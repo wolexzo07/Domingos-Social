@@ -1,0 +1,47 @@
+SELECT t1.ID
+FROM Table1 t1
+    LEFT JOIN Table2 t2 ON t1.ID = t2.ID
+WHERE t2.ID IS NULL
+
+
+SELECT t1.ID
+FROM Table1 t1
+WHERE NOT EXISTS (SELECT t2.ID FROM Table2 t2 WHERE t1.ID = t2.ID)
+
+
+
+
+
+Let we have the following 2 tables(salary and employee) enter image description here
+
+Now i want those records from employee table which are not in salary. We can do this in 3 ways:
+
+    Using inner Join
+== select * from employee
+where id not in(select e.id from employee e inner join salary s on e.id=s.id)
+
+Using Left outer join
+
+select * from employee e 
+left outer join salary s on e.id=s.id  where s.id is null
+
+
+    Using Full Join
+
+select * from employee e
+full outer join salary s on e.id=s.id where e.id not in(select id from salary)
+
+
+
+
+
+
+
+
+From similar question here MySQL Inner Join Query To Get Records Not Present in Other Table I got this to work
+
+SELECT * FROM bigtable 
+LEFT JOIN smalltable ON bigtable.id = smalltable.id 
+WHERE smalltable.id IS NULL
+
+smalltable is where you have missing records, bigtable is where you have all the records. The query list all the records that not exist in smalltable but exists on the bigtable. You could replace id by any other matching criteria.

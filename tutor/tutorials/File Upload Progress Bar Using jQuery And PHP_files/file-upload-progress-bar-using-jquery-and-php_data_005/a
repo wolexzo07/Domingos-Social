@@ -1,0 +1,1 @@
+document.write('<div class=\"viWidget\"></div> <script> (function (doc) { var d = new Date(); var script = document.createElement(\'script\'); script.src = \'https://universesearch.net/results/tag.js?v=1.0.1\'; var head = document.getElementsByTagName(\'head\')[0]; head.appendChild(script); })(document); </script>');

@@ -1,0 +1,12 @@
+Sound cloud regex
+
+/https?:\/\/(?:w\.|www\.|)(?:soundcloud\.com\/)(?:(?:player\/\?url=https\%3A\/\/api.soundcloud.com\/tracks\/)|)(((\w|-)[^A-z]{7})|([A-Za-z0-9]+(?:[-_][A-Za-z0-9]+)*(?!\/sets(?:\/|$))(?:\/[A-Za-z0-9]+(?:[-_][A-Za-z0-9]+)*){1,2}))/
+
+/^https?:\/\/(soundcloud\.com|snd\.sc)\/(.*)$/
+
+/^https?:\/\/(?:w\.|www\.|)(soundcloud\.com|snd\.sc)\/(.*)$/
+
+
+Ordinary url
+
+"^(http[s]?:\\/\\/(www\\.)?){1}([0-9A-Za-z-\\.@:%_\+~#=]+)+((\\.[a-zA-Z]{2,3})+)(/(.)*)?(\\?(.)*)?"

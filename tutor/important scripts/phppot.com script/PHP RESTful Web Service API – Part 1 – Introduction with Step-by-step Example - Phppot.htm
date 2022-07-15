@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>PHP RESTful Web Service API – Part 1 – Introduction with Step-by-step Example - Phppot</title>
+<meta name="description" content="Comprehensive introduction to RESTful service concept with step by step example and tutorial to learn, build RESTful web services using PHP."><link rel="next" href="https://phppot.com/demo/php-restful-web-service/">
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://phppot.com/feed/">
+<link rel="apple-touch-icon" sizes="180x180" href="https://phppot.com/apple-touch-icon.png?v=031218">
+<link rel="icon" type="image/png" sizes="32x32" href="https://phppot.com/favicon-32x32.png?v=031218">
+<link rel="icon" type="image/png" sizes="16x16" href="https://phppot.com/favicon-16x16.png?v=031218">
+<link rel="manifest" href="https://phppot.com/site.webmanifest?v=031218">
+<link rel="mask-icon" href="https://phppot.com/safari-pinned-tab.svg?v=031218" color="#ffa500">
+<link rel="shortcut icon" href="https://phppot.com/favicon.ico?v=031218">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="PHP RESTful Web Service API – Part 1 – Introduction with Step-by-step Example - Phppot">
+<meta property="og:site_name" content="Phppot">
+<meta property="og:description" content="Comprehensive introduction to RESTful service concept with step by step example and tutorial to learn, build RESTful web services using PHP."><meta property="og:url" content="https://phppot.com/php/php-restful-web-service/">
+<meta property="twitter:title" content="PHP RESTful Web Service API – Part 1 – Introduction with Step-by-step Example - Phppot">
+<meta name="twitter:site" content="@phppot">
+<meta property="twitter:creator" content="@phppot">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://phppot.com/wp-content/uploads/2015/10/RESTful-Web-Service-GET-1.png"><meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:description" content="Comprehensive introduction to RESTful service concept with step by step example and tutorial to learn, build RESTful web services using PHP."><meta property="twitter:image" content="https://phppot.com/wp-content/uploads/2015/10/RESTful-Web-Service-GET-1.png"><script type="text/javascript" async="" src="PHP%20RESTful%20Web%20Service%20API%20%E2%80%93%20Part%201%20%E2%80%93%20Introduction%20with%20Step-by-step%20Example%20-%20Phppot_files/ga.js"></script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40067115-1']);
+  _gaq.push(['_setDomainName', 'phppot.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://www.google-analytics.com/"><link rel="dns-prefetch" href="https://www.youtube.com/"><link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/"><link rel="dns-prefetch" href="https://static.doubleclick.net/"><link rel="dns-prefetch" href="https://www.google.com/"><link rel="dns-prefetch" href="https://i.ytimg.com/"><link rel="dns-prefetch" href="https://yt3.ggpht.com/"><link rel="dns-prefetch" href="https://fonts.gstatic.com/"><link rel="stylesheet" id="main-style-css" href="PHP%20RESTful%20Web%20Service%20API%20%E2%80%93%20Part%201%20%E2%80%93%20Introduction%20with%20Step-by-step%20Example%20-%20Phppot_files/papers_228192.css" type="text/css" media="all">
+<link rel="canonical" href="https://phppot.com/php/php-restful-web-service/">
+</head>
+<body onload="prettyPrint()">
+ <div id="site_header">
+    <div class="content">
+        <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP"><img src="PHP%20RESTful%20Web%20Service%20API%20%E2%80%93%20Part%201%20%E2%80%93%20Introduction%20with%20Step-by-step%20Example%20-%20Phppot_files/phppot-logo.png" id="site-logo" alt="Helping You Build Web Applications Using PHP"></a>
+        <div class="search-container">
+            <form method="get" action="/" class="search-form">
+                <input name="s" class="search" placeholder="Search Phppot" title="Search Phppot" autocomplete="off">
+                <button type="submit" title="Search Phppot" id="search-button"></button>
+            </form>
+        </div>
+        <div class="header-link-container">
+            <span id="mobile-search-icon" onclick="toggleSearch();">Mobile
+                Search</span>
+                <div id="expand-sub-menu-icon">
+                    <a class="testimonial-icon" href="https://phppot.com/testimonials/">Testimonials</a><a class="demo-download-icon" href="https://phppot.com/demo/">Demo</a>
+                </div>  <a id="header-contact-navigation" href="https://phppot.com/contact/">Contact Me</a>
+        </div>
+    </div>
+</div>    <div class="content">
+        <div id="tutorial-body">
+            <div id="tutorial">
+                <h1>PHP RESTful Web Service API – Part 1 – Introduction with Step-by-step Example</h1>
+                <div class="modified-on">Last modified on February 19th, 2019 by Vincy.</div>
+<p>This is part 1 of a three part series to help you learn RESTful web 
+services using PHP. These tutorials will be comprehensive, by following 
+it through you can build your own web services easily and consume 
+external services.</p>
+<p>In this tutorial, we will see how to create PHP RESTful web service 
+without using any framework. Most of the times I do prefer to write 
+custom code without depending on frameworks since this approach has lot 
+of advantages. Mainly, this will take you deeper in learning the 
+concepts and you can keep things sleek and effective.</p>
+<p><strong>REST</strong> or <strong>Representational State Transfer</strong>
+ is one of the popular architectural style used to develop web services.
+ This style of architecture contains constraints or rules to design web 
+services which can be accessed from external apps or web applications.</p>
+<h2>The objective of this PHP RESTful web service example</h2>
+<p>The objective is to build a RESTful web service in PHP to provide 
+resource data based on the request with the network call by the external
+ clients. Also, the following list of steps are implemented while 
+customizing this example without depending on any framework.</p>
+<ul>
+<li>Create request URI with patterns that follow REST principles.</li>
+<li>Make the RESTful service to be capable of responding to the requests in JSON, XML, HTML formats.</li>
+<li>Demonstrate the use of HTTP Status code based on different scenarios.</li>
+<li>Demonstrate the use of Request Headers.</li>
+<li>Test the RESTful web service using a REST client.</li>
+</ul>
+<h2>How it is made?</h2>
+<p>An array of mobile names are the resource data that will be targeted 
+by the REST clients. I have this resource in a domain class of 
+this&nbsp;PHP RESTful example.</p>
+<p>For accessing these data via this web service, the client will send 
+the request by setting URI, parameters with the selected method, and 
+more information.</p>
+<p>The resource handlers of the web service will prepare the response in
+ JSON, XML or HTML format based on the request. Then, the response will 
+be sent to the client.</p>
+<p>On the Internet, I have seen web services tutorials and most of the 
+times they all turn out to be error-prone or incomplete. I tested those 
+RESTful services using a REST client and mostly they fail.</p>
+<p><a class="demo" href="https://phppot.com/demo/php-restful-web-service/">View Demo</a></p>
+<h2>What is inside?</h2>
+<ol>
+<li><a href="#what-is-restful">What is RESTful?</a></li>
+<li><a href="#restful-web-services-vs-rpc-web-services">RESTful web services vs RPC web services</a></li>
+<li><a href="#restful-web-services-api-architecture">RESTful web services API architecture</a></li>
+<li><a href="#uses-of-restful-api">Uses of RESTful API</a></li>
+<li><a href="#php-restful-web-service-example">PHP RESTful web service example</a></li>
+<li><a href="#file-structure-of-restful-example-service">File structure of RESTful example service</a></li>
+<li><a href="#restful-services-uri-mapping">RESTful services URI mapping</a></li>
+<li><a href="#uml-sequence-diagram-for-the-example-restful-service">UML sequence diagram for the example RESTful service</a></li>
+<li><a href="#restful-web-service-controller">RESTful web service controller</a></li>
+<li><a href="#a-simple-restful-base-class">A simple RESTful base class</a></li>
+<li><a href="#restful-web-service-handler">RESTful web service handler</a></li>
+<li><a href="#restful-web-service-client">RESTful web service client</a></li>
+<li><a href="#restful-web-service-output">RESTful Web Service Output</a></li>
+</ol>
+<h2 id="what-is-restful">What is RESTful?</h2>
+<p>REST stands for Representational State Transfer and it is an 
+architectural style that enables communication between systems. The term
+ <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">REST was first coined by Roy T. Fielding in his PhD. dissertation</a>.</p>
+<p>The concept of REST is defined by certain rules, constraints or 
+principles. The system, application,&nbsp;services or whatever satisfies
+ these REST principles are called RESTful.</p>
+<p>Web services that follow the RESTful principles are RESTful services.
+ The URI is used to access RESTful services to get the resources.</p>
+<p>In the RESTful glossary, the resources are nothing but the data and 
+functions. So&nbsp;eventually we will call the web services via URI to 
+access functions and thereby get the resource data.</p>
+<h3>REST Constraints</h3>
+<p>The following constraints define the RESTfulness of an application or service.</p>
+<ul>
+<li>Client-Server architecture</li>
+<li>Statelessness</li>
+<li>Uniform interface</li>
+<li>Layered system</li>
+<li>Cacheability</li>
+<li>Code on Demand</li>
+</ul>
+<h2 id="restful-web-services-vs-rpc-web-services">RESTful web services vs RPC web services</h2>
+<p>The following table shows the comparison of RESTful and RPC style web
+ services. This comparison is made by factors like service request URI, 
+request methods, data transmission, service handlers and more.</p>
+<table class="tutorial-table" width="100%">
+<tbody>
+<tr>
+<th>&nbsp;</th>
+<th width="40%">RESTful-Style</th>
+<th width="40%">RPC-Style</th>
+</tr>
+<tr>
+<td>Request URI</td>
+<td>The request URI will differ based on the resource.</td>
+<td>Same URI for all resources.</td>
+</tr>
+<tr>
+<td>Request methods</td>
+<td>The service request parameters can be sent via GET, PUT, POST request methods.</td>
+<td>Supports only the POST method.</td>
+</tr>
+<tr>
+<td>Service methods or handlers</td>
+<td>Same method for all resources.</td>
+<td>Methods and params are posted on request.</td>
+</tr>
+<tr>
+<td>Target on</td>
+<td>The service request using this style targets resources.</td>
+<td>The target is methods.</td>
+</tr>
+<tr>
+<td>Response data transmission</td>
+<td>Over HTTP</td>
+<td>wrapped with the requested methods and params.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="restful-web-services-api-architecture">RESTful web&nbsp;services API architecture</h2>
+<p>The following diagram shows a RESTful web service architecture. In 
+this diagram, the request-response flow among the client-server is 
+represented.</p>
+<p>In this diagram, the database is shown as a resource. Based on the 
+web service the resource can be XML feed, JSON data extracted from the 
+file system or any.</p>
+<p><a href="https://phppot.com/wp-content/uploads/2015/10/restful-web-services-api-architecture.jpg"><img class="alignnone wp-image-9407 size-large" src="PHP%20RESTful%20Web%20Service%20API%20%E2%80%93%20Part%201%20%E2%80%93%20Introduction%20with%20Step-by-step%20Example%20-%20Phppot_files/restful-web-services-api-architecture-550x413.jpg" alt="RESTful Web Services API Architecture" srcset="https://phppot.com/wp-content/uploads/2015/10/restful-web-services-api-architecture-550x413.jpg 550w, https://phppot.com/wp-content/uploads/2015/10/restful-web-services-api-architecture-300x225.jpg 300w, https://phppot.com/wp-content/uploads/2015/10/restful-web-services-api-architecture-768x576.jpg 768w, https://phppot.com/wp-content/uploads/2015/10/restful-web-services-api-architecture.jpg 850w" sizes="(max-width: 550px) 100vw, 550px" width="550" height="413"></a></p>
+<h2 id="uses-of-restful-api">Uses of RESTful API</h2>
+<p>RESTful API provides services to access resources from external 
+applications or REST clients. Some of the predominant uses of the 
+RESTful API is listed below.</p>
+<ul>
+<li>As an interface with multi-platform support which is used to access 
+resources from outside application coded in various programming 
+languages like PHP, JAVA, Android and more.</li>
+<li>REST is the simple architectural style for transmitting data over HTTP.</li>
+<li>The REST API is the most suitable resource provider for an 
+AJAX-based application interface which requires data to update UI 
+without page reload.</li>
+<li>By meeting more the REST constraints, the web applications or services can support a wide range of clients.</li>
+</ul>
+<h2 id="php-restful-web-service-example">PHP RESTful web service example</h2>
+<p>In the PHP RESTful web service example, the following domain class 
+contains the resource data array and service handlers. These handlers 
+are called based on the request sent by the REST client or external 
+apps.</p>
+<p>In the next section, we can see all the file structure and the purpose of each file of this example.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php
+</span><span class="com">/* 
+A domain Class to demonstrate RESTful web services
+*/</span><span class="pln">
+</span><span class="typ">Class</span><span class="pln"> </span><span class="typ">Mobile</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+	
+	</span><span class="kwd">private</span><span class="pln"> $mobiles </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+		</span><span class="lit">1</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Apple iPhone 6S'</span><span class="pun">,</span><span class="pln">  
+		</span><span class="lit">2</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Samsung Galaxy S6'</span><span class="pun">,</span><span class="pln">  
+		</span><span class="lit">3</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Apple iPhone 6S Plus'</span><span class="pun">,</span><span class="pln">  			
+		</span><span class="lit">4</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'LG G4'</span><span class="pun">,</span><span class="pln">  			
+		</span><span class="lit">5</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Samsung Galaxy S6 edge'</span><span class="pun">,</span><span class="pln">  
+		</span><span class="lit">6</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'OnePlus 2'</span><span class="pun">);</span><span class="pln">
+		
+	</span><span class="com">/*
+		you should hookup the DAO here
+	*/</span><span class="pln">
+	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> getAllMobile</span><span class="pun">(){</span><span class="pln">
+		</span><span class="kwd">return</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">mobiles</span><span class="pun">;</span><span class="pln">
+	</span><span class="pun">}</span><span class="pln">
+	
+	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> getMobile</span><span class="pun">(</span><span class="pln">$id</span><span class="pun">){</span><span class="pln">
+		
+		$mobile </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">$id </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$this</span><span class="pun">-&gt;</span><span class="pln">mobiles</span><span class="pun">[</span><span class="pln">$id</span><span class="pun">])</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">mobiles</span><span class="pun">[</span><span class="pln">$id</span><span class="pun">]</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">mobiles</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]);</span><span class="pln">
+		</span><span class="kwd">return</span><span class="pln"> $mobile</span><span class="pun">;</span><span class="pln">
+	</span><span class="pun">}</span><span class="pln">	
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">?&gt;</span></pre>
+<h2 id="file-structure-of-restful-example-service">File structure of RESTful example service</h2>
+<p>Below file structure shows the simplicity of creating a RESTful web service example.&nbsp;</p>
+<p>As discussed above the Mobile.php is the domain class which is having resource array and handlers to get the resource.</p>
+<p><img class="alignnone size-full wp-image-9438" src="PHP%20RESTful%20Web%20Service%20API%20%E2%80%93%20Part%201%20%E2%80%93%20Introduction%20with%20Step-by-step%20Example%20-%20Phppot_files/php-restful-web-service-file-structure.jpg" alt="PHP RESTful Web Service File Structure" srcset="https://phppot.com/wp-content/uploads/2015/10/php-restful-web-service-file-structure.jpg 452w, https://phppot.com/wp-content/uploads/2015/10/php-restful-web-service-file-structure-300x141.jpg 300w" sizes="(max-width: 452px) 100vw, 452px" width="452" height="212"></p>
+<p>The .htaccess file is used for mapping the request URI to the REST service endpoint.</p>
+<p>In the following sections, we will see how the URI is mapped, how the
+ service handler is invoked to get resource data from the domain.&nbsp; –
+ <a href="https://tools.ietf.org/html/rfc3986">URI RFC 3986</a></p>
+<h2 id="restful-services-uri-mapping">RESTful services URI mapping</h2>
+<p>Every resource is identified via a URI (Uniform Resource Identifier).&nbsp;</p>
+<blockquote>
+<p>A Uniform Resource Identifier (URI) is a compact sequence of characters that identifies an abstract or physical resource.</p>
+</blockquote>
+<p>RestController.php shown in the above file structure is the PHP endpoint to which the request is to be forwarded.</p>
+<p>In this example, I provide two URIs for accessing this web service 
+from external applications or REST client. One URI will be used to get 
+the complete array of mobile names in a JSON format and the other is to 
+get a particular mobile name based on the ident passed via the request 
+URI.</p>
+<table class="tutorial-table" width="100%">
+<tbody>
+<tr>
+<th>URI</th>
+<th>Method</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>http://localhost/restexample/mobile/list/</td>
+<td>GET</td>
+<td>JSON</td>
+<td>To get the list of mobile names in an JSON array.</td>
+</tr>
+<tr>
+<td>http://localhost/restexample/mobile/list/{id}/</td>
+<td>GET</td>
+<td>JSON</td>
+<td>To get single mobile data array by ident passed via URL.</td>
+</tr>
+</tbody>
+</table>
+<p>The following URIs are mapped to the real file via the .htaccess file.</p>
+<p><strong>URI to get the list of all mobiles:</strong></p>
+<pre class="prettyprint prettyprinted" style=""><span class="pln">http</span><span class="pun">:</span><span class="com">//localhost/restexample/mobile/list/</span></pre>
+<p><strong>URI to get a particular mobile’s detail using its id:</strong></p>
+<p>In the below URI the number ‘2’ is the id of a mobile. The resource 
+domain class can get the particular data with the reference of this id 
+parameter.</p>
+<pre class="prettyprint prettyprinted" style=""><span class="pln">http</span><span class="pun">:</span><span class="com">//localhost/restexample/mobile/list/2/</span></pre>
+<p>Below code snippet shows the complete rules and URL mappings created for this PHP RESTful web service example in its <code>.htaccess</code>&nbsp;&nbsp;file.</p>
+<pre class="prettyprint prettyprinted" style=""><span class="com"># Turn rewrite engine on</span><span class="pln">
+</span><span class="typ">Options</span><span class="pln"> </span><span class="pun">+</span><span class="typ">FollowSymlinks</span><span class="pln">
+</span><span class="typ">RewriteEngine</span><span class="pln"> on
+
+</span><span class="com"># map neat URL to internal URL</span><span class="pln">
+</span><span class="typ">RewriteRule</span><span class="pln"> </span><span class="pun">^</span><span class="pln">mobile</span><span class="pun">/</span><span class="pln">list</span><span class="pun">/</span><span class="pln">$   </span><span class="typ">RestController</span><span class="pun">.</span><span class="pln">php</span><span class="pun">?</span><span class="pln">view</span><span class="pun">=</span><span class="pln">all </span><span class="pun">[</span><span class="pln">nc</span><span class="pun">,</span><span class="pln">qsa</span><span class="pun">]</span><span class="pln">
+</span><span class="typ">RewriteRule</span><span class="pln"> </span><span class="pun">^</span><span class="pln">mobile</span><span class="pun">/</span><span class="pln">list</span><span class="pun">/([</span><span class="lit">0</span><span class="pun">-</span><span class="lit">9</span><span class="pun">]+)/</span><span class="pln">$   </span><span class="typ">RestController</span><span class="pun">.</span><span class="pln">php</span><span class="pun">?</span><span class="pln">view</span><span class="pun">=</span><span class="pln">single</span><span class="pun">&amp;</span><span class="pln">id</span><span class="pun">=</span><span class="pln">$1 </span><span class="pun">[</span><span class="pln">nc</span><span class="pun">,</span><span class="pln">qsa</span><span class="pun">]</span></pre>
+<h2 id="restful-web-service-controller">RESTful web service controller</h2>
+<p>In the<code>.htaccess</code>&nbsp;file, we are forwarding all the request to the RestController.php file.</p>
+<p>While forwarding the request the parameters are sent to execute a 
+required part of the REST controller. This parameter is the key named as
+ ‘view’.</p>
+<p>The value of the key parameter can be either “all” or “single” based on the request URI.</p>
+<p>Following is the RestController.php file that receives the request 
+and gets the view parameter. Based on this parameter value, the 
+appropriate controll case will be executed.</p>
+<p>On the controller cases, the request is dispatched to respective methods created in the REST handler class.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php
+require_once</span><span class="pun">(</span><span class="str">"MobileRestHandler.php"</span><span class="pun">);</span><span class="pln">
+		
+$view </span><span class="pun">=</span><span class="pln"> </span><span class="str">""</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">if</span><span class="pun">(</span><span class="pln">isset</span><span class="pun">(</span><span class="pln">$_GET</span><span class="pun">[</span><span class="str">"view"</span><span class="pun">]))</span><span class="pln">
+	$view </span><span class="pun">=</span><span class="pln"> $_GET</span><span class="pun">[</span><span class="str">"view"</span><span class="pun">];</span><span class="pln">
+</span><span class="com">/*
+controls the RESTful services
+URL mapping
+*/</span><span class="pln">
+</span><span class="kwd">switch</span><span class="pun">(</span><span class="pln">$view</span><span class="pun">){</span><span class="pln">
+
+	</span><span class="kwd">case</span><span class="pln"> </span><span class="str">"all"</span><span class="pun">:</span><span class="pln">
+		</span><span class="com">// to handle REST Url /mobile/list/</span><span class="pln">
+		$mobileRestHandler </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MobileRestHandler</span><span class="pun">();</span><span class="pln">
+		$mobileRestHandler</span><span class="pun">-&gt;</span><span class="pln">getAllMobiles</span><span class="pun">();</span><span class="pln">
+		</span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+		
+	</span><span class="kwd">case</span><span class="pln"> </span><span class="str">"single"</span><span class="pun">:</span><span class="pln">
+		</span><span class="com">// to handle REST Url /mobile/show/&lt;id&gt;/</span><span class="pln">
+		$mobileRestHandler </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MobileRestHandler</span><span class="pun">();</span><span class="pln">
+		$mobileRestHandler</span><span class="pun">-&gt;</span><span class="pln">getMobile</span><span class="pun">(</span><span class="pln">$_GET</span><span class="pun">[</span><span class="str">"id"</span><span class="pun">]);</span><span class="pln">
+		</span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+
+	</span><span class="kwd">case</span><span class="pln"> </span><span class="str">""</span><span class="pln"> </span><span class="pun">:</span><span class="pln">
+		</span><span class="com">//404 - not found;</span><span class="pln">
+		</span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">?&gt;</span></pre>
+<h2 id="a-simple-restful-base-class">A simple RESTful base class</h2>
+<p>Following class has a couple of methods that can be commonly used for the RESTful service handlers.</p>
+<p>The&nbsp;getHttpStatusMessage() method is used to get the HTTP status
+ message to construct the response. It contains the HTTP status code and
+ message mapping array.</p>
+<p>By receiving the status code, it returns the appropriate header 
+response message. If the invalid status code is passed to this function 
+or no such code is found in the mapping array, then the “Invalid Server 
+Error” will be returned in the response.</p>
+<p>These methods can be commonly&nbsp;used in the base class of simple PHP RESTful web services.</p>
+<pre class="prettyprint prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php 
+</span><span class="com">/*
+A simple RESTful webservices base class
+Use this as a template and build upon it
+*/</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">SimpleRest</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+	
+	</span><span class="kwd">private</span><span class="pln"> $httpVersion </span><span class="pun">=</span><span class="pln"> </span><span class="str">"HTTP/1.1"</span><span class="pun">;</span><span class="pln">
+
+	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> setHttpHeaders</span><span class="pun">(</span><span class="pln">$contentType</span><span class="pun">,</span><span class="pln"> $statusCode</span><span class="pun">){</span><span class="pln">
+		
+		$statusMessage </span><span class="pun">=</span><span class="pln"> $this </span><span class="pun">-&gt;</span><span class="pln"> getHttpStatusMessage</span><span class="pun">(</span><span class="pln">$statusCode</span><span class="pun">);</span><span class="pln">
+		
+		header</span><span class="pun">(</span><span class="pln">$this</span><span class="pun">-&gt;</span><span class="pln">httpVersion</span><span class="pun">.</span><span class="pln"> </span><span class="str">" "</span><span class="pun">.</span><span class="pln"> $statusCode </span><span class="pun">.</span><span class="str">" "</span><span class="pun">.</span><span class="pln"> $statusMessage</span><span class="pun">);</span><span class="pln">		
+		header</span><span class="pun">(</span><span class="str">"Content-Type:"</span><span class="pun">.</span><span class="pln"> $contentType</span><span class="pun">);</span><span class="pln">
+	</span><span class="pun">}</span><span class="pln">
+	
+	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> getHttpStatusMessage</span><span class="pun">(</span><span class="pln">$statusCode</span><span class="pun">){</span><span class="pln">
+		$httpStatus </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+			</span><span class="lit">100</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Continue'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">101</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Switching Protocols'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">200</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'OK'</span><span class="pun">,</span><span class="pln">
+			</span><span class="lit">201</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Created'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">202</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Accepted'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">203</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Non-Authoritative Information'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">204</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'No Content'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">205</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Reset Content'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">206</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Partial Content'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">300</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Multiple Choices'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">301</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Moved Permanently'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">302</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Found'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">303</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'See Other'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">304</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Not Modified'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">305</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Use Proxy'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">306</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'(Unused)'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">307</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Temporary Redirect'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">400</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Bad Request'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">401</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Unauthorized'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">402</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Payment Required'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">403</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Forbidden'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">404</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Not Found'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">405</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Method Not Allowed'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">406</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Not Acceptable'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">407</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Proxy Authentication Required'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">408</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Request Timeout'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">409</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Conflict'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">410</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Gone'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">411</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Length Required'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">412</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Precondition Failed'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">413</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Request Entity Too Large'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">414</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Request-URI Too Long'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">415</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Unsupported Media Type'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">416</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Requested Range Not Satisfiable'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">417</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Expectation Failed'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">500</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Internal Server Error'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">501</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Not Implemented'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">502</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Bad Gateway'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">503</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Service Unavailable'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">504</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'Gateway Timeout'</span><span class="pun">,</span><span class="pln">  
+			</span><span class="lit">505</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'HTTP Version Not Supported'</span><span class="pun">);</span><span class="pln">
+		</span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$httpStatus</span><span class="pun">[</span><span class="pln">$statusCode</span><span class="pun">])</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> $httpStatus</span><span class="pun">[</span><span class="pln">$statusCode</span><span class="pun">]</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> $status</span><span class="pun">[</span><span class="lit">500</span><span class="pun">];</span><span class="pln">
+	</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">?&gt;</span></pre>
+<h2 id="restful-web-service-handler">RESTful web&nbsp;service handler</h2>
+<p>This is the service class of this PHP example that handles the REST request dispatched from the controller.</p>
+<p>First, we have to decide about the response format in which the 
+resource data has to be prepared. It is based on the request header 
+parameters.</p>
+<p>In the request header, the “Accept” parameter will have the specification about the response content format or type.&nbsp;</p>
+<p>The protocol here is, when the request is sent, it should set the 
+Request header parameter “Accept” and send it. The values can be like 
+“application/json” or “application/xml” or “text/html”.</p>
+<p>Based on these values the response data will be ready by invoking 
+appropriate 
+methods&nbsp;encodeJson(),&nbsp;encodeXML(),&nbsp;encodeHTML() shown 
+below.</p>
+<p>Then, the status code has to be returned to the client with the response data. On success, the&nbsp;status code will be 200.</p>
+<p>Similarly, there are different status codes available and they should
+ be used accordingly to set response header as we discussed in the above
+ section.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php
+require_once</span><span class="pun">(</span><span class="str">"SimpleRest.php"</span><span class="pun">);</span><span class="pln">
+require_once</span><span class="pun">(</span><span class="str">"Mobile.php"</span><span class="pun">);</span><span class="pln">
+		
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">MobileRestHandler</span><span class="pln"> extends </span><span class="typ">SimpleRest</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+	</span><span class="kwd">function</span><span class="pln"> getAllMobiles</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">	
+
+		$mobile </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Mobile</span><span class="pun">();</span><span class="pln">
+		$rawData </span><span class="pun">=</span><span class="pln"> $mobile</span><span class="pun">-&gt;</span><span class="pln">getAllMobile</span><span class="pun">();</span><span class="pln">
+
+		</span><span class="kwd">if</span><span class="pun">(</span><span class="pln">empty</span><span class="pun">(</span><span class="pln">$rawData</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			$statusCode </span><span class="pun">=</span><span class="pln"> </span><span class="lit">404</span><span class="pun">;</span><span class="pln">
+			$rawData </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="str">'error'</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">'No mobiles found!'</span><span class="pun">);</span><span class="pln">		
+		</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			$statusCode </span><span class="pun">=</span><span class="pln"> </span><span class="lit">200</span><span class="pun">;</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln">
+
+		$requestContentType </span><span class="pun">=</span><span class="pln"> $_SERVER</span><span class="pun">[</span><span class="str">'HTTP_ACCEPT'</span><span class="pun">];</span><span class="pln">
+		$this </span><span class="pun">-&gt;</span><span class="pln">setHttpHeaders</span><span class="pun">(</span><span class="pln">$requestContentType</span><span class="pun">,</span><span class="pln"> $statusCode</span><span class="pun">);</span><span class="pln">
+				
+		</span><span class="kwd">if</span><span class="pun">(</span><span class="pln">strpos</span><span class="pun">(</span><span class="pln">$requestContentType</span><span class="pun">,</span><span class="str">'application/json'</span><span class="pun">)</span><span class="pln"> </span><span class="pun">!==</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">){</span><span class="pln">
+			$response </span><span class="pun">=</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">encodeJson</span><span class="pun">(</span><span class="pln">$rawData</span><span class="pun">);</span><span class="pln">
+			echo $response</span><span class="pun">;</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">strpos</span><span class="pun">(</span><span class="pln">$requestContentType</span><span class="pun">,</span><span class="str">'text/html'</span><span class="pun">)</span><span class="pln"> </span><span class="pun">!==</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">){</span><span class="pln">
+			$response </span><span class="pun">=</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">encodeHtml</span><span class="pun">(</span><span class="pln">$rawData</span><span class="pun">);</span><span class="pln">
+			echo $response</span><span class="pun">;</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">strpos</span><span class="pun">(</span><span class="pln">$requestContentType</span><span class="pun">,</span><span class="str">'application/xml'</span><span class="pun">)</span><span class="pln"> </span><span class="pun">!==</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">){</span><span class="pln">
+			$response </span><span class="pun">=</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">encodeXml</span><span class="pun">(</span><span class="pln">$rawData</span><span class="pun">);</span><span class="pln">
+			echo $response</span><span class="pun">;</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln">
+	</span><span class="pun">}</span><span class="pln">
+	
+	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> encodeHtml</span><span class="pun">(</span><span class="pln">$responseData</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+	
+		$htmlResponse </span><span class="pun">=</span><span class="pln"> </span><span class="str">"&lt;table border='1'&gt;"</span><span class="pun">;</span><span class="pln">
+		</span><span class="kwd">foreach</span><span class="pun">(</span><span class="pln">$responseData </span><span class="kwd">as</span><span class="pln"> $key</span><span class="pun">=&gt;</span><span class="pln">$value</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    			$htmlResponse </span><span class="pun">.=</span><span class="pln"> </span><span class="str">"&lt;tr&gt;&lt;td&gt;"</span><span class="pun">.</span><span class="pln"> $key</span><span class="pun">.</span><span class="pln"> </span><span class="str">"&lt;/td&gt;&lt;td&gt;"</span><span class="pun">.</span><span class="pln"> $value</span><span class="pun">.</span><span class="pln"> </span><span class="str">"&lt;/td&gt;&lt;/tr&gt;"</span><span class="pun">;</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln">
+		$htmlResponse </span><span class="pun">.=</span><span class="pln"> </span><span class="str">"&lt;/table&gt;"</span><span class="pun">;</span><span class="pln">
+		</span><span class="kwd">return</span><span class="pln"> $htmlResponse</span><span class="pun">;</span><span class="pln">		
+	</span><span class="pun">}</span><span class="pln">
+	
+	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> encodeJson</span><span class="pun">(</span><span class="pln">$responseData</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+		$jsonResponse </span><span class="pun">=</span><span class="pln"> json_encode</span><span class="pun">(</span><span class="pln">$responseData</span><span class="pun">);</span><span class="pln">
+		</span><span class="kwd">return</span><span class="pln"> $jsonResponse</span><span class="pun">;</span><span class="pln">		
+	</span><span class="pun">}</span><span class="pln">
+	
+	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> encodeXml</span><span class="pun">(</span><span class="pln">$responseData</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+		</span><span class="com">// creating object of SimpleXMLElement</span><span class="pln">
+		$xml </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SimpleXMLElement</span><span class="pun">(</span><span class="str">'&lt;?xml version="1.0"</span><span class="pun">?&gt;</span><span class="tag">&lt;mobile&gt;&lt;/mobile&gt;</span><span class="pln">');
+		foreach($responseData as $key=&gt;$value) {
+			$xml-&gt;addChild($key, $value);
+		}
+		return $xml-&gt;asXML();
+	}
+	
+	public function getMobile($id) {
+
+		$mobile = new Mobile();
+		$rawData = $mobile-&gt;getMobile($id);
+
+		if(empty($rawData)) {
+			$statusCode = 404;
+			$rawData = array('error' =&gt; 'No mobiles found!');		
+		} else {
+			$statusCode = 200;
+		}
+
+		$requestContentType = $_SERVER['HTTP_ACCEPT'];
+		$this -&gt;setHttpHeaders($requestContentType, $statusCode);
+				
+		if(strpos($requestContentType,'application/json') !== false){
+			$response = $this-&gt;encodeJson($rawData);
+			echo $response;
+		} else if(strpos($requestContentType,'text/html') !== false){
+			$response = $this-&gt;encodeHtml($rawData);
+			echo $response;
+		} else if(strpos($requestContentType,'application/xml') !== false){
+			$response = $this-&gt;encodeXml($rawData);
+			echo $response;
+		}
+	}
+}
+</span><span class="pun">?&gt;</span></pre>
+<h2 id="restful-web-service-client">RESTful web service client</h2>
+<p>There are various stand-alone REST clients available in the market. 
+These client interfaces are used to test a RESTful web service.</p>
+<p>The <a href="https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo">Advanced Rest Client extension</a> which can be added to the Chrome installed in your machine.</p>
+<p>We can also write our own custom client to test a RESTful web service.</p>
+<p>I used this Google Chrome extension REST client for testing this PHP RESTful web service example.</p>
+<h2 id="restful-web-service-output">PHP RESTful web service output</h2>
+<p>In the below screenshot, it shows how to call RESTful web service. In
+ this screenshot, the circled sections highlight the request URI, 
+selected request method, Header’s Accept param, and more details.</p>
+<p>By clicking the send button, the response will be returned from the PHP RESTful web service.</p>
+<p><strong>XML Response</strong></p>
+<p>I set the <strong>application/xml</strong> as the response type. So 
+the resultant resource data is prepared in the requested format as shown
+ in the response section of the below screenshot.</p>
+<p><a href="https://phppot.com/wp-content/uploads/2015/10/RESTful-Web-Service-GET-1.png"><img class="alignnone wp-image-3326 size-full" src="PHP%20RESTful%20Web%20Service%20API%20%E2%80%93%20Part%201%20%E2%80%93%20Introduction%20with%20Step-by-step%20Example%20-%20Phppot_files/RESTful-Web-Service-GET-1.png" alt="RESTful Web Service GET" srcset="https://phppot.com/wp-content/uploads/2015/10/RESTful-Web-Service-GET-1.png 973w, https://phppot.com/wp-content/uploads/2015/10/RESTful-Web-Service-GET-1-300x257.png 300w" sizes="(max-width: 973px) 100vw, 973px" width="973" height="834"></a></p>
+<p><strong>PHP RESTful web service JSON response</strong></p>
+<p><a href="https://phppot.com/wp-content/uploads/2015/10/RESTful-Web-Service-JSON-Output.png"><img class="alignnone size-full wp-image-3328" src="PHP%20RESTful%20Web%20Service%20API%20%E2%80%93%20Part%201%20%E2%80%93%20Introduction%20with%20Step-by-step%20Example%20-%20Phppot_files/RESTful-Web-Service-JSON-Output.png" alt="RESTful-Web-Service-JSON-Output" srcset="https://phppot.com/wp-content/uploads/2015/10/RESTful-Web-Service-JSON-Output.png 973w, https://phppot.com/wp-content/uploads/2015/10/RESTful-Web-Service-JSON-Output-300x257.png 300w" sizes="(max-width: 973px) 100vw, 973px" width="973" height="834"></a></p>
+<h2>Conclusion</h2>
+<p>In this three part tutorial series on RESTful webservices using PHP, 
+you will learn the RESTful implementation in detail using these 
+comprehensive material. This first part has given you a complete 
+introduction to the concepts with step by step example.&nbsp;</p>
+<p>With the knowledge that you have acquired from this tutorial, about 
+the rules and principles of RESTfulness, you can build a RESTful API 
+easily. Though there are frameworks for developing RESTful API, it can 
+be done by using plain core PHP which will be effective and provide good
+ performance.</p>
+<p>In the coming part, you will be seeing about all aspects of developing a CRUD RESTful web services API using PHP for an entity.</p>
+<p><a class="demo" href="https://phppot.com/demo/php-restful-web-service/">View Demo</a><a class="download" href="https://phppot.com/wp-content/uploads/2015/10/restexample.zip">Download</a></p>
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			Comments to “PHP RESTful Web Service API – Part 1 – Introduction with Step-by-step Example”		</h2>
+
+		<ul class="comment-list">
+					<li class="comment even thread-even depth-1 parent" id="comment-19428">
+				<div id="div-comment-19428" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Emanuele Magni</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-19428">
+			March 16, 2019 at 3:15 pm</a>		</div>
+
+		<p>Very good example.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=19428#respond" onclick='return addComment.moveForm( "div-comment-19428", "19428", "respond", "3323" )' aria-label="Reply to Emanuele Magni">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor odd alt depth-2" id="comment-19608">
+				<div id="div-comment-19608" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-19608">
+			March 17, 2019 at 1:58 pm</a>		</div>
+
+		<p>Thank you Emanuele.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=19608#respond" onclick='return addComment.moveForm( "div-comment-19608", "19608", "respond", "3323" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even depth-2 parent" id="comment-20365">
+				<div id="div-comment-20365" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Jonathan Cruz Tejada</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-20365">
+			May 22, 2019 at 3:21 am</a>		</div>
+
+		<p>iTS BEAUTIFUL EXAMPLE, THANKS</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=20365#respond" onclick='return addComment.moveForm( "div-comment-20365", "20365", "respond", "3323" )' aria-label="Reply to Jonathan Cruz Tejada">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor odd alt depth-3" id="comment-21060">
+				<div id="div-comment-21060" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-21060">
+			May 23, 2019 at 10:26 am</a>		</div>
+
+		<p>Welcome Jonathan.</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-19567">
+				<div id="div-comment-19567" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Claude</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-19567">
+			March 29, 2019 at 8:01 pm</a>		</div>
+
+		<p>Thank you but where are the part 2 and 3 ?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=19567#respond" onclick='return addComment.moveForm( "div-comment-19567", "19567", "respond", "3323" )' aria-label="Reply to Claude">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor odd alt depth-2 parent" id="comment-19599">
+				<div id="div-comment-19599" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-19599">
+			March 30, 2019 at 12:35 pm</a>		</div>
+
+		<p>Welcome Claude. It will be updated in a month.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=19599#respond" onclick='return addComment.moveForm( "div-comment-19599", "19599", "respond", "3323" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3" id="comment-20173">
+				<div id="div-comment-20173" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Lau</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-20173">
+			May 8, 2019 at 2:12 pm</a>		</div>
+
+		<p>Ohh I hope it will come soon :) Thanks for the first part!</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-20107">
+				<div id="div-comment-20107" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Rajendra</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-20107">
+			April 30, 2019 at 8:19 pm</a>		</div>
+
+		<p>thank you. ms. vincy your blog is very nice and with very simple 
+example which help me in most of the project. after learning basic from 
+here  I am easily able to apply on my required logic… thank you once 
+again.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=20107#respond" onclick='return addComment.moveForm( "div-comment-20107", "20107", "respond", "3323" )' aria-label="Reply to Rajendra">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor even depth-2" id="comment-24100">
+				<div id="div-comment-24100" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-24100">
+			May 1, 2019 at 2:47 pm</a>		</div>
+
+		<p>Welcome, Rajendra for the nice words. It made my day! Thank you.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=24100#respond" onclick='return addComment.moveForm( "div-comment-24100", "24100", "respond", "3323" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-20116">
+				<div id="div-comment-20116" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Anarbona</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-20116">
+			May 1, 2019 at 10:28 pm</a>		</div>
+
+		<p>Hello Vincy, thank you for your tutorial, I think it’s a fantastic material. I look forward to seeing the other two parts.<br>
+A greeting from Spain ;)</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=20116#respond" onclick='return addComment.moveForm( "div-comment-20116", "20116", "respond", "3323" )' aria-label="Reply to Anarbona">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor even depth-2" id="comment-24099">
+				<div id="div-comment-24099" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-24099">
+			May 2, 2019 at 2:47 pm</a>		</div>
+
+		<p>Hey Anarbona, thank you so much. I will get the other two parts soon.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=24099#respond" onclick='return addComment.moveForm( "div-comment-24099", "24099", "respond", "3323" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-20172">
+				<div id="div-comment-20172" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">ANUJ KUMAR</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-20172">
+			May 8, 2019 at 11:06 am</a>		</div>
+
+		<p>Very easy and understandable example .. Thanks a lot</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=20172#respond" onclick='return addComment.moveForm( "div-comment-20172", "20172", "respond", "3323" )' aria-label="Reply to ANUJ KUMAR">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor even depth-2" id="comment-24098">
+				<div id="div-comment-24098" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-24098">
+			May 9, 2019 at 2:46 pm</a>		</div>
+
+		<p>Welcome, Anuj.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=24098#respond" onclick='return addComment.moveForm( "div-comment-24098", "24098", "respond", "3323" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-20334">
+				<div id="div-comment-20334" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Huseyin</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-20334">
+			May 20, 2019 at 3:42 pm</a>		</div>
+
+		<p>Hi Vincy<br>
+Thank you for your awesome tutorial.. It is so helpful.. </p>
+<p>I changed some lines;</p>
+<p>MobileRestHandler.php:30<br>
+added else{}</p>
+<p>SimpleRest.php:61<br>
+return ($httpStatus[$statusCode]) ? $httpStatus[$statusCode] : $httpStatus[500];</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=20334#respond" onclick='return addComment.moveForm( "div-comment-20334", "20334", "respond", "3323" )' aria-label="Reply to Huseyin">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor even depth-2" id="comment-21062">
+				<div id="div-comment-21062" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-21062">
+			May 21, 2019 at 10:28 am</a>		</div>
+
+		<p>Welcome, Huseyin. Thanks for sharing the updated code snippet.</p>
+<p>Thank you so much for adding value. When you do such things, the Internet becomes a beautiful place. Thank you for your time.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=21062#respond" onclick='return addComment.moveForm( "div-comment-21062", "21062", "respond", "3323" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-20606">
+				<div id="div-comment-20606" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Rakesh Yadav</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-20606">
+			June 5, 2019 at 3:42 pm</a>		</div>
+
+		<p>Example was good. But still where are the next tutorial. I have been eagerly waiting !!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=20606#respond" onclick='return addComment.moveForm( "div-comment-20606", "20606", "respond", "3323" )' aria-label="Reply to Rakesh Yadav">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor even depth-2" id="comment-20912">
+				<div id="div-comment-20912" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-20912">
+			June 6, 2019 at 2:59 pm</a>		</div>
+
+		<p>Thanks Rakesh. Coming soon!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=20912#respond" onclick='return addComment.moveForm( "div-comment-20912", "20912", "respond", "3323" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-21432">
+				<div id="div-comment-21432" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Nadeem Inamdar</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-21432">
+			July 15, 2019 at 5:18 pm</a>		</div>
+
+		<p>Very well explained. But you missed out in the SQL for creating the
+ tbl_mobile table. Please include it for the readers and learners.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=21432#respond" onclick='return addComment.moveForm( "div-comment-21432", "21432", "respond", "3323" )' aria-label="Reply to Nadeem Inamdar">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor even depth-2" id="comment-21478">
+				<div id="div-comment-21478" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-21478">
+			July 18, 2019 at 11:08 am</a>		</div>
+
+		<p>Thank you Nadeem, sure I will update the article with that.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=21478#respond" onclick='return addComment.moveForm( "div-comment-21478", "21478", "respond", "3323" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-23656">
+				<div id="div-comment-23656" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Heather</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-23656">
+			August 17, 2019 at 9:16 am</a>		</div>
+
+		<p>This is a helpful tutorial.  Thank-you for creating and sharing it.</p>
+<p>A slight modification to the rewrite rules in the .htaccess file will
+ allow the trailing forward slash to be optional when the user enters a 
+URL in the browser.  When I first tested out this example I put 
+http:/localhost/restexample/mobile/list into the browser’s address bar. 
+ This returned a 404 error.  Initially I thought my Apache configuration
+ was not set up correctly to allow overrides by .htaccess but that was 
+not the case.  The problem was that I hadn’t put a trailing forward 
+slash at the end of the URL and the original rewrite rules were written 
+such that the trailing forward slash was mandatory.</p>
+<p>Here is how I modified the rewrite rules to make the trailing forward slash optional:<br>
+RewriteRule ^mobile/list/?$ RestController.php?view=all [nc,qsa]<br>
+RewriteRule ^mobile/show/([0-9]+)/?$ RestController.php?view=single&amp;id=$1 [nc,qsa]</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=23656#respond" onclick='return addComment.moveForm( "div-comment-23656", "23656", "respond", "3323" )' aria-label="Reply to Heather">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor even depth-2" id="comment-24097">
+				<div id="div-comment-24097" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-restful-web-service/#comment-24097">
+			August 20, 2019 at 2:45 pm</a>		</div>
+
+		<p>Hi Heather,</p>
+<p>Thank you for the updated code. Appreciate it. Thank you so much for adding value to the article and discussion.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-restful-web-service/?replytocom=24097#respond" onclick='return addComment.moveForm( "div-comment-24097", "24097", "respond", "3323" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		</ul>
+
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://phppot.com/php/php-restful-web-service/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://phppot.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Leave this empty <span class="required">*</span></label> <input id="url" name="url" type="text" size="30" maxlength="245"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="3323" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>			</form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+    <div class="related-articles">
+                    <h2>Popular Articles</h2>
+                    <ul class="related-articles-list">
+                        <li><a href="https://phppot.com/php/rest-api-search-implementation-in-php/">REST API Search Implementation in PHP</a></li>
+                        <li><a href="https://phppot.com/php/php-mysql-rest-api-for-android/">PHP MySQL REST API for Android</a></li>
+                        <li><a href="https://phppot.com/php/rest-api-crud-using-php/">REST API CRUD using PHP</a></li>
+                    </ul>
+                </div>
+                <p>
+                    <a href="#top" class="top">↑ Back to Top</a>
+                </p>
+            </div>
+            <div id="tutorial-menu">
+	<ul class="main-menu"><li class="cat-item cat-item-72"><a href="https://phppot.com/category/php/">PHP</a><ul class="sub-menu"><li class="cat-item cat-item-59 "><a href="https://phppot.com/category/php/php-introduction/">PHP Introduction</a></li><li class="cat-item cat-item-26 "><a href="https://phppot.com/category/php/php-basics/">PHP Basics</a></li><li class="cat-item cat-item-99 "><a href="https://phppot.com/category/php/product/">Product</a></li><li class="cat-item cat-item-79 "><a href="https://phppot.com/category/php/php-shopping-cart/">PHP Shopping Cart</a></li><li class="cat-item cat-item-102 "><a href="https://phppot.com/category/php/payment-gateway-integration/">Payment Gateway Integration</a></li><li class="cat-item cat-item-94 "><a href="https://phppot.com/category/php/php-contact-form/">PHP Contact Form</a></li><li class="cat-item cat-item-103 "><a href="https://phppot.com/category/php/comments-system/">Comments System</a></li><li class="cat-item cat-item-57 "><a href="https://phppot.com/category/php/types-variables-operators/">Types, Variables &amp; Operators</a></li><li class="cat-item cat-item-58 "><a href="https://phppot.com/category/php/php-strings/">PHP Strings</a></li><li class="cat-item cat-item-22 "><a href="https://phppot.com/category/php/php-arrays/">PHP Arrays</a></li><li class="cat-item cat-item-61 "><a href="https://phppot.com/category/php/php-functions/">PHP Functions</a></li><li class="cat-item cat-item-35 "><a href="https://phppot.com/category/php/php-oops/">PHP OOPS</a></li><li class="cat-item cat-item-31 "><a href="https://phppot.com/category/php/php-forms/">PHP Forms</a></li><li class="cat-item cat-item-78 "><a href="https://phppot.com/category/php/advanced/">Advanced</a></li><li class="cat-item cat-item-90 "><a href="https://phppot.com/category/php/php-ajax/">PHP AJAX</a></li><li class="cat-item cat-item-89 taxonomy-active"><a href="https://phppot.com/category/php/restful-api/">RESTful API</a><ul class="post-list"><li class="current-post">PHP RESTful Web Service API - Part 1 - Introduction with Step-by-step Example</li><li><a class="post-menu" href="https://phppot.com/php/php-mysql-rest-api-for-android/">PHP MySQL REST API for Android</a></li><li><a class="post-menu" href="https://phppot.com/php/rest-api-crud-using-php/">REST API CRUD using PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/rest-api-search-implementation-in-php/">REST API Search Implementation in PHP</a></li></ul></li><li class="cat-item cat-item-15 "><a href="https://phppot.com/category/php/php-databases/">PHP Databases</a></li><li class="cat-item cat-item-23 "><a href="https://phppot.com/category/php/php-sessions-and-cookies/">PHP Sessions and Cookies</a></li><li class="cat-item cat-item-51 "><a href="https://phppot.com/category/php/error-exception-handling/">Error and Exception Handling</a></li><li class="cat-item cat-item-100 "><a href="https://phppot.com/category/php/file-upload/">File Upload</a></li><li class="cat-item cat-item-101 "><a href="https://phppot.com/category/php/file-import-export/">File Import Export</a></li><li class="cat-item cat-item-36 "><a href="https://phppot.com/category/php/files-and-directories/">Files and Directories</a></li><li class="cat-item cat-item-45 "><a href="https://phppot.com/category/php/php-date-time/">PHP Date Time</a></li><li class="cat-item cat-item-12 "><a href="https://phppot.com/category/php/php-graphics/">PHP Graphics</a></li><li class="cat-item cat-item-24 "><a href="https://phppot.com/category/php/php-xml/">PHP XML</a></li><li class="cat-item cat-item-62 "><a href="https://phppot.com/category/php/php-code-samples/">PHP Code Samples</a></li><li class="cat-item cat-item-96 "><a href="https://phppot.com/category/php/library/">Library</a></li><li class="cat-item cat-item-88 "><a href="https://phppot.com/category/php/php-freelancer/">PHP Freelancer</a></li></ul></li><li class="cat-item cat-item-73"><a href="https://phppot.com/category/jquery/">jQuery</a></li><li class="cat-item cat-item-74"><a href="https://phppot.com/category/wordpress/">WordPress</a></li><li class="cat-item cat-item-75"><a href="https://phppot.com/category/mysql/">MySQL</a></li><li class="cat-item cat-item-76"><a href="https://phppot.com/category/css/">CSS</a></li></ul></div>
+
+            <div id="social-icon">
+                <div class="heading">Share this Article</div>
+                <ul>
+                    <li><a class="social-link facebook-social-link" href="https://www.facebook.com/sharer/sharer.php?u=https://phppot.com/php/php-restful-web-service/" title="Share on Facebook"><span class="facebook-social-img">Share</span></a></li>
+                    <li><a class="social-link twitter-social-link" href="https://twitter.com/intent/tweet?original_referer=https://phppot.com&amp;source=tweetbutton&amp;text=PHP%20RESTful%20Web%20Service%20API%20%E2%80%93%20Part%201%20%E2%80%93%20Introduction%20with%20Step-by-step%20Example;url=https://phppot.com/php/php-restful-web-service/&amp;via=phppot" title="Share on Twitter"><span class="twitter-social-img">Tweet</span></a></li>
+                    <li><a class="social-link linkedin-social-link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://phppot.com/php/php-restful-web-service/&amp;media=PHP%20RESTful%20Web%20Service%20API%20%E2%80%93%20Part%201%20%E2%80%93%20Introduction%20with%20Step-by-step%20Example" title="Share on Linkedin"><span class="linkedin-social-img">Share</span></a></li>
+                </ul>
+            </div>
+        </div>
+<div id="sidebar">
+    <div id="aboutcntnt">
+        <div id="photo">
+            <img src="PHP%20RESTful%20Web%20Service%20API%20%E2%80%93%20Part%201%20%E2%80%93%20Introduction%20with%20Step-by-step%20Example%20-%20Phppot_files/Vincy.jpg" alt="Vincy" title="Vincy" width="100" height="100">
+        </div>
+        <div id="aboutdesc">
+            <p>
+                I’m Vincy, a web developer. If you want to start a
+                project and do a quick launch, <a href="https://phppot.com/contact/">contact
+                    me</a>.
+            </p>
+            <p>I am available for freelance work.</p>
+        </div>
+        <div id="contactMe">
+            <a href="mailto:vincy@phppot.com" title="Contact Me">vincy@phppot.com</a>
+        </div>
+    </div>
+
+                          <div class="sidebar-featured-product">
+        <div class="heading">Featured Product</div>
+        <a href="https://phppot.com/shop/contact-form-iris/"><img src="PHP%20RESTful%20Web%20Service%20API%20%E2%80%93%20Part%201%20%E2%80%93%20Introduction%20with%20Step-by-step%20Example%20-%20Phppot_files/simple-secure-spam-free-contact-form-in-php-iris-150x150.png">
+        </a>
+        <div class="sidebar-featured-url">
+            <a href="https://phppot.com/shop/contact-form-iris/">Contact
+                Form - Iris</a>
+        </div>
+    </div>
+            <div id="recommended">
+        <div class="heading">Trending Now</div>
+        <ul>
+            <li><a href="https://phppot.com/shop/contact-form-iris/">Contact
+                    Form – Iris</a></li>
+            <li><a href="https://phppot.com/php/simple-php-shopping-cart/">Simple
+                    PHP Shopping Cart</a></li>
+            <li><a href="https://phppot.com/php/how-to-become-a-full-time-freelance-php-developer-and-consultant/">How
+                    to Become a Full Time Freelance PHP Developer and
+                    Consultant</a></li>
+            <li><a href="https://phppot.com/jquery/jquery-ajax-inline-crud-with-php/">jQuery
+                    AJAX Inline CRUD with PHP</a></li>
+            <li><a href="https://phppot.com/php/simple-secure-spam-free-contact-form-in-php-iris/">Simple
+                    Secure Spam-Free Contact Form in PHP – Iris</a></li>
+        </ul>
+    </div>
+    <div class="testimonials-sbar">
+    <div class="heading">Testimonials</div>
+    <p class="testimonial-content"><span class="left-quotes">“</span>The
+ process was fast and very professional. The whole time we could follow 
+the work and correct small details. As we got new ideas under the 
+process Vincy was able to implement them without delay ...<span class="right-quotes">”</span></p>
+    <p class="testimonials-sbar-by">Steen Hertzum Kirchhoff, JobRater, Sweeden</p>
+    <div class="view-more-testimonial">
+        <a href="https://phppot.com/testimonials/"><span class="view-testimonials">View More Testimonials</span></a>
+    </div>
+</div></div></div>
+<div id="footer-contact-note">
+    <div class="content">
+        <h2>Looking for an expert PHP freelancer?</h2>
+        <p class="footer-contact-banner-title">Do you want to develop a
+            modern, lightweight, responsive web application and launch
+            quickly?</p>
+        <p>
+            <a id="footer-contact-navigation" href="https://phppot.com/contact/">Contact
+                Me</a>
+        </p>
+    </div>
+</div>
+<div id="footer">
+    <div class="content">
+        <div class="subscribe-section">
+            <div class="subscribe-email">
+                <div>
+    <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=phppot',
+             'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <p>
+        </p><div><label for="feedb-email-inp">Email:</label></div>
+            <input id="feedb-email-inp" placeholder="Enter your email here" type="text" class="feedb-email" name="email"><input type="hidden" value="phppot" name="uri"><input type="hidden" name="loc" value="en_US"><input type="submit" value="Subscribe" class="subscribe">
+        <p></p>
+    </form>
+</div></div>
+
+            <div class="follow">
+                <a class="facebook" href="https://www.facebook.com/PPbay" rel="nofollow noopener" title="Phppot Facebook Page" target="_blank">Facebook</a><a class="twitter" href="https://www.linkedin.com/in/vincya/" rel="nofollow noopener" title="Phppot LinkedIn Page" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="shop-footer-common">
+            <div class="shop-doc-nav">
+                <div class="shop-doc-nav-links">
+                    <div class="heading">Digital Goods Shop</div>
+                    <a href="https://phppot.com/faq/">FAQ</a> <a href="https://phppot.com/support-policy/">Support
+                        Policy</a> <a href="https://phppot.com/refund-policy/">Refund Policy</a>
+                    <a href="https://phppot.com/licenses/">Licenses</a> <a href="https://phppot.com/user-license/">User License</a> <a href="https://phppot.com/developer-license/">Developer License</a>
+                </div>
+
+                <div class="policy-doc-nav">
+                    <a href="https://phppot.com/terms-of-use/">Terms of
+                        Service</a><a href="https://phppot.com/privacy-policy/">Privacy
+                        Policy</a><a href="https://phppot.com/privacy-policy/#cookie-policy">Cookie
+                        Policy</a> <span class="copyright">© 2019 <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP">Phppot</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('click', function(e){
+    	var element = document.getElementsByClassName("search-container")[0];
+        if (element && !element.contains(e.target) && e.target.id != "mobile-search-icon" && window.innerWidth <= "550") {
+            element.style.display = "none";
+        }
+    });
+    function toggleSearch() {
+        var element = document.getElementsByClassName("search-container")[0];
+        if(element.style.display == 'inline-block') {
+            	element.style.display = "none";
+        } else {
+        	   element.style.display = "inline-block";
+        }
+    }
+</script><script async="" src="PHP%20RESTful%20Web%20Service%20API%20%E2%80%93%20Part%201%20%E2%80%93%20Introduction%20with%20Step-by-step%20Example%20-%20Phppot_files/prettify.js"></script>
+
+</body></html>

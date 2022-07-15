@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link href="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/2549344219-widget_css_bundle.css" rel="stylesheet" type="text/css">
+<meta content="#7ac9ed" name="theme-color">
+<link href="https://wallscript8labs.s3.amazonaws.com/favicon.png" rel="icon" type="image/x-icon">
+<link href="https://wallscript8labs.s3.amazonaws.com/favicon.png" rel="icon" sizes="192x192">
+<link href="https://wallscript8labs.s3.amazonaws.com/favicon.png" rel="shortcut icon" type="image/x-icon">
+<link href="https://wallscript8labs.s3.amazonaws.com/favicon.png" rel="apple-touch-icon-precomposed">
+<link href="https://wallscript8labs.s3.amazonaws.com/favicon.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+<link href="https://wallscript8labs.s3.amazonaws.com/favicon.png" rel="apple-touch-icon-precomposed" sizes="72x72">
+<link href="https://wallscript8labs.s3.amazonaws.com/favicon.png" rel="apple-touch-icon-precomposed" sizes="144x144">
+<meta content="Oadu4tZqIUs6txsQlETNELX32OnahAd9Wy_TVt7duXg" name="google-site-verification">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="https://www.9lessons.info/" hreflang="en" rel="alternate">
+<link rel="preload" href="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/integrator_002.js" as="script"><script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/osd.js"></script><script async="" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/async-ads.js"></script><script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/cbgapi.loaded_2" async=""></script><script type="text/javascript" async="" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/cse.js"></script><script async="" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/analytics.js"></script><script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/cbgapi.loaded_1" async=""></script><script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/cbgapi.loaded_0" async=""></script><script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/browserfp.js"></script><script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/show_ads_impl_fy2019.js" id="google_shimpl"></script><script type="text/javascript" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/integrator_002.js"></script><link rel="preload" href="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/integrator.js" as="script"><script type="text/javascript" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/integrator.js"></script><link rel="preload" href="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/show_ads_impl_fy2019.js" as="script"><script type="text/javascript" async="" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/bsa.js"></script><script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/cse_element__en.js" type="text/javascript"></script><link type="text/css" rel="stylesheet" href="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/defaulten.css"><link type="text/css" rel="stylesheet" href="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/default.css"><style type="text/css">.gsc-control-cse{font-family:arial, sans-serif}.gsc-control-cse .gsc-table-result{font-family:arial, sans-serif}.gsc-refinementsGradient{background:linear-gradient(to left,rgba(255,255,255,1),rgba(255,255,255,0))}.gsc-control-cse{border-color:#FFFFFF;background-color:#FFFFFF}input.gsc-input,.gsc-input-box,.gsc-input-box-hover,.gsc-input-box-focus{border-color:#D9D9D9}.gsc-search-button-v2,.gsc-search-button-v2:hover,.gsc-search-button-v2:focus{border-color:#666666;background-color:#CECECE;background-image:none;filter:none}.gsc-search-button-v2 svg{fill:#FFFFFF}.gsc-tabHeader.gsc-tabhActive,.gsc-refinementHeader.gsc-refinementhActive{color:#CCCCCC;border-color:#CCCCCC;background-color:#FFFFFF}.gsc-tabHeader.gsc-tabhInactive,.gsc-refinementHeader.gsc-refinementhInactive{color:#CCCCCC;border-color:#CCCCCC;background-color:#FFFFFF}.gsc-webResult.gsc-result,.gsc-results .gsc-imageResult{border-color:#FFFFFF;background-color:#FFFFFF}.gsc-webResult.gsc-result:hover,.gsc-imageResult:hover{border-color:#FFFFFF;background-color:#FFFFFF}.gs-webResult.gs-result a.gs-title:link,.gs-webResult.gs-result a.gs-title:link b,.gs-imageResult a.gs-title:link,.gs-imageResult a.gs-title:link b{color:#0000CC}.gs-webResult.gs-result a.gs-title:visited,.gs-webResult.gs-result a.gs-title:visited b,.gs-imageResult a.gs-title:visited,.gs-imageResult a.gs-title:visited b{color:#0000CC}.gs-webResult.gs-result a.gs-title:hover,.gs-webResult.gs-result a.gs-title:hover b,.gs-imageResult a.gs-title:hover,.gs-imageResult a.gs-title:hover b{color:#0000CC}.gs-webResult.gs-result a.gs-title:active,.gs-webResult.gs-result a.gs-title:active b,.gs-imageResult a.gs-title:active,.gs-imageResult a.gs-title:active b{color:#0000CC}.gsc-cursor-page{color:#0000CC}a.gsc-trailing-more-results:link{color:#0000CC}.gs-webResult .gs-snippet,.gs-imageResult .gs-snippet,.gs-fileFormatType{color:#000000}.gs-webResult div.gs-visibleUrl,.gs-imageResult div.gs-visibleUrl{color:#008000}.gs-webResult div.gs-visibleUrl-short{color:#008000}.gs-webResult div.gs-visibleUrl-short{display:none}.gs-webResult div.gs-visibleUrl-long{display:block}.gs-promotion div.gs-visibleUrl-short{display:none}.gs-promotion div.gs-visibleUrl-long{display:block}.gsc-cursor-box{border-color:#FFFFFF}.gsc-results .gsc-cursor-box .gsc-cursor-page{border-color:#CCCCCC;background-color:#FFFFFF;color:#CCCCCC}.gsc-results .gsc-cursor-box .gsc-cursor-current-page{border-color:#CCCCCC;background-color:#FFFFFF;color:#CCCCCC}.gsc-webResult.gsc-result.gsc-promotion{border-color:#336699;background-color:#FFFFFF}.gsc-completion-title{color:#0000CC}.gsc-completion-snippet{color:#000000}.gs-promotion a.gs-title:link,.gs-promotion a.gs-title:link *,.gs-promotion .gs-snippet a:link{color:#0000CC}.gs-promotion a.gs-title:visited,.gs-promotion a.gs-title:visited *,.gs-promotion .gs-snippet a:visited{color:#0000CC}.gs-promotion a.gs-title:hover,.gs-promotion a.gs-title:hover *,.gs-promotion .gs-snippet a:hover{color:#0000CC}.gs-promotion a.gs-title:active,.gs-promotion a.gs-title:active *,.gs-promotion .gs-snippet a:active{color:#0000CC}.gs-promotion .gs-snippet,.gs-promotion .gs-title .gs-promotion-title-right,.gs-promotion .gs-title .gs-promotion-title-right *{color:#000000}.gs-promotion .gs-visibleUrl,.gs-promotion .gs-visibleUrl-short{color:#008000}.gcsc-find-more-on-google{color:#0000CC}.gcsc-find-more-on-google-magnifier{fill:#0000CC}</style><style type="text/css">.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q{display:block!important;border:1px solid #cdcfd2!important;background-color:#fff!important;color:#373a3d!important;width:100vw!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-24GeGuJgk9LrMLp7qVvlyz{background:#6a7e89!important;color:#fff!important;padding:10px!important;font-size:18px!important;font-family:sans-serif!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-KVjdulkCFfUZps29EbgAC{background:#f3f6f8!important;border-bottom:1px solid #cdcfd2!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-KVjdulkCFfUZps29EbgAC>*{margin-right:10px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1OeZ2PQ98oAp6Vc5mMc6V5{list-style:none!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-vCwYmWF_l83ScZBrGnRoi,.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1OeZ2PQ98oAp6Vc5mMc6V5{margin:0!important;padding:0!important;width:100%!important;display:block!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-vCwYmWF_l83ScZBrGnRoi:not(:last-child){border-bottom:1px solid #cdcfd2!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1XQZkb-FlHWABUp4_uShaZ{color:inherit!important;cursor:pointer!important;width:100%!important;display:inline-block!important;margin:10px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1XTzMvb2XKitWz0mFLlyyp{margin:5px!important;display:block!important;width:auto!important;white-space:pre!important;overflow-x:scroll!important;background:inherit!important;color:inherit!important;font-family:monospace}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1XTzMvb2XKitWz0mFLlyyp:not(.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-39QUvFFn5B7GMcqMQkOXZ3){display:none!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-295DY3nO0DbJWMsOqmjCli{background:#f5f5f5!important;color:#5a5a5a!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1aQZwu6CUzAf2zUcI7tg0Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-295DY3nO0DbJWMsOqmjCli{display:none!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-38EPFyKXMtoP12rPlmrHxs{background:#e6f7ff!important;color:#006097!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3W4ZnQjhoGfT1gTNcqRXdi .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-38EPFyKXMtoP12rPlmrHxs{display:none!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-HGYnfzlmgOZ-l7eANhQe_{background:#fff3ea!important;color:#993a00!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-24e52A11B1UIErbKHtBmqc .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-HGYnfzlmgOZ-l7eANhQe_{display:none!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-jji74ZzulHScD0OAD_G7h{background:#fef2f1!important;color:#b10823!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-28jAOA7cDee-95LvwGsOP- .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-jji74ZzulHScD0OAD_G7h{display:none!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu{background-color:#0073b1!important;border:0!important;border-radius:2px!important;box-sizing:border-box!important;color:#fff!important;cursor:pointer!important;display:inline-block!important;font-family:-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif!important;font-weight:600!important;overflow:hidden!important;outline-width:2px!important;position:relative!important;text-align:center!important;text-decoration:none!important;vertical-align:middle!important;white-space:nowrap!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu:disabled{cursor:not-allowed!important;opacity:.7!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu:not(:disabled):not(.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1zhzkayakwEXovVYUbq5Gy):hover{background-color:#006097!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu:not(:disabled):not(.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1zhzkayakwEXovVYUbq5Gy):active{background-color:#004b7c!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1zhzkayakwEXovVYUbq5Gy{background-color:#fff!important;color:#0073b1!important;box-shadow:inset 0 0 0 1px rgba(0,0,0,.3)!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1zhzkayakwEXovVYUbq5Gy:not(:disabled):hover{color:#006097!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1zhzkayakwEXovVYUbq5Gy:not(:disabled):active{color:#004b7c!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu>xdoor-icon{display:inline-block!important;height:100%!important;vertical-align:top!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu>xdoor-icon>svg{pointer-events:none!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-7inSbaAsvG5bf7w6lJTEr{font-size:10px!important;height:16px!important;line-height:16px!important;padding:0 6px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-7inSbaAsvG5bf7w6lJTEr>xdoor-icon{margin-left:-6px!important;margin-right:3px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-7inSbaAsvG5bf7w6lJTEr>xdoor-icon>svg{height:16px!important;width:16px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-7inSbaAsvG5bf7w6lJTEr.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon{margin-right:-6px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu,.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3uCBSbQNVNf2QjqHe1rfb6{font-size:11px!important;height:20px!important;line-height:20px!important;padding:0 7px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3uCBSbQNVNf2QjqHe1rfb6>xdoor-icon,.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu>xdoor-icon{margin-left:-7px!important;margin-right:3.5px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3uCBSbQNVNf2QjqHe1rfb6>xdoor-icon>svg,.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu>xdoor-icon>svg{height:20px!important;width:20px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3uCBSbQNVNf2QjqHe1rfb6.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon,.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon{margin-right:-7px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-21Smv9YG-5V6M6KP-5v2WG{font-size:14px!important;height:24px!important;line-height:24px!important;padding:0 12px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-21Smv9YG-5V6M6KP-5v2WG>xdoor-icon{margin-left:-12px!important;margin-right:6px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-21Smv9YG-5V6M6KP-5v2WG>xdoor-icon>svg{height:24px!important;width:24px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-21Smv9YG-5V6M6KP-5v2WG.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon{margin-right:-12px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1TGdQUTLZdNG4R87OfAB-q{font-size:16px!important;height:32px!important;line-height:32px!important;padding:0 16px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1TGdQUTLZdNG4R87OfAB-q>xdoor-icon{margin-left:-16px!important;margin-right:8px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1TGdQUTLZdNG4R87OfAB-q>xdoor-icon>svg{height:32px!important;width:32px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1TGdQUTLZdNG4R87OfAB-q.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon{margin-right:-16px!important}</style><style>.gc-bubbleDefault{background-color:transparent !important;text-align:left;padding:0 !important;margin:0 !important;border:0 !important;table-layout:auto !important}.gc-reset{background-color:transparent !important;border:0 !important;padding:0 !important;margin:0 !important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc !important}.pls-topTail,.pls-vertShimLeft,.pls-contentLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif) !important}.pls-topTail{background-repeat:repeat-x !important;background-position:bottom !important}.pls-vertShim{background-color:#fff !important;text-align:right}.tbl-grey .pls-vertShim{background-color:#f5f5f5 !important}.pls-vertShimLeft{background-repeat:repeat-y !important;background-position:right !important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2 !important}.pls-contentWrap{background-color:#fff !important;position:relative !important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:right;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png) !important;background-repeat:repeat-y !important;vertical-align:top}.pls-vert,.pls-tailleft,.pls-dropTR .pls-dropBR,.pls-dropBL,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png) !important;background-repeat:repeat-x !important;width:100%;vertical-align:top}.pls-topLeft{background:inherit !important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit !important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit !important;text-align:right}.pls-bottomRight{background:inherit !important;text-align:left;vertical-align:top}.pls-tailtop,.pls-tailright,.pls-tailbottom,.pls-tailleft{display:none;position:relative}.pls-tailbottom,.pls-tailtop,.pls-tailright,.pls-tailleft,.pls-dropTR,.pls-dropBR,.pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png) !important;background-repeat:no-repeat}.tbl-grey .pls-tailbottom,.tbl-grey .pls-tailtop,.tbl-grey .pls-tailright,.tbl-grey .pls-tailleft,.tbl-grey .pls-dropTR,.tbl-grey .pls-dropBR,.tbl-grey .pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png) !important}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-topLeft img,.pls-topRight img,.pls-tailbottom{vertical-align:bottom}.pls-bottomLeft img,.bubbleDropTR,.pls-dropBottomL img,.pls-dropBottom img,.pls-dropBottomR img,.pls-bottomLeft{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacertop,.pls-spacerright,.pls-spacerbottom,.pls-spacerleft{position:static !important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0} </style><link rel="preload" href="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/integrator_002.js" as="script"><script type="text/javascript" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/integrator_002.js"></script><link rel="preload" href="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/integrator.js" as="script"><script type="text/javascript" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/integrator.js"></script><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-moz-user-select:none;white-space:nowrap}.gsst_e{vertical-align:middle;opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gsq_a{padding:0}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gssb_a{padding:0 9px}.gsib_a{padding:5px 9px 4px 9px}.gscb_a{line-height:27px}.gssb_e{border:0}.gssb_l{margin:5px 0}input.gsc-input::-webkit-input-placeholder{font-size:14px}input.gsc-input:-moz-placeholder{font-size:14px}input.gsc-input::-moz-placeholder{font-size:14px}input.gsc-input:-ms-input-placeholder{font-size:14px}input.gsc-input:focus::-webkit-input-placeholder{color:transparent}input.gsc-input:focus:-moz-placeholder{color:transparent}input.gsc-input:focus::-moz-placeholder{color:transparent}input.gsc-input:focus:-ms-input-placeholder{color:transparent}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style><script type="text/javascript" id="_bsap_js_ce1cf9e0a1e44bafe65c4664385c08d7" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/s_ce1cf9e0a1e44bafe65c4664385c08d7.js" async="async"></script><script type="text/javascript" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/pro.js" id="_bsap_premium_pro"></script><script type="text/javascript" id="_bsaPRO_js" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/a" async="async"></script><script charset="utf-8" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/button.js"></script></head><body><include expiration="7d" path="/assets/**.css"></include>
+<include expiration="2d" path="/assets/**.js"></include>
+<include expiration="3d" path="/assets/**.gif"></include>
+<include expiration="3d" path="/assets/**.jpeg"></include>
+<include expiration="3d" path="/assets/**.jpg"></include>
+<include expiration="3d" path="/assets/**.png"></include>
+<title>Create a RESTful API using NodeJS and  MySQL Database</title>
+
+
+<meta content="JavaScript, web development, web design, web programming, Angular, ajax php, React Native, React JS, jquery demos, regular expression, ajax demos, ajax programming, tutorials, php script, ajax tutorial, ajax examples, jquery tutorial, database, mysql, web database development, blogger, google ajax api, google visualization, google app, rss, technology, coding, code, examples, php programming, facebook scripts, twitter API, facebook like, twitter scripts, form validation, hosting, form submit, validation, application development, software, free scripts, free hosting, sql script, programming, jsp, tomcat, SMTP Mail, java Restful, Oauth, 9lessons.info , 9lessons, 9lessons Programming Blog" name="keywords">
+<meta content="True" name="HandheldFriendly">
+<meta content="index, follow" name="robots">
+<meta content="global" name="distribution">
+<meta content="1 days" name="revisit">
+<meta content="1 days" name="revisit-after">
+<meta content="document" name="resource-type">
+<meta content="all" name="audience">
+<meta content="general" name="rating">
+<meta content="all" name="robots">
+<meta content="en-us" name="language">
+<meta content="USA" name="country">
+<meta content="320" name="MobileOptimized">
+<meta content="website" property="og:type">
+<meta content="Create a RESTful API using NodeJS and  MySQL Database" property="og:title">
+<meta content="Tutorial focused on Web Programming, Javascipt, Angular, React JS, Jquery, Ionic, Ajax, PHP, Demos, Web Design and M" property="og:description">
+<meta content="https://lh3.googleusercontent.com/-q7nP4lSJ4tg/Vim1CZJDWvI/AAAAAAAANIU/vE0RZ8-9rCE/s599-Ic42/9lessonsLogo.png" property="og:image">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="6AjQa-NbwaKsfO-CAR2zEP4InUc" name="alexaVerifyID">
+<meta content="Srinivas Tamada" name="author">
+<meta content="1025751018" property="fb:admins">
+<meta content="Copyright (c) 2009-2019 Srinivas Tamada" name="dcterms.dateCopyrighted">
+<meta content="j_NzAv9w2MauepXWZ9ggPupfW5Mr5gkudpn-Wu0AZF0" name="google-site-verification">
+<meta content="p7yyWkGI8UUrpr3YilZbOff9lHb5U16IbbjPop8Yd60" name="google-site-verification">
+<meta content="F2FEEF3D9FA54697BBAF9E08A80D3483" name="msvalidate.01">
+<meta content="mn2bdKJzo8xQpOyAjIpIng4KGjMVZKuJr8kXnCdMpPQ=" name="verify-v1">
+<meta content="4df3c85ea53c8f10" name="yandex-verification">
+<meta content="D0FD91CF47B81A0444FA5AB6BFF9CBD4" name="msvalidate.01">
+<meta content="642636B8B26344A69F5FA5C22A629A16" name="msvalidate.01">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="blogger" name="generator">
+<link href="https://www.9lessons.info/favicon.ico" rel="icon" type="image/x-icon">
+<link href="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/create-restful-api-nodejs-mysql_008.htm" rel="canonical">
+<link rel="alternate" type="application/atom+xml" title="9lessons Programming Blog - Atom" href="https://www.9lessons.info/feeds/posts/default">
+<link rel="alternate" type="application/rss+xml" title="9lessons Programming Blog - RSS" href="https://www.9lessons.info/feeds/posts/default?alt=rss">
+<link rel="service.post" type="application/atom+xml" title="9lessons Programming Blog - Atom" href="https://www.blogger.com/feeds/992226187759619576/posts/default">
+<link rel="alternate" type="application/atom+xml" title="9lessons Programming Blog - Atom" href="https://www.9lessons.info/feeds/2058240458962611363/comments/default">
+
+<link href="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/nodebanner.png" rel="image_src">
+<meta content="REST consists set of guidelines to build a web service, which can be used to modify or view specific information on the web without performing any server side" name="description">
+<meta content="http://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html" property="og:url">
+<meta content="Create a RESTful API using NodeJS and  MySQL Database" property="og:title">
+<meta content="REST consists set of guidelines to build a web service, which can be used to modify or view specific information on the web without performing any server side" property="og:description">
+<meta content="https://lh3.googleusercontent.com/proxy/yJZcqfnuXkqIA_gyxrgGMrXXkQOAZb05a54fJZ-_1kCfBtteQvSss1ZLrdU9fkm3Hs3W0LMcKCbZjWaP0DIynbbsqSUnQuRTACyfURBM80o=w1200-h630-p-k-no-nu" property="og:image">
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<link href="https://feeds2.feedburner.com/9lesson" rel="alternate" title="9lessons is a programming blog" type="application/rss+xml">
+<link href="https://www.9lessons.info/" rel="shortlink">
+<link href="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/css.css" rel="stylesheet" type="text/css">
+<script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Srinivas Tamada",
+              "url": "https://www.9lessons.info",
+              "sameAs": [
+                "https://www.facebook.com/srinivas.tamada",
+                "https://instagram.com/9lessons",
+                "https://www.linkedin.com/in/srinivastamada"
+               
+              ]
+            }
+            </script>
+<style id="page-skin-1" type="text/css"><!--
+
+--></style>
+<style>
+html { -webkit-font-smoothing: antialiased;}* {font-weight: inherit;font-family: inherit;font-style: inherit;font-size: 100%;border: 0 none;outline: 0;padding: 0;margin: 0;}b{ font-weight:bold} body{ color:#333333;border:0;margin:0;padding:0;font-smooth:always; font:.75em/1.73em 'Open Sans',sans-serif,Arial,Helvetica;font-weight:500;background:url(https://lh3.googleusercontent.com/-Ytc1nm0H-xk/VlarLMg6ssI/AAAAAAAANLw/bRp6GBN5ILk/s167-Ic42/bg.png)}#navbar-iframe{display:none;height:0px;}.comment-form{margin-left:45px}a:link,a:visited{color:#0c97d2;text-decoration:none}a:hover{text-decoration:underline}form{border:0;margin:0}.post{clear:both}form{font-size:12px}form,input{padding:0}h1,h2,h3,h4,h5{margin:0;border:0;padding:0;color:#313029;font-weight:normal}h1,h2{color:#333;font-family:Helvetica,Arial;font-weight:bold;line-height:1.1em;padding-bottom:5px;text-shadow:0 1px 0 #FFF;font-size:36px}h1 a:link,h1 a:visited{color:#333;text-decoration:none}h1 a:hover{text-decoration:none}h2 a:link,h2 a:visited{color:#333;text-decoration:none}h2 a:hover{background-color:#B2E0F5;text-decoration:none}h3{font-size:13px;line-height:32px;color:#333333;font-weight:bold;font-family:Helvetica,Arial,sans-serif}h4{font-size:12px;font-weight:bold;color:#40403b;margin-bottom:14px}h5{font-size:20px;line-height:22px;font-family:Helvetica,Arial,sans-serif;display:block;padding-bottom:10px;color:#333333}i{color:#333333;background-color:#d8ff83;padding-left:2px;padding-right:2px}.face{float:left;border-right:solid 1px #dedede;border-bottom:solid 1px #dedede;padding:4px;background-color:#fff;margin-right:5px;width:90px}.sri,.sri650{border:1px solid #CCC;padding:9px;background:#fff}.sri100{border:1px solid #CCC;padding:9px;background:#fff; width:100%}ul,li{margin:0;border:0;padding:0}ul{margin-bottom:20px} #sideside li{list-style:none;display:block}div.code{font-family:Consolas, Monaco, monospace;font-size:14px;color:#333333;border:dashed 2px #dedede;padding:10px;word-wrap:break-word;background:#fbf9f3;line-height:23px}div.codeDark{font-family:Courier,monospace,Courier New;font-size:14px;color:#ffffff;padding:20px;line-height:23px;95%;word-wrap:break-word;background-color:#2e3440; border-radius:5px}
+  .codeDark i{background-color:#3d4148 !important}
+#gsc-i-id1{border: none !important} .gsc-input-box{border:solid 1px #333 !important;}
+#container{width:1000px;margin:0 auto;margin-bottom:20px}#top-header{font-size:13px;}#egglabs-header{margin:0 auto;padding:0px;width:1000px;height:110px}.centerclass{text-align:center}#main_left{line-height:18px;margin-right:15px}.section-links{font-size:12px;line-height:16px;padding:4px 8px;color:#333333;border-bottom:#fff solid 1px}.section-links li{padding-bottom:6px;border-bottom:solid 1px #d8d8d8;margin-bottom:6px}.section-links a:link,.section-links a:visited{text-decoration:none;color:#333333}.section-links li a:hover{text-decoration:underline;color:#333333}.site-reviews li{border:none}#container-footer{height:80px}#footer{clear:both;font-size:12px;color:#333333;padding:20px 0px;border-top:3px #333 solid;width:1000px;margin:0 auto}#footer a:link,#footer a:visited{color:#0c97d2;text-decoration:underline}#navbar{display:none;height:0;visibility:hidden}#logo{background: url("https://lh3.googleusercontent.com/-q7nP4lSJ4tg/Vim1CZJDWvI/AAAAAAAANIU/vE0RZ8-9rCE/s599-Ic42/9lessonsLogo.png") no-repeat;background-size: 264px;width:266px;height:80px;margin-top:25px}.updated{color:#999;font-family:Helvetica,Arial,sans-serif;text-transform:uppercase;font-size:12px;margin-bottom:10px;margin-top:10px;padding:0px}.bigInt{text-shadow: 0 1px 0 white;font-size:17px;color:#1e1e1e;line-height:26px;font-family:'Open Sans',sans-serif,Helvetica,Arial;text-align:justify}.big{font-weight:bold;font-size:24px;color:#333333;}.blog-pager{font-size:12px}.blog-pager a{color:#80c8e5}.blog-pager-newer-link,.blog-pager-older-link{display:block;float:left;padding:6px 10px;text-align:center;font-size:2.4em;font-weight:bold;margin-right:8px}.home-link{display:block;float:left;padding:6px 10px;text-align:center;color:#333;font-size:2.4em;font-weight:bold;margin-right:8px}.post-body-n{font-family:'Open Sans',sans-serif,Arial;font-size:17px;line-height:26px;word-wrap: break-word;color:#3A4145;}.post-body-n a:link,.post-body-n a:visited{text-decoration:none;color:#0c97d2}.post-body-n a:hover{text-decoration:underline}.comment-author{color:#333333;font-size:14px;padding:4px;font-weight:bold;text-decoration:none}.comment-author a:link,.comment-author a:visited,.comment-author a:hover{font-weight:bold;color:#333333;padding-bottom:2px;text-decoration:none}.comment-footer a:link,.comment-footer a:visited{font-size:12px;font-weight:bold;color:#FFF;text-align:center;display:block;clear:both;width:137px;height:36px;line-height:36px;background:url(https://lh4.ggpht.com/_N9kpbq3FL74/SZF4bQLpLHI/AAAAAAAABDU/l6FPOJh1Dgc/letter2.png) no-repeat}.comment-timestamp{font-size:12px;color:#666666}.comment-timestamp a:link,.comment-timestamp a:visited{font-size:12px;color:#999;background:none;width:auto;height:auto;text-align:left;font-weight:normal}a.comment-link{font-weight:bold}dd{margin:0;border:0;padding:0;padding:0 10px;width:96%}dd.comment-body{font-size:15px;color:#3A4145;border:dashed 2px #48B1D9;border-bottom:none;word-wrap: break-word}dd.comment-body a{color:#DF3D82;text-decoration:none}dd.comment-body a:hover{color:#DF3D82;text-decoration:none}dd.comment-body p{border:0;padding:0;margin:0;padding:10px 0}dd.comment-footer{margin-bottom:10px;border:dashed 2px #48B1D9;border-top:none}dd.au-body{color:#333333;border:dashed 2px #DF3D82;border-bottom:none;font-size:15px}dd.au-body a{color:#0081b3;text-decoration:none}dd.au-body a:hover{color:#0081b3;text-decoration:none}dd.au-body p{border:0;padding:0;margin:0;padding:10px 0}.comment b{font-family:Georgia,Times New Roman,Times,serif;font-size:14px}.spacer{clear:both;height:10px;display:block}.post-tag{font-family:Helvetica,Arial,sans-serif;margin-bottom:10px}.feedinput{padding:4px;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#333;font-weight:bold;border:solid 1px #dedede}*html .feedinput{padding:0;height:23px}.commentOld{background:url(https://lh3.ggpht.com/_N9kpbq3FL74/SiUh-MmdPGI/AAAAAAAABvs/9MN3GO2uCqc/comment.png) no-repeat left top;padding-left:28px;font-size:12px;line-height:18px;float:left}.comment a:link,.comment a:visited{color:#333333}#footer{margin:0 auto}.ads{padding-top:5px;float:right;margin-left:5px}.tweet{float:left;height:35px;padding-top:5px}.cen{text-align:center}.gap{margin-right:0px}.showpageNum a:hover{border:1px solid #333;background-color:#fff;float:left}.showpagePoint{color:#333333;text-decoration:none;margin:0 4px;float:left;font-weight:bold;padding:3px}.showpageOf{text-decoration:none;padding:3px;margin:0 4px 0 0;display:none;float:left}.showpage a{text-decoration:none;border:1px solid #333;padding:3px;margin:0 4px;font-weight:bold;float:left;color:#333333}.showpage a:hover{text-decoration:none;background-color:#f2f2f2}.showpageNum a:link,.showpage a:link{text-decoration:none;color:#333333;float:left}#sideside{vertical-align:text-top;width:300px}#ravi_profile{width:100%;height:100px;border:1px solid #dcdcdc;background-color:#f9f9f9;font:bold 12px "Trebuchet MS",Verdana,Arial}.ravi_pic{float:left;margin:6px}.ravi_pic img{border:4px solid #fff}.ravi_details{float:left;border-right:1px solid #dcdcdc;padding:0 15px 10px 10px;margin-top:10px}.ravi_contact{float:left;margin-top:10px;padding:0 0 0 15px}.ravi_mailto,.ravi_mailto:hover{color:#333333}.adhere{background-color:#ffffff;width:124px !important;height:124px !important}@-webkit-keyframes rotate-star{0%{-webkit-transform:rotate(0) scale(1)}50%{-webkit-transform:rotate(360deg) scale(2)}100%{-webkit-transform:rotate(720deg) scale(1)}}#buyselladss_div a:hover img{-webkit-animation-name:rotate-star;-webkit-animation-duration:500ms;-webkit-animation-iteration-count:1;-webkit-animation-timing-function:ease-out}#top-header div.menu{min-width:1000px;display: block;height:2.5em;margin:0;padding:0;background-color:#162336}.clear-both{clear:both}#top-header div.menu-subvert{min-width:1000px;display: block;height:2.5em;background-color:#7ac9ed;border-bottom:solid 1px #666666}#top-header ul.menu{width:1000px;margin:0 auto;display:block}#top-header ul.menu li{font-weight: bold;font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;font-size: 12px;text-transform: uppercase;white-space: nowrap;float:left;margin:0;padding:.65em 0;list-style-image:none;list-style:none}#top-header ul.menu li a:hover{text-decoration:none;color:#80c8e5}#top-header ul.menu a{padding:0 .94em;color:white;font-size:12px;font-family:'Open Sans',sans-serif,Helvetica,Arial;border-right:1px solid #2A3659}#top-header div.menu-ads{width:1000px;margin:0 auto}.post-tag a:hover{text-decoration:none;background-color:#dedede}.tagstyle{line-height:24px;margin-bottom:5px;display:inline;padding:2px 6px;font-weight:normal;font-size:12px;background-color:#80C8E5;-moz-border-radius:5px;-webkit-border-radius:5px;white-space:nowrap;color:#333333 !important;text-decoration:none;text-transform:uppercase;margin-right:10px}#related-posts{width:100%;margin-top:20px;font-size:14px}#related-posts a{text-decoration:none}#related-posts a:hover{text-decoration:underline}#related-posts ul{border:medium none;margin-top:10px;padding:0}#related-posts ul li{display:block;margin:0;padding-top:0;padding-right:0;padding-bottom:1px;margin-bottom:5px;line-height:2em;border-bottom:1px dotted #ccc}.topbannerad{background:url(https://lh4.googleusercontent.com/-JFPstwNikuY/U7wBVAaP1EI/AAAAAAAAK-0/kUAEsg9xyRw/s16/shade.png);padding:10px; text-align:center;background-color:#f5f5f5;border-bottom:2px solid #ccc;}.countsocial{width:330px;padding-top:47px}.gs-title{color:#006699}.socialicons{border-bottom:1px solid #dedede;border-top:1px solid #dedede;padding-top:5px;height:25px}.count_buttons{margin-right:18px;float:left;width:45px}
+#comments{font-family:'Open Sans',sans-serif,Helvetica,Arial}.logoimg{border:none;margin-top:24px;margin-bottom:10px}.logosocial{margin-bottom:20px;margin-left:27px}.logofacebook{border:none;overflow:hidden;width:95px;height:21px}.searchgoogletop{height:56px;float:right;margin-top:0px;text-align:right;widht:400px}.search_google{float:right;margin-top:25px;text-align:right}#cse-search-form{width:350px}
+.home{border-left:1px solid#2A3659}.menu-ads{padding:7px 0px 0px 0px}.fixed_table{table-layout:fixed}.googleadsbig{width:100%}#cse{width:100%}.m15top{margin-top:15px}.displaynone{display:none}.font12{font:12px}.comment_box{font-size:16px;font-weight:bold;float:left;margin-right:10px}.cpright{font-size:12px;float:left;color:#333333;margin-left:10px;padding-top:17px}.counterstat{width:1000px;margin:0 auto;font-weight:bold;text-align:right}.comment_footer{border:dashed 2px#DF3D82;border-top:none}.side_box{background:url(https://lh4.googleusercontent.com/-JFPstwNikuY/U7wBVAaP1EI/AAAAAAAAK-0/kUAEsg9xyRw/s16/shade.png);padding:10px;background-color:#f2f2f2}.nametitle{font-size:13px;font-weight:bold}.socialspace{float:left;margin-left:10px;} .fbtopbutton{ position: absolute;margin-top: -23px;margin-left: 132px;}blockquote {margin: 20px;padding: 0 0 0 14px;color: #666;border-left: 2px solid #999;}blockquote {display: block;-webkit-margin-before: 1em;-webkit-margin-after: 1em;-webkit-margin-start: 40px;-webkit-margin-end: 40px;}.wallbanner{margin-top:3px}.profile_social{display: block;width: 32px;height: 32px;float:left;margin-bottom:5px;clear:both}.profile_facebook {background: url('https://lh4.googleusercontent.com/-cSvc_7zcj58/UwXw2y-b5FI/AAAAAAAAJCM/CefHPGtpOb4/s260/social_icons.png') no-repeat 0 0;}.profile_twitter {background: url('https://lh4.googleusercontent.com/-cSvc_7zcj58/UwXw2y-b5FI/AAAAAAAAJCM/CefHPGtpOb4/s260/social_icons.png') no-repeat -38px 0;}.profile_gplus {background: url('https://lh4.googleusercontent.com/-cSvc_7zcj58/UwXw2y-b5FI/AAAAAAAAJCM/CefHPGtpOb4/s260/social_s.png') no-repeat -76px 0;}.profile_tumblr {background: url('https://lh4.googleusercontent.com/-cSvc_7zcj58/UwXw2y-b5FI/AAAAAAAAJCM/CefHPGtpOb4/s260/social_icons.png') no-repeat -114px 0;}.profile_rss {background: url('https://lh4.googleusercontent.com/-cSvc_7zcj58/UwXw2y-b5FI/AAAAAAAAJCM/CefHPGtpOb4/s260/social_icons.png') no-repeat -152px 0;}.profile_vimeo {background: url('https://lh4.googleusercontent.com/-cSvc_7zcj58/UwXw2y-b5FI/AAAAAAAAJCM/CefHPGtpOb4/s260/social_icons.png') no-repeat -190px 0;}.profile_youtube {background: url('https://lh4.googleusercontent.com/-cSvc_7zcj58/UwXw2y-b5FI/AAAAAAAAJCM/CefHPGtpOb4/s260/social_icons.png') no-repeat -228px 0;}.profile_left{margin-right:6px}#facebook_follow{margin-top:2px}#twitter_follow{float:left;width:256px;height:26px;margin-top:6px}#follow_text{font-weight:bold;font-size:13px;float:left;margin-right:10px;margin-top:8px}.fn{text-transform:uppercase;color:#333333;font-size:13px; }.marginfive{margin:0px 0px 5px 0px}.floatx{float:left;width:90px}.widthfull{width:100%}.width{width:220px}.valignbottom{vertical-align:text-bottom;}.buy{display:block;overflow:auto}#cat{padding-right:7px;margin-bottom:10px}.borderzero{border:0px}#fcount{border:0;margin-right:10px;margin-top:6px}.menuin{margin:0 auto; width:1000px;height: 2.5em;}.margin10{margin-top:10px}.facebookfollow{border:none; overflow:hidden; width:150px;height:25px;margin-top:5px}.bordertopzero{border-top:none;}#femail{padding:7px;border:solid 1px #333333;width:170px;margin-right:4px}.font12{font-size:12px;}.m5{margin-top:5px;}.mb6{margin-bottom:6px}.font13{font-size:13px; color:#333333;}.facebooklike{border:none; overflow:hidden; width:60px; height:70px}.sidex{vertical-align:text-top;width:310px}.vtop{vertical-align:text-top;}.flikebox{border:none; overflow:hidden; width:100%; height:215px;}.cf{color:#fff; display:none}#sbar{margin-top:-144px;height:32px;position: absolute;margin-left: 284px;}.dnone{display:none}.dblue{color:#006699 !important;}#email{text-decoration:none; color:#006699;font-size:12px}.p5{padding-top:5px}.tc{text-align:center}.f45{float:left;width:45%;}.fr45{float:right;width:45%}.he1{height:1px}.fl{float:left}.fr{float:right;}.tr{text-align:right}.bannerBig{width:100%}.shade{background: url(https://lh4.googleusercontent.com/-JFPstwNikuY/U7wBVAaP1EI/AAAAAAAAK-0/kUAEsg9xyRw/s16/shade.png);}.comment-form{overflow:hidden}.comments h3{line-height:normal;text-transform:uppercase;color:#333;font-weight:700;margin:0 0 20px;font-size:14px;padding:0}h4#comment-post-message{display:none;margin:0}.comments{clear:both;margin-top:10px;margin-bottom:0}.comments .comments-content{font-size:13px;margin-bottom:8px}.comments .comments-content .comment-thread ol{text-align:left;margin:13px 0;padding:0}.comments .avatar-image-container{overflow:hidden;padding:6px}.comments .comment-block{position:relative;padding:15px;margin-left:60px;border-left:3px solid #ddd;border-top:3px solid #48B1D9;border-right:1px solid #DDD;border-bottom:1px solid #DDD}.comments .comment-block:before{content:"";width:0;height:0;position:absolute;right:100%;top:14px;border-width:10px;border-style:solid;border-color:transparent #DDD transparent transparent;display:block}.comments .comments-content .comment-replies{margin:8px 0 8px 60px}.comments .comments-content .comment-thread:empty{display:none}.comments .comment-replybox-single{background:#f0f0f0;padding:0;margin:8px 0 8px 60px}.comments .comment-replybox-thread{background:#f0f0f0;margin:8px 0 0;padding:0}.comments .comments-content .comment{margin-bottom:6px;padding:0}.comments .comments-content .comment:first-child,.comments .comments-content .comment:last-child{padding:0;margin:0}.comments .comment-thread.inline-thread .comment,.comments .comment-thread.inline-thread .comment:last-child{margin:0 0 5px 30%}.comment .comment-thread.inline-thread .comment:nth-child(6){margin:0 0 5px 25%}.comment .comment-thread.inline-thread .comment:nth-child(5){margin:0 0 5px 20%}.comment .comment-thread.inline-thread .comment:nth-child(4){margin:0 0 5px 15%}.comment .comment-thread.inline-thread .comment:nth-child(3){margin:0 0 5px 10%}.comment .comment-thread.inline-thread .comment:nth-child(2){margin:0 0 5px 5%}.comment .comment-thread.inline-thread .comment:nth-child(1){margin:0 0 5px}.comments .comments-content .comment-thread{margin:0;padding:0}.comments .comments-content .inline-thread{padding:15px;margin:0}.comments .comments-content .icon.blog-author{display:inline}.comments .comments-content .icon.blog-author:after{background:#0088C2;color:#fff;font-size:12px;padding:2px 5px}.comment-header{text-transform:uppercase;font-size:12px}.comments .comments-content .datetime{margin-left:6px}.comments .comments-content .datetime a{color:#888}.comments .comment .comment-actions a,.comments .comment .comment-actions a{font-weight:700;line-height:15px;margin:4px 8px 0 0}.comments .comment .comment-actions a:hover,.comments .continue a:hover{text-decoration:underline}.authorBlock{border-top:3px solid #DF3D82 !important}.comment-content{word-wrap: break-word !important;text-align:left !important}.comments .continue a,  .wallButton{font-weight: bold;padding: 7px 9px;background-color: #5fcf80;color: #fff !important;font-size: 12px;font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;cursor: pointer;text-decoration: none !important;text-shadow: 0 1px 0px rgba(0,0,0,0.15);border-width: 1px 1px 3px !important;border-style: solid;border-color: #3ac162;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;display: -moz-inline-stack;display: inline-block;vertical-align: middle;zoom: 1;border-radius: 3px;box-sizing: border-box;box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;}.comments .continue a{margin-left:60px}.followmebuttons{margin-right:15px;}.comment-content a{color:#cc0000 !important}#ab-message{padding:15px;font-size:15px;text-align:center;background-color:#E23C3C;color:#ffffff;font-weight:bold;border-bottom:solid 1px #333333}
+    #mobileLogo{display:none}#searchBlock{float:right;margin-top: 21px;}.articleAuthor{color:#333333;font-weight: normal;text-transform: uppercase}
+#survey{text-align: center;padding:20px 0px ; clear:both}#thanks{clear: both; display: none; }.show{display: inline !important;}
+#survey b, #thanks b{font-size: 20px; display: block;margin-bottom: 20px}.post-body ul{margin-left:20px}
+.surveyGrid{width: 48%;margin-top: 10px}
+.surveryA{float: left; text-align: right;}.surveryB{float: right; text-align: left}
+.surveryButton{padding:10px;border: solid 2px #1bbc9b; color: #1bbc9b !important;  text-decoration: none !important; border-radius: 4px }
+      .comment .comment-thread.inline-thread .comment{margin:0px !important}
+      .gs-result .gs-title, .gs-result .gs-title *{
+color: #245dc1 !important;
+    text-decoration: none !important;font-weight:bold !important;
+
+}
+ .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 60px 0px;
+            border: 1px solid #888;
+            width: 50%;
+            text-align: center;
+        }
+
+        .modal-title {
+            line-height: 28px;
+           display:block;
+           margin-bottom:40px;
+
+            color: #2f5492;
+            font-size: 26px;
+        }
+
+        .modal-p {
+            font-size: 20px;
+            margin-top:15px;
+font-weight:600;
+        }
+
+        .modal-x {
+            margin-top: 40px;
+            text-transform: uppercase;
+             color: #2f5492;
+            letter-spacing: 0.14em;
+            font-size: 16px;
+      font-weight:600;
+        }
+#webNotification{
+width: 100%;
+    border-radius: 17px;
+margin-top:20px;  
+}
+  #container-footer2{clear:both}
+#facebook_follow{
+float:left;
+}
+  .gsc-control-cse{ background: none !important}
+  .gs-title{text-align:left !important}.gsc-search-button-v2{background: #5fcf80 !important}
+.github_div {
+    margin: 20px 0px;
+    background: #f2f2f2 url(https://github.com/srinivastamada/9lessonsImages/blob/master/Octocat.png?raw=true) no-repeat 20px 50%;
+    font-weight: bold;
+    background-size: 74px;
+    border:solid 1px #dedede;
+    border-radius: 5px;
+    clear:both;
+      }
+.github_div: hover{
+-webkit-box-shadow: 0px 0px 8px 0px rgba(12,151,210,1);
+-moz-box-shadow: 0px 0px 8px 0px rgba(12,151,210,1);
+box-shadow: 0px 0px 8px 0px rgba(12,151,210,1);
+      }
+.github_div a{display:block;  padding: 20px 20px 20px 100px;text-decoration:none !important}.github_div b{display:block; color:#333333; text-decoration:none !important }.takealook{    position: absolute;
+    margin-top: -21px;
+    margin-left: 135px;}
+@media only screen and (min-width: 300px)
+{
+
+	#contentPart{width:100%}
+	.countsocial,.fbtopbutton,.followmebuttons{display:none}
+    #container,#egglabs-header,#footer,.counterstat{width:100%}
+    #top-header div.menu,#addsectionsTopperHead{display:none}
+    #top-header div.menu-subvert{display:none}
+        .takealook{display:none}
+    h1, h2{font-size:22px}
+    
+    
+	
+}
+
+@media only screen and (min-width: 768px){
+
+    #contentPart{width:694px}
+	#sideside{width:300px;display:block}
+    .countsocial{display:none}
+    .fbtopbutton{display:block}
+    #container,#egglabs-header,#footer,.counterstat{width:100%}
+     #top-header div.menu,#addsectionsTopperHead,.followmebuttons{display:block}
+#top-header div.menu-subvert{display:block}
+        .sri{max-width:550px} .sri650{max-width:650px}
+    #searchBlock{width:400px}
+h1, h2{font-size:28px}
+
+.takealook{display:block}
+}
+@media only screen and (max-width: 768px) {
+
+.takealook{display:block}
+.sri,.sribig,.sri650{width:90%}
+    }
+@media only screen and (max-width: 632px) {
+        #mobileLogo{display:block;text-align:center}
+#desktopLogo,.countsocial  {display:none}
+input.gsc-input{width:90% !important;padding:6px !important}
+#searchBlock{float:right;margin-bottom: 20px; margin-top:0px !important}
+        #contentPart{padding-left:10px}
+      
+}
+
+
+@media only screen and (min-width: 1000px){
+    .takealook{display:block}
+   .countsocial,.fbtopbutton{display:block}
+   #container,#egglabs-header,#footer,.counterstat{width:1000px}
+   #top-header div.menu,#addsectionsTopperHead,.followmebuttons{display:block}
+#top-header div.menu-subvert{display:block}
+.sri{max-width:550px}
+ #searchBlock{width:400px;}
+h1, h2{font-size:36px}
+.medium-8 {
+  width: 66.66667%;
+  float:left;
+}
+.medium-4 {
+        width: 33.33333%;
+        float:right;
+    }
+
+}
+
+</style>
+<script type="text/javascript">
+<!-- Related Articles -->
+//<![CDATA[
+var relatedTitles = new Array();
+var relatedTitlesNum = 0;
+var relatedUrls = new Array();
+function related_results_labels(json) {
+for (var i = 0; i < json.feed.entry.length; i++) {
+var entry = json.feed.entry[i];
+relatedTitles[relatedTitlesNum] = entry.title.$t;
+for (var k = 0; k < entry.link.length; k++) {
+if (entry.link[k].rel == 'alternate') {
+relatedUrls[relatedTitlesNum] = entry.link[k].href;
+relatedTitlesNum++;
+break;
+}
+}
+}
+}
+function removeRelatedDuplicates() {
+var tmp = new Array(0);
+var tmp2 = new Array(0);
+for(var i = 0; i < relatedUrls.length; i++) {
+if(!contains(tmp, relatedUrls[i])) {
+tmp.length += 1;
+tmp[tmp.length - 1] = relatedUrls[i];
+tmp2.length += 1;
+tmp2[tmp2.length - 1] = relatedTitles[i];
+}
+}
+relatedTitles = tmp2;
+relatedUrls = tmp;
+}
+function contains(a, e) {
+for(var j = 0; j < a.length; j++) if (a[j]==e) return true;
+return false;
+}
+function printRelatedLabels() {
+var r = Math.floor((relatedTitles.length - 1) * Math.random());
+var i = 0;
+document.write('<ul>');
+while (i < relatedTitles.length && i < 10) {
+document.write('<li><a href="' + relatedUrls[r] + '">' + relatedTitles[r] + '</a></li>');
+if (r < relatedTitles.length - 1) {
+r++;
+} else {
+r = 0;
+}
+i++;
+}
+document.write('</ul>');
+
+}
+
+function rankPage(value) 
+{
+ga('send', {
+'hitType': 'event',
+'eventCategory': 'Page',
+'eventAction': 'Rank',
+'eventValue': value
+});
+
+}
+
+
+
+
+
+//]]>
+</script>
+<link href="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/authorization.css" media="all" onload="if(media!='all')media='all'" rel="stylesheet"><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=992226187759619576&amp;zx=5ce58713-9f4a-43f6-ad4d-0bb94bf7d1d2' rel='stylesheet'/></noscript>
+<script type="text/javascript" language="javascript">
+  // Supply ads personalization default for EEA readers
+  // See https://www.blogger.com/go/adspersonalization
+  adsbygoogle = window.adsbygoogle || [];
+  if (typeof adsbygoogle.requestNonPersonalizedAds === 'undefined') {
+    adsbygoogle.requestNonPersonalizedAds = 1;
+  }
+</script>
+
+
+<div id="top-header">
+<div id="ab-message" style="display: none;">Blocked scrolling. Please disable your ad blocker for 9lessons.info</div>
+<div id="egglabs-header">
+<div id="mobileLogo" itemprop="logo"><a href="https://www.9lessons.info/"><img alt="9lessons logo" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/9lessonsLogo.png" style="width:250px;margin-top:10px"></a></div>
+<div class="widthfull" style="position:relative">
+<div class="width200" id="desktopLogo" style="float:left">
+<a href="https://www.9lessons.info/" title="9lessons Programming Blog">
+<div id="logo">
+</div>
+</a>
+</div>
+<div class="countsocial valignbottom" style="float:left">
+<div class="logosocial">
+<span class="gap" id="homeLike"><iframe name="facebook" allowtransparency="true" class="logofacebook" scrolling="no" src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com/9lessons&amp;send=false&amp;layout=button_count&amp;width=85&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" frameborder="0"></iframe></span>
+<span class="gap">
+<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 111px; height: 24px;" id="___ytsubscribe_0"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 111px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" tabindex="0" vspace="0" id="I0_1572439885734" name="I0_1572439885734" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/subscribe_embed.htm" data-gapiattached="true" width="100%" frameborder="0"></iframe></div>
+</span>
+
+</div>
+</div>
+<div id="searchBlock">
+
+<div class="searchgoogletop">
+<div id="___gcse_0"><div class="gsc-control-cse gsc-control-cse-en"><div class="gsc-control-wrapper-cse" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><table class="gsc-search-box" cellspacing="0" cellpadding="0"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table style="width: 100%; padding: 0px;" id="gs_id50" class="gstl_50 gsc-input" cellspacing="0" cellpadding="0"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" style="width: 100%; padding: 0px; border: medium none; margin: 0px; height: auto; background: rgb(255, 255, 255) url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) no-repeat scroll left center; text-indent: 48px; outline: currentcolor none medium;" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></form><div class="gsc-results-wrapper-overlay"><div class="gsc-results-close-btn" tabindex="0"></div><div class="gsc-positioningWrapper"><div class="gsc-tabsAreaInvisible"><div class="gsc-tabHeader gsc-inline-block gsc-tabhActive">Custom Search</div><span class="gs-spacer"> </span></div></div><div class="gsc-positioningWrapper"><div class="gsc-tabsAreaInvisible"></div></div><div class="gsc-above-wrapper-area-invisible"><table class="gsc-above-wrapper-area-container" cellspacing="0" cellpadding="0"><tbody><tr><td class="gsc-result-info-container"><div class="gsc-result-info-invisible"></div></td><td class="gsc-orderby-container"><div class="gsc-orderby-invisible"><div class="gsc-orderby-label gsc-inline-block">Sort by:</div><div class="gsc-option-menu-container gsc-inline-block"><div class="gsc-selected-option-container gsc-inline-block"><div class="gsc-selected-option">Relevance</div><div class="gsc-option-selector"></div></div><div class="gsc-option-menu-invisible"><div class="gsc-option-menu-item gsc-option-menu-item-highlighted"><div class="gsc-option">Relevance</div></div><div class="gsc-option-menu-item"><div class="gsc-option">Date</div></div></div></div></div></td></tr></tbody></table></div><div class="gsc-adBlockInvisible"></div><div class="gsc-wrapper"><div class="gsc-adBlockInvisible"></div><div class="gsc-resultsbox-invisible"><div class="gsc-resultsRoot gsc-tabData gsc-tabdActive"><div><div class="gsc-expansionArea"></div></div></div></div></div></div><div class="gsc-modal-background-image" tabindex="0"></div></div></div></div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="menu">
+<div class="menuin">
+<ul class="menu">
+<li><a class="home" href="https://www.9lessons.info/2008/08/table-of-contents.html" onclick="ga('send', 'event', 'Tutorials', 'click','Tutorials');" title="Tutorials">Tutorials</a></li>
+<li><a href="https://www.9lessons.info/search/label/javascript" onclick="ga('send', 'event', 'Jquery', 'click','Javascript');" title="Jquery Tutorials demos">JavaScript</a></li>
+<li><a href="https://www.9lessons.info/search/label/php" onclick="ga('send', 'event', 'PHP', 'click','PHP');" title="PHP Tutorials">PHP</a></li>
+<li><a href="https://www.9lessons.info/search/label/ionic" onclick="ga('send', 'event', 'IONIC', 'click','IONIC');" title="IONIC Tutorials">IONIC</a></li>
+<li><a href="https://www.9lessons.info/search/label/angular" onclick="ga('send', 'event', 'Angular', 'click','angular');" title="Angular JS Tutorials">Angular</a></li>
+<li><a href="https://www.9lessons.info/search/label/reactjs" onclick="ga('send', 'event', 'react', 'click','react');" title="React JS Tutorials">React</a></li>
+<li><a href="https://www.9lessons.info/search/label/jQuery" onclick="ga('send', 'event', 'jquery', 'click','Jquery');" title="Angular JS Tutorials">JQuery</a></li>
+<li><a href="https://demos.9lessons.info/" onclick="ga('send', 'event', 'Demos', 'click','Demos');" title="Demos">Demos</a></li>
+<li><a href="https://wall.9lessons.info/" onclick="ga('send', 'event', 'WallScript', 'click','WallScript');" title="Facebook style wall script">
+Social Script</a></li>
+<li><a href="https://www.oauthlogin.com/" onclick="ga('send', 'event', 'OauthLogin', 'click','OauthLogin');" title="FGLogin">Social Login</a></li>
+<li><a href="mailto:srinivas@9lessons.info?subject=Request Tutorial" onclick="ga('send', 'event', 'Request Tutorials', 'click','Request Tutorials');" target="_blank" title="Request Tutorial">Request Tutorial</a></li>
+</ul>
+</div>
+</div>
+<div class="menu-subvert">
+<div class="menu-ads">
+<div class="section" id="addsections3"><div class="widget HTML" data-version="1" id="HTML1">
+<div class="widget-content">
+
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-6904774409601870" data-ad-slot="5642462839" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_3_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0px;width:728px;height:15px;" width="728" height="15" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=992226187759619576&amp;widgetType=HTML&amp;widgetId=HTML1&amp;action=editWidget&amp;sectionId=addsections3" onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' rel="nofollow" target="configHTML1" title="Edit">
+<img alt="" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+</div>
+</div>
+<div id="container">
+
+<div class="wallbanner" id="wallscriptBanner">
+<a class="block" href="https://wall.9lessons.info/">
+<img alt="Wall Script" class="borderzero bannerBig" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/wallbanner_white.gif">
+</a>
+</div><div class="wallbanner" id="mailxengineBanner" style="display: none;">
+<a class="block" href="https://www.mailxengine.com/" target="_blank">
+<img alt="MailxEngine" class="bannerBig" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/bigMailnew.gif" style="border:solid 1px #333333">
+</a>
+</div>
+<script>
+function banners() {
+    var x = Math.floor((Math.random() * 10)) ;
+    var b = x % 2;
+    if(parseInt(b) > 0){
+     document.getElementById("mailxengineBanner").style.display = "none";
+    }
+    else{
+    document.getElementById("wallscriptBanner").style.display = "none";
+    }
+   
+}
+banners();
+</script>
+
+<div>
+<div class="medium-8" id="contentPart">
+
+<div id="main_left">
+<div id="system-container"></div>
+
+<div class="googleadsbig">
+
+<div id="cse"></div>
+</div>
+<div class="spacer"></div>
+<div class="section" id="main_s"><div class="widget Blog" data-version="1" id="Blog1">
+<div class="blog-posts hfeed" itemscope="itemscope" itemtype="https://schema.org/BlogPosting">
+
+<meta content="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html" itemprop="url mainEntityOfPage">
+<abbr class="updated" itemprop="datePublished dateModified" title="2017-02-05T23:35:00-05:00">Sunday, February 05, 2017</abbr>
+<div class="post hentry">
+<a name="2058240458962611363"></a>
+<h1 class="entry-title" itemprop="headline">Create a RESTful API using NodeJS and MySQL Database</h1>
+<div class="post-tag">
+<a class="tagstyle" href="https://www.9lessons.info/search/label/API" rel="tag">
+<span itemprop="keywords">API</span>
+</a>
+<a class="tagstyle" href="https://www.9lessons.info/search/label/Mysql" rel="tag">
+<span itemprop="keywords">Mysql</span>
+</a>
+<a class="tagstyle" href="https://www.9lessons.info/search/label/nodejs" rel="tag">
+<span itemprop="keywords">nodejs</span>
+</a>
+<a class="tagstyle" href="https://www.9lessons.info/search/label/RESTful" rel="tag">
+<span itemprop="keywords">RESTful</span>
+</a>
+<a class="tagstyle" href="https://www.9lessons.info/search/label/Web%20Development" rel="tag">
+<span itemprop="keywords">Web Development</span>
+</a>
+</div>
+<div class="socialicons">
+<div class="commentOld">
+{
+<b><a class="comment-link" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html#comment-form" onclick="">
+22
+</a></b>
+comments
+}</div>
+<div class="socialspace"> -
+<span class="post-author vcard" itemprop="author" itemscope="itemscope" itemtype="https://schema.org/Person">
+<meta content="https://www.blogger.com/profile/17418084732618477326" itemprop="url">
+<span class="fn author">
+<a href="https://www.blogger.com/profile/17418084732618477326" rel="author" title="author profile">
+<span itemprop="name">Srinivas Tamada</span>
+</a>
+</span>
+</span>
+</div>
+<div class="socialspace">
+<span class="IN-widget" style="display: inline-block; line-height: 1; vertical-align: bottom; padding: 0px; margin: 0px; text-indent: 0px; text-align: center;" data-lnkd-debug="&lt;script data-counter=&quot;right&quot; data-url=&quot;https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html&quot; type=&quot;in/share+init&quot;&gt;&lt;/script&gt;"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: bottom !important; font-size: 1px !important;"><button class="IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu"><xdoor-icon aria-hidden="true"><svg viewBox="0 0 24 24" width="24px" height="24px" x="0" y="0" preserveAspectRatio="xMinYMin meet">
+      <g style="fill: currentColor">
+        <rect x="-0.003" style="fill:none;" width="24" height="24"></rect>
+        <path style="" d="M20,2h-16c-1.1,0-2,0.9-2,2v16c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V4C22,2.9,21.1,2,20,2zM8,19h-3v-9h3V19zM6.5,8.8C5.5,8.8,4.7,8,4.7,7s0.8-1.8,1.8-1.8S8.3,6,8.3,7S7.5,8.8,6.5,8.8zM19,19h-3v-4c0-1.4-0.6-2-1.5-2c-1.1,0-1.5,0.8-1.5,2.2V19h-3v-9h2.9v1.1c0.5-0.7,1.4-1.3,2.6-1.3c2.3,0,3.5,1.1,3.5,3.7V19z"></path>
+      </g>
+    </svg></xdoor-icon>Share</button></span></span>
+</div>
+<div class="socialspace">
+<iframe id="twitter-widget-1" scrolling="no" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 61px; height: 20px;" title="Twitter Tweet Button" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/tweet_button.htm" data-url="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html" frameborder="0"></iframe>
+</div>
+</div>
+<div class="spacer"></div>
+<div class="ads">
+
+<script type="text/javascript">
+    google_ad_client = "ca-pub-6904774409601870";
+    google_ad_host = "ca-host-pub-1556223355139109";
+    google_ad_host_channel = "L0007";
+    google_ad_slot = "5289887236";
+    google_ad_width = 336;
+    google_ad_height = 280;
+</script>
+
+<script type="text/javascript" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;" data-ad-slot="5289887236"><ins id="aswift_0_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0px;width:336px;height:280px;" width="336" height="280" frameborder="0"></iframe></ins></ins>
+
+</div>
+<div class="post-body-n">
+<span class="tweet" id="facebookLike"><iframe allowtransparency="true" class="facebooklike" name="facebook" scrolling="no" src="https://www.facebook.com/plugins/like.php?href=https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html&amp;layout=box_count&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" frameborder="0"></iframe></span>
+<span class="post-body entry-content" id="post-body-2058240458962611363" itemprop="articleBody">
+<div class="bigInt" itemprop="description">These days, there are no 
+projects that do not have a REST API for creating professional web 
+services. REST ( Representational State Transfer) consists set of 
+guidelines to build a web service, which can be used to modify or view 
+specific information on the web without performing any server side 
+operations. Using RESTful APIs saves huge amount of time. Twitter, 
+Facebook, Google and thousands of companies use REST APIs. This is 
+because REST is the most efficient and widespread standard in the 
+creation of APIs for Internet services. </div><br>
+<div class="cen"><img alt="Create RESTful API NodeJS Mysql" class="sri650" itemprop="image" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/nodebanner.png"></div><br>
+<a name="more"></a><br>
+We have already discussed how to <a href="https://www.9lessons.info/2014/12/create-restful-services-using-slim-php.html" target="_blank">create RESTful APIs using PHP</a> and <a href="https://www.9lessons.info/2012/09/restful-web-services-api-using-java-and.html" target="_blank">Java</a>
+ in my previous tutorials. Let’s see how to create RESTful API usig Node
+ for processing HTTP requests. With this API created, you can just use 
+it with any application that submits HTTP request. It is the best way to
+ work especially if you are building any mobile application. <br>
+<br>
+<div class="github_div"><a href="https://github.com/srinivastamada/NodeRestful" rel="nofollow" target="_blank"><b>Node Restful</b>Download this project on Github</a></div><br>
+You have to install <a href="https://nodejs.org/en/" rel="nofollow" target="_blank">NodeJs</a> and <a href="https://www.mysql.com/" rel="nofollow" target="_blank">MySQL</a> softwares, create following tables or download sql file from my Git repository and import. <br>
+<br>
+<div class="big">Users Table</div>User table contains all the users registration details. <br>
+<div class="code">CREATE TABLE `<span style="color: #cc0000;">users</span>` (<br>
+`<span style="color: blue;">uid</span>` int(11) <span style="color: #a64d79;">AUTO_INCREMENT</span>,<br>
+`<span style="color: blue;">username</span>` varchar(50),<br>
+`<span style="color: blue;">password</span>` varchar(200),<br>
+`<span style="color: blue;">email</span>` varchar(200),<br>
+<span style="color: #e06666;">PRIMARY KEY</span> (`uid`)<br>
+);</div><br>
+<div class="big">Messages Table</div>This table contains all of the user messages. <br>
+<div class="code">CREATE TABLE `<span style="color: #cc0000;">messages</span>` (<br>
+`<span style="color: blue;">mid</span>` int(11) <span style="color: #a64d79;">AUTO_INCREMENT</span>,<br>
+`<span style="color: blue;">message</span>` text,<br>
+`<span style="color: blue;">uid_fk</span>` int(11),<br>
+<span style="color: #e06666;">PRIMARY KEY</span> (`mid`)<br>
+);</div><br>
+<div class="cen"><img alt="Create RESTful API NodeJS user Mysql" class="sri650" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/messages.png"></div><br>
+<div class="big">Setup Node Restful Project</div><br>
+Go to <i>Terminal</i> or <i>Command Line</i>, create a project folder. <br>
+<div class="code">$ <span style="color: blue;">mkdir</span> <span style="color: #cc0000;">nodeRestful</span><br>
+<br>
+$ <span style="color: blue;">cd</span> <span style="color: #cc0000;">nodeRestful</span></div><br>
+Initialize your node project, this will create a <i>package.json</i> file.<br>
+<div class="code">$ <span style="color: #38761d;">node</span> init</div><br>
+Install <a href="https://hapijs.com/" rel="nofollow" target="_blank">hapi.js</a> plugin for Restful APIs. <br>
+<div class="code">$ <span style="color: #cc0000;">npm</span> install <span style="color: #0b5394;"><b>hapi</b></span> <span style="color: #38761d;">--save</span></div><br>
+<div class="big">Create a Node Hapi Server</div><br>
+<b>server.js</b><br>
+Open text editor, copy following code. Here <i>const</i> (JavaScript ES6) is a identifier won’t be reassigned, if you want you can use <i>var</i>.<br>
+<div class="code">'<span style="color: #38761d;">use strict</span>';<br>
+<span style="color: #a64d79;">const</span> <span style="color: #0b5394;">Hapi</span> = <span style="color: #3d85c6;">require</span>('hapi');<br>
+<br>
+// Create a server with a host and port<br>
+<span style="color: #a64d79;">const</span>&nbsp;server = new <span style="color: #0b5394;">Hapi</span>.<span style="color: #cc0000;">Server</span>();<br>
+server.<span style="color: #cc0000;">connection</span>({ <br>
+&nbsp; &nbsp; host: '<span style="color: blue;">localhost</span>', <br>
+&nbsp; &nbsp; port: <span style="color: #cc0000;">8000 </span><br>
+});<br>
+<br>
+// Add the route<br>
+server.<span style="color: #cc0000;">route</span>({<br>
+&nbsp; &nbsp; method: '<span style="color: #0b5394;">GET</span>',<br>
+&nbsp; &nbsp; path:'<span style="color: #38761d;">/helloworld</span>', <br>
+&nbsp; &nbsp; <span style="color: #3d85c6;">handler</span>: <b>function</b> (request, reply) {<br>
+&nbsp; &nbsp; return <span style="color: #cc0000;">reply</span>('hello world');<br>
+}<br>
+});<br>
+<br>
+server.<span style="color: #cc0000;">start</span>((err) =&gt; {<br>
+&nbsp; &nbsp;if (err) {<br>
+&nbsp; &nbsp; &nbsp;<span style="color: blue;">throw</span> err;<br>
+&nbsp; &nbsp;}<br>
+&nbsp; <span style="color: #3d85c6;">console</span>.<span style="color: #e06666;">log</span>('Server running at:', server.info.uri);<br>
+});</div><br>
+<b>Run Project</b><br>
+<div class="code">$ sudo <span style="color: #cc0000;">npm</span> <span style="color: blue;">start</span></div><br>
+Open your browser and launch the following URL, you will find "hello world" result. <br>
+<i>http://localhost:8000/helloworld</i><br>
+<br>
+<div class="big">Database Connection</div><br>
+<b>MySQL Database</b><br>
+Install MySQL package for Node using node package manager(NPM). <br>
+<div class="code">$&nbsp;<span style="color: #cc0000;">npm</span>&nbsp;install&nbsp;<span style="color: #0b5394;"><b>mysql</b></span>&nbsp;<span style="color: #38761d;">--save</span></div><br>
+<b>server.js</b><br>
+Modify the server.js and include MySQL connection code. Here you have to
+ modify the MySQL database name, host, username and password. <br>
+<div class="code">'<span style="color: #38761d;">use strict</span>';<br>
+<span style="color: #a64d79;">const</span>&nbsp;<span style="color: #0b5394;">Hapi</span>&nbsp;=&nbsp;<span style="color: #3d85c6;">require</span>('hapi');<br>
+<span style="color: #a64d79;">const</span>&nbsp;<span style="color: #0b5394;">MySQL</span>&nbsp;=&nbsp;<span style="color: #3d85c6;">require</span>('mysql');<br>
+<br>
+// Create a server with a host and port<br>
+<span style="color: #a64d79;">const</span>&nbsp;server = new&nbsp;<span style="color: #0b5394;">Hapi</span>.<span style="color: #cc0000;">Server</span>();<br>
+<br>
+<span style="color: #a64d79;">const</span>&nbsp;connection = <span style="color: #0b5394;">MySQL</span>.<span style="color: #cc0000;">createConnection</span>({<br>
+&nbsp; &nbsp; &nbsp;host: '<span style="color: #e06666;">localhost</span>',<br>
+&nbsp; &nbsp; &nbsp;user: '<span style="color: #e06666;">username</span>',<br>
+&nbsp; &nbsp; &nbsp;password: '<span style="color: #e06666;">password</span>',<br>
+&nbsp; &nbsp; &nbsp;database: '<span style="color: #e06666;">database_name</span>'<br>
+});<br>
+<br>
+server.<span style="color: #cc0000;">connection</span>({<br>
+&nbsp; &nbsp; host: '<span style="color: blue;">localhost</span>',<br>
+&nbsp; &nbsp; port:&nbsp;<span style="color: #cc0000;">8000</span><br>
+});<br>
+<br>
+<span style="color: #cc0000;">connection</span>.<span style="color: #0b5394;">connect</span>();<br>
+<br>
+.....<br>
+.....<br>
+.....</div><br>
+<br>
+<b>Get Users Details</b><br>
+Here is the route for users data. Download <i>poster</i> extension for Chrome browser, this will help you to test these Restful APIs.<br>
+<i>http://localhost:8000/users</i><br>
+<div class="code">server.<span style="color: #cc0000;">route</span>({<br>
+&nbsp; &nbsp; method: '<span style="color: #3d85c6;">GET</span>',<br>
+&nbsp; &nbsp; path: '<span style="color: #38761d;">/users</span>',<br>
+&nbsp; &nbsp; <span style="color: #3d85c6;">handler</span>: <b>function</b> (request, reply) {<br>
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #cc0000;">connection</span>.<span style="color: #0b5394;">query</span>('<span style="color: #e06666;">SELECT uid, username, email FROM users</span>',<br>
+&nbsp; &nbsp; &nbsp; &nbsp;<b>function</b> (error, results, fields) {<br>
+&nbsp; &nbsp; &nbsp; &nbsp;if (error) throw error;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #cc0000;">reply</span>(results);<br>
+&nbsp; &nbsp; });<br>
+&nbsp; }<br>
+});</div><br>
+<div class="cen"><img alt="Create RESTful API NodeJS user Mysql" class="sri650" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/users.png"></div><br>
+<div class="big">Working with Parameters</div><br>
+<b>Parameter Validations</b><br>
+For valid inputs, install Joi package for Node.<br>
+<div class="code">$&nbsp;<span style="color: #cc0000;">npm</span>&nbsp;install&nbsp;<span style="color: #0b5394;"><b>joi</b></span>&nbsp;<span style="color: #38761d;">--save</span></div><br>
+<div class="code">Username validation minimum value 3 characters and maximum 30. <br>
+username: <span style="color: #cc0000;">Joi</span>.string().<span style="color: #0b5394;">alphanum</span>().min(3).max(30).<span style="color: #e06666;">required</span>()<br>
+<br>
+Password regular expression min 8 and max 30 <br>
+password:&nbsp;<span style="color: #cc0000;">Joi</span>.string().<span style="color: blue;">regex</span>(/^[a-zA-Z0-9]{8,30}$/)<br>
+<br>
+Message validation supports both strings and numbers. <br>
+message: [<span style="color: #cc0000;">Joi</span>.string(),&nbsp;<span style="color: #cc0000;">Joi</span>.<span style="color: #0b5394;">number</span>()]<br>
+<br>
+Birth year validation<br>
+birthyear:&nbsp;<span style="color: #cc0000;">Joi</span>.number().<span style="color: #0b5394;">integer</span>().min(1900).max(2013)<br>
+<br>
+Email validation<br>
+email:&nbsp;<span style="color: #cc0000;">Joi</span>.string().<span style="color: #0b5394;">email</span>()</div><br>
+<b>Get User Data</b><br>
+Here getting the user data based on uid value, <i>Joi.number().integer()</i> validating the user id input. <br>
+<i>http://localhost:8000/user/1</i><br>
+<div class="code"><span style="color: #a64d79;">const</span> Joi = <span style="color: #3d85c6;">require</span>('joi');<br>
+<br>
+server.<span style="color: #cc0000;">route</span>({<br>
+&nbsp; &nbsp; method: '<span style="color: #3d85c6;">GET</span>',<br>
+&nbsp; &nbsp; path: '<span style="color: #38761d;">/user/</span><span style="color: #cc0000;">{uid}</span>',<br>
+&nbsp; &nbsp; <span style="color: #3d85c6;">handler</span>: <b>function</b> (request, reply) {<br>
+&nbsp; &nbsp;&nbsp;<span style="color: #a64d79;">const</span>&nbsp;uid = request.<span style="background-color: #ffd966;">params</span>.uid;<br>
+<br>
+&nbsp; &nbsp; <span style="color: #cc0000;">connection</span>.<span style="color: #0b5394;">query</span>('<span style="color: #e06666;">SELECT uid, username, email FROM users WHERE uid = "' </span>+ uid +<span style="color: #e06666;"> '"</span>',<br>
+<b>&nbsp; &nbsp; function</b> (error, results, fields) {<br>
+&nbsp; &nbsp; &nbsp; &nbsp;if (error) throw error;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0b5394;">reply</span>(results);<br>
+&nbsp; &nbsp; });<br>
+&nbsp; &nbsp; },<br>
+<span style="color: #0b5394;">&nbsp; &nbsp;config</span>: {<br>
+&nbsp; &nbsp; &nbsp; &nbsp;validate: {<br>
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="background-color: #ffd966;"> params</span>: {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; uid: <span style="color: #cc0000;">Joi</span>.number().<span style="color: #3d85c6;">integer</span>()<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; }<br>
+}<br>
+});</div><br>
+<div class="cen"><img alt="Create RESTful API NodeJS user Mysql" class="sri650" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/userdata.png"></div><br>
+<b>POST</b><br>
+Get user message details, post parameters works with payload. <br>
+<i>http://localhost:8000/messages</i><br>
+<div class="code">server.<span style="color: #cc0000;">route</span>({<br>
+&nbsp; &nbsp; method: '<span style="color: #3d85c6;">POST</span>',<br>
+&nbsp; &nbsp; path: '<span style="color: #38761d;">/messages</span>',<br>
+&nbsp; &nbsp; <span style="color: #3d85c6;">handler</span>: <b>function</b> (request, reply) {<br>
+<br>
+&nbsp; &nbsp; <span style="color: #a64d79;">const</span> uid = request.<span style="background-color: #93c47d;">payload</span>.uid;<br>
+&nbsp; &nbsp; <span style="color: #cc0000;">connection</span>.<span style="color: #0b5394;">query</span>('<span style="color: #e06666;">SELECT * FROM messages WHERE uid_fk = "' </span>+ uid +<span style="color: #e06666;"> '"</span>',<br>
+&nbsp; &nbsp; <b>function</b> (error, results, fields) {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; if (error) throw error;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; reply(results);<br>
+&nbsp; &nbsp; });<br>
+},<br>
+<span style="color: #0b5394;">config</span>: {<br>
+&nbsp; &nbsp; validate: {<br>
+&nbsp; &nbsp; <span style="background-color: #93c47d;">payload</span>: {<br>
+&nbsp; &nbsp; uid: <span style="color: #cc0000;">Joi</span>.<span style="color: #38761d;">number</span>().<span style="color: #3d85c6;">integer</span>()<br>
+}<br>
+}<br>
+<br>
+}<br>
+});</div><br>
+<div class="cen"><img alt="Create RESTful API NodeJS user Mysql" class="sri650" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/messagePost.png"></div><br>
+<b>Delete</b><br>
+Delete user message data based on user and message ids. <br>
+<i>http://localhost:8000/message/1/3</i><br>
+<div class="code">server.<span style="color: #cc0000;">route</span>({<br>
+&nbsp; &nbsp; method: '<span style="color: #3d85c6;">DELETE</span>',<br>
+&nbsp; &nbsp; path: '<span style="color: #38761d;">/message/</span><span style="color: #cc0000;">{uid}</span><span style="color: #38761d;">/</span><span style="color: #cc0000;">{mid}</span>',<br>
+&nbsp; &nbsp;&nbsp;<span style="color: #3d85c6;">handler</span>: <b>function</b> (request, reply) {<br>
+<span style="color: #a64d79;">&nbsp; &nbsp; const</span>&nbsp;uid = request.<span style="background-color: #93c47d;">params</span>.uid;<br>
+<span style="color: #a64d79;">&nbsp; &nbsp; const</span>&nbsp;mid = request.<span style="background-color: #93c47d;">params</span>.mid;<br>
+<span style="color: #cc0000;">&nbsp; &nbsp; connection</span>.query('<span style="color: #e06666;">DELETE FROM messages WHERE uid_fk = "' + uid + '"AND&nbsp;</span><br>
+<span style="color: #e06666;">&nbsp; &nbsp; mid = "' + mid + '"</span>',<br>
+&nbsp; &nbsp; <b>function</b> (error, result, fields) {<br>
+&nbsp; &nbsp; &nbsp; &nbsp;if (error) throw error;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;if (result.affectedRows) {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0b5394;">reply</span>(true);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;} else {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0b5394;">reply</span>(false);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+});<br>
+},<br>
+<span style="color: #3d85c6;">config</span>: {<br>
+&nbsp; &nbsp; &nbsp;validate: {<br>
+&nbsp; &nbsp; &nbsp;<span style="background-color: #93c47d;">params</span>: {<br>
+&nbsp; &nbsp; &nbsp; &nbsp;uid: <span style="color: #cc0000;">Joi</span>.<span style="color: #38761d;">number</span>().<span style="color: #0b5394;">integer</span>(),<br>
+&nbsp; &nbsp; &nbsp; &nbsp;mid: <span style="color: #cc0000;">Joi</span>.<span style="color: #38761d;">number</span>().<span style="color: #0b5394;">integer</span>()<br>
+&nbsp; &nbsp; &nbsp; }<br>
+&nbsp; &nbsp; &nbsp;}<br>
+}<br>
+});</div><br>
+<div class="cen"><img alt="Create RESTful API NodeJS user Mysql" class="sri650" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/delete.png"></div><br>
+<div class="big">Encryption</div>We need to encrypt user password, <i>bcrypt</i> package will provide you the salt encryption code. <br>
+<div class="code">$ <span style="color: #cc0000;">npm</span> install <span style="color: #0b5394;"><b>bcrypt</b></span> <span style="color: #38761d;">--save</span></div><br>
+<div class="cen"><img alt="Create RESTful API NodeJS user Mysql" class="sri650" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/signup_database.png"></div><br>
+<br>
+<b>POST User Signup</b><br>
+User signup with encrypted user password. <br>
+<div class="code">server.<span style="color: #cc0000;">route</span>({<br>
+&nbsp; &nbsp; method: '<span style="color: #3d85c6;">POST</span>',<br>
+&nbsp; &nbsp; path: '<span style="color: #38761d;">/signup</span>',<br>
+&nbsp; &nbsp; <span style="color: #3d85c6;">handler</span>: <b>function</b> (request, reply) {<br>
+<span style="color: #a64d79;">&nbsp; &nbsp; const</span>&nbsp;username = request.<span style="background-color: #ffd966;">payload</span>.username;<br>
+<span style="color: #a64d79;">&nbsp; &nbsp; const</span>&nbsp;email = request.<span style="background-color: #ffd966;">payload</span>.email;<br>
+<span style="color: #a64d79;">&nbsp; &nbsp; const</span>&nbsp;password = request.<span style="background-color: #ffd966;">payload</span>.password;<br>
+<br>
+<span style="color: orange;">&nbsp; &nbsp; //Encryption</span><br>
+&nbsp; &nbsp; var salt = <span style="color: #cc0000;">Bcrypt</span>.<span style="color: #3d85c6;">genSaltSync</span>();<br>
+&nbsp; &nbsp; var encryptedPassword = <span style="color: #cc0000;">Bcrypt</span>.<span style="color: #3d85c6;">hashSync</span>(password, salt);<br>
+<br>
+&nbsp; &nbsp; <span style="color: orange;">//Decrypt</span><br>
+&nbsp; &nbsp; var orgPassword = <span style="color: #cc0000;">Bcrypt</span>.<span style="color: #3d85c6;">compareSync</span>(password, encryptedPassword);<br>
+<br>
+<span style="color: #cc0000;">&nbsp; &nbsp; connection</span>.query('<span style="color: #e06666;">INSERT INTO users (username,email,passcode) VALUES&nbsp;</span><br>
+<span style="color: #e06666;">&nbsp; &nbsp; ("' </span>+ username +<span style="color: #e06666;"> '","' </span>+ email +<span style="color: #e06666;"> '","'</span> + encryptedPassword + <span style="color: #e06666;">'")</span>',<br>
+<b>&nbsp; &nbsp; function</b> (error, results, fields) {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; if (error) throw error;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #3d85c6;">reply</span>(results);<br>
+&nbsp; &nbsp; });<br>
+},<br>
+<span style="color: #0b5394;">config</span>: {<br>
+&nbsp; &nbsp; &nbsp; validate: {<br>
+&nbsp; &nbsp; &nbsp; &nbsp;<span style="background-color: #ffd966;">payload:</span> {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; username: <span style="color: #cc0000;">Joi</span>.string().<span style="color: #38761d;">alphanum</span>().min(3).max(30).<span style="color: #e06666;">required</span>(),<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; email:&nbsp;<span style="color: #cc0000;">Joi</span>.string().<span style="color: #0b5394;">email</span>(),<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; password:&nbsp;<span style="color: #cc0000;">Joi</span>.string().<span style="color: blue;">regex</span>(/^[a-zA-Z0-9]{8,30}$/)<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; }<br>
+}<br>
+});</div><br>
+<div class="cen"><img alt="Create RESTful API NodeJS user Mysql" class="sri650" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/signup.png"></div><br>
+<div class="cen"><img alt="Create RESTful API NodeJS user Mysql" class="sri650" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/sendMessage.png"></div><br>
+<div class="github_div"><a href="https://github.com/srinivastamada/NodeRestful" rel="nofollow" target="_blank"><b>Node Restful</b>Download this project on Github</a></div>
+</span>
+<div>
+<a href="https://push.9lessons.info/"><img alt="web notification" id="webNotification" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/web.png"></a>
+</div>
+<div class="clearboth"></div>
+</div>
+<div class="widthfull">
+<div style="float:left;width:330px">
+<div class="margin10">
+
+<script type="text/javascript">
+    google_ad_client = "ca-pub-6904774409601870";
+    google_ad_host = "ca-host-pub-1556223355139109";
+    google_ad_host_channel = "L0007";
+    google_ad_slot = "5289887236";
+    google_ad_width = 336;
+    google_ad_height = 280;
+</script>
+
+<script type="text/javascript" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/show_ads.js">
+</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;" data-ad-slot="5289887236"><ins id="aswift_1_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0px;width:336px;height:280px;" width="336" height="280" frameborder="0"></iframe></ins></ins>
+
+</div>
+</div>
+<div style="float:right;width:330px">
+<div class="margin10">
+
+<script type="text/javascript">
+    google_ad_client = "ca-pub-6904774409601870";
+    google_ad_host = "ca-host-pub-1556223355139109";
+    google_ad_host_channel = "L0007";
+    google_ad_slot = "5289887236";
+    google_ad_width = 336;
+    google_ad_height = 280;
+</script>
+
+<script type="text/javascript" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/show_ads.js">
+</script><ins id="aswift_2_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;" data-ad-slot="5289887236"><ins id="aswift_2_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0px;width:336px;height:280px;" width="336" height="280" frameborder="0"></iframe></ins></ins>
+
+</div>
+</div>
+</div>
+<div style="clear:both">
+<script type="text/javascript">
+setTimeout(function(){ 
+document.getElementById('facebookLike').innerHTML="<iframe allowTransparency='true' class='facebooklike' frameborder='0' name='facebook' scrolling='no' src='https://www.facebook.com/plugins/like.php?href=https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html&layout=box_count&show_faces=false&width=450&action=like&colorscheme=light'></iframe>";
+}, 8000);
+</script>
+<div id="related-posts">
+<div style="display:none">
+<abbr class="published updated" title="2017-02-05T23:35:00-05:00">Sunday, February 05, 2017</abbr>
+</div>
+<div style="clear:both"></div>
+<h3>Related Posts</h3><span class="cf">API,
+<script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/API" type="text/javascript"></script>Mysql,
+<script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/Mysql" type="text/javascript"></script>nodejs,
+<script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/nodejs" type="text/javascript"></script>RESTful,
+<script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/RESTful" type="text/javascript"></script>Web Development
+<script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/Web%2520Development" type="text/javascript"></script>
+</span>
+<script type="text/javascript"> removeRelatedDuplicates(); printRelatedLabels();
+</script><ul><li><a href="http://www.9lessons.info/2016/04/facebook-like-reactions-using-php-mysql.html">Facebook Like Reactions using PHP, MySQL and Jquery.  </a></li><li><a href="http://www.9lessons.info/2015/02/facebook-style-background-image-upload.html">Facebook Style Background Image Upload and Position Adjustment.</a></li><li><a href="http://www.9lessons.info/2019/08/mock-rest-backend-server-for-angular.html">Mock REST Backend Server for Angular and React Applications. </a></li><li><a href="http://www.9lessons.info/2019/04/generating-pdf-documents-on-fly-using.html">Generating PDF Documents on the Fly Using Nodejs and Kue</a></li><li><a href="http://www.9lessons.info/2016/10/react-webpack-heroku-youtube-instant.html">React Webpack Heroku Youtube Instant Search Working with APIs Tutorial</a></li><li><a href="http://www.9lessons.info/2016/06/rethink-database-for-creating-realtime.html">Rethink Database for Creating a Realtime Web Application with Node JS</a></li><li><a href="http://www.9lessons.info/2018/07/social-login-using-angular-and-restful.html">Social Login using Angular and RESTful APIs</a></li><li><a href="http://www.9lessons.info/2018/04/paypal-express-checkout-with-react-js.html">PayPal Express Checkout with React JS and PHP RESTful</a></li><li><a href="http://www.9lessons.info/2017/12/ionic-angular-lazy-loading-child-components.html">Ionic Angular Lazy Loading with Child Components</a></li><li><a href="http://www.9lessons.info/2017/12/ionic-angular-camera-restful-upload.html">Ionic and Angular: Native Camera with Restful Upload.</a></li></ul>
+</div>
+<script id="mNCC" language="javascript">  medianet_width='600';  medianet_height= '250';  medianet_crid='104462668';  </script>
+<script id="mNSC" language="javascript" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/nmedianet.js"></script><script language="javascript" type="text/javascript" id="_mN_dy_104462668" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/fcmdynet.js"></script><iframe marginwidth="0" marginheight="0" scrolling="no" id="_mN_main_104462668_0_n" width="600" height="250" frameborder="0"></iframe>
+<div class="widget2" id="top-comment1">
+<div class="centerare1">
+<div class="comments" id="comments">
+<a name="comments"></a>
+<div class="komhead">
+<h4>
+22
+comments:
+</h4>
+<div class="stripe-line"></div>
+</div>
+<div class="comments-content">
+<script async="async" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/create-restful-api-nodejs-mysql_008.htm" type="text/javascript"></script>
+<script type="text/javascript">
+    (function() {
+      var items = null;
+      var msgs = null;
+      var config = {};
+
+// <![CDATA[
+      var cursor = null;
+      if (items && items.length > 0) {
+        cursor = parseInt(items[items.length - 1].timestamp) + 1;
+      }
+
+      var bodyFromEntry = function(entry) {
+        var text = (entry &&
+                    ((entry.content && entry.content.$t) ||
+                     (entry.summary && entry.summary.$t))) ||
+            '';
+        if (entry && entry.gd$extendedProperty) {
+          for (var k in entry.gd$extendedProperty) {
+            if (entry.gd$extendedProperty[k].name == 'blogger.contentRemoved') {
+              return '<span class="deleted-comment">' + text + '</span>';
+            }
+          }
+        }
+        return text;
+      }
+
+      var parse = function(data) {
+        cursor = null;
+        var comments = [];
+        if (data && data.feed && data.feed.entry) {
+          for (var i = 0, entry; entry = data.feed.entry[i]; i++) {
+            var comment = {};
+            // comment ID, parsed out of the original id format
+            var id = /blog-(\d+).post-(\d+)/.exec(entry.id.$t);
+            comment.id = id ? id[2] : null;
+            comment.body = bodyFromEntry(entry);
+            comment.timestamp = Date.parse(entry.published.$t) + '';
+            if (entry.author && entry.author.constructor === Array) {
+              var auth = entry.author[0];
+              if (auth) {
+                comment.author = {
+                  name: (auth.name ? auth.name.$t : undefined),
+                  profileUrl: (auth.uri ? auth.uri.$t : undefined),
+                  avatarUrl: (auth.gd$image ? auth.gd$image.src : undefined)
+                };
+              }
+            }
+            if (entry.link) {
+              if (entry.link[2]) {
+                comment.link = comment.permalink = entry.link[2].href;
+              }
+              if (entry.link[3]) {
+                var pid = /.*comments\/default\/(\d+)\?.*/.exec(entry.link[3].href);
+                if (pid && pid[1]) {
+                  comment.parentId = pid[1];
+                }
+              }
+            }
+            comment.deleteclass = 'item-control blog-admin';
+            if (entry.gd$extendedProperty) {
+              for (var k in entry.gd$extendedProperty) {
+                if (entry.gd$extendedProperty[k].name == 'blogger.itemClass') {
+                  comment.deleteclass += ' ' + entry.gd$extendedProperty[k].value;
+                } else if (entry.gd$extendedProperty[k].name == 'blogger.displayTime') {
+                  comment.displayTime = entry.gd$extendedProperty[k].value;
+                }
+              }
+            }
+            comments.push(comment);
+          }
+        }
+        return comments;
+      };
+
+      var paginator = function(callback) {
+        if (hasMore()) {
+          var url = config.feed + '?alt=json&v=2&orderby=published&reverse=false&max-results=50';
+          if (cursor) {
+            url += '&published-min=' + new Date(cursor).toISOString();
+          }
+          window.bloggercomments = function(data) {
+            var parsed = parse(data);
+            cursor = parsed.length < 50 ? null
+                : parseInt(parsed[parsed.length - 1].timestamp) + 1
+            callback(parsed);
+            window.bloggercomments = null;
+          }
+          url += '&callback=bloggercomments';
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = url;
+          document.getElementsByTagName('head')[0].appendChild(script);
+        }
+      };
+      var hasMore = function() {
+        return !!cursor;
+      };
+      var getMeta = function(key, comment) {
+        if ('iswriter' == key) {
+          var matches = !!comment.author
+              && comment.author.name == config.authorName
+              && comment.author.profileUrl == config.authorUrl;
+          return matches ? 'true' : '';
+        } else if ('deletelink' == key) {
+          return config.baseUri + '/delete-comment.g?blogID='
+               + config.blogId + '&postID=' + comment.id;
+        } else if ('deleteclass' == key) {
+          return comment.deleteclass;
+        }
+        return '';
+      };
+
+      var replybox = null;
+      var replyUrlParts = null;
+      var replyParent = undefined;
+
+      var onReply = function(commentId, domId) {
+        if (replybox == null) {
+          // lazily cache replybox, and adjust to suit this style:
+          replybox = document.getElementById('comment-editor');
+          if (replybox != null) {
+            replybox.height = '250px';
+            replybox.style.display = 'block';
+            replyUrlParts = replybox.src.split('#');
+          }
+        }
+        if (replybox && (commentId !== replyParent)) {
+          replybox.src = '';
+          document.getElementById(domId).insertBefore(replybox, null);
+          replybox.src = replyUrlParts[0]
+              + (commentId ? '&parentID=' + commentId : '')
+              + '#' + replyUrlParts[1];
+          replyParent = commentId;
+        }
+      };
+
+      var hash = (window.location.hash || '#').substring(1);
+      var startThread, targetComment;
+      if (/^comment-form_/.test(hash)) {
+        startThread = hash.substring('comment-form_'.length);
+      } else if (/^c[0-9]+$/.test(hash)) {
+        targetComment = hash.substring(1);
+      }
+
+      // Configure commenting API:
+      var configJso = {
+        'maxDepth': config.maxThreadDepth
+      };
+      var provider = {
+        'id': config.postId,
+        'data': items,
+        'loadNext': paginator,
+        'hasMore': hasMore,
+        'getMeta': getMeta,
+        'onReply': onReply,
+        'rendered': true,
+        'initComment': targetComment,
+        'initReplyThread': startThread,
+        'config': configJso,
+        'messages': msgs
+      };
+
+      var render = function() {
+        if (window.goog && window.goog.comments) {
+          var holder = document.getElementById('comment-holder');
+          window.goog.comments.render(holder, provider);
+        }
+      };
+
+      // render now, or queue to render when library loads:
+      if (window.goog && window.goog.comments) {
+        render();
+      } else {
+        window.goog = window.goog || {};
+        window.goog.comments = window.goog.comments || {};
+        window.goog.comments.loadQueue = window.goog.comments.loadQueue || [];
+        window.goog.comments.loadQueue.push(render);
+      }
+    })();
+// ]]>
+  </script>
+<div id="comment-holder">
+<div class="comment-thread toplevel-thread"><ol id="top-ra"><li class="comment" id="c2066686366350445775"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-.png" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/12856870693299258255" rel="nofollow">Ranjit kumar</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1486364303978#c2066686366350445775">February 6, 2017 at 1:58 AM</a></span></div><p class="comment-content">Amazing article <br><br>Why hapi over expressjs</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="2066686366350445775" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-280855253"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=2066686366350445775">Delete</a></span></span></div><div class="comment-replies"><div id="c2066686366350445775-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c2066686366350445775-ra" class="thread-chrome thread-expanded"><div></div><div id="c2066686366350445775-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="2066686366350445775" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c2066686366350445775-ce"></div></li><li class="comment" id="c8233372020597830639"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/PhotoGrid_1447861598903.jpg" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/08851740610278012273" rel="nofollow">Faiz Fadly</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1486369780458#c8233372020597830639">February 6, 2017 at 3:29 AM</a></span></div><p class="comment-content">my result <br><br>{"statusCode":404,"error":"Not Found"}</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="8233372020597830639" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-782216615"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=8233372020597830639">Delete</a></span></span></div><div class="comment-replies"><div id="c8233372020597830639-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c8233372020597830639-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c6825231139129771856"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-.png" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/14688165540592767955" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1486464220231#c6825231139129771856">February 7, 2017 at 5:43 AM</a></span></div><p class="comment-content">I get this too</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-2046080620"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=6825231139129771856">Delete</a></span></span></div><div class="comment-replies"><div id="c6825231139129771856-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c6825231139129771856-ra" class="thread-chrome thread-expanded"><div></div><div id="c6825231139129771856-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="6825231139129771856" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c6825231139129771856-ce"></div></li></div><div id="c8233372020597830639-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="8233372020597830639" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c8233372020597830639-ce"></div></li><li class="comment" id="c8486074745517562533"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/photo_010.jpg" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/08350985414867372190" rel="nofollow">Felipe Caparelli</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1486384868862#c8486074745517562533">February 6, 2017 at 7:41 AM</a></span></div><p class="comment-content">It's simple, effective and easy like always you do Mr. Tamada! Thanks</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="8486074745517562533" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-1106584402"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=8486074745517562533">Delete</a></span></span></div><div class="comment-replies"><div id="c8486074745517562533-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c8486074745517562533-ra" class="thread-chrome thread-expanded"><div></div><div id="c8486074745517562533-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="8486074745517562533" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c8486074745517562533-ce"></div></li><li class="comment" id="c4320471117640432363"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/photo_002.jpg" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/13037590624128659023" rel="nofollow">Amir Sidik</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1486386755652#c4320471117640432363">February 6, 2017 at 8:12 AM</a></span></div><p class="comment-content">Nice work bro. </p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4320471117640432363" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-231398839"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=4320471117640432363">Delete</a></span></span></div><div class="comment-replies"><div id="c4320471117640432363-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c4320471117640432363-ra" class="thread-chrome thread-expanded"><div></div><div id="c4320471117640432363-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4320471117640432363" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4320471117640432363-ce"></div></li><li class="comment" id="c8014188047955872897"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/photo_008.jpg" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/11354459674000449780" rel="nofollow">ULISES GERMAN</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1486490603382#c8014188047955872897">February 7, 2017 at 1:03 PM</a></span></div><p class="comment-content">Thanks for this useful article...<br><br>Need 2 mods Mr. Tamada:<br><br>http://localhost:8000/helloword ---&gt; http://localhost:8000/helloworld<br><br>and<br><br>when install bcrypt have an error, may be you need to do this:<br>npm install --save bcryptjs &amp;&amp; npm uninstall --save bcrypt<br>finally the require must be:<br>const Bcrypt = require('bcryptjs');<br><br>Best regards!</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="8014188047955872897" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-728346429"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=8014188047955872897">Delete</a></span></span></div><div class="comment-replies"><div id="c8014188047955872897-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c8014188047955872897-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c736231408488430786"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-.png" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/03541344747324747191" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1486624831978#c736231408488430786">February 9, 2017 at 2:20 AM</a></span></div><p class="comment-content">good. thank</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-1035925179"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=736231408488430786">Delete</a></span></span></div><div class="comment-replies"><div id="c736231408488430786-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c736231408488430786-ra" class="thread-chrome thread-expanded"><div></div><div id="c736231408488430786-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="736231408488430786" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c736231408488430786-ce"></div></li></div><div id="c8014188047955872897-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="8014188047955872897" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c8014188047955872897-ce"></div></li><li class="comment" id="c4779071686531695477"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/photo_006.jpg" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/17804478255492327953" rel="nofollow">Kalpesh Damor</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1487993471522#c4779071686531695477">February 24, 2017 at 10:31 PM</a></span></div><p class="comment-content">This Article Very Useful my college study <br>Thank you</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4779071686531695477" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-1631801422"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=4779071686531695477">Delete</a></span></span></div><div class="comment-replies"><div id="c4779071686531695477-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c4779071686531695477-ra" class="thread-chrome thread-expanded"><div></div><div id="c4779071686531695477-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4779071686531695477" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4779071686531695477-ce"></div></li><li class="comment" id="c5301890043111761943"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/photo_007.jpg" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/07948557597498690732" rel="nofollow">irfan abdurrasyid</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1488525269075#c5301890043111761943">March 3, 2017 at 2:14 AM</a></span></div><p class="comment-content">great tutorial, very usefull for me..</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="5301890043111761943" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-1921710726"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=5301890043111761943">Delete</a></span></span></div><div class="comment-replies"><div id="c5301890043111761943-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c5301890043111761943-ra" class="thread-chrome thread-expanded"><div></div><div id="c5301890043111761943-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="5301890043111761943" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c5301890043111761943-ce"></div></li><li class="comment" id="c9159374714994189696"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/photo_005.jpg" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/00718428595468425016" rel="nofollow">Deepali Kakkar</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1491556921081#c9159374714994189696">April 7, 2017 at 5:22 AM</a></span></div><p class="comment-content">why did you use tapi over express js?</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="9159374714994189696" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-593074171"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=9159374714994189696">Delete</a></span></span></div><div class="comment-replies"><div id="c9159374714994189696-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c9159374714994189696-ra" class="thread-chrome thread-expanded"><div></div><div id="c9159374714994189696-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="9159374714994189696" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c9159374714994189696-ce"></div></li><li class="comment" id="c6453437356008498087"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/DSCF0404.JPG" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/12387114314789640756" rel="nofollow">Gun Jack</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1493369930866#c6453437356008498087">April 28, 2017 at 4:58 AM</a></span></div><p class="comment-content">Nice tutorial !<br>As several people already asked here why did you choose toy use 'hapi' and not 'express'?<br>What are the advantages of hapi ?</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="6453437356008498087" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-462243916"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=6453437356008498087">Delete</a></span></span></div><div class="comment-replies"><div id="c6453437356008498087-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c6453437356008498087-ra" class="thread-chrome thread-expanded"><div></div><div id="c6453437356008498087-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="6453437356008498087" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c6453437356008498087-ce"></div></li><li class="comment" id="c1592096367854742258"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/photo.jpg" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/16471610447413043855" rel="nofollow">Mateusz Henicz</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1497971858772#c1592096367854742258">June 20, 2017 at 11:17 AM</a></span></div><p class="comment-content">great</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="1592096367854742258" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-1958204746"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=1592096367854742258">Delete</a></span></span></div><div class="comment-replies"><div id="c1592096367854742258-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c1592096367854742258-ra" class="thread-chrome thread-expanded"><div></div><div id="c1592096367854742258-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="1592096367854742258" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c1592096367854742258-ce"></div></li><li class="comment" id="c368236062364810839"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/photo.png" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/00819337494340284119" rel="nofollow">Newbielabs Studio</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1501270816137#c368236062364810839">July 28, 2017 at 3:40 PM</a></span></div><p class="comment-content">No PUT method?</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="368236062364810839" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-1609245478"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=368236062364810839">Delete</a></span></span></div><div class="comment-replies"><div id="c368236062364810839-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c368236062364810839-ra" class="thread-chrome thread-expanded"><div></div><div id="c368236062364810839-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="368236062364810839" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c368236062364810839-ce"></div></li><li class="comment" id="c5608251028746217401"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-.png" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/15879860416397004127" rel="nofollow">Bharath Kumar</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1505741022414#c5608251028746217401">September 18, 2017 at 9:23 AM</a></span></div><p class="comment-content">hi <br>how
+ can i add header here facing 'Access-Control-Allow-Origin' header is 
+present on the requested resource. Origin 'http://localhost:3000' is 
+therefore not allowed access.<br>can you pls help on this<br></p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="5608251028746217401" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-445641474"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=5608251028746217401">Delete</a></span></span></div><div class="comment-replies"><div id="c5608251028746217401-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c5608251028746217401-ra" class="thread-chrome thread-expanded"><div></div><div id="c5608251028746217401-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="5608251028746217401" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c5608251028746217401-ce"></div></li><li class="comment" id="c3473982554300800983"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/photo_004.jpg" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/03095098201551058622" rel="nofollow">Java9Pro</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1507482495031#c3473982554300800983">October 8, 2017 at 1:08 PM</a></span></div><p class="comment-content">Good one.Learnt node.js application creation.How do we know the package name for a functionality.</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="3473982554300800983" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-1435897827"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=3473982554300800983">Delete</a></span></span></div><div class="comment-replies"><div id="c3473982554300800983-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c3473982554300800983-ra" class="thread-chrome thread-expanded"><div></div><div id="c3473982554300800983-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="3473982554300800983" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c3473982554300800983-ce"></div></li><li class="comment" id="c4379351286370725662"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/photo_009.jpg" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/13901393549664841135" rel="nofollow">Gianluca Suarato</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1509110600486#c4379351286370725662">October 27, 2017 at 9:23 AM</a></span></div><p class="comment-content">for secure the api?</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4379351286370725662" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-1427806836"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=4379351286370725662">Delete</a></span></span></div><div class="comment-replies"><div id="c4379351286370725662-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c4379351286370725662-ra" class="thread-chrome thread-expanded"><div></div><div id="c4379351286370725662-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4379351286370725662" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4379351286370725662-ce"></div></li><li class="comment" id="c4079930999889522929"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-.png" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/09706368409250140369" rel="nofollow">Martin Z</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1509563245341#c4079930999889522929">November 1, 2017 at 3:07 PM</a></span></div><p class="comment-content">Great tutorial, very easy to undestand!</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4079930999889522929" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-1536058260"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=4079930999889522929">Delete</a></span></span></div><div class="comment-replies"><div id="c4079930999889522929-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c4079930999889522929-ra" class="thread-chrome thread-expanded"><div></div><div id="c4079930999889522929-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4079930999889522929" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4079930999889522929-ce"></div></li><li class="comment" id="c8999918378312415060"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-.png" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/10683386423466681458" rel="nofollow">Bharat Bhushan</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1511457035914#c8999918378312415060">November 23, 2017 at 12:10 PM</a></span></div><p class="comment-content">Very nice... need to close db connection?</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="8999918378312415060" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-300326261"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=8999918378312415060">Delete</a></span></span></div><div class="comment-replies"><div id="c8999918378312415060-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c8999918378312415060-ra" class="thread-chrome thread-expanded"><div></div><div id="c8999918378312415060-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="8999918378312415060" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c8999918378312415060-ce"></div></li><li class="comment" id="c949284075241766829"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/photo_003.jpg" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/03718340131134505952" rel="nofollow">Selçuk Akkurt</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1528099211612#c949284075241766829">June 4, 2018 at 4:00 AM</a></span></div><p class="comment-content">My bro youre really expert, thank you very very much ;)</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="949284075241766829" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-5161889"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=949284075241766829">Delete</a></span></span></div><div class="comment-replies"><div id="c949284075241766829-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c949284075241766829-ra" class="thread-chrome thread-expanded"><div></div><div id="c949284075241766829-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="949284075241766829" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c949284075241766829-ce"></div></li><li class="comment" id="c4492507855120000577"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-.png" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/03419738087721410181" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1549547217329#c4492507855120000577">February 7, 2019 at 8:46 AM</a></span></div><p class="comment-content">good...</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4492507855120000577" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-181721532"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=4492507855120000577">Delete</a></span></span></div><div class="comment-replies"><div id="c4492507855120000577-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c4492507855120000577-ra" class="thread-chrome thread-expanded"><div></div><div id="c4492507855120000577-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4492507855120000577" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4492507855120000577-ce"></div></li><li class="comment" id="c3249768446591876545"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-.png" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/02681596679505129986" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1551404134540#c3249768446591876545">February 28, 2019 at 8:35 PM</a></span></div><p class="comment-content">I
+ copied your code from Github and installed all the packages mentioned 
+in the tutorial but I get the error code "Error: connect ECONNREFUSED" 
+when running npm start on the command line. The server starts up but I 
+get this error code.</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="3249768446591876545" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-902970825"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=3249768446591876545">Delete</a></span></span></div><div class="comment-replies"><div id="c3249768446591876545-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c3249768446591876545-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c437959570161194464"><div class="avatar-image-container"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/22451426.png" alt=""></div><div class="comment-block authorBlock"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/17418084732618477326" rel="nofollow">Srinivas Tamada</a></cite><span class="icon user blog-author"></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html?showComment=1554822767790#c437959570161194464">April 9, 2019 at 11:12 AM</a></span></div><p class="comment-content">Run $node server.js</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-57914092"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=992226187759619576&amp;postID=437959570161194464">Delete</a></span></span></div><div class="comment-replies"><div id="c437959570161194464-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c437959570161194464-ra" class="thread-chrome thread-expanded"><div></div><div id="c437959570161194464-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="437959570161194464" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c437959570161194464-ce"></div></li></div><div id="c3249768446591876545-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="3249768446591876545" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c3249768446591876545-ce"></div></li></ol><div id="top-continue" class="continue hidden"><a class="comment-reply" target="_self" href="javascript:;">Add comment</a></div><div class="comment-replybox-thread" id="top-ce"><iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" id="comment-editor" name="comment editor" src="https://www.blogger.com/comment-iframe.g?blogID=992226187759619576&amp;postID=2058240458962611363&amp;blogspotRpcToken=5174680#%7B%22color%22:%22rgb(51,%2051,%2051)%22,%22backgroundColor%22:%22rgb(0,%200,%200)%22,%22unvisitedLinkColor%22:%22rgb(12,%20151,%20210)%22,%22fontFamily%22:%22%5C%22Open%20Sans%5C%22,%20sans-serif,%20Helvetica,%20Arial%22%7D" data-resized="true" style="display: block;" width="100%" height="213px" frameborder="0"></iframe></div><div class="loadmore hidden" data-post-id="2058240458962611363"><a target="_self">Load more...</a></div></div>
+</div>
+</div>
+<p class="comment-footer">
+</p><div class="comment-form">
+<a name="comment-form"></a>
+<p>
+</p>
+<a href="https://www.blogger.com/comment-iframe.g?blogID=992226187759619576&amp;postID=2058240458962611363&amp;blogspotRpcToken=5174680" id="comment-editor-src"></a>
+
+<script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/3962873971-comment_from_post_iframe.js" type="text/javascript"></script>
+<script type="text/javascript">
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html');
+    </script>
+</div>
+<p></p>
+<div id="backlinks-container">
+<div id="Blog1_backlinks-container">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="spacer"></div>
+</div>
+
+</div>
+<div class="blog-pager" id="blog-pager">
+<span id="blog-pager-newer-link">
+<a class="blog-pager-newer-link" href="https://www.9lessons.info/2017/02/create-angular2-firebase-social-autentication.html" id="Blog1_blog-pager-newer-link" title="Newer Post">Newer Post</a>
+</span>
+<span id="blog-pager-older-link">
+<a class="blog-pager-older-link" href="https://www.9lessons.info/2017/01/activate-free-ssl-certificate-for-your.html" id="Blog1_blog-pager-older-link" title="Older Post">Older Post</a>
+</span>
+<a class="home-link" href="https://www.9lessons.info/">Home</a>
+</div>
+<div class="clear"></div>
+</div></div>
+</div>
+
+</div>
+<div class="medium-4" id="sideside">
+<div class="side_box vcard">
+<div class="section-links" id="aboutme"><img alt="Srinivas Tamada" class="face" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/SrinivasTamada.png" title="Srinivas Tamada">
+<span class=" author"><a class="nametitle fn" href="https://www.9lessons.info/p/about.html" itemprop="author" rel="author me">Srinivas Tamada</a></span><br>
+Entrepreneur, Blogger, Thinker &amp; UI Architect <br>
+<a href="mailto:srinivas@9lessons.info" id="email">srinivas [at] 9lessons.info</a><br>
+I love the WEB - <b>Indian</b><br>Invented <a class="dblue" href="https://wall.9lessons.info/">Wall Script</a><br>Lives in <span class="adr">
+<span class="locality">Atlanta - USA</span></span>
+<a class="dnone" href="https://www.9lessons.info/p/about.html" rel="author" title="Srinivas Tamada">About Me</a>
+<div id="sbar">
+<a class="profile_facebook profile_social profile_left" href="https://www.facebook.com/srinivas.tamada" rel="nofollow" target="_blank"></a>
+<a class="profile_twitter profile_social profile_left" href="https://www.twitter.com/9lessons" rel="nofollow" target="_blank"></a>
+<a class="profile_tumblr profile_social profile_left" href="https://www.srinivastamada.com/" rel="nofollow" target="_blank"></a>
+<a class="profile_rss profile_social profile_left" href="https://feeds2.feedburner.com/9lesson" rel="nofollow" target="_blank"></a>
+<a class="profile_vimeo profile_social profile_left" href="https://www.vimeo.com/srinivas" rel="nofollow" target="_blank"></a>
+<a class="profile_youtube profile_social" href="https://www.youtube.com/c/SrinivasTamada" rel="nofollow" target="_blank"></a>
+</div>
+<div class="m5">
+<a href="https://www.facebook.com/srinivas.tamada" onclick="ga('send', 'event', 'Sidebar', 'click','take a look');" target="_blank"><img alt="Srinivas Tamada Facebook Profile" class="borderzero" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/TakeMyLook.png"></a>
+</div>
+<div>
+<span></span>
+</div>
+<div>
+<iframe id="twitter-widget-0" scrolling="no" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" style="position: static; visibility: visible; width: 214px; height: 20px;" title="Twitter Follow Button" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/follow_button.htm" data-screen-name="9lessons" frameborder="0"></iframe>
+</div>
+<div class="clear-both"></div>
+</div>
+<div class="section-links">
+<div class="mb6">
+Subscribe my updates via <b>Email </b>
+</div><div><form action="https://feedburner.google.com/fb/a/mailverify" method="post"><input class="feedinput" id="femail" name="email" type="text"><input name="uri" type="hidden" value="9lesson"><input name="loc" type="hidden" value="en_US"><input class="wallButton" name="sign up" type="submit" value="Sign Up"></form></div>
+<div class="marginfive">
+<div>
+<a href="https://feeds2.feedburner.com/9lesson" title="9lessons feed"><img alt="feed" id="fcount" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/9lesson.gif" width="88" height="26"></a>
+</div>
+</div>
+<div class="clearboth"></div>
+
+</div>
+<div class="section-links p5">
+<div class="section" id="mailBlockSide"><div class="widget HTML" data-version="1" id="HTML4">
+<div class="widget-content">
+<div class="buy" id="buysell_div">
+<div class="bsap bsap_1245205" id="bsap_1245205" data-serve="CEADV2V">
+
+<style type="text/css">
+div.bsap_1245205{width:100%;display:block;}div.bsap_1245205 a{width:125px;}div.bsap_1245205 a img{padding:0;}div.bsap_1245205 a em{font-style:normal;}div.bsap_1245205 a{display:block;font-size:11px;color:#333;font-family:verdana,sans-serif;margin-left:4px;text-align:center;text-decoration:none;overflow:hidden;float:left;margin-bottom:4px;}
+div.bsap_1245205 img{border:0;clear:right;}
+div.bsap_1245205 a.adhere{color:#333;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#fff;text-align:center;margin-left:4px;margin-bottom:4px;}
+div.bsap_1245205 a.adhere:hover{border:1px solid #333;background:#ffffff;color:#000;}div.bsap_1245205 a{line-height:100%;}div.bsap_1245205 a.adhere{width:125px;height:125px;line-height:1000%;}html>body div.bsap_1245205 a.adhere{width:123px;height:123px;}div.bsap_1245205 img.s{height:0;width:0;}
+</style>
+<!-- no ad --><!-- no ad --><!-- no ad --><!-- no ad --><a href="https://srv.buysellads.com/ads/click/x/GTND42QUCVBDCKJICTYLYKQMCA7DVKJLCYYIVZ3JCWSI6K7NCABIL53KC6BI5KJWCKSDEK3EHJNCLSIZ" class="ad4 odd " title="The Ultimate WordPress Theme" id="bsa_6139196" target="_blank" rel="nofollow noopener">
+<img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/289250-1442087157.png" alt="" width="125" height="125"></a><!-- no ad -->
+
+<a href="http://www.buysellads.com/buy/detail/21014/zone/1245205?utm_source=site_21014&amp;utm_medium=website&amp;utm_campaign=imagetext&amp;utm_content=zone_1245205" class="adhere">Advertise Here</a>
+
+
+<script type="text/javascript" id="auto_1" class="ignoreme"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+
+<script type="text/javascript">
+(function(){
+  var bsa = document.createElement('script');
+     bsa.type = 'text/javascript';
+     bsa.async = true;
+     bsa.src = '//s3.buysellads.com/ac/bsa.js';
+  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+})();
+</script>
+
+
+
+<div style="
+  width: 256px;clear:both;line-height:1.4;margin:auto;
+  font-size: 16px;font-weight: bold; background-color: #ffe07a; color:#333333; font-family:Arial, Helvetica, sans-serif
+">
+<div style="padding:19px  15px ">
+Get the best web hosting discounts with the complete <strong><a href="https://www.wp-tweaks.com/hostgator-coupon-code-list/" style="color:#006699" rel="sponsored">Hostgator
+coupon 2019</a></strong>
+list at WP-Tweaks!
+</div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=992226187759619576&amp;widgetType=HTML&amp;widgetId=HTML4&amp;action=editWidget&amp;sectionId=mailBlockSide" onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML4"));' rel="nofollow" target="configHTML4" title="Edit">
+<img alt="" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+</div>
+<div>
+<div class="section" id="bigbanneraddCode"><div class="widget HTML" data-version="1" id="HTML9">
+<div class="widget-content">
+<div style="text-align:left">
+
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-6904774409601870" data-ad-slot="9830233637" data-adsbygoogle-status="done"><ins id="aswift_4_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_4_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;border:0px;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=992226187759619576&amp;widgetType=HTML&amp;widgetId=HTML9&amp;action=editWidget&amp;sectionId=bigbanneraddCode" onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML9"));' rel="nofollow" target="configHTML9" title="Edit">
+<img alt="" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+<div class="side_box vcard">
+<div class="section-links p5">
+<div class="clear-both tc">
+<div class="section" id="newadsblock"><div class="widget HTML" data-version="1" id="HTML3">
+<div class="widget-content">
+
+
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=992226187759619576&amp;widgetType=HTML&amp;widgetId=HTML3&amp;action=editWidget&amp;sectionId=newadsblock" onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML3"));' rel="nofollow" target="configHTML3" title="Edit">
+<img alt="" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+
+</div>
+<div class="section-links"><h3>Most Popular Posts</h3><div class="section" id="addsections7"><div class="widget PopularPosts" data-version="1" id="PopularPosts1">
+<div class="widget-content popular-posts">
+<ul>
+<li>
+<a href="https://www.9lessons.info/2008/09/jsp-login-page-to-connect-mysql-atabase.html">Connecting JSP To Mysql Database Lesson</a>
+</li>
+<li>
+<a href="https://www.9lessons.info/2019/08/ionic-5-angular-8-welcome-page.html">Ionic 5 and Angular 8: Create a Welcome Page with Tabs Home Pages.</a>
+</li>
+<li>
+<a href="https://www.9lessons.info/2019/09/ionic-5-and-angular-8-restful-api-user.html">Ionic 5 and Angular 8: Restful API User Authentication Login and Signup using Guard and Resolver</a>
+</li>
+<li>
+<a href="https://www.9lessons.info/2017/06/ionic-angular-php-login-restful-api.html">Ionic 3 and Angular 4: PHP Restful API User Authentication for Login and Signup.</a>
+</li>
+<li>
+<a href="https://www.9lessons.info/2017/10/reactjs-php-restful-api-token.html">React JS and PHP Restful API User Authentication for Login and Signup.</a>
+</li>
+<li>
+<a href="https://www.9lessons.info/2019/06/angular-8-lazy-load-routing.html">Angular 8 Lazy Load Routing. </a>
+</li>
+<li>
+<a href="https://www.9lessons.info/2013/05/message-conversation-database-design.html">Facebook Style Messaging System Database Design. </a>
+</li>
+<li>
+<a href="https://www.9lessons.info/2012/05/create-restful-services-api-in-php.html">Create a RESTful Services API in PHP.</a>
+</li>
+<li>
+<a href="https://www.9lessons.info/2018/07/social-login-using-angular-and-restful.html">Social Login using Angular and RESTful APIs</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=992226187759619576&amp;widgetType=PopularPosts&amp;widgetId=PopularPosts1&amp;action=editWidget&amp;sectionId=addsections7" onclick='return _WidgetManager._PopupConfig(document.getElementById("PopularPosts1"));' rel="nofollow" target="configPopularPosts1" title="Edit">
+<img alt="" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div></div>
+</div>
+
+<div class="shade">
+<div class="section" id="addsections38"><div class="widget HTML" data-version="1" id="HTML8">
+<div class="widget-content">
+<div class="cen">
+<a href="https://www.mailxengine.com/" target="_blank"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/mailGif.gif"></a>
+<a href="https://www.youtube.com/c/SrinivasTamada" target="_blank"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/youtube.jpeg" style="    width: 250px;border: solid 2px #333333;"></a>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=992226187759619576&amp;widgetType=HTML&amp;widgetId=HTML8&amp;action=editWidget&amp;sectionId=addsections38" onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML8"));' rel="nofollow" target="configHTML8" title="Edit">
+<img alt="" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+<div class="side_box">
+<div class="section-links" id="cat"><h3>Categories</h3>
+<div class="spacer"></div><div class="site-reviews f45"><ul><li><a href="https://www.9lessons.info/search/label/angular">Angular</a></li><li><a href="https://www.9lessons.info/search/label/reactjs">React JS</a></li><li><a href="https://www.9lessons.info/search/label/jQuery">jQuery</a></li><li><a href="https://www.9lessons.info/search/label/javascript">JavaScript</a></li><li><a href="https://www.9lessons.info/2008/08/table-of-contents.html">Tutorials</a></li><li><a href="https://www.9lessons.info/search/label/WebDesign">Web Design</a></li></ul></div>
+<div class="site-reviews fr45"><ul><li><a href="https://www.9lessons.info/search/label/J2EE">J2EE</a></li><li><a href="https://www.9lessons.info/search/label/HTML5">HTML5</a></li><li><a href="https://www.9lessons.info/search/label/ionic">Ionic</a></li><li><a href="https://www.9lessons.info/search/label/Mysql">MySQL</a></li><li><a href="https://www.9lessons.info/search/label/Ajax">Ajax</a></li><li><a href="https://www.9lessons.info/search/label/php">PHP</a></li></ul></div><div class="spacer he1"></div></div>
+<div class="section-links">
+<a href="https://www.oauthlogin.com/" onclick="ga('send', 'event', 'Sidebar', 'click', 'OAuth Login');">
+<img alt="Facebook and Google Login" class="borderzero" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/OauthLoginBanner.gif"></a>
+</div>
+<div class="section-links"><h3>Recent Posts</h3><script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/9lesson.js" type="text/javascript"></script><div class="feedburnerFeedBlock" id="9lesson1fmia57ot1vum58ne424lur804"><ul><li><span class="headline"><a href="http://www.9lessons.info/2019/09/ionic-5-and-angular-8-restful-api-user.html">Ionic 5 and Angular 8: Restful API User Authentication Login and Signup using Guard and Resolver</a></span></li><li><span class="headline"><a href="http://www.9lessons.info/2019/08/mock-rest-backend-server-for-angular.html">Mock REST Backend Server for Angular and React Applications.</a></span></li><li><span class="headline"><a href="http://www.9lessons.info/2019/08/ionic-5-angular-8-welcome-page.html">Ionic 5 and Angular 8: Create a Welcome Page with Tabs Home Pages.</a></span></li><li><span class="headline"><a href="http://www.9lessons.info/2019/08/azure-virtual-machines-setup-xampp.html">Microsoft Azure Virtual Machines Setup with Ubuntu and XAMPP PHP Server</a></span></li><li><span class="headline"><a href="http://www.9lessons.info/2019/07/google-cloud-vm-instance-setup-with.html">Google Cloud VM Instance Setup with Ubuntu and XAMPP PHP Server</a></span></li><li><span class="headline"><a href="http://www.9lessons.info/2019/07/angular-multi-tenant-project.html">Angular 8 Multi Tenants Architecture</a></span></li><li><span class="headline"><a href="http://www.9lessons.info/2019/06/30-web-tools-and-services-reviewed-for.html">30+ Web Tools and Services Reviewed For You</a></span></li><li><span class="headline"><a href="http://www.9lessons.info/2019/06/angular-8-lazy-load-routing.html">Angular 8 Lazy Load Routing.</a></span></li><li><span class="headline"><a href="http://www.9lessons.info/2019/06/which-hostgator-plan-is-best-for-indian.html">Which Hostgator Plan is Best for Indian Businesses?</a></span></li></ul> <div id="creditfooter"><a href="https://feedburner.google.com/" target="_blank"><img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/buzzboost-pwrd.gif" alt="Headlines by FeedBurner" style="border:0"></a></div></div></div>
+<div class="section-links">
+<div class="section" id="addsections71"><div class="widget HTML" data-version="1" id="HTML5">
+<div class="widget-content">
+
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=992226187759619576&amp;widgetType=HTML&amp;widgetId=HTML5&amp;action=editWidget&amp;sectionId=addsections71" onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML5"));' rel="nofollow" target="configHTML5" title="Edit">
+<img alt="" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+</div>
+<div class="m5" id="googleplus">
+
+<div style="position: absolute; width: 450px; left: -10000px;" id="___person_0"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" tabindex="0" vspace="0" id="I1_1572439885752" name="I1_1572439885752" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/person.htm" data-gapiattached="true" width="100%" frameborder="0"></iframe></div><div class="g-person" data-href="https://www.9lessons.info/p/about.html" data-rel="author" data-gapiscan="true" data-onload="true" data-gapistub="true"></div>
+</div>
+<div class="margin10">
+<div class="section" id="addsections31"><div class="widget HTML" data-version="1" id="HTML2">
+<div class="widget-content">
+
+<script>
+
+function disableScrolling(){
+    var x=window.scrollX;
+    var y=window.scrollY;
+    window.onscroll=function(){window.scrollTo(x, y);};
+}
+
+function adBlockDownload()
+{
+alert("Please disable your ad blocker for 9lessons.info and download.");
+}
+
+function adBlockFunction()
+{
+setTimeout(function() { 
+// document.getElementById('myModal').style.display = 'block';
+ga('send', 'event', 'Blocker', 'click','Blocker');
+
+},2000);
+
+//disableScrolling();
+
+document.getElementById('ab-message').style.display = 'block';
+
+var b = document.getElementById('downloadScript'); 
+b.setAttribute("href", "#block");
+b.setAttribute("onclick", "adBlockDownload();");
+
+}
+</script>
+<div style="margin-top:20px; text-align:center">
+<iframe src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/videoseries.htm" width="100%" height="200" frameborder="0"></iframe>
+</div>
+<div style="margin-top:20px; text-align:center">
+<iframe src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/videoseries_002.htm" width="100%" height="200" frameborder="0"></iframe>
+</div>
+<div style="margin-top:20px; text-align:center">
+<iframe src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/videoseries_003.htm" width="100%" height="200" frameborder="0"></iframe>
+</div>
+<div style="margin-top:20px; text-align:center">
+<iframe src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/videoseries_004.htm" width="100%" height="200" frameborder="0"></iframe>
+</div>
+<div style="margin:10px 0px 10px 0px;" id="big600">
+
+<script async="" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/adsbygoogle.js" onerror="adBlockFunction();"></script>
+
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-6904774409601870" data-ad-slot="9830233637" data-adsbygoogle-status="done"><ins id="aswift_5_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_5_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;border:0px;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6904774409601870",
+          enable_page_level_ads: true
+     });
+</script>
+</div>
+<div style="margin-top:20px; text-align:center">
+<img src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/makeinindia.htm" alt="Make in India" style="width:100px">
+</div>
+<script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/platform.js" gapi_processed="true"></script>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=992226187759619576&amp;widgetType=HTML&amp;widgetId=HTML2&amp;action=editWidget&amp;sectionId=addsections31" onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML2"));' rel="nofollow" target="configHTML2" title="Edit">
+<img alt="" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+
+</div></div>
+
+<div>
+<div class="no-items section" id="addsectionsFooterTop"></div>
+</div>
+
+</div><iframe style="display: none; height: 0px; width: 0px;" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/bfp_ssn.htm"></iframe><div style="visibility: hidden; position: absolute;" id="userdata_el"></div><iframe name="oauth2relay508010390" id="oauth2relay508010390" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/postmessageRelay.htm" style="width: 1px; height: 1px; position: absolute; top: -100px;" tabindex="-1" aria-hidden="true"></iframe>
+
+<div id="container-footer2">
+<div class="tc" id="container-footer">
+<div class="counterstat"><script type="text/javascript">
+var sc_project=3967696; 
+var sc_invisible=0; 
+var sc_partition=46; 
+var sc_click_stat=1; 
+var sc_security="6979b175"; 
+var sc_text=1; 
+</script>
+<script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/counter.js" type="text/javascript"></script><script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/text.htm"></script>41616949
+<noscript><div class='statcounter'><img alt='free html hit counter' class='statcounter' src='https://c.statcounter.com/3967696/0/6979b175/0/'/></div></noscript></div>
+<div id="footer">
+<table class="widthfull">
+<tbody><tr>
+<td>
+<span class="fl"><a href="https://egglabs.in/" onclick="ga('send', 'event', 'Footer', 'click', 'Egglabs');" title="Egglabs"><img alt="egglabs" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/eggsmall.png" style="border:none"></a></span>
+<span class="cpright">
+© 2009-2019 9lessons.info <b>Made in India</b>. All rights reserved the content is copyrighted to Srinivas Tamada -
+<a href="https://www.9lessons.info/2009/05/advertising-on-9lessons.html" title="9lessons Advertisement">Advertise </a>
+-
+<a href="https://www.9lessons.info/p/about.html" target="_blank"> About Me</a>
+</span>
+</td>
+<td class="tr">
+<span flass="fr">
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="license"><img alt="Creative Commons License" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/80x15.png" style="border-width:0;margin-top:10px"></a>
+</span>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div></div>
+
+<script>
+//<![CDATA[
+  var elems = document.getElementsByClassName('blog-author');
+  for (var i=0;i<elems.length;i+=1){
+    
+    elems[i].parentNode.parentNode.classList.add('authorBlock');
+  }
+
+setTimeout(function(){ 
+  document.getElementById('homeLike').innerHTML="<iframe name='facebook' allowTransparency='true' class='logofacebook' frameborder='0' scrolling='no' src='https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com/9lessons&amp;send=false&amp;layout=button_count&amp;width=85&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21'/>";
+
+document.getElementById('facebook_follow').innerHTML="<iframe name='facebook' allowTransparency='true' class='facebookfollow' frameborder='0' scrolling='no' src='https://www.facebook.com/plugins/subscribe.php?href=https%3A%2F%2Fwww.facebook.com%2Fsrinivas.tamada&amp;layout=button_count&amp;show_faces=true&amp;colorscheme=light&amp;font&amp;width=200&amp;appId=223109594375281'/>";
+
+}, 8000);
+
+
+
+//]]>
+  
+
+
+/*		
+if (top.location!= self.location) {
+			top.location = self.location
+		}
+*/
+
+
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-10999810-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>
+  (function() {
+    var cx = '009836389770947284437:brwicvydcgs';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/widgets.js" type="text/javascript"></script>
+<script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/in.js" type="text/javascript"></script>
+<script src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/buttons.js"></script>
+<div class="modal" id="myModal">
+
+<div class="modal-content">
+<b class="modal-title">Thanks for visiting 9lessons</b>
+<p class="modal-p">We notice you have an ad blocker on.</p>
+<p class="modal-p">Advertisements help us provide quality content.</p>
+<p class="modal-x">Please turn ad blocker off for 9lessons.info</p>
+</div>
+</div>
+
+<script defer="defer" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/cookienotice.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function(event) {
+      window.cookieChoices && cookieChoices.showCookieConsentBar && cookieChoices.showCookieConsentBar(
+          (window.cookieOptions && cookieOptions.msg) || 'This site uses cookies from Google to deliver its services and to analyse traffic. Your IP address and user agent are shared with Google, together with performance and security metrics, to ensure quality of service, generate usage statistics and to detect and address abuse.',
+          (window.cookieOptions && cookieOptions.close) || 'Ok',
+          (window.cookieOptions && cookieOptions.learn) || 'Learn more',
+          (window.cookieOptions && cookieOptions.link) || 'https://www.blogger.com/go/blogspot-cookies');
+    });
+  </script>
+<script type="text/javascript" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/1068551213-widgets.js"></script><div style="display: block; visibility: hidden; position: absolute; width: 106px; left: -1000px; top: -1000px;"><table dir="ltr" style="width:106px;" frame="void" rules="none" class=" gc-bubbleDefault pls-container" cellspacing="0" cellpadding="0"><tbody><tr class="gc-reset"><td class="pls-topLeft gc-reset"><img class="gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/border_3.gif"></td><td class="pls-topTail gc-reset"><img class="pls-tailbottom gc-reset" style="width:15px !important; height:9px !important; max-width: 15px !important; max-height: 9px !important;" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/spacer.gif"><img class="pls-spacerbottom gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/spacer.gif"></td><td class="pls-topRight gc-reset"><img class="gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/border_3.gif"></td></tr><tr class="gc-reset"><td class="pls-vertShimLeft gc-reset"><img class="gc-reset" style="width:1px !important; height:4px !important; max-width: 1px !important; max-height: 4px !important;" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/spacer.gif"></td><td class="pls-vertShim gc-reset"><img class="gc-reset" style="width:1px !important; height:4px !important; max-width: 1px !important; max-height: 4px !important;" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/spacer.gif"></td><td class="pls-vertShimRight gc-reset"><img class="pls-dropTR gc-reset" style="width:5px !important; height:4px !important; max-width: 5px !important; max-height: 4px !important;" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/spacer.gif"></td></tr><tr class="gc-reset"><td class="pls-contentLeft gc-reset"><img class="pls-tailright gc-reset" style="width:9px !important; height:15px !important; max-width: 9px !important; max-height: 15px !important;" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/spacer.gif"><img class="pls-spacerright gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/spacer.gif"></td><td class="pls-contentWrap gc-reset"><div class="goog-bubble-content gc-reset"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="margin:0px;position:absolute;z-index:1;border-style:none;outline:none;width:100px;" tabindex="0" vspace="0" id="I0_1572439888802" name="I0_1572439888802" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/subscribe_embed_002.htm" width="100%" frameborder="0"></iframe></div></td><td class="pls-dropRight gc-reset"><img class="pls-tailleft gc-reset" style="width:12px !important; height:19px !important; max-width: 12px !important; max-height: 19px !important;" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/spacer.gif"><img class="pls-spacerleft gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/spacer.gif"></td></tr><tr class="gc-reset"><td class="pls-bottomLeft gc-reset"><img class="gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/border_3.gif"></td><td class="gc-reset"><table style="width:100%" class="gc-reset" cellspacing="0" cellpadding="0"><tbody><tr class="gc-reset"><td class="pls-vert gc-reset"><img class="pls-dropBL gc-reset" style="width:4px !important; height:5px !important; max-width: 4px !important; max-height: 5px !important;" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/spacer.gif"></td><td class="pls-dropBottom gc-reset"><img class="pls-tailtop gc-reset" style="width:19px !important; height:13px !important; max-width: 19px !important; max-height: 13px !important;" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/spacer.gif"><img class="pls-spacertop gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/spacer.gif"></td></tr></tbody></table></td><td class="pls-vert gc-reset"><img class="pls-dropBR gc-reset" style="width:5px !important; height:5px !important; max-width: 5px !important; max-height: 5px !important;" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/spacer.gif"></td></tr></tbody></table></div>
+<script type="text/javascript">
+window['__wavt'] = 'AOuZoY7V1J81yffA3-Eqm6qHjKFQL0z1wg:1572425535144';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d992226187759619576','//www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html','992226187759619576');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '992226187759619576', 'title': '9lessons Programming Blog', 'url': 'http://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html', 'canonicalUrl': 'http://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html', 'homepageUrl': 'http://www.9lessons.info/', 'searchUrl': 'http://www.9lessons.info/search', 'canonicalHomepageUrl': 'http://www.9lessons.info/', 'blogspotFaviconUrl': 'http://www.9lessons.info/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': true, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': 'UA-10999810-1', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x229lessons Programming Blog - Atom\x22 href\x3d\x22http://www.9lessons.info/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x229lessons Programming Blog - RSS\x22 href\x3d\x22http://www.9lessons.info/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x229lessons Programming Blog - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/992226187759619576/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x229lessons Programming Blog - Atom\x22 href\x3d\x22http://www.9lessons.info/feeds/2058240458962611363/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseClientId': 'ca-pub-6904774409601870', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': true, 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/96c64ed9a3427d9f', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'disableGComments': true, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Share to Twitter', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '2058240458962611363', 'postImageUrl': 'https://s3.amazonaws.com/9lessonspics/nodeapi/nodebanner.png', 'pageName': 'Create a RESTful API using NodeJS and  MySQL Database', 'pageTitle': '9lessons Programming Blog: Create a RESTful API using NodeJS and  MySQL Database', 'metaDescription': 'REST consists set of guidelines to build a web service, which can be used to modify or view specific information on the web without performing any server side'}}, {'name': 'features', 'data': {'sharing_get_link_dialog': 'true', 'sharing_native': 'false'}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'Create a RESTful API using NodeJS and  MySQL Database', 'description': 'REST consists set of guidelines to build a web service, which can be used to modify or view specific information on the web without performing any server side', 'featuredImage': 'https://lh3.googleusercontent.com/proxy/yJZcqfnuXkqIA_gyxrgGMrXXkQOAZb05a54fJZ-_1kCfBtteQvSss1ZLrdU9fkm3Hs3W0LMcKCbZjWaP0DIynbbsqSUnQuRTACyfURBM80o', 'url': 'http://www.9lessons.info/2017/02/create-restful-api-nodejs-mysql.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 2058240458962611363}}]);
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'addsections3', document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML6', 'addsectionsTopperHead', document.getElementById('HTML6'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main_s', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/3421882774-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML4', 'mailBlockSide', document.getElementById('HTML4'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML9', 'bigbanneraddCode', document.getElementById('HTML9'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML3', 'newadsblock', document.getElementById('HTML3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML7', 'mediaPartner', document.getElementById('HTML7'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PopularPostsView', new _WidgetInfo('PopularPosts1', 'addsections7', document.getElementById('PopularPosts1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML8', 'addsections38', document.getElementById('HTML8'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML5', 'addsections71', document.getElementById('HTML5'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'addsections31', document.getElementById('HTML2'), {}, 'displayModeFull'));
+</script>
+
+<iframe name="GoogleSetNPA" id="GoogleSetNPA" style="display:none;position:fixed;left:-999px;top:-999px;width:0px;height:0px;"></iframe><ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"><ins id="aswift_6_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_6_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_6" name="aswift_6" style="left:0;position:absolute;top:0;border:0px;width:0px;height:0px;" frameborder="0"></iframe></ins></ins></ins><iframe scrolling="no" allowtransparency="true" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/widget_iframe.htm" title="Twitter settings iframe" style="display: none;" frameborder="0"></iframe><table style="width: 188px; display: none; top: 56px; left: 832px; position: absolute;" class="gstl_50 gssb_c" cellspacing="0" cellpadding="0"><tbody><tr><td class="gssb_f"></td><td class="gssb_e" style="width: 100%;"></td></tr></tbody></table><iframe id="google_osd_static_frame_1849427122360" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe><iframe id="rufous-sandbox" scrolling="no" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: medium none;" title="Twitter analytics iframe" frameborder="0"></iframe><ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"></ins></body><iframe id="google_esf" name="google_esf" src="Create%20a%20RESTful%20API%20using%20NodeJS%20and%20MySQL%20Database_files/zrt_lookup.htm" style="display: none;" data-ad-client="ca-pub-6904774409601870"></iframe></html>

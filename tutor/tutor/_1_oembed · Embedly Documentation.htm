@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product" ng-app="hub" class="ng-scope" lang="en"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="readme-deploy" content="c49ecc2c79841dedd740204b74a339d69a350218"><meta name="readme-subdomain" content="embedly"><meta name="readme-version" content="1.0"><title>/1/oembed · Embedly Documentation</title><meta http-equiv="Content-type" content="text/html; charset=UTF-8"><meta name="description" content="oEmbed is Embedly’s basic offering, providing a simple API for embedding content from any URL. This method follows the oEmbed standard."><link href="https://files.readme.io/IExwmdEJTyW4tfm4VfQD_favicon.png" rel="shortcut icon" type="image/x-icon"><meta property="og:title" content="/1/oembed · Embedly Documentation"><meta property="og:description" content="oEmbed is Embedly’s basic offering, providing a simple API for embedding content from any URL. This method follows the oEmbed standard."><!-- Removed due to XSS--><!--meta(property="og:url", content=og('url'))--><meta property="og:image" content="https://files.readme.io/1Nt3OwU8TDqjTDq6eu95_logo_200_64.png"><meta property="og:site_name" content="Embedly Documentation"><meta id="config-proxy-url" content="https://proxy.readme.io/proxy"><link rel="canonical" href="http://docs.embed.ly/docs/oembed"><link rel="alternate" type="application/rss+xml" title="RSS Feed for Embedly Documentation" href="https://docs.embed.ly/blog.rss"><!-- Application styles--><link rel="stylesheet" href="_1_oembed%20%C2%B7%20Embedly%20Documentation_files/bundle-hub.css"><!--if lt IE 9script(src="http://html5shim.googlecode.com/svn/trunk/html5.js")
+--><script src="_1_oembed%20%C2%B7%20Embedly%20Documentation_files/python.js"></script><script src="_1_oembed%20%C2%B7%20Embedly%20Documentation_files/shell.js"></script><script src="_1_oembed%20%C2%B7%20Embedly%20Documentation_files/javascript.js"></script><script async="" src="_1_oembed%20%C2%B7%20Embedly%20Documentation_files/analytics.js"></script><script>var is_hub = true;
+var is_hub_edit = false;
+var is_hub2 = false;
+
+</script><script src="_1_oembed%20%C2%B7%20Embedly%20Documentation_files/bundle-hub1.js"></script><style type="text/css">/* Magnific Popup CSS */
+.mfp-bg {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1042;
+  overflow: hidden;
+  position: fixed;
+  background: #0b0b0b;
+  opacity: 0.8;
+  filter: alpha(opacity=80); }
+
+.mfp-wrap {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1043;
+  position: fixed;
+  outline: none !important;
+  -webkit-backface-visibility: hidden; }
+
+.mfp-container {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 0 8px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.mfp-container:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle; }
+
+.mfp-align-top .mfp-container:before {
+  display: none; }
+
+.mfp-content {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  text-align: left;
+  z-index: 1045; }
+
+.mfp-inline-holder .mfp-content,
+.mfp-ajax-holder .mfp-content {
+  width: 100%;
+  cursor: auto; }
+
+.mfp-ajax-cur {
+  cursor: progress; }
+
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+  cursor: -moz-zoom-out;
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out; }
+
+.mfp-zoom {
+  cursor: pointer;
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: zoom-in; }
+
+.mfp-auto-cursor .mfp-content {
+  cursor: auto; }
+
+.mfp-close,
+.mfp-arrow,
+.mfp-preloader,
+.mfp-counter {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; }
+
+.mfp-loading.mfp-figure {
+  display: none; }
+
+.mfp-hide {
+  display: none !important; }
+
+.mfp-preloader {
+  color: #CCC;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  text-align: center;
+  margin-top: -0.8em;
+  left: 8px;
+  right: 8px;
+  z-index: 1044; }
+  .mfp-preloader a {
+    color: #CCC; }
+    .mfp-preloader a:hover {
+      color: #FFF; }
+
+.mfp-s-ready .mfp-preloader {
+  display: none; }
+
+.mfp-s-error .mfp-content {
+  display: none; }
+
+button.mfp-close,
+button.mfp-arrow {
+  overflow: visible;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  display: block;
+  outline: none;
+  padding: 0;
+  z-index: 1046;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+.mfp-close {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-decoration: none;
+  text-align: center;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  padding: 0 0 18px 10px;
+  color: #FFF;
+  font-style: normal;
+  font-size: 28px;
+  font-family: Arial, Baskerville, monospace; }
+  .mfp-close:hover,
+  .mfp-close:focus {
+    opacity: 1;
+    filter: alpha(opacity=100); }
+  .mfp-close:active {
+    top: 1px; }
+
+.mfp-close-btn-in .mfp-close {
+  color: #333; }
+
+.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
+  color: #FFF;
+  right: -6px;
+  text-align: right;
+  padding-right: 6px;
+  width: 100%; }
+
+.mfp-counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #CCC;
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap; }
+
+.mfp-arrow {
+  position: absolute;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  margin: 0;
+  top: 50%;
+  margin-top: -55px;
+  padding: 0;
+  width: 90px;
+  height: 110px;
+  -webkit-tap-highlight-color: transparent; }
+  .mfp-arrow:active {
+    margin-top: -54px; }
+  .mfp-arrow:hover,
+  .mfp-arrow:focus {
+    opacity: 1;
+    filter: alpha(opacity=100); }
+  .mfp-arrow:before,
+  .mfp-arrow:after,
+  .mfp-arrow .mfp-b,
+  .mfp-arrow .mfp-a {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 35px;
+    margin-left: 35px;
+    border: medium inset transparent; }
+  .mfp-arrow:after,
+  .mfp-arrow .mfp-a {
+    border-top-width: 13px;
+    border-bottom-width: 13px;
+    top: 8px; }
+  .mfp-arrow:before,
+  .mfp-arrow .mfp-b {
+    border-top-width: 21px;
+    border-bottom-width: 21px;
+    opacity: 0.7; }
+
+.mfp-arrow-left {
+  left: 0; }
+  .mfp-arrow-left:after,
+  .mfp-arrow-left .mfp-a {
+    border-right: 17px solid #FFF;
+    margin-left: 31px; }
+  .mfp-arrow-left:before,
+  .mfp-arrow-left .mfp-b {
+    margin-left: 25px;
+    border-right: 27px solid #3F3F3F; }
+
+.mfp-arrow-right {
+  right: 0; }
+  .mfp-arrow-right:after,
+  .mfp-arrow-right .mfp-a {
+    border-left: 17px solid #FFF;
+    margin-left: 39px; }
+  .mfp-arrow-right:before,
+  .mfp-arrow-right .mfp-b {
+    border-left: 27px solid #3F3F3F; }
+
+.mfp-iframe-holder {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  .mfp-iframe-holder .mfp-content {
+    line-height: 0;
+    width: 100%;
+    max-width: 900px; }
+  .mfp-iframe-holder .mfp-close {
+    top: -40px; }
+
+.mfp-iframe-scaler {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-top: 56.25%; }
+  .mfp-iframe-scaler iframe {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    background: #000; }
+
+/* Main image in popup */
+img.mfp-img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  line-height: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 40px 0 40px;
+  margin: 0 auto; }
+
+/* The shadow behind the image */
+.mfp-figure {
+  line-height: 0; }
+  .mfp-figure:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 40px;
+    bottom: 40px;
+    display: block;
+    right: 0;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    background: #444; }
+  .mfp-figure small {
+    color: #BDBDBD;
+    display: block;
+    font-size: 12px;
+    line-height: 14px; }
+  .mfp-figure figure {
+    margin: 0; }
+
+.mfp-bottom-bar {
+  margin-top: -36px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  cursor: auto; }
+
+.mfp-title {
+  text-align: left;
+  line-height: 18px;
+  color: #F3F3F3;
+  word-wrap: break-word;
+  padding-right: 36px; }
+
+.mfp-image-holder .mfp-content {
+  max-width: 100%; }
+
+.mfp-gallery .mfp-image-holder .mfp-figure {
+  cursor: pointer; }
+
+@media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) {
+  /**
+       * Remove all paddings around the image on small screen
+       */
+  .mfp-img-mobile .mfp-image-holder {
+    padding-left: 0;
+    padding-right: 0; }
+  .mfp-img-mobile img.mfp-img {
+    padding: 0; }
+  .mfp-img-mobile .mfp-figure:after {
+    top: 0;
+    bottom: 0; }
+  .mfp-img-mobile .mfp-figure small {
+    display: inline;
+    margin-left: 5px; }
+  .mfp-img-mobile .mfp-bottom-bar {
+    background: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    margin: 0;
+    top: auto;
+    padding: 3px 5px;
+    position: fixed;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .mfp-img-mobile .mfp-bottom-bar:empty {
+      padding: 0; }
+  .mfp-img-mobile .mfp-counter {
+    right: 5px;
+    top: 3px; }
+  .mfp-img-mobile .mfp-close {
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    text-align: center;
+    padding: 0; } }
+
+@media all and (max-width: 900px) {
+  .mfp-arrow {
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75); }
+  .mfp-arrow-left {
+    -webkit-transform-origin: 0;
+    transform-origin: 0; }
+  .mfp-arrow-right {
+    -webkit-transform-origin: 100%;
+    transform-origin: 100%; }
+  .mfp-container {
+    padding-left: 6px;
+    padding-right: 6px; } }
+
+.mfp-ie7 .mfp-img {
+  padding: 0; }
+
+.mfp-ie7 .mfp-bottom-bar {
+  width: 600px;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: 5px;
+  padding-bottom: 5px; }
+
+.mfp-ie7 .mfp-container {
+  padding: 0; }
+
+.mfp-ie7 .mfp-content {
+  padding-top: 44px; }
+
+.mfp-ie7 .mfp-close {
+  top: 0;
+  right: 0;
+  padding-top: 0; }
+</style><style type="text/css">.atwho-view {
+    position:absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    margin-top: 18px;
+    background: white;
+    color: black;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    min-width: 120px;
+    max-height: 200px;
+    overflow: auto;
+    z-index: 11110 !important;
+}
+
+.atwho-view .cur {
+    background: #3366FF;
+    color: white;
+}
+.atwho-view .cur small {
+    color: white;
+}
+.atwho-view strong {
+    color: #3366FF;
+}
+.atwho-view .cur strong {
+    color: white;
+    font:bold;
+}
+.atwho-view ul {
+    /* width: 100px; */
+    list-style:none;
+    padding:0;
+    margin:auto;
+}
+.atwho-view ul li {
+    display: block;
+    padding: 5px 10px;
+    border-bottom: 1px solid #DDD;
+    cursor: pointer;
+    /* border-top: 1px solid #C8C8C8; */
+}
+.atwho-view small {
+    font-size: smaller;
+    color: #777;
+    font-weight: normal;
+}
+</style><style type="text/css">/*
+ * Toastr
+ * Version 2.0.2
+ * Copyright 2012-2014 John Papa and Hans Fjällemark.
+ * All Rights Reserved.
+ * Use, reproduction, distribution, and modification of this code is subject to the terms and
+ * conditions of the MIT license, available at http://www.opensource.org/licenses/mit-license.php
+ *
+ * Author: John Papa and Hans Fjällemark
+ * Project: https://github.com/CodeSeven/toastr
+ */
+.toast-title {
+  font-weight: bold;
+}
+.toast-message {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+.toast-message a,
+.toast-message label {
+  color: #ffffff;
+}
+.toast-message a:hover {
+  color: #cccccc;
+  text-decoration: none;
+}
+.toast-close-button {
+  position: relative;
+  right: -0.3em;
+  top: -0.3em;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  -webkit-text-shadow: 0 1px 0 #ffffff;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.8;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  filter: alpha(opacity=80);
+}
+.toast-close-button:hover,
+.toast-close-button:focus {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.4;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  filter: alpha(opacity=40);
+}
+/*Additional properties for button version
+ iOS requires the button element instead of an anchor tag.
+ If you want the anchor version, it requires `href="#"`.*/
+button.toast-close-button {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+.toast-top-full-width {
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+.toast-bottom-full-width {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+.toast-top-left {
+  top: 12px;
+  left: 12px;
+}
+.toast-top-right {
+  top: 12px;
+  right: 12px;
+}
+.toast-bottom-right {
+  right: 12px;
+  bottom: 12px;
+}
+.toast-bottom-left {
+  bottom: 12px;
+  left: 12px;
+}
+#toast-container {
+  position: fixed;
+  z-index: 999999;
+  /*overrides*/
+
+}
+#toast-container * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#toast-container > div {
+  margin: 0 0 6px;
+  padding: 15px 15px 15px 50px;
+  width: 300px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  -moz-box-shadow: 0 0 12px #999999;
+  -webkit-box-shadow: 0 0 12px #999999;
+  box-shadow: 0 0 12px #999999;
+  color: #ffffff;
+  opacity: 0.8;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  filter: alpha(opacity=80);
+}
+#toast-container > :hover {
+  -moz-box-shadow: 0 0 12px #000000;
+  -webkit-box-shadow: 0 0 12px #000000;
+  box-shadow: 0 0 12px #000000;
+  opacity: 1;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: alpha(opacity=100);
+  cursor: pointer;
+}
+#toast-container > .toast-info {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVEhLtZa9SgNBEMc9sUxxRcoUKSzSWIhXpFMhhYWFhaBg4yPYiWCXZxBLERsLRS3EQkEfwCKdjWJAwSKCgoKCcudv4O5YLrt7EzgXhiU3/4+b2ckmwVjJSpKkQ6wAi4gwhT+z3wRBcEz0yjSseUTrcRyfsHsXmD0AmbHOC9Ii8VImnuXBPglHpQ5wwSVM7sNnTG7Za4JwDdCjxyAiH3nyA2mtaTJufiDZ5dCaqlItILh1NHatfN5skvjx9Z38m69CgzuXmZgVrPIGE763Jx9qKsRozWYw6xOHdER+nn2KkO+Bb+UV5CBN6WC6QtBgbRVozrahAbmm6HtUsgtPC19tFdxXZYBOfkbmFJ1VaHA1VAHjd0pp70oTZzvR+EVrx2Ygfdsq6eu55BHYR8hlcki+n+kERUFG8BrA0BwjeAv2M8WLQBtcy+SD6fNsmnB3AlBLrgTtVW1c2QN4bVWLATaIS60J2Du5y1TiJgjSBvFVZgTmwCU+dAZFoPxGEEs8nyHC9Bwe2GvEJv2WXZb0vjdyFT4Cxk3e/kIqlOGoVLwwPevpYHT+00T+hWwXDf4AJAOUqWcDhbwAAAAASUVORK5CYII=") !important;
+}
+#toast-container > .toast-error {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHOSURBVEhLrZa/SgNBEMZzh0WKCClSCKaIYOED+AAKeQQLG8HWztLCImBrYadgIdY+gIKNYkBFSwu7CAoqCgkkoGBI/E28PdbLZmeDLgzZzcx83/zZ2SSXC1j9fr+I1Hq93g2yxH4iwM1vkoBWAdxCmpzTxfkN2RcyZNaHFIkSo10+8kgxkXIURV5HGxTmFuc75B2RfQkpxHG8aAgaAFa0tAHqYFfQ7Iwe2yhODk8+J4C7yAoRTWI3w/4klGRgR4lO7Rpn9+gvMyWp+uxFh8+H+ARlgN1nJuJuQAYvNkEnwGFck18Er4q3egEc/oO+mhLdKgRyhdNFiacC0rlOCbhNVz4H9FnAYgDBvU3QIioZlJFLJtsoHYRDfiZoUyIxqCtRpVlANq0EU4dApjrtgezPFad5S19Wgjkc0hNVnuF4HjVA6C7QrSIbylB+oZe3aHgBsqlNqKYH48jXyJKMuAbiyVJ8KzaB3eRc0pg9VwQ4niFryI68qiOi3AbjwdsfnAtk0bCjTLJKr6mrD9g8iq/S/B81hguOMlQTnVyG40wAcjnmgsCNESDrjme7wfftP4P7SP4N3CJZdvzoNyGq2c/HWOXJGsvVg+RA/k2MC/wN6I2YA2Pt8GkAAAAASUVORK5CYII=") !important;
+}
+#toast-container > .toast-success {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVEhLY2AYBfQMgf///3P8+/evAIgvA/FsIF+BavYDDWMBGroaSMMBiE8VC7AZDrIFaMFnii3AZTjUgsUUWUDA8OdAH6iQbQEhw4HyGsPEcKBXBIC4ARhex4G4BsjmweU1soIFaGg/WtoFZRIZdEvIMhxkCCjXIVsATV6gFGACs4Rsw0EGgIIH3QJYJgHSARQZDrWAB+jawzgs+Q2UO49D7jnRSRGoEFRILcdmEMWGI0cm0JJ2QpYA1RDvcmzJEWhABhD/pqrL0S0CWuABKgnRki9lLseS7g2AlqwHWQSKH4oKLrILpRGhEQCw2LiRUIa4lwAAAABJRU5ErkJggg==") !important;
+}
+#toast-container > .toast-warning {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGYSURBVEhL5ZSvTsNQFMbXZGICMYGYmJhAQIJAICYQPAACiSDB8AiICQQJT4CqQEwgJvYASAQCiZiYmJhAIBATCARJy+9rTsldd8sKu1M0+dLb057v6/lbq/2rK0mS/TRNj9cWNAKPYIJII7gIxCcQ51cvqID+GIEX8ASG4B1bK5gIZFeQfoJdEXOfgX4QAQg7kH2A65yQ87lyxb27sggkAzAuFhbbg1K2kgCkB1bVwyIR9m2L7PRPIhDUIXgGtyKw575yz3lTNs6X4JXnjV+LKM/m3MydnTbtOKIjtz6VhCBq4vSm3ncdrD2lk0VgUXSVKjVDJXJzijW1RQdsU7F77He8u68koNZTz8Oz5yGa6J3H3lZ0xYgXBK2QymlWWA+RWnYhskLBv2vmE+hBMCtbA7KX5drWyRT/2JsqZ2IvfB9Y4bWDNMFbJRFmC9E74SoS0CqulwjkC0+5bpcV1CZ8NMej4pjy0U+doDQsGyo1hzVJttIjhQ7GnBtRFN1UarUlH8F3xict+HY07rEzoUGPlWcjRFRr4/gChZgc3ZL2d8oAAAAASUVORK5CYII=") !important;
+}
+#toast-container.toast-top-full-width > div,
+#toast-container.toast-bottom-full-width > div {
+  width: 96%;
+  margin: auto;
+}
+.toast {
+  background-color: #030303;
+}
+.toast-success {
+  background-color: #51a351;
+}
+.toast-error {
+  background-color: #bd362f;
+}
+.toast-info {
+  background-color: #2f96b4;
+}
+.toast-warning {
+  background-color: #f89406;
+}
+/*Responsive Design*/
+@media all and (max-width: 240px) {
+  #toast-container > div {
+    padding: 8px 8px 8px 50px;
+    width: 11em;
+  }
+  #toast-container .toast-close-button {
+    right: -0.2em;
+    top: -0.2em;
+  }
+}
+@media all and (min-width: 241px) and (max-width: 480px) {
+  #toast-container > div {
+    padding: 8px 8px 8px 50px;
+    width: 18em;
+  }
+  #toast-container .toast-close-button {
+    right: -0.2em;
+    top: -0.2em;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 768px) {
+  #toast-container > div {
+    padding: 15px 15px 15px 50px;
+    width: 25em;
+  }
+}
+</style><style type="text/css">tags-input{display:block}tags-input *,tags-input :after,tags-input :before{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}tags-input .host{position:relative;margin-top:5px;margin-bottom:5px;height:100%}tags-input .host:active{outline:0}tags-input .tags{-moz-appearance:textfield;-webkit-appearance:textfield;padding:1px;overflow:hidden;word-wrap:break-word;cursor:text;background-color:#fff;border:1px solid #a9a9a9;box-shadow:1px 1px 1px 0 #d3d3d3 inset;height:100%}tags-input .tags.focused{outline:0;-webkit-box-shadow:0 0 3px 1px rgba(5,139,242,.6);-moz-box-shadow:0 0 3px 1px rgba(5,139,242,.6);box-shadow:0 0 3px 1px rgba(5,139,242,.6)}tags-input .tags .tag-list{margin:0;padding:0;list-style-type:none}tags-input .tags .tag-item{margin:2px;padding:0 5px;display:inline-block;float:left;font:14px "Helvetica Neue",Helvetica,Arial,sans-serif;height:26px;line-height:25px;border:1px solid #acacac;border-radius:3px;background:-webkit-linear-gradient(top,#f0f9ff 0,#cbebff 47%,#a1dbff 100%);background:linear-gradient(to bottom,#f0f9ff 0,#cbebff 47%,#a1dbff 100%)}tags-input .tags .tag-item.selected{background:-webkit-linear-gradient(top,#febbbb 0,#fe9090 45%,#ff5c5c 100%);background:linear-gradient(to bottom,#febbbb 0,#fe9090 45%,#ff5c5c 100%)}tags-input .tags .tag-item .remove-button{margin:0 0 0 5px;padding:0;border:none;background:0 0;cursor:pointer;vertical-align:middle;font:700 16px Arial,sans-serif;color:#585858}tags-input .tags .tag-item .remove-button:active{color:red}tags-input .tags .input{border:0;outline:0;margin:2px;padding:0;padding-left:5px;float:left;height:26px;font:14px "Helvetica Neue",Helvetica,Arial,sans-serif}tags-input .tags .input.invalid-tag{color:red}tags-input .tags .input::-ms-clear{display:none}tags-input.ng-invalid .tags{-webkit-box-shadow:0 0 3px 1px rgba(255,0,0,.6);-moz-box-shadow:0 0 3px 1px rgba(255,0,0,.6);box-shadow:0 0 3px 1px rgba(255,0,0,.6)}tags-input .autocomplete{margin-top:5px;position:absolute;padding:5px 0;z-index:999;width:100%;background-color:#fff;border:1px solid rgba(0,0,0,.2);-webkit-box-shadow:0 5px 10px rgba(0,0,0,.2);-moz-box-shadow:0 5px 10px rgba(0,0,0,.2);box-shadow:0 5px 10px rgba(0,0,0,.2)}tags-input .autocomplete .suggestion-list{margin:0;padding:0;list-style-type:none}tags-input .autocomplete .suggestion-item{padding:5px 10px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font:16px "Helvetica Neue",Helvetica,Arial,sans-serif;color:#000;background-color:#fff}tags-input .autocomplete .suggestion-item.selected,tags-input .autocomplete .suggestion-item.selected em{color:#fff;background-color:#0097cf}tags-input .autocomplete .suggestion-item em{font:normal bold 16px "Helvetica Neue",Helvetica,Arial,sans-serif;color:#000;background-color:#fff}</style><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-52479696-1', 'auto');
+ga('send', 'pageview');
+</script><script>ga('create', 'UA-15045445-30', 'auto', {'name': 'custom'});
+ga('custom.send', 'pageview');
+</script><link href="_1_oembed%20%C2%B7%20Embedly%20Documentation_files/css.css" rel="stylesheet" type="text/css"><style>.theme-line header {  border-bottom-color: #fff;}.theme-line header a.btn {  background-color: #fff;}.theme-line header a.btn:hover {  background-color: #cccccc;}.theme-line header .navbar-nav a:hover ,.theme-line header .navbar-nav .open > a {  color: #fff;}.theme-line header .navbar-nav .tt-cursor {  background-color: #fff;}.theme-line .navbar-nav .active a {  font-weight: bold;  color: #00c7e4;}.theme-line .navbar-nav .active a:hover {  color: #006e7e;}.theme-line .main-links .links a:hover {  color: #00c7e4;}.theme-line .main-content a {  color: #00c7e4;}.theme-line .main-content a:hover {  color: #006e7e;}.theme-line .sidebar-nav ul li a.active:before {  background-color: #00c7e4;}.theme-line .sidebar-nav ul li a.active {  color: #00c7e4;}.theme-line .sidebar-nav ul li a:hover,.theme-line .sidebar-nav ul li a.active:hover {  color: #006e7e;}.theme-line .btn-primary {  background-color: #00c7e4;}.theme-line .btn-primary:hover {  background-color: #006e7e;}.theme-line .main-content .nav-horizontal a.active {  border-color: #00c7e4;  color: #00c7e4;}.theme-line .main-content .nav-horizontal a:hover {  color: #006e7e;}.theme-line .main-content .nav-horizontal a.active:hover {  border-color: #006e7e;}.theme-line header .navbar-nav a.active ,.theme-line #versions-list li a:hover strong,.theme-line #versions-list li a.active .current,.theme-line #versions-list li a:active .current {  color: #00c7e4;}.theme-line.body-threes .section-right .threes-nav .btn-default:hover,.theme-line.page-docs.body-threes .section-right .threes-nav .pull-right a:hover {  color: #00c7e4;  border-color: #00c7e4;}.theme-solid header {  background-color: #fff;}.theme-solid.header-custom header a.btn {  background-color: #cccccc;}.theme-solid.header-custom header a.btn:hover {  background-color: #999999;}.theme-solid header .navbar-nav .dropdown-menu a:hover {  color: #00c7e4;}.theme-line.lumosity-light header .navbar-nav a:hover,.theme-line.lumosity-light header .navbar-nav .open > a {  color: #00c7e4;}.theme-line.lumosity-light header a.btn {  background-color: #00c7e4;}.theme-line.lumosity-light header a.btn:hover {  background-color: #006e7e;}.theme-solid .main-links .links a:hover {  color: #00c7e4;}.theme-solid .main-content a {  color: #00c7e4;}.theme-solid .main-content a:hover {  color: #006e7e;}.theme-solid .sidebar-nav ul li a.active:before {  background-color: #00c7e4;}.theme-solid .sidebar-nav ul li a.active {  color: #00c7e4;}.theme-solid .sidebar-nav ul li a:hover,.theme-solid .sidebar-nav ul li a.active:hover {  color: #006e7e;}.theme-solid .btn-primary {  background-color: #00c7e4;}.theme-solid .btn-primary:hover {  background-color: #006e7e;}.theme-solid .main-content .nav-horizontal a.active {  border-color: #00c7e4;  color: #00c7e4;}.theme-solid .main-content .nav-horizontal a:hover {  color: #006e7e;}.theme-solid .main-content .nav-horizontal a.active:hover {  border-color: #006e7e;}.theme-solid header .navbar-nav a.active ,.theme-solid #versions-list li a:hover strong,.theme-solid #versions-list li a.active .current,.theme-solid #versions-list li a:active .current {  color: #00c7e4;}.theme-solid.body-threes .section-right .threes-nav .btn-default:hover,.theme-solid.page-docs.body-threes .section-right .threes-nav .pull-right a:hover {  color: #00c7e4;  border-color: #00c7e4;}.theme-solid.header-gradient header {  background: -moz-linear-gradient(top, #fff, #d9d9d9);  background: -webkit-gradient(linear, left top, #fff, #d9d9d9);  background: -webkit-linear-gradient(top, #fff, #d9d9d9);  background: linear-gradient(to bottom, #fff, #d9d9d9);}.theme-solid.header-custom .header {  background-image: url("https://files.readme.io/dvqTRznfTnSaSuEKoVOu_readme-fire-bw.png");  background-position: center center;}body {  font-weight: 400;font-family: Open Sans, sans-serif;;}h1, h2, h3, h4, h5, h6 {  font-weight: 400;font-family: Open Sans, sans-serif;;}.submit-vote.submit-vote-parent.voted a.submit-vote-button,.submit-vote.submit-vote-parent a.submit-vote-button:hover {  background-color: #00c7e4;}div.submit-vote.submit-vote-parent.voted a.submit-vote-button:hover {  background-color: #006e7e;}a,.link .title {  color: #00c7e4;}a:hover,.link:hover .title {  color: #006e7e;}.header h1.navbar-brand a {  background-image: url("https://files.readme.io/1Nt3OwU8TDqjTDq6eu95_logo_200_64.png")}.header h1.navbar-brand {  width: 125px;}
+</style><style>.theme-solid.header-custom header {
+  border-bottom: 5px solid #00c7e4; 
+}
+
+.theme-solid.header-custom header a.btn {
+    background-color: #00c7e4;
+}
+
+.theme-solid .header .searchbox .typeahead::-webkit-input-placeholder {
+  color: #333;
+}
+.theme-solid .header .searchbox .typeahead:-moz-placeholder {
+  color: #333;
+}
+.theme-solid .header .searchbox .typeahead::-moz-placeholder {
+  color: #333;
+}
+.theme-solid .header .searchbox .typeahead:-ms-input-placeholder {
+  color: #333;
+}
+.theme-solid .header .searchbox .typeahead:placeholder {
+  color: #333;
+}</style></head><body ng-controller="Root" class="layout page-docs body-none theme-solid header-custom header-bg-size-cover header-bg-pos-tc header-overlay-triangles lumosity-light undefined theme-threes ng-scope os-windows"><div class="wrapper"><header id="header" class="header"><div class="container"><h1 class="navbar-brand"><a href="http://embed.ly/">Embedly Documentation</a></h1><div class="navbar-collapse collapse"><div id="project-info">{"id":"564de2dbfe07a81700b5c3a5","name":"Embedly
+ 
+Documentation","subdomain":"embedly","versions":[{"_id":"564de2dbfe07a81700b5c3a8","releaseDate":"2015-11-19T14:55:23.837Z","is_deprecated":false,"is_hidden":false,"is_beta":false,"is_stable":true,"codename":"","version_clean":"1.0.0","version":"1.0"}],"current_version":{"version_clean":"1.0.0","version":"1.0"},"oauth":{"enabled":false},"api":{"name":"","url":"https://api.embedly.com","contenttype":"json","auth":"token","explorer":false,"proxyEnabled":true,"jwt":false,"authextra":[{"_id":"564de3f2e39c4435005a1f5f","type":"query","default":"","key":"key"}],"headers":[],"object_definitions":[]},"apiAlt":[{"_id":"564e0334e512d10d007641d3","object_definitions":[],"headers":[],"authextra":[{"_id":"564e035c2879913500dd28c3","type":"query","default":"","key":"key"}],"jwt":false,"proxyEnabled":true,"explorer":false,"auth":"token","contenttype":"body","url":"https://i.embed.ly","name":"i.embed.ly"},{"_id":"569412f63e9d080d00f064fe","object_definitions":[],"headers":[],"authextra":[{"_id":"5694140f237d3b0d0074074c","type":"query","default":"","key":"key"}],"jwt":false,"proxyEnabled":true,"explorer":false,"auth":"token","contenttype":"json","url":"https://upload.embed.ly","name":"Upload"}],"plan_details":{"name":"Business","is_active":true,"cost":199,"versions":10000,"custom_domain":true,"custom_pages":true,"whitelabel":true,"errors":true,"password":true,"landing_page":true,"stylesheet":true,"javascript":true,"html":true,"extra_html":true,"admins":true},"intercom":"","intercom_secure_emailonly":false,"flags":{"allow_hub2":false,"hub2":false,"migrationRun":true,"oauth":false,"swagger":false,"correctnewlines":false,"speedyRender":false,"allowXFrame":false,"jwt":false,"hideGoogleAnalytics":false,"stripe":false,"disableDiscuss":false,"newApiExplorer":false,"autoSslGeneration":true,"ssl":false},"asset_base_url":""}</div><ul class="nav navbar-nav"></ul><ul class="nav navbar-nav pull-right"><li class="active"><a href="https://docs.embed.ly/docs" title="Documentation">Documentation</a></li><li><div class="searchbox"><div class="fa fa-search"></div><span class="twitter-typeahead" style="position: relative; display: inline-block;"><input type="text" class="typeahead tt-hint" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: rgba(0, 0, 0, 0.1) none repeat scroll 0% 0%;" readonly="readonly" autocomplete="off" spellcheck="false" tabindex="-1" dir="ltr"><input type="text" placeholder="Search" class="typeahead tt-input" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Open Sans, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre><div class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"><div class="tt-dataset tt-dataset-docs"></div><div class="tt-dataset tt-dataset-support"></div><div class="tt-dataset tt-dataset-blog"></div><div class="tt-notfound">No results found</div></div></span></div></li></ul></div></div></header><div class="container body-container"><div class="main-content"><div class="main-head"><div ng-controller="ShowPage" class="ng-scope"><div scope-scoop=""><pre var="page" ng-non-bindable="" style="display: none;">{"_id":"564de2ddfe07a81700b5c3ab","project":"564de2dbfe07a81700b5c3a5","__v":18,"editedParams":true,"editedParams2":true,"user":"564de2b4fe07a81700b5c3a4","category":{"_id":"564df3217c8f372b00b934df","project":"564de2dbfe07a81700b5c3a5","__v":12,"pages":["564e01de8980c32b009e8bca","564e031f5eab6e0d0069ca38","564e057a873c362d005172b2","564e05a15eab6e0d0069ca40","564e07b01494cc2b00acb618","56941291d8c04d1700e5adc2","5696aca1cb14e11700f8aa01","56d46a4f73dcd20b00fb8647","56d46a5b8001e30b00896ebb","56f00bd1d58ed32400df6092","56f01568d58ed32400df60c1","56f0194911415c2900969c10"],"version":"564de2dbfe07a81700b5c3a8","sync":{"url":"","isSync":false},"reference":true,"createdAt":"2015-11-19T16:04:49.459Z","from_sync":false,"order":1,"slug":"api","title":"API"},"version":{"_id":"564de2dbfe07a81700b5c3a8","project":"564de2dbfe07a81700b5c3a5","__v":10,"createdAt":"2015-11-19T14:55:23.838Z","releaseDate":"2015-11-19T14:55:23.837Z","categories":["564de2ddfe07a81700b5c3a9","564df317826645210097a890","564df3217c8f372b00b934df","564e5227c3553e0d003e53ba","5666dac5d784a70d00397bcb","56cd08ddd98d851d00c0c3bd","56e9a50946bfd60e008840a7","5718e37bf8f7de1900683fad","58c3308dfedf070f0043b72c","58ce99c75457d02300560c0a"],"is_deprecated":false,"is_hidden":false,"is_beta":false,"is_stable":true,"codename":"","version_clean":"1.0.0","version":"1.0"},"githubsync":"","parentDoc":null,"metadata":{"title":"","description":"","image":[]},"updates":["59aa907b93a131001b96b310","59aa917ac250f8000f83878f","59eb8189e6ed6b001aa1d96b","5ae774c8a92b1c0003a7d6e1","5ae774d81b1a2e000356f50a","5ae7752de7d58d000321aecf","5ae7759be7d58d000321aed0"],"next":{"pages":[],"description":""},"createdAt":"2015-11-19T14:55:25.953Z","link_external":false,"link_url":"","sync_unique":"","hidden":false,"api":{"examples":{"codes":[{"language":"javascript","code":"// jQuery\n$.getJSON('https://api.embedly.com/1/oembed?' + $.param({\n  url: 'https://www.youtube.com/watch?v=jofNR_WkoCE',\n  key: \":key\"\n}));\n\n// jQuery Embedly \n$.embedly.oembed('https://www.youtube.com/watch?v=jofNR_WkoCE', {key: \":key\"});"},{"code":"curl \"http://api.embedly.com/1/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DjofNR_WkoCE&amp;key=:key\"","language":"curl"},{"language":"python","code":"import requests\n\n# Create the query\nquery = {\n  \"url\": \"https://www.youtube.com/watch?v=jofNR_WkoCE\",\n  \"key\": \":key\"\n}\n\n# Make the call.\nr = requests.get('https://api.embedly.com/1/oembed', params=query)\n\n# print the json result.\nprint r.json()\n"}]},"method":"get","results":{"codes":[{"status":200,"name":"","code":"{\n  \"type\": \"video\",\n  \"url\": \"http://www.youtube.com/watch?v=jofNR_WkoCE\",\n  \"provider_name\": \"YouTube\",\n  \"provider_url\": \"https://www.youtube.com/\", \n  \"title\": \"Ylvis - The Fox (What Does The Fox Say?) [Official music video HD]\",\n  \"description\": \"iTunes: http://smarturl.it/YlvisFox Fra I kveld med Y...\", \n  \"author_name\": \"TVNorge\",\n  \"author_url\": \"https://www.youtube.com/user/tvnorge\",\n  \"html\": \"&lt;iframe class=\\\"embedly-embed\\\" src=\\\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FjofNR_WkoCE%3Ffeature%3Doembed&amp;url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DjofNR_WkoCE&amp;image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FjofNR_WkoCE%2Fhqdefault.jpg&amp;key=internal&amp;type=text%2Fhtml&amp;schema=youtube\\\" width=\\\"854\\\" height=\\\"480\\\" scrolling=\\\"no\\\" frameborder=\\\"0\\\" allowfullscreen&gt;&lt;/iframe&gt;\",\n  \"width\": 854,\n  \"height\": 480, \n  \"thumbnail_url\": \"https://i.ytimg.com/vi/jofNR_WkoCE/hqdefault.jpg\", \n  \"thumbnail_width\": 480,\n  \"thumbnail_height\": 360,\n  \"version\": \"1.0\"\n}","language":"json"}]},"settings":"","auth":"required","params":[{"_id":"564de4a9fe07a81700b5c3b2","ref":"","in":"query","required":false,"desc":"The URL is to retrieve embedding information. This URL must be escaped to ensure that Embedly retrieves the correct link. For example, this Embedly URL.","default":"","type":"string","name":"url"},{"_id":"564df12e7441dc350097531b","ref":"","in":"query","required":false,"desc":"A comma separated list of urls for Embedly to process. Each URL must be escaped, but commas separating URLS must NOT be URL encoded. urls accepts a maximum of 10 urls at a time. Embedly processes these urls in parallel, therefore, it’s quicker to use urls for batched processing.","default":"","type":"string","name":"urls"},{"_id":"564de4a9fe07a81700b5c3b1","ref":"","in":"query","required":false,"desc":"This is the maximum width of the embed in pixels. maxwidth is used for scaling down embeds so they fit into a certain width. If the container for an embed is 500px you should pass maxwidth=500 in the query parameters.","default":"","type":"int","name":"maxwidth"},{"_id":"564df12e7441dc350097531a","ref":"","in":"query","required":false,"desc":"This is the maximum height of the embed in pixels. Functions the same as maxwidth, but for the height of the embed instead. It’s noteworthy that maxwidth is preferred over maxheight.","default":"","type":"int","name":"maxheight"},{"_id":"564df2897441dc350097531f","ref":"","in":"query","required":false,"desc":"Will scale embeds type rich and video to the exact width that a developer specifies in pixels. Embeds smaller than this width will be scaled up and embeds larger than this width will be scaled down. Note that using this may cause distortion when scaling up embeds.","default":"","type":"int","name":"width"},{"_id":"56c5deb60fba010d004307bb","ref":"","in":"query","required":false,"desc":"Will scale embeds type rich and video to the exact height that a developer specifies in pixels. Embeds smaller than this height will be scaled up and embeds larger than this height will be scaled down. Note that using this may cause distortion when scaling up embeds.","default":"","type":"int","name":"height"},{"_id":"564df2897441dc350097531e","ref":"","in":"query","required":false,"desc":"The response format – Accepted values: (xml, json)","default":"","type":"string","name":"format"},{"_id":"564df2897441dc350097531d","ref":"","in":"query","required":false,"desc":"Will append the wmode value to the flash object. Possible values include window, opaque and transparent.","default":"","type":"string","name":"wmode"},{"_id":"564dfad332e48b0d005f9db0","ref":"","in":"query","required":false,"desc":"Returns a (jsonp) response format. The callback is the name of the javascript function to execute.","default":"","type":"string","name":"callback"},{"_id":"564dfad332e48b0d005f9daf","ref":"","in":"query","required":false,"desc":"By default Embedly does not return script embeds for jsonp requests. They just don’t work and cause lots of issues. In some cases, you may need the script tag for saving and displaying later. In order for Embedly to send the script embeds over jsonp add allowscripts=true. Use with care, and this option is only valid when a callback is supplied, otherwise, it is ignored.","default":"","type":"boolean","name":"allowscripts"},{"_id":"564dfad332e48b0d005f9dae","ref":"","in":"query","required":false,"desc":"This will tell the video/rich media to automatically play when the media is loaded. Accepted values: (true, false) Default: false","default":"","type":"boolean","name":"autoplay"},{"_id":"564dfad332e48b0d005f9dad","ref":"","in":"query","required":false,"desc":"The words parameter works by trying to split the description at the closest sentence to that word count","default":"50","type":"string","name":"words"},{"_id":"564dfad332e48b0d005f9dac","ref":"","in":"query","required":false,"desc":"chars is much simpler than words. Embedly will blindly truncate a description to the number of characters you specify adding ... at the end when needed.","default":"","type":"string","name":"chars"},{"_id":"564dfad332e48b0d005f9dab","ref":"","in":"query","required":false,"desc":"With luxe Embedly’s iframe is initially loaded with poster image and play button rather than loading the whole embed. When the user clicks play the embed is loaded and starts playing.","default":"0","type":"boolean","name":"luxe"},{"_id":"564dfad332e48b0d005f9daa","ref":"","in":"query","required":false,"desc":"secure allows you to serve embeds with a SSL connection. You can also serve images over SSL with our Display product. You can enable this by adding secure=true.","default":"","type":"boolean","name":"secure"},{"_id":"564dfad332e48b0d005f9da9","ref":"","in":"query","required":false,"desc":"scheme allows to set the protocol scheme explicity to http or https. By default embeds are sent back protocol-less so that they will work in any page. You can explicity set a protocol by adding scheme=https.","default":"","type":"string","name":"scheme"},{"_id":"569fbbfc4583912300b5ef77","ref":"","in":"query","required":false,"desc":"With title Embedly will set the title response attribute to the open_graph, meta, or twitter title if available in the page. Accepted values: (og, twitter, meta)","default":"","type":"string","name":"title"},{"_id":"569fbc26b4f2d31900898cf8","ref":"","in":"query","required":false,"desc":"With description Embedly will set the description response attribute to the open_graph, meta, or twitter description if available in the page. Accepted values: (og, twitter, meta)","default":"","type":"string","name":"description"},{"_id":"56f2b8e8d67b16190084cd0e","ref":"","in":"query","required":false,"desc":"Will return only an image found in meta tags or an API response if set.","default":"0","type":"boolean","name":"meta_images"},{"_id":"58c19b1c0d030419008d818e","ref":"","in":"query","required":false,"desc":"Turns on/off player analytics","default":"1","type":"boolean","name":"a"},{"_id":"598cb34396193400190d882a","ref":"","in":"query","required":false,"desc":"Turns on/off Do Not Track support within embed","default":"0","type":"boolean","name":"dnt"}],"url":"/1/oembed"},"isReference":true,"order":0,"body":"[block:api-header]\n{\n  \"type\": \"basic\",\n  \"title\": \"Response Attributes\"\n}\n[/block]\n\n``type`` (required)\n    The resource type. Valid values, along with value-specific parameters are\n    described below.\n\n``version`` (required)\n    The oEmbed version number. This must be 1.0.\n\n``title`` (optional)\n    A text title describing the resource.\n\n``author_name`` (optional)\n    The name of the author/owner of the resource.\n\n``author_url`` (optional)\n    A URL for the author/owner of the resource.\n\n``provider_name`` (optional)\n    The name of the resource provider.\n\n``provider_url`` (optional)\n    The url of the resource provider.\n\n``cache_age`` (optional)\n    The suggested cache lifetime for this resource, in seconds. Consumers may\n    choose to ignore this value.\n\n``thumbnail_url`` (optional)\n    A URL to a thumbnail image representing the resource. The thumbnail must\n    respect any maxwidth and maxheight parameters. If this parameter is present,\n    thumbnail_width and thumbnail_height must also be present.\n\n``thumbnail_width`` (optional)\n    The width of the optional thumbnail. If this parameter is present,\n    thumbnail_url and thumbnail_height must also be present.\n\n``thumbnail_height`` (optional)\n    The height of the optional thumbnail. If this parameter is present,\n    thumbnail_url and thumbnail_width must also be present.\n\n``description``\n    We support and pass back a description for all oEmbed types.\n\n\n###The photo type\n\nThis type is used for representing static photos. The following parameters are\ndefined:\n\n``url`` (required)\n    The source URL of the image. Consumers should be able to insert this URL\n    into an``&lt;img&gt;``element. Only HTTP and HTTPS URLs are valid.\n\n``width`` (required)\n    The width in pixels of the image specified in the ``url`` parameter.\n\n``height`` (required)\n    The height in pixels of the image specified in the ``url`` parameter.\n\n\n###The video type\n\nThis type is used for representing playable videos. The following parameters\nare defined:\n\n``html`` (required)\n    The HTML required to embed a video player. The HTML should have no padding\n    or margins. Consumers may wish to load the HTML in an off-domain iframe to\n    avoid XSS vulnerabilities.\n\n``width``\n    The width in pixels required to display the HTML.\n\n``height``\n    The height in pixels required to display the HTML.\n\n\n###The link type\n\nResponses of this type allow a provider to return any generic embed data (such\nas title and author_name), without providing either the url or html parameters.\nThe consumer may then link to the resource, using the URL specified in the\noriginal request.\n\n###The rich type\n\nThis type is used for rich HTML content that does not fall under one of the\nother categories. The following parameters are defined:\n\n``html`` (required)\n    The HTML required to display the resource. The HTML should have no padding\n    or margins. Consumers may wish to load the HTML in an off-domain iframe to\n    avoid XSS vulnerabilities. The markup should be valid XHTML 1.0 Basic.\n\n``width``\n    The width in pixels required to display the HTML. \n\n``height``\n    The height in pixels required to display the HTML. \n\n\n\nError Codes\n----------------\n\n###JSON or XML Requests\n\n\n400 Bad Request\n  * Required \"url\" parameter is missing.\n  * Either \"url\" or \"urls\" parameter is reqiured.\n  * Invalid URL format.\n  * Invalid \"maxheight\" parameter.\n  * Invalid \"maxwidth\" parameter.\n  * Invalid \"urls\" parameter, exceeded max count of 20.\n\n401 Unauthorized\n  * Invalid key or oauth_consumer_key provided: &lt;key&gt;, contact: support:::at:::embed.ly.\n  * The provided key does not support this endpoint: &lt;key&gt;, contact: support@embed.ly.\n  * URL is private or restricted.\n\n403 Forbidden\n  * This service requires an embedly key parameter, contact: support@embed.ly or sign up: http://embed.ly/signup.\n  * Invalid IP provided: &lt;ip&gt;, contact: support@embed.ly.\n  * Invalid referrer provided: &lt;referrer&gt;, contact: support@embed.ly.\n\n404 Not Found\n  URL Not Found or unable to be accessed by Embedly servers.\n  \n  ``Note``:  Error message will contain Upstream server response.\n\n500 Server issues\n   Embed.ly is having trouble with this url. Please try again or contact us, support@embed.ly.\n\n501 Not Implemented\n   Not implemented for format: acceptable values are ``{json or xml}``.\n\n503 Service Unavailable\n  ``Note``: This happens if our service is down, please contact us immediately: support@embed.ly.\n\n###JSONP Requests\n\nFormat\n    ``callbackFunction({\"url\": \"url with error\", \"error_code\": \"error code\",\n    \"error_message\": \"error message\", \"type\": \"error\"})``\n\nError Response\n    ``jsonp1273162787542({\"url\": \"http://flickr.com/embedly\", \"error_code\": 404, \"error_message\":\n    \"HTTP 404: Not Found\", \"type\": \"error\"})``\n\n[block:callout]\n{\n  \"type\": \"warning\",\n  \"title\": \"Want to Try out the oEmbed API?\",\n  \"body\": \"Try out our handy [oEmbed API Explorer](http://embed.ly/docs/explore/oembed). It's awesome and will allow you to preview the response of any URL.\\n\\nGo to the [oEmbed API Explorer](http://embed.ly/docs/explore/oembed)\"\n}\n[/block]","excerpt":"oEmbed is Embedly’s basic offering, providing a simple API for embedding content from any URL. This method follows the oEmbed standard.","slug":"oembed","type":"endpoint","title":"/1/oembed"}</pre></div><div class="row"><div class="col-sm-3 border-right section-left"><div saveheight="1" class="sidebar-nav"><h4>Documentation</h4><ul><li><a href="https://docs.embed.ly/docs/embedly-api"><span>Overview</span></a></li><li><a href="https://docs.embed.ly/docs/authentication"><span>Authentication</span></a></li><li><a href="https://docs.embed.ly/docs/libraries"><span>Libraries</span></a></li><li><a href="https://docs.embed.ly/docs/faq"><span>Frequently Asked Questions</span></a></li></ul><h4>API</h4><ul><li><a href="https://docs.embed.ly/docs/oembed" class="active"><span title="get" class="pg-type type-get">get</span><span>/1/oembed</span></a></li><li><a href="https://docs.embed.ly/docs/extract"><span title="get" class="pg-type type-get">get</span><span>/1/extract</span></a></li><li><a href="https://docs.embed.ly/docs/display"><span title="get" class="pg-type type-get">get</span><span>/1/display</span></a></li><li><a href="https://docs.embed.ly/docs/resize"><span title="get" class="pg-type type-get">get</span><span>/1/display/resize</span></a></li><li><a href="https://docs.embed.ly/docs/crop"><span title="get" class="pg-type type-get">get</span><span>/1/display/crop</span></a></li><li><a href="https://docs.embed.ly/docs/fill"><span title="get" class="pg-type type-get">get</span><span>/1/display/fill</span></a></li><li><a href="https://docs.embed.ly/docs/video"><span title="post" class="pg-type type-post">post</span><span>/1/video</span></a></li><li><a href="https://docs.embed.ly/docs/status"><span title="get" class="pg-type type-get">get</span><span>/1/status</span></a></li><li><a href="https://docs.embed.ly/docs/update"><span title="post" class="pg-type type-post">post</span><span>/1/update</span></a></li></ul><h4>JavaScript</h4><ul><li><a href="https://docs.embed.ly/docs/platformjs"><span>Install</span></a></li><li><a href="https://docs.embed.ly/docs/cards"><span>Cards</span></a></li><li><a href="https://docs.embed.ly/docs/player"><span>Player</span></a></li><li><a href="https://docs.embed.ly/docs/button"><span>Button</span></a></li><li><a href="https://docs.embed.ly/docs/native"><span>Native</span></a></li></ul><h4>Player.js</h4><ul><li><a href="https://docs.embed.ly/docs/playerjs"><span>Player.js</span></a></li></ul><h4>Tutorials</h4><ul><li><a href="https://docs.embed.ly/docs/tutorials-inline"><span>Inline</span></a></li><li><a href="https://docs.embed.ly/docs/modal"><span>Modal</span></a></li><li><a href="https://docs.embed.ly/docs/responsive-embeds"><span>Responsive Embeds</span></a></li><li><a href="https://docs.embed.ly/docs/tutorial-play-and-stop-gifs"><span>Play and Stop GIFs</span></a></li><li><a href="https://docs.embed.ly/docs/color-background-placeholders-for-loading-images"><span>Color Background Placeholders for Loading Images</span></a></li><li><a href="https://docs.embed.ly/docs/video-upload-button"><span>Video Upload Button</span></a></li><li><a href="https://docs.embed.ly/docs/recommendation-intro"><span>Recommendation Intro</span></a></li><li><a href="https://docs.embed.ly/docs/embedding-with-google-amp"><span>Embedding with Google AMP</span></a></li><li><a href="https://docs.embed.ly/docs/masonry-embedly"><span>Masonry + Embedly</span></a></li></ul><h4>Video</h4><ul><li><a href="https://docs.embed.ly/docs/video-introduction"><span>Video Introduction</span></a></li></ul><h4>Integrations</h4><ul><li><a href="https://docs.embed.ly/docs/how-to-embed-on-medium"><span>How to Embed on Medium</span></a></li></ul></div></div><div class="col-sm-9 border-left section-right"><div class="docs-content"><div class="docs-header"><nav class="pull-right"><a href="https://dash.readme.io/project/embedly/v1.0/docs/oembed" require-login="" ng-show="u.user.is_admin" class="suggest ng-hide"><div class="fa fa-pencil fa-right"></div>Edit this Page</a><a href="https://docs.embed.ly/docs/oembed/edit" require-login="" ng-hide="u.user.is_admin" class="suggest"><div class="fa fa-pencil fa-right"></div>Suggest Edits</a></nav><h1><span class="pg-type-big pg-type type-get">get</span>/1/oembed</h1><div marked="" class="ng-isolate-scope"><p>oEmbed
+ is Embedly’s basic offering, providing a simple API for embedding 
+content from any URL. This method follows the oEmbed standard.</p>
+</div><hr></div><div class="docs-body"><div class="api-manager"><h3>Definition</h3><div class="api-definition"><span class="definition-url ng-binding">https://api.embedly.com</span><span class="definition-path ng-binding">/1/oembed</span></div></div><div class="api-manager"><hr class="bottom"><h3>Parameters</h3><div class="param-table"><div class="table"><h4 class="paramGroupTitle">Query Params</h4><div class="tr"><div class="td param"><strong>url<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">string</strong><div marked="" class="ng-isolate-scope"><p>The
+ URL is to retrieve embedding information. This URL must be escaped to 
+ensure that Embedly retrieves the correct link. For example, this 
+Embedly URL.</p>
+</div></div></div><div class="tr"><div class="td param"><strong>urls<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">string</strong><div marked="" class="ng-isolate-scope"><p>A
+ comma separated list of urls for Embedly to process. Each URL must be 
+escaped, but commas separating URLS must NOT be URL encoded. urls 
+accepts a maximum of 10 urls at a time. Embedly processes these urls in 
+parallel, therefore, it’s quicker to use urls for batched processing.</p>
+</div></div></div><div class="tr"><div class="td param"><strong>maxwidth<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">integer</strong><div marked="" class="ng-isolate-scope"><p>This
+ is the maximum width of the embed in pixels. maxwidth is used for 
+scaling down embeds so they fit into a certain width. If the container 
+for an embed is 500px you should pass maxwidth=500 in the query 
+parameters.</p>
+</div></div></div><div class="tr"><div class="td param"><strong>maxheight<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">integer</strong><div marked="" class="ng-isolate-scope"><p>This
+ is the maximum height of the embed in pixels. Functions the same as 
+maxwidth, but for the height of the embed instead. It’s noteworthy that 
+maxwidth is preferred over maxheight.</p>
+</div></div></div><div class="tr"><div class="td param"><strong>width<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">integer</strong><div marked="" class="ng-isolate-scope"><p>Will
+ scale embeds type rich and video to the exact width that a developer 
+specifies in pixels. Embeds smaller than this width will be scaled up 
+and embeds larger than this width will be scaled down. Note that using 
+this may cause distortion when scaling up embeds.</p>
+</div></div></div><div class="tr"><div class="td param"><strong>height<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">integer</strong><div marked="" class="ng-isolate-scope"><p>Will
+ scale embeds type rich and video to the exact height that a developer 
+specifies in pixels. Embeds smaller than this height will be scaled up 
+and embeds larger than this height will be scaled down. Note that using 
+this may cause distortion when scaling up embeds.</p>
+</div></div></div><div class="tr"><div class="td param"><strong>format<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">string</strong><div marked="" class="ng-isolate-scope"><p>The response format – Accepted values: (xml, json)</p>
+</div></div></div><div class="tr"><div class="td param"><strong>wmode<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">string</strong><div marked="" class="ng-isolate-scope"><p>Will append the wmode value to the flash object. Possible values include window, opaque and transparent.</p>
+</div></div></div><div class="tr"><div class="td param"><strong>callback<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">string</strong><div marked="" class="ng-isolate-scope"><p>Returns a (jsonp) response format. The callback is the name of the javascript function to execute.</p>
+</div></div></div><div class="tr"><div class="td param"><strong>allowscripts<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">boolean</strong><div marked="" class="ng-isolate-scope"><p>By
+ default Embedly does not return script embeds for jsonp requests. They 
+just don’t work and cause lots of issues. In some cases, you may need 
+the script tag for saving and displaying later. In order for Embedly to 
+send the script embeds over jsonp add allowscripts=true. Use with care, 
+and this option is only valid when a callback is supplied, otherwise, it
+ is ignored.</p>
+</div></div></div><div class="tr"><div class="td param"><strong>autoplay<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">boolean</strong><div marked="" class="ng-isolate-scope"><p>This
+ will tell the video/rich media to automatically play when the media is 
+loaded. Accepted values: (true, false) Default: false</p>
+</div></div></div><div class="tr"><div class="td param"><strong>words<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">string</strong><span class="param-default text-muted">50</span><div marked="" class="ng-isolate-scope"><p>The words parameter works by trying to split the description at the closest sentence to that word count</p>
+</div></div></div><div class="tr"><div class="td param"><strong>chars<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">string</strong><div marked="" class="ng-isolate-scope"><p>chars
+ is much simpler than words. Embedly will blindly truncate a description
+ to the number of characters you specify adding ... at the end when 
+needed.</p>
+</div></div></div><div class="tr"><div class="td param"><strong>luxe<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">boolean</strong><span class="param-default text-muted">0</span><div marked="" class="ng-isolate-scope"><p>With
+ luxe Embedly’s iframe is initially loaded with poster image and play 
+button rather than loading the whole embed. When the user clicks play 
+the embed is loaded and starts playing.</p>
+</div></div></div><div class="tr"><div class="td param"><strong>secure<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">boolean</strong><div marked="" class="ng-isolate-scope"><p>secure
+ allows you to serve embeds with a SSL connection. You can also serve 
+images over SSL with our Display product. You can enable this by adding 
+secure=true.</p>
+</div></div></div><div class="tr"><div class="td param"><strong>scheme<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">string</strong><div marked="" class="ng-isolate-scope"><p>scheme
+ allows to set the protocol scheme explicity to http or https. By 
+default embeds are sent back protocol-less so that they will work in any
+ page. You can explicity set a protocol by adding scheme=https.</p>
+</div></div></div><div class="tr"><div class="td param"><strong>title<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">string</strong><div marked="" class="ng-isolate-scope"><p>With
+ title Embedly will set the title response attribute to the open_graph, 
+meta, or twitter title if available in the page. Accepted values: (og, 
+twitter, meta)</p>
+</div></div></div><div class="tr"><div class="td param"><strong>description<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">string</strong><div marked="" class="ng-isolate-scope"><p>With
+ description Embedly will set the description response attribute to the 
+open_graph, meta, or twitter description if available in the page. 
+Accepted values: (og, twitter, meta)</p>
+</div></div></div><div class="tr"><div class="td param"><strong>meta_images<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">boolean</strong><span class="param-default text-muted">0</span><div marked="" class="ng-isolate-scope"><p>Will return only an image found in meta tags or an API response if set.</p>
+</div></div></div><div class="tr"><div class="td param"><strong>a<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">boolean</strong><span class="param-default text-muted">1</span><div marked="" class="ng-isolate-scope"><p>Turns on/off player analytics</p>
+</div></div></div><div class="tr"><div class="td param"><strong>dnt<span class="colon">:</span></strong></div><div class="td"><strong class="param-type">boolean</strong><span class="param-default text-muted">0</span><div marked="" class="ng-isolate-scope"><p>Turns on/off Do Not Track support within embed</p>
+</div></div></div></div></div></div><div class="api-manager"><hr class="bottom"><h3>Examples</h3><div class="block-code block-show-code ng-isolate-scope ng-valid" scheme="light" type="'code'" ng-model="page.api.examples">
+  <div class="code-tabs">
+    <!-- ngRepeat: tab in data.codes track by $id($index) --><div ng-class="{tab: true, on:$index==current, off:$index!=current}" ng-repeat="tab in data.codes track by $id($index)" class="ng-scope tab off">
+      <a href="" ng-click="choose($index)">
+        <!-- ngIf: tab.status -->
+        <!-- ngIf: !tab.status --><span ng-if="!tab.status" class="ng-binding ng-scope">
+          JavaScript
+        </span><!-- end ngIf: !tab.status -->
+      </a><span ng-hide="$last">·</span>
+    </div><!-- end ngRepeat: tab in data.codes track by $id($index) --><div ng-class="{tab: true, on:$index==current, off:$index!=current}" ng-repeat="tab in data.codes track by $id($index)" class="ng-scope tab on">
+      <a href="" ng-click="choose($index)">
+        <!-- ngIf: tab.status -->
+        <!-- ngIf: !tab.status --><span ng-if="!tab.status" class="ng-binding ng-scope">
+          cURL
+        </span><!-- end ngIf: !tab.status -->
+      </a><span ng-hide="$last">·</span>
+    </div><!-- end ngRepeat: tab in data.codes track by $id($index) --><div ng-class="{tab: true, on:$index==current, off:$index!=current}" ng-repeat="tab in data.codes track by $id($index)" class="ng-scope tab off">
+      <a href="" ng-click="choose($index)">
+        <!-- ngIf: tab.status -->
+        <!-- ngIf: !tab.status --><span ng-if="!tab.status" class="ng-binding ng-scope">
+          Python
+        </span><!-- end ngIf: !tab.status -->
+      </a><span ng-hide="$last" class="ng-hide">·</span>
+    </div><!-- end ngRepeat: tab in data.codes track by $id($index) -->
+  </div>
+
+  <!-- ngRepeat: tab in data.codes track by $id($index) --><div ng-repeat="tab in data.codes track by $id($index)" ng-show="$index==current" class="ng-scope ng-hide">
+  <!-- ngIf: data.codes[$index].code == "" -->
+  <!-- ngIf: data.codes[$index].code != "" --><pre ng-if="data.codes[$index].code != &quot;&quot;" class="cm-s-neo" data-mode="javascript"><span class="cm-comment">// jQuery</span>
+<span class="cm-variable">$</span>.<span class="cm-property">getJSON</span>(<span class="cm-string">'https://api.embedly.com/1/oembed?'</span> <span class="cm-operator">+</span> <span class="cm-variable">$</span>.<span class="cm-property">param</span>({
+  <span class="cm-property">url</span>: <span class="cm-string">'https://www.youtube.com/watch?v=jofNR_WkoCE'</span>,
+  <span class="cm-property">key</span>: <span class="cm-string">":key"</span>
+}));
+
+<span class="cm-comment">// jQuery Embedly </span>
+<span class="cm-variable">$</span>.<span class="cm-property">embedly</span>.<span class="cm-property">oembed</span>(<span class="cm-string">'https://www.youtube.com/watch?v=jofNR_WkoCE'</span>, {<span class="cm-property">key</span>: <span class="cm-string">":key"</span>});</pre><!-- end ngIf: data.codes[$index].code != "" -->
+</div><!-- end ngRepeat: tab in data.codes track by $id($index) --><div ng-repeat="tab in data.codes track by $id($index)" ng-show="$index==current" class="ng-scope">
+  <!-- ngIf: data.codes[$index].code == "" -->
+  <!-- ngIf: data.codes[$index].code != "" --><pre ng-if="data.codes[$index].code != &quot;&quot;" class="cm-s-neo" data-mode="curl"><span class="cm-builtin">curl</span> <span class="cm-string">"http://api.embedly.com/1/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DjofNR_WkoCE&amp;key=:key"</span></pre><!-- end ngIf: data.codes[$index].code != "" -->
+</div><!-- end ngRepeat: tab in data.codes track by $id($index) --><div ng-repeat="tab in data.codes track by $id($index)" ng-show="$index==current" class="ng-scope ng-hide">
+  <!-- ngIf: data.codes[$index].code == "" -->
+  <!-- ngIf: data.codes[$index].code != "" --><pre ng-if="data.codes[$index].code != &quot;&quot;" class="cm-s-neo" data-mode="python"><span class="cm-keyword">import</span> <span class="cm-variable">requests</span>
+
+<span class="cm-comment"># Create the query</span>
+<span class="cm-variable">query</span> <span class="cm-operator">=</span> {
+  <span class="cm-string">"url"</span>: <span class="cm-string">"https://www.youtube.com/watch?v=jofNR_WkoCE"</span>,
+  <span class="cm-string">"key"</span>: <span class="cm-string">":key"</span>
+}
+
+<span class="cm-comment"># Make the call.</span>
+<span class="cm-variable">r</span> <span class="cm-operator">=</span> <span class="cm-variable">requests</span>.<span class="cm-property">get</span>(<span class="cm-string">'https://api.embedly.com/1/oembed'</span>, <span class="cm-variable">params</span><span class="cm-operator">=</span><span class="cm-variable">query</span>)
+
+<span class="cm-comment"># print the json result.</span>
+<span class="cm-builtin">print</span> <span class="cm-variable">r</span>.<span class="cm-property">json</span>()
+</pre><!-- end ngIf: data.codes[$index].code != "" -->
+</div><!-- end ngRepeat: tab in data.codes track by $id($index) -->
+</div><hr class="bottom"><h3>Result Format</h3><div class="block-code block-show-code ng-isolate-scope ng-valid" scheme="light" type="'code'" ng-model="page.api.results" status="1">
+  <div class="code-tabs">
+    <!-- ngRepeat: tab in data.codes track by $id($index) --><div ng-class="{tab: true, on:$index==current, off:$index!=current}" ng-repeat="tab in data.codes track by $id($index)" class="ng-scope tab on">
+      <a href="" ng-click="choose($index)">
+        <!-- ngIf: tab.status --><span ng-if="tab.status" class="ng-binding ng-scope">
+          <!-- ngIf: tab.status --><span ng-if="tab.status" class="status-icon status-icon-success"></span><!-- end ngIf: tab.status -->
+          <!-- ngIf: !getStatusCode(tab.status)[3] --><em ng-if="!getStatusCode(tab.status)[3]" class="ng-binding ng-scope">200</em><!-- end ngIf: !getStatusCode(tab.status)[3] -->
+          OK
+        </span><!-- end ngIf: tab.status -->
+        <!-- ngIf: !tab.status -->
+      </a><span ng-hide="$last" class="ng-hide">·</span>
+    </div><!-- end ngRepeat: tab in data.codes track by $id($index) -->
+  </div>
+
+  <!-- ngRepeat: tab in data.codes track by $id($index) --><div ng-repeat="tab in data.codes track by $id($index)" ng-show="$index==current" class="ng-scope">
+  <!-- ngIf: data.codes[$index].code == "" -->
+  <!-- ngIf: data.codes[$index].code != "" --><pre ng-if="data.codes[$index].code != &quot;&quot;" class="cm-s-neo" data-mode="json">{
+  <span class="cm-property">"type"</span>: <span class="cm-string">"video"</span>,
+  <span class="cm-property">"url"</span>: <span class="cm-string">"http://www.youtube.com/watch?v=jofNR_WkoCE"</span>,
+  <span class="cm-property">"provider_name"</span>: <span class="cm-string">"YouTube"</span>,
+  <span class="cm-property">"provider_url"</span>: <span class="cm-string">"https://www.youtube.com/"</span>, 
+  <span class="cm-property">"title"</span>: <span class="cm-string">"Ylvis - The Fox (What Does The Fox Say?) [Official music video HD]"</span>,
+  <span class="cm-property">"description"</span>: <span class="cm-string">"iTunes: http://smarturl.it/YlvisFox Fra I kveld med Y..."</span>, 
+  <span class="cm-property">"author_name"</span>: <span class="cm-string">"TVNorge"</span>,
+  <span class="cm-property">"author_url"</span>: <span class="cm-string">"https://www.youtube.com/user/tvnorge"</span>,
+  <span class="cm-property">"html"</span>: <span class="cm-string">"&lt;iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FjofNR_WkoCE%3Ffeature%3Doembed&amp;url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DjofNR_WkoCE&amp;image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FjofNR_WkoCE%2Fhqdefault.jpg&amp;key=internal&amp;type=text%2Fhtml&amp;schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" frameborder=\"0\" allowfullscreen&gt;&lt;/iframe&gt;"</span>,
+  <span class="cm-property">"width"</span>: <span class="cm-number">854</span>,
+  <span class="cm-property">"height"</span>: <span class="cm-number">480</span>, 
+  <span class="cm-property">"thumbnail_url"</span>: <span class="cm-string">"https://i.ytimg.com/vi/jofNR_WkoCE/hqdefault.jpg"</span>, 
+  <span class="cm-property">"thumbnail_width"</span>: <span class="cm-number">480</span>,
+  <span class="cm-property">"thumbnail_height"</span>: <span class="cm-number">360</span>,
+  <span class="cm-property">"version"</span>: <span class="cm-string">"1.0"</span>
+}</pre><!-- end ngIf: data.codes[$index].code != "" -->
+</div><!-- end ngRepeat: tab in data.codes track by $id($index) -->
+</div></div><hr class="bottom"><h3>Documentation</h3><div class="content block-content ready"><div class="blocks-parent"><!-- ngRepeat: (k, section) in sections --><!-- ngIf: is_sidebar === undefined || is_sidebar == !!section.sidebar --><div ng-repeat="(k, section) in sections" data-pos="0" ng-if="is_sidebar === undefined || is_sidebar == !!section.sidebar" class="block section ng-scope"><div ng-switch="section.type"><!-- ngSwitchWhen: textarea --><!-- TODO: Make this generic using 'default' --><!-- ngSwitchWhen: api-header --><div ng-switch-when="api-header" class="ng-scope"><div class="block-api-header block-display-api-header ng-isolate-scope ng-valid" type="section.type" ng-model="section.data">
+  <!--
+  <div class="picker-offset">
+    <input type-picker ng-cloak ng-model="doc.type">
+  </div>
+  -->
+  <h2 id="response-attributes" class="ng-binding">
+    <span ng-show="data.type &amp;&amp; data.type != 'basic'" class="pg-type-big pg-type type-basic ng-hide">basic</span>
+    Response Attributes
+    <a class="fa fa-anchor fa-left" href="#response-attributes"></a>
+  </h2>
+  <hr>
+</div></div><!-- end ngSwitchWhen: --><!-- ngSwitchWhen: code --><!-- ngSwitchWhen: image --><!-- ngSwitchWhen: embed --><!-- ngSwitchWhen: callout --><!-- ngSwitchWhen: parameters --><!-- ngSwitchWhen: html --></div></div><!-- end ngIf: is_sidebar === undefined || is_sidebar == !!section.sidebar --><!-- end ngRepeat: (k, section) in sections --><!-- ngIf: is_sidebar === undefined || is_sidebar == !!section.sidebar --><div ng-repeat="(k, section) in sections" data-pos="1" ng-if="is_sidebar === undefined || is_sidebar == !!section.sidebar" class="block section ng-scope"><div ng-switch="section.type"><!-- ngSwitchWhen: textarea --><div ng-switch-when="textarea" class="ng-scope"><div marked="section.text" class="ng-isolate-scope"><p><code>type</code> (required)<br>    The resource type. Valid values, along with value-specific parameters are<br>    described below.</p>
+<p><code>version</code> (required)<br>    The oEmbed version number. This must be 1.0.</p>
+<p><code>title</code> (optional)<br>    A text title describing the resource.</p>
+<p><code>author_name</code> (optional)<br>    The name of the author/owner of the resource.</p>
+<p><code>author_url</code> (optional)<br>    A URL for the author/owner of the resource.</p>
+<p><code>provider_name</code> (optional)<br>    The name of the resource provider.</p>
+<p><code>provider_url</code> (optional)<br>    The url of the resource provider.</p>
+<p><code>cache_age</code> (optional)<br>    The suggested cache lifetime for this resource, in seconds. Consumers may<br>    choose to ignore this value.</p>
+<p><code>thumbnail_url</code> (optional)<br>    A URL to a thumbnail image representing the resource. The thumbnail must<br>    respect any maxwidth and maxheight parameters. If this parameter is present,<br>    thumbnail_width and thumbnail_height must also be present.</p>
+<p><code>thumbnail_width</code> (optional)<br>    The width of the optional thumbnail. If this parameter is present,<br>    thumbnail_url and thumbnail_height must also be present.</p>
+<p><code>thumbnail_height</code> (optional)<br>    The height of the optional thumbnail. If this parameter is present,<br>    thumbnail_url and thumbnail_width must also be present.</p>
+<p><code>description</code><br>    We support and pass back a description for all oEmbed types.</p>
+<h3 id="section-the-photo-type">The photo type<a class="fa fa-anchor fa-left" href="#section-the-photo-type"></a></h3>
+<p>This type is used for representing static photos. The following parameters are<br>defined:</p>
+<p><code>url</code> (required)<br>    The source URL of the image. Consumers should be able to insert this URL<br>    into an<code>&lt;img&gt;</code>element. Only HTTP and HTTPS URLs are valid.</p>
+<p><code>width</code> (required)<br>    The width in pixels of the image specified in the <code>url</code> parameter.</p>
+<p><code>height</code> (required)<br>    The height in pixels of the image specified in the <code>url</code> parameter.</p>
+<h3 id="section-the-video-type">The video type<a class="fa fa-anchor fa-left" href="#section-the-video-type"></a></h3>
+<p>This type is used for representing playable videos. The following parameters<br>are defined:</p>
+<p><code>html</code> (required)<br>    The HTML required to embed a video player. The HTML should have no padding<br>    or margins. Consumers may wish to load the HTML in an off-domain iframe to<br>    avoid XSS vulnerabilities.</p>
+<p><code>width</code><br>    The width in pixels required to display the HTML.</p>
+<p><code>height</code><br>    The height in pixels required to display the HTML.</p>
+<h3 id="section-the-link-type">The link type<a class="fa fa-anchor fa-left" href="#section-the-link-type"></a></h3>
+<p>Responses of this type allow a provider to return any generic embed data (such<br>as title and author_name), without providing either the url or html parameters.<br>The consumer may then link to the resource, using the URL specified in the<br>original request.</p>
+<h3 id="section-the-rich-type">The rich type<a class="fa fa-anchor fa-left" href="#section-the-rich-type"></a></h3>
+<p>This type is used for rich HTML content that does not fall under one of the<br>other categories. The following parameters are defined:</p>
+<p><code>html</code> (required)<br>    The HTML required to display the resource. The HTML should have no padding<br>    or margins. Consumers may wish to load the HTML in an off-domain iframe to<br>    avoid XSS vulnerabilities. The markup should be valid XHTML 1.0 Basic.</p>
+<p><code>width</code><br>    The width in pixels required to display the HTML. </p>
+<p><code>height</code><br>    The height in pixels required to display the HTML. </p>
+<h2 id="section-error-codes">Error Codes<a class="fa fa-anchor fa-left" href="#section-error-codes"></a></h2>
+<h3 id="section-json-or-xml-requests">JSON or XML Requests<a class="fa fa-anchor fa-left" href="#section-json-or-xml-requests"></a></h3>
+<p>400 Bad Request</p>
+<ul>
+<li>Required "url" parameter is missing.</li>
+<li>Either "url" or "urls" parameter is reqiured.</li>
+<li>Invalid URL format.</li>
+<li>Invalid "maxheight" parameter.</li>
+<li>Invalid "maxwidth" parameter.</li>
+<li>Invalid "urls" parameter, exceeded max count of 20.</li>
+</ul>
+<p>401 Unauthorized</p>
+<ul>
+<li>Invalid key or oauth_consumer_key provided: &lt;key&gt;, contact: support@embed.ly.</li>
+<li>The provided key does not support this endpoint: &lt;key&gt;, contact: support@embed.ly.</li>
+<li>URL is private or restricted.</li>
+</ul>
+<p>403 Forbidden</p>
+<ul>
+<li>This service requires an embedly key parameter, contact: support@embed.ly or sign up: <a href="http://embed.ly/signup">http://embed.ly/signup</a>.</li>
+<li>Invalid IP provided: &lt;ip&gt;, contact: support@embed.ly.</li>
+<li>Invalid referrer provided: &lt;referrer&gt;, contact: support@embed.ly.</li>
+</ul>
+<p>404 Not Found<br>  URL Not Found or unable to be accessed by Embedly servers.</p>
+<p>  <code>Note</code>:  Error message will contain Upstream server response.</p>
+<p>500 Server issues<br>   Embed.ly is having trouble with this url. Please try again or contact us, support@embed.ly.</p>
+<p>501 Not Implemented<br>   Not implemented for format: acceptable values are <code>{json or xml}</code>.</p>
+<p>503 Service Unavailable<br>  <code>Note</code>: This happens if our service is down, please contact us immediately: support@embed.ly.</p>
+<h3 id="section-jsonp-requests">JSONP Requests<a class="fa fa-anchor fa-left" href="#section-jsonp-requests"></a></h3>
+<p>Format<br>    <code>callbackFunction({"url": "url with error", "error_code": "error code",
+    "error_message": "error message", "type": "error"})</code></p>
+<p>Error Response<br>    <code>jsonp1273162787542({"url": "http://flickr.com/embedly", "error_code": 404, "error_message":
+    "HTTP 404: Not Found", "type": "error"})</code></p>
+</div></div><!-- end ngSwitchWhen: --><!-- TODO: Make this generic using 'default' --><!-- ngSwitchWhen: api-header --><!-- ngSwitchWhen: code --><!-- ngSwitchWhen: image --><!-- ngSwitchWhen: embed --><!-- ngSwitchWhen: callout --><!-- ngSwitchWhen: parameters --><!-- ngSwitchWhen: html --></div></div><!-- end ngIf: is_sidebar === undefined || is_sidebar == !!section.sidebar --><!-- end ngRepeat: (k, section) in sections --><!-- ngIf: is_sidebar === undefined || is_sidebar == !!section.sidebar --><div ng-repeat="(k, section) in sections" data-pos="2" ng-if="is_sidebar === undefined || is_sidebar == !!section.sidebar" class="block section ng-scope"><div ng-switch="section.type"><!-- ngSwitchWhen: textarea --><!-- TODO: Make this generic using 'default' --><!-- ngSwitchWhen: api-header --><!-- ngSwitchWhen: code --><!-- ngSwitchWhen: image --><!-- ngSwitchWhen: embed --><!-- ngSwitchWhen: callout --><div ng-switch-when="callout" class="ng-scope"><div class="block-callout block-show-callout  type-warning block-show-callout  type-warning ng-valid" type="section.type" ng-model="section.data">
+  <h3>
+    <i class="fa fa-info-circle " title="Info"></i>
+    <i class="fa fa-exclamation-circle on" title="Warning"></i>
+    <i class="fa fa-exclamation-triangle " title="Danger"></i>
+    <i class="fa fa-check-square " title="Success"></i>
+
+    <span class="ng-binding">Want to Try out the oEmbed API?</span>
+  </h3>
+
+  <div marked="data.body" class="ng-isolate-scope"><p>Try out our handy <a href="http://embed.ly/docs/explore/oembed">oEmbed API Explorer</a>. It's awesome and will allow you to preview the response of any URL.</p>
+<p>Go to the <a href="http://embed.ly/docs/explore/oembed">oEmbed API Explorer</a></p>
+</div>
+</div></div><!-- end ngSwitchWhen: --><!-- ngSwitchWhen: parameters --><!-- ngSwitchWhen: html --></div></div><!-- end ngIf: is_sidebar === undefined || is_sidebar == !!section.sidebar --><!-- end ngRepeat: (k, section) in sections --></div></div></div></div></div></div></div></div></div></div></div><!-- Include partials--><div><script type="text/ng-template" id="content"><div class="block-content"><div class="blocks-parent"><div ng-repeat="(k, section) in sections" data-pos="{{ k }}" ng-if="is_sidebar === undefined || is_sidebar == !!section.sidebar" class="block section"><div ng-switch="section.type"><div ng-switch-when="textarea"><div marked="section.text"></div></div><!-- TODO: Make this generic using 'default' --><div ng-switch-when="api-header"><div type="section.type" ng-model="section.data" class="block-api-header"></div></div><div ng-switch-when="code"><div type="section.type" ng-model="section.data" class="block-code"></div></div><div ng-switch-when="image"><div type="section.type" ng-model="section.data" class="block-image"></div></div><div ng-switch-when="embed"><div type="section.type" ng-model="section.data" class="block-embed"></div></div><div ng-switch-when="callout"><div type="section.type" ng-model="section.data" class="block-callout"></div></div><div ng-switch-when="parameters"><div type="section.type" ng-model="section.data" class="block-parameters"></div></div><div ng-switch-when="html"><div type="section.type" ng-model="section.data" class="block-html"></div></div></div></div></div></div></script></div><div><script type="text/ng-template" id="blocks/api-header/show"><div class="block-display-api-header">
+  <!--
+  <div class="picker-offset">
+    <input type-picker ng-cloak ng-model="doc.type">
+  </div>
+  -->
+  <h2 id="{{ slugify(data.title) }}">
+    <span ng-show="data.type && data.type != 'basic'" class="pg-type-big pg-type type-{{data.type}}">{{data.type}}</span>
+    {{ data.title }}
+    <a class="fa fa-anchor fa-left" href="#{{ slugify(data.title) }}"></a>
+  </h2>
+  <hr>
+</div>
+</script><script type="text/ng-template" id="blocks/callout/show"><div class="block-show-callout {{ !data.title? 'no-title' : ''}} type-{{data.type}}">
+  <h3>
+    <i class="fa fa-info-circle {{data.type == 'info' ? 'on' : ''}}" title="Info"></i>
+    <i class="fa fa-exclamation-circle {{data.type == 'warning' ? 'on' : ''}}" title="Warning"></i>
+    <i class="fa fa-exclamation-triangle {{data.type == 'danger' ? 'on' : ''}}" title="Danger"></i>
+    <i class="fa fa-check-square {{data.type == 'success' ? 'on' : ''}}" title="Success"></i>
+
+    <span>{{ data.title }}</span>
+  </h3>
+
+  <div marked="data.body"></div>
+</div>
+</script><script type="text/ng-template" id="blocks/code/show"><div class="block-show-code">
+  <div class="code-tabs">
+    <div ng-class="{tab: true, on:$index==current, off:$index!=current}" ng-repeat="tab in data.codes track by $id($index)">
+      <a href="" ng-click="choose($index)">
+        <span ng-if="tab.status">
+          <span ng-if="tab.status" class="status-icon status-icon-{{ getStatusCode(tab.status)[2] }}"></span>
+          <em ng-if="!getStatusCode(tab.status)[3]">{{getStatusCode(tab.status)[0]}}</em>
+          {{ tab.name ? tab.name : getStatusCode(tab.status)[1] }}
+        </span>
+        <span ng-if="!tab.status">
+          {{ tab.name ? tab.name : code_types_obj[tab.language] }}
+        </span>
+      </a><span ng-hide="$last">&middot;</span>
+    </div>
+  </div>
+
+  <div ng-repeat="tab in data.codes track by $id($index)" ng-show="$index==current">
+  <pre ng-if='data.codes[$index].code == ""' class="{{theme}}" data-mode='text'><div class='text-muted'>No Content</div></pre>
+  <pre ng-if='data.codes[$index].code != ""' class="{{theme}}" data-mode="{{ data.codes[$index].language }}">{{ data.codes[$index].code }}</pre>
+</div>
+</div>
+</script><script type="text/ng-template" id="blocks/image/show"><div class="block-display-image" ng-show="data.images.length > 0">
+  <figure ng-show="data.images[0].image.length">
+    <a href="{{ data.images[0].image[0] }}" class="block-display-image-parent block-display-image-size-{{data.images[0].sizing || 'smart'}} {{data.images[0].border ? 'block-display-image-border' : ''}}">
+      <img ng-src="{{ data.images[0].image[0] }}">
+    </a>
+    <figcaption>{{ data.images[0].caption }}</figcaption>
+  </figure>
+</div>
+</script><script type="text/ng-template" id="blocks/parameters/show"><div class="block-display-parameters">
+  <table>
+    <tr ng-if="data.data['h-0'] || data.data['h-1']"> <!-- Rough check -->
+      <th ng-repeat="(c, col) in getNumber(data.cols) track by $index">
+        {{ data.data['h-' + c] }}
+      </th>
+    </tr>
+    <tr ng-repeat="(r, row) in getNumber(data.rows) track by $index">
+      <td ng-repeat="(c, col) in getNumber(data.cols) track by $index">
+        <div marked="data.data[r + '-' + c]"></div>
+      </th>
+    </tr>
+  </table>
+</div>
+
+</script><script type="text/ng-template" id="blocks/html/show"><div class="block-display-html"></div>
+
+</script><script type="text/ng-template" id="blocks/embed/show"><div class="block-display-embed">
+  <div class="html-replace" ng-if="data.html"></div>
+  <div ng-if="!data.html">
+    <div ng-if="data.iframe" class="iframe-replace"></div>
+    <div ng-if="!data.iframe">
+      <strong>
+        <img ng-src="{{data.favicon}}" class="favicon" ng-if="data.favicon">
+        <a href="{{ data.url }}" target="_new">{{ data.title || data.url }}</a>
+      </strong>
+    </div>
+  </div>
+</div>
+
+</script></div><div class="container container-footer"><footer></footer></div></body></html>

@@ -1,0 +1,84 @@
+$('button').click(regexTestDomain);
+regexTestDomain();
+
+/* test :
+ * a) url (is valid url)
+ * b) Soundcloud url
+ * c) youtube url
+ * d) vimeo url
+ */
+function regexTestDomain(){
+   $('#results').html('');
+   var values = $('textarea').val();
+       values = values.split('\n');
+    for(var i=0;i<values.length;i++){
+       var val=values[i];
+       
+        if(regExTestValidDomain(val)){/* a) */
+            
+            if(regExTestSC(val)){/* b) */
+                res(i,val,'ok','sc');
+            }else if(regExTestYT(val)){ /* c) */
+             res(i,val,'ok','yt');
+               var id=regExGetYTID(val);
+                if(id){
+                    $('#results').append(id[1]+'<br>');
+                }
+            }else if(regExTestVM(val)){ /* d) */
+             res(i,val,'ok','vm');
+                var id=regExGetVMID(val);
+                if(id){
+                    $('#results').append(id+'<br>');
+                }
+            }else{
+           res(i,val,'ok');
+            }
+        }else{
+            res(i,val,'error');
+        }
+    }
+}
+/* test url */
+function regExTestValidDomain(str){
+    var exp = new RegExp("^(http[s]?:\\/\\/(www\\.)?){1}([0-9A-Za-z-\\.@:%_\+~#=]+)+((\\.[a-zA-Z]{2,3})+)(/(.)*)?(\\?(.)*)?");
+    //var exp = new RegExp(/^https?:\/\/?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/);
+    return exp.test(str);
+}
+/* test vimeo */
+function regExTestVM(str){
+    var exp = new RegExp(/(vimeo\.com)/);
+    return exp.test(str);
+}
+
+function regExGetVMID(url){
+    var regExp = /^.*(vimeo\.com\/)((channels\/[A-z]+\/)|(groups\/[A-z]+\/videos\/))?([0-9]+)/
+    var parseUrl = regExp.exec(url);
+    return parseUrl[5]
+}
+
+function regExGetYTID(url){
+        //http://stackoverflow.com/questions/6903823/regex-for-youtube-id
+       var exp = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i;
+        return exp.exec(url);         
+}
+
+/* test youtube */
+function regExTestYT(str){
+    var exp = new RegExp(/(youtu\.be|youtube\.com)/);
+    return exp.test(str);
+}
+/* test soundcloud */
+function regExTestSC(str){
+    var exp = new RegExp(/(snd\.sc|soundcloud\.com)/);
+    return exp.test(str);
+}
+
+
+/* print result */
+function res(i,msg,ok,domaine){
+    var result = (ok==='error')?'<strike>':'';
+        result += '<span class="'+ok+'">'+i+'</span> ';
+    result+= (domaine)?'<span class="'+domaine+'">'+msg+'</span>':msg;
+        result += (ok==='error')?'</strike>':'';
+    $('#results').append(result+'<br>');
+}

@@ -1,0 +1,21 @@
+
+(function(){
+    if(!(window == top || window.heyoyaShouldLoad)) return;
+    if ("undefined" == typeof(window.heyoya))
+        window.heyoya={};
+
+    var heyoya = window.heyoya;
+    if(!heyoya.utils) heyoya.utils = {};
+    if(!heyoya.params) heyoya.params = {};
+
+    heyoya.utils.loadFile=loadFileUtil=function(){var t={script:1,css:2,json:3},e=0;function a(n,o,l,r){if(null!=n&&""!=n&&null!=o&&""!=o)switch(-1==o.indexOf("http://")&&-1==o.indexOf("https://")&&(o=document.location.protocol+"//"+o),"https:"==document.location.protocol&&-1==o.indexOf("https://")&&(o=o.replace("http://","https://")),n){case t.script:e++;var c=document.createElement("script");c.setAttribute("src",o),c.setAttribute("id","heyoya_"+e+Math.floor(1e6*Math.random()+1)),c.setAttribute("type","text/javascript"),l&&(c.onload=c.onreadystatechange=function(){this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState||(c.onload=c.onreadystatechange=null,l())}),null!=r&&null!=r&&"string"==typeof r&&(c.onerror=function(){a(n,r,l)}),document.getElementsByTagName("head")[0].appendChild(c);break;case t.css:var s=document.getElementsByTagName("head")[0],d=document.createElement("link");d.type="text/css",d.rel="stylesheet",d.href=o;try{l&&(d.onload=l)}catch(t){}s.appendChild(d)}}return{loadFile:a,urlTypes:t}}();;
+    heyoya.params.mainUrl="b2b_main.hey";
+    heyoya.params.receiverUrl="https://commerce.heyoya.com/receiver/";
+    heyoya.params.configurationUrl="b2b_conf.hey";
+    heyoya.params.dataUrl="b2b_data.hey";
+    heyoya.params.uiUrl="b2b_ui.hey";
+    heyoya.params.hostCssUrl="css/hhost.css";
+    heyoya.params.reportUrl="report.action";
+    heyoya.params.version="v=140255";
+    for(var qs="",baseUrl="",scripts=document.getElementsByTagName("script"),scriptsIterator=0;scriptsIterator<scripts.length;scriptsIterator++)if(-1!=scripts[scriptsIterator].src.indexOf("/b2b_loader.")){""==qs&&-1!=scripts[scriptsIterator].src.indexOf("?")&&(qs=scripts[scriptsIterator].src.substring(scripts[scriptsIterator].src.indexOf("?"))),baseUrl=scripts[scriptsIterator].src.substring(0,scripts[scriptsIterator].src.indexOf("/b2b_loader")+1);break}heyoya.params.initialQS=qs,heyoya.params.baseUrl=baseUrl?baseUrl.replace("http://","https://"):baseUrl,window&&window.location&&window.location.href&&-1!=window.location.href.indexOf("shse123=hse321")&&(heyoya.params.baseUrl=heyoya.params.baseUrl.replace("commerce-static.","commerce-staging.").replace("commerce.","commerce-staging."),heyoya.params.receiverUrl=heyoya.params.receiverUrl.replace("commerce-static.","commerce-staging.").replace("commerce.","commerce-staging."));var affiliateString="";if(heyoyaSettings&&heyoyaSettings.affId)affiliateString="&affId="+heyoyaSettings.affId;else if(heyoya.params.initialQS&&-1!=heyoya.params.initialQS.indexOf("affId")){var affiliateIndexOf=heyoya.params.initialQS.indexOf("affId"),nextAmpAfterAffiliate=heyoya.params.initialQS.indexOf("&",affiliateIndexOf);affiliateString=-1!=nextAmpAfterAffiliate?"&"+heyoya.params.initialQS.substring(affiliateIndexOf,nextAmpAfterAffiliate):"&"+heyoya.params.initialQS.substring(affiliateIndexOf)}heyoya.utils.loadFile.loadFile(heyoya.utils.loadFile.urlTypes.script,heyoya.params.baseUrl+heyoya.params.mainUrl+"?"+heyoya.params.version+affiliateString);
+}());

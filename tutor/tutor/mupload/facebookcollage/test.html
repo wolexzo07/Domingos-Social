@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="jquery.js"></script>
+
+        <script src="src/images-grid.js"></script>
+        <link rel="stylesheet" href="src/images-grid.css">
+
+       
+
+    </head>
+    <body>
+
+        <div id="gallery7"></div>
+
+        <script>
+				$(function() {
+                $('#gallery7').imagesGrid({
+                    images: [
+                        'images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/5.jpg','images/6.jpg','images/7.jpg','images/8.jpg','images/9.jpg','images/10.jpg','images/11.jpg','images/12.jpg'
+							],
+                    align: true,
+                    getViewAllText: function(imgsCount) {
+					var	subcount = imgsCount-5;
+					return "+ "+subcount; 					
+				}
+                });
+
+            });
+
+        </script>
+
+    </body>
+</html>

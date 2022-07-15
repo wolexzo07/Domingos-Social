@@ -1,0 +1,119 @@
+Paystack allows you to send money to any Nigerian Bank account using our Transfers APIs. You can initiate both single and bulk transfers. Here are the steps.
+
+Step 1: Get your Secret Key
+Step 2: Collect and verify the Account Number
+Step 3: Create a Transfer Recipient
+Step 4: Initiate Transfer
+Step 5: Listen for Transfer status notification
+
+
+// Creating Recipient code
+
+curl -X POST -H "Authorization: Bearer SECRET_KEY" -H "Content-Type: application/json" -d '{ 
+   "type": "nuban",
+   "name": "Account 1029",
+   "description": "Customer1029 bank account",
+   "account_number": "01000000010",
+   "bank_code": "044",
+   "currency": "NGN",
+ }' "https://api.paystack.co/transferrecipient"
+ 
+// Initiate a transfer
+ 
+curl https://api.paystack.co/transfer \
+-H "Authorization: Bearer SECRET_KEY" \
+-H "Content-Type: application/json" \
+-d '{"source": "balance", "reason": "Holiday Flexing", "amount":3794800, "recipient": "RCP_gx2wn530m0i3w3m"}' \
+-X POST
+
+// Fetch transfer details
+
+curl "https://api.paystack.co/transfer/TRF_2x5j67tnnw1t98k" \
+-H "Authorization: Bearer SECRET_KEY" 
+-X GET
+
+// Bulk Transfer
+
+curl https://api.paystack.co/transfer/bulk \
+-H "Authorization: Bearer YOUR_SECRET_KEY" \
+-H "Content-Type: application/json" \
+-d '{
+    "currency": "NGN",
+    "source": "balance",
+    "transfers": [
+    {
+    "amount": 50000,
+    "recipient": "RCP_db342dvqvz9qcrn"
+    },
+    {
+    "amount": 50000,
+    "recipient": "RCP_db342dvqvz9qcrn"
+    }
+    ]
+}' \
+-X POST
+
+// Finalize transfer for otp enabled
+
+curl https://api.paystack.co/transfer/finalize_transfer \
+-H "Authorization: Bearer SECRET_KEY" \
+-H "Content-Type: application/json" \
+-d '{"transfer_code": "TRF_vsyqdmlzble3uii", "otp": "928783"}' \
+-X POST
+
+CHECK ACCOUNT BALANCE
+
+curl -X GET -H "Authorization: Bearer SECRET_KEY" "https://api.paystack.co/balance"
+
+RESEND OTP
+
+curl https://api.paystack.co/transfer/resend_otp \
+-H "Authorization: Bearer SECRET_KEY" \
+-H "Content-Type: application/json" \
+-d '{"transfer_code": "TRF_vsyqdmlzble3uii"}' \
+-X POST
+
+LIST TRANSFER RECIPIENT
+
+curl "https://api.paystack.co/transferrecipient" \
+-H "Authorization: Bearer SECRET_KEY" 
+-X GET
+
+RESOLVE CARD BIN (First 6 characters of card)
+
+curl "https://api.paystack.co/decision/bin/539983" \
+-X GET
+
+GET LIST OF NIGERIAN BANK
+
+curl "https://api.paystack.co/bank" \
+-H "Authorization: Bearer SECRET_KEY" 
+-X GET
+
+CREATE A REFUND
+
+curl --request POST \
+  --url https://api.paystack.co/refund \
+  --header 'authorization: Bearer sk_{domain}_s3cr3tk3y' \
+  --header 'content-type: application/json' \
+  --header 'user-agent: Paystack-Developers-Hub' \
+  --data '{"currency":"NGN"}'
+  
+FETCH SETTLEMENT
+
+curl "https://api.paystack.co/settlement" \
+-H "Authorization: Bearer SECRET_KEY" 
+-X GET
+
+RESULT OF CREATING RECIPIENT
+
+Array ( [status] => 1 [message] => Transfer recipient created successfully [data] => Array ( [active] => 1 [createdAt] => 2018-09-06T12:41:30.000Z [currency] => NGN [description] => Oluwole bank account [domain] => live [email] => wolexzo007@gmail.com [id] => 334172 [integration] => 132398 [metadata] => [name] => Oluwole 1029 [recipient_code] => RCP_xuhruxrac8fdxvk [type] => nuban [updatedAt] => 2019-11-18T21:53:18.000Z [is_deleted] => [details] => Array ( [authorization_code] => [account_number] => 2177929814 [account_name] => [bank_code] => 057 [bank_name] => Zenith Bank ) ) ) 
+
+RESULT OF TRANSFER
+
+Array ( [status] => 1 [message] => Transfer has been queued [data] => Array ( [reference] => eur4s81zah [integration] => 132398 [domain] => live [amount] => 50 [currency] => NGN [source] => balance [reason] => Normal Transfer [recipient] => 334172 [status] => pending [transfer_code] => TRF_khrvg0pwas1h5q7 [id] => 12985761 [createdAt] => 2019-11-17T21:58:28.602Z [updatedAt] => 2019-11-17T21:58:28.602Z ) ) 
+
+RESULT OF TEST FETCH TRANSFER
+
+Array ( [status] => 1 [message] => Transfer retrieved [data] => Array ( [amount] => 5000 [createdAt] => 2019-11-17T22:11:18.000Z [currency] => NGN [domain] => live [failures] => [id] => 12985830 [integration] => 132398 [reason] => Normal Transfer [reference] => m4vuqk2dqb [source] => balance [source_details] => [status] => success [titan_code] => [transfer_code] => TRF_lcqefhufn902gey [transferred_at] => 2019-11-17T22:11:20.000Z [updatedAt] => 2019-11-17T22:11:20.000Z [recipient] => Array ( [active] => 1 [createdAt] => 2018-09-06T12:41:30.000Z [currency] => NGN [description] => Oluwole bank account [domain] => live [email] => wolexzo007@gmail.com [id] => 334172 [integration] => 132398 [metadata] => [name] => Oluwole 1029 [recipient_code] => RCP_xuhruxrac8fdxvk [type] => nuban [updatedAt] => 2019-11-17T21:29:41.000Z [is_deleted] => [details] => Array ( [authorization_code] => [account_number] => 2177929814 [account_name] => [bank_code] => 057 [bank_name] => Zenith Bank ) ) ) ) 
+

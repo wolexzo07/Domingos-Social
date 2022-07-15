@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>PHP Session Vs Cookies - Phppot</title>
+<meta name="description" content="Sessions and cookies are the global storages used to store data to be persistently available all over the site. These globals can be accesse"><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://phppot.com/feed/">
+<link rel="apple-touch-icon" sizes="180x180" href="https://phppot.com/apple-touch-icon.png?v=031218">
+<link rel="icon" type="image/png" sizes="32x32" href="https://phppot.com/favicon-32x32.png?v=031218">
+<link rel="icon" type="image/png" sizes="16x16" href="https://phppot.com/favicon-16x16.png?v=031218">
+<link rel="manifest" href="https://phppot.com/site.webmanifest?v=031218">
+<link rel="mask-icon" href="https://phppot.com/safari-pinned-tab.svg?v=031218" color="#ffa500">
+<link rel="shortcut icon" href="https://phppot.com/favicon.ico?v=031218">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="PHP Session Vs Cookies - Phppot">
+<meta property="og:site_name" content="Phppot">
+<meta property="og:description" content="Sessions and cookies are the global storages used to store data to be persistently available all over the site. These globals can be accesse"><meta property="og:url" content="https://phppot.com/php/session-vs-cookies/">
+<meta property="twitter:title" content="PHP Session Vs Cookies - Phppot">
+<meta name="twitter:site" content="@phppot">
+<meta property="twitter:creator" content="@phppot">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://phppot.com/wp-content/uploads/2013/04/php_session.jpg"><meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:description" content="Sessions and cookies are the global storages used to store data to be persistently available all over the site. These globals can be accesse"><meta property="twitter:image" content="https://phppot.com/wp-content/uploads/2013/04/php_session.jpg"><script type="text/javascript" async="" src="PHP%20Session%20Vs%20Cookies%20-%20Phppot_files/ga.js"></script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40067115-1']);
+  _gaq.push(['_setDomainName', 'phppot.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://www.google-analytics.com/"><link rel="dns-prefetch" href="https://www.youtube.com/"><link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/"><link rel="dns-prefetch" href="https://static.doubleclick.net/"><link rel="dns-prefetch" href="https://www.google.com/"><link rel="dns-prefetch" href="https://i.ytimg.com/"><link rel="dns-prefetch" href="https://yt3.ggpht.com/"><link rel="dns-prefetch" href="https://fonts.gstatic.com/"><link rel="stylesheet" id="main-style-css" href="PHP%20Session%20Vs%20Cookies%20-%20Phppot_files/papers_228192.css" type="text/css" media="all">
+<link rel="canonical" href="https://phppot.com/php/session-vs-cookies/">
+</head>
+<body onload="prettyPrint()">
+ <div id="site_header">
+    <div class="content">
+        <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP"><img src="PHP%20Session%20Vs%20Cookies%20-%20Phppot_files/phppot-logo.png" id="site-logo" alt="Helping You Build Web Applications Using PHP"></a>
+        <div class="search-container">
+            <form method="get" action="/" class="search-form">
+                <input name="s" class="search" placeholder="Search Phppot" title="Search Phppot" autocomplete="off">
+                <button type="submit" title="Search Phppot" id="search-button"></button>
+            </form>
+        </div>
+        <div class="header-link-container">
+            <span id="mobile-search-icon" onclick="toggleSearch();">Mobile
+                Search</span>
+                <div id="expand-sub-menu-icon">
+                    <a class="testimonial-icon" href="https://phppot.com/testimonials/">Testimonials</a><a class="demo-download-icon" href="https://phppot.com/demo/">Demo</a>
+                </div>  <a id="header-contact-navigation" href="https://phppot.com/contact/">Contact Me</a>
+        </div>
+    </div>
+</div>    <div class="content">
+        <div id="tutorial-body">
+            <div id="tutorial">
+                <h1>PHP Session Vs Cookies</h1>
+                <div class="modified-on">Last modified on March 23rd, 2017 by Vincy.</div>
+<p>Sessions and cookies are the global storages used to store data to be
+ persistently available all over the site. These globals can be accessed
+ from anywhere. In PHP, there are predefined global array variables 
+$_SESSION and $_COOKIES to contain session and cookies data, 
+respectively. Sessions are stored in the server and the cookies are 
+preserved only at the client side browser level.</p>
+<p>In this tutorial, we are going to learn how the create, access and 
+destroy PHP sessions and cookies variables. Also, we are going learn how
+ to set an expiration time for session and cookies data. In a previous 
+tutorial, while discussing the <a href="https://phppot.com/php/unique-features-of-php/">features of PHP</a>, we have seen about super global variables.</p>
+<p><img class="alignnone size-full wp-image-4451" src="PHP%20Session%20Vs%20Cookies%20-%20Phppot_files/global-access.jpg" alt="global-access" srcset="https://phppot.com/wp-content/uploads/2013/04/global-access.jpg 550w, https://phppot.com/wp-content/uploads/2013/04/global-access-300x185.jpg 300w" sizes="(max-width: 550px) 100vw, 550px" width="550" height="340"></p>
+<h2>Working with Session</h2>
+<p>In this section, we are going to see the following&nbsp;to work with PHP sessions. These are,</p>
+<ul>
+<li>Starting session</li>
+<li>Storing session variable</li>
+<li>Accessing session variable</li>
+<li>Clearing session variable</li>
+</ul>
+<h3>Starting Session</h3>
+<p>PHP has a built-in function named as <em>session_start()</em>. This 
+function is used to start a new session or to resume an existing 
+session. By starting the session, it will call session handlers to read 
+and return current session data by using the callback functions. As of 
+PHP version 7, this function can have an associative array of options as
+ its argument.&nbsp;Using these options, we can overwrite the default 
+session configurations.</p>
+<h3>Storing Session Variable</h3>
+<p>The $_SESSION&nbsp;array is used to create a session variable. In the
+ following code, I have created a new session with the index named as <em>tagName</em>.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">session_start</span><span class="pun">();</span><span class="pln">
+$_SESSION</span><span class="pun">[</span><span class="str">"tagName"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"PHP"</span><span class="pun">;</span></pre>
+<h3>Accessing Session Variable</h3>
+<p>Once the data is stored in a session variable, then it is in global scope and can be accessed from any PHP file.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">session_start</span><span class="pun">();</span><span class="pln">
+$tag </span><span class="pun">=</span><span class="pln"> $_SESSION</span><span class="pun">[</span><span class="str">"tagName"</span><span class="pun">];</span><span class="pln">
+echo </span><span class="str">"Welcome to $tag world!"</span><span class="pun">;</span></pre>
+<h3>Clearing Session Variable</h3>
+<p>PHP provides functions to clear existing session data. Those are, <em>session_destroy()</em>, <em>session_unset()</em> and more.</p>
+<p>The <em>session_destroy()&nbsp;</em>function is used to clear all the
+ current session data. After destroying the session, we have to reload 
+the page to see that the session is cleared.</p>
+<p>To make the session_destroy() action to show immediate effect, we can
+ call session_unset() or unset() function to clear session data. Code 
+shows an example to clear session variable.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">session_start</span><span class="pun">();</span><span class="pln">
+session_destroy</span><span class="pun">();</span><span class="pln">
+echo $_SESSION</span><span class="pun">[</span><span class="str">"tagName"</span><span class="pun">];</span><span class="com">//session remains until refresh</span><span class="pln">
+unset</span><span class="pun">(</span><span class="pln">$_SESSION</span><span class="pun">[</span><span class="str">"tagName"</span><span class="pun">]);</span><span class="pln">
+echo $_SESSION</span><span class="pun">[</span><span class="str">"tagName"</span><span class="pun">];</span><span class="com">//session no more;</span></pre>
+<h2><span style="font-size: 1.285714286rem; line-height: 1.6;">PHP Cookies</span></h2>
+<p>In this section, we are going to learn how to set data to the&nbsp;cookies array and use them all over the site.&nbsp;</p>
+<h3>Setting cookies</h3>
+<p>In PHP, we can set cookies by using setcookie<em>(), setrawcookie() or header()</em>&nbsp;function. setrawcookie<em>()</em> is same as setcookie<em>(),</em>&nbsp;but differs by setting the&nbsp;raw value of the cookie with the header without encoding.<em>&nbsp;</em>These
+ function must be used before sending any output to the browser. 
+Otherwise, the cookie data will not be set with the header 
+information.&nbsp;</p>
+<p>While setting cookies, it needs information like&nbsp;cookies name, 
+domain, expiration time and more. The following Code shows the usage 
+example for setting cookies by using the header() and setcookie() 
+functions.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">header</span><span class="pun">(</span><span class="str">"Set-Cookie: platform=php; expires=Mon, 20-April-13 17:30:48 GMT; path=/; domain=phppot.com"</span><span class="pun">);</span></pre>
+<p>or</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">setcookie</span><span class="pun">(</span><span class="str">"platform"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"php"</span><span class="pun">,</span><span class="pln"> time</span><span class="pun">()+</span><span class="lit">7200</span><span class="pun">,</span><span class="pln"> </span><span class="str">"/"</span><span class="pun">,</span><span class="pln"> </span><span class="str">".phppot.com"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">);</span></pre>
+<h3>Accessing cookies</h3>
+<p>PHP cookies can be accessed by using $_COOKIE variable. Also, we can 
+use the other superglobals like $_SERVER, $_ENV and PHP getenv() 
+function to access cookies by specifying HTTP_COOKIE index as shown in 
+the code below. But, $_COOKIE has the guaranteed access in all the 
+server compare to the other global variables. Because some server 
+configuration will not allow us access $_SERVER, $_ENV variables.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">echo $_COOKIE</span><span class="pun">[</span><span class="str">"platform"</span><span class="pun">];</span><span class="pln"> </span><span class="com">// Output: php</span><span class="pln">
+</span><span class="com">// OR</span><span class="pln">
+echo $_SERVER</span><span class="pun">[‘</span><span class="pln">HTTP_COOKIE</span><span class="pun">’];</span><span class="pln"> </span><span class="com">// Output: platform=php</span><span class="pln">
+echo getenv</span><span class="pun">(‘</span><span class="pln">HTTP_COOKIE</span><span class="pun">’);</span><span class="pln"> </span><span class="com">// Output: platform=php</span></pre>
+
+<div id="comments" class="comments-area">
+
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://phppot.com/php/session-vs-cookies/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://phppot.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Leave this empty <span class="required">*</span></label> <input id="url" name="url" type="text" size="30" maxlength="245"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="160" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>			</form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+    <div class="related-articles">
+                    <h2>Popular Articles</h2>
+                    <ul class="related-articles-list">
+                        <li><a href="https://phppot.com/php/secure-remember-me-for-login-using-php-session-and-cookies/">Secure Remember Me for Login using PHP Session and Cookies</a></li>
+                        <li><a href="https://phppot.com/php/php-session-encode-decode/">PHP Session Encode Decode</a></li>
+                        <li><a href="https://phppot.com/php/php-session-configuration/">PHP Session Configuration</a></li>
+                    </ul>
+                </div>
+                <p>
+                    <a href="#top" class="top">↑ Back to Top</a>
+                </p>
+            </div>
+            <div id="tutorial-menu">
+	<ul class="main-menu"><li class="cat-item cat-item-72"><a href="https://phppot.com/category/php/">PHP</a><ul class="sub-menu"><li class="cat-item cat-item-59 "><a href="https://phppot.com/category/php/php-introduction/">PHP Introduction</a></li><li class="cat-item cat-item-26 "><a href="https://phppot.com/category/php/php-basics/">PHP Basics</a></li><li class="cat-item cat-item-99 "><a href="https://phppot.com/category/php/product/">Product</a></li><li class="cat-item cat-item-79 "><a href="https://phppot.com/category/php/php-shopping-cart/">PHP Shopping Cart</a></li><li class="cat-item cat-item-102 "><a href="https://phppot.com/category/php/payment-gateway-integration/">Payment Gateway Integration</a></li><li class="cat-item cat-item-94 "><a href="https://phppot.com/category/php/php-contact-form/">PHP Contact Form</a></li><li class="cat-item cat-item-103 "><a href="https://phppot.com/category/php/comments-system/">Comments System</a></li><li class="cat-item cat-item-57 "><a href="https://phppot.com/category/php/types-variables-operators/">Types, Variables &amp; Operators</a></li><li class="cat-item cat-item-58 "><a href="https://phppot.com/category/php/php-strings/">PHP Strings</a></li><li class="cat-item cat-item-22 "><a href="https://phppot.com/category/php/php-arrays/">PHP Arrays</a></li><li class="cat-item cat-item-61 "><a href="https://phppot.com/category/php/php-functions/">PHP Functions</a></li><li class="cat-item cat-item-35 "><a href="https://phppot.com/category/php/php-oops/">PHP OOPS</a></li><li class="cat-item cat-item-31 "><a href="https://phppot.com/category/php/php-forms/">PHP Forms</a></li><li class="cat-item cat-item-78 "><a href="https://phppot.com/category/php/advanced/">Advanced</a></li><li class="cat-item cat-item-90 "><a href="https://phppot.com/category/php/php-ajax/">PHP AJAX</a></li><li class="cat-item cat-item-89 "><a href="https://phppot.com/category/php/restful-api/">RESTful API</a></li><li class="cat-item cat-item-15 "><a href="https://phppot.com/category/php/php-databases/">PHP Databases</a></li><li class="cat-item cat-item-23 taxonomy-active"><a href="https://phppot.com/category/php/php-sessions-and-cookies/">PHP Sessions and Cookies</a><ul class="post-list"><li class="current-post">PHP Session Vs Cookies</li><li><a class="post-menu" href="https://phppot.com/php/secure-remember-me-for-login-using-php-session-and-cookies/">Secure Remember Me for Login using PHP Session and Cookies</a></li><li><a class="post-menu" href="https://phppot.com/php/php-session-configuration/">PHP Session Configuration</a></li><li><a class="post-menu" href="https://phppot.com/php/php-session-encode-decode/">PHP Session Encode Decode</a></li></ul></li><li class="cat-item cat-item-51 "><a href="https://phppot.com/category/php/error-exception-handling/">Error and Exception Handling</a></li><li class="cat-item cat-item-100 "><a href="https://phppot.com/category/php/file-upload/">File Upload</a></li><li class="cat-item cat-item-101 "><a href="https://phppot.com/category/php/file-import-export/">File Import Export</a></li><li class="cat-item cat-item-36 "><a href="https://phppot.com/category/php/files-and-directories/">Files and Directories</a></li><li class="cat-item cat-item-45 "><a href="https://phppot.com/category/php/php-date-time/">PHP Date Time</a></li><li class="cat-item cat-item-12 "><a href="https://phppot.com/category/php/php-graphics/">PHP Graphics</a></li><li class="cat-item cat-item-24 "><a href="https://phppot.com/category/php/php-xml/">PHP XML</a></li><li class="cat-item cat-item-62 "><a href="https://phppot.com/category/php/php-code-samples/">PHP Code Samples</a></li><li class="cat-item cat-item-96 "><a href="https://phppot.com/category/php/library/">Library</a></li><li class="cat-item cat-item-88 "><a href="https://phppot.com/category/php/php-freelancer/">PHP Freelancer</a></li></ul></li><li class="cat-item cat-item-73"><a href="https://phppot.com/category/jquery/">jQuery</a></li><li class="cat-item cat-item-74"><a href="https://phppot.com/category/wordpress/">WordPress</a></li><li class="cat-item cat-item-75"><a href="https://phppot.com/category/mysql/">MySQL</a></li><li class="cat-item cat-item-76"><a href="https://phppot.com/category/css/">CSS</a></li></ul></div>
+
+            <div id="social-icon">
+                <div class="heading">Share this Article</div>
+                <ul>
+                    <li><a class="social-link facebook-social-link" href="https://www.facebook.com/sharer/sharer.php?u=https://phppot.com/php/session-vs-cookies/" title="Share on Facebook"><span class="facebook-social-img">Share</span></a></li>
+                    <li><a class="social-link twitter-social-link" href="https://twitter.com/intent/tweet?original_referer=https://phppot.com&amp;source=tweetbutton&amp;text=PHP%20Session%20Vs%20Cookies;url=https://phppot.com/php/session-vs-cookies/&amp;via=phppot" title="Share on Twitter"><span class="twitter-social-img">Tweet</span></a></li>
+                    <li><a class="social-link linkedin-social-link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://phppot.com/php/session-vs-cookies/&amp;media=PHP%20Session%20Vs%20Cookies" title="Share on Linkedin"><span class="linkedin-social-img">Share</span></a></li>
+                </ul>
+            </div>
+        </div>
+<div id="sidebar">
+    <div id="aboutcntnt">
+        <div id="photo">
+            <img src="PHP%20Session%20Vs%20Cookies%20-%20Phppot_files/Vincy.jpg" alt="Vincy" title="Vincy" width="100" height="100">
+        </div>
+        <div id="aboutdesc">
+            <p>
+                I’m Vincy, a web developer. If you want to start a
+                project and do a quick launch, <a href="https://phppot.com/contact/">contact
+                    me</a>.
+            </p>
+            <p>I am available for freelance work.</p>
+        </div>
+        <div id="contactMe">
+            <a href="mailto:vincy@phppot.com" title="Contact Me">vincy@phppot.com</a>
+        </div>
+    </div>
+
+                          <div class="sidebar-featured-product">
+        <div class="heading">Featured Product</div>
+        <a href="https://phppot.com/shop/contact-form-iris/"><img src="PHP%20Session%20Vs%20Cookies%20-%20Phppot_files/simple-secure-spam-free-contact-form-in-php-iris-150x150.png">
+        </a>
+        <div class="sidebar-featured-url">
+            <a href="https://phppot.com/shop/contact-form-iris/">Contact
+                Form - Iris</a>
+        </div>
+    </div>
+            <div id="recommended">
+        <div class="heading">Trending Now</div>
+        <ul>
+            <li><a href="https://phppot.com/shop/contact-form-iris/">Contact
+                    Form – Iris</a></li>
+            <li><a href="https://phppot.com/php/simple-php-shopping-cart/">Simple
+                    PHP Shopping Cart</a></li>
+            <li><a href="https://phppot.com/php/how-to-become-a-full-time-freelance-php-developer-and-consultant/">How
+                    to Become a Full Time Freelance PHP Developer and
+                    Consultant</a></li>
+            <li><a href="https://phppot.com/jquery/jquery-ajax-inline-crud-with-php/">jQuery
+                    AJAX Inline CRUD with PHP</a></li>
+            <li><a href="https://phppot.com/php/simple-secure-spam-free-contact-form-in-php-iris/">Simple
+                    Secure Spam-Free Contact Form in PHP – Iris</a></li>
+        </ul>
+    </div>
+    <div class="testimonials-sbar">
+    <div class="heading">Testimonials</div>
+    <p class="testimonial-content"><span class="left-quotes">“</span>Subcontracted
+ work was completed on time, as requested, with great attention to 
+details and utmost flexibility despite various changes towards the end 
+of the project. Bravo! ...<span class="right-quotes">”</span></p>
+    <p class="testimonials-sbar-by">Haris Memisevic, Webpage.ba, Bosnia and Herzegovina</p>
+    <div class="view-more-testimonial">
+        <a href="https://phppot.com/testimonials/"><span class="view-testimonials">View More Testimonials</span></a>
+    </div>
+</div></div></div>
+<div id="footer-contact-note">
+    <div class="content">
+        <h2>Looking for an expert PHP freelancer?</h2>
+        <p class="footer-contact-banner-title">Do you want to develop a
+            modern, lightweight, responsive web application and launch
+            quickly?</p>
+        <p>
+            <a id="footer-contact-navigation" href="https://phppot.com/contact/">Contact
+                Me</a>
+        </p>
+    </div>
+</div>
+<div id="footer">
+    <div class="content">
+        <div class="subscribe-section">
+            <div class="subscribe-email">
+                <div>
+    <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=phppot',
+             'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <p>
+        </p><div><label for="feedb-email-inp">Email:</label></div>
+            <input id="feedb-email-inp" placeholder="Enter your email here" type="text" class="feedb-email" name="email"><input type="hidden" value="phppot" name="uri"><input type="hidden" name="loc" value="en_US"><input type="submit" value="Subscribe" class="subscribe">
+        <p></p>
+    </form>
+</div></div>
+
+            <div class="follow">
+                <a class="facebook" href="https://www.facebook.com/PPbay" rel="nofollow noopener" title="Phppot Facebook Page" target="_blank">Facebook</a><a class="twitter" href="https://www.linkedin.com/in/vincya/" rel="nofollow noopener" title="Phppot LinkedIn Page" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="shop-footer-common">
+            <div class="shop-doc-nav">
+                <div class="shop-doc-nav-links">
+                    <div class="heading">Digital Goods Shop</div>
+                    <a href="https://phppot.com/faq/">FAQ</a> <a href="https://phppot.com/support-policy/">Support
+                        Policy</a> <a href="https://phppot.com/refund-policy/">Refund Policy</a>
+                    <a href="https://phppot.com/licenses/">Licenses</a> <a href="https://phppot.com/user-license/">User License</a> <a href="https://phppot.com/developer-license/">Developer License</a>
+                </div>
+
+                <div class="policy-doc-nav">
+                    <a href="https://phppot.com/terms-of-use/">Terms of
+                        Service</a><a href="https://phppot.com/privacy-policy/">Privacy
+                        Policy</a><a href="https://phppot.com/privacy-policy/#cookie-policy">Cookie
+                        Policy</a> <span class="copyright">© 2019 <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP">Phppot</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('click', function(e){
+    	var element = document.getElementsByClassName("search-container")[0];
+        if (element && !element.contains(e.target) && e.target.id != "mobile-search-icon" && window.innerWidth <= "550") {
+            element.style.display = "none";
+        }
+    });
+    function toggleSearch() {
+        var element = document.getElementsByClassName("search-container")[0];
+        if(element.style.display == 'inline-block') {
+            	element.style.display = "none";
+        } else {
+        	   element.style.display = "inline-block";
+        }
+    }
+</script><script async="" src="PHP%20Session%20Vs%20Cookies%20-%20Phppot_files/prettify.js"></script>
+
+</body></html>

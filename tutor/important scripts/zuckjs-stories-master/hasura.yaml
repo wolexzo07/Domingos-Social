@@ -1,0 +1,9 @@
+description: A basic webpage with zuck.js implemented. With zuck.js, you can add Instagram/WhatsApp/Facebook/Messenger
+  stories/status to your application.
+keywords: zuck.js, nginx, static-files
+media:
+  images:
+  - https://raw.githubusercontent.com/anirudhmurali/zuckjs-stories/master/stories.png
+name: zuckjs-stories
+platformVersion: v0.15.3
+repoUrl: https://github.com/anirudhmurali/zuckjs-stories

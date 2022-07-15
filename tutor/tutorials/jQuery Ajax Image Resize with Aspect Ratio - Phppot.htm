@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>jQuery Ajax Image Resize with Aspect Ratio - Phppot</title>
+<meta name="description" content="In this tutorial, we are going to see how to resize the uploaded image with the aspect ratio. The aspect ratio will be calculated by using t"><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://phppot.com/feed/">
+<link rel="apple-touch-icon" sizes="180x180" href="https://phppot.com/apple-touch-icon.png?v=031218">
+<link rel="icon" type="image/png" sizes="32x32" href="https://phppot.com/favicon-32x32.png?v=031218">
+<link rel="icon" type="image/png" sizes="16x16" href="https://phppot.com/favicon-16x16.png?v=031218">
+<link rel="manifest" href="https://phppot.com/site.webmanifest?v=031218">
+<link rel="mask-icon" href="https://phppot.com/safari-pinned-tab.svg?v=031218" color="#ffa500">
+<link rel="shortcut icon" href="https://phppot.com/favicon.ico?v=031218">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="jQuery Ajax Image Resize with Aspect Ratio - Phppot">
+<meta property="og:site_name" content="Phppot">
+<meta property="og:description" content="In this tutorial, we are going to see how to resize the uploaded image with the aspect ratio. The aspect ratio will be calculated by using t"><meta property="og:url" content="https://phppot.com/jquery/jquery-ajax-image-resize-with-aspect-ratio/">
+<meta property="twitter:title" content="jQuery Ajax Image Resize with Aspect Ratio - Phppot">
+<meta name="twitter:site" content="@phppot">
+<meta property="twitter:creator" content="@phppot">
+<meta property="og:type" content="article">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:description" content="In this tutorial, we are going to see how to resize the uploaded image with the aspect ratio. The aspect ratio will be calculated by using t"><script type="text/javascript" async="" src="jQuery%20Ajax%20Image%20Resize%20with%20Aspect%20Ratio%20-%20Phppot_files/ga.js"></script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40067115-1']);
+  _gaq.push(['_setDomainName', 'phppot.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://www.google-analytics.com/"><link rel="dns-prefetch" href="https://www.youtube.com/"><link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/"><link rel="dns-prefetch" href="https://static.doubleclick.net/"><link rel="dns-prefetch" href="https://www.google.com/"><link rel="dns-prefetch" href="https://i.ytimg.com/"><link rel="dns-prefetch" href="https://yt3.ggpht.com/"><link rel="dns-prefetch" href="https://fonts.gstatic.com/"><link rel="stylesheet" id="main-style-css" href="jQuery%20Ajax%20Image%20Resize%20with%20Aspect%20Ratio%20-%20Phppot_files/papers_228192.css" type="text/css" media="all">
+<link rel="canonical" href="https://phppot.com/jquery/jquery-ajax-image-resize-with-aspect-ratio/">
+</head>
+<body onload="prettyPrint()">
+ <div id="site_header">
+    <div class="content">
+        <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP"><img src="jQuery%20Ajax%20Image%20Resize%20with%20Aspect%20Ratio%20-%20Phppot_files/phppot-logo.png" id="site-logo" alt="Helping You Build Web Applications Using PHP"></a>
+        <div class="search-container">
+            <form method="get" action="/" class="search-form">
+                <input name="s" class="search" placeholder="Search Phppot" title="Search Phppot" autocomplete="off">
+                <button type="submit" title="Search Phppot" id="search-button"></button>
+            </form>
+        </div>
+        <div class="header-link-container">
+            <span id="mobile-search-icon" onclick="toggleSearch();">Mobile
+                Search</span>
+                <div id="expand-sub-menu-icon">
+                    <a class="testimonial-icon" href="https://phppot.com/testimonials/">Testimonials</a><a class="demo-download-icon" href="https://phppot.com/demo/">Demo</a>
+                </div>  <a id="header-contact-navigation" href="https://phppot.com/contact/">Contact Me</a>
+        </div>
+    </div>
+</div>    <div class="content">
+        <div id="tutorial-body">
+            <div id="tutorial">
+                <h1>jQuery Ajax Image Resize with Aspect Ratio</h1>
+                <div class="modified-on">Last modified on September 26th, 2017 by Vincy.</div>
+<p>In this tutorial, we are going to see how to resize the uploaded 
+image with the aspect ratio. The aspect ratio will be calculated by 
+using the dimensions of the original image. Based on this aspect ratio 
+the width or height of the thumbnail image will be scaled.&nbsp;</p>
+<p>In this tutorial, I have used jQuery AJAX to access the image resize 
+function in a PHP class. In a previous tutorial, we have seen the code 
+example for <a href="https://phppot.com/jquery/jquery-ajax-image-upload/">uploading image file via jQuery AJAX</a>.
+ In this example, the image file data is sent to the PHP to access 
+ImageResizer service. On successful image resizing, the PHP code will 
+return the thumbnail markup as a response.</p>
+<p><img class="alignnone size-full wp-image-4553" src="jQuery%20Ajax%20Image%20Resize%20with%20Aspect%20Ratio%20-%20Phppot_files/jquery-ajax-image-upload.jpg" alt="jquery-ajax-image-upload" srcset="https://phppot.com/wp-content/uploads/2017/04/jquery-ajax-image-upload.jpg 550w, https://phppot.com/wp-content/uploads/2017/04/jquery-ajax-image-upload-300x185.jpg 300w" sizes="(max-width: 550px) 100vw, 550px" width="550" height="340"></p>
+<h2>HTML Form to Submit Image Data</h2>
+<p>This code shows HTML to upload the image file to be resized via 
+jquery AJAX function. On clicking the Upload Photo button the selected 
+file input data is sent to a PHP file via AJAX request.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"uploadForm"</span><span class="pln"> </span><span class="atn">action</span><span class="pun">=</span><span class="atv">"upload.php"</span><span class="pln"> </span><span class="atn">method</span><span class="pun">=</span><span class="atv">"post"</span><span class="tag">&gt;</span><span class="pln">
+	</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"targetOuter"</span><span class="tag">&gt;</span><span class="pln">
+		</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"targetLayer"</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+		</span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"photo.png"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"icon-choose-image"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+		</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"icon-choose-image"</span><span class="tag">&gt;</span><span class="pln">
+			</span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"userImage"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"userImage"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"file"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"inputFile"</span><span class="pln">
+				</span><span class="atn">onChange</span><span class="pun">=</span><span class="atv">"</span><span class="pln">showPreview</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">);</span><span class="atv">"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+		</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+	</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+	</span><span class="tag">&lt;div&gt;</span><span class="pln">
+		</span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"Upload Photo"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btnSubmit"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;/form&gt;</span></pre>
+<h2>Access ImageResizer via jQuery AJAX</h2>
+<p>This jQuery function sends an AJAX request to PHP by passing the 
+image data. In PHP code, it accesses ImageResizer service to create 
+thumb based on the aspect ratio.&nbsp; The AJAX call will get the 
+resized image markup after resizing is done.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/javascript"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="kwd">function</span><span class="pln"> showPreview</span><span class="pun">(</span><span class="pln">objFileInput</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">objFileInput</span><span class="pun">.</span><span class="pln">files</span><span class="pun">[</span><span class="lit">0</span><span class="pun">])</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">var</span><span class="pln"> fileReader </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">FileReader</span><span class="pun">();</span><span class="pln">
+        fileReader</span><span class="pun">.</span><span class="pln">onload </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            $</span><span class="pun">(</span><span class="str">"#targetLayer"</span><span class="pun">).</span><span class="pln">html</span><span class="pun">(</span><span class="str">'&lt;img src="'</span><span class="pun">+</span><span class="pln">e</span><span class="pun">.</span><span class="pln">target</span><span class="pun">.</span><span class="pln">result</span><span class="pun">+</span><span class="str">'" class="upload-preview" /&gt;'</span><span class="pun">);</span><span class="pln">
+			$</span><span class="pun">(</span><span class="str">"#targetLayer"</span><span class="pun">).</span><span class="pln">css</span><span class="pun">(</span><span class="str">'opacity'</span><span class="pun">,</span><span class="str">'0.7'</span><span class="pun">);</span><span class="pln">
+			$</span><span class="pun">(</span><span class="str">".icon-choose-image"</span><span class="pun">).</span><span class="pln">css</span><span class="pun">(</span><span class="str">'opacity'</span><span class="pun">,</span><span class="str">'0.5'</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+		fileReader</span><span class="pun">.</span><span class="pln">readAsDataURL</span><span class="pun">(</span><span class="pln">objFileInput</span><span class="pun">.</span><span class="pln">files</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+$</span><span class="pun">(</span><span class="pln">document</span><span class="pun">).</span><span class="pln">ready</span><span class="pun">(</span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+	$</span><span class="pun">(</span><span class="str">"#uploadForm"</span><span class="pun">).</span><span class="pln">on</span><span class="pun">(</span><span class="str">'submit'</span><span class="pun">,(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+		e</span><span class="pun">.</span><span class="pln">preventDefault</span><span class="pun">();</span><span class="pln">
+		$</span><span class="pun">.</span><span class="pln">ajax</span><span class="pun">({</span><span class="pln">
+        	url</span><span class="pun">:</span><span class="pln"> </span><span class="str">"upload.php"</span><span class="pun">,</span><span class="pln">
+			type</span><span class="pun">:</span><span class="pln"> </span><span class="str">"POST"</span><span class="pun">,</span><span class="pln">
+			data</span><span class="pun">:</span><span class="pln">  </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">FormData</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">),</span><span class="pln">
+			beforeSend</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(){</span><span class="pln">$</span><span class="pun">(</span><span class="str">"#body-overlay"</span><span class="pun">).</span><span class="pln">show</span><span class="pun">();},</span><span class="pln">
+			contentType</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">,</span><span class="pln">
+    	    processData</span><span class="pun">:</span><span class="kwd">false</span><span class="pun">,</span><span class="pln">
+			success</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln">
+		    </span><span class="pun">{</span><span class="pln">
+			$</span><span class="pun">(</span><span class="str">"#targetLayer"</span><span class="pun">).</span><span class="pln">html</span><span class="pun">(</span><span class="pln">data</span><span class="pun">);</span><span class="pln">
+			$</span><span class="pun">(</span><span class="str">"#targetLayer"</span><span class="pun">).</span><span class="pln">css</span><span class="pun">(</span><span class="str">'opacity'</span><span class="pun">,</span><span class="str">'1'</span><span class="pun">);</span><span class="pln">
+			setInterval</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">$</span><span class="pun">(</span><span class="str">"#body-overlay"</span><span class="pun">).</span><span class="pln">hide</span><span class="pun">();</span><span class="pln"> </span><span class="pun">},</span><span class="lit">500</span><span class="pun">);</span><span class="pln">
+			</span><span class="pun">},</span><span class="pln">
+		  	error</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> 
+	    	</span><span class="pun">{</span><span class="pln">
+	    	</span><span class="pun">}</span><span class="pln"> 	        
+	   </span><span class="pun">});</span><span class="pln">
+	</span><span class="pun">}));</span><span class="pln">
+</span><span class="pun">});</span><span class="pln">
+</span><span class="tag">&lt;/script&gt;</span></pre>
+<h2>ImageResizer Service</h2>
+<p>In the ImageResizer class, I define a function to resize the original
+ image based on the aspect ratio. If the width and height of the 
+original image are not same, then the aspect ratio is calculated to 
+scale down or scale up the thumbnail image dimensions.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">ImageResizer</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> $thumbWidth </span><span class="pun">=</span><span class="pln"> </span><span class="str">"550"</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> $thumbHeight </span><span class="pun">=</span><span class="pln"> </span><span class="str">"340"</span><span class="pun">;</span><span class="pln">
+    
+    </span><span class="kwd">function</span><span class="pln"> createThumbnail</span><span class="pun">(</span><span class="pln">$image_name</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        $sourcePath </span><span class="pun">=</span><span class="pln"> $uploadDir </span><span class="pun">.</span><span class="pln"> </span><span class="str">'/'</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> $image_name</span><span class="pun">;</span><span class="pln">
+        
+        $sourcePathinfo </span><span class="pun">=</span><span class="pln"> getimagesize</span><span class="pun">(</span><span class="pln">$sourcePath</span><span class="pun">);</span><span class="pln">
+        $imageDetail </span><span class="pun">=</span><span class="pln"> pathinfo</span><span class="pun">(</span><span class="pln">$sourcePath</span><span class="pun">);</span><span class="pln">
+        
+        $originalImage </span><span class="pun">=</span><span class="pln"> imagecreatefromjpeg</span><span class="pun">(</span><span class="pln">$sourcePath</span><span class="pun">);</span><span class="pln">
+        
+        $width          </span><span class="pun">=</span><span class="pln">   $imageDetail</span><span class="pun">[</span><span class="str">"width"</span><span class="pun">];</span><span class="pln">
+        $height          </span><span class="pun">=</span><span class="pln">   $imageDetail</span><span class="pun">[</span><span class="str">"height"</span><span class="pun">];</span><span class="pln">
+        
+        </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$width </span><span class="pun">&gt;</span><span class="pln"> $height</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            $thumbWidth    </span><span class="pun">=</span><span class="pln">   $this</span><span class="pun">-&gt;</span><span class="pln">$thumbWidth</span><span class="pun">;</span><span class="pln">
+            $thumbHeight    </span><span class="pun">=</span><span class="pln">   $old_y</span><span class="pun">*(</span><span class="pln">$this</span><span class="pun">-&gt;</span><span class="pln">$thumbHeight</span><span class="pun">/</span><span class="pln">$old_x</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        
+        </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$width </span><span class="pun">&lt;</span><span class="pln"> $height</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            $thumbWidth    </span><span class="pun">=</span><span class="pln">   $old_x</span><span class="pun">*(</span><span class="pln">$this</span><span class="pun">-&gt;</span><span class="pln">$thumbWidth</span><span class="pun">/</span><span class="pln">$old_y</span><span class="pun">);</span><span class="pln">
+            $thumbHeight    </span><span class="pun">=</span><span class="pln">   $this</span><span class="pun">-&gt;</span><span class="pln">$thumbHeight</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        
+        </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$width </span><span class="pun">==</span><span class="pln"> $height</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            $thumbWidth    </span><span class="pun">=</span><span class="pln">   $this</span><span class="pun">-&gt;</span><span class="pln">$thumbWidth</span><span class="pun">;</span><span class="pln">
+            $thumbHeight    </span><span class="pun">=</span><span class="pln">   $this</span><span class="pun">-&gt;</span><span class="pln">$thumbHeight</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        
+        $thumbImage  </span><span class="pun">=</span><span class="pln">   </span><span class="typ">ImageCreateTrueColor</span><span class="pun">(</span><span class="pln">$thumbWidth</span><span class="pun">,</span><span class="pln">$thumbHeight</span><span class="pun">);</span><span class="pln">
+        
+        imagecopyresampled</span><span class="pun">(</span><span class="pln">$thumbImage</span><span class="pun">,</span><span class="pln">$originalImage</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="pln">$thumbWidth</span><span class="pun">,</span><span class="pln">$thumbHeight</span><span class="pun">,</span><span class="pln">$width</span><span class="pun">,</span><span class="pln">$height</span><span class="pun">);</span><span class="pln">
+        
+        
+        </span><span class="com">// New save location</span><span class="pln">
+        $targetPath </span><span class="pun">=</span><span class="pln"> $moveToDir </span><span class="pun">.</span><span class="pln"> $image_name</span><span class="pun">;</span><span class="pln">
+        
+        $result </span><span class="pun">=</span><span class="pln"> imagejpeg</span><span class="pun">(</span><span class="pln">$thumb_image</span><span class="pun">,</span><span class="pln">$targetPath</span><span class="pun">,</span><span class="lit">80</span><span class="pun">);</span><span class="pln">
+        
+        imagedestroy</span><span class="pun">(</span><span class="pln">$thumbImage</span><span class="pun">);</span><span class="pln">
+        imagedestroy</span><span class="pun">(</span><span class="pln">$originalImage</span><span class="pun">);</span><span class="pln">
+        
+        </span><span class="kwd">return</span><span class="pln"> $result</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">?&gt;</span></pre>
+<p><a class="download" href="https://phppot.com/demo/jQuery-Ajax-Image-Resize-with-Aspect-Ratio/jQuery-Ajax-Image-Resize-with-Aspect-Ratio.zip">Download</a></p>
+
+    <div class="related-articles">
+                    <h2>Popular Articles</h2>
+                    <ul class="related-articles-list">
+                        <li><a href="https://phppot.com/jquery/php-ajax-multiple-image-upload-using-jquery/">PHP AJAX Multiple Image Upload using jQuery</a></li>
+                        <li><a href="https://phppot.com/jquery/jquery-progress-bar-for-php-ajax-file-upload/">jQuery Progress Bar for PHP AJAX File Upload</a></li>
+                        <li><a href="https://phppot.com/jquery/add-delete-image-via-jquery-ajax/">Add Delete Image via jQuery AJAX</a></li>
+                    </ul>
+                </div>
+                <p>
+                    <a href="#top" class="top">↑ Back to Top</a>
+                </p>
+            </div>
+            <div id="tutorial-menu">
+	<ul class="main-menu"><li class="cat-item cat-item-72"><a href="https://phppot.com/category/php/">PHP</a></li><li class="cat-item cat-item-73"><a href="https://phppot.com/category/jquery/">jQuery</a><ul class="sub-menu"><li class="cat-item cat-item-56 "><a href="https://phppot.com/category/jquery/jquery-tutorials/">jQuery Tutorials</a></li><li class="cat-item cat-item-93 "><a href="https://phppot.com/category/jquery/jquery-bootstrap/">jQuery Bootstrap</a></li><li class="cat-item cat-item-82 "><a href="https://phppot.com/category/jquery/jquery-effects/">jQuery Effects</a></li><li class="cat-item cat-item-87 "><a href="https://phppot.com/category/jquery/jquery-animation/">jQuery Animation</a></li><li class="cat-item cat-item-86 "><a href="https://phppot.com/category/jquery/jquery-menu/">jQuery Menu</a></li><li class="cat-item cat-item-80 "><a href="https://phppot.com/category/jquery/jquery-ajax-form/">jQuery AJAX Form</a></li><li class="cat-item cat-item-81 "><a href="https://phppot.com/category/jquery/jquery-form-validation/">jQuery Form Validation</a></li><li class="cat-item cat-item-85 taxonomy-active"><a href="https://phppot.com/category/jquery/jquery-file-upload/">jQuery File Upload</a><ul class="post-list"><li><a class="post-menu" href="https://phppot.com/jquery/php-ajax-multiple-image-upload-using-jquery/">PHP AJAX Multiple Image Upload using jQuery</a></li><li><a class="post-menu" href="https://phppot.com/jquery/add-delete-image-via-jquery-ajax/">Add Delete Image via jQuery AJAX</a></li><li><a class="post-menu" href="https://phppot.com/jquery/jquery-drag-and-drop-image-upload/">jQuery Drag and Drop Image Upload</a></li><li><a class="post-menu" href="https://phppot.com/jquery/jquery-progress-bar-for-php-ajax-file-upload/">jQuery Progress Bar for PHP AJAX File Upload</a></li><li class="current-post">jQuery Ajax Image Resize with Aspect Ratio</li></ul></li><li class="cat-item cat-item-16 "><a href="https://phppot.com/category/jquery/jquery-ajax/">jQuery AJAX</a></li><li class="cat-item cat-item-84 "><a href="https://phppot.com/category/jquery/jquery-ajax-crud/">jQuery AJAX CRUD</a></li><li class="cat-item cat-item-83 "><a href="https://phppot.com/category/jquery/jquery-social-media-effects/">jQuery Social Media Effects</a></li></ul></li><li class="cat-item cat-item-74"><a href="https://phppot.com/category/wordpress/">WordPress</a></li><li class="cat-item cat-item-75"><a href="https://phppot.com/category/mysql/">MySQL</a></li><li class="cat-item cat-item-76"><a href="https://phppot.com/category/css/">CSS</a></li></ul></div>
+
+            <div id="social-icon">
+                <div class="heading">Share this Article</div>
+                <ul>
+                    <li><a class="social-link facebook-social-link" href="https://www.facebook.com/sharer/sharer.php?u=https://phppot.com/jquery/jquery-ajax-image-resize-with-aspect-ratio/" title="Share on Facebook"><span class="facebook-social-img">Share</span></a></li>
+                    <li><a class="social-link twitter-social-link" href="https://twitter.com/intent/tweet?original_referer=https://phppot.com&amp;source=tweetbutton&amp;text=jQuery%20Ajax%20Image%20Resize%20with%20Aspect%20Ratio;url=https://phppot.com/jquery/jquery-ajax-image-resize-with-aspect-ratio/&amp;via=phppot" title="Share on Twitter"><span class="twitter-social-img">Tweet</span></a></li>
+                    <li><a class="social-link linkedin-social-link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://phppot.com/jquery/jquery-ajax-image-resize-with-aspect-ratio/&amp;media=jQuery%20Ajax%20Image%20Resize%20with%20Aspect%20Ratio" title="Share on Linkedin"><span class="linkedin-social-img">Share</span></a></li>
+                </ul>
+            </div>
+        </div>
+<div id="sidebar">
+    <div id="aboutcntnt">
+        <div id="photo">
+            <img src="jQuery%20Ajax%20Image%20Resize%20with%20Aspect%20Ratio%20-%20Phppot_files/Vincy.jpg" alt="Vincy" title="Vincy" width="100" height="100">
+        </div>
+        <div id="aboutdesc">
+            <p>
+                I’m Vincy, a web developer. If you want to start a
+                project and do a quick launch, <a href="https://phppot.com/contact/">contact
+                    me</a>.
+            </p>
+            <p>I am available for freelance work.</p>
+        </div>
+        <div id="contactMe">
+            <a href="mailto:vincy@phppot.com" title="Contact Me">vincy@phppot.com</a>
+        </div>
+    </div>
+
+                          <div class="sidebar-featured-product">
+        <div class="heading">Featured Product</div>
+        <a href="https://phppot.com/shop/contact-form-iris/"><img src="jQuery%20Ajax%20Image%20Resize%20with%20Aspect%20Ratio%20-%20Phppot_files/simple-secure-spam-free-contact-form-in-php-iris-150x150.png">
+        </a>
+        <div class="sidebar-featured-url">
+            <a href="https://phppot.com/shop/contact-form-iris/">Contact
+                Form - Iris</a>
+        </div>
+    </div>
+            <div id="recommended">
+        <div class="heading">Trending Now</div>
+        <ul>
+            <li><a href="https://phppot.com/shop/contact-form-iris/">Contact
+                    Form – Iris</a></li>
+            <li><a href="https://phppot.com/php/simple-php-shopping-cart/">Simple
+                    PHP Shopping Cart</a></li>
+            <li><a href="https://phppot.com/php/how-to-become-a-full-time-freelance-php-developer-and-consultant/">How
+                    to Become a Full Time Freelance PHP Developer and
+                    Consultant</a></li>
+            <li><a href="https://phppot.com/jquery/jquery-ajax-inline-crud-with-php/">jQuery
+                    AJAX Inline CRUD with PHP</a></li>
+            <li><a href="https://phppot.com/php/simple-secure-spam-free-contact-form-in-php-iris/">Simple
+                    Secure Spam-Free Contact Form in PHP – Iris</a></li>
+        </ul>
+    </div>
+    <div class="testimonials-sbar">
+    <div class="heading">Testimonials</div>
+    <p class="testimonial-content"><span class="left-quotes">“</span>The
+ process was fast and very professional. The whole time we could follow 
+the work and correct small details. As we got new ideas under the 
+process Vincy was able to implement them without delay ...<span class="right-quotes">”</span></p>
+    <p class="testimonials-sbar-by">Steen Hertzum Kirchhoff, JobRater, Sweeden</p>
+    <div class="view-more-testimonial">
+        <a href="https://phppot.com/testimonials/"><span class="view-testimonials">View More Testimonials</span></a>
+    </div>
+</div></div></div>
+<div id="footer-contact-note">
+    <div class="content">
+        <h2>Looking for an expert PHP freelancer?</h2>
+        <p class="footer-contact-banner-title">Do you want to develop a
+            modern, lightweight, responsive web application and launch
+            quickly?</p>
+        <p>
+            <a id="footer-contact-navigation" href="https://phppot.com/contact/">Contact
+                Me</a>
+        </p>
+    </div>
+</div>
+<div id="footer">
+    <div class="content">
+        <div class="subscribe-section">
+            <div class="subscribe-email">
+                <div>
+    <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=phppot',
+             'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <p>
+        </p><div><label for="feedb-email-inp">Email:</label></div>
+            <input id="feedb-email-inp" placeholder="Enter your email here" type="text" class="feedb-email" name="email"><input type="hidden" value="phppot" name="uri"><input type="hidden" name="loc" value="en_US"><input type="submit" value="Subscribe" class="subscribe">
+        <p></p>
+    </form>
+</div></div>
+
+            <div class="follow">
+                <a class="facebook" href="https://www.facebook.com/PPbay" rel="nofollow noopener" title="Phppot Facebook Page" target="_blank">Facebook</a><a class="twitter" href="https://www.linkedin.com/in/vincya/" rel="nofollow noopener" title="Phppot LinkedIn Page" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="shop-footer-common">
+            <div class="shop-doc-nav">
+                <div class="shop-doc-nav-links">
+                    <div class="heading">Digital Goods Shop</div>
+                    <a href="https://phppot.com/faq/">FAQ</a> <a href="https://phppot.com/support-policy/">Support
+                        Policy</a> <a href="https://phppot.com/refund-policy/">Refund Policy</a>
+                    <a href="https://phppot.com/licenses/">Licenses</a> <a href="https://phppot.com/user-license/">User License</a> <a href="https://phppot.com/developer-license/">Developer License</a>
+                </div>
+
+                <div class="policy-doc-nav">
+                    <a href="https://phppot.com/terms-of-use/">Terms of
+                        Service</a><a href="https://phppot.com/privacy-policy/">Privacy
+                        Policy</a><a href="https://phppot.com/privacy-policy/#cookie-policy">Cookie
+                        Policy</a> <span class="copyright">© 2019 <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP">Phppot</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('click', function(e){
+    	var element = document.getElementsByClassName("search-container")[0];
+        if (element && !element.contains(e.target) && e.target.id != "mobile-search-icon" && window.innerWidth <= "550") {
+            element.style.display = "none";
+        }
+    });
+    function toggleSearch() {
+        var element = document.getElementsByClassName("search-container")[0];
+        if(element.style.display == 'inline-block') {
+            	element.style.display = "none";
+        } else {
+        	   element.style.display = "inline-block";
+        }
+    }
+</script><script async="" src="jQuery%20Ajax%20Image%20Resize%20with%20Aspect%20Ratio%20-%20Phppot_files/prettify.js"></script>
+
+</body></html>

@@ -1,0 +1,747 @@
+<html><head><iframe id="pxcelframe" style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/t_.htm"></iframe><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/osd.js"></script><script async="" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/get_counts"></script><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pubads_impl_rendering_2019102101.js"></script><script type="text/javascript" async="" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/publishertag.js"></script><style class="vjs-styles-defaults">
+      .video-js {
+        width: 300px;
+        height: 150px;
+      }
+
+      .vjs-fluid {
+        padding-top: 56.25%
+      }
+    </style><style class="vjs-styles-dimensions">
+      .vdo_ai_6351072-dimensions {
+        width: 300px;
+        height: 250px;
+      }
+
+      .vdo_ai_6351072-dimensions.vjs-fluid {
+        padding-top: 56.25%;
+      }
+    </style>
+
+<title>File Upload Progress Bar Using jQuery And PHP</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="Description" content="How to create File Upload Progress Bar Using jQuery And PHP On TalkersCode.com">
+<meta name="Keywords" content="File Upload Progress Bar,ajax file upload,file uploader,jquery upload file,jquery upload,ajax upload,ajax upload file,file upload jquery,jquery file upload plugin,jquery ajax file upload,jquery file upload progress bar,php upload progress bar,php file upload progress bar,jquery file upload demo,ajax image upload,image upload progress bar,jquery progress bar,upload file jquery,progress bar jquery,progress bar,progress bar jquery,jquery progressbar,html progress bar,jquery loading animation,php progress bar,jquery progress,ajax progress bar,jquery progress bar demo,jquery file upload progress bar,progressbar jquery,progress bar html,jquery ajax progress,progress bar jquery,html5 progress bar,progress bar demo,jquery progress bar example,progressbar">
+<meta property="og:image" content="http://talkerscode.com/webtricks/images/progress_bar.jpg">
+
+<link rel="canonical" href="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/file-upload-progress-bar-using-jquery-and-php_002.htm">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TalkersCode">
+<meta name="twitter:title" content="File Upload Progress Bar Using jQuery And PHP On TalkersCode.com">
+<meta name="twitter:description" content="How to create File Upload Progress Bar Using jQuery And PHP On TalkersCode.com">
+<meta name="twitter:image" content="http://talkerscode.com/webtricks/images/progress_bar.jpg">
+
+<link rel="stylesheet" type="text/css" href="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/header.css">
+<link rel="stylesheet" type="text/css" href="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/footer.css">
+<link rel="stylesheet" type="text/css" href="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/webtrick_tut.css">
+<link rel="stylesheet" type="text/css" href="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/big_display_style.css">
+<link rel="stylesheet" type="text/css" href="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/small_display_style.css">
+<link rel="stylesheet" type="text/css" href="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/middle_display_style.css">
+<script type="text/javascript" async="" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/conversion_async.js"></script><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/client.js" async="" type="text/javascript"></script><script type="text/javascript" async="" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/analytics.js"></script><script async="" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/5990996cd85a710012ca4e41.js"></script><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/jquery_002.js"></script><script async="" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/analytics_002.js"></script><script type="text/javascript" async="" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/b2b_loader.htm"></script><script type="text/javascript" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/jquery.js"></script>
+
+<link rel="stylesheet" type="text/css" href="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/prettify.css">
+
+<script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a"></script><script defer="defer" async="" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/vdo.js"></script><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a"></script><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/b2b_main.htm" id="heyoya_1583754" type="text/javascript"></script><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a"></script><link id="_vdo_ads_css_5654_" rel="stylesheet" href="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/vdo.css"><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a"></script><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a"></script><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/prebid-v2.js"></script><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/gpt.js"></script><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/viPlayer_v24.js"></script><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/ima3.js"></script><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/sf_host.js"></script><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/apstag.js"></script><script async="" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/js_002"></script><link rel="preload" href="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/integrator_002.js" as="script"><script type="text/javascript" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/integrator_002.js"></script><link rel="preload" href="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/integrator.js" as="script"><script type="text/javascript" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/integrator.js"></script><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pubads_impl_2019102101.js" async=""></script><style>.vi-instream--container{position: relative;display: inline-block;}.vi-instream--play-handler{cursor:pointer;z-index:9997;position: absolute;background-color: rgba(0, 0, 0, 0.3); top: 0;left: 0; width: 100%;height: 100%;}.vi-instream--play-button{width: 100px; height: 100px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); fill:#282828;}.vi-instream--play-button g{fill: #fff;}</style><link type="text/css" rel="stylesheet" href="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/hhost.css"><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/js"></script><script type="text/javascript">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config', 'AW-819124231');</script><script src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_003"></script><style type="text/css">#st-1 {
+  font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;;
+  direction: ltr;
+  display: block;
+  opacity: 1;
+  text-align: left;
+  z-index: 94034;
+}
+#st-1.st-animated {
+  -moz-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -ms-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -o-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -webkit-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in;
+}
+#st-1.st-hidden {
+  opacity: 0;
+}
+#st-1.st-hide {
+  display: none;
+}
+#st-1 .st-btn {
+  -moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+  -moz-transition: opacity 0.2s ease-in, top 0.2s ease-in; -ms-transition: opacity 0.2s ease-in, top 0.2s ease-in; -o-transition: opacity 0.2s ease-in, top 0.2s ease-in; -webkit-transition: opacity 0.2s ease-in, top 0.2s ease-in; transition: opacity 0.2s ease-in, top 0.2s ease-in;
+  -moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 8px;
+  padding: 0 10px;
+  position: relative;
+  text-align: center;
+  top: 0;
+  vertical-align: top;
+  white-space: nowrap;
+}
+#st-1 .st-btn:last-child {
+  margin-right: 0;
+}
+#st-1 .st-btn > svg {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  top: 10px;
+  vertical-align: top;
+}
+#st-1 .st-btn > img {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  position: relative;
+  top: 10px;
+  vertical-align: top;
+}
+#st-1 .st-btn > span {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  min-width: 67px;
+  opacity: 1;
+  padding: 0 6px;
+  position: relative;
+  vertical-align: top;
+}
+#st-1.st-has-labels .st-btn {
+  min-width: 135px;
+}
+#st-1.st-has-labels .st-btn.st-remove-label {
+  min-width: 50px;
+}
+#st-1.st-has-labels .st-btn.st-remove-label > span {
+  display: none;
+}
+#st-1.st-has-labels .st-btn.st-hide-label > span {
+  display: none;
+}
+#st-1 .st-total {
+  color: #555;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 15px;
+  margin-right: 0;
+  max-width: 80px;
+  padding: 4px 8px;
+  text-align: center;
+}
+#st-1 .st-total.st-hidden {
+  display: none;
+}
+#st-1 .st-total > span {
+  font-size: 20px;
+  line-height: 22px;
+  display: block;
+  padding: 0;
+}
+#st-1 .st-total > span.st-shares {
+  font-size: 12px;
+  line-height: 12px;
+}
+#st-1.st-justified {
+  display: flex;
+  text-align: center;
+}
+#st-1.st-justified .st-btn {
+  -moz-flex: 1;
+-ms-flex: 1;
+-webkit-flex: 1;
+flex: 1;
+}#st-1 .st-btn:hover {
+  opacity: .8;
+  top: -4px;
+}#st-1 .st-btn[data-network='facebook'] {
+  background-color: #4267B2;
+}
+#st-1 .st-btn[data-network='facebook'] svg {
+  fill: #fff;
+}
+#st-1 .st-btn[data-network='facebook'] > span {
+  color: #fff;
+}
+#st-1 .st-btn[data-network='twitter'] {
+  background-color: #55acee;
+}
+#st-1 .st-btn[data-network='twitter'] svg {
+  fill: #fff;
+}
+#st-1 .st-btn[data-network='twitter'] > span {
+  color: #fff;
+}
+#st-1 .st-btn[data-network='linkedin'] {
+  background-color: #0077b5;
+}
+#st-1 .st-btn[data-network='linkedin'] svg {
+  fill: #fff;
+}
+#st-1 .st-btn[data-network='linkedin'] > span {
+  color: #fff;
+}
+#st-1 .st-btn[data-network='googleplus'] {
+  background-color: undefined;
+}
+#st-1 .st-btn[data-network='googleplus'] svg {
+  fill: #fff;
+}
+#st-1 .st-btn[data-network='googleplus'] > span {
+  color: #fff;
+}
+#st-1 .st-btn[data-network='reddit'] {
+  background-color: #ff4500;
+}
+#st-1 .st-btn[data-network='reddit'] svg {
+  fill: #fff;
+}
+#st-1 .st-btn[data-network='reddit'] > span {
+  color: #fff;
+}</style><link rel="preload" href="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/integrator_002.js" as="script"><script type="text/javascript" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/integrator_002.js"></script><link rel="preload" href="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/integrator.js" as="script"><script type="text/javascript" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/integrator.js"></script><link rel="preload" href="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/integrator_002.js" as="script"><script type="text/javascript" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/integrator_002.js"></script><link rel="preload" href="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/integrator.js" as="script"><script type="text/javascript" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/integrator.js"></script></head>
+<body>
+
+<!--
+<script>
+document.addEventListener('DOMContentLoaded',function()
+{
+	if($(document).width()<950 || readCookie('cancel_talkerscode_blogging_subscribe')=='true')
+	{
+		
+	}
+	else
+	{
+		$("#full_window_subscribe_div").slideDown();
+		window.scrollTo(0, 0);
+	}
+});
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function close_subscribe_window()
+{
+	$("#full_window_subscribe_div").slideUp();
+	var date=new Date();
+	date.setTime(date.getTime()+(1*24*60*60*1000));
+	document.cookie ='cancel_talkerscode_blogging_subscribe=true; expires='+date.toGMTString()+'; path=/'
+}
+</script>
+
+<div id="full_window_subscribe_div">
+	<div id="full_mc_embed_signup">
+		
+		<h1>Do You Have A Blog or Website? Check Out This <br>Voice Comment System</h1>
+		<p><img src="http://talkerscode.com/images/heyoya_header.jpg" alt="heyoya"></p>
+		<h2><u>Replace Your Old Comment System With This One</u></h2>
+		
+		<p class="link_wrapper">
+			<a rel="nofollow" target="_blank" href="https://www.heyoya.com/?_hsi=Uzi4SitpgS&_hssi=talkerscode&_hclki=web&_hrt=16383">SIGNUP NOW IT'S FREE & ADD THIS VOICE COMMENT SYSTEM NOW &rarr;</a>
+		</p>
+		
+		<p class="button_wrapper">
+			<input type="button" onclick="close_subscribe_window();" value="No I Don't Want To Improve My Website">
+		</p>
+
+	</div>
+</div>
+-->
+
+<script>
+function showmenu_links()
+{
+$('#mobile_menu_links').animate({width:'toggle'});
+}
+function close_menu()
+{
+	$('#mobile_menu_links').hide();
+}
+function show_search()
+{
+	$('#search_form').toggle();
+}
+function checksearch()
+{
+var sval=document.getElementById("search_query");
+if(sval.value=="")
+{
+	return false;
+}
+else
+{
+	return true;
+}
+}
+</script>
+
+
+<!--
+<div id="sponsored_review_div">
+<p><a target="_blank" rel="nofollow" href="https://www.accuwebhosting.com/">Grab 35% Hosting Discounts on SSD and cloud hosting with FREE domain name* &rarr;</a></p>
+</div>
+-->
+
+
+<div id="header_wrapper">
+
+	<div id="header">
+	
+		<img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/menu_icon.png" id="menu_icon" onclick="showmenu_links();">
+		
+		<a href="http://talkerscode.com/index.php" id="sitename">TalkersCode</a>
+		<div id="menu_links">
+			<li class="main_link"><a class="main_anchor">Learn Web Development</a>
+			<ul id="sub_menu_link">
+			<li><a href="http://talkerscode.com/html/html.php">HTML</a></li>
+			<li><a href="http://talkerscode.com/css/css.php">CSS</a></li>
+			<li><a href="http://talkerscode.com/javascript/javascript.php">JavaScript</a></li>
+			<li><a href="http://talkerscode.com/jquery/jquery.php">jQuery</a></li>
+			<li><a href="http://talkerscode.com/php/php.php">PHP</a></li>
+			<li><a href="http://talkerscode.com/mysql/mysql.php">MySQL</a></li>
+			</ul>
+			</li>
+			<li class="main_link"><a class="main_anchor" href="http://talkerscode.com/webtricks.php">Tutorials</a></li>
+			<li class="main_link"><a class="main_anchor" href="http://talkerscode.com/blogging.php">Blogging</a></li>
+			<li class="main_link"><a class="main_anchor" href="http://talkerscode.com/reviews.php">Reviews</a></li>
+			<li class="main_link"><a class="main_anchor" href="http://talkerscode.com/offers.php">Offers</a></li>
+			<li class="main_link"><a class="main_anchor" href="http://talkerscode.com/advertise.php">Advertise</a></li>
+		</div>
+		
+		<input type="button" onclick="show_search();" id="search_button" value="SEARCH">
+
+		<div id="mobile_menu_links">
+			<li id="close_button" onclick="close_menu();">← CLOSE</li>
+			<li><a href="http://talkerscode.com/html/html.php">HTML</a></li>
+			<li><a href="http://talkerscode.com/css/css.php">CSS</a></li>
+			<li><a href="http://talkerscode.com/javascript/javascript.php">JavaScript</a></li>
+			<li><a href="http://talkerscode.com/jquery/jquery.php">jQuery</a></li>
+			<li><a href="http://talkerscode.com/php/php.php">PHP</a></li>
+			<li><a href="http://talkerscode.com/mysql/mysql.php">MySQL</a></li>
+			<li><a href="http://talkerscode.com/webtricks.php">Tutorials</a></li>
+			<li><a href="http://talkerscode.com/blogging.php">Blogging</a></li>
+			<li><a href="http://talkerscode.com/reviews.php">Reviews</a></li>
+			<li><a href="http://talkerscode.com/offers.php">Offers</a></li>
+			<li><a href="http://talkerscode.com/advertise.php">Advertise</a></li>
+		</div>
+
+	</div><!--end of header-->
+</div><!--end of header_wrapper-->
+
+<div id="blogging_menu_wrapper">
+	<div id="blogging_menu">
+	<p>	
+		Want To Be A Blogger 
+		&nbsp;→&nbsp;
+		<a href="http://talkerscode.com/blogging/how-to-start-a-blog.php">Start A Blog</a>
+		&nbsp;→&nbsp;
+		<a href="http://talkerscode.com/blogging/increase-website-traffic.php">Increase Traffic</a>
+		&nbsp;→&nbsp;
+		<a href="http://talkerscode.com/blogging/make-money-online.php">Make Money Online</a>
+		&nbsp;→&nbsp;
+		<a href="http://talkerscode.com/recommended-things-for-bloggers.php">Recommended Things</a>
+	</p>	
+	</div>
+</div>
+
+<div id="review_request_wrapper">
+<div id="review_request_div">
+	<p class="intro_head">Do You Want A Detailed Review Of Your Product/Service ?</p>
+	<p class="form_link"><a href="http://talkerscode.com/review-request.php">Request A Review</a></p>
+</div>
+</div>
+
+<div id="search_form">
+	<form methof="get" action="http://talkerscode.com/search.php" onsubmit="return checksearch();">
+		<input type="text" id="search_query" name="search" placeholder="Enter Text To Search" autofocus="">
+	</form>
+</div><div id="wrapper">
+<div id="content">
+
+<script type="text/javascript" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_002" defer="defer" async=""></script><script> var vitag = vitag || {};</script>
+
+<div id="bigad_display">
+
+<div class="adsbyvli" data-ad-slot="vi_13703660" data-id="vi_13703660_1" style="display: block !important; max-width: 970px; position: relative !important; margin: 0px auto !important;"><div id="vi_13703660_1" data-ad-slot="vi_13703660" style="width: 970px; height: 250px; display: block;" data-google-query-id="CNfWsbG-uOUCFQKhewodnb0Frg"><iframe class="vliIgnore" id="ifr_vi_13703660_1" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a.htm" scrolling="no" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" allowtransparency="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="970" height="250" frameborder="0"> </iframe></div><iframe class="vliIcon" id="vliIcon_vi_13703660_1" scrolling="no" allowtransparency="true" hidefocus="true" tabindex="-1" marginwidth="0" marginheight="0" style="border-top-right-radius: 5px !important; background-color: rgba(255, 255, 255, 0.9) !important; overflow: hidden !important; position: absolute !important; left: 0px !important; bottom: 0px !important; z-index: 9999 !important; transition: width 0.3s ease 0s, opacity 0.3s ease-in-out 0s !important; height: 16px !important; width: 16px !important; opacity: 0; visibility: hidden;" frameborder="no"></iframe></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_13703660")})</script>
+
+</div>
+
+<div id="left_div">
+<div id="webtrick_div">
+<h1 class="page_title">File Upload Progress Bar Using jQuery And PHP.</h1>
+<p class="posttime">Last Updated - Aug 30, 2019</p>
+
+<!--Social Sharing Buttons-->
+<script type="text/javascript" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/sharethis.js" async="async"></script>
+<div class="sharethis-inline-share-buttons st-left st-has-labels  st-inline-share-buttons st-animated" id="st-1"><div class="st-total ">
+  <span class="st-label">202</span>
+  <span class="st-shares">
+    Shares
+  </span>
+</div><div class="st-btn st-first" data-network="facebook" style="display: inline-block;">
+  <img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/facebook.svg">
+  <span class="st-label">Share</span>
+</div><div class="st-btn" data-network="twitter" style="display: inline-block;">
+  <img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/twitter.svg">
+  <span class="st-label">Tweet</span>
+</div><div class="st-btn" data-network="linkedin" style="display: inline-block;">
+  <img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/linkedin.svg">
+  <span class="st-label">Share</span>
+</div><div class="st-btn st-last st-remove-label" data-network="reddit" style="display: inline-block;">
+  <img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/reddit.svg">
+  <span class="st-label">Share</span>
+</div></div>
+<p class="tuttags">Tags:- <a href="http://talkerscode.com/webtricks.php?category=jQuery">jQuery</a> <a href="http://talkerscode.com/webtricks.php?category=PHP">PHP</a> <a href="http://talkerscode.com/webtricks.php?category=HTML">HTML</a> <a href="http://talkerscode.com/webtricks.php?category=CSS">CSS</a></p>
+
+<div id="linkad_middle">
+
+</div>
+<br>
+
+<p class="explain_para">Progress Bar is used to display the progress of 
+file upload process.Its very helpful and widely used in file 
+upload process just to give user about progress of file upload.In this 
+tutorial we will create file upload progress bar using jquery and 
+php.You may also like <a href="http://talkerscode.com/webtricks/drag-and-drop-image-upload-using-ajax-jquery-and-php.php">Drag And Drop Image Upload Using jQuery</a></p>
+
+<script type="text/javascript" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_002" defer="defer" async=""></script><script> var vitag = vitag || {};</script>
+
+<div id="middlead_display">
+
+<div class="adsbyvli" data-ad-slot="vi_13703423" data-id="vi_13703423_1" style="display: block !important; max-width: 300px; position: relative !important; margin: 0px auto !important;"><div id="vi_13703423_1" data-ad-slot="vi_13703423" style="display: block; width: 300px; height: 250px;" data-google-query-id="CO7BtrG-uOUCFcc54Aod8C0IKA"><iframe class="vliIgnore" id="ifr_vi_13703423_1" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a.htm" scrolling="no" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" allowtransparency="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="250" frameborder="0"> </iframe></div><iframe class="vliIcon" id="vliIcon_vi_13703423_1" scrolling="no" allowtransparency="true" hidefocus="true" tabindex="-1" marginwidth="0" marginheight="0" style="border-top-right-radius: 5px !important; background-color: rgba(255, 255, 255, 0.9) !important; overflow: hidden !important; position: absolute !important; left: 0px !important; bottom: 0px !important; z-index: 9999 !important; transition: width 0.3s ease 0s, opacity 0.3s ease-in-out 0s !important; height: 16px !important; width: 16px !important; opacity: 0; visibility: hidden;" frameborder="no"></iframe></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_13703423")})</script>
+
+</div>
+
+<br>
+<a class="demolink" href="http://talkerscode.com/webtricks/demo/demo_file-upload-progress-bar-using-jquery-and-php.php" target="_blank">See Demo</a>
+<br>
+<center><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/progress_bar.jpg" class="tut_image" alt="File Upload Progress Bar"></center>
+
+<br>
+<br>
+
+<p class="explain_para"><b><u>To Create File Upload Progress Bar it takes only four steps:-</u></b></p>
+<ol>
+<li>Make a HTML file and define markup for file upload</li>
+<li>Make a JavaScript file and define script for Progress Bar</li>
+<li>Make a PHP file to upload the image</li>
+<li>Make a CSS file and define styling for Progress Bar</li>
+</ol>
+<br>
+
+<script type="text/javascript" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_002" defer="defer" async=""></script><script> var vitag = vitag || {};</script>
+
+<div id="second_middlead_display">
+
+<div class="adsbyvli" data-ad-slot="vi_13703423" data-id="vi_13703423_2" style="display: block !important; max-width: 300px; position: relative !important; margin: 0px auto !important;"><div id="vi_13703423_2" data-ad-slot="vi_13703423" style="display: block; width: 300px; height: 250px;" data-google-query-id="CInxurG-uOUCFcuqdwodhuIMYQ"><iframe class="vliIgnore" id="ifr_vi_13703423_2" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a.htm" scrolling="no" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" allowtransparency="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="250" frameborder="0"> </iframe></div><iframe class="vliIcon" id="vliIcon_vi_13703423_2" scrolling="no" allowtransparency="true" hidefocus="true" tabindex="-1" marginwidth="0" marginheight="0" style="border-top-right-radius: 5px !important; background-color: rgba(255, 255, 255, 0.9) !important; overflow: hidden !important; position: absolute !important; left: 0px !important; bottom: 0px !important; z-index: 9999 !important; transition: width 0.3s ease 0s, opacity 0.3s ease-in-out 0s !important; height: 16px !important; width: 16px !important; opacity: 0; visibility: hidden;" frameborder="no"></iframe></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_13703423")})</script>
+
+</div>
+
+<br>
+<p class="explain_para"><b>Step 1.Make a HTML file and define markup for file upload</b></p>
+<p class="explain_para">We make a HTML file and save it with a name <b>fileupload.html</b></p>
+<div class="code_div">
+<pre class="prettyprint prettyprinted" style=""><span class="tag">&lt;html&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+  </span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/css"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"progress_style.css"</span><span class="tag">&gt;</span><span class="pln">
+  </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/javascript"</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"jquery.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+  </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/javascript"</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"jquery.form.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+  </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/javascript"</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"upload_progress.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body&gt;</span><span class="pln">
+</span><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">action</span><span class="pun">=</span><span class="atv">"upload_file.php"</span><span class="atn">id</span><span class="pun">=</span><span class="atv">"myForm"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"frmupload"</span><span class="pln"> </span><span class="atn">method</span><span class="pun">=</span><span class="atv">"post"</span><span class="pln"> </span><span class="atn">enctype</span><span class="pun">=</span><span class="atv">"multipart/form-data"</span><span class="tag">&gt;</span><span class="pln">
+  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"file"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"upload_file"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"upload_file"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">'submit_image'</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"Submit Comment"</span><span class="pln"> </span><span class="atn">onclick</span><span class="pun">=</span><span class="atv">'</span><span class="pln">upload_image</span><span class="pun">();</span><span class="atv">'</span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;/form&gt;</span><span class="pln">
+</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">'progress'</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"progress_div"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">'bar'</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">'bar1'</span><span class="tag">&gt;&lt;/div&gt;</span><span class="pln">
+</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">'percent'</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">'percent1'</span><span class="tag">&gt;</span><span class="pln">0%</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">'output_image'</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></pre>
+</div>
+<br>
+<p class="explain_para">In this step we make a form to upload file and attach all the necessary files but before you proceed further you
+have to download <a href="https://jquery.com/download/">jQuery</a> and <a href="http://malsup.com/jquery/form/#download">jQuery Form Plugin</a>
+</p>
+
+<br>
+<br>
+
+<script type="text/javascript" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_002" defer="defer" async=""></script><script> var vitag = vitag || {};</script>
+
+<div id="third_middlead_display">
+
+<div class="adsbyvli" data-ad-slot="vi_13703423" data-id="vi_13703423_3" style="display: block !important; max-width: 300px; position: relative !important; margin: 0px auto !important;"><div id="vi_13703423_3" data-ad-slot="vi_13703423" style="display: block; width: 300px; height: 250px;" data-google-query-id="CPb0vrG-uOUCFck74AodxuwI7A"><iframe class="vliIgnore" id="ifr_vi_13703423_3" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a.htm" scrolling="no" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" allowtransparency="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="250" frameborder="0"> </iframe></div><iframe class="vliIcon" id="vliIcon_vi_13703423_3" scrolling="no" allowtransparency="true" hidefocus="true" tabindex="-1" marginwidth="0" marginheight="0" style="border-top-right-radius: 5px !important; background-color: rgba(255, 255, 255, 0.9) !important; overflow: hidden !important; position: absolute !important; left: 0px !important; bottom: 0px !important; z-index: 9999 !important; transition: width 0.3s ease 0s, opacity 0.3s ease-in-out 0s !important; height: 16px !important; width: 16px !important; opacity: 0; visibility: hidden;" frameborder="no"></iframe></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_13703423")})</script>
+
+</div>
+
+<p class="explain_para"><b>Step 2.Make a JavaScript file and define script for Progress Bar</b></p>
+<p class="explain_para">We make a JavaScript file and save it with name <b>upload_progress.js</b></p>
+<div class="code_div">
+<pre class="prettyprint prettyprinted" style=""><span class="kwd">function</span><span class="pln"> upload_image</span><span class="pun">()</span><span class="pln"> 
+</span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">var</span><span class="pln"> bar </span><span class="pun">=</span><span class="pln"> $</span><span class="pun">(</span><span class="str">'#bar'</span><span class="pun">);</span><span class="pln">
+  </span><span class="kwd">var</span><span class="pln"> percent </span><span class="pun">=</span><span class="pln"> $</span><span class="pun">(</span><span class="str">'#percent'</span><span class="pun">);</span><span class="pln">
+  $</span><span class="pun">(</span><span class="str">'#myForm'</span><span class="pun">).</span><span class="pln">ajaxForm</span><span class="pun">({</span><span class="pln">
+    beforeSubmit</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"progress_div"</span><span class="pun">).</span><span class="pln">style</span><span class="pun">.</span><span class="pln">display</span><span class="pun">=</span><span class="str">"block"</span><span class="pun">;</span><span class="pln">
+      </span><span class="kwd">var</span><span class="pln"> percentVal </span><span class="pun">=</span><span class="pln"> </span><span class="str">'0%'</span><span class="pun">;</span><span class="pln">
+      bar</span><span class="pun">.</span><span class="pln">width</span><span class="pun">(</span><span class="pln">percentVal</span><span class="pun">)</span><span class="pln">
+      percent</span><span class="pun">.</span><span class="pln">html</span><span class="pun">(</span><span class="pln">percentVal</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">},</span><span class="pln">
+
+    uploadProgress</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="kwd">event</span><span class="pun">,</span><span class="pln"> position</span><span class="pun">,</span><span class="pln"> total</span><span class="pun">,</span><span class="pln"> percentComplete</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="kwd">var</span><span class="pln"> percentVal </span><span class="pun">=</span><span class="pln"> percentComplete </span><span class="pun">+</span><span class="pln"> </span><span class="str">'%'</span><span class="pun">;</span><span class="pln">
+      bar</span><span class="pun">.</span><span class="pln">width</span><span class="pun">(</span><span class="pln">percentVal</span><span class="pun">)</span><span class="pln">
+      percent</span><span class="pun">.</span><span class="pln">html</span><span class="pun">(</span><span class="pln">percentVal</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">},</span><span class="pln">
+    
+	success</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="kwd">var</span><span class="pln"> percentVal </span><span class="pun">=</span><span class="pln"> </span><span class="str">'100%'</span><span class="pun">;</span><span class="pln">
+      bar</span><span class="pun">.</span><span class="pln">width</span><span class="pun">(</span><span class="pln">percentVal</span><span class="pun">)</span><span class="pln">
+      percent</span><span class="pun">.</span><span class="pln">html</span><span class="pun">(</span><span class="pln">percentVal</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">},</span><span class="pln">
+
+    complete</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">xhr</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">xhr</span><span class="pun">.</span><span class="pln">responseText</span><span class="pun">)</span><span class="pln">
+      </span><span class="pun">{</span><span class="pln">
+        document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"output_image"</span><span class="pun">).</span><span class="pln">innerHTML</span><span class="pun">=</span><span class="pln">xhr</span><span class="pun">.</span><span class="pln">responseText</span><span class="pun">;</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">});</span><span class="pln"> 
+</span><span class="pun">}</span></pre>
+</div>
+<br>
+<p class="explain_para">In this step we use ajaxForm to upload and show 
+the progress bar.jQuery Form Plugin has predefined 
+functions to upload and display the progress bar.In first function we 
+initialise the progress bar width and % and set the styling.In second
+function it increase the % and width of the bar as file uploads slowly 
+slowly.In third function if file upload successfully then set the % 
+to 100 and increase the bar width.In fourth function if the whole file 
+upload process completes with no error then it displays the file.For 
+more information about <a href="http://malsup.com/jquery/form/">jQuery form functions.</a></p>
+<br>
+<br>
+
+<p class="explain_para"><b>Step 3.Make a PHP file to upload the image</b></p>
+<p class="explain_para">We make a PHP file and save it with name <b>upload_file.php</b></p>
+<div class="code_div">
+<pre class="prettyprint prettyprinted" style=""><span class="kwd">if</span><span class="pun">(</span><span class="pln">isset</span><span class="pun">(</span><span class="pln">$_POST</span><span class="pun">[</span><span class="str">'submit_image'</span><span class="pun">]))</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+  $uploadfile</span><span class="pun">=</span><span class="pln">$_FILES</span><span class="pun">[</span><span class="str">"upload_file"</span><span class="pun">][</span><span class="str">"tmp_name"</span><span class="pun">];</span><span class="pln">
+  $folder</span><span class="pun">=</span><span class="str">"images/"</span><span class="pun">;</span><span class="pln">
+  move_uploaded_file</span><span class="pun">(</span><span class="pln">$_FILES</span><span class="pun">[</span><span class="str">"upload_file"</span><span class="pun">][</span><span class="str">"tmp_name"</span><span class="pun">],</span><span class="pln"> $folder</span><span class="pun">.</span><span class="pln">$_FILES</span><span class="pun">[</span><span class="str">"upload_file"</span><span class="pun">][</span><span class="str">"name"</span><span class="pun">]);</span><span class="pln">
+  echo </span><span class="str">'&lt;img src="'</span><span class="pun">.</span><span class="pln">$folder</span><span class="pun">.</span><span class="str">""</span><span class="pun">.</span><span class="pln">$_FILES</span><span class="pun">[</span><span class="str">"upload_file"</span><span class="pun">][</span><span class="str">"name"</span><span class="pun">].</span><span class="str">'"&gt;'</span><span class="pun">;</span><span class="pln">
+  </span><span class="kwd">exit</span><span class="pun">();</span><span class="pln">
+</span><span class="pun">}</span></pre>
+</div>
+<br>
+<p class="explain_para">In this step we get and upload file to folder and send the file to javascript upload file for display.In this step we
+except only images to upload you can customise further as per your need.You can also view <a href="http://talkerscode.com/webtricks/upload%20image%20to%20database%20and%20server%20using%20HTML,PHP%20and%20MySQL.php">How to Upload Images to server or database</a>
+</p>
+<br>
+<br>
+
+<p class="explain_para"><b>Step 4.Make a CSS file and define styling for progress bar</b></p>
+<p class="explain_para">We make a CSS file and save it with name <b>progress_style.css</b>.</p>
+<div class="code_div">
+<pre class="prettyprint prettyprinted" style=""><span class="pln">body
+</span><span class="pun">{</span><span class="pln"> 
+  padding</span><span class="pun">:</span><span class="pln"> </span><span class="lit">30px</span><span class="pln"> 
+</span><span class="pun">}</span><span class="pln">
+form 
+</span><span class="pun">{</span><span class="pln"> 
+  display</span><span class="pun">:</span><span class="pln"> block</span><span class="pun">;</span><span class="pln"> 
+  margin</span><span class="pun">:</span><span class="pln"> </span><span class="lit">20px</span><span class="pln"> </span><span class="kwd">auto</span><span class="pun">;</span><span class="pln"> 
+  background</span><span class="pun">:</span><span class="pln"> </span><span class="com">#eee; </span><span class="pln">
+  border</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span><span class="pln"> </span><span class="lit">10px</span><span class="pun">;</span><span class="pln"> 
+  padding</span><span class="pun">:</span><span class="pln"> </span><span class="lit">15px</span><span class="pln"> 
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">.</span><span class="pln">progress 
+</span><span class="pun">{</span><span class="pln">
+  display</span><span class="pun">:</span><span class="pln">none</span><span class="pun">;</span><span class="pln"> 
+  position</span><span class="pun">:</span><span class="pln">relative</span><span class="pun">;</span><span class="pln"> 
+  width</span><span class="pun">:</span><span class="lit">400px</span><span class="pun">;</span><span class="pln"> 
+  border</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1px</span><span class="pln"> solid </span><span class="com">#ddd; </span><span class="pln">
+  padding</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1px</span><span class="pun">;</span><span class="pln"> 
+  border</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span><span class="pln"> </span><span class="lit">3px</span><span class="pun">;</span><span class="pln"> 
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">.</span><span class="pln">bar 
+</span><span class="pun">{</span><span class="pln"> 
+  background</span><span class="pun">-</span><span class="pln">color</span><span class="pun">:</span><span class="pln"> </span><span class="com">#B4F5B4; </span><span class="pln">
+  width</span><span class="pun">:</span><span class="lit">0</span><span class="pun">%;</span><span class="pln"> 
+  height</span><span class="pun">:</span><span class="lit">20px</span><span class="pun">;</span><span class="pln"> 
+  border</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span><span class="pln"> </span><span class="lit">3px</span><span class="pun">;</span><span class="pln"> 
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">.</span><span class="pln">percent 
+</span><span class="pun">{</span><span class="pln"> 
+  position</span><span class="pun">:</span><span class="pln">absolute</span><span class="pun">;</span><span class="pln"> 
+  display</span><span class="pun">:</span><span class="kwd">inline</span><span class="pun">-</span><span class="pln">block</span><span class="pun">;</span><span class="pln"> 
+  top</span><span class="pun">:</span><span class="lit">3px</span><span class="pun">;</span><span class="pln"> 
+  left</span><span class="pun">:</span><span class="lit">48</span><span class="pun">%;</span><span class="pln"> 
+</span><span class="pun">}</span><span class="pln">
+</span></pre>
+</div>
+<br>
+<p class="explain_para">You can view our <a href="http://talkerscode.com/webtricks/get-file-size-and-extension-before-uploading-using-jquery.php">get file size and extension before uploading using jQuery</a> 
+tutorial to validate files before uploading.Thats all, this is how to Create File Upload Progress Bar Using jQuery and PHP.
+You can customize this code further as per your requirement. And please feel free to give comments on this tutorial.
+</p>
+</div><!--end of webtrick_div-->
+
+<div id="comment_div">
+<script>
+function right_scroll_results()
+{
+	$('#latest_tutorial_div ul').animate({scrollLeft: "+=350px"}, "fast");
+}
+function left_scroll_results()
+{
+	$('#latest_tutorial_div ul').animate({scrollLeft: "-=350px"}, "fast");
+}
+</script>
+
+<div id="latest_tutorial_div"><p class="head"><span>RELATED TUTORIALS</span></p><ul><li class="left_scroll_btn" onclick="left_scroll_results()">❮</li>		<li><a href="http://talkerscode.com/webtricks/file-upload-progress-bar-using-jquery-and-php.php" class="latest_tut_links"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/progress_bar.jpg"><span>File Upload Progress Bar Using jQuery And PHP</span></a></li>
+				<li><a href="http://talkerscode.com/webtricks/animated-progress-bar-using-jquery-and-css.php" class="latest_tut_links"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/animated_progress_bar.jpg"><span>Animated Progress Bar Using jQuery And CSS</span></a></li>
+				<li><a href="http://talkerscode.com/webtricks/multistep-form-with-progress-bar-using-jquery-and-css.php" class="latest_tut_links"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/multi_form.jpg"><span>Multistep Form With Progress Bar Using jQuery And CSS</span></a></li>
+				<li><a href="http://talkerscode.com/webtricks/display-progress-bar-while-page-loads-using-jquery.php" class="latest_tut_links"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/progress_bar_onload.jpg"><span>Display Progress Bar While Page Loads Using jQuery</span></a></li>
+				<li><a href="http://talkerscode.com/webtricks/create-zip-file-after-upload-using-php.php" class="latest_tut_links"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/php_zip_file.jpg"><span>Create Zip File After Upload Using PHP</span></a></li>
+				<li><a href="http://talkerscode.com/webtricks/remove-file-extensions-using-htaccess-file.php" class="latest_tut_links"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/remove_extensions_htaccess.jpg"><span>Remove File Extensions Using Htaccess File</span></a></li>
+				<li><a href="http://talkerscode.com/webtricks/create-simple-notification-bar-using-jquery-and-css.php" class="latest_tut_links"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/notification_bar.jpg"><span>Create Simple Notification Bar Using jQuery And CSS</span></a></li>
+				<li><a href="http://talkerscode.com/webtricks/create-animated-skill-bar-using-jquery-html-and-css.php" class="latest_tut_links"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/animated_skill_bar.jpg"><span>Create Animated Skill Bar Using jQuery, HTML And CSS</span></a></li>
+				<li><a href="http://talkerscode.com/webtricks/drag-and-drop-image-upload-using-ajax-jquery-and-php.php" class="latest_tut_links"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/drag_and_drop.jpg"><span>Drag And Drop Image Upload Using jQuery Ajax And PHP</span></a></li>
+				<li><a href="http://talkerscode.com/webtricks/upload-image-without-page-refresh-using-ajax-jquery-and-php.php" class="latest_tut_links"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/ajax_image_upload.jpg"><span>Upload Image Without Page Refresh Using Ajax,jQuery And PHP</span></a></li>
+		<li class="right_scroll_btn" onclick="right_scroll_results()">❯</li></ul></div>
+<div id="user_comments">
+<div id="heyoyaDiv" style="width: 640px; max-width: 100%; overflow: hidden;"><div id="heyoyaB2BApp" style="width:100% !important; height: 1286px !important;min-height: 1286px !important;">    <iframe id="heyB2BData" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/b2b_data.htm" allow="microphone;" frameborder="0"></iframe>   <iframe id="heyB2BUI" class="normal" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/b2b_ui.htm" scrolling="no" allow="microphone;" style="width:100% !important; height: 1286px !important;;min-height: 1286px !important;display:block !important;" frameborder="0"></iframe> </div></div>
+<script type="text/javascript" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/b2b_settings.htm"></script>
+</div>
+
+
+<!--728x90-->
+<br>
+<div class="adsbyvli" data-ad-slot="vi_13703424" data-id="vi_13703424_1" style="display: block !important; max-width: 728px; position: relative !important; margin: 0px auto !important;"><div id="vi_13703424_1" data-ad-slot="vi_13703424" style="display: block; width: 728px; height: 90px;" data-google-query-id="CMjRwbG-uOUCFco24AodujsBmA"><iframe class="vliIgnore" id="ifr_vi_13703424_1" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a.htm" scrolling="no" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" allowtransparency="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="90" frameborder="0"> </iframe></div><iframe class="vliIcon" id="vliIcon_vi_13703424_1" scrolling="no" allowtransparency="true" hidefocus="true" tabindex="-1" marginwidth="0" marginheight="0" style="border-top-right-radius: 5px !important; background-color: rgba(255, 255, 255, 0.9) !important; overflow: hidden !important; position: absolute !important; left: 0px !important; bottom: 0px !important; z-index: 9999 !important; transition: width 0.3s ease 0s, opacity 0.3s ease-in-out 0s !important; height: 16px !important; width: 16px !important; opacity: 0; visibility: hidden;" frameborder="no"></iframe></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_13703424")})</script></div><!--end of comment_div-->
+
+</div><!--end of left_div-->
+
+<div id="right_div">
+<!--Previous Scroll top 250-->
+
+<script>
+$(window).scroll(function(e){ 
+	var $el = $('#affiliate_div'); 
+	var isPositionFixed = ($el.css('position') == 'fixed');
+
+	if($(this).scrollTop() > 650 && !isPositionFixed && $(this).scrollTop() < ($(document).height() - 1000))
+	{ 
+		$('#affiliate_div').css({'position': 'fixed', 'top': '0px'}); 
+	}
+	if($(this).scrollTop() < 650 && isPositionFixed)
+	{
+		$('#affiliate_div').css({'position': 'static', 'top': '0px'}); 
+	}
+	if ($(this).scrollTop() > ($(document).height() - 1000) && isPositionFixed)
+	{
+		$('#affiliate_div').css({'position': 'static', 'bottom': '0px'}); 
+	}
+});
+</script>
+
+<script type="text/javascript" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_002" defer="defer" async=""></script><script> var vitag = vitag || {};</script>
+<div id="affiliate_div" style="position: fixed; top: 0px;">
+<div id="vdo_ai_div-0" style="display: block; width: 100%; margin-left: 0px;"><div id="_vdo_ads_player_ai_1102" style="display: none;" class="vdo_content"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_018.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_033.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_060.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_016.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_057.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_006.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_063.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_072.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_071.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_028.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_010.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_073.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_045.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_047.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_050.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_043.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_049.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_056.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_030.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_003.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_035.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_029.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_044.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_013.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_011.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_021.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_020.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_062.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_059.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_015.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_024.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_061.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_022.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_070.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_075.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_004.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_008.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_038.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_027.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_037.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_065.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_040.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_002.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_066.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_026.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_041.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_067.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_042.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_007.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_058.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_009.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_036.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_046.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_025.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_034.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_051.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_005.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_053.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_012.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_031.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_014.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_017.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_032.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_048.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_019.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_055.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_069.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_023.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_074.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_039.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><div class="vdo-js vjs-default-skin vdo_ai_6351072-dimensions vjs-controls-disabled vjs-workinghover vjs-v7 vjs-has-started vjs-playing vjs-user-inactive" webkit-playsinline="webkit-playsinline" playsinline="playsinline" autoplay="true" muted="true" id="vdo_ai_6351072" tabindex="-1" role="region" aria-label="Video Player" lang="en-us"><video id="vdo_ai_6351072_html5_api" muted="muted" autoplay="autoplay" playsinline="playsinline" webkit-playsinline="true" class="vjs-tech" tabindex="-1" preload="true" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/9.mp4"></video><div class="vjs-poster vjs-hidden" tabindex="-1" aria-disabled="false"></div><div class="vjs-text-track-display" aria-live="off" aria-atomic="true"></div><div class="vjs-loading-spinner" dir="ltr"><span class="vjs-control-text">Video Player is loading.</span></div><button class="vjs-big-play-button" type="button" title="Play Video" aria-disabled="false"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Play Video</span></button><div class="vjs-control-bar" dir="ltr"><button class="vjs-play-control vjs-control vjs-button vjs-playing" type="button" title="Pause" aria-disabled="false"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Pause</span></button><div class="vjs-volume-panel vjs-control vjs-volume-panel-horizontal"><button class="vjs-mute-control vjs-control vjs-button vjs-vol-0" type="button" title="Unmute" aria-disabled="false"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Unmute</span></button><div class="vjs-volume-control vjs-control vjs-volume-horizontal"><div tabindex="0" class="vjs-volume-bar vjs-slider-bar vjs-slider vjs-slider-horizontal" role="slider" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Volume Level" aria-live="polite" aria-valuetext="0%"><div class="vjs-volume-level" style="width: 0%;"><span class="vjs-control-text"></span></div></div></div></div><div class="vjs-current-time vjs-time-control vjs-control"><span class="vjs-control-text" role="presentation">Current Time&nbsp;</span><span class="vjs-current-time-display" aria-live="off" role="presentation">0:29</span></div><div class="vjs-time-control vjs-time-divider" aria-hidden="true"><div><span>/</span></div></div><div class="vjs-duration vjs-time-control vjs-control"><span class="vjs-control-text" role="presentation">Duration&nbsp;</span><span class="vjs-duration-display" aria-live="off" role="presentation">0:35</span></div><div class="vjs-progress-control vjs-control"><div tabindex="0" class="vjs-progress-holder vjs-slider vjs-slider-horizontal" role="slider" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progress Bar"><div class="vjs-load-progress" style="width: 99.8557%;"><span class="vjs-control-text"><span>Loaded</span>: <span class="vjs-control-text-loaded-percentage">99.86%</span></span><div style="left: 0%; width: 100%;"></div></div><div class="vjs-mouse-display"><div class="vjs-time-tooltip" aria-hidden="true"></div></div><div class="vjs-play-progress vjs-slider-bar" aria-hidden="true"><div class="vjs-time-tooltip" aria-hidden="true"></div></div></div></div><div class="vjs-live-control vjs-control vjs-hidden"><div class="vjs-live-display" aria-live="off"><span class="vjs-control-text">Stream Type&nbsp;</span>LIVE</div></div><button class="vjs-seek-to-live-control vjs-control vjs-at-live-edge" type="button" title="Seek to live, currently playing live" aria-disabled="true"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Seek to live, currently playing live</span><span class="vjs-seek-to-live-text" aria-hidden="true">LIVE</span></button><div class="vjs-remaining-time vjs-time-control vjs-control"><span class="vjs-control-text" role="presentation">Remaining Time&nbsp;</span><span aria-hidden="true">-</span><span class="vjs-remaining-time-display" aria-live="off" role="presentation">0:06</span></div><div class="vjs-custom-control-spacer vjs-spacer ">&nbsp;</div><div class="vjs-playback-rate vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden"><button class="vjs-playback-rate vjs-menu-button vjs-menu-button-popup vjs-button" type="button" aria-disabled="false" title="Playback Rate" aria-haspopup="true" aria-expanded="false"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Playback Rate</span></button><div class="vjs-menu"><ul class="vjs-menu-content" role="menu"></ul></div><div class="vjs-playback-rate-value">1x</div></div><div class="vjs-chapters-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden"><button class="vjs-chapters-button vjs-menu-button vjs-menu-button-popup vjs-button" type="button" aria-disabled="false" title="Chapters" aria-haspopup="true" aria-expanded="false"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Chapters</span></button><div class="vjs-menu"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-title" tabindex="-1">Chapters</li></ul></div></div><div class="vjs-descriptions-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden"><button class="vjs-descriptions-button vjs-menu-button vjs-menu-button-popup vjs-button" type="button" aria-disabled="false" title="Descriptions" aria-haspopup="true" aria-expanded="false"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Descriptions</span></button><div class="vjs-menu"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="true"><span class="vjs-menu-item-text">descriptions off</span><span class="vjs-control-text" aria-live="polite">, selected</span></li></ul></div></div><div class="vjs-subs-caps-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden"><button class="vjs-subs-caps-button vjs-menu-button vjs-menu-button-popup vjs-button" type="button" aria-disabled="false" title="Captions" aria-haspopup="true" aria-expanded="false"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Captions</span></button><div class="vjs-menu"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-item vjs-texttrack-settings" tabindex="-1" role="menuitem" aria-disabled="false"><span class="vjs-menu-item-text">captions settings</span><span class="vjs-control-text" aria-live="polite">, opens captions settings dialog</span></li><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="true"><span class="vjs-menu-item-text">captions off</span><span class="vjs-control-text" aria-live="polite">, selected</span></li></ul></div></div><div class="vjs-audio-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden"><button class="vjs-audio-button vjs-menu-button vjs-menu-button-popup vjs-button" type="button" aria-disabled="false" title="Audio Track" aria-haspopup="true" aria-expanded="false"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Audio Track</span></button><div class="vjs-menu"><ul class="vjs-menu-content" role="menu"></ul></div></div><button class="vjs-fullscreen-control vjs-control vjs-button" type="button" title="Fullscreen" aria-disabled="false"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Fullscreen</span></button></div><div class="vjs-error-display vjs-modal-dialog vjs-hidden " tabindex="-1" aria-describedby="vdo_ai_6351072_component_8031_description" aria-hidden="true" aria-label="Modal Window" role="dialog"><p class="vjs-modal-dialog-description vjs-control-text" id="vdo_ai_6351072_component_8031_description">This is a modal window.</p><div class="vjs-modal-dialog-content" role="document"></div></div><div class="vjs-modal-dialog vjs-hidden  vjs-text-track-settings" tabindex="-1" aria-describedby="vdo_ai_6351072_component_8035_description" aria-hidden="true" aria-label="Caption Settings Dialog" role="dialog"><p class="vjs-modal-dialog-description vjs-control-text" id="vdo_ai_6351072_component_8035_description">Beginning of dialog window. Escape will cancel and close the window.</p><div class="vjs-modal-dialog-content" role="document"><div class="vjs-track-settings-colors"><fieldset class="vjs-fg-color vjs-track-setting"><legend id="captions-text-legend-vdo_ai_6351072_component_8035">Text</legend><label id="captions-foreground-color-vdo_ai_6351072_component_8035" class="vjs-label">Color</label><select aria-labelledby="captions-text-legend-vdo_ai_6351072_component_8035 captions-foreground-color-vdo_ai_6351072_component_8035"><option id="captions-foreground-color-vdo_ai_6351072_component_8035-White" value="#FFF" aria-labelledby="captions-text-legend-vdo_ai_6351072_component_8035 captions-foreground-color-vdo_ai_6351072_component_8035 captions-foreground-color-vdo_ai_6351072_component_8035-White" selected="selected">White</option><option id="captions-foreground-color-vdo_ai_6351072_component_8035-Black" value="#000" aria-labelledby="captions-text-legend-vdo_ai_6351072_component_8035 captions-foreground-color-vdo_ai_6351072_component_8035 captions-foreground-color-vdo_ai_6351072_component_8035-Black">Black</option><option id="captions-foreground-color-vdo_ai_6351072_component_8035-Red" value="#F00" aria-labelledby="captions-text-legend-vdo_ai_6351072_component_8035 captions-foreground-color-vdo_ai_6351072_component_8035 captions-foreground-color-vdo_ai_6351072_component_8035-Red">Red</option><option id="captions-foreground-color-vdo_ai_6351072_component_8035-Green" value="#0F0" aria-labelledby="captions-text-legend-vdo_ai_6351072_component_8035 captions-foreground-color-vdo_ai_6351072_component_8035 captions-foreground-color-vdo_ai_6351072_component_8035-Green">Green</option><option id="captions-foreground-color-vdo_ai_6351072_component_8035-Blue" value="#00F" aria-labelledby="captions-text-legend-vdo_ai_6351072_component_8035 captions-foreground-color-vdo_ai_6351072_component_8035 captions-foreground-color-vdo_ai_6351072_component_8035-Blue">Blue</option><option id="captions-foreground-color-vdo_ai_6351072_component_8035-Yellow" value="#FF0" aria-labelledby="captions-text-legend-vdo_ai_6351072_component_8035 captions-foreground-color-vdo_ai_6351072_component_8035 captions-foreground-color-vdo_ai_6351072_component_8035-Yellow">Yellow</option><option id="captions-foreground-color-vdo_ai_6351072_component_8035-Magenta" value="#F0F" aria-labelledby="captions-text-legend-vdo_ai_6351072_component_8035 captions-foreground-color-vdo_ai_6351072_component_8035 captions-foreground-color-vdo_ai_6351072_component_8035-Magenta">Magenta</option><option id="captions-foreground-color-vdo_ai_6351072_component_8035-Cyan" value="#0FF" aria-labelledby="captions-text-legend-vdo_ai_6351072_component_8035 captions-foreground-color-vdo_ai_6351072_component_8035 captions-foreground-color-vdo_ai_6351072_component_8035-Cyan">Cyan</option></select><span class="vjs-text-opacity vjs-opacity"><label id="captions-foreground-opacity-vdo_ai_6351072_component_8035" class="vjs-label">Transparency</label><select aria-labelledby="captions-text-legend-vdo_ai_6351072_component_8035 captions-foreground-opacity-vdo_ai_6351072_component_8035"><option id="captions-foreground-opacity-vdo_ai_6351072_component_8035-Opaque" value="1" aria-labelledby="captions-text-legend-vdo_ai_6351072_component_8035 captions-foreground-opacity-vdo_ai_6351072_component_8035 captions-foreground-opacity-vdo_ai_6351072_component_8035-Opaque" selected="selected">Opaque</option><option id="captions-foreground-opacity-vdo_ai_6351072_component_8035-SemiTransparent" value="0.5" aria-labelledby="captions-text-legend-vdo_ai_6351072_component_8035 captions-foreground-opacity-vdo_ai_6351072_component_8035 captions-foreground-opacity-vdo_ai_6351072_component_8035-SemiTransparent">Semi-Transparent</option></select></span></fieldset><fieldset class="vjs-bg-color vjs-track-setting"><legend id="captions-background-vdo_ai_6351072_component_8035">Background</legend><label id="captions-background-color-vdo_ai_6351072_component_8035" class="vjs-label">Color</label><select aria-labelledby="captions-background-vdo_ai_6351072_component_8035 captions-background-color-vdo_ai_6351072_component_8035"><option id="captions-background-color-vdo_ai_6351072_component_8035-Black" value="#000" aria-labelledby="captions-background-vdo_ai_6351072_component_8035 captions-background-color-vdo_ai_6351072_component_8035 captions-background-color-vdo_ai_6351072_component_8035-Black" selected="selected">Black</option><option id="captions-background-color-vdo_ai_6351072_component_8035-White" value="#FFF" aria-labelledby="captions-background-vdo_ai_6351072_component_8035 captions-background-color-vdo_ai_6351072_component_8035 captions-background-color-vdo_ai_6351072_component_8035-White">White</option><option id="captions-background-color-vdo_ai_6351072_component_8035-Red" value="#F00" aria-labelledby="captions-background-vdo_ai_6351072_component_8035 captions-background-color-vdo_ai_6351072_component_8035 captions-background-color-vdo_ai_6351072_component_8035-Red">Red</option><option id="captions-background-color-vdo_ai_6351072_component_8035-Green" value="#0F0" aria-labelledby="captions-background-vdo_ai_6351072_component_8035 captions-background-color-vdo_ai_6351072_component_8035 captions-background-color-vdo_ai_6351072_component_8035-Green">Green</option><option id="captions-background-color-vdo_ai_6351072_component_8035-Blue" value="#00F" aria-labelledby="captions-background-vdo_ai_6351072_component_8035 captions-background-color-vdo_ai_6351072_component_8035 captions-background-color-vdo_ai_6351072_component_8035-Blue">Blue</option><option id="captions-background-color-vdo_ai_6351072_component_8035-Yellow" value="#FF0" aria-labelledby="captions-background-vdo_ai_6351072_component_8035 captions-background-color-vdo_ai_6351072_component_8035 captions-background-color-vdo_ai_6351072_component_8035-Yellow">Yellow</option><option id="captions-background-color-vdo_ai_6351072_component_8035-Magenta" value="#F0F" aria-labelledby="captions-background-vdo_ai_6351072_component_8035 captions-background-color-vdo_ai_6351072_component_8035 captions-background-color-vdo_ai_6351072_component_8035-Magenta">Magenta</option><option id="captions-background-color-vdo_ai_6351072_component_8035-Cyan" value="#0FF" aria-labelledby="captions-background-vdo_ai_6351072_component_8035 captions-background-color-vdo_ai_6351072_component_8035 captions-background-color-vdo_ai_6351072_component_8035-Cyan">Cyan</option></select><span class="vjs-bg-opacity vjs-opacity"><label id="captions-background-opacity-vdo_ai_6351072_component_8035" class="vjs-label">Transparency</label><select aria-labelledby="captions-background-vdo_ai_6351072_component_8035 captions-background-opacity-vdo_ai_6351072_component_8035"><option id="captions-background-opacity-vdo_ai_6351072_component_8035-Opaque" value="1" aria-labelledby="captions-background-vdo_ai_6351072_component_8035 captions-background-opacity-vdo_ai_6351072_component_8035 captions-background-opacity-vdo_ai_6351072_component_8035-Opaque" selected="selected">Opaque</option><option id="captions-background-opacity-vdo_ai_6351072_component_8035-SemiTransparent" value="0.5" aria-labelledby="captions-background-vdo_ai_6351072_component_8035 captions-background-opacity-vdo_ai_6351072_component_8035 captions-background-opacity-vdo_ai_6351072_component_8035-SemiTransparent">Semi-Transparent</option><option id="captions-background-opacity-vdo_ai_6351072_component_8035-Transparent" value="0" aria-labelledby="captions-background-vdo_ai_6351072_component_8035 captions-background-opacity-vdo_ai_6351072_component_8035 captions-background-opacity-vdo_ai_6351072_component_8035-Transparent">Transparent</option></select></span></fieldset><fieldset class="vjs-window-color vjs-track-setting"><legend id="captions-window-vdo_ai_6351072_component_8035">Window</legend><label id="captions-window-color-vdo_ai_6351072_component_8035" class="vjs-label">Color</label><select aria-labelledby="captions-window-vdo_ai_6351072_component_8035 captions-window-color-vdo_ai_6351072_component_8035"><option id="captions-window-color-vdo_ai_6351072_component_8035-Black" value="#000" aria-labelledby="captions-window-vdo_ai_6351072_component_8035 captions-window-color-vdo_ai_6351072_component_8035 captions-window-color-vdo_ai_6351072_component_8035-Black" selected="selected">Black</option><option id="captions-window-color-vdo_ai_6351072_component_8035-White" value="#FFF" aria-labelledby="captions-window-vdo_ai_6351072_component_8035 captions-window-color-vdo_ai_6351072_component_8035 captions-window-color-vdo_ai_6351072_component_8035-White">White</option><option id="captions-window-color-vdo_ai_6351072_component_8035-Red" value="#F00" aria-labelledby="captions-window-vdo_ai_6351072_component_8035 captions-window-color-vdo_ai_6351072_component_8035 captions-window-color-vdo_ai_6351072_component_8035-Red">Red</option><option id="captions-window-color-vdo_ai_6351072_component_8035-Green" value="#0F0" aria-labelledby="captions-window-vdo_ai_6351072_component_8035 captions-window-color-vdo_ai_6351072_component_8035 captions-window-color-vdo_ai_6351072_component_8035-Green">Green</option><option id="captions-window-color-vdo_ai_6351072_component_8035-Blue" value="#00F" aria-labelledby="captions-window-vdo_ai_6351072_component_8035 captions-window-color-vdo_ai_6351072_component_8035 captions-window-color-vdo_ai_6351072_component_8035-Blue">Blue</option><option id="captions-window-color-vdo_ai_6351072_component_8035-Yellow" value="#FF0" aria-labelledby="captions-window-vdo_ai_6351072_component_8035 captions-window-color-vdo_ai_6351072_component_8035 captions-window-color-vdo_ai_6351072_component_8035-Yellow">Yellow</option><option id="captions-window-color-vdo_ai_6351072_component_8035-Magenta" value="#F0F" aria-labelledby="captions-window-vdo_ai_6351072_component_8035 captions-window-color-vdo_ai_6351072_component_8035 captions-window-color-vdo_ai_6351072_component_8035-Magenta">Magenta</option><option id="captions-window-color-vdo_ai_6351072_component_8035-Cyan" value="#0FF" aria-labelledby="captions-window-vdo_ai_6351072_component_8035 captions-window-color-vdo_ai_6351072_component_8035 captions-window-color-vdo_ai_6351072_component_8035-Cyan">Cyan</option></select><span class="vjs-window-opacity vjs-opacity"><label id="captions-window-opacity-vdo_ai_6351072_component_8035" class="vjs-label">Transparency</label><select aria-labelledby="captions-window-vdo_ai_6351072_component_8035 captions-window-opacity-vdo_ai_6351072_component_8035"><option id="captions-window-opacity-vdo_ai_6351072_component_8035-Transparent" value="0" aria-labelledby="captions-window-vdo_ai_6351072_component_8035 captions-window-opacity-vdo_ai_6351072_component_8035 captions-window-opacity-vdo_ai_6351072_component_8035-Transparent" selected="selected">Transparent</option><option id="captions-window-opacity-vdo_ai_6351072_component_8035-SemiTransparent" value="0.5" aria-labelledby="captions-window-vdo_ai_6351072_component_8035 captions-window-opacity-vdo_ai_6351072_component_8035 captions-window-opacity-vdo_ai_6351072_component_8035-SemiTransparent">Semi-Transparent</option><option id="captions-window-opacity-vdo_ai_6351072_component_8035-Opaque" value="1" aria-labelledby="captions-window-vdo_ai_6351072_component_8035 captions-window-opacity-vdo_ai_6351072_component_8035 captions-window-opacity-vdo_ai_6351072_component_8035-Opaque">Opaque</option></select></span></fieldset></div><div class="vjs-track-settings-font"><fieldset class="vjs-font-percent vjs-track-setting"><legend id="captions-font-size-vdo_ai_6351072_component_8035" class="">Font Size</legend><select aria-labelledby="captions-font-size-vdo_ai_6351072_component_8035"><option id="captions-font-size-vdo_ai_6351072_component_8035-50" value="0.50" aria-labelledby="captions-font-size-vdo_ai_6351072_component_8035 captions-font-size-vdo_ai_6351072_component_8035-50">50%</option><option id="captions-font-size-vdo_ai_6351072_component_8035-75" value="0.75" aria-labelledby="captions-font-size-vdo_ai_6351072_component_8035 captions-font-size-vdo_ai_6351072_component_8035-75">75%</option><option id="captions-font-size-vdo_ai_6351072_component_8035-100" value="1.00" aria-labelledby="captions-font-size-vdo_ai_6351072_component_8035 captions-font-size-vdo_ai_6351072_component_8035-100" selected="selected">100%</option><option id="captions-font-size-vdo_ai_6351072_component_8035-125" value="1.25" aria-labelledby="captions-font-size-vdo_ai_6351072_component_8035 captions-font-size-vdo_ai_6351072_component_8035-125">125%</option><option id="captions-font-size-vdo_ai_6351072_component_8035-150" value="1.50" aria-labelledby="captions-font-size-vdo_ai_6351072_component_8035 captions-font-size-vdo_ai_6351072_component_8035-150">150%</option><option id="captions-font-size-vdo_ai_6351072_component_8035-175" value="1.75" aria-labelledby="captions-font-size-vdo_ai_6351072_component_8035 captions-font-size-vdo_ai_6351072_component_8035-175">175%</option><option id="captions-font-size-vdo_ai_6351072_component_8035-200" value="2.00" aria-labelledby="captions-font-size-vdo_ai_6351072_component_8035 captions-font-size-vdo_ai_6351072_component_8035-200">200%</option><option id="captions-font-size-vdo_ai_6351072_component_8035-300" value="3.00" aria-labelledby="captions-font-size-vdo_ai_6351072_component_8035 captions-font-size-vdo_ai_6351072_component_8035-300">300%</option><option id="captions-font-size-vdo_ai_6351072_component_8035-400" value="4.00" aria-labelledby="captions-font-size-vdo_ai_6351072_component_8035 captions-font-size-vdo_ai_6351072_component_8035-400">400%</option></select></fieldset><fieldset class="vjs-edge-style vjs-track-setting"><legend id="vdo_ai_6351072_component_8035" class="">Text Edge Style</legend><select aria-labelledby="vdo_ai_6351072_component_8035"><option id="vdo_ai_6351072_component_8035-None" value="none" aria-labelledby="vdo_ai_6351072_component_8035 vdo_ai_6351072_component_8035-None" selected="selected">None</option><option id="vdo_ai_6351072_component_8035-Raised" value="raised" aria-labelledby="vdo_ai_6351072_component_8035 vdo_ai_6351072_component_8035-Raised">Raised</option><option id="vdo_ai_6351072_component_8035-Depressed" value="depressed" aria-labelledby="vdo_ai_6351072_component_8035 vdo_ai_6351072_component_8035-Depressed">Depressed</option><option id="vdo_ai_6351072_component_8035-Uniform" value="uniform" aria-labelledby="vdo_ai_6351072_component_8035 vdo_ai_6351072_component_8035-Uniform">Uniform</option><option id="vdo_ai_6351072_component_8035-Dropshadow" value="dropshadow" aria-labelledby="vdo_ai_6351072_component_8035 vdo_ai_6351072_component_8035-Dropshadow">Dropshadow</option></select></fieldset><fieldset class="vjs-font-family vjs-track-setting"><legend id="captions-font-family-vdo_ai_6351072_component_8035" class="">Font Family</legend><select aria-labelledby="captions-font-family-vdo_ai_6351072_component_8035"><option id="captions-font-family-vdo_ai_6351072_component_8035-ProportionalSansSerif" value="proportionalSansSerif" aria-labelledby="captions-font-family-vdo_ai_6351072_component_8035 captions-font-family-vdo_ai_6351072_component_8035-ProportionalSansSerif" selected="selected">Proportional Sans-Serif</option><option id="captions-font-family-vdo_ai_6351072_component_8035-MonospaceSansSerif" value="monospaceSansSerif" aria-labelledby="captions-font-family-vdo_ai_6351072_component_8035 captions-font-family-vdo_ai_6351072_component_8035-MonospaceSansSerif">Monospace Sans-Serif</option><option id="captions-font-family-vdo_ai_6351072_component_8035-ProportionalSerif" value="proportionalSerif" aria-labelledby="captions-font-family-vdo_ai_6351072_component_8035 captions-font-family-vdo_ai_6351072_component_8035-ProportionalSerif">Proportional Serif</option><option id="captions-font-family-vdo_ai_6351072_component_8035-MonospaceSerif" value="monospaceSerif" aria-labelledby="captions-font-family-vdo_ai_6351072_component_8035 captions-font-family-vdo_ai_6351072_component_8035-MonospaceSerif">Monospace Serif</option><option id="captions-font-family-vdo_ai_6351072_component_8035-Casual" value="casual" aria-labelledby="captions-font-family-vdo_ai_6351072_component_8035 captions-font-family-vdo_ai_6351072_component_8035-Casual">Casual</option><option id="captions-font-family-vdo_ai_6351072_component_8035-Script" value="script" aria-labelledby="captions-font-family-vdo_ai_6351072_component_8035 captions-font-family-vdo_ai_6351072_component_8035-Script">Script</option><option id="captions-font-family-vdo_ai_6351072_component_8035-SmallCaps" value="small-caps" aria-labelledby="captions-font-family-vdo_ai_6351072_component_8035 captions-font-family-vdo_ai_6351072_component_8035-SmallCaps">Small Caps</option></select></fieldset></div><div class="vjs-track-settings-controls"><button type="button" class="vjs-default-button" title="restore all settings to the default values">Reset<span class="vjs-control-text"> restore all settings to the default values</span></button><button type="button" class="vjs-done-button">Done</button></div></div><button class="vjs-close-button vjs-control vjs-button" type="button" aria-disabled="false" title="Close Modal Dialog"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Close Modal Dialog</span></button><p class="vjs-control-text">End of dialog window.</p></div><div id="vdo_ai_6351072_ima-ad-container" class="vdo_ai_6351072_ima-ad-container ima-ad-container" style="position: absolute; z-index: 1111; display: none;"><div style="position: absolute;"><div style="display: none;"><video style="background-color: rgb(0, 0, 0); position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;" title="Advertisement" webkit-playsinline="true" playsinline="true"></video><div style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></div></div><div style="display: none;"><video style="background-color: rgb(0, 0, 0); position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;" title="Advertisement" webkit-playsinline="true" playsinline="true"></video><div style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></div></div><iframe src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/bridge3.htm" allowfullscreen="" style="border: 0px none; opacity: 0; margin: 0px; padding: 0px; position: relative;"></iframe></div><div id="vdo_ai_6351072_ima-controls-div" class="vdo_ai_6351072_ima-controls-div ima-controls-div" style="width: 100%;"><div id="vdo_ai_6351072_ima-countdown-div" class="vdo_ai_6351072_ima-countdown-div ima-countdown-div" style="display: block;">Advertisement</div><div id="vdo_ai_6351072_ima-seek-bar-div" class="vdo_ai_6351072_ima-seek-bar-div ima-seek-bar-div" style="width: 100%;"><div id="vdo_ai_6351072_ima-progress-div" class="vdo_ai_6351072_ima-progress-div ima-progress-div"></div></div><div id="vdo_ai_6351072_ima-play-pause-div" class="vdo_ai_6351072_ima-play-pause-div ima-play-pause-div ima-playing"></div><div id="vdo_ai_6351072_ima-mute-div" class="vdo_ai_6351072_ima-mute-div ima-mute-div ima-muted ima-muted"></div><div id="vdo_ai_6351072_ima-slider-div" class="vdo_ai_6351072_ima-slider-div ima-slider-div"><div id="vdo_ai_6351072_ima-slider-level-div" class="vdo_ai_6351072_ima-slider-level-div ima-slider-level-div" style="width: 0%;"></div></div><div id="vdo_ai_6351072_ima-fullscreen-div" class="vdo_ai_6351072_ima-fullscreen-div ima-fullscreen-div ima-non-fullscreen"></div></div></div></div><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_052.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_064.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_054.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/pixel_068.gif" style="width: 1px !important; height: 1px !important; margin: 0px !important; display: none;"></div></div><script>(function(v,d,o,ai){ai=d.createElement('script');ai.defer=true;ai.async=true;ai.src=v.location.protocol+o;d.head.appendChild(ai);})(window, document, '//a.vdo.ai/core/talkerscodev2/vdo.ai.js');</script>
+<div class="adsbyvli" data-ad-slot="vi_13704476" data-id="vi_13704476_1" style="display: block !important; max-width: 300px; position: relative !important; margin: 0px auto !important;"><div id="vi_13704476_1" data-ad-slot="vi_13704476" style="display: block; width: 300px; height: 600px;" data-google-query-id="CJbixbG-uOUCFVM84Aod44oDpw"><iframe class="vliIgnore" id="ifr_vi_13704476_1" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a.htm" scrolling="no" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" allowtransparency="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="600" frameborder="0"> </iframe></div><iframe class="vliIcon" id="vliIcon_vi_13704476_1" scrolling="no" allowtransparency="true" hidefocus="true" tabindex="-1" marginwidth="0" marginheight="0" style="border-top-right-radius: 5px !important; background-color: rgba(255, 255, 255, 0.9) !important; overflow: hidden !important; position: absolute !important; left: 0px !important; bottom: 0px !important; z-index: 9999 !important; transition: width 0.3s ease 0s, opacity 0.3s ease-in-out 0s !important; height: 16px !important; width: 16px !important; opacity: 0; visibility: hidden;" frameborder="no"></iframe></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_13704476")})</script>
+</div></div><!--end of right_div-->
+
+
+</div><!--end of content-->
+</div><!--end of wrapper-->
+<div id="footerwrapper">
+<div id="footer">
+
+<div id="div1">
+<p class="footer_head">About TalkersCode</p>
+<p>TalkersCode is one of the best and biggest website for web developers
+ in India. We also started Blogging articles, reviews and offers</p>
+<br>
+<br>
+<p class="footer_head">Affiliate Disclosure</p>
+<p>We as TalkersCode may receive compensation from some of the companies whose products we review.</p>
+</div>
+
+<div id="div2">
+<p class="footer_head">Useful Links</p>
+<p><a href="http://talkerscode.com/index.php">Home</a></p>
+<p><a href="http://talkerscode.com/aboutus.php">About Us</a></p>
+<p><a href="http://talkerscode.com/contactus.php">Contact Us</a></p>
+<p><a href="http://talkerscode.com/alltutorials.php">All Post</a></p>
+<p><a href="http://talkerscode.com/sitemap.xml">Sitemap</a></p>
+<p><a href="http://talkerscode.com/rss.xml">RSS</a></p>
+</div>
+
+<div id="div3">
+<p>© 2018 All Rights Reserved To TalkersCode</p>
+<p id="social_share">
+Follow Us On →
+<br>
+<a target="_blank" href="https://www.facebook.com/talkerscode/"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/facebook_icon.png"></a>
+<a target="_blank" href="https://twitter.com/Talkerscode"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/twitter_icon.png"></a>
+<a target="_blank" href="https://www.linkedin.com/in/muditjain310/"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/linkedin_icon.png"></a>
+<a target="_blank" href="https://plus.google.com/102970142249395280883"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/googleplus_icon.png"></a>
+<a target="_blank" href="http://feeds.feedburner.com/Talkerscode"><img src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/rss_icon.png"></a>
+</p>
+</div>
+
+</div>
+</div>
+
+
+<!--Google Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61824078-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!--Vdo.ai ad code
+<div id = 'vdo_ai_div'></div><script>(function(v,d,o,ai){ai=d.createElement('script');ai.defer=true;ai.async=true;ai.src=v.location.protocol+o;d.head.appendChild(ai);})(window, document, '//a.vdo.ai/core/talkerscodev2/vdo.ai.js');</script> 
+-->
+  
+
+<script id="_vdo_ads_css_5654_" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/vdo_002.js"></script><script id="_vdo_ads_sdk_5654_" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/ima3.js"></script><script id="_vdo_ads_frame_5654_" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/adframe.js"></script><div id="vi_pixel_8383" style="width: 0px; height: 0px; display: none;"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_057.jpg" width="0" height="0"><iframe id="vi_track_8383" style="display: none;" width="0" height="0"></iframe><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_047.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_079.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_048.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_039.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_027.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_031.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_080.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_086.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_011.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_013.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_085.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_006.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_019.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_088.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_070.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_038.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_089.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_076.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_024.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_034.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_050.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_081.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_025.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_090.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_026.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_043.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_082.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_059.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_028.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_009.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_054.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_041.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_037.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_067.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_052.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_018.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_065.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_074.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_022.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_072.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_005.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_069.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_051.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_077.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_015.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_023.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_062.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_029.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_007.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_030.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_046.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_008.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_040.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_075.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_033.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_058.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_042.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_045.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_020.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_056.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_017.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_016.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_071.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_061.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_003.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_083.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_066.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_044.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_053.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_002.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_010.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_036.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_014.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_063.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_060.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_084.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_012.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_068.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_078.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_064.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_021.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_049.jpg" width="0" height="0"><iframe id="VIEventStats" style="display: none;" width="0" height="0"></iframe><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_055.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_032.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_087.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_073.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_004.jpg" width="0" height="0"><img style="display: none;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/a_035.jpg" width="0" height="0"></div><iframe src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/portal.htm" id="st_gdpr_iframe" title="GDPR Consent Management" style="width: 0px; height: 0px; position: absolute; left: -5000px;"></iframe><iframe style="display: none;" src="//aax-eu.amazon-adsystem.com/s/iu3?cm3ppd=1&amp;d=dtb-pub&amp;csif=t&amp;dl=rbd_oath_r1u_dm_pm_dmx"></iframe><iframe src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/syncframe.htm" id="criteo-syncframe" style="display: none;"></iframe><iframe id="google_osd_static_frame_1025702343515" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe><ins id="vi_13703426" class="vlioutstream" style="background: unset !important; position: fixed; z-index: 2147483647; right: -510px; bottom: 0px; transition: transform 1s ease 0s; width: 410px; height: 231px;"><ins style="background:unset!important;position: relative;display:block;width:100%;height:100%"><ins style="width: 105px; background: unset!important;box-sizing: unset!important;display: block; border-bottom: 20px solid rgba(0, 0, 0, 0.7); border-right: 10px solid transparent; position: absolute; top: -20px; left: 0;"><ins style="background: unset!important;box-sizing: unset!important;padding: 2px;position:absolute; top: 0; left: 0;"><ins id="vi_outstrClose_vi_13703426" title="Hide Ads" style="background: unset!important;box-sizing: unset!important;cursor:pointer;display: block; float: left; width: 10px; height: 10px; margin: 3px;"><svg width="512px" height="512px" display="inherit" enable-background="new 0 0 92.132 92.132" style="box-sizing:unset!important;height:100%;width:100%" version="1.1" viewBox="0 0 92.132 92.132" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path class="active-path" d="m2.141 89.13c1.425 1.429 3.299 2.142 5.167 2.142 1.869 0 3.742-0.713 5.167-2.142l33.591-33.592 33.591 33.592c1.426 1.429 3.299 2.142 5.167 2.142 1.867 0 3.74-0.713 5.167-2.142 2.854-2.854 2.854-7.48 0-10.334l-33.593-33.591 31.869-31.869c2.855-2.853 2.855-7.481 0-10.334-2.853-2.855-7.479-2.855-10.334 0l-31.868 31.868-31.867-31.869c-2.854-2.855-7.481-2.855-10.333 0-2.855 2.853-2.855 7.481 0 10.334l31.868 31.869-33.59 33.591c-2.857 2.853-2.857 7.479-2e-3 10.335z" fill="#fff" data-old_color="#ffffff" data-original="#000000"></path></svg></ins><a style="box-sizing: unset!important;display: flex; float: left; margin-left: 5px;" href="http://valueimpression.com/?ref=talkerscode.com" target="_blank" rel="nofollow"><img style="width: 80px!important;" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/vi-logo.svg"></a></ins></ins><ins style="background:unset!important;display:block" id="vi_outstrAd_vi_13703426"></ins></ins></ins></body><iframe sandbox="allow-scripts allow-same-origin" id="10643cf7b25738138" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="//sync.serverbid.com/ss/2000909.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="107c439b5703131d8" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="//sync.serverbid.com/ss/2000909.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="108ed04e0f32d5f78" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/async_usersync_006.htm" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="10970d8508540b4f8" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="//sync.serverbid.com/ss/2000909.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="110ffb9a73e64a338" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/async_usersync_006.htm" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="1114760c28489dd38" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/async_usersync_006.htm" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="112a4bd60e4a93ac" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/async_usersync_006.htm" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="113a85c8d0954e6f" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="//sync.serverbid.com/ss/2000909.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="1147562fb9c853c4" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/async_usersync_006.htm" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="1153832fd925935f8" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="//sync.serverbid.com/ss/2000909.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="11676786c4906763" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/showad_004.htm" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="11773cddbe8f1d408" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/showad_004.htm" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="118a34895c7150438" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/showad_004.htm" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="1194631bcd086462" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://eus.rubiconproject.com/usync.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="12046ce5274bc1b1" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/showad_004.htm" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="307b43b57b2101" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="File%20Upload%20Progress%20Bar%20Using%20jQuery%20And%20PHP_files/async_usersync_006.htm" width="0" height="0" frameborder="0">
+    </iframe></html>

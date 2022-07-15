@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>How to Handle CSV with PHP: Read Write, Import Export with Database - Phppot</title>
+<meta name="description" content="Article to learn about CSV file and how to handle CSV data like read, write, import and export with database using PHP built-in functions."><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://phppot.com/feed/">
+<link rel="apple-touch-icon" sizes="180x180" href="https://phppot.com/apple-touch-icon.png?v=031218">
+<link rel="icon" type="image/png" sizes="32x32" href="https://phppot.com/favicon-32x32.png?v=031218">
+<link rel="icon" type="image/png" sizes="16x16" href="https://phppot.com/favicon-16x16.png?v=031218">
+<link rel="manifest" href="https://phppot.com/site.webmanifest?v=031218">
+<link rel="mask-icon" href="https://phppot.com/safari-pinned-tab.svg?v=031218" color="#ffa500">
+<link rel="shortcut icon" href="https://phppot.com/favicon.ico?v=031218">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="How to Handle CSV with PHP: Read Write, Import Export with Database - Phppot">
+<meta property="og:site_name" content="Phppot">
+<meta property="og:description" content="Article to learn about CSV file and how to handle CSV data like read, write, import and export with database using PHP built-in functions."><meta property="og:url" content="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/">
+<meta property="twitter:title" content="How to Handle CSV with PHP: Read Write, Import Export with Database - Phppot">
+<meta name="twitter:site" content="@phppot">
+<meta property="twitter:creator" content="@phppot">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://phppot.com/wp-content/uploads/2019/02/csv-to-html-conversion.jpg"><meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:description" content="Article to learn about CSV file and how to handle CSV data like read, write, import and export with database using PHP built-in functions."><meta property="twitter:image" content="https://phppot.com/wp-content/uploads/2019/02/csv-to-html-conversion.jpg"><script type="text/javascript" async="" src="How%20to%20Handle%20CSV%20with%20PHP%20%20Read%20Write,%20Import%20Export%20with%20Database%20-%20Phppot_files/ga.js"></script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40067115-1']);
+  _gaq.push(['_setDomainName', 'phppot.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://www.google-analytics.com/"><link rel="dns-prefetch" href="https://www.youtube.com/"><link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/"><link rel="dns-prefetch" href="https://static.doubleclick.net/"><link rel="dns-prefetch" href="https://www.google.com/"><link rel="dns-prefetch" href="https://i.ytimg.com/"><link rel="dns-prefetch" href="https://yt3.ggpht.com/"><link rel="dns-prefetch" href="https://fonts.gstatic.com/"><link rel="stylesheet" id="main-style-css" href="How%20to%20Handle%20CSV%20with%20PHP%20%20Read%20Write,%20Import%20Export%20with%20Database%20-%20Phppot_files/papers_228192.css" type="text/css" media="all">
+<link rel="canonical" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/">
+</head>
+<body onload="prettyPrint()">
+ <div id="site_header">
+    <div class="content">
+        <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP"><img src="How%20to%20Handle%20CSV%20with%20PHP%20%20Read%20Write,%20Import%20Export%20with%20Database%20-%20Phppot_files/phppot-logo.png" id="site-logo" alt="Helping You Build Web Applications Using PHP"></a>
+        <div class="search-container">
+            <form method="get" action="/" class="search-form">
+                <input name="s" class="search" placeholder="Search Phppot" title="Search Phppot" autocomplete="off">
+                <button type="submit" title="Search Phppot" id="search-button"></button>
+            </form>
+        </div>
+        <div class="header-link-container">
+            <span id="mobile-search-icon" onclick="toggleSearch();">Mobile
+                Search</span>
+                <div id="expand-sub-menu-icon">
+                    <a class="testimonial-icon" href="https://phppot.com/testimonials/">Testimonials</a><a class="demo-download-icon" href="https://phppot.com/demo/">Demo</a>
+                </div>  <a id="header-contact-navigation" href="https://phppot.com/contact/">Contact Me</a>
+        </div>
+    </div>
+</div>    <div class="content">
+        <div id="tutorial-body">
+            <div id="tutorial">
+                <h1>How to Handle CSV with PHP: Read Write, Import Export with Database</h1>
+                <div class="modified-on">Last modified on February 8th, 2019 by Vincy.</div>
+<p>CSV is one of the familiar file formats and used widely by 
+programmers for handling data. The simplicity of the format and human 
+readable form made it so popular.&nbsp;CSV stands for 
+Comma-Separated&nbsp;Values. In earlier days, the delimiter was only a 
+comma (,) and so the name CSV. Nowadays, CSV files use tab-demitted row 
+data too.&nbsp;</p>
+<p>To handle CSV with&nbsp;PHP, we must be aware there is excellent 
+support in-built with core PHP.&nbsp;Knowledge about those built-in 
+library and functions will he handy in handling CSV files.</p>
+<p><img class="alignnone size-large wp-image-9333" src="How%20to%20Handle%20CSV%20with%20PHP%20%20Read%20Write,%20Import%20Export%20with%20Database%20-%20Phppot_files/csv-php-550x215.jpg" alt="CSV PHP" srcset="https://phppot.com/wp-content/uploads/2019/02/csv-php-550x215.jpg 550w, https://phppot.com/wp-content/uploads/2019/02/csv-php-300x117.jpg 300w, https://phppot.com/wp-content/uploads/2019/02/csv-php-768x300.jpg 768w, https://phppot.com/wp-content/uploads/2019/02/csv-php.jpg 1090w" sizes="(max-width: 550px) 100vw, 550px" width="550" height="215">&nbsp;</p>
+<h2>What is inside?</h2>
+<p>In this article, we will see about about how to handle CSV using PHP&nbsp; with suitable examples.</p>
+<ol class="post-list">
+<li><a href="#csv-file-format-and-mime-type">CSV file format and MIME type</a></li>
+<li><a href="#how-to-convert-php-array-to-csv">How to convert PHP Array to CSV?</a></li>
+<li><a href="#csv-file-data-validation">CSV file data validation</a></li>
+<li><a href="#how-to-import-large-csv-files">How to import large CSV files?</a></li>
+<li><a href="#how-to-split-large-csv-files-and-process-using-php">How to split large CSV files and process using PHP?</a></li>
+<li><a href="#how-to-read-encoded-csv-files-with-special-characters">How to read encoded CSV files with special characters?</a></li>
+<li><a href="#convert-csv-file-to-html-table-using-php">Convert CSV file to HTML table using PHP</a></li>
+<li><a href="#process-csv-file-with-comma-data-values-using-php">Process CSV file with comma data values using PHP</a></li>
+<li><a href="#export-database-records-to-csv-in-a-generic-way">Export database records to CSV in a generic way</a></li>
+<li><a href="#how-to-export-csv-using-fputcsv">How to export CSV using fputcsv?</a></li>
+<li><a href="#download-as-csv-file-via-browser-using-content-type">Download as CSV File via browser using Content-Type</a></li>
+<li><a href="#read-csv-using-php-built-in-functions">Read CSV using PHP built-in functions</a></li>
+</ol>
+<p>This will serve you as a comprehensive tutorial that discusses all 
+aspects of CSV file handling with PHP. When you need to handle 
+structured data then using <a href="https://phppot.com/php/json-handling-with-php-how-to-encode-write-parse-decode-and-convert/">JSON data and handling it with PHP</a> will be a better choice.</p>
+<h2 id="csv-file-format-and-mime-type">CSV file format and MIME type</h2>
+<p>Let us start with CSV format and MIME type conventions. The common 
+formats and MIME type for the CSV files are discussed here with the 
+reference of the&nbsp;RFC 4180 documentation.</p>
+<h3>CSV Format Definition</h3>
+<p>These are the general definitions for a valid CSV format.</p>
+<ul>
+<li>Each row is separated or delimited by a line break (CRLF). For example:
+<pre class="prettyprint prettyprinted" style=""><span class="pln">        col_11</span><span class="pun">,</span><span class="pln">col_12</span><span class="pun">,</span><span class="pln">col_13 CRLF
+        col_21</span><span class="pun">,</span><span class="pln">col_22</span><span class="pun">,</span><span class="pln">col_23 CRLF</span></pre>
+</li>
+<li>The last row of the CSV file may or may not have a line break. For example:
+<pre class="prettyprint prettyprinted" style=""><span class="pln">        col_11</span><span class="pun">,</span><span class="pln">col_12</span><span class="pun">,</span><span class="pln">col_13 CRLF
+        col_21</span><span class="pun">,</span><span class="pln">col_22</span><span class="pun">,</span><span class="pln">col_23</span></pre>
+</li>
+<li>CSV data may contain an optional header line at the beginning in the same format as other rows. For example:
+<pre class="prettyprint prettyprinted" style=""><span class="pln">       column_name1</span><span class="pun">,</span><span class="pln">column_name2</span><span class="pun">,</span><span class="pln">column_name3 CRLF
+       col_11</span><span class="pun">,</span><span class="pln">col_12</span><span class="pun">,</span><span class="pln">col_13 CRLF
+       col_21</span><span class="pun">,</span><span class="pln">col_22</span><span class="pun">,</span><span class="pln">col_23</span></pre>
+</li>
+<li>The count of the comma-separated field names in the header must be 
+the same as the count of the comma-separated values in rest of the rows 
+in the CSV file. For example:
+<pre class="prettyprint prettyprinted" style=""><span class="pln">       column_name1</span><span class="pun">,</span><span class="pln">column_name2</span><span class="pun">,</span><span class="pln">column_name3 CRLF
+       col_11</span><span class="pun">,</span><span class="pln">col_12</span><span class="pun">,</span><span class="pln">col_13 CRLF
+       col_21</span><span class="pun">,</span><span class="pln">col_22</span><span class="pun">,</span><span class="pln">col_23</span></pre>
+</li>
+<li>Each field the rows may be enclosed by Double Quotes(“). But it is 
+optional. Fields not enclosed by double quote may not contain the double
+ quotes special character as part of it. For example:
+<pre class="prettyprint prettyprinted" style=""><span class="pln">       </span><span class="str">"col_11"</span><span class="pun">,</span><span class="str">"col_12"</span><span class="pun">,</span><span class="str">"col_13"</span><span class="pln"> CRLF
+       col_21</span><span class="pun">,</span><span class="pln">col_22</span><span class="pun">,</span><span class="pln">col_23</span></pre>
+</li>
+<li>Fields containing double quotes (“), Line Break (CRLF) and Comma must be enclosed with double quotes. For example:
+<pre class="prettyprint prettyprinted" style=""><span class="pln">       </span><span class="str">"col_""11"</span><span class="pun">,</span><span class="str">"col_"</span><span class="pln">CRLF
+       </span><span class="lit">12</span><span class="str">",col_13 CRLF
+       col_21,col_22,col_23</span></pre>
+</li>
+<li>Fields containing double quotes (“), Line Break (CRLF) and Comma must be enclosed with double quotes. For example:
+<pre class="prettyprint prettyprinted" style=""><span class="pln">       </span><span class="str">"col_11"</span><span class="pun">,</span><span class="str">"col_"</span><span class="pln">CRLF
+       </span><span class="lit">12</span><span class="str">",col_13 CRLF
+       col_21,col_22,col_23</span></pre>
+</li>
+<li>If Fields enclosed by double quotes (“) contain double quotes 
+character then the double quotes inside the field must be preceded with 
+another double quote as an escape sequence. For example:
+<pre class="prettyprint prettyprinted" style=""><span class="pln">       </span><span class="str">"col_""11"</span><span class="pun">,</span><span class="str">"col_12"</span><span class="pun">,</span><span class="pln">col_13 CRLF
+       col_21</span><span class="pun">,</span><span class="pln">col_22</span><span class="pun">,</span><span class="pln">col_23</span></pre>
+</li>
+</ul>
+<p>The standard exclusive MIME type <strong>text/csv</strong> is 
+registered by the RFC 4180. Before that, various MIME types like 
+“text/tab-separated-values” type were used by various programs or OS for
+ the CSV format.</p>
+<p>If you want to learn&nbsp;more about the CSV format and MIME types, the <a href="https://www.ietf.org/rfc/rfc4180.txt">RFC 4180 document</a> has more information.</p>
+<h2 id="how-to-convert-php-array-to-csv">How to convert PHP Array to CSV?</h2>
+<p>There are many possible ways in PHP to convert an array data into CSV format. PHP contains in-built functions like <strong>fputcsv()&nbsp;</strong>for doing this conversion.</p>
+<p>The following code uses custom PHP function str_putcsv() to get the 
+array data and put it into the file target as specified. This custom 
+function uses PHP built-in fputcsv() on each array iteration.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php
+
+</span><span class="kwd">function</span><span class="pln"> arrayToCSV</span><span class="pun">(</span><span class="pln">$inputArray</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    $csvFieldRow </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">foreach</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$inputArray </span><span class="kwd">as</span><span class="pln"> $CSBRow</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        $csvFieldRow</span><span class="pun">[]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> str_putcsv</span><span class="pun">(</span><span class="pln">$CSBRow</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    $csvData </span><span class="pun">=</span><span class="pln"> implode</span><span class="pun">(</span><span class="str">"\n"</span><span class="pun">,</span><span class="pln"> $csvFieldRow</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> $csvData</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">function</span><span class="pln"> str_putcsv</span><span class="pun">(</span><span class="pln">$input</span><span class="pun">,</span><span class="pln"> $delimiter </span><span class="pun">=</span><span class="pln"> </span><span class="str">','</span><span class="pun">,</span><span class="pln"> $enclosure </span><span class="pun">=</span><span class="pln"> </span><span class="str">'"'</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="com">// Open a memory "file" for read/write</span><span class="pln">
+    $fp </span><span class="pun">=</span><span class="pln"> fopen</span><span class="pun">(</span><span class="str">'php://temp'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'r+'</span><span class="pun">);</span><span class="pln">
+    </span><span class="com">// Write the array to the target file using fputcsv()</span><span class="pln">
+    fputcsv</span><span class="pun">(</span><span class="pln">$fp</span><span class="pun">,</span><span class="pln"> $input</span><span class="pun">,</span><span class="pln"> $delimiter</span><span class="pun">,</span><span class="pln"> $enclosure</span><span class="pun">);</span><span class="pln">
+    </span><span class="com">// Rewind the file</span><span class="pln">
+    rewind</span><span class="pun">(</span><span class="pln">$fp</span><span class="pun">);</span><span class="pln">
+    </span><span class="com">// File Read</span><span class="pln">
+    $data </span><span class="pun">=</span><span class="pln"> fread</span><span class="pun">(</span><span class="pln">$fp</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1048576</span><span class="pun">);</span><span class="pln">
+    fclose</span><span class="pun">(</span><span class="pln">$fp</span><span class="pun">);</span><span class="pln">
+    </span><span class="com">// Ad line break and return the data</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> rtrim</span><span class="pun">(</span><span class="pln">$data</span><span class="pun">,</span><span class="pln"> </span><span class="str">"\n"</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+$inputArray </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+    array</span><span class="pun">(</span><span class="str">"First Name"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Last Name"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Identification Number"</span><span class="pun">),</span><span class="pln">
+    array</span><span class="pun">(</span><span class="str">"Kim"</span><span class="pun">,</span><span class="str">"Thomas"</span><span class="pun">,</span><span class="str">"8001"</span><span class="pun">),</span><span class="pln">
+    array</span><span class="pun">(</span><span class="str">"Jeffery"</span><span class="pun">,</span><span class="str">"Robert"</span><span class="pun">,</span><span class="str">"8021"</span><span class="pun">),</span><span class="pln">
+    array</span><span class="pun">(</span><span class="str">"Helan"</span><span class="pun">,</span><span class="str">"Albert"</span><span class="pun">,</span><span class="str">"8705"</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"&lt;PRE&gt;"</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">print</span><span class="pln"> $CSVData </span><span class="pun">=</span><span class="pln"> arrayToCSV</span><span class="pun">(</span><span class="pln">$inputArray</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">?&gt;</span></pre>
+<p>I have printed the converted output data to the browser. The CSV output is,</p>
+<p><img class="alignnone size-large wp-image-9299" src="How%20to%20Handle%20CSV%20with%20PHP%20%20Read%20Write,%20Import%20Export%20with%20Database%20-%20Phppot_files/php-array-to-csv-conversion-output-550x102.jpg" alt="PHP Array to CSV Conversion Output" srcset="https://phppot.com/wp-content/uploads/2019/02/php-array-to-csv-conversion-output.jpg 550w, https://phppot.com/wp-content/uploads/2019/02/php-array-to-csv-conversion-output-300x56.jpg 300w" sizes="(max-width: 550px) 100vw, 550px" width="550" height="102"></p>
+<h2 id="csv-file-data-validation">CSV file data validation</h2>
+<p>Generally, validation on a CSV file will be done to check whether it 
+has the standard format definition. The following conditions have to be 
+applied to a CSV input file to check whether it is valid or not.</p>
+<ul>
+<li>To check if the input file is with the proper CSV file extension and within the size limit.</li>
+<li>To check if the count of comma-separated values in all rows are same.</li>
+<li>To check if the row data containing allowed special characters with proper escape sequences.</li>
+</ul>
+<p>Added to that, you can add additional validation based on your application requirement. For example,</p>
+<ul>
+<li>To check if the CSV row field contains data in an expected format. 
+For example, if a phone_number field contains numeric data with allowed 
+characters.</li>
+<li>To check if the fields are in the correct order as per your application requirement.</li>
+<li>To check if the mandatory fields are not empty.</li>
+</ul>
+<p>This PHP code shows how to apply CSV validation on an uploaded file. In a previous tutorial, we have seen how to <a href="https://phppot.com/php/php-image-upload-with-size-type-dimension-validation/">validate&nbsp;an uploaded image file in PHP</a>.</p>
+<p>In this script, the validation made to check the CSV file extension, 
+size. Once it is done, we need to handle CSV with PHP to check 
+the&nbsp;field count in all the CSV rows.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php
+</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">isset</span><span class="pun">(</span><span class="pln">$_POST</span><span class="pun">[</span><span class="str">"upload"</span><span class="pun">]))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    
+    </span><span class="com">// Get file extension</span><span class="pln">
+    $file_extension </span><span class="pun">=</span><span class="pln"> pathinfo</span><span class="pun">(</span><span class="pln">$_FILES</span><span class="pun">[</span><span class="str">"file-input"</span><span class="pun">][</span><span class="str">"name"</span><span class="pun">],</span><span class="pln"> PATHINFO_EXTENSION</span><span class="pun">);</span><span class="pln">
+    </span><span class="com">// Validate file input to check if is not empty</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln"> file_exists</span><span class="pun">(</span><span class="pln">$_FILES</span><span class="pun">[</span><span class="str">"file-input"</span><span class="pun">][</span><span class="str">"tmp_name"</span><span class="pun">]))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        $response </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+            </span><span class="str">"type"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"error"</span><span class="pun">,</span><span class="pln">
+            </span><span class="str">"message"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"File input should not be empty."</span><span class="pln">
+        </span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln"> </span><span class="com">// Validate file input to check if is with valid extension</span><span class="pln">
+    </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$file_extension </span><span class="pun">!=</span><span class="pln"> </span><span class="str">"csv"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            $response </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+                </span><span class="str">"type"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"error"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"message"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"Invalid CSV: File must have .csv extension."</span><span class="pln">
+            </span><span class="pun">);</span><span class="pln">
+            echo $result</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln"> </span><span class="com">// Validate file size</span><span class="pln">
+    </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">((</span><span class="pln">$_FILES</span><span class="pun">[</span><span class="str">"file-input"</span><span class="pun">][</span><span class="str">"size"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">2000000</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            $response </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+                </span><span class="str">"type"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"error"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"message"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"Invalid CSV: File size is too large."</span><span class="pln">
+            </span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln"> </span><span class="com">// Validate if all the records have same number of fields</span><span class="pln">
+    </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        $lengthArray </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">();</span><span class="pln">
+        
+        $row </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">((</span><span class="pln">$fp </span><span class="pun">=</span><span class="pln"> fopen</span><span class="pun">(</span><span class="pln">$_FILES</span><span class="pun">[</span><span class="str">"file-input"</span><span class="pun">][</span><span class="str">"tmp_name"</span><span class="pun">],</span><span class="pln"> </span><span class="str">"r"</span><span class="pun">))</span><span class="pln"> </span><span class="pun">!==</span><span class="pln"> FALSE</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">((</span><span class="pln">$data </span><span class="pun">=</span><span class="pln"> fgetcsv</span><span class="pun">(</span><span class="pln">$fp</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1000</span><span class="pun">,</span><span class="pln"> </span><span class="str">","</span><span class="pun">))</span><span class="pln"> </span><span class="pun">!==</span><span class="pln"> FALSE</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                $lengthArray</span><span class="pun">[]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> count</span><span class="pun">(</span><span class="pln">$data</span><span class="pun">);</span><span class="pln">
+                $row </span><span class="pun">++;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            fclose</span><span class="pun">(</span><span class="pln">$fp</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+            
+        $lengthArray </span><span class="pun">=</span><span class="pln"> array_unique</span><span class="pun">(</span><span class="pln">$lengthArray</span><span class="pun">);</span><span class="pln">
+        
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">count</span><span class="pun">(</span><span class="pln">$lengthArray</span><span class="pun">)</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            $response </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+                </span><span class="str">"type"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"success"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"message"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"File Validation Success."</span><span class="pln">
+            </span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            $response </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="pln">
+                </span><span class="str">"type"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"error"</span><span class="pun">,</span><span class="pln">
+                </span><span class="str">"message"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"Invalid CSV: Count mismatch."</span><span class="pln">
+            </span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">?&gt;</span></pre>
+<h3>CSV Validation Script</h3>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"frm-upload"</span><span class="pln"> </span><span class="atn">action</span><span class="pun">=</span><span class="atv">""</span><span class="pln"> </span><span class="atn">method</span><span class="pun">=</span><span class="atv">"post"</span><span class="pln">
+    </span><span class="atn">enctype</span><span class="pun">=</span><span class="atv">"multipart/form-data"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-row"</span><span class="tag">&gt;</span><span class="pln">
+        </span><span class="tag">&lt;div&gt;</span><span class="pln">Choose file:</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+        </span><span class="tag">&lt;div&gt;</span><span class="pln">
+            </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"file"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"file-input"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"file-input"</span><span class="tag">&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"button-row"</span><span class="tag">&gt;</span><span class="pln">
+        </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"btn-submit"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"upload"</span><span class="pln">
+            </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"Upload"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+</span><span class="tag">&lt;/form&gt;</span><span class="pln">
+</span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">if</span><span class="pun">(!</span><span class="pln">empty</span><span class="pun">(</span><span class="pln">$response</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+&lt;div class="response </span><span class="pun">&lt;?</span><span class="pln">php echo $response</span><span class="pun">[</span><span class="str">"type"</span><span class="pun">];</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+    "&gt;
+    </span><span class="pun">&lt;?</span><span class="pln">php echo $response</span><span class="pun">[</span><span class="str">"message"</span><span class="pun">];</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+</span><span class="pun">&lt;?</span><span class="pln">php </span><span class="pun">}?&gt;</span></pre>
+<p>If the validation process is not returning TRUE then the error 
+message will be displayed to the user as shown in the below screenshot.</p>
+<p><img class="alignnone size-large wp-image-9305" src="How%20to%20Handle%20CSV%20with%20PHP%20%20Read%20Write,%20Import%20Export%20with%20Database%20-%20Phppot_files/csv-validation-script-550x220.jpg" alt="CSV Validation Script" srcset="https://phppot.com/wp-content/uploads/2019/02/csv-validation-script.jpg 550w, https://phppot.com/wp-content/uploads/2019/02/csv-validation-script-300x120.jpg 300w" sizes="(max-width: 550px) 100vw, 550px" width="550" height="220"></p>
+<h2 id="how-to-import-large-csv-files">How to import large CSV files?</h2>
+<p>Importing a large CSV file using PHP file handling functions may not 
+be an efficient way of doing it. If the execution time exceeds the 
+configured max_execution_time limit then the import will not be 
+completed.</p>
+<p>While processing large CSV file import, there are ways like command 
+line execution, query execution and more. In this section, I will show 
+how to import a large CSV file using <a href="https://dev.mysql.com/doc/refman/5.7/en/load-data.html">MySQL LOAD DATA statement</a>. If you can this LOAD, then this is the better choice as it gives the best performance.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php 
+$conn </span><span class="pun">=</span><span class="pln"> mysqli_connect</span><span class="pun">(</span><span class="str">"localhost"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"root"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"test"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"blog_samples"</span><span class="pun">);</span><span class="pln">
+$query </span><span class="pun">=</span><span class="pln"> </span><span class="str">"LOAD DATA INFILE 'input.csv' INTO TABLE tbl_student_master IGNORE 1 LINES"</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">mysqli_query</span><span class="pun">(</span><span class="pln">$conn</span><span class="pun">,</span><span class="pln"> $query</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    printf</span><span class="pun">(</span><span class="str">"Errormessage: %s\n"</span><span class="pun">,</span><span class="pln"> mysqli_error</span><span class="pun">(</span><span class="pln">$conn</span><span class="pun">));</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">?&gt;</span></pre>
+<p>Before running this program, make sure that you have created the 
+required target database and table. Import the following SQL script to 
+process import by running this example in your environment.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pun">--</span><span class="pln">
+</span><span class="pun">--</span><span class="pln"> </span><span class="typ">Table</span><span class="pln"> structure </span><span class="kwd">for</span><span class="pln"> table </span><span class="str">`tbl_student_master`</span><span class="pln">
+</span><span class="pun">--</span><span class="pln">
+
+CREATE TABLE </span><span class="str">`tbl_student_master`</span><span class="pln"> </span><span class="pun">(</span><span class="pln">
+  </span><span class="str">`unique_id`</span><span class="pln"> </span><span class="kwd">int</span><span class="pun">(</span><span class="lit">11</span><span class="pun">)</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln">
+  </span><span class="str">`first_name`</span><span class="pln"> varchar</span><span class="pun">(</span><span class="lit">55</span><span class="pun">)</span><span class="pln"> NOT NULL</span><span class="pun">,</span><span class="pln">
+  </span><span class="str">`last_name`</span><span class="pln"> varchar</span><span class="pun">(</span><span class="lit">55</span><span class="pun">)</span><span class="pln"> NOT NULL
+</span><span class="pun">)</span><span class="pln"> ENGINE</span><span class="pun">=</span><span class="typ">InnoDB</span><span class="pln"> DEFAULT CHARSET</span><span class="pun">=</span><span class="pln">latin1</span><span class="pun">;</span><span class="pln">
+
+</span><span class="pun">--</span><span class="pln">
+</span><span class="pun">--</span><span class="pln"> </span><span class="typ">Indexes</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> table </span><span class="str">`tbl_student_master`</span><span class="pln">
+</span><span class="pun">--</span><span class="pln">
+ALTER TABLE </span><span class="str">`tbl_student_master`</span><span class="pln">
+  ADD PRIMARY KEY </span><span class="pun">(</span><span class="str">`unique_id`</span><span class="pun">);</span><span class="pln">
+COMMIT</span><span class="pun">;</span></pre>
+<p><strong>Note:&nbsp;</strong>If the <strong>–secure-file-priv</strong>
+ option is enabled in your MySQL configuration, then this program 
+will&nbsp;work only if the input CSV file is located in the directory as
+ specified in the&nbsp;–secure-file-priv&nbsp;settings.</p>
+<h2 id="how-to-split-large-csv-files-and-process-using-php">How to split large CSV files and process using PHP?</h2>
+<p>In a previous tutorial, we have seen <a href="https://phppot.com/php/split-and-export-into-multiple-excel-sheet-files-using-php/">how to split an excel file into multiple files</a>. Splitting will be required while dealing with large Excel or CSV file.&nbsp;</p>
+<p>In this section, I am showing how to split a CSV file into multiple files. I have used PHP <strong>RegexIterator</strong> and <strong>SplFileObject</strong>&nbsp;classes for implementing splitting on an input CSV file.</p>
+<p>The&nbsp;RegexIterator is the built-in PHP class that inherits&nbsp;<em>FilterInheritor&nbsp;</em>class
+ to filter based on regular expression. It accepts the input data, regex
+ pattern and mode of operations and more parameters.</p>
+<p>The&nbsp;&nbsp;SplFileObject class which gives an object-oriented 
+interface for a file. Using this the target object is created to put the
+ splitted&nbsp;records into the target.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php
+$rowAry </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> \RegexIterator</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> \SplFileObject</span><span class="pun">(</span><span class="str">'input.csv'</span><span class="pun">),</span><span class="pln"> </span><span class="str">'/\n/'</span><span class="pun">,</span><span class="pln"> </span><span class="typ">RegexIterator</span><span class="pun">::</span><span class="pln">SPLIT</span><span class="pun">);</span><span class="pln">
+$header </span><span class="pun">=</span><span class="pln"> </span><span class="str">""</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">foreach</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$rowAry </span><span class="kwd">as</span><span class="pln"> $i </span><span class="pun">=&gt;</span><span class="pln"> $row</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="com">// IF the input CSV has header (column_name) row</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$i </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        $header </span><span class="pun">=</span><span class="pln"> $row</span><span class="pun">[</span><span class="lit">0</span><span class="pun">];</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        $filename </span><span class="pun">=</span><span class="pln"> </span><span class="str">"output_$i.csv"</span><span class="pun">;</span><span class="pln">
+        $myfile </span><span class="pun">=</span><span class="pln"> fopen</span><span class="pun">(</span><span class="pln">$filename</span><span class="pun">,</span><span class="pln"> </span><span class="str">"w"</span><span class="pun">);</span><span class="pln">
+        $target </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> \SplFileObject</span><span class="pun">(</span><span class="pln">$filename</span><span class="pun">,</span><span class="pln"> </span><span class="str">'w'</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln"> empty</span><span class="pun">(</span><span class="pln">$header</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            $target</span><span class="pun">-&gt;</span><span class="pln">fwrite</span><span class="pun">(</span><span class="pln">$header </span><span class="pun">.</span><span class="pln"> </span><span class="str">"\n"</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        $target</span><span class="pun">-&gt;</span><span class="pln">fwrite</span><span class="pun">(</span><span class="pln">$row</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">?&gt;</span></pre>
+<h2 id="how-to-read-encoded-csv-files-with-special-characters">How to read encoded CSV files with special characters?</h2>
+<p>If the input CSV contains non-english data, the CSV file parsing will
+ behave as expected. Either it will return error like “Invalid argument”
+ or it will output jumbled character as the result of the CSV read 
+operation.</p>
+<p>This issue could be resolved by setting the charset while reading 
+CSV. In the below script, the PHP iconv function is used to set the 
+input and output charset for reading the actual data from the CSV.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php
+</span><span class="kwd">function</span><span class="pln"> convert</span><span class="pun">(</span><span class="pln"> $str </span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> iconv</span><span class="pun">(</span><span class="pln"> </span><span class="str">"UTF-8"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"UTF-8"</span><span class="pun">,</span><span class="pln"> $str </span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">((</span><span class="pln">$fp </span><span class="pun">=</span><span class="pln"> fopen</span><span class="pun">(</span><span class="str">'input.csv'</span><span class="pun">,</span><span class="pln"> </span><span class="str">"r"</span><span class="pun">))</span><span class="pln"> </span><span class="pun">!==</span><span class="pln"> FALSE</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">((</span><span class="pln">$row </span><span class="pun">=</span><span class="pln"> fgetcsv</span><span class="pun">(</span><span class="pln">$fp</span><span class="pun">))</span><span class="pln"> </span><span class="pun">!==</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        $rowArray </span><span class="pun">=</span><span class="pln"> array_map</span><span class="pun">(</span><span class="pln"> </span><span class="str">"convert"</span><span class="pun">,</span><span class="pln"> $row </span><span class="pun">);</span><span class="pln">
+        $rowCSV</span><span class="pun">[]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> implode</span><span class="pun">(</span><span class="str">","</span><span class="pun">,</span><span class="pln"> $rowArray</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    fclose</span><span class="pun">(</span><span class="pln">$fp</span><span class="pun">);</span><span class="pln">
+    $csvData </span><span class="pun">=</span><span class="pln"> implode</span><span class="pun">(</span><span class="str">"\n"</span><span class="pun">,</span><span class="pln"> $rowCSV</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">print</span><span class="pln"> $csvData</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">?&gt;</span></pre>
+<h2 id="convert-csv-file-to-html-table-using-php">Convert CSV file to HTML table using PHP</h2>
+<p>For converting the CSV file into a HTML format, the table rows 
+markup&nbsp;has to be created during the row by row iteration of the 
+CSV.</p>
+<p>With the reference of the previous examples that we have seen above, it is an easy job to create HTML for the CSV data.</p>
+<p>Below code shows how to generate HTML table markup and display the 
+CSV data into it. It iterates the CSV file uploaded via an HTML 
+form&nbsp;and it is parsed to get the row data.&nbsp;</p>
+<p>The parsed row data is put into the table columns by using PHP echo 
+statements. The table header could be identified by using the loop 
+iteration index. Hence, the header data is differentiated from the other
+ rows using CSS.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php
+</span><span class="kwd">if</span><span class="pun">(!</span><span class="pln">empty</span><span class="pun">(</span><span class="pln">isset</span><span class="pun">(</span><span class="pln">$_POST</span><span class="pun">[</span><span class="str">"upload"</span><span class="pun">])))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">((</span><span class="pln">$fp </span><span class="pun">=</span><span class="pln"> fopen</span><span class="pun">(</span><span class="pln">$_FILES</span><span class="pun">[</span><span class="str">"file-input"</span><span class="pun">][</span><span class="str">"tmp_name"</span><span class="pun">],</span><span class="pln"> </span><span class="str">"r"</span><span class="pun">))</span><span class="pln"> </span><span class="pun">!==</span><span class="pln"> FALSE</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="pun">?&gt;</span><span class="pln">
+</span><span class="tag">&lt;table</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"tutorial-table"</span><span class="pln"> </span><span class="atn">width</span><span class="pun">=</span><span class="atv">"100%"</span><span class="pln"> </span><span class="atn">border</span><span class="pun">=</span><span class="atv">"1"</span><span class="pln"> </span><span class="atn">cellspacing</span><span class="pun">=</span><span class="atv">"0"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="pun">&lt;?</span><span class="pln">php
+    $i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">((</span><span class="pln">$row </span><span class="pun">=</span><span class="pln"> fgetcsv</span><span class="pun">(</span><span class="pln">$fp</span><span class="pun">))</span><span class="pln"> </span><span class="pun">!==</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        $class </span><span class="pun">=</span><span class="str">""</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$i</span><span class="pun">==</span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+           $class </span><span class="pun">=</span><span class="pln"> </span><span class="str">"header"</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">?&gt;</span><span class="pln">
+    </span><span class="tag">&lt;tr&gt;</span><span class="pln">
+            &lt;td class="</span><span class="pun">&lt;?</span><span class="pln">php echo $class</span><span class="pun">;</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">"&gt;</span><span class="pun">&lt;?</span><span class="pln">php echo $row</span><span class="pun">[</span><span class="lit">0</span><span class="pun">];</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="tag">&lt;/td&gt;</span><span class="pln">
+            &lt;td class="</span><span class="pun">&lt;?</span><span class="pln">php echo $class</span><span class="pun">;</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">"&gt;</span><span class="pun">&lt;?</span><span class="pln">php echo $row</span><span class="pun">[</span><span class="lit">1</span><span class="pun">];</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="tag">&lt;/td&gt;</span><span class="pln">
+            &lt;td class="</span><span class="pun">&lt;?</span><span class="pln">php echo $class</span><span class="pun">;</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">"&gt;</span><span class="pun">&lt;?</span><span class="pln">php echo $row</span><span class="pun">[</span><span class="lit">2</span><span class="pun">];</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="tag">&lt;/td&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/tr&gt;</span><span class="pln">
+    </span><span class="pun">&lt;?</span><span class="pln">php
+        $i </span><span class="pun">++;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    fclose</span><span class="pun">(</span><span class="pln">$fp</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">?&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/table&gt;</span><span class="pln">
+</span><span class="pun">&lt;?</span><span class="pln">php
+    $response </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="str">"type"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"success"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"message"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"CSV is converted to HTML successfully"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        $response </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">(</span><span class="str">"type"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"error"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"message"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"Unable to process CSV"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">?&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+</span><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">if</span><span class="pun">(!</span><span class="pln">empty</span><span class="pun">(</span><span class="pln">$response</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+&lt;div class="response </span><span class="pun">&lt;?</span><span class="pln">php echo $response</span><span class="pun">[</span><span class="str">"type"</span><span class="pun">];</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+    "&gt;
+    </span><span class="pun">&lt;?</span><span class="pln">php echo $response</span><span class="pun">[</span><span class="str">"message"</span><span class="pun">];</span><span class="pln"> </span><span class="pun">?&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+</span><span class="pun">&lt;?</span><span class="pln">php </span><span class="pun">}</span><span class="pln"> </span><span class="pun">?&gt;</span></pre>
+<h3>CSV to HTML Conversion Output</h3>
+<p>The following screenshot shows the output of the HTML table generated by parsing the CSV file uploaded via the form.</p>
+<p><img class="alignnone size-large wp-image-9345" src="How%20to%20Handle%20CSV%20with%20PHP%20%20Read%20Write,%20Import%20Export%20with%20Database%20-%20Phppot_files/csv-to-html-conversion-550x361.jpg" alt="CSV To HTML Conversion" srcset="https://phppot.com/wp-content/uploads/2019/02/csv-to-html-conversion-550x361.jpg 550w, https://phppot.com/wp-content/uploads/2019/02/csv-to-html-conversion-300x197.jpg 300w, https://phppot.com/wp-content/uploads/2019/02/csv-to-html-conversion-768x503.jpg 768w, https://phppot.com/wp-content/uploads/2019/02/csv-to-html-conversion.jpg 1428w" sizes="(max-width: 550px) 100vw, 550px" width="550" height="361"></p>
+<h2 id="process-csv-file-with-comma-data-values-using-php">Process CSV file with comma data values using PHP</h2>
+<p>As per the CSV specification “Fields containing line breaks (CRLF), 
+double quotes, and commas should be enclosed in double-quotes.</p>
+<p>So, I have created an input.csv containing values with Comma(,) character. The file content will be as shown as below.</p>
+<pre class="prettyprint prettyprinted" style=""><span class="str">"Identification Number"</span><span class="pun">,</span><span class="str">"First Name"</span><span class="pun">,</span><span class="str">"Last Name"</span><span class="pln">
+</span><span class="lit">8001</span><span class="pun">,</span><span class="str">"Kim,"</span><span class="pun">,</span><span class="typ">Thomas</span><span class="pln">
+</span><span class="lit">8021</span><span class="pun">,</span><span class="str">"Jeff,ery"</span><span class="pun">,</span><span class="typ">Robert</span><span class="pln">
+</span><span class="lit">8705</span><span class="pun">,</span><span class="typ">Helan</span><span class="pun">,</span><span class="typ">Albert</span></pre>
+<p>In the above CSV data, you can see that the values containing Comma are enclosed by the double quotes(“)</p>
+<p>As like as the above example, we are going to use PHP fgetcsv() 
+function to read and process the CSV file data containing Comma in its 
+value.</p>
+<p>As per the syntax of the fgetcsv() function, it receives character 
+inputs for specifying the field delimiter, field enclosure and more.</p>
+<p>As the default enclosure is the double quotes character, we need not specify those parameters while invoking fgetcsv().</p>
+<p>Supply the CSV input having values with Comma to the CSV to HTML 
+conversion script that we have seen in the above section. This will 
+output the CSV data with Comma in the HTML format as shown below.</p>
+<p><img class="alignnone size-large wp-image-9314" src="How%20to%20Handle%20CSV%20with%20PHP%20%20Read%20Write,%20Import%20Export%20with%20Database%20-%20Phppot_files/process-csv-containing-values-with-comma-550x208.jpg" alt="Process CSV Containing Values with Comma" srcset="https://phppot.com/wp-content/uploads/2019/02/process-csv-containing-values-with-comma-550x208.jpg 550w, https://phppot.com/wp-content/uploads/2019/02/process-csv-containing-values-with-comma-300x113.jpg 300w, https://phppot.com/wp-content/uploads/2019/02/process-csv-containing-values-with-comma-768x290.jpg 768w, https://phppot.com/wp-content/uploads/2019/02/process-csv-containing-values-with-comma.jpg 910w" sizes="(max-width: 550px) 100vw, 550px" width="550" height="208"></p>
+<h2 id="export-database-records-to-csv-in-a-generic-way">Export database records to CSV in a generic way</h2>
+<p>While exporting a database, the backup file can be created in various
+ formats SQL, CSV, Excel. In a previous tutorial, we have seen <a href="https://phppot.com/php/php-csv-file-export/">how to export a database to a CSV file</a>.</p>
+<p>For doing this database backup programmatically, we need to execute 
+appropriate MySQL statements to extract the structure and the data.</p>
+<p>By doing this, the backup will be ready with&nbsp;the database 
+table’s create statements, insert queries dumped with data, statements 
+for Indexes, auto increment and more. The PHP code for exporting 
+database records to CSV is as follows.</p>
+<pre class="prettyprint lang-php prettyprinted"><span class="pun">&lt;?</span><span class="pln">php
+$conn </span><span class="pun">=</span><span class="pln"> mysqli_connect</span><span class="pun">(</span><span class="str">"localhost"</span><span class="pun">,</span><span class="str">"root"</span><span class="pun">,</span><span class="str">"test"</span><span class="pun">,</span> <span class="str">"phppot_examples"</span><span class="pun">);</span><span class="pln">
+
+$query </span><span class="pun">=</span> <span class="str">"SELECT * FROM toy"</span><span class="pun">;</span><span class="pln">
+$result </span><span class="pun">=</span><span class="pln"> mysqli_query</span><span class="pun">(</span><span class="pln">$conn</span><span class="pun">,</span><span class="pln"> $query</span><span class="pun">);</span><span class="pln">
+
+$num_column </span><span class="pun">=</span><span class="pln"> mysqli_num_fields</span><span class="pun">(</span><span class="pln">$result</span><span class="pun">);</span><span class="pln">		
+
+$csv_header </span><span class="pun">=</span> <span class="str">''</span><span class="pun">;</span>
+<span class="kwd">for</span><span class="pun">(</span><span class="pln">$i</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">$i</span><span class="pun">&lt;</span><span class="pln">$num_column</span><span class="pun">;</span><span class="pln">$i</span><span class="pun">++)</span> <span class="pun">{</span><span class="pln">
+    $csv_header </span><span class="pun">.=</span> <span class="str">'"'</span> <span class="pun">.</span><span class="pln"> mysqli_fetch_field_direct</span><span class="pun">(</span><span class="pln">$result</span><span class="pun">,</span><span class="pln">$i</span><span class="pun">)-&gt;</span><span class="pln">name </span><span class="pun">.</span> <span class="str">'",'</span><span class="pun">;</span>
+<span class="pun">}</span><span class="pln">	
+$csv_header </span><span class="pun">.=</span> <span class="str">"\n"</span><span class="pun">;</span><span class="pln">
+
+$csv_row </span><span class="pun">=</span><span class="str">''</span><span class="pun">;</span>
+<span class="kwd">while</span><span class="pun">(</span><span class="pln">$row </span><span class="pun">=</span><span class="pln"> mysqli_fetch_row</span><span class="pun">(</span><span class="pln">$result</span><span class="pun">))</span> <span class="pun">{</span>
+<span class="kwd">for</span><span class="pun">(</span><span class="pln">$i</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">$i</span><span class="pun">&lt;</span><span class="pln">$num_column</span><span class="pun">;</span><span class="pln">$i</span><span class="pun">++)</span> <span class="pun">{</span><span class="pln">
+		$csv_row </span><span class="pun">.=</span> <span class="str">'"'</span> <span class="pun">.</span><span class="pln"> $row</span><span class="pun">[</span><span class="pln">$i</span><span class="pun">]</span> <span class="pun">.</span> <span class="str">'",'</span><span class="pun">;</span>
+<span class="pun">}</span><span class="pln">
+	$csv_row </span><span class="pun">.=</span> <span class="str">"\n"</span><span class="pun">;</span>
+<span class="pun">}</span>
+<span class="pun">?&gt;</span></pre>
+<p>In this code, the database structure and data are extracted and prepared in the form of CSV string.</p>
+<p>Then the prepared backup content can be downloaded to the browser by using PHP header() function with the specification if <strong>Content-Type</strong>. In the following sections, we will see how to download CSV by using Content-Type.</p>
+<h2 id="how-to-export-csv-using-fputcsv">How to export CSV using fputcsv?</h2>
+<p>If you are only going to take the data backup instead of a complete 
+database, then the fputcsv() function is enough. This function accepts 
+the target CSV handle and the input array as it mandatory arguments.</p>
+<p>&nbsp;The input array must contain the row of column names or column values. The following PHP code shows <a href="https://phppot.com/php/php-csv-file-export-using-fputcsv/">how to exports MySQL records to a CSV file using fputcsv()</a>.</p>
+<p>In this code, the database column names and values are extracted row 
+by row and put it into the target CSV. The target CSV handle is created 
+before executing the fputcsv() function.</p>
+<pre class="prettyprint lang-php prettyprinted"><span class="pun">&lt;?</span><span class="pln">php
+$conn </span><span class="pun">=</span><span class="pln"> mysqli_connect</span><span class="pun">(</span><span class="str">"localhost"</span><span class="pun">,</span> <span class="str">"root"</span><span class="pun">,</span> <span class="str">"test"</span><span class="pun">,</span> <span class="str">"phppot_examples"</span><span class="pun">);</span><span class="pln">
+
+$filename </span><span class="pun">=</span> <span class="str">"toy_csv.csv"</span><span class="pun">;</span><span class="pln">
+$fp </span><span class="pun">=</span><span class="pln"> fopen</span><span class="pun">(</span><span class="str">'php://output'</span><span class="pun">,</span> <span class="str">'w'</span><span class="pun">);</span><span class="pln">
+
+$query </span><span class="pun">=</span> <span class="str">"SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='phppot_examples' AND TABLE_NAME='toy'"</span><span class="pun">;</span><span class="pln">
+$result </span><span class="pun">=</span><span class="pln"> mysqli_query</span><span class="pun">(</span><span class="pln">$conn</span><span class="pun">,</span><span class="pln">$query</span><span class="pun">);</span>
+<span class="kwd">while</span> <span class="pun">(</span><span class="pln">$row </span><span class="pun">=</span><span class="pln"> mysqli_fetch_row</span><span class="pun">(</span><span class="pln">$result</span><span class="pun">))</span> <span class="pun">{</span><span class="pln">
+	$header</span><span class="pun">[]</span> <span class="pun">=</span><span class="pln"> $row</span><span class="pun">[</span><span class="lit">0</span><span class="pun">];</span>
+<span class="pun">}</span><span class="pln">	
+
+header</span><span class="pun">(</span><span class="str">'Content-type: application/csv'</span><span class="pun">);</span><span class="pln">
+header</span><span class="pun">(</span><span class="str">'Content-Disposition: attachment; filename='</span><span class="pun">.</span><span class="pln">$filename</span><span class="pun">);</span><span class="pln">
+fputcsv</span><span class="pun">(</span><span class="pln">$fp</span><span class="pun">,</span><span class="pln"> $header</span><span class="pun">);</span><span class="pln">
+
+$query </span><span class="pun">=</span> <span class="str">"SELECT * FROM toy"</span><span class="pun">;</span><span class="pln">
+$result </span><span class="pun">=</span><span class="pln"> mysqli_query</span><span class="pun">(</span><span class="pln">$conn</span><span class="pun">,</span><span class="pln"> $query</span><span class="pun">);</span>
+<span class="kwd">while</span><span class="pun">(</span><span class="pln">$row </span><span class="pun">=</span><span class="pln"> mysqli_fetch_row</span><span class="pun">(</span><span class="pln">$result</span><span class="pun">))</span> <span class="pun">{</span><span class="pln">
+	fputcsv</span><span class="pun">(</span><span class="pln">$fp</span><span class="pun">,</span><span class="pln"> $row</span><span class="pun">);</span>
+<span class="pun">}</span>
+<span class="kwd">exit</span><span class="pun">;</span>
+<span class="pun">?&gt;</span></pre>
+<h2 id="download-as-csv-file-via-browser-using-content-type">Download as CSV File via browser using Content-Type</h2>
+<p>In the above code, the PHP header() function is used to specify the 
+Content-type, Content-disposition and more specifications. With these 
+settings, the header will be sent to the browser with the CSV file 
+attachment to be downloaded.</p>
+<p>By adding the header() function with&nbsp;<strong><span class="str">Content-type: application/csv&nbsp;</span></strong><span class="str">then CSV file will be downloaded to the browser.</span></p>
+<h2 id="read-csv-using-php-built-in-functions">Read CSV using PHP built-in functions</h2>
+<p>PHP supports to read a CSV file by proving built-in functions. In 
+this article, we have seen several examples to handle CSV with PHP 
+functions like fgetcsv(), str_getcsv(). All these PHP functions are used
+ in the above sections to read CSV file before processing it.</p>
+<p>The fgetcsv() function is used to read the CSV file data with the 
+reference of the file handle. The str_getcsv() will accept the CSV 
+string instead of the file pointer. Then the CSV string will be parsed 
+to read the data.</p>
+<h2>Conclusion</h2>
+<p>As the CSV(Comma-Separated Values) is one of the popularly used data 
+handling formats and every programmer should be comfortable in handling 
+CSV data. PHP provides the best support for handling CSV file and you 
+should be aware of the functions available. Hope you have been 
+introduced to all about CSV in PHP. If there is any topic missing, let 
+me know it via the comments below and I will include that in the 
+article.</p>
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			Comments to “How to Handle CSV with PHP: Read Write, Import Export with Database”		</h2>
+
+		<ul class="comment-list">
+					<li class="comment even thread-even depth-1 parent" id="comment-19246">
+				<div id="div-comment-19246" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Liam</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-19246">
+			February 8, 2019 at 6:28 pm</a>		</div>
+
+		<p>I am tasked to process census records. I was looking for a way to 
+process the huge volume and mysql load way you have described is cool. 
+Thanks.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=19246#respond" onclick='return addComment.moveForm( "div-comment-19246", "19246", "respond", "9268" )' aria-label="Reply to Liam">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor odd alt depth-2" id="comment-19249">
+				<div id="div-comment-19249" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-19249">
+			February 9, 2019 at 1:43 am</a>		</div>
+
+		<p>Welcome Liam. I am glad that it is of help to you.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=19249#respond" onclick='return addComment.moveForm( "div-comment-19249", "19249", "respond", "9268" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-19247">
+				<div id="div-comment-19247" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Willie</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-19247">
+			February 8, 2019 at 8:21 pm</a>		</div>
+
+		<p>Almost all your code are simple and clean without any bloatware, no
+ unnecessary dependency. Straight to the point and minimal number of 
+lines. Appreciations to you, continue the good job.</p>
+<p>With thanks, from Milan.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=19247#respond" onclick='return addComment.moveForm( "div-comment-19247", "19247", "respond", "9268" )' aria-label="Reply to Willie">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor odd alt depth-2" id="comment-19250">
+				<div id="div-comment-19250" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-19250">
+			February 9, 2019 at 1:43 am</a>		</div>
+
+		<p>Sure Willie, thank you for the nice words and I will be continuing it.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=19250#respond" onclick='return addComment.moveForm( "div-comment-19250", "19250", "respond", "9268" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-19248">
+				<div id="div-comment-19248" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">hank</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-19248">
+			February 8, 2019 at 8:22 pm</a>		</div>
+
+		<p>can you write one similar on excel?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=19248#respond" onclick='return addComment.moveForm( "div-comment-19248", "19248", "respond", "9268" )' aria-label="Reply to hank">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor odd alt depth-2 parent" id="comment-19251">
+				<div id="div-comment-19251" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-19251">
+			February 9, 2019 at 1:44 am</a>		</div>
+
+		<p>Sure Hank, I will soon write one similar article on processing excel files using PHP.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=19251#respond" onclick='return addComment.moveForm( "div-comment-19251", "19251", "respond", "9268" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3 parent" id="comment-19257">
+				<div id="div-comment-19257" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Pr</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-19257">
+			February 11, 2019 at 10:54 am</a>		</div>
+
+		<p>Hey, Vincy I am a very big fan of you.</p>
+<p>Please when you prepare import/export on excel, please can you give 
+us the best strategy for a very huge database? because last time I have 
+tried but was failed on it using ajax-PHP-MySQL-Phpspreadsheet. </p>
+<p>Is it the best approach for using batch processing?</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-vincy bypostauthor odd alt depth-3" id="comment-19261">
+				<div id="div-comment-19261" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-19261">
+			February 12, 2019 at 12:08 am</a>		</div>
+
+		<p>That is so nice of you Pr. </p>
+<p>Sure, I will include a section on handling huge excel files.</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-19252">
+				<div id="div-comment-19252" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">jafar mohammad</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-19252">
+			February 9, 2019 at 7:31 pm</a>		</div>
+
+		<p>Thanks for your contributions nice one.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=19252#respond" onclick='return addComment.moveForm( "div-comment-19252", "19252", "respond", "9268" )' aria-label="Reply to jafar mohammad">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor odd alt depth-2" id="comment-19254">
+				<div id="div-comment-19254" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-19254">
+			February 10, 2019 at 12:28 pm</a>		</div>
+
+		<p>You are most welcome Jafar.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=19254#respond" onclick='return addComment.moveForm( "div-comment-19254", "19254", "respond", "9268" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-19255">
+				<div id="div-comment-19255" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Abdulrasheed</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-19255">
+			February 11, 2019 at 3:47 am</a>		</div>
+
+		<p>Big THANKS 2U. Your code always help, Am becoming better in coding 
+due to some of your codes. None of your code is ever useless, it help 
+always. THANK YOU.<br>
+Please provide fast means of communicating with you for freelance work.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=19255#respond" onclick='return addComment.moveForm( "div-comment-19255", "19255", "respond", "9268" )' aria-label="Reply to Abdulrasheed">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor odd alt depth-2" id="comment-19260">
+				<div id="div-comment-19260" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-19260">
+			February 12, 2019 at 12:05 am</a>		</div>
+
+		<p>Thank you for the very nice words Abdulrasheed. It is so nice of you. You can contact me via my email <a href="mailto:vincy@phppot.com">vincy@phppot.com</a> for freelance services and I always respond within a day.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=19260#respond" onclick='return addComment.moveForm( "div-comment-19260", "19260", "respond", "9268" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-19264">
+				<div id="div-comment-19264" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Opeyemi</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-19264">
+			February 13, 2019 at 2:56 pm</a>		</div>
+
+		<p>Words are not enough for me to appreciate your efforts. I’ve 
+benefited a lot from this site. You’re so kind for sharing your 
+knowledge FREE. I pray for more knowledge and wisdom. Thank you. Please 
+check your mail, I sent you a message to help me out on Uploading and 
+Inserting CSV into MySql. Than you so much.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=19264#respond" onclick='return addComment.moveForm( "div-comment-19264", "19264", "respond", "9268" )' aria-label="Reply to Opeyemi">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor odd alt depth-2 parent" id="comment-19265">
+				<div id="div-comment-19265" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-19265">
+			February 13, 2019 at 6:50 pm</a>		</div>
+
+		<p>Thank you so much for the nice words Opeyemi. I will check my email and reply to you on that.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=19265#respond" onclick='return addComment.moveForm( "div-comment-19265", "19265", "respond", "9268" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3" id="comment-19266">
+				<div id="div-comment-19266" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Opeyemi</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-19266">
+			February 13, 2019 at 8:12 pm</a>		</div>
+
+		<p>Alright. I’ll be waiting</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-19485">
+				<div id="div-comment-19485" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">sameer</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-19485">
+			March 24, 2019 at 10:57 pm</a>		</div>
+
+		<p>Great job! Vincy :) God Bless</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=19485#respond" onclick='return addComment.moveForm( "div-comment-19485", "19485", "respond", "9268" )' aria-label="Reply to sameer">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor even depth-2" id="comment-19602">
+				<div id="div-comment-19602" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-19602">
+			March 25, 2019 at 1:20 pm</a>		</div>
+
+		<p>Thank you Sameer for the appreciations.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=19602#respond" onclick='return addComment.moveForm( "div-comment-19602", "19602", "respond", "9268" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-20315">
+				<div id="div-comment-20315" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Imam Suharjo</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-20315">
+			May 19, 2019 at 3:34 am</a>		</div>
+
+		<p>Thanks for sharing. It’s very interesting</p>
+<p>Regard,<br>
+<a href="http://imam.web.id/" rel="nofollow">Imam</a></p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=20315#respond" onclick='return addComment.moveForm( "div-comment-20315", "20315", "respond", "9268" )' aria-label="Reply to Imam Suharjo">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor even depth-2" id="comment-21064">
+				<div id="div-comment-21064" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-21064">
+			May 20, 2019 at 10:29 am</a>		</div>
+
+		<p>Welcome Imam.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=21064#respond" onclick='return addComment.moveForm( "div-comment-21064", "21064", "respond", "9268" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-20701">
+				<div id="div-comment-20701" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Rajesh</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-20701">
+			June 11, 2019 at 11:31 am</a>		</div>
+
+		<p>i have to save CSV to specific path via ajax request</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=20701#respond" onclick='return addComment.moveForm( "div-comment-20701", "20701", "respond", "9268" )' aria-label="Reply to Rajesh">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor even depth-2" id="comment-20906">
+				<div id="div-comment-20906" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-20906">
+			June 12, 2019 at 2:53 pm</a>		</div>
+
+		<p>Yes it is definitely possible but you need to make some code 
+tweaks. AJAX request and saving to a path are two different things and 
+can be handled independently.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=20906#respond" onclick='return addComment.moveForm( "div-comment-20906", "20906", "respond", "9268" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-20782">
+				<div id="div-comment-20782" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Jafar Mohammad Musa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-20782">
+			June 17, 2019 at 10:52 pm</a>		</div>
+
+		<p>thank you very much</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=20782#respond" onclick='return addComment.moveForm( "div-comment-20782", "20782", "respond", "9268" )' aria-label="Reply to Jafar Mohammad Musa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor even depth-2" id="comment-20902">
+				<div id="div-comment-20902" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-20902">
+			June 18, 2019 at 2:46 pm</a>		</div>
+
+		<p>Welcome Jafar.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=20902#respond" onclick='return addComment.moveForm( "div-comment-20902", "20902", "respond", "9268" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-20881">
+				<div id="div-comment-20881" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Aatmik</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-20881">
+			June 25, 2019 at 12:50 pm</a>		</div>
+
+		<p>Your method of explanation and code writing is so simple, narrative
+ and clean which makes laymen like us to understand every piece of it! </p>
+<p>Brilliant work, please let me know if I can be of any help to you. I 
+have a dedicated server which I can lend it to you at the lowest price 
+or even free if we agree to terms.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=20881#respond" onclick='return addComment.moveForm( "div-comment-20881", "20881", "respond", "9268" )' aria-label="Reply to Aatmik">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor even depth-2" id="comment-20899">
+				<div id="div-comment-20899" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-20899">
+			June 26, 2019 at 2:37 pm</a>		</div>
+
+		<p>Hi Aatmik,<br>
+Thank you for the nice words and thank you for the offer on server. I will definitely let you know if I need one. Thanks a lot.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=20899#respond" onclick='return addComment.moveForm( "div-comment-20899", "20899", "respond", "9268" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-21147">
+				<div id="div-comment-21147" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Jai</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-21147">
+			July 4, 2019 at 11:32 am</a>		</div>
+
+		<p>Excellent work Vincy. Very knowledgeable.  I’ve benefited a lot from this article. I want to know few other things,<br>
+1. I have a csv file and I want to edit a filed (column value) of a particular row and save it with php.<br>
+2. Want to delete a particular row.<br>
+Thanks in advance.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=21147#respond" onclick='return addComment.moveForm( "div-comment-21147", "21147", "respond", "9268" )' aria-label="Reply to Jai">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor even depth-2" id="comment-21149">
+				<div id="div-comment-21149" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#comment-21149">
+			July 4, 2019 at 11:50 am</a>		</div>
+
+		<p>Welcome Jai, thank you for the nice words.</p>
+<p>This will require custom code. I will try to enhance the code and update it in the article.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/?replytocom=21149#respond" onclick='return addComment.moveForm( "div-comment-21149", "21149", "respond", "9268" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		</ul>
+
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://phppot.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Leave this empty <span class="required">*</span></label> <input id="url" name="url" type="text" size="30" maxlength="245"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="9268" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>			</form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+    <div class="related-articles">
+                    <h2>Popular Articles</h2>
+                    <ul class="related-articles-list">
+                        <li><a href="https://phppot.com/php/php-csv-file-read/">PHP CSV File Read</a></li>
+                        <li><a href="https://phppot.com/php/php-file_get_contents/">PHP file_get_contents()</a></li>
+                        <li><a href="https://phppot.com/php/array-to-xml-conversion-using-php/">Array to XML Conversion using PHP</a></li>
+                    </ul>
+                </div>
+                <p>
+                    <a href="#top" class="top">↑ Back to Top</a>
+                </p>
+            </div>
+            <div id="tutorial-menu">
+	<ul class="main-menu"><li class="cat-item cat-item-72"><a href="https://phppot.com/category/php/">PHP</a><ul class="sub-menu"><li class="cat-item cat-item-59 "><a href="https://phppot.com/category/php/php-introduction/">PHP Introduction</a></li><li class="cat-item cat-item-26 "><a href="https://phppot.com/category/php/php-basics/">PHP Basics</a></li><li class="cat-item cat-item-99 "><a href="https://phppot.com/category/php/product/">Product</a></li><li class="cat-item cat-item-79 "><a href="https://phppot.com/category/php/php-shopping-cart/">PHP Shopping Cart</a></li><li class="cat-item cat-item-102 "><a href="https://phppot.com/category/php/payment-gateway-integration/">Payment Gateway Integration</a></li><li class="cat-item cat-item-94 "><a href="https://phppot.com/category/php/php-contact-form/">PHP Contact Form</a></li><li class="cat-item cat-item-103 "><a href="https://phppot.com/category/php/comments-system/">Comments System</a></li><li class="cat-item cat-item-57 "><a href="https://phppot.com/category/php/types-variables-operators/">Types, Variables &amp; Operators</a></li><li class="cat-item cat-item-58 "><a href="https://phppot.com/category/php/php-strings/">PHP Strings</a></li><li class="cat-item cat-item-22 "><a href="https://phppot.com/category/php/php-arrays/">PHP Arrays</a></li><li class="cat-item cat-item-61 "><a href="https://phppot.com/category/php/php-functions/">PHP Functions</a></li><li class="cat-item cat-item-35 "><a href="https://phppot.com/category/php/php-oops/">PHP OOPS</a></li><li class="cat-item cat-item-31 "><a href="https://phppot.com/category/php/php-forms/">PHP Forms</a></li><li class="cat-item cat-item-78 "><a href="https://phppot.com/category/php/advanced/">Advanced</a></li><li class="cat-item cat-item-90 "><a href="https://phppot.com/category/php/php-ajax/">PHP AJAX</a></li><li class="cat-item cat-item-89 "><a href="https://phppot.com/category/php/restful-api/">RESTful API</a></li><li class="cat-item cat-item-15 "><a href="https://phppot.com/category/php/php-databases/">PHP Databases</a></li><li class="cat-item cat-item-23 "><a href="https://phppot.com/category/php/php-sessions-and-cookies/">PHP Sessions and Cookies</a></li><li class="cat-item cat-item-51 "><a href="https://phppot.com/category/php/error-exception-handling/">Error and Exception Handling</a></li><li class="cat-item cat-item-100 "><a href="https://phppot.com/category/php/file-upload/">File Upload</a></li><li class="cat-item cat-item-101 "><a href="https://phppot.com/category/php/file-import-export/">File Import Export</a></li><li class="cat-item cat-item-36 taxonomy-active"><a href="https://phppot.com/category/php/files-and-directories/">Files and Directories</a><ul class="post-list"><li><a class="post-menu" href="https://phppot.com/php/insert-xml-data-to-mysql-table/">Insert XML Data to MySql Table</a></li><li><a class="post-menu" href="https://phppot.com/php/array-to-xml-conversion-using-php/">Array to XML Conversion using PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/php-pdf-generation-using-fpdf/">PHP PDF Generation using FPDF</a></li><li><a class="post-menu" href="https://phppot.com/php/generate-pdf-from-mysql-data-using-fpdf/">Generate PDF from MySQL Data using FPDF</a></li><li><a class="post-menu" href="https://phppot.com/php/php-csv-file-read/">PHP CSV File Read</a></li><li><a class="post-menu" href="https://phppot.com/php/php-csv-file-export/">PHP CSV File Export</a></li><li><a class="post-menu" href="https://phppot.com/php/php-csv-file-export-using-fputcsv/">PHP CSV File Export Using fputcsv()</a></li><li class="current-post">How to Handle CSV with PHP: Read Write, Import Export with Database</li><li><a class="post-menu" href="https://phppot.com/php/split-and-export-into-multiple-excel-sheet-files-using-php/">Split and Export into Multiple Excel Sheet Files using PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/create-zip-file-of-multiple-uploaded-files-using-php/">Create Zip File of Multiple Uploaded Files using PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/php-file-handling/">PHP File Handling</a></li><li><a class="post-menu" href="https://phppot.com/php/php-file_get_contents/">PHP file_get_contents()</a></li><li><a class="post-menu" href="https://phppot.com/php/php-directory-functions/">PHP Directory Functions</a></li></ul></li><li class="cat-item cat-item-45 "><a href="https://phppot.com/category/php/php-date-time/">PHP Date Time</a></li><li class="cat-item cat-item-12 "><a href="https://phppot.com/category/php/php-graphics/">PHP Graphics</a></li><li class="cat-item cat-item-24 "><a href="https://phppot.com/category/php/php-xml/">PHP XML</a></li><li class="cat-item cat-item-62 "><a href="https://phppot.com/category/php/php-code-samples/">PHP Code Samples</a></li><li class="cat-item cat-item-96 "><a href="https://phppot.com/category/php/library/">Library</a></li><li class="cat-item cat-item-88 "><a href="https://phppot.com/category/php/php-freelancer/">PHP Freelancer</a></li></ul></li><li class="cat-item cat-item-73"><a href="https://phppot.com/category/jquery/">jQuery</a></li><li class="cat-item cat-item-74"><a href="https://phppot.com/category/wordpress/">WordPress</a></li><li class="cat-item cat-item-75"><a href="https://phppot.com/category/mysql/">MySQL</a></li><li class="cat-item cat-item-76"><a href="https://phppot.com/category/css/">CSS</a></li></ul></div>
+
+            <div id="social-icon">
+                <div class="heading">Share this Article</div>
+                <ul>
+                    <li><a class="social-link facebook-social-link" href="https://www.facebook.com/sharer/sharer.php?u=https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/" title="Share on Facebook"><span class="facebook-social-img">Share</span></a></li>
+                    <li><a class="social-link twitter-social-link" href="https://twitter.com/intent/tweet?original_referer=https://phppot.com&amp;source=tweetbutton&amp;text=How%20to%20Handle%20CSV%20with%20PHP:%20Read%20Write,%20Import%20Export%20with%20Database;url=https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/&amp;via=phppot" title="Share on Twitter"><span class="twitter-social-img">Tweet</span></a></li>
+                    <li><a class="social-link linkedin-social-link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://phppot.com/php/how-to-handle-csv-with-php-read-write-import-export-with-database/&amp;media=How%20to%20Handle%20CSV%20with%20PHP:%20Read%20Write,%20Import%20Export%20with%20Database" title="Share on Linkedin"><span class="linkedin-social-img">Share</span></a></li>
+                </ul>
+            </div>
+        </div>
+<div id="sidebar">
+    <div id="aboutcntnt">
+        <div id="photo">
+            <img src="How%20to%20Handle%20CSV%20with%20PHP%20%20Read%20Write,%20Import%20Export%20with%20Database%20-%20Phppot_files/Vincy.jpg" alt="Vincy" title="Vincy" width="100" height="100">
+        </div>
+        <div id="aboutdesc">
+            <p>
+                I’m Vincy, a web developer. If you want to start a
+                project and do a quick launch, <a href="https://phppot.com/contact/">contact
+                    me</a>.
+            </p>
+            <p>I am available for freelance work.</p>
+        </div>
+        <div id="contactMe">
+            <a href="mailto:vincy@phppot.com" title="Contact Me">vincy@phppot.com</a>
+        </div>
+    </div>
+
+                          <div class="sidebar-featured-product">
+        <div class="heading">Featured Product</div>
+        <a href="https://phppot.com/shop/contact-form-iris/"><img src="How%20to%20Handle%20CSV%20with%20PHP%20%20Read%20Write,%20Import%20Export%20with%20Database%20-%20Phppot_files/simple-secure-spam-free-contact-form-in-php-iris-150x150.png">
+        </a>
+        <div class="sidebar-featured-url">
+            <a href="https://phppot.com/shop/contact-form-iris/">Contact
+                Form - Iris</a>
+        </div>
+    </div>
+            <div id="recommended">
+        <div class="heading">Trending Now</div>
+        <ul>
+            <li><a href="https://phppot.com/shop/contact-form-iris/">Contact
+                    Form – Iris</a></li>
+            <li><a href="https://phppot.com/php/simple-php-shopping-cart/">Simple
+                    PHP Shopping Cart</a></li>
+            <li><a href="https://phppot.com/php/how-to-become-a-full-time-freelance-php-developer-and-consultant/">How
+                    to Become a Full Time Freelance PHP Developer and
+                    Consultant</a></li>
+            <li><a href="https://phppot.com/jquery/jquery-ajax-inline-crud-with-php/">jQuery
+                    AJAX Inline CRUD with PHP</a></li>
+            <li><a href="https://phppot.com/php/simple-secure-spam-free-contact-form-in-php-iris/">Simple
+                    Secure Spam-Free Contact Form in PHP – Iris</a></li>
+        </ul>
+    </div>
+    <div class="testimonials-sbar">
+    <div class="heading">Testimonials</div>
+    <p class="testimonial-content"><span class="left-quotes">“</span>She
+ is cooperative and able to quickly understand our needs behind 
+different features. We kept the estimated budget and fit within the 
+assumed timeline. ...<span class="right-quotes">”</span></p>
+    <p class="testimonials-sbar-by">Marcin Bialy, Grandmetric, Poland</p>
+    <div class="view-more-testimonial">
+        <a href="https://phppot.com/testimonials/"><span class="view-testimonials">View More Testimonials</span></a>
+    </div>
+</div></div></div>
+<div id="footer-contact-note">
+    <div class="content">
+        <h2>Looking for an expert PHP freelancer?</h2>
+        <p class="footer-contact-banner-title">Do you want to develop a
+            modern, lightweight, responsive web application and launch
+            quickly?</p>
+        <p>
+            <a id="footer-contact-navigation" href="https://phppot.com/contact/">Contact
+                Me</a>
+        </p>
+    </div>
+</div>
+<div id="footer">
+    <div class="content">
+        <div class="subscribe-section">
+            <div class="subscribe-email">
+                <div>
+    <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=phppot',
+             'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <p>
+        </p><div><label for="feedb-email-inp">Email:</label></div>
+            <input id="feedb-email-inp" placeholder="Enter your email here" type="text" class="feedb-email" name="email"><input type="hidden" value="phppot" name="uri"><input type="hidden" name="loc" value="en_US"><input type="submit" value="Subscribe" class="subscribe">
+        <p></p>
+    </form>
+</div></div>
+
+            <div class="follow">
+                <a class="facebook" href="https://www.facebook.com/PPbay" rel="nofollow noopener" title="Phppot Facebook Page" target="_blank">Facebook</a><a class="twitter" href="https://www.linkedin.com/in/vincya/" rel="nofollow noopener" title="Phppot LinkedIn Page" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="shop-footer-common">
+            <div class="shop-doc-nav">
+                <div class="shop-doc-nav-links">
+                    <div class="heading">Digital Goods Shop</div>
+                    <a href="https://phppot.com/faq/">FAQ</a> <a href="https://phppot.com/support-policy/">Support
+                        Policy</a> <a href="https://phppot.com/refund-policy/">Refund Policy</a>
+                    <a href="https://phppot.com/licenses/">Licenses</a> <a href="https://phppot.com/user-license/">User License</a> <a href="https://phppot.com/developer-license/">Developer License</a>
+                </div>
+
+                <div class="policy-doc-nav">
+                    <a href="https://phppot.com/terms-of-use/">Terms of
+                        Service</a><a href="https://phppot.com/privacy-policy/">Privacy
+                        Policy</a><a href="https://phppot.com/privacy-policy/#cookie-policy">Cookie
+                        Policy</a> <span class="copyright">© 2019 <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP">Phppot</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('click', function(e){
+    	var element = document.getElementsByClassName("search-container")[0];
+        if (element && !element.contains(e.target) && e.target.id != "mobile-search-icon" && window.innerWidth <= "550") {
+            element.style.display = "none";
+        }
+    });
+    function toggleSearch() {
+        var element = document.getElementsByClassName("search-container")[0];
+        if(element.style.display == 'inline-block') {
+            	element.style.display = "none";
+        } else {
+        	   element.style.display = "inline-block";
+        }
+    }
+</script><script async="" src="How%20to%20Handle%20CSV%20with%20PHP%20%20Read%20Write,%20Import%20Export%20with%20Database%20-%20Phppot_files/prettify.js"></script>
+
+</body></html>

@@ -1,0 +1,23 @@
+.m-logo{
+	width:50px;
+}
+.mobilemenu{
+  position:fixed;
+  left: 0pt;
+  bottom:0pt;
+  width: 100%;
+  background-color:white;
+  box-shadow:1px 1px 1px 4px lightgray;
+  opacity:0.9;
+  color:black;
+  text-align: center;
+  height:;
+  padding-top:6pt;
+   padding-bottom:6pt;
+}
+.btn-updated{
+	margin-left:5pt;
+}
+#content{
+	margin-bottom:40pt;
+}

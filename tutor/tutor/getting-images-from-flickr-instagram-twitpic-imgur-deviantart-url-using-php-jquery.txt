@@ -1,0 +1,128 @@
+Getting Images from Flickr, Instagram, Twitpic, Imgur & Deviantart Url using PHP & jQuery
+
+This function is used to extract links from text
+
+function extract_link_from_text($text)
+{
+    //The Regular Expression filter
+    $reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,4}(\/\S*)?/";
+    // Check if there is a url in the text
+    if(preg_match($reg_exUrl, $text, $url)) {
+
+           return $url[0];
+    } else {
+           // if no urls in the text just return the text
+           return $text;
+    }
+}
+
+Create a simple array that contains the details about image sources & its regular expression to validate the urls
+Storing Image Sources in PHP array
+
+$image_sites = array("flickr" => '/https?:\/\/[w\.]*flickr\.com\/photos\/([^?]*)/is', "twitpic" => '/https?:\/\/[w\.]*twitpic\.com\/([^?]*)/is', "imgur" => '/https?:\/\/[w\.]*imgur\.[^\/]*\/([^?]*)/is',    "deviantart" => '/https?:\/\/[^\/]*\.*deviantart\.[^\/]*\/([^?]*)/is', "instagram" => '/https?:\/\/[w\.]*instagram\.[^\/]*\/([^?]*)/is');
+
+I have used simple preg_match function that will validate the url with image sources and give the corresponding image codes
+
+function get_image($link)
+{
+    $link = fix_url($link);
+    $image_sites = array("flickr" => '/https?:\/\/[w\.]*flickr\.com\/photos\/([^?]*)/is', "twitpic" => '/https?:\/\/[w\.]*twitpic\.com\/([^?]*)/is', "imgur" => '/https?:\/\/[w\.]*imgur\.[^\/]*\/([^?]*)/is',	"deviantart" => '/https?:\/\/[^\/]*\.*deviantart\.[^\/]*\/([^?]*)/is', "instagram" => '/https?:\/\/[w\.]*instagram\.[^\/]*\/([^?]*)/is');
+
+	foreach($image_sites as $site => $regexp)
+    {
+        preg_match($regexp, $link, $match);
+        if(!empty($match))
+        {
+            switch ($site)
+            {
+                case "flickr":
+                $flickr_json = "http://www.flickr.com/services/oembed/?format=json&maxwidth=500&maxheight=380&url=".$link;
+                $image = get_json_response($flickr_json);
+                break;
+                case "instagram":
+                $instagram_json = "http://api.instagram.com/oembed?format=json&maxwidth=500&maxheight=380&url=".$link;
+                $image = get_json_response($instagram_json);
+                break;
+                case "deviantart":
+                $deviantart_json = "http://backend.deviantart.com/oembed?format=json&thumbnail_width=500&thumbnail_height=380&url=".$link;
+                $image = get_json_response($deviantart_json);
+                break;
+                case "twitpic":
+                $code = $match[1];
+                $image = "<img src='http://twitpic.com/show/large/".$code.".jpg'>";
+                break;
+                case "imgur":
+                $imgur_json = "http://api.imgur.com/oembed/?format=json&url=".$link;
+                $image = get_json_response($imgur_json);
+                break;
+                case "":
+                $image = "";
+                break;
+            }
+            return $image;
+        }
+    }
+}
+
+//function used to fix the url by adding http / https
+function fix_url($url) {
+ if (substr($url, 0, 7) == 'http://') { return $url; }
+ if (substr($url, 0, 8) == 'https://') { return $url; }
+ return 'http://'. $url;
+}
+
+Php code to get JSON response from URL using CURL
+
+Here json_decode function is used to convert json object into PHP array by passing 2nd parameter as true value
+
+function get_json_response($url)
+{
+    $json_response = get_url_data($url);
+    $res = json_decode($json_response, true);
+    if(is_array($res) && !empty($res))
+    {
+        $image = "<img src='".$res["url"]."'>";
+        return $image;
+    }
+}
+
+//curl function to get json response
+function get_url_data($url)
+{
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.16) Gecko/20110319 Firefox/3.6.16");
+        $curlData = curl_exec($curl);
+        curl_close($curl);
+        return $curlData;
+}
+
+Update.php
+
+<?php
+if(isset($_POST['msg']) && $_POST['msg'] != '')
+{
+  require_once 'functions.php';
+  $message = strip_tags(trim($_POST['msg']));
+  //extract link from message
+  $link = extract_link_from_text($message);
+  //fetch images from url;
+  $image = get_image($link);
+?>
+<div class="msg_body">
+<div class="msg_img">
+<img src="http://0.gravatar.com/avatar/82620dd66b22b34a915303b93b92929b" />
+</div>
+<div class="msg_text">
+<?php echo convert_text_links($message);  ?>
+<div class="time">5 seconds ago</div>
+<p><?php echo $image; ?></p>
+</div>
+</div>
+<?php
+}
+?>
+
+Please don’t forget to share and subscribe to latest updates of the blog. Comments and feedbacks are always welcome!
+By using jQuery ajax function, I will pass the input to the update.php

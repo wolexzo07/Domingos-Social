@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Dates and Time in PHP - Phppot</title>
+<meta name="description" content="PHP includes a lot of date and time functions. These functions are coming under PHP date and time-related extensions. These are used perform"><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://phppot.com/feed/">
+<link rel="apple-touch-icon" sizes="180x180" href="https://phppot.com/apple-touch-icon.png?v=031218">
+<link rel="icon" type="image/png" sizes="32x32" href="https://phppot.com/favicon-32x32.png?v=031218">
+<link rel="icon" type="image/png" sizes="16x16" href="https://phppot.com/favicon-16x16.png?v=031218">
+<link rel="manifest" href="https://phppot.com/site.webmanifest?v=031218">
+<link rel="mask-icon" href="https://phppot.com/safari-pinned-tab.svg?v=031218" color="#ffa500">
+<link rel="shortcut icon" href="https://phppot.com/favicon.ico?v=031218">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Dates and Time in PHP - Phppot">
+<meta property="og:site_name" content="Phppot">
+<meta property="og:description" content="PHP includes a lot of date and time functions. These functions are coming under PHP date and time-related extensions. These are used perform"><meta property="og:url" content="https://phppot.com/php/dates-and-time-in-php/">
+<meta property="twitter:title" content="Dates and Time in PHP - Phppot">
+<meta name="twitter:site" content="@phppot">
+<meta property="twitter:creator" content="@phppot">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://phppot.com/wp-content/uploads/2013/04/php_date_time.jpg"><meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:description" content="PHP includes a lot of date and time functions. These functions are coming under PHP date and time-related extensions. These are used perform"><meta property="twitter:image" content="https://phppot.com/wp-content/uploads/2013/04/php_date_time.jpg"><script type="text/javascript" async="" src="Dates%20and%20Time%20in%20PHP%20-%20Phppot_files/ga.js"></script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40067115-1']);
+  _gaq.push(['_setDomainName', 'phppot.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://www.google-analytics.com/"><link rel="dns-prefetch" href="https://www.youtube.com/"><link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/"><link rel="dns-prefetch" href="https://static.doubleclick.net/"><link rel="dns-prefetch" href="https://www.google.com/"><link rel="dns-prefetch" href="https://i.ytimg.com/"><link rel="dns-prefetch" href="https://yt3.ggpht.com/"><link rel="dns-prefetch" href="https://fonts.gstatic.com/"><link rel="stylesheet" id="main-style-css" href="Dates%20and%20Time%20in%20PHP%20-%20Phppot_files/papers_228192.css" type="text/css" media="all">
+<link rel="canonical" href="https://phppot.com/php/dates-and-time-in-php/">
+</head>
+<body onload="prettyPrint()">
+ <div id="site_header">
+    <div class="content">
+        <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP"><img src="Dates%20and%20Time%20in%20PHP%20-%20Phppot_files/phppot-logo.png" id="site-logo" alt="Helping You Build Web Applications Using PHP"></a>
+        <div class="search-container">
+            <form method="get" action="/" class="search-form">
+                <input name="s" class="search" placeholder="Search Phppot" title="Search Phppot" autocomplete="off">
+                <button type="submit" title="Search Phppot" id="search-button"></button>
+            </form>
+        </div>
+        <div class="header-link-container">
+            <span id="mobile-search-icon" onclick="toggleSearch();">Mobile
+                Search</span>
+                <div id="expand-sub-menu-icon">
+                    <a class="testimonial-icon" href="https://phppot.com/testimonials/">Testimonials</a><a class="demo-download-icon" href="https://phppot.com/demo/">Demo</a>
+                </div>  <a id="header-contact-navigation" href="https://phppot.com/contact/">Contact Me</a>
+        </div>
+    </div>
+</div>    <div class="content">
+        <div id="tutorial-body">
+            <div id="tutorial">
+                <h1>Dates and Time in PHP</h1>
+                <div class="modified-on">Last modified on May 29th, 2017 by Vincy.</div>
+<p>PHP includes a lot of date and time functions. These functions are 
+coming under PHP date and time-related extensions. These are used 
+perform various operations with date and time, like getting date time 
+information based on the input or parameters passed, performing date 
+time manipulation, converting date input&nbsp;formats from one another 
+and more.</p>
+<p>In this tutorial, we are going to see the basic functions of the PHP 
+date and time-related&nbsp;extension. I am giving few examples for doing
+ the below date and time functionalities.</p>
+<ol>
+<li>Getting the current date and time information.</li>
+<li>Getting the current date&nbsp;in a specified format.</li>
+<li>Calculating timestamp of the given date.</li>
+</ol>
+<p><img class="alignnone size-full wp-image-4828" src="Dates%20and%20Time%20in%20PHP%20-%20Phppot_files/calendar-date.jpg" alt="calendar-date" srcset="https://phppot.com/wp-content/uploads/2013/04/calendar-date.jpg 550w, https://phppot.com/wp-content/uploads/2013/04/calendar-date-300x185.jpg 300w" sizes="(max-width: 550px) 100vw, 550px" width="550" height="340"></p>
+<h2>Getting the Current Date and Time&nbsp;Information</h2>
+<p>The PHP&nbsp;<em>getdate()</em>&nbsp;function is used to get the 
+array of date and time information for the current date. It returns the 
+day of the month, the day of the week, year of the week, the month of 
+the year, month name, hour, minute, second and the timestamp in an 
+array. The following code shows the usage of this function and the 
+output array it returns.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">$date_components </span><span class="pun">=</span><span class="pln"> getdate</span><span class="pun">();</span><span class="pln">
+</span><span class="com">/*
+Array
+(
+    [seconds] =&gt; 23
+    [minutes] =&gt; 22
+    [hours] =&gt; 8
+    [mday] =&gt; 29
+    [wday] =&gt; 1
+    [mon] =&gt; 5
+    [year] =&gt; 2017
+    [yday] =&gt; 148
+    [weekday] =&gt; Monday
+    [month] =&gt; May
+    [0] =&gt; 1496038943
+)
+*/</span></pre>
+<h2>Getting the Current Date&nbsp;in a Specified Format</h2>
+<p>I used PHP <em>date()</em> function to get the current date in a 
+specified format. This function accepts two arguments. The first 
+argument is the format of the date to be returned and the second 
+parameter is the timestamp. If the second argument is not passed then 
+the date function will return the current date in the specified format. I
+ specified the <em>MM-DD-YYYY</em> format to the <em>date()</em> function below.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">$current_date </span><span class="pun">=</span><span class="pln"> date</span><span class="pun">(</span><span class="str">'m-d-Y'</span><span class="pun">);</span><span class="pln">
+</span><span class="com">// Will print current date in mm-dd-yyyy format </span><span class="pln">
+echo $current_date</span><span class="pun">;</span></pre>
+<h2>Calculating timestamp of the given date</h2>
+<p>The <em>time()</em> function is used to get the current timestamp. 
+Timestamp is nothing but the number of second passed from January 1st, 
+1970 midnight at GMT. And then, if we want to get timestamp of a 
+specified date we should use the PHP function mktime(). This function 
+requires the Hour, Minute, Second, Month, Day and Year in the order of 
+(H, I, S, M, D, Y ) as shown in the following example.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="com">// Will return timestamp for current date, time</span><span class="pln">
+$current_time </span><span class="pun">=</span><span class="pln"> time</span><span class="pun">();</span><span class="pln">
+</span><span class="com">// Will return timestamp for 25th April 2013</span><span class="pln">
+$timestamp </span><span class="pun">=</span><span class="pln"> mktime</span><span class="pun">(</span><span class="lit">25</span><span class="pun">,</span><span class="pln"> </span><span class="lit">35</span><span class="pun">,</span><span class="pln"> </span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4</span><span class="pun">,</span><span class="pln"> </span><span class="lit">25</span><span class="pun">,</span><span class="pln"> </span><span class="lit">2013</span><span class="pun">);</span></pre>
+<h2>Other Date and Time-Related Functions</h2>
+<p>PHP supports a lot of date and time-related functionalities by using 
+its built-in&nbsp;functions. In this section, I have listed few of them 
+as below.</p>
+<ul>
+<li><em>checkdate()</em> –&nbsp;It validates date by accepting date components in the order of (month, day and year).</li>
+<li><em>strtotime()</em> – Converts the date string into a timestamp.</li>
+<li><em>date_diff()</em> – Calculates difference between two date objects and returns the array of differences in an object array.</li>
+</ul>
+<p>For advanced Date and Time functionalities&nbsp;like&nbsp;<a title="PHP Timezone" href="https://phppot.com/php/php-timezone/">timezone conversion</a>&nbsp;and more, we can use PHP DateTime and DateTimezone class functions.</p>
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			Comments to “Dates and Time in PHP”		</h2>
+
+		<ul class="comment-list">
+					<li class="comment even thread-even depth-1" id="comment-10896">
+				<div id="div-comment-10896" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">krishna</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/dates-and-time-in-php/#comment-10896">
+			June 5, 2014 at 9:58 pm</a>		</div>
+
+		<p>hi vincy, how can i create year 1900 to 2014 dropdown by using loop? please help this</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/dates-and-time-in-php/?replytocom=10896#respond" onclick='return addComment.moveForm( "div-comment-10896", "10896", "respond", "204" )' aria-label="Reply to krishna">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		</ul>
+
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://phppot.com/php/dates-and-time-in-php/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://phppot.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Leave this empty <span class="required">*</span></label> <input id="url" name="url" type="text" size="30" maxlength="245"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="204" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>			</form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+    <div class="related-articles">
+                    <h2>Popular Articles</h2>
+                    <ul class="related-articles-list">
+                        <li><a href="https://phppot.com/php/php-current-date/">PHP Current Date</a></li>
+                        <li><a href="https://phppot.com/php/php-timestamp/">PHP Timestamp</a></li>
+                        <li><a href="https://phppot.com/php/php-timezone/">PHP Timezone</a></li>
+                    </ul>
+                </div>
+                <p>
+                    <a href="#top" class="top">↑ Back to Top</a>
+                </p>
+            </div>
+            <div id="tutorial-menu">
+	<ul class="main-menu"><li class="cat-item cat-item-72"><a href="https://phppot.com/category/php/">PHP</a><ul class="sub-menu"><li class="cat-item cat-item-59 "><a href="https://phppot.com/category/php/php-introduction/">PHP Introduction</a></li><li class="cat-item cat-item-26 "><a href="https://phppot.com/category/php/php-basics/">PHP Basics</a></li><li class="cat-item cat-item-99 "><a href="https://phppot.com/category/php/product/">Product</a></li><li class="cat-item cat-item-79 "><a href="https://phppot.com/category/php/php-shopping-cart/">PHP Shopping Cart</a></li><li class="cat-item cat-item-102 "><a href="https://phppot.com/category/php/payment-gateway-integration/">Payment Gateway Integration</a></li><li class="cat-item cat-item-94 "><a href="https://phppot.com/category/php/php-contact-form/">PHP Contact Form</a></li><li class="cat-item cat-item-103 "><a href="https://phppot.com/category/php/comments-system/">Comments System</a></li><li class="cat-item cat-item-57 "><a href="https://phppot.com/category/php/types-variables-operators/">Types, Variables &amp; Operators</a></li><li class="cat-item cat-item-58 "><a href="https://phppot.com/category/php/php-strings/">PHP Strings</a></li><li class="cat-item cat-item-22 "><a href="https://phppot.com/category/php/php-arrays/">PHP Arrays</a></li><li class="cat-item cat-item-61 "><a href="https://phppot.com/category/php/php-functions/">PHP Functions</a></li><li class="cat-item cat-item-35 "><a href="https://phppot.com/category/php/php-oops/">PHP OOPS</a></li><li class="cat-item cat-item-31 "><a href="https://phppot.com/category/php/php-forms/">PHP Forms</a></li><li class="cat-item cat-item-78 "><a href="https://phppot.com/category/php/advanced/">Advanced</a></li><li class="cat-item cat-item-90 "><a href="https://phppot.com/category/php/php-ajax/">PHP AJAX</a></li><li class="cat-item cat-item-89 "><a href="https://phppot.com/category/php/restful-api/">RESTful API</a></li><li class="cat-item cat-item-15 "><a href="https://phppot.com/category/php/php-databases/">PHP Databases</a></li><li class="cat-item cat-item-23 "><a href="https://phppot.com/category/php/php-sessions-and-cookies/">PHP Sessions and Cookies</a></li><li class="cat-item cat-item-51 "><a href="https://phppot.com/category/php/error-exception-handling/">Error and Exception Handling</a></li><li class="cat-item cat-item-100 "><a href="https://phppot.com/category/php/file-upload/">File Upload</a></li><li class="cat-item cat-item-101 "><a href="https://phppot.com/category/php/file-import-export/">File Import Export</a></li><li class="cat-item cat-item-36 "><a href="https://phppot.com/category/php/files-and-directories/">Files and Directories</a></li><li class="cat-item cat-item-45 taxonomy-active"><a href="https://phppot.com/category/php/php-date-time/">PHP Date Time</a><ul class="post-list"><li><a class="post-menu" href="https://phppot.com/php/calculating-hours-difference-in-php/">Calculating Hours Difference in PHP</a></li><li class="current-post">Dates and Time in PHP</li><li><a class="post-menu" href="https://phppot.com/php/php-current-date/">PHP Current Date</a></li><li><a class="post-menu" href="https://phppot.com/php/formatting-dates-in-php/">Formatting Dates in PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/php-timestamp/">PHP Timestamp</a></li><li><a class="post-menu" href="https://phppot.com/php/php-time-ago-function/">PHP Time Ago Function</a></li><li><a class="post-menu" href="https://phppot.com/php/php-timezone/">PHP Timezone</a></li></ul></li><li class="cat-item cat-item-12 "><a href="https://phppot.com/category/php/php-graphics/">PHP Graphics</a></li><li class="cat-item cat-item-24 "><a href="https://phppot.com/category/php/php-xml/">PHP XML</a></li><li class="cat-item cat-item-62 "><a href="https://phppot.com/category/php/php-code-samples/">PHP Code Samples</a></li><li class="cat-item cat-item-96 "><a href="https://phppot.com/category/php/library/">Library</a></li><li class="cat-item cat-item-88 "><a href="https://phppot.com/category/php/php-freelancer/">PHP Freelancer</a></li></ul></li><li class="cat-item cat-item-73"><a href="https://phppot.com/category/jquery/">jQuery</a></li><li class="cat-item cat-item-74"><a href="https://phppot.com/category/wordpress/">WordPress</a></li><li class="cat-item cat-item-75"><a href="https://phppot.com/category/mysql/">MySQL</a></li><li class="cat-item cat-item-76"><a href="https://phppot.com/category/css/">CSS</a></li></ul></div>
+
+            <div id="social-icon">
+                <div class="heading">Share this Article</div>
+                <ul>
+                    <li><a class="social-link facebook-social-link" href="https://www.facebook.com/sharer/sharer.php?u=https://phppot.com/php/dates-and-time-in-php/" title="Share on Facebook"><span class="facebook-social-img">Share</span></a></li>
+                    <li><a class="social-link twitter-social-link" href="https://twitter.com/intent/tweet?original_referer=https://phppot.com&amp;source=tweetbutton&amp;text=Dates%20and%20Time%20in%20PHP;url=https://phppot.com/php/dates-and-time-in-php/&amp;via=phppot" title="Share on Twitter"><span class="twitter-social-img">Tweet</span></a></li>
+                    <li><a class="social-link linkedin-social-link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://phppot.com/php/dates-and-time-in-php/&amp;media=Dates%20and%20Time%20in%20PHP" title="Share on Linkedin"><span class="linkedin-social-img">Share</span></a></li>
+                </ul>
+            </div>
+        </div>
+<div id="sidebar">
+    <div id="aboutcntnt">
+        <div id="photo">
+            <img src="Dates%20and%20Time%20in%20PHP%20-%20Phppot_files/Vincy.jpg" alt="Vincy" title="Vincy" width="100" height="100">
+        </div>
+        <div id="aboutdesc">
+            <p>
+                I’m Vincy, a web developer. If you want to start a
+                project and do a quick launch, <a href="https://phppot.com/contact/">contact
+                    me</a>.
+            </p>
+            <p>I am available for freelance work.</p>
+        </div>
+        <div id="contactMe">
+            <a href="mailto:vincy@phppot.com" title="Contact Me">vincy@phppot.com</a>
+        </div>
+    </div>
+
+                          <div class="sidebar-featured-product">
+        <div class="heading">Featured Product</div>
+        <a href="https://phppot.com/shop/contact-form-iris/"><img src="Dates%20and%20Time%20in%20PHP%20-%20Phppot_files/simple-secure-spam-free-contact-form-in-php-iris-150x150.png">
+        </a>
+        <div class="sidebar-featured-url">
+            <a href="https://phppot.com/shop/contact-form-iris/">Contact
+                Form - Iris</a>
+        </div>
+    </div>
+            <div id="recommended">
+        <div class="heading">Trending Now</div>
+        <ul>
+            <li><a href="https://phppot.com/shop/contact-form-iris/">Contact
+                    Form – Iris</a></li>
+            <li><a href="https://phppot.com/php/simple-php-shopping-cart/">Simple
+                    PHP Shopping Cart</a></li>
+            <li><a href="https://phppot.com/php/how-to-become-a-full-time-freelance-php-developer-and-consultant/">How
+                    to Become a Full Time Freelance PHP Developer and
+                    Consultant</a></li>
+            <li><a href="https://phppot.com/jquery/jquery-ajax-inline-crud-with-php/">jQuery
+                    AJAX Inline CRUD with PHP</a></li>
+            <li><a href="https://phppot.com/php/simple-secure-spam-free-contact-form-in-php-iris/">Simple
+                    Secure Spam-Free Contact Form in PHP – Iris</a></li>
+        </ul>
+    </div>
+    <div class="testimonials-sbar">
+    <div class="heading">Testimonials</div>
+    <p class="testimonial-content"><span class="left-quotes">“</span>She
+ is cooperative and able to quickly understand our needs behind 
+different features. We kept the estimated budget and fit within the 
+assumed timeline. ...<span class="right-quotes">”</span></p>
+    <p class="testimonials-sbar-by">Marcin Bialy, Grandmetric, Poland</p>
+    <div class="view-more-testimonial">
+        <a href="https://phppot.com/testimonials/"><span class="view-testimonials">View More Testimonials</span></a>
+    </div>
+</div></div></div>
+<div id="footer-contact-note">
+    <div class="content">
+        <h2>Looking for an expert PHP freelancer?</h2>
+        <p class="footer-contact-banner-title">Do you want to develop a
+            modern, lightweight, responsive web application and launch
+            quickly?</p>
+        <p>
+            <a id="footer-contact-navigation" href="https://phppot.com/contact/">Contact
+                Me</a>
+        </p>
+    </div>
+</div>
+<div id="footer">
+    <div class="content">
+        <div class="subscribe-section">
+            <div class="subscribe-email">
+                <div>
+    <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=phppot',
+             'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <p>
+        </p><div><label for="feedb-email-inp">Email:</label></div>
+            <input id="feedb-email-inp" placeholder="Enter your email here" type="text" class="feedb-email" name="email"><input type="hidden" value="phppot" name="uri"><input type="hidden" name="loc" value="en_US"><input type="submit" value="Subscribe" class="subscribe">
+        <p></p>
+    </form>
+</div></div>
+
+            <div class="follow">
+                <a class="facebook" href="https://www.facebook.com/PPbay" rel="nofollow noopener" title="Phppot Facebook Page" target="_blank">Facebook</a><a class="twitter" href="https://www.linkedin.com/in/vincya/" rel="nofollow noopener" title="Phppot LinkedIn Page" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="shop-footer-common">
+            <div class="shop-doc-nav">
+                <div class="shop-doc-nav-links">
+                    <div class="heading">Digital Goods Shop</div>
+                    <a href="https://phppot.com/faq/">FAQ</a> <a href="https://phppot.com/support-policy/">Support
+                        Policy</a> <a href="https://phppot.com/refund-policy/">Refund Policy</a>
+                    <a href="https://phppot.com/licenses/">Licenses</a> <a href="https://phppot.com/user-license/">User License</a> <a href="https://phppot.com/developer-license/">Developer License</a>
+                </div>
+
+                <div class="policy-doc-nav">
+                    <a href="https://phppot.com/terms-of-use/">Terms of
+                        Service</a><a href="https://phppot.com/privacy-policy/">Privacy
+                        Policy</a><a href="https://phppot.com/privacy-policy/#cookie-policy">Cookie
+                        Policy</a> <span class="copyright">© 2019 <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP">Phppot</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('click', function(e){
+    	var element = document.getElementsByClassName("search-container")[0];
+        if (element && !element.contains(e.target) && e.target.id != "mobile-search-icon" && window.innerWidth <= "550") {
+            element.style.display = "none";
+        }
+    });
+    function toggleSearch() {
+        var element = document.getElementsByClassName("search-container")[0];
+        if(element.style.display == 'inline-block') {
+            	element.style.display = "none";
+        } else {
+        	   element.style.display = "inline-block";
+        }
+    }
+</script><script async="" src="Dates%20and%20Time%20in%20PHP%20-%20Phppot_files/prettify.js"></script>
+
+</body></html>

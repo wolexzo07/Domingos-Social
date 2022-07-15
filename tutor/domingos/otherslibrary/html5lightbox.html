@@ -1,0 +1,811 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="height: 100%;"><!-- InstanceBegin template="/Templates/html5lightbox_withright.dwt" codeOutsideHTMLIsLocked="true" --><head>
+
+
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>jQuery Video LightBox Plugin, jQuery Image and Video LightBox 
+Plugin, HTML5 Video Lightbox, HTML5 Photo and Video LightBox - Android, 
+iPhone and iPad Compatible Photo Gallery and Video Gallery</title>
+<meta name="title" content="jQuery Video LightBox, jQuery Image and Video LightBox Plugin, HTML5 Video Lightbox, jQuery Photo and Video LightBox, HTML5 Photo and Video LightBox - Android, iPhone and iPad Compatible Photo Gallery and Video Gallery">
+<meta name="description" content="jQuery Video LightBox Plugin, jQuery Image and Video LightBox Plugin, HTML5 Video Lightbox, jQuery Photo and Video LightBox, HTML5 Photo and Video LightBox - Android, iPhone and iPad Compatible Photo Gallery and Video Gallery">
+<meta name="keywords" content="jQuery Video LightBox Plugin, jQuery Image and Video LightBox Plugin, jQuery Image LightBox, jQuery Photo LightBox, jQuery Image and Video LightBox Plugin, HTML5 LightBox, HTML5 Video LightBox, HTML5 Image LightBox, HTML5 Photo LightBox, HTML5 Photo and Video LightBox">
+
+<meta property="og:title" content="jQuery Image and Video LightBox Plugin"> 
+<meta property="og:description" content="Awesome jQuery Photo and Video LightBox, works on Android, iPhone, iPad and all modern web browsers"> 
+<meta property="og:image" content="../images/html5boxlogo.jpg"> 
+
+<script src="html5lightbox/all_002.js" async="" crossorigin="anonymous"></script><script src="html5lightbox/cbgapi.loaded_0" async=""></script><script type="text/javascript" id="www-widgetapi-script" src="html5lightbox/www-widgetapi.js" async=""></script><script src="html5lightbox/iframe_api.js"></script><script src="html5lightbox/froogaloop2.js"></script><script id="twitter-wjs" src="html5lightbox/widgets.js"></script><script id="facebook-jssdk" src="html5lightbox/all.js"></script><script type="text/javascript" async="" src="html5lightbox/plusone.js" gapi_processed="true"></script><script type="text/javascript" async="" src="html5lightbox/ga.js"></script><script type="text/javascript" src="html5lightbox/jquery.js"></script>
+<script type="text/javascript" src="html5lightbox/html5highlight.js"></script>
+
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="html5lightbox/style.css" rel="stylesheet" type="text/css">
+<link href="html5lightbox/bootstrap.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" -->
+
+<script type="text/javascript" src="html5lightbox/html5lightbox.js"></script>
+<!-- InstanceEndEditable -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29319282-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="html5lightbox/translateelement.css"><script type="text/javascript" charset="UTF-8" src="html5lightbox/main.js"></script><link rel="stylesheet" href="html5lightbox/fontello.css" type="text/css"><script type="text/javascript" charset="UTF-8" src="html5lightbox/element_main.js"></script><link rel="stylesheet" type="text/css" href="html5lightbox/socialwidgets.css"><script charset="utf-8" src="html5lightbox/button.js"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style></head>
+<body style="position: relative; min-height: 100%; top: 0px;">
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div><iframe name="fb_xdm_frame_https" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none;" src="html5lightbox/xd_arbiter.html" frameborder="0"></iframe></div><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<div class="main">
+  <div class="header">
+    <div class="block_header">
+    
+    <div class="headertranslate">
+  <div id="google_translate_element"><div class="skiptranslate goog-te-gadget" dir="ltr" style=""><div id=":0.targetLanguage" style="white-space: nowrap;" class="goog-te-gadget-simple"><img src="html5lightbox/cleardot.gif" class="goog-te-gadget-icon" alt="" style="background-image: url(&quot;https://translate.googleapis.com/translate_static/img/te_ctrl3.gif&quot;); background-position: -65px 0px;"><span style="vertical-align: middle;"><a aria-haspopup="true" class="goog-te-menu-value" href="javascript:void(0)"><span>Select Language</span><img src="html5lightbox/cleardot.gif" alt="" width="1" height="1"><span style="border-left: 1px solid rgb(187, 187, 187);">​</span><img src="html5lightbox/cleardot.gif" alt="" width="1" height="1"><span style="color: rgb(118, 118, 118);" aria-hidden="true">▼</span></a></span></div></div></div><script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    gaTrack: true,
+    gaId: 'UA-29319282-1',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script><script src="html5lightbox/element.js"></script>
+  </div>
+  
+         <div class="header_text"></div>
+    <div class="clr"></div>
+   <div class="block_header_form">
+      <div class="logo"><a href="https://html5box.com/index.php"><img src="html5lightbox/html5boxlogo.png" alt="logo" border="0"></a></div>
+      
+      <div style="float:right;">
+		<div class="menu">
+          <ul>
+          
+<li><a href="https://html5box.com/index.php"><span>Home</span></a></li>            <li><a href="https://html5box.com/products.php" class="active"><span>Products</span></a></li>
+            <li><a href="https://html5box.com/order.php"><span>Pricing</span></a></li>
+            <li><a href="https://html5box.com/members/"><span>Members Area</span></a></li>
+            <li><a href="https://html5box.com/contact.php"><span>Contact Us</span></a></li>
+          
+          </ul>
+        </div>      
+        </div>
+        <div class="clr"></div>
+      </div>
+      <div class="slider2">
+      
+     <div style="float:right;padding:40px 8px 4px 0px;">
+      <a href="https://twitter.com/html5box" class="twitter-follow-button twitter-follow-button-error" data-show-count="true" data-twitter-extracted-i157227509106878682="true">Follow</a>
+      </div>
+      
+      <div style="float:right;padding:40px 8px 4px 0px;">
+      <img src="html5lightbox/FacebookLike.svg" class="privacyBadgerReplacementButton" title="Privacy Badger has replaced this FacebookLike button.">
+      </div>
+
+     
+      </div> 
+      <div class="clr"></div>      
+    </div>
+  </div>    
+
+    <div class="body">
+    <div class="body_resize"> 
+     <div class="left">           
+<!-- InstanceBeginEditable name="mainbody" -->  
+
+<h1>jQuery Image and Video LightBox Plugin- Awesome HTML5 and jQuery  
+lightbox effect, supports images, Flash SWF files, YouTube, Vimeo and 
+local mp4, m4v, flv, ogg, ogv and webm videos, works on Windows, Linux, 
+Mac, iPhone, iPad, Android, Windows Phone and all modern web browsers</h1>
+
+<div class="clr"></div>  
+<div>
+
+  <div style="float:left;">
+    <p><a class="btn btn-success btn-large" href="https://html5box.com/download/html5_lightbox_free.zip" onclick="javascript: _gaq.push(['_trackPageview', '/download/html5_lightbox_free.zip']);">&nbsp;&nbsp;&nbsp;&nbsp;Download Free Version&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    Version 8.0, released on May 20, 2019
+    </p><p><a href="http://www.wonderplugin.com/wordpress-lightbox/?utm_source=html5box&amp;utm_medium=banner&amp;utm_campaign=html5lightbox" target="_blank" title="WordPress Lightbox">Looking for a WordPress Image &amp; Video LightBox Plugin?</a>
+  </p>
+  </div>
+
+</div>
+
+<div class="clr"></div> 
+  
+<div>
+<h2><a name="examples" id="examples"></a>Examples</h2>
+
+
+<div class="clr"></div>
+
+<h3>Gallery of images, YouTube, Vimeo and local MP4 Videos with thumbnail navigation and share buttons</h3>
+<div class="image_tn"><a href="https://html5box.com/html5lightbox/images/mountain.jpg" data-showsocial="true" data-transition="crossfade" data-thumbnail="images/mountain-96.jpg" class="html5lightbox" data-group="set1" data-width="600" data-height="400" title="Mountain"><img src="html5lightbox/mountain-96.jpg"></a></div>
+<div class="image_tn"><a href="https://html5box.com/html5lightbox/images/skynight.jpg" data-showsocial="true" data-thumbnail="images/skynight-96.jpg" class="html5lightbox" data-group="set1" data-width="800" data-height="600" title="Skynight"><img src="html5lightbox/skynight-96.jpg"></a></div>
+<div class="image_tn"><a href="https://www.youtube.com/embed/YE7VzlLtp-4?rel=0" data-showsocial="true" data-thumbnail="images/Big_Buck_Bunny_1_96.jpg" class="html5lightbox" data-group="set1" title="Big Buck Bunny Copyright Blender Foundation"><img src="html5lightbox/Big_Buck_Bunny_1_96.jpg"></a></div>
+<div class="image_tn"><a href="https://player.vimeo.com/video/1084537" data-showsocial="true" data-shareimage="images/Big_Buck_Bunny_2.jpg" data-thumbnail="images/Big_Buck_Bunny_2_96.jpg" class="html5lightbox" data-group="set1" title="Big Buck Bunny Copyright Blender Foundation"><img src="html5lightbox/Big_Buck_Bunny_2_96.jpg"></a></div>
+<div class="image_tn"><a href="https://html5box.com/html5lightbox/images/Big_Buck_Bunny_2.m4v" data-showsocial="true" data-shareimage="images/Big_Buck_Bunny_3.jpg" data-thumbnail="images/Big_Buck_Bunny_3_96.jpg" data-webm="images/Big_Buck_Bunny_2.webm" class="html5lightbox" data-group="set1" title="Big Buck Bunny Copyright Blender Foundation"><img src="html5lightbox/Big_Buck_Bunny_3_96.jpg"></a></div>
+
+<div class="clr"></div>
+<p></p>
+
+<h3>Open the gallery in fullscrren mode (the close button on top right corner of the web browser), auto slideshow on popup</h3>
+<div class="image_tn"><a href="https://html5box.com/html5lightbox/images/mountain.jpg" data-fullscreenmode="true" data-transition="crossfade" data-autoslide="true" data-thumbnail="images/mountain-96.jpg" class="html5lightbox" data-group="set1" data-width="600" data-height="400" title="Mountain"><img src="html5lightbox/mountain-96.jpg"></a></div>
+<div class="image_tn"><a href="https://html5box.com/html5lightbox/images/skynight.jpg" data-fullscreenmode="true" data-autoslide="true" data-thumbnail="images/skynight-96.jpg" class="html5lightbox" data-group="set1" data-width="800" data-height="600" title="Skynight"><img src="html5lightbox/skynight-96.jpg"></a></div>
+<div class="image_tn"><a href="https://www.youtube.com/embed/YE7VzlLtp-4?rel=0" data-fullscreenmode="true" data-autoslide="true" data-thumbnail="images/Big_Buck_Bunny_1_96.jpg" class="html5lightbox" data-group="set1" title="Big Buck Bunny Copyright Blender Foundation"><img src="html5lightbox/Big_Buck_Bunny_1_96.jpg"></a></div>
+<div class="image_tn"><a href="https://player.vimeo.com/video/1084537" data-fullscreenmode="true" data-autoslide="true" data-thumbnail="images/Big_Buck_Bunny_2_96.jpg" class="html5lightbox" data-group="set1" title="Big Buck Bunny Copyright Blender Foundation"><img src="html5lightbox/Big_Buck_Bunny_2_96.jpg"></a></div>
+<div class="image_tn"><a href="https://html5box.com/html5lightbox/images/Big_Buck_Bunny_2.m4v" data-fullscreenmode="true" data-autoslide="true" data-thumbnail="images/Big_Buck_Bunny_3_96.jpg" data-webm="images/Big_Buck_Bunny_2.webm" class="html5lightbox" data-group="set1" title="Big Buck Bunny Copyright Blender Foundation"><img src="html5lightbox/Big_Buck_Bunny_3_96.jpg"></a></div>
+
+<div class="clr"></div>
+<p>* Video autoplay does not work on mobile and tablets. The limitation comes from iOS and Android.</p>
+<p></p>
+
+<div class="clr"></div>
+<h3 id="popupgallery">Lightbox popup gallery - fullscreen mode with sliding effect</h3>
+<div class="image_tn" style="display:block;width:120px;height:120px;"><a href="https://html5box.com/html5lightbox/images/mountain2.jpg" data-fullscreenmode="true" data-transition="slide" data-thumbnail="images/mountain2-200.jpg" class="html5lightbox" data-group="set3" data-width="600" data-height="400" title="Mountain"><img src="html5lightbox/mountain2-200.jpg" style="width:120px;height:120px;"></a></div>
+<div class="image_tn" style="display:none"><a href="https://html5box.com/html5lightbox/images/skynight2.jpg" data-fullscreenmode="true" data-transition="slide" data-thumbnail="images/skynight2-200.jpg" class="html5lightbox" data-group="set3" data-width="800" data-height="600" title="Skynight"><img src="html5lightbox/skynight2-200.jpg"></a></div>
+<div class="image_tn" style="display:none"><a href="https://html5box.com/html5lightbox/images/lakeandballoon2.jpg" data-fullscreenmode="true" data-transition="slide" data-thumbnail="images/lakeandballoon2-200.jpg" class="html5lightbox" data-group="set3" title="Lake"><img src="html5lightbox/lakeandballoon2-200.jpg"></a></div>
+<div class="image_tn" style="display:none"><a href="https://html5box.com/html5lightbox/images/wild.jpg" data-fullscreenmode="true" data-transition="slide" data-thumbnail="images/wild-200.jpg" class="html5lightbox" data-group="set3" title="Wild"><img src="html5lightbox/wild-200.jpg"></a></div>
+<div class="image_tn" style="display:none"><a href="https://html5box.com/html5lightbox/images/cloud.jpg" data-fullscreenmode="true" data-transition="slide" data-thumbnail="images/cloud-200.jpg" class="html5lightbox" data-group="set3" title="Cloud"><img src="html5lightbox/cloud-200.jpg"></a></div>
+
+<div class="clr"></div>
+<h3>Image with Social Media Share Buttons</h3>
+<div class="image_tn"><a href="https://html5box.com/html5lightbox/images/lakeandballoon.jpg" data-showsocial="true" class="html5lightbox" title="Image with Social Media Share" data-description="Share your media on Facebook, Twitter and Pinterest"><img src="html5lightbox/lakeandballoon-96.jpg"></a></div>
+<div class="clr"></div>
+<p></p>
+
+<h3>Image with a link in title</h3>
+<div class="image_tn"><a href="https://html5box.com/html5lightbox/images/Evening_1024.jpg" data-exitanimation="fadeOutDown" class="html5lightbox" data-title="You can add link in text &lt;a href='http://www.html5box.com'&gt;HTML5Box.com&lt;/a&gt;." data-description="You can also display a long description under the title."><img src="html5lightbox/Evening_96.jpg"></a></div>
+<div class="clr"></div>
+<p></p>
+
+<h3>Open a web link when clicking on the image in the lightbox</h3>
+<div class="image_tn"><a href="https://html5box.com/html5lightbox/images/dog.jpg" class="html5lightbox" data-title="Click the image to open a web link" data-weblink="https://unsplash.com" data-weblinktarget="_blank"><img src="html5lightbox/dog_120.jpg"></a></div>
+<div class="clr"></div>
+<p></p>
+
+<h3>YouTube Video with Social Media Share Buttons</h3>
+<div class="image_tn"><a href="https://www.youtube.com/embed/_mMKNw_Mlxs?rel=0" data-showsocial="true" class="html5lightbox" title="WordPress Slider Plugin"><img src="html5lightbox/wordpressslideryoutube-96.jpg"></a></div>
+<div class="clr"></div>
+<p></p>
+
+<h3>YouTube Video with text on right</h3>
+<div class="image_tn"><a href="https://www.youtube.com/watch?v=c9-gOVGjHvQ" data-titlestyle="right" data-width="600" data-height="400" class="html5lightbox" title="WonderPlugin Carousel" data-description="WonderPlugin Carousel is a WordPress plugin that enables you to create WordPress posts carousel for categories, WordPress recent posts carousel, image carousel slider, image scroller and video LightBox. The plugin supports WordPress posts, images, YouTube, Vimeo, mp4 and webm videos. It's fully responsive, works on iPhone, iPad, Android, Firefox, Chrome, Safari, Opera and Internet Explorer 7/8/9/10/11."><img src="html5lightbox/wonderplugincarousel-96.jpg"></a></div>
+<div class="clr"></div>
+<p></p>
+
+<h3>Vimeo Video</h3>
+<div class="image_tn"><a href="https://player.vimeo.com/video/1084537?title=0&amp;byline=0&amp;portrait=0" class="html5lightbox" title="Big Buck Bunny Copyright Blender Foundation"><img src="html5lightbox/Big_Buck_Bunny_2_96.jpg"></a></div>
+<div class="clr"></div>
+<p></p>
+<h3>Local mp4 Video</h3>
+<div class="image_tn"><a href="https://html5box.com/html5lightbox/images/Big_Buck_Bunny_1.m4v" data-webm="images/Big_Buck_Bunny_1.webm" class="html5lightbox" title="Big Buck Bunny Copyright Blender Foundation"><img src="html5lightbox/Big_Buck_Bunny_3_96.jpg"></a></div>
+<div class="clr"></div>
+<h3>Local mp4 Video - click the video to open a web link</h3>
+<div class="image_tn"><a href="https://html5box.com/html5lightbox/images/carousel.mp4" class="html5lightbox" title="WonderPlugin Carousel" data-weblink="https://www.wonderplugin.com" data-weblinktarget="_self"><img src="html5lightbox/wordpresscarousel_120.jpg"></a></div>
+<div class="clr"></div>
+<p></p>
+<h3>Local FLV Video (Legacy Use - FLV format is not compatible with iPhone and iPad)</h3>
+<div class="image_tn"><a href="https://html5box.com/html5lightbox/images/Big_Buck_Bunny_1.flv" class="html5lightbox" title="Big Buck Bunny Copyright Blender Foundation"><img src="html5lightbox/Big_Buck_Bunny_3_96.jpg"></a></div>
+<div class="clr"></div>
+<p></p>
+
+<h3>Facebook Video</h3>
+
+<p><a class="html5lightbox" data-mediatype="12" data-width="960" data-height="540" href="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fhtml5box%2Fvideos%2F1863756623657296%2F&amp;show_text=0&amp;width=560&amp;mute=0">Facebook Video Lightbox</a></p>
+
+<h3>PDF (the PDF file must use an absolute URL and must be hosted at the same domain)</h3>
+<div class="image_tn"><a href="https://html5box.com/html5lightbox/images/how-to-create-a-wordpress-post-carousel.pdf" data-width="1200" data-height="1200" data-barheight="0" class="html5lightbox">Open PDF file in Lightbox</a></div>
+<div class="clr"></div>
+<p></p>
+
+<h3 id="lightboxgallery">Lightbox Gallery</h3>
+
+<p>
+<a href="https://www.youtube.com/watch?v=_mMKNw_Mlxs" class="html5lightbox" data-group="myvideo" data-thumbnail="https://img.youtube.com/vi/_mMKNw_Mlxs/default.jpg">Open a Lightbox Gallery</a>
+<a href="https://www.youtube.com/watch?v=mV0ME4GQDEA" class="html5lightbox" data-group="myvideo" data-thumbnail="https://img.youtube.com/vi/mV0ME4GQDEA/default.jpg" style="display:none;">Second Video</a>
+<a href="https://www.youtube.com/watch?v=ODvBHI5bbEg" class="html5lightbox" data-group="myvideo" data-thumbnail="https://img.youtube.com/vi/ODvBHI5bbEg/default.jpg" style="display:none;">Third Video</a>
+<a href="https://www.youtube.com/watch?v=pChmieCDWpo" class="html5lightbox" data-group="myvideo" data-thumbnail="https://img.youtube.com/vi/pChmieCDWpo/default.jpg" style="display:none;">Fourth Video</a>
+</p>
+
+<h3>Open a Div in Lightbox</h3>
+
+<p>The following link will open an inline div in the lightbox:</p>
+
+<style type="text/css">
+.lightboxcontainer {
+  width:100%;
+  text-align:left;
+}
+.lightboxleft {
+  width: 40%;
+  float:left;
+}
+.lightboxright {
+  width: 60%;
+  float:left;
+}
+.lightboxright iframe {
+  min-height: 390px;
+}
+.divtext {
+  margin: 36px;
+}
+@media (max-width: 800px) {
+  .lightboxleft {
+    width: 100%;
+  }
+  .lightboxright {
+    width: 100%;
+  }
+  .divtext {
+    margin: 12px;
+  }
+}
+</style>
+
+<div id="mydiv" style="display:none;">
+  <div class="lightboxcontainer">
+	<div class="lightboxleft">
+	  <div class="divtext">
+		<p class="divtitle" style="font-size:16px;font-weight:bold;margin:12px 0px;">WonderPlugin Gallery</p>
+		<p class="divdescription" style="font-size:14px;line-height:20px;">WonderPlugin
+ Gallery is a WordPress photo and video gallery plugin, and a great way 
+to showcase your images and videos online. The plugin supports images, 
+YouTube, Vimeo, Dailymotion, mp4 and webm videos. It's fully responsive,
+ works on iPhone, iPad, Android, Firefox, Chrome, Safari, Opera and 
+Internet Explorer 7/8/9/10/11.</p>
+	  </div>
+	</div>
+	<div class="lightboxright">
+	  <iframe src="html5lightbox/wswxQ3mhwqQ.html" allowfullscreen="" width="100%" height="100%" frameborder="0"></iframe>
+	</div>
+	<div style="clear:both;"></div>
+</div></div>
+
+<p><a href="#mydiv" class="html5lightbox" data-width="800" data-height="400">Open a Div in Lightbox</a></p>
+
+<p>To open a div in the lightbox, firstly, define a div with an ID in your webpage. You can add CSS style <code>display:none;</code> to make it invisible on the page.</p>
+
+<div class="inlinecode">
+<pre><span style="color:#ff0000">&lt;div </span>id="<span style="color:#0000ff">mydiv</span>" style="<span style="color:#0000ff">display:none;</span>"<span style="color:#ff0000">&gt;</span>
+  <span style="color:#ff0000">&lt;div </span>class="<span style="color:#0000ff">lightboxcontainer</span>"<span style="color:#ff0000">&gt;</span>
+	<span style="color:#ff0000">&lt;div </span>class="<span style="color:#0000ff">lightboxleft</span>"<span style="color:#ff0000">&gt;</span>
+	  <span style="color:#ff0000">&lt;div </span>class="<span style="color:#0000ff">divtext</span>"<span style="color:#ff0000">&gt;</span>
+		<span style="color:#ff0000">&lt;p </span>class="<span style="color:#0000ff">divtitle</span>" style="<span style="color:#0000ff">font-size:16px;font-weight:bold;margin:12px 0px;</span>"<span style="color:#ff0000">&gt;</span>WonderPlugin Gallery<span style="color:#ff0000">&lt;/p&gt;</span>
+		<span style="color:#ff0000">&lt;p </span>class="<span style="color:#0000ff">divdescription</span>" style="<span style="color:#0000ff">font-size:14px;line-height:20px;</span>"<span style="color:#ff0000">&gt;</span>WonderPlugin Gallery is a WordPress photo and video gallery plugin, and a great way to showcase your images and videos online. The plugin supports images, YouTube, Vimeo, Dailymotion, mp4 and webm videos. It's fully responsive, works on iPhone, iPad, Android, Firefox, Chrome, Safari, Opera and Internet Explorer 7/8/9/10/11.<span style="color:#ff0000">&lt;/p&gt;</span>
+	  <span style="color:#ff0000">&lt;/div&gt;</span>
+	<span style="color:#ff0000">&lt;/div&gt;</span>
+	<span style="color:#ff0000">&lt;div </span>class="<span style="color:#0000ff">lightboxright</span>"<span style="color:#ff0000">&gt;</span>
+	  <span style="color:#ff0000">&lt;iframe </span>width="<span style="color:#0000ff">100%</span>" height="<span style="color:#0000ff">100%</span>" src="<span style="color:#0000ff">https://www.youtube.com/embed/wswxQ3mhwqQ</span>" frameborder="<span style="color:#0000ff">0</span>" allowfullscreen<span style="color:#ff0000">&gt;</span><span style="color:#ff0000">&lt;/iframe&gt;</span>
+	<span style="color:#ff0000">&lt;/div&gt;</span>
+	<span style="color:#ff0000">&lt;div </span>style="<span style="color:#0000ff">clear:both;</span>"<span style="color:#ff0000">&gt;</span><span style="color:#ff0000">&lt;/div&gt;</span>
+<span style="color:#ff0000">&lt;/div&gt;</span><span style="color:#ff0000">&lt;/div&gt;</span>
+</pre>
+</div>
+
+<p>To make the content itself responsive, please also add the following CSS code to your webpage:</p>
+<div class="inlinecode">
+<pre><span style="color:#ff0000">&lt;style </span>type="<span style="color:#0000ff">text/css</span>"<span style="color:#ff0000">&gt;</span>
+.lightboxcontainer {
+  width:100%;
+  text-align:left;
+}
+.lightboxleft {
+  width: 40%;
+  float:left;
+}
+.lightboxright {
+  width: 60%;
+  float:left;
+}
+.lightboxright iframe {
+  min-height: 390px;
+}
+.divtext {
+  margin: 36px;
+}
+@media (max-width: 800px) {
+  .lightboxleft {
+    width: 100%;
+  }
+  .lightboxright {
+    width: 100%;
+  }
+  .divtext {
+    margin: 12px;
+  }
+}
+<span style="color:#ff0000">&lt;/style&gt;</span>
+</pre>
+</div>
+
+<p>You can then use <code>#DIVID</code> as the href value of the lightbox link.</p>
+
+<div class="inlinecode">
+<pre><span style="color:#ff0000">&lt;a </span>href="<span style="color:#0000ff">#mydiv</span>" class="<span style="color:#0000ff">html5lightbox</span>" data-width=800 data-height=400 title="<span style="color:#0000ff">Inline Div</span>"<span style="color:#ff0000">&gt;</span>Open a Div in Lightbox<span style="color:#ff0000">&lt;/a&gt;</span>
+</pre>
+</div>
+
+<div class="clr"></div>
+<p></p>
+
+
+
+<div class="clr"></div>
+<p></p>
+ 
+<h3>Webpage: a photo and video gallery in Lightbox.</h3>
+<div class="image_tn"><a href="https://html5box.com/html5gallery/demo_fullscreen_light.php" class="html5lightbox" data-width="670" data-height="600" title="Created with HTML5 Gallery and HTML5 Lightbox">Photo and Video Gallery</a></div>
+<div class="clr"></div>
+<p></p> 
+
+<h3 id="iframewebpage">Webpage: WonderPlugin.com</h3>
+<div class="image_tn"><a href="https://www.wonderplugin.com/" class="html5lightbox" data-width="1200" data-height="900">Open WonderPlugin.com</a></div>
+<div class="clr"></div>
+<p></p> 
+
+<h3>Flash SWF File</h3>
+<div class="image_tn"><a href="https://html5box.com/html5lightbox/images/snow.swf" class="html5lightbox" data-group="set2" data-width="560" data-height="180" title="Snow - Made with Flash Banner Wizard"><img src="html5lightbox/flashsnoweffect.jpg" width="150" height="75"></a></div>
+<div class="clr"></div>
+
+<h3>JavaScript API</h3>
+<p>
+<a href="javascript:html5Lightbox.showLightbox(0, 'images/Toronto_1024.jpg', 'Image lightbox');">Image</a></p>
+<p><a href="javascript:html5Lightbox.showLightbox(2, 'images/Big_Buck_Bunny_1.m4v', 'Video lightbox', 480, 270, 'images/Big_Buck_Bunny_1.webm');">Local Video</a></p>
+<p><a href="javascript:html5Lightbox.showLightbox(3, 'https://www.youtube.com/embed/YE7VzlLtp-4', 'YouTube lightbox');">YouTube Video</a></p>
+</div> 
+   
+ 
+<div>
+<h2><a name="quickinstallation" id="quickinstallation"></a>Quick Installation</h2>   
+<p>1. Download  <a href="https://html5box.com/download/html5_lightbox_free.zip">Free Version HTML5 LightBox</a>, Unzip the downloaded file, copy or upload the folder <code>html5lightbox</code> to your web server</p>
+<p>2. Reference the file<code>jquery.js</code> and  <code>html5lightbox.js</code> which is in the folder <code>html5lightbox</code> before the <code>&lt;/head&gt;</code> of your web page. If you already have a jQuery script in your web page, you need to add <code>html5lightbox.js</code> after your jQuery file. The minimum required version of jQuery is 1.6.</p>
+<div class="inlinecode">
+<pre><span style="color:#ff0000">&lt;script </span>type="<span style="color:#0000ff">text/javascript</span>" src="<span style="color:#0000ff">html5lightbox/jquery.js</span>"<span style="color:#ff0000">&gt;</span><span style="color:#ff0000">&lt;/script&gt;</span>
+<span style="color:#ff0000">&lt;script </span>type="<span style="color:#0000ff">text/javascript</span>" src="<span style="color:#0000ff">html5lightbox/html5lightbox.js</span>"<span style="color:#ff0000">&gt;</span><span style="color:#ff0000">&lt;/script&gt;</span></pre></div>
+
+<p>If your website already has a jQuery, do not add the jquery.js line, 
+only add the html5lightbox.js AFTER the existing jquery on your webstie:
+ </p>
+<div class="inlinecode">
+<pre><span style="color:#ff0000">&lt;script </span>type="<span style="color:#0000ff">text/javascript</span>" src="<span style="color:#0000ff">html5lightbox/html5lightbox.js</span>"<span style="color:#ff0000">&gt;</span><span style="color:#ff0000">&lt;/script&gt;</span></pre></div>
+
+<p>3. Add a <code>class="html5lightbox"</code> attribute to any link tag to activate the Lightbox effect</p>
+<div class="inlinecode">
+  <pre><span style="color:#ff0000">&lt;a </span>href="<span style="color:#0000ff">images/Toronto_1024.jpg</span>" class="<span style="color:#0000ff">html5lightbox</span>" title="<span style="color:#0000ff">Toronto</span>"<span style="color:#ff0000">&gt;</span>Image<span style="color:#ff0000">&lt;/a&gt;</span>
+<span style="color:#ff0000">&lt;a </span>href="<span style="color:#0000ff">images/Big_Buck_Bunny_1.m4v</span>" class="<span style="color:#0000ff">html5lightbox</span>" data-width="<span style="color:#0000ff">480</span>" data-height="<span style="color:#0000ff">320</span>" title="<span style="color:#0000ff">Big Buck Bunny</span>"<span style="color:#ff0000">&gt;</span>Video<span style="color:#ff0000">&lt;/a&gt;</span></pre>
+</div>
+<p>To show a caption, you can use the <code>title</code> attribute, to define the size of a video or Flash SWF file, you can use the <code>data-width</code> and <code>data-height</code> attributes.</p>
+<p>If you have a group of images and videos, you can use the attribute <code>data-group</code> to create a gallery. You can use <code>data-thumbnail</code> to add thumbnail navigation to the gallery.</p>
+<div class="inlinecode">
+  <pre><span style="color:#ff0000">&lt;a </span>href="<span style="color:#0000ff">images/Toronto_1024.jpg</span>" class="<span style="color:#0000ff">html5lightbox</span>" data-group="<span style="color:#0000ff">mygroup</span>" data-thumbnail="<span style="color:#0000ff">images/Toronto_96.jpg</span>" title="<span style="color:#0000ff">Toronto</span>"<span style="color:#ff0000">&gt;</span>Image1<span style="color:#ff0000">&lt;/a&gt;</span>
+<span style="color:#ff0000">&lt;a </span>href="<span style="color:#0000ff">images/Sunrise_1024.jpg</span>" class="<span style="color:#0000ff">html5lightbox</span>" data-group="<span style="color:#0000ff">mygroup</span>" data-thumbnail="<span style="color:#0000ff">images/Sunrise_96.jpg</span>" title="<span style="color:#0000ff">Sunrise</span>"<span style="color:#ff0000">&gt;</span>Image2<span style="color:#ff0000">&lt;/a&gt;</span>
+<span style="color:#ff0000">&lt;a </span>href="<span style="color:#0000ff">images/Big_Buck_Bunny_1.m4v</span>" class="<span style="color:#0000ff">html5lightbox</span>" data-group="<span style="color:#0000ff">mygroup</span>"  data-thumbnail="<span style="color:#0000ff">images/Big_Buck_Bunny_1_96.jpg.jpg</span>" data-width="<span style="color:#0000ff">480</span>" data-height="<span style="color:#0000ff">320</span>" title="<span style="color:#0000ff">Big Buck Bunny</span>"<span style="color:#ff0000">&gt;</span>Video<span style="color:#ff0000">&lt;/a&gt;</span></pre>
+</div>
+</div>
+
+<div>
+<h2><a name="easybranding" id="easybranding"></a>Easy Branding</h2>   
+<p>It's easy to add an image branding to HTML5 LightBox, all you need to
+ do is adding the following scripts to the &lt;head&gt; section of your 
+webpage. </p>
+<div class="inlinecode">
+<pre><span style="color:#ff0000">&lt;script </span>type="<span style="color:#0000ff">text/javascript</span>"<span style="color:#ff0000">&gt;</span><br>    var html5lightbox_options = {
+        watermark: "<span style="color:#0000ff">http://html5box.com/images/html5boxlogo.png</span>",
+        watermarklink: "<span style="color:#0000ff">http://html5box.com</span>"<br>    };<br><span style="color:#ff0000">&lt;/script&gt;</span></pre>
+</div>
+
+<p>If you don't like the link on the watermark image, you can change the code to following:</p>
+<div class="inlinecode">
+<pre><span style="color:#ff0000">&lt;script </span>type="<span style="color:#0000ff">text/javascript</span>"<span style="color:#ff0000">&gt;</span><br>    var html5lightbox_options = {
+        watermark: "<span style="color:#0000ff">http://html5box.com/images/html5boxlogo.png</span>",
+        watermarklink: "<span style="color:#0000ff"></span>"<br>    };<br><span style="color:#ff0000">&lt;/script&gt;</span></pre>
+</div>
+</div>
+
+<h2><a name="news" id="news"></a>What's New</h2>
+
+<p>Version 8.0</p>
+<ul>
+	<li>Display loading animation when opening a webpage in lightbox</li>
+</ul>
+
+<p>Version 7.9</p>
+<ul>
+	<li>Add an option <code>mutevideo</code> to mute the video by default</li>
+</ul>
+
+<p>Version 7.8</p>
+<ul>
+	<li>Add an option to place the text outside of the image lightbox</li>
+</ul>
+
+<p>Version 7.7</p>
+<ul>
+	<li>Support opening a web link when clicking on the image or the HTML5 video in the lightbox</li>
+</ul>
+
+<p>Version 7.6</p>
+<ul>
+	<li>Fix the issue of Vimeo and YouTube videos not autoplay on Chrome and Safari</li>
+</ul>
+
+<p>Version 7.5</p>
+<ul>
+	<li>Fix the bug when the option arrowloop is false</li>
+</ul>
+
+<p>Version 7.4</p>
+<ul>
+	<li>Support sliding effect</li>
+	<li>Change lightbox HTML elements from ID to class name</li>
+</ul>
+
+<p>Version 7.3</p>
+<ul>
+	<li>Fix a bug when playing MP4 videos in fullscreen on some Android phones</li>
+</ul>
+
+<p>Version 7.2</p>
+<ul>
+	<li>Fix a bug under Android</li>
+</ul>
+
+<p>Version 7.1</p>
+<ul>
+	<li>Fix a bug of displaying PDF files in lightbox</li>
+</ul>
+
+<p>Version 7.0</p>
+<ul>
+	<li>Add a class name to the image counter in lightbox title</li>
+	<li>Trigger an event when the lightbox is closed</li>
+</ul>
+
+<p>Version 6.9</p>
+<ul>
+	<li>Open PDF file in lightbox popup</li>
+</ul>
+
+<p>Version 6.8</p>
+<ul>
+	<li>Support autoopen and autoopendelay in JavaScript configuration variable html5lightbox_options</li>
+	<li>Support an option autoclosedelay to setup the delay time to close the lightbox when a video is finished</li>
+</ul>
+
+<p>Version 6.7</p>
+<ul>
+	<li>Fix a problem under Windows Chrome: when pressing esc key to exit 
+the full screen video, it will close the lightbox popup at the same 
+time.</li>
+</ul>
+
+<p>Version 6.6</p>
+<ul>
+	<li>Fix a problem under Internet Explorer: when pressing esc key to 
+exit the full screen video, it will close the lightbox popup at the same
+ time.</li>
+</ul>
+
+<p>Version 6.5</p>
+<ul>
+	<li>Change fullscreen mode default to false on small screen devices</li>
+</ul>
+
+<p>Version 6.4</p>
+<ul>
+	<li>Change text effect of the fullscreen mode on small screen devices</li>
+	<li>Enable the fullscreen mode on small screen devices</li>
+</ul>
+
+<p>Version 6.3</p>
+<ul>
+	<li>Add an option to remove border and margin on the fullscreen mode</li>
+	<li>Add an option to only enable the full screen mode on small screen devices</li>
+</ul>
+
+<p>Version 6.2</p>
+<ul>
+	<li>Support social media share buttons: Facebook, Twitter and Pinterest</li>
+</ul>
+
+<p>Version 6.1</p>
+<ul>
+	<li>Use native HTML5 video controls on Firefox and Inetnet Explorer by default</li>
+</ul>
+
+<p>Version 6.0</p>
+<ul>
+	<li>Support data tag autoopen, autoopendelay and autoclose</li>
+	<li>Support Wistia video</li>
+</ul>
+
+<p>Version 5.9</p>
+<ul>
+	<li>Support using data tag html5videoposter to specify a poster image for HTML5 video player</li>
+</ul>
+
+<p>Version 5.8</p>
+<ul>
+	<li>Fix a bug of playing YouTube video on Firefox</li>
+</ul>
+
+<p>Version 5.7</p>
+<ul>
+	<li>Fix the position of lightbox when the responsive option is false</li>
+</ul>
+
+<p>Version 5.6</p>
+<ul>
+	<li>Fix a bug in keyboard navigation</li>
+</ul>
+
+<p>Version 5.5</p>
+<ul>
+	<li>Fix a bug in lightbox auto slideshow</li>
+</ul>
+
+<p>Version 5.4</p>
+<ul>
+	<li>Support lightbox auto slideshow</li>
+</ul>
+
+<p>Version 5.3</p>
+<ul>
+	<li>Support fullscreen mode</li>
+	<li>Support displaying text on bottom, inside, left and right of the lightbox</li>
+	<li>Support title prefix</li>
+</ul>
+
+<p>Version 5.2</p>
+<ul>
+	<li>Support iframe</li>
+</ul>
+
+<p>Version 5.1</p>
+<ul>
+	<li>Add an option to disable/enable touch swipe</li>
+	<li>Fix a minor bug of displaying div</li>
+</ul>
+
+<p>Version 5.0</p>
+<ul>
+	<li>Fix the bug when there are more than 6 vidoes on Google Chrome</li>
+	<li>Support iframe scrolling on iPhone and iPad</li>
+</ul>
+
+<p>Version 4.9</p>
+<ul>
+	<li>Support opening a div in lightbox</li>
+	<li>Add an option defaultvideovolume to specify the default volume of self-hosted mp4 and flv videos</li>
+</ul>
+
+<p>Version 4.8</p>
+<ul>
+	<li>Fix a bug in thumbnail navigation</li>
+</ul>
+
+<p>Version 4.7</p>
+<ul>
+	<li>Trigger event html5lightbox.videoended for HTML5 video player</li>
+</ul>
+
+<p>Version 4.6</p>
+<ul>
+	<li>Add four events: onfirstitem, onlastitem, onfirstarrowclicked, onlastarrowclicked</li>
+</ul>
+      
+<p>Version 4.5</p>
+<ul>
+	<li>Fix the bug in Flash video player</li>
+</ul>
+
+<p>Version 4.4</p>
+<ul>
+	<li>Support events onshowitem and oncloselightbox</li>
+</ul>
+
+<p>Version 4.3</p>
+<ul>
+	<li>Support https</li>
+</ul>
+
+<p>Version 4.2</p>
+<ul>
+	<li>Support Google Analytics</li>
+</ul>
+
+<p>Version 4.1</p>
+<ul>
+	<li>Fix minor bugs</li>
+</ul>
+
+<p>Version 4.0</p>
+<ul>
+	<li>Fix minor bugs</li>
+</ul>
+
+<p>Version 3.9</p>
+<ul>
+	<li>Fix a minor bug in Version 3.8</li>
+</ul>
+
+<p>Version 3.8</p>
+<ul>
+	<li>Add an option to hide video control bar</li>
+	<li>Add an option to disable looping arrow buttons</li>
+</ul>
+
+<p>Version 3.7</p>
+<ul>
+	<li>Add an option to disable responsive and keep the Lightbox size as specified.</li>
+</ul>
+
+<p>Version 3.6</p>
+<ul>
+  <li>Display description under title</li>
+  <li>Use custom HTML5 video player controls that look same across all web browsers</li>
+</ul>
+<p>Version 3.5</p>
+<ul>
+  <li>Support thumbnail navigation</li>
+  <li>Fully responsive</li>
+  <li>Fix a minor bug of playing video on Android devices</li>
+</ul>
+<p>Version 3.1:</p>
+<ul>
+  <li>Support YouTube URL parameters, for example, you can use the 
+following URL to play HD 1080p video: 
+https://www.youtube.com/embed/YE7VzlLtp-4?rel=0&amp;vq=hd1080</li>
+</ul>
+<p>Version 3.0:</p>
+<ul>
+  <li>Add an option barheight to specify the height of the text area</li>
+</ul>
+<p>Version 2.9:</p>
+<ul>
+  <li>Hide the loading button after a webpage is loaded</li>
+</ul>
+<p>Version 2.8:</p>
+<ul>
+  <li>Fix a bug with jQuery 1.10</li>
+</ul>
+<p>Version 2.7:</p>
+<ul>
+  <li>Change default value of option html5player to true</li>
+</ul>
+<p>Version 2.6:</p>
+<ul>
+  <li>Fix the bug of detecting Opera 15</li>
+</ul>
+<p>Version 2.5:</p>
+<ur>
+<ul>
+  <li>Fix the bug of duplicated HTML5 lightbox links</li>
+</ul>
+<p>Version 2.4:</p>
+<ur>
+<ul>
+  <li>Support touch swipe</li>
+  <li>Improve display of previous and next buttons</li>
+</ul>
+<p>Version 2.3:</p>
+<ur>
+<ul>
+  <li>Support HTML tag area</li>
+</ul>
+<p>Version 2.2:</p>
+<ur>
+<ul>
+  <li>Press ESC key to exit Lightbox</li>
+</ul>
+<p>Version 2.1:</p>
+<ur>
+<ul>
+  <li>Fix the issue with jQuery 1.9.0</li>
+</ul>
+
+<p>Version 2.0:</p>
+<ul>
+  <li>Fix the bug of playing FLV video </li>
+  <li>Change the way to get the folder of js file</li>
+</ul>
+
+
+<!-- InstanceEndEditable -->
+    </ur></ur></ur></ur></ur></div>
+    
+    <div class="right">
+
+      <p class="title">Connect With Us</p>
+		<div>
+
+<div style="clear:both;padding:8px 0px 4px 0px;">
+<a href="https://twitter.com/html5box" class="twitter-follow-button twitter-follow-button-error" data-show-count="false" data-size="large" data-twitter-extracted-i157227509106878682="true">Follow @html5box</a>
+</div>
+<div style="clear:both;padding:8px 0px 4px 0px;">
+      <div class="fb-like-box fb_iframe_widget" data-href="https://www.facebook.com/html5box" data-width="230" data-height="170" data-show-faces="true" data-border-color="#dcdcdc" data-stream="false" data-header="false" fb-xfbml-state="parsed" fb-iframe-plugin-query="app_id=&amp;container_width=0&amp;header=false&amp;height=170&amp;href=https%3A%2F%2Fwww.facebook.com%2Fhtml5box&amp;locale=en_US&amp;sdk=joey&amp;show_faces=true&amp;stream=false&amp;width=230"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f2b649eeb20d386" title="fb:like_box Facebook Social Plugin" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="border: medium none; visibility: hidden; display: none !important; width: 0px; height: 0px;" src="https://www.facebook.com/plugins/like_box.php?app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D44%23cb%3Df2d16f82bcb0832%26domain%3Dhtml5box.com%26origin%3Dhttps%253A%252F%252Fhtml5box.com%252Ff2750eaaba6bc4e%26relation%3Dparent.parent&amp;container_width=0&amp;header=false&amp;height=170&amp;href=https%3A%2F%2Fwww.facebook.com%2Fhtml5box&amp;locale=en_US&amp;sdk=joey&amp;show_faces=true&amp;stream=false&amp;width=230" width="230px" hidden="" height="170px" frameborder="0"></iframe></span></div>
+      </div>
+      
+  	</div>
+    
+      <p class="title"><a href="http://amazingslider.com/?source=html5lightbox" target="_blank"><img src="html5lightbox/amazingslider_250_250.jpg" alt="jQuery Slider" width="250" height="250"></a></p>
+      <p class="title">Services</p>
+      <ul>
+      <li>
+        <p><a href="https://html5box.com/html5lightbox/index.php">HTML5 LightBox</a></p>
+      </li>
+      <li>
+        <p> <a href="https://html5box.com/download/html5_lightbox_free.zip" onclick="javascript: _gaq.push(['_trackPageview', '/download/html5_lightbox_free.zip']);">Download Free Version</a></p>
+      </li>
+       <li>
+        <p><a href="https://html5box.com/order.php">Buy Commercial License</a></p>
+      </li>     <li>
+        <p><a href="https://html5box.com/html5lightbox/index.php#examples">Examples</a></p>
+      </li>
+      <li>
+       <p><a class="btn btn-primary" style="color:#ffffff;" href="https://html5box.com/html5lightbox/index.php#quickinstallation">Quick Installation</a></p>
+      </li>  
+            <li>
+       <p><a class="btn btn-primary" style="color:#ffffff;" href="https://html5box.com/html5lightbox/index.php#easybranding">Easy Branding</a></p>
+      </li> 
+       <li>
+        <p><a href="https://html5box.com/html5lightbox/help.php">Help Document</a></p>
+      </li>    
+      </ul>           
+      <p class="title"> Products</p>
+      <ul>
+      <li>
+        <p><a href="https://html5box.com/html5lightbox/index.php">HTML5 LightBox</a></p>
+      </li>      <li>
+        <p><a href="https://html5box.com/html5gallery/index.php">HTML5 Gallery</a></p>
+      </li>
+      </ul>           
+    </div>
+    
+    <div class="clr"></div>  
+    </div>            
+   </div>   
+     
+<div class="footer">
+    <div class="footer_resize">
+      <p class="leftt">Copyright © 2010-2013 Magic Hills Pty Ltd. ABN: 73 140 123 511
+      </p>
+      <p class="rightt"><a href="https://html5box.com/html5gallery/index.php">HTML5 Gallery</a>|<a href="https://html5box.com/html5lightbox/index.php">HTML5 LightBox</a><br><br>
+      <a href="https://html5box.com/privacy.php">Privacy Policy</a><strong></strong> | <a href="https://html5box.com/terms.php">Terms of Use</a> | <a href="https://html5box.com/contact.php">Contact Us</a></p>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  
+  
+</div>
+
+<div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="html5lightbox/translate_24dp.png" alt="Google Translate" width="20" height="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><iframe scrolling="no" allowtransparency="true" src="html5lightbox/widget_iframe.html" title="Twitter settings iframe" style="display: none;" frameborder="0"></iframe><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><iframe class="goog-te-menu-frame skiptranslate" title="Language Translate Widget" style="visibility: visible; box-sizing: content-box; width: 1003px; height: 274px; display: none;" frameborder="0"></iframe></body><!-- InstanceEnd --></html>

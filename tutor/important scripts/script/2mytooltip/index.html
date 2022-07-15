@@ -1,0 +1,153 @@
+<!doctype html>
+<!--[if lt IE 8]> <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>LiteTooltip.js</title>
+    
+
+
+    
+    <style>
+	
+			  .litetooltip-wrapper{position:absolute;font:normal 90% Verdana;z-index:10000;display:block;visibility:visible;min-width:100px}
+			  
+			  .litetooltip-wrapper.top,.litetooltip-wrapper.top-left,.litetooltip-wrapper.top-right{margin-top:-3px;padding:5px 0 10px 0}
+			  
+			  .litetooltip-wrapper.right,.litetooltip-wrapper.right-top,.litetooltip-wrapper.right-bottom{margin-left:3px;padding:0 5px 0 10px}
+			  
+			  .litetooltip-wrapper.bottom,.litetooltip-wrapper.bottom-left,.litetooltip-wrapper.bottom-right{margin-top:3px;padding:10px 0 5px 0}
+			  
+			  .litetooltip-wrapper.left,.litetooltip-wrapper.left-top,.litetooltip-wrapper.left-bottom{margin-left:-3px;padding:0 10px 0 5px}
+			  
+			  .litetooltip-wrapper .tooltip-arrow{border-color:transparent;border-style:solid;width:0;height:0;padding:0}
+			  
+			  .litetooltip-wrapper .tooltip-arrow.top{margin-left:-8px;position:absolute;left:50%;bottom:0;border-width:10px 8px 0 8px}
+			  
+			  .litetooltip-wrapper .tooltip-arrow.top-left{margin-left:8px;left:0;bottom:0;position:absolute;border-width:10px 8px 0 8px}
+			  
+			  .litetooltip-wrapper .tooltip-arrow.top-right{margin-right:8px;right:0;bottom:0;position:absolute;border-width:10px 8px 0 8px}
+			  
+			  .litetooltip-wrapper .tooltip-arrow.right{margin-top:-8px;position:absolute;top:50%;left:0;border-width:8px 10px 8px 0}
+			  
+			  .litetooltip-wrapper .tooltip-arrow.right-top{margin-bottom:8px;position:absolute;bottom:0;left:0;border-width:8px 10px 8px 0}
+			  
+			  .litetooltip-wrapper .tooltip-arrow.right-bottom{margin-top:8px;position:absolute;top:0;left:0;border-width:8px 10px 8px 0}
+			  
+			  .litetooltip-wrapper .tooltip-arrow.bottom{margin-left:-8px;position:absolute;left:50%;top:0;border-width:0 8px 10px 8px}
+			  
+			  .litetooltip-wrapper .tooltip-arrow.bottom-left{margin-left:8px;position:absolute;left:0;top:0;border-width:0 8px 10px 8px}
+			  
+			  .litetooltip-wrapper .tooltip-arrow.bottom-right{margin-right:8px;position:absolute;right:0;top:0;border-width:0 8px 10px 8px}
+			  
+			  .litetooltip-wrapper .tooltip-arrow.left{margin-top:-8px;position:absolute;top:50%;right:0;border-width:8px 0 8px 10px}
+			  
+			  .litetooltip-wrapper .tooltip-arrow.left-top{margin-bottom:8px;position:absolute;bottom:0;right:0;border-width:8px 0 8px 10px}
+			  
+			  .litetooltip-wrapper .tooltip-arrow.left-bottom{margin-top:8px;position:absolute;top:0;right:0;border-width:8px 0 8px 10px}
+			  
+			  .table1{ border:2px green dashed; background-color:#DAE7DF; padding:20px; text-decoration:none; height:100px; }
+
+			  .table2{ border:2px green dashed; background-color:#DAE7DF; padding:5px; text-decoration:none; width:920px; height:250px; }
+			  
+			  td { padding:10px; }
+			  
+			  a{ text-decoration:none; font-size:18px; }
+			  
+			  small{ font-family:"Comic Sans MS", cursive; font-size:12px; color:#00F;}
+	
+	</style>
+    
+    
+</head>
+
+<body data-spy="scroll" data-target=".guide-sidebar" data-offset="100">
+    
+            
+                
+                
+      
+                    
+                    <section id="positions">
+                        <h3 align="center" style="margin-top:30px; margin-bottom:-20px;"> Positions <small>data-location</small></h3>
+                        <table id="tbl_locations" class="table1" style="width: 800px; margin: 0px auto">
+                            <tbody>
+                                <tr>
+                                    <td><a href="#" data-title="top-left" data-location="top-left">top-left</a></td>
+                                    <td><a href="#" data-title="top" data-location="top">top</a></td>
+                                    <td><a href="#" data-title="top-right" data-location="top-right">top-right</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" data-title="left-top<br />hellow 2my4edge,<br /> <a href='http://www.2my4edge.blogspot.com' target='_blank'>Click here</a>" data-trigger="hoverable" data-location="left-top" >left-top</a></td>
+                                    <td></td>
+                                    <td><a href="#" data-title="right-top<br /><br />2my4edge<br />Arunkumar Maha.<a href='http://www.2my4edge.blogspot.com' target='_blank'>Click here</a>" data-trigger="hoverable" data-location="right-top">right-top</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" data-title="left" data-location="left">left</a></td>
+                                    <td></td>
+                                    <td><a href="#" data-title="right" data-location="right">right</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" data-title="left-bottom<br /><br />hellow world... <a href='http://www.2my4edge.blogspot.com' target='_blank'>Click here</a>" data-trigger="hoverable" data-location="left-bottom">left-bottom</a></td>
+                                    <td></td>
+                                    <td><a href="#" data-title="right-bottom<br /><br />Check tooltip <a href='http://www.2my4edge.blogspot.com' target='_blank'>Click here</a>" data-trigger="hoverable" data-location="right-bottom">right-bottom</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" data-title="bottom-left" data-location="bottom-left">bottom-left</a></td>
+                                    <td><a href="#" data-title="bottom" data-location="bottom">bottom</a></td>
+                                    <td><a href="#" data-title="bottom-right" data-location="bottom-right">bottom-right</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                       
+                    </section>
+                    
+                    <section id="triggers">
+                        <h3 align="center" style="margin-top:-10px; margin-bottom:-25px;">Triggers <small>data-trigger</small></h3>
+                        <table id="tbl_triggers" width="800" border="0" align="center" cellpadding="5px" cellspacing="5px" class="table2">
+                            <thead>
+                                <tr>
+                                    <th style="width: 220px;">trigger</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="vertical-align: middle;"><a href="#" data-title="click trigger" data-location="right" data-trigger="click">click</a></td>
+                                    <td><code>data-trigger="click"</code><br> It attaches the click event to the target and toggles the visibility of tooltip on clicking the target element. It also hides the tooltip when user clicks anywhere on rest of the web page.</td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: middle;"><a href="#" data-title="hover trigger" data-location="right" data-trigger="hover">hover</a></td>
+                                    <td><code>daat-trigger="hover"</code><br> It is the default behavior that shows/hides the tooltip on mouse over and mouse out event.</td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: middle;"><a href="#" data-title="hoverable trigger <br> lkdsfjlkdsj <hr> <a href='http://www.2my4edge.blogspot.com' target='_blank'>here</a>" data-location="right" data-trigger="hoverable">hoverable</a></td>
+                                    <td><code>data-trigger="hoverable"</code><br> It allows to show the tooltip on mouse over event of target element. The tooltip remains in visible state until the user moves the mouse pointer over and then out of the hoverable tooltip balloon.</td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: middle;">
+                                        <label>set focus: </label>
+                                        <input data-title="focus trigger" data-location="right" data-trigger="focus" /></td>
+                                    <td><code>data-trigger="focus"</code> <br>It attaches the focus/blur event to target form input elements. The tooltip appears when focus event of the input contol fires and hides on blur.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+   
+   
+    <script src="jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="tooltip.js" ></script>
+    
+	<script type="text/javascript">
+        $("#tbl_locations a").LiteTooltip({ textalign: 'left', trigger: 'hover' });
+        $("#tbl_triggers a").LiteTooltip({ textalign: 'left' });
+        $("#tbl_triggers input").LiteTooltip({ textalign: 'left' });        
+    </script>
+
+    
+</body>
+</html>

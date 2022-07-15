@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>PHP Session Configuration - Phppot</title>
+<meta name="description" content="PHP has several configuration directives to control session handling processes like session upload and URL rewriting. These are set with PHP"><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://phppot.com/feed/">
+<link rel="apple-touch-icon" sizes="180x180" href="https://phppot.com/apple-touch-icon.png?v=031218">
+<link rel="icon" type="image/png" sizes="32x32" href="https://phppot.com/favicon-32x32.png?v=031218">
+<link rel="icon" type="image/png" sizes="16x16" href="https://phppot.com/favicon-16x16.png?v=031218">
+<link rel="manifest" href="https://phppot.com/site.webmanifest?v=031218">
+<link rel="mask-icon" href="https://phppot.com/safari-pinned-tab.svg?v=031218" color="#ffa500">
+<link rel="shortcut icon" href="https://phppot.com/favicon.ico?v=031218">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="PHP Session Configuration - Phppot">
+<meta property="og:site_name" content="Phppot">
+<meta property="og:description" content="PHP has several configuration directives to control session handling processes like session upload and URL rewriting. These are set with PHP"><meta property="og:url" content="https://phppot.com/php/php-session-configuration/">
+<meta property="twitter:title" content="PHP Session Configuration - Phppot">
+<meta name="twitter:site" content="@phppot">
+<meta property="twitter:creator" content="@phppot">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://phppot.com/wp-content/uploads/2014/04/php_session_configuration.png"><meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:description" content="PHP has several configuration directives to control session handling processes like session upload and URL rewriting. These are set with PHP"><meta property="twitter:image" content="https://phppot.com/wp-content/uploads/2014/04/php_session_configuration.png"><script type="text/javascript" async="" src="PHP%20Session%20Configuration%20-%20Phppot_files/ga.js"></script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40067115-1']);
+  _gaq.push(['_setDomainName', 'phppot.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://www.google-analytics.com/"><link rel="dns-prefetch" href="https://www.youtube.com/"><link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/"><link rel="dns-prefetch" href="https://static.doubleclick.net/"><link rel="dns-prefetch" href="https://www.google.com/"><link rel="dns-prefetch" href="https://i.ytimg.com/"><link rel="dns-prefetch" href="https://yt3.ggpht.com/"><link rel="dns-prefetch" href="https://fonts.gstatic.com/"><link rel="stylesheet" id="main-style-css" href="PHP%20Session%20Configuration%20-%20Phppot_files/papers_228192.css" type="text/css" media="all">
+<link rel="canonical" href="https://phppot.com/php/php-session-configuration/">
+</head>
+<body onload="prettyPrint()">
+ <div id="site_header">
+    <div class="content">
+        <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP"><img src="PHP%20Session%20Configuration%20-%20Phppot_files/phppot-logo.png" id="site-logo" alt="Helping You Build Web Applications Using PHP"></a>
+        <div class="search-container">
+            <form method="get" action="/" class="search-form">
+                <input name="s" class="search" placeholder="Search Phppot" title="Search Phppot" autocomplete="off">
+                <button type="submit" title="Search Phppot" id="search-button"></button>
+            </form>
+        </div>
+        <div class="header-link-container">
+            <span id="mobile-search-icon" onclick="toggleSearch();">Mobile
+                Search</span>
+                <div id="expand-sub-menu-icon">
+                    <a class="testimonial-icon" href="https://phppot.com/testimonials/">Testimonials</a><a class="demo-download-icon" href="https://phppot.com/demo/">Demo</a>
+                </div>  <a id="header-contact-navigation" href="https://phppot.com/contact/">Contact Me</a>
+        </div>
+    </div>
+</div>    <div class="content">
+        <div id="tutorial-body">
+            <div id="tutorial">
+                <h1>PHP Session Configuration</h1>
+                <div class="modified-on">Last modified on February 24th, 2017 by Vincy.</div>
+<p>PHP has several configuration directives to control <a href="https://phppot.com/php/session-vs-cookies/">session handling</a>
+ processes like session upload and URL rewriting. These are set with PHP
+ configuration file php.ini. To know the values that are set we can use 
+the <a href="https://phppot.com/php/phpinfo/">phpinfo()</a> function. For example, I get the following.</p>
+<p><img style="display: inline; border-width: 0px;" title="php_session_configuration" src="PHP%20Session%20Configuration%20-%20Phppot_files/php_session_configuration.png" alt="php_session_configuration" width="570" height="672" border="0"></p>
+<p>In this PHP tutorial, we are going to see about few important session configuration directives and their possible values.</p>
+<h2>PHP Session Configuration Directives</h2>
+<h3>session.save_handler</h3>
+<ul>
+<li>To set possible handlers to store and retrieve session data. These are,
+<pre class="prettyprint lang-html prettyprinted" style=""><span class="pln">session.save_handler = files | mm | sqlite | user</span></pre>
+</li>
+<li>The default option files to handle session data. <em>mm</em> makes RAM handle session data. With <em>SQLite</em> option, SQLite database is used. Then with <em>user</em> option, we can have custom functions to handle the session.</li>
+</ul>
+<h3>session.save_path</h3>
+<ul>
+<li>If the above <em>session.save_handler</em> is set as <em>files</em>, then we need to set the path of the directory where we want to have session data files. <em>session.save_path</em> the directive is used to set the path.</li>
+<li>We can also create subdirectories to let file storage module to 
+store session files. And then, we should refer this directory path by 
+specifying its depth. For example,&nbsp;&nbsp;&nbsp;
+<pre class="prettyprint lang-html prettyprinted" style=""><span class="pln">session.save_path = "N;/path"</span></pre>
+<p>where N is an Integer representing the depth of the subdirectory.</p></li>
+<li>PHP creates session files in the above location with the name as current session_id with <em>sess_</em> prefix.</li>
+<li>We can set the session files mode by using,
+<pre class="prettyprint lang-html prettyprinted" style=""><span class="pln">session.save_path = "N;MODE;/path"</span></pre>
+<p>where MODE is an Octal value. The default mode is 600 (allows the owner to read and write).</p></li>
+</ul>
+<h3>session.use_cookies</h3>
+<p>This directive has 1 or 0 as its value to specify whether cookies are used to store session id or not.</p>
+<pre class="prettyprint lang-html prettyprinted" style=""><span class="pln">session.use_cookies = 0 | 1</span></pre>
+<p>If 1 then cookies will be used to store session id. If not, the session id is preserved by using URL rewriting.</p>
+<h3>session.cookie_secure</h3>
+<p>It controls whether cookies are sent via secure connections or not. It will be set with ON | OFF values. The default is OFF.</p>
+<h3>session.use_only_cookies</h3>
+<p>By setting this directive cookies are used as the mandatory storage to preserve session id. It prevents session hijacking.</p>
+<h3>session.name</h3>
+<p>To specify the name of the session. PHPSESSID is the default name.</p>
+<pre class="prettyprint lang-html prettyprinted" style=""><span class="pln">session.name = PHPSESSID</span></pre>
+<h3>session.auto_start</h3>
+<p>We need to start the session before using PHP session function. This 
+directive is used to start the session automatically on each page 
+request. So, we need to set session.auto_start as 1.</p>
+<pre class="prettyprint lang-html prettyprinted" style=""><span class="pln">session.auto_start = 0 | 1</span></pre>
+<p>If <em>session.auto_start</em> is 1, managing objects into session need further configuration. That is, the <em>auto_prepend_file</em> directive is used to refer corresponding class.</p>
+<h3>session.cookie_lifetime</h3>
+<p>This is used to set cookie lifetime. If it is set as 0, then cookie remains until browser restart.</p>
+<h3>session.cookie_path</h3>
+<p>To specify the path where the cookies will be valid.</p>
+<h3>session.cookie_domain</h3>
+<p>Similarly, to specify the domain in which the cookies will be valid.</p>
+<h3>session.cookie_httponly</h3>
+<p>This directive is on then it will stop client side scripts to access session id preserved in cookies.</p>
+<h3>session.gc_probability, session.gc_divisor</h3>
+<p>The values of these directives are used to calculate the probability of running garbage collection to clean up session data.</p>
+<h3>session.gc_maxlifetime</h3>
+<p>It has the max lifetime of the session id in seconds. If the session 
+id reaches this limit, PHP will treat it as garbage and clear it.</p>
+<h3>session.cache_limiter</h3>
+<p>This directive controls cache headers sent to the client and proxies. The possible values are,</p>
+<ul>
+<li>none – stops sending cache headers to the client.</li>
+<li>nocache – default option; stop client or proxy to cache page content.</li>
+<li>private – allows the only client to cache page content.</li>
+<li>private_no_expire – No expire time is set with the cache header.</li>
+<li>public – allows both client and proxy caching.</li>
+</ul>
+<h3>session.cache_expire</h3>
+<ul>
+<li>It specifies cache expiration time for session enabled pages in seconds.
+<pre class="prettyprint lang-html prettyprinted" style=""><span class="pln">session.cache_expire = 120</span></pre>
+</li>
+<li>This directive need not be set if <em>session.cache_limiter = nocache.</em></li>
+</ul>
+<h3>session.use_trans_sid</h3>
+<p>This directive is used to preserve session id by URL rewriting. As 
+URL are shared among multiple users, maintaining session id in URL is 
+risky. It causes multiple access with the same session_id at a time.</p>
+<h3>session.hash_function</h3>
+<p>This directive is used to choose the hash function to generate session id. 0 and 1 represents <a href="https://phppot.com/php/md5-vs-sha1-hashing-in-php/">MD5 and SHA algorithms</a> respectively.</p>
+
+<div id="comments" class="comments-area">
+
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://phppot.com/php/php-session-configuration/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://phppot.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Leave this empty <span class="required">*</span></label> <input id="url" name="url" type="text" size="30" maxlength="245"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="2595" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>			</form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+    <div class="related-articles">
+                    <h2>Popular Articles</h2>
+                    <ul class="related-articles-list">
+                        <li><a href="https://phppot.com/php/secure-remember-me-for-login-using-php-session-and-cookies/">Secure Remember Me for Login using PHP Session and Cookies</a></li>
+                        <li><a href="https://phppot.com/php/php-session-encode-decode/">PHP Session Encode Decode</a></li>
+                        <li><a href="https://phppot.com/php/session-vs-cookies/">PHP Session Vs Cookies</a></li>
+                    </ul>
+                </div>
+                <p>
+                    <a href="#top" class="top">↑ Back to Top</a>
+                </p>
+            </div>
+            <div id="tutorial-menu">
+	<ul class="main-menu"><li class="cat-item cat-item-72"><a href="https://phppot.com/category/php/">PHP</a><ul class="sub-menu"><li class="cat-item cat-item-59 "><a href="https://phppot.com/category/php/php-introduction/">PHP Introduction</a></li><li class="cat-item cat-item-26 "><a href="https://phppot.com/category/php/php-basics/">PHP Basics</a></li><li class="cat-item cat-item-99 "><a href="https://phppot.com/category/php/product/">Product</a></li><li class="cat-item cat-item-79 "><a href="https://phppot.com/category/php/php-shopping-cart/">PHP Shopping Cart</a></li><li class="cat-item cat-item-102 "><a href="https://phppot.com/category/php/payment-gateway-integration/">Payment Gateway Integration</a></li><li class="cat-item cat-item-94 "><a href="https://phppot.com/category/php/php-contact-form/">PHP Contact Form</a></li><li class="cat-item cat-item-103 "><a href="https://phppot.com/category/php/comments-system/">Comments System</a></li><li class="cat-item cat-item-57 "><a href="https://phppot.com/category/php/types-variables-operators/">Types, Variables &amp; Operators</a></li><li class="cat-item cat-item-58 "><a href="https://phppot.com/category/php/php-strings/">PHP Strings</a></li><li class="cat-item cat-item-22 "><a href="https://phppot.com/category/php/php-arrays/">PHP Arrays</a></li><li class="cat-item cat-item-61 "><a href="https://phppot.com/category/php/php-functions/">PHP Functions</a></li><li class="cat-item cat-item-35 "><a href="https://phppot.com/category/php/php-oops/">PHP OOPS</a></li><li class="cat-item cat-item-31 "><a href="https://phppot.com/category/php/php-forms/">PHP Forms</a></li><li class="cat-item cat-item-78 "><a href="https://phppot.com/category/php/advanced/">Advanced</a></li><li class="cat-item cat-item-90 "><a href="https://phppot.com/category/php/php-ajax/">PHP AJAX</a></li><li class="cat-item cat-item-89 "><a href="https://phppot.com/category/php/restful-api/">RESTful API</a></li><li class="cat-item cat-item-15 "><a href="https://phppot.com/category/php/php-databases/">PHP Databases</a></li><li class="cat-item cat-item-23 taxonomy-active"><a href="https://phppot.com/category/php/php-sessions-and-cookies/">PHP Sessions and Cookies</a><ul class="post-list"><li><a class="post-menu" href="https://phppot.com/php/session-vs-cookies/">PHP Session Vs Cookies</a></li><li><a class="post-menu" href="https://phppot.com/php/secure-remember-me-for-login-using-php-session-and-cookies/">Secure Remember Me for Login using PHP Session and Cookies</a></li><li class="current-post">PHP Session Configuration</li><li><a class="post-menu" href="https://phppot.com/php/php-session-encode-decode/">PHP Session Encode Decode</a></li></ul></li><li class="cat-item cat-item-51 "><a href="https://phppot.com/category/php/error-exception-handling/">Error and Exception Handling</a></li><li class="cat-item cat-item-100 "><a href="https://phppot.com/category/php/file-upload/">File Upload</a></li><li class="cat-item cat-item-101 "><a href="https://phppot.com/category/php/file-import-export/">File Import Export</a></li><li class="cat-item cat-item-36 "><a href="https://phppot.com/category/php/files-and-directories/">Files and Directories</a></li><li class="cat-item cat-item-45 "><a href="https://phppot.com/category/php/php-date-time/">PHP Date Time</a></li><li class="cat-item cat-item-12 "><a href="https://phppot.com/category/php/php-graphics/">PHP Graphics</a></li><li class="cat-item cat-item-24 "><a href="https://phppot.com/category/php/php-xml/">PHP XML</a></li><li class="cat-item cat-item-62 "><a href="https://phppot.com/category/php/php-code-samples/">PHP Code Samples</a></li><li class="cat-item cat-item-96 "><a href="https://phppot.com/category/php/library/">Library</a></li><li class="cat-item cat-item-88 "><a href="https://phppot.com/category/php/php-freelancer/">PHP Freelancer</a></li></ul></li><li class="cat-item cat-item-73"><a href="https://phppot.com/category/jquery/">jQuery</a></li><li class="cat-item cat-item-74"><a href="https://phppot.com/category/wordpress/">WordPress</a></li><li class="cat-item cat-item-75"><a href="https://phppot.com/category/mysql/">MySQL</a></li><li class="cat-item cat-item-76"><a href="https://phppot.com/category/css/">CSS</a></li></ul></div>
+
+            <div id="social-icon">
+                <div class="heading">Share this Article</div>
+                <ul>
+                    <li><a class="social-link facebook-social-link" href="https://www.facebook.com/sharer/sharer.php?u=https://phppot.com/php/php-session-configuration/" title="Share on Facebook"><span class="facebook-social-img">Share</span></a></li>
+                    <li><a class="social-link twitter-social-link" href="https://twitter.com/intent/tweet?original_referer=https://phppot.com&amp;source=tweetbutton&amp;text=PHP%20Session%20Configuration;url=https://phppot.com/php/php-session-configuration/&amp;via=phppot" title="Share on Twitter"><span class="twitter-social-img">Tweet</span></a></li>
+                    <li><a class="social-link linkedin-social-link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://phppot.com/php/php-session-configuration/&amp;media=PHP%20Session%20Configuration" title="Share on Linkedin"><span class="linkedin-social-img">Share</span></a></li>
+                </ul>
+            </div>
+        </div>
+<div id="sidebar">
+    <div id="aboutcntnt">
+        <div id="photo">
+            <img src="PHP%20Session%20Configuration%20-%20Phppot_files/Vincy.jpg" alt="Vincy" title="Vincy" width="100" height="100">
+        </div>
+        <div id="aboutdesc">
+            <p>
+                I’m Vincy, a web developer. If you want to start a
+                project and do a quick launch, <a href="https://phppot.com/contact/">contact
+                    me</a>.
+            </p>
+            <p>I am available for freelance work.</p>
+        </div>
+        <div id="contactMe">
+            <a href="mailto:vincy@phppot.com" title="Contact Me">vincy@phppot.com</a>
+        </div>
+    </div>
+
+                          <div class="sidebar-featured-product">
+        <div class="heading">Featured Product</div>
+        <a href="https://phppot.com/shop/contact-form-iris/"><img src="PHP%20Session%20Configuration%20-%20Phppot_files/simple-secure-spam-free-contact-form-in-php-iris-150x150.png">
+        </a>
+        <div class="sidebar-featured-url">
+            <a href="https://phppot.com/shop/contact-form-iris/">Contact
+                Form - Iris</a>
+        </div>
+    </div>
+            <div id="recommended">
+        <div class="heading">Trending Now</div>
+        <ul>
+            <li><a href="https://phppot.com/shop/contact-form-iris/">Contact
+                    Form – Iris</a></li>
+            <li><a href="https://phppot.com/php/simple-php-shopping-cart/">Simple
+                    PHP Shopping Cart</a></li>
+            <li><a href="https://phppot.com/php/how-to-become-a-full-time-freelance-php-developer-and-consultant/">How
+                    to Become a Full Time Freelance PHP Developer and
+                    Consultant</a></li>
+            <li><a href="https://phppot.com/jquery/jquery-ajax-inline-crud-with-php/">jQuery
+                    AJAX Inline CRUD with PHP</a></li>
+            <li><a href="https://phppot.com/php/simple-secure-spam-free-contact-form-in-php-iris/">Simple
+                    Secure Spam-Free Contact Form in PHP – Iris</a></li>
+        </ul>
+    </div>
+    <div class="testimonials-sbar">
+    <div class="heading">Testimonials</div>
+    <p class="testimonial-content"><span class="left-quotes">“</span>Subcontracted
+ work was completed on time, as requested, with great attention to 
+details and utmost flexibility despite various changes towards the end 
+of the project. Bravo! ...<span class="right-quotes">”</span></p>
+    <p class="testimonials-sbar-by">Haris Memisevic, Webpage.ba, Bosnia and Herzegovina</p>
+    <div class="view-more-testimonial">
+        <a href="https://phppot.com/testimonials/"><span class="view-testimonials">View More Testimonials</span></a>
+    </div>
+</div></div></div>
+<div id="footer-contact-note">
+    <div class="content">
+        <h2>Looking for an expert PHP freelancer?</h2>
+        <p class="footer-contact-banner-title">Do you want to develop a
+            modern, lightweight, responsive web application and launch
+            quickly?</p>
+        <p>
+            <a id="footer-contact-navigation" href="https://phppot.com/contact/">Contact
+                Me</a>
+        </p>
+    </div>
+</div>
+<div id="footer">
+    <div class="content">
+        <div class="subscribe-section">
+            <div class="subscribe-email">
+                <div>
+    <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=phppot',
+             'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <p>
+        </p><div><label for="feedb-email-inp">Email:</label></div>
+            <input id="feedb-email-inp" placeholder="Enter your email here" type="text" class="feedb-email" name="email"><input type="hidden" value="phppot" name="uri"><input type="hidden" name="loc" value="en_US"><input type="submit" value="Subscribe" class="subscribe">
+        <p></p>
+    </form>
+</div></div>
+
+            <div class="follow">
+                <a class="facebook" href="https://www.facebook.com/PPbay" rel="nofollow noopener" title="Phppot Facebook Page" target="_blank">Facebook</a><a class="twitter" href="https://www.linkedin.com/in/vincya/" rel="nofollow noopener" title="Phppot LinkedIn Page" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="shop-footer-common">
+            <div class="shop-doc-nav">
+                <div class="shop-doc-nav-links">
+                    <div class="heading">Digital Goods Shop</div>
+                    <a href="https://phppot.com/faq/">FAQ</a> <a href="https://phppot.com/support-policy/">Support
+                        Policy</a> <a href="https://phppot.com/refund-policy/">Refund Policy</a>
+                    <a href="https://phppot.com/licenses/">Licenses</a> <a href="https://phppot.com/user-license/">User License</a> <a href="https://phppot.com/developer-license/">Developer License</a>
+                </div>
+
+                <div class="policy-doc-nav">
+                    <a href="https://phppot.com/terms-of-use/">Terms of
+                        Service</a><a href="https://phppot.com/privacy-policy/">Privacy
+                        Policy</a><a href="https://phppot.com/privacy-policy/#cookie-policy">Cookie
+                        Policy</a> <span class="copyright">© 2019 <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP">Phppot</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('click', function(e){
+    	var element = document.getElementsByClassName("search-container")[0];
+        if (element && !element.contains(e.target) && e.target.id != "mobile-search-icon" && window.innerWidth <= "550") {
+            element.style.display = "none";
+        }
+    });
+    function toggleSearch() {
+        var element = document.getElementsByClassName("search-container")[0];
+        if(element.style.display == 'inline-block') {
+            	element.style.display = "none";
+        } else {
+        	   element.style.display = "inline-block";
+        }
+    }
+</script><script async="" src="PHP%20Session%20Configuration%20-%20Phppot_files/prettify.js"></script>
+
+</body></html>

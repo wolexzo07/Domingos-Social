@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://thedebuggers.com/xmlrpc.php">
+	<title>Multiple files upload using HTML and PHP - The Debuggers</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v12.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Implement multiple files upload with one time submit using PHP and HTML. Use single HTML file input or use multiple file inputs with additional input."/>
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<link rel="canonical" href="https://thedebuggers.com/multiple-files-upload-using-html-php/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Multiple files upload using HTML and PHP - The Debuggers" />
+<meta property="og:description" content="Implement multiple files upload with one time submit using PHP and HTML. Use single HTML file input or use multiple file inputs with additional input." />
+<meta property="og:url" content="https://thedebuggers.com/multiple-files-upload-using-html-php/" />
+<meta property="og:site_name" content="The Debuggers" />
+<meta property="article:publisher" content="https://www.facebook.com/thedebuggers" />
+<meta property="article:section" content="PHP" />
+<meta property="article:published_time" content="2017-12-28T16:44:46+00:00" />
+<meta property="article:modified_time" content="2018-08-18T06:34:28+00:00" />
+<meta property="og:updated_time" content="2018-08-18T06:34:28+00:00" />
+<meta property="og:image" content="https://i0.wp.com/thedebuggers.com/wp-content/uploads/2017/12/multiple-files-upload-php.jpg?fit=784%2C419&#038;ssl=1" />
+<meta property="og:image:secure_url" content="https://i0.wp.com/thedebuggers.com/wp-content/uploads/2017/12/multiple-files-upload-php.jpg?fit=784%2C419&#038;ssl=1" />
+<meta property="og:image:width" content="784" />
+<meta property="og:image:height" content="419" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Implement multiple files upload with one time submit using PHP and HTML. Use single HTML file input or use multiple file inputs with additional input." />
+<meta name="twitter:title" content="Multiple files upload using HTML and PHP - The Debuggers" />
+<meta name="twitter:site" content="@thedebuggers" />
+<meta name="twitter:image" content="https://i0.wp.com/thedebuggers.com/wp-content/uploads/2017/12/multiple-files-upload-php.jpg?fit=784%2C419&#038;ssl=1" />
+<meta name="twitter:creator" content="@thedebuggers" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://thedebuggers.com/#website","url":"https://thedebuggers.com/","name":"The Debuggers","potentialAction":{"@type":"SearchAction","target":"https://thedebuggers.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://thedebuggers.com/multiple-files-upload-using-html-php/#primaryimage","url":"https://i0.wp.com/thedebuggers.com/wp-content/uploads/2017/12/multiple-files-upload-php.jpg?fit=784%2C419&ssl=1","width":784,"height":419,"caption":"Multiple Files Upload Using PHP"},{"@type":"WebPage","@id":"https://thedebuggers.com/multiple-files-upload-using-html-php/#webpage","url":"https://thedebuggers.com/multiple-files-upload-using-html-php/","inLanguage":"en-US","name":"Multiple files upload using HTML and PHP - The Debuggers","isPartOf":{"@id":"https://thedebuggers.com/#website"},"primaryImageOfPage":{"@id":"https://thedebuggers.com/multiple-files-upload-using-html-php/#primaryimage"},"datePublished":"2017-12-28T16:44:46+00:00","dateModified":"2018-08-18T06:34:28+00:00","author":{"@id":"https://thedebuggers.com/#/schema/person/8442bb52dd10a3563766cfb5cefa0ce9"},"description":"Implement multiple files upload with one time submit using PHP and HTML. Use single HTML file input or use multiple file inputs with additional input."},{"@type":["Person"],"@id":"https://thedebuggers.com/#/schema/person/8442bb52dd10a3563766cfb5cefa0ce9","name":"thedebuggers","image":{"@type":"ImageObject","@id":"https://thedebuggers.com/#authorlogo","url":"https://secure.gravatar.com/avatar/8d1d68d00d909220b2f851f3944e6a9c?s=96&d=blank&r=g","caption":"thedebuggers"},"sameAs":[]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="The Debuggers &raquo; Feed" href="https://thedebuggers.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="The Debuggers &raquo; Comments Feed" href="https://thedebuggers.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="The Debuggers &raquo; Multiple files upload using HTML and PHP Comments Feed" href="https://thedebuggers.com/multiple-files-upload-using-html-php/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/thedebuggers.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.4"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://thedebuggers.com/wp-includes/css/dist/block-library/style.min.css?ver=5.2.4' type='text/css' media='all' />
+<link rel='stylesheet' id='publishable-mag-style-css'  href='https://thedebuggers.com/wp-content/themes/publishable-mag/style.css?ver=5.2.4' type='text/css' media='all' />
+<style id='publishable-mag-style-inline-css' type='text/css'>
+
+        #site-header { background-image: url(''); }
+        #tabber .inside li .meta b,footer .widget li a:hover,.fn a,.reply a,#tabber .inside li div.info .entry-title a:hover, #navigation ul ul a:hover,.single_post a, a:hover, .sidebar.c-4-12 .textwidget a, #site-footer .textwidget a, #commentform a, #tabber .inside li a, .copyrights a:hover, a, .sidebar.c-4-12 a:hover, .top a:hover, footer .tagcloud a:hover { color: #c69c6d; }
+
+	span.sticky-post, .nav-previous a:hover, .nav-next a:hover, #commentform input#submit, #searchform input[type='submit'], .home_menu_item, .primary-navigation, .currenttext, .pagination a:hover, .readMore a, .mts-subscribe input[type='submit'], .pagination .current, .woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current, .woocommerce-product-search input[type="submit"], .woocommerce a.button, .woocommerce-page a.button, .woocommerce button.button, .woocommerce-page button.button, .woocommerce input.button, .woocommerce-page input.button, .woocommerce #respond input#submit, .woocommerce-page #respond input#submit, .woocommerce #content input.button, .woocommerce-page #content input.button { background-color: #c69c6d; }
+
+	.woocommerce nav.woocommerce-pagination ul li span.current, .woocommerce-page nav.woocommerce-pagination ul li span.current, .woocommerce #content nav.woocommerce-pagination ul li span.current, .woocommerce-page #content nav.woocommerce-pagination ul li span.current, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce-page nav.woocommerce-pagination ul li a:hover, .woocommerce #content nav.woocommerce-pagination ul li a:hover, .woocommerce-page #content nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce-page nav.woocommerce-pagination ul li a:focus, .woocommerce #content nav.woocommerce-pagination ul li a:focus, .woocommerce-page #content nav.woocommerce-pagination ul li a:focus, .pagination .current, .tagcloud a { border-color: #c69c6d; }
+	.corner { border-color: transparent transparent #c69c6d transparent;}
+
+	.primary-navigation, footer, .readMore a:hover, #commentform input#submit:hover, .featured-thumbnail .latestPost-review-wrapper { background-color: #1b1b1b; }
+	
+</style>
+<link rel='stylesheet' id='publishable-mag-fonts-css'  href='//fonts.googleapis.com/css?family=Roboto%3A400%2C500%2C700%2C900' type='text/css' media='all' />
+<link rel='stylesheet' id='enlighter-local-css'  href='https://thedebuggers.com/wp-content/plugins/enlighter/resources/EnlighterJS.min.css?ver=3.10.0' type='text/css' media='all' />
+<link rel='stylesheet' id='social-logos-css'  href='https://thedebuggers.com/wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=1' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://thedebuggers.com/wp-content/plugins/jetpack/css/jetpack.css?ver=7.8' type='text/css' media='all' />
+<script type='text/javascript' src='https://thedebuggers.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type='text/javascript' src='https://thedebuggers.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://thedebuggers.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://thedebuggers.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://thedebuggers.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.2.4" />
+<link rel='shortlink' href='https://wp.me/p8d8w8-5E' />
+<link rel="alternate" type="application/json+oembed" href="https://thedebuggers.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthedebuggers.com%2Fmultiple-files-upload-using-html-php%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://thedebuggers.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthedebuggers.com%2Fmultiple-files-upload-using-html-php%2F&#038;format=xml" />
+			<meta property="fb:pages" content="111118675571667" />
+			
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-40878730-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<link rel='dns-prefetch' href='//i0.wp.com'/>
+<link rel='dns-prefetch' href='//i1.wp.com'/>
+<link rel='dns-prefetch' href='//i2.wp.com'/>
+<link rel='dns-prefetch' href='//jetpack.wordpress.com'/>
+<link rel='dns-prefetch' href='//s0.wp.com'/>
+<link rel='dns-prefetch' href='//s1.wp.com'/>
+<link rel='dns-prefetch' href='//s2.wp.com'/>
+<link rel='dns-prefetch' href='//public-api.wordpress.com'/>
+<link rel='dns-prefetch' href='//0.gravatar.com'/>
+<link rel='dns-prefetch' href='//1.gravatar.com'/>
+<link rel='dns-prefetch' href='//2.gravatar.com'/>
+<style type='text/css'>img#wpstats{display:none}</style>
+    <style type="text/css">
+   #site-header { background-color: ; }
+
+    </style>
+    	<style type="text/css">
+			.site-title a,
+		.site-description {
+			color: #fff;
+		}
+		</style>
+				<style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+			<script>
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script>
+		<link rel="icon" href="https://i0.wp.com/thedebuggers.com/wp-content/uploads/2018/08/thedebuggers-icon.png?fit=32%2C32&#038;ssl=1" sizes="32x32" />
+<link rel="icon" href="https://i0.wp.com/thedebuggers.com/wp-content/uploads/2018/08/thedebuggers-icon.png?fit=192%2C192&#038;ssl=1" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://i0.wp.com/thedebuggers.com/wp-content/uploads/2018/08/thedebuggers-icon.png?fit=180%2C180&#038;ssl=1" />
+<meta name="msapplication-TileImage" content="https://i0.wp.com/thedebuggers.com/wp-content/uploads/2018/08/thedebuggers-icon.png?fit=250%2C250&#038;ssl=1" />
+</head>
+
+<body class="post-template-default single single-post postid-350 single-format-standard group-blog">
+    <div class="main-container">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+		<header id="site-header" role="banner">
+			<div class="container clear">
+				<div class="site-branding">
+																	    <h2 id="logo" class="site-title" itemprop="headline">
+								<a href="https://thedebuggers.com">The Debuggers</a>
+							</h2><!-- END #logo -->
+							<div class="site-description"></div>
+															</div><!-- .site-branding -->
+				<div id="text-5" class="widget-header">			<div class="textwidget"><p><!-- dbg_videos_leaderboard_large --><br />
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-2649652639912551"
+     data-ad-slot="8249285373"></ins><br />
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+</div>
+		</div>			</div>
+			<div class="primary-navigation">
+				<a href="#" id="pull" class="toggle-mobile-menu">Menu</a>
+				<div class="container clear">
+					<nav id="navigation" class="primary-navigation mobile-menu-wrapper" role="navigation">
+													<ul id="menu-main-menu" class="menu clearfix"><li id="menu-item-20" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-20"><a href="https://thedebuggers.com/category/php/">PHP</a></li>
+<li id="menu-item-17" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17"><a href="https://thedebuggers.com/category/database/">Database</a></li>
+<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19"><a href="https://thedebuggers.com/category/javascript/">JavaScript</a></li>
+<li id="menu-item-18" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18"><a href="https://thedebuggers.com/category/debugging-tools/">Debugging Tools</a></li>
+<li id="menu-item-21" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21"><a href="https://thedebuggers.com/category/python/">Python</a></li>
+<li id="menu-item-993" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-993"><a target="_blank" rel="noopener noreferrer" href="https://videos.thedebuggers.com">Video Tutorials</a></li>
+</ul>											</nav><!-- #site-navigation -->
+				</div>
+			</div>
+		</header><!-- #masthead -->
+
+<div id="page" class="single">
+	<div class="content">
+		<!-- Start Article -->
+	    							<div class="breadcrumb" xmlns:v="http://rdf.data-vocabulary.org/#"><span typeof="v:Breadcrumb" class="root"><a rel="v:url" property="v:title" href="https://thedebuggers.com">Home</a></span><span><i class="publishable-icon icon-angle-double-right"></i></span><span typeof="v:Breadcrumb"><a href="https://thedebuggers.com/category/php/" rel="v:url" property="v:title">PHP</a></span><span><i class="publishable-icon icon-angle-double-right"></i></span><span><span>Multiple files upload using HTML and PHP</span></span></div>
+								<article class="article">		
+							<div id="post-350" class="post post-350 type-post status-publish format-standard has-post-thumbnail hentry category-php">
+					<div class="single_post">
+				
+						<header>
+											    <div class="post-date-publishable">December 28, 2017</div>
+
+							<!-- Start Title -->
+							<h1 class="title single-title">Multiple files upload using HTML and PHP</h1>
+							<!-- End Title -->
+						</header>
+						<!-- Start Content -->
+						<div id="content" class="post-single-content box mark-links">
+							<p>Are you trying to upload multiple files at once ? Here&#8217;s how to implement multiple files upload using HTML and PHP.</p>
+<p>In this article, I am going to show how to use a single HTML file input to upload multiple files. In addition to that, I will demonstrate using multiple file inputs with additional input fields.</p>
+<h3>Implementing multiple files upload</h3>
+<p>Firstly, you need to create a HTML <em>form</em> with attribute <em>enctype=&#8217;multiple/form-data&#8217;</em>. In fact, the <strong>enctype</strong> attribute specifies how the form-data should be encoded when submitting it to the server. When you are using forms that have a file upload control, you need to specify <em>enctype</em> as <em>multiple/form-data</em>.</p>
+<p>If you are using single file input, you need to enable your file element to select multiple files. In order to do this, you need to name your file input as an array, eg. <em>name=&#8221;files[]&#8221; </em>. Also, File Input element must have <em>multiple=&#8221;multiple&#8221;</em> or just multiple.</p>
+<p>The HTML form will look like as follows:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="html">&lt;form action="" method="post" enctype="multipart/form-data"&gt;
+  &lt;label&gt; Select Files: &lt;/label&gt;
+  &lt;input type="file" name="fileUpload[]" multiple &gt; 
+  &lt;input type="submit" name="Submit" value="Upload" &gt;
+&lt;/form&gt;
+
+</pre>
+<p>When user submits the form after selecting files, we can process the form using simple PHP snippets as follows:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="php">&lt;?php
+
+// Set Upload Path
+$target_dir = 'files/';
+
+if( isset($_FILES['fileUpload']['name'])) {
+      
+  $total_files = count($_FILES['fileUpload']['name']);
+  
+  for($key = 0; $key &lt; $total_files; $key++) {
+    
+    // Check if file is selected
+    if(isset($_FILES['fileUpload']['name'][$key]) 
+                      &amp;&amp; $_FILES['fileUpload']['size'][$key] &gt; 0) {
+      
+      $original_filename = $_FILES['fileUpload']['name'][$key];
+      $target = $target_dir . basename($original_filename);
+      $tmp  = $_FILES['fileUpload']['tmp_name'][$key];
+      move_uploaded_file($tmp, $target);
+    }
+    
+  }
+     
+}
+
+?&gt;
+</pre>
+
+<center>
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-2649652639912551"
+     data-ad-slot="3129945437"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+<h3>Validating file type and file size</h3>
+<p>You can restrict file type by checking extension of the uploaded file with set of allowed extensions. The following code checks for valid image file.</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="php">// Get the extension
+$ext = strtolower(pathinfo($_FILES["fileUpload"]["name"][$key], PATHINFO_EXTENSION));
+        
+// check extension and upload
+if( in_array( $ext, array('jpg', 'jpeg', 'png', 'gif', 'bmp'))) {
+  // Filetype if valid, process uploading
+}</pre>
+<p>In order to check the file size, you can use $_FILES[&#8216;image&#8217;][&#8216;size&#8217;] as follows:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="php">$maxFileSize = 5 * 1024 * 1024; //5MB
+$errors = array();
+
+if($_FILES['fileUpload']['size'][$key] &gt; $maxFileSize){
+  $errors[$key] = 'File size is greater than allowed size';
+}
+</pre>
+<p>Furthermore, you can also rename filename before uploading. Here&#8217;s how to replace spaces within filename with underscore and add timestamp to the filename.</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="php">if(isset($_FILES['fileUpload']['name'][$key]) 
+                  &amp;&amp; $_FILES['fileUpload']['size'][$key] &gt; 0) {
+  
+  
+  $original_filename = $_FILES['fileUpload']['name'][$key]; 
+     
+  // Get the fileextension
+  $ext = pathinfo($original_filename, PATHINFO_EXTENSION);  
+    
+  // Get filename without extesion
+  $filename_without_ext = basename($original_filename, '.'.$ext);
+  // Generate new filename
+  $new_filename = str_replace(' ', '_', $filename_without_ext) . '_' . time() . '.' . $ext; 
+  // Upload the file with new name
+  move_uploaded_file($_FILES['fileUpload']['tmp_name'][$key], $target_dir . $new_filename);
+}
+
+</pre>
+
+<center>
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-2649652639912551"
+     data-ad-slot="3129945437"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+<h3>Uploading multiple files with additional information</h3>
+<p>Sometimes it is required to upload multiple files with additional information like title, description, etc. In such cases, you have to use several file input controls.</p>
+<p><img class="aligncenter size-full wp-image-819 jetpack-lazy-image" src="https://i0.wp.com/thedebuggers.com/wp-content/uploads/2017/12/multiple-files-upload-php.jpg?resize=678%2C362" alt="Multiple Files Upload Using PHP" width="678" height="362" data-recalc-dims="1" data-lazy-srcset="https://i0.wp.com/thedebuggers.com/wp-content/uploads/2017/12/multiple-files-upload-php.jpg?w=784&amp;ssl=1 784w, https://i0.wp.com/thedebuggers.com/wp-content/uploads/2017/12/multiple-files-upload-php.jpg?resize=300%2C160&amp;ssl=1 300w, https://i0.wp.com/thedebuggers.com/wp-content/uploads/2017/12/multiple-files-upload-php.jpg?resize=768%2C410&amp;ssl=1 768w" data-lazy-sizes="(max-width: 678px) 100vw, 678px" data-lazy-src="https://i0.wp.com/thedebuggers.com/wp-content/uploads/2017/12/multiple-files-upload-php.jpg?resize=678%2C362&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img class="aligncenter size-full wp-image-819" src="https://i0.wp.com/thedebuggers.com/wp-content/uploads/2017/12/multiple-files-upload-php.jpg?resize=678%2C362" alt="Multiple Files Upload Using PHP" width="678" height="362" srcset="https://i0.wp.com/thedebuggers.com/wp-content/uploads/2017/12/multiple-files-upload-php.jpg?w=784&amp;ssl=1 784w, https://i0.wp.com/thedebuggers.com/wp-content/uploads/2017/12/multiple-files-upload-php.jpg?resize=300%2C160&amp;ssl=1 300w, https://i0.wp.com/thedebuggers.com/wp-content/uploads/2017/12/multiple-files-upload-php.jpg?resize=768%2C410&amp;ssl=1 768w" sizes="(max-width: 678px) 100vw, 678px" data-recalc-dims="1" /></noscript></p>
+<p>In the above screenshot, each file input has corresponding title. Here&#8217;s the sample HTML.</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="html">&lt;form action="" method="post" enctype="multipart/form-data"&gt; 
+  
+  &lt;input type="text" name="title[]" placeholder="Title" &gt;
+  &lt;input type="file" name="fileUpload[]" &gt; 
+  
+  &lt;input type="text" name="title[]" placeholder="Title" &gt;
+  &lt;input type="file" name="fileUpload[]" &gt; 
+  
+  &lt;input type="text" name="title[]" placeholder="Title" &gt;
+  &lt;input type="file" name="fileUpload[]" &gt; 
+  
+  &lt;input type="text" name="title[]" placeholder="Title" &gt;
+  &lt;input type="file" name="fileUpload[]" &gt; 
+  
+  &lt;input type="submit" name="Submit" value="Upload" &gt; 
+  
+&lt;/form&gt;
+</pre>
+<p>As you can see, there is multiple text input and file input controls. By appending &#8216;[]&#8217; to your input element names, input elements will submit as arrays.</p>
+<p>When you submit the above form, <strong>$_POST[&#8216;title&#8217;]</strong> will be an array. By matching the index of array $_POST[&#8216;title&#8217;] with $_FILES[&#8216;fileUpload&#8217;][&#8216;name&#8217;], you can get corresponding title, filename pair. For instance, $_POST[&#8216;title&#8217;][0] is the title of file $_FILES[&#8216;fileUpload&#8217;][&#8216;name&#8217;][0] and so on.</p>
+<p>In this way, you can implement multiple file uploads using HTML and PHP.</p>
+<p>You can also upload multiple files using <a href="https://thedebuggers.com/drag-drop-file-upload-dropzonejs-php/" target="_blank" rel="noopener">AJAX</a>.</p>
+<p>You may also like: <a href="https://thedebuggers.com/mysql-bulk-insert-update-using-php/">Inserting multiple rows into MySQL using PHP</a></p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-350" class="share-twitter sd-button share-icon" href="https://thedebuggers.com/multiple-files-upload-using-html-php/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-350" class="share-facebook sd-button share-icon" href="https://thedebuggers.com/multiple-files-upload-using-html-php/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-end"></li></ul></div></div></div>																						<!-- Start Tags -->
+								<div class="tags"></div>
+								<!-- End Tags -->
+													</div><!-- End Content -->
+							
+						    <!-- Start Related Posts -->
+							<div class="related-posts"><div class="postauthor-top"><h3>Related Posts</h3></div>								<article class="post excerpt  ">
+																			<a href="https://thedebuggers.com/mysql-bulk-insert-update-using-php/" title="Bulk Insert Update into MySQL using PHP" id="featured-thumbnail">
+											<div class="featured-thumbnail">
+												<img width="200" height="125" src="https://i2.wp.com/thedebuggers.com/wp-content/uploads/2017/11/mysql-php-bulk-insert-update.jpg?resize=200%2C125&amp;ssl=1" class="attachment-publishable-mag-related size-publishable-mag-related wp-post-image jetpack-lazy-image" alt="MySQL PHP bulk insert update" title="" data-lazy-srcset="https://i2.wp.com/thedebuggers.com/wp-content/uploads/2017/11/mysql-php-bulk-insert-update.jpg?resize=200%2C125&amp;ssl=1 200w, https://i2.wp.com/thedebuggers.com/wp-content/uploads/2017/11/mysql-php-bulk-insert-update.jpg?zoom=2&amp;resize=200%2C125&amp;ssl=1 400w, https://i2.wp.com/thedebuggers.com/wp-content/uploads/2017/11/mysql-php-bulk-insert-update.jpg?zoom=3&amp;resize=200%2C125&amp;ssl=1 600w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" data-lazy-src="https://i2.wp.com/thedebuggers.com/wp-content/uploads/2017/11/mysql-php-bulk-insert-update.jpg?resize=200%2C125&amp;ssl=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />																							</div>
+											<header>
+												<h4 class="title front-view-title">Bulk Insert Update into MySQL using PHP</h4>
+											</header>
+										</a>
+																	</article><!--.post.excerpt-->
+																								<article class="post excerpt  ">
+																			<a href="https://thedebuggers.com/search-youtube-videos-using-youtube-api3/" title="Search YouTube videos using YouTube API 3.0" id="featured-thumbnail">
+											<div class="featured-thumbnail">
+												<img width="200" height="125" src="https://i1.wp.com/thedebuggers.com/wp-content/uploads/2017/10/search-youtube-videos.jpg?resize=200%2C125&amp;ssl=1" class="attachment-publishable-mag-related size-publishable-mag-related wp-post-image jetpack-lazy-image" alt="Search YouTube Videos" title="" data-lazy-srcset="https://i1.wp.com/thedebuggers.com/wp-content/uploads/2017/10/search-youtube-videos.jpg?resize=200%2C125&amp;ssl=1 200w, https://i1.wp.com/thedebuggers.com/wp-content/uploads/2017/10/search-youtube-videos.jpg?zoom=2&amp;resize=200%2C125&amp;ssl=1 400w, https://i1.wp.com/thedebuggers.com/wp-content/uploads/2017/10/search-youtube-videos.jpg?zoom=3&amp;resize=200%2C125&amp;ssl=1 600w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" data-lazy-src="https://i1.wp.com/thedebuggers.com/wp-content/uploads/2017/10/search-youtube-videos.jpg?resize=200%2C125&amp;ssl=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />																							</div>
+											<header>
+												<h4 class="title front-view-title">Search YouTube videos using YouTube API 3.0</h4>
+											</header>
+										</a>
+																	</article><!--.post.excerpt-->
+																								<article class="post excerpt  last">
+																			<a href="https://thedebuggers.com/persistent-menu-get-started-buttons-bot/" title="Add Persistent Menu and Buttons to your messenger bot" id="featured-thumbnail">
+										
+											<header>
+												<h4 class="title front-view-title">Add Persistent Menu and Buttons to your messenger bot</h4>
+											</header>
+										</a>
+																	</article><!--.post.excerpt-->
+																</div>							<!-- End Related Posts -->
+						  
+													<!-- Start Author Box -->
+							<div class="postauthor">
+								<h4>About The Author</h4>
+								<img alt src="https://secure.gravatar.com/avatar/8d1d68d00d909220b2f851f3944e6a9c?s=85&#038;d=blank&#038;r=g" class="avatar avatar-85 photo jetpack-lazy-image" height="85" width="85" data-lazy-srcset="https://secure.gravatar.com/avatar/8d1d68d00d909220b2f851f3944e6a9c?s=170&#038;d=blank&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/8d1d68d00d909220b2f851f3944e6a9c?s=85&amp;is-pending-load=1#038;d=blank&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt='' src='https://secure.gravatar.com/avatar/8d1d68d00d909220b2f851f3944e6a9c?s=85&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/8d1d68d00d909220b2f851f3944e6a9c?s=170&#038;d=blank&#038;r=g 2x' class='avatar avatar-85 photo' height='85' width='85' /></noscript>								<h5>thedebuggers</h5>
+								<p></p>
+							</div>
+							<!-- End Author Box -->
+						  
+						
+<!-- You can start editing here. -->
+	<div id="comments">
+		<div class="total-comments">2 Comments</div>
+		<ol class="commentlist">
+			<div class="navigation">
+				<div class="alignleft"></div>
+				<div class="alignright"></div>
+			</div>
+				<li class="comment even thread-even depth-1" id="li-comment-180">
+		<div id="comment-180" style="position:relative;" itemscope itemtype="http://schema.org/UserComments">
+			<div class="comment-author vcard">
+				<img alt src="https://secure.gravatar.com/avatar/ac202e40f17a62c857479c45700a0fd1?s=70&#038;d=blank&#038;r=g" class="avatar avatar-70 photo jetpack-lazy-image" height="70" width="70" data-lazy-srcset="https://secure.gravatar.com/avatar/ac202e40f17a62c857479c45700a0fd1?s=140&#038;d=blank&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/ac202e40f17a62c857479c45700a0fd1?s=70&amp;is-pending-load=1#038;d=blank&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt='' src='https://secure.gravatar.com/avatar/ac202e40f17a62c857479c45700a0fd1?s=70&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/ac202e40f17a62c857479c45700a0fd1?s=140&#038;d=blank&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' /></noscript>				<div class="comment-metadata">
+					<span class="fn" itemprop="creator" itemscope itemtype="http://schema.org/Person">fr. trade</span>					<span class="comment-meta">
+											</span>
+				</div>
+			</div>
+						<div class="commentmetadata" itemprop="commentText">
+				<p>Hello can you help i&#8217;am trying to get it right but i am doing something wrong.<br />
+How do i need to set the validation file type en size script in the php upload script??</p>
+<p>Hope you can help me</p>
+				<time>June 15, 2018</time>
+				<span class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='#comment-180' data-commentid="180" data-postid="350" data-belowelement="comment-180" data-respondelement="respond" aria-label='Reply to fr. trade'>Reply</a>				</span>
+			</div>
+		</div>
+	</li>
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-276">
+		<div id="comment-276" style="position:relative;" itemscope itemtype="http://schema.org/UserComments">
+			<div class="comment-author vcard">
+				<img alt src="https://secure.gravatar.com/avatar/8e3363ec35a5876a42e2a97c2d217c37?s=70&#038;d=blank&#038;r=g" class="avatar avatar-70 photo jetpack-lazy-image" height="70" width="70" data-lazy-srcset="https://secure.gravatar.com/avatar/8e3363ec35a5876a42e2a97c2d217c37?s=140&#038;d=blank&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/8e3363ec35a5876a42e2a97c2d217c37?s=70&amp;is-pending-load=1#038;d=blank&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt='' src='https://secure.gravatar.com/avatar/8e3363ec35a5876a42e2a97c2d217c37?s=70&#038;d=blank&#038;r=g' srcset='https://secure.gravatar.com/avatar/8e3363ec35a5876a42e2a97c2d217c37?s=140&#038;d=blank&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' /></noscript>				<div class="comment-metadata">
+					<span class="fn" itemprop="creator" itemscope itemtype="http://schema.org/Person">Steven</span>					<span class="comment-meta">
+											</span>
+				</div>
+			</div>
+						<div class="commentmetadata" itemprop="commentText">
+				<p>Thanks for this tutorial, one slight correction;<br />
+Using your code there was an error with the file extension on rename which was being duplicated, I simplified the rename using microtime in replacement of the file name altogether, which is no longer needed as microtime will produce a different name for every file.</p>
+<p>I can&#8217;t post the code here, won&#8217;t let me.</p>
+				<time>February 4, 2019</time>
+				<span class="reply">
+					<a rel='nofollow' class='comment-reply-link' href='#comment-276' data-commentid="276" data-postid="350" data-belowelement="comment-276" data-respondelement="respond" aria-label='Reply to Steven'>Reply</a>				</span>
+			</div>
+		</div>
+	</li>
+	</li><!-- #comment-## -->
+			<div class="navigation bottomnav">
+				<div class="alignleft"></div>
+				<div class="alignright"></div>
+			</div>
+		</ol>
+	</div>
+	<div id="commentsAdd">
+		<div id="respond" class="box m-t-6">
+			
+		<div id="respond" class="comment-respond">
+							<h3 id="reply-title" class="comment-reply-title">Leave a Reply					<small><a rel="nofollow" id="cancel-comment-reply-link" href="/multiple-files-upload-using-html-php/#respond" style="display:none;">Cancel reply</a></small>
+				</h3>
+						<form id="commentform" class="comment-form">
+				<iframe title="Comment Form" src="https://jetpack.wordpress.com/jetpack-comment/?blogid=121341696&#038;postid=350&#038;comment_registration=0&#038;require_name_email=1&#038;stc_enabled=1&#038;stb_enabled=1&#038;show_avatars=1&#038;avatar_default=blank&#038;greeting=Leave+a+Reply&#038;greeting_reply=Leave+a+Reply+to+%25s&#038;color_scheme=light&#038;lang=en_US&#038;jetpack_version=7.8&#038;show_cookie_consent=10&#038;has_cookie_consent=0&#038;token_key=%3Bnormal%3B&#038;sig=5fa6c6b0c6216caa6d441aebcf789c4420cd63ce#parent=https%3A%2F%2Fthedebuggers.com%2Fmultiple-files-upload-using-html-php%2F" style="width:100%; height: 430px; border:0;" name="jetpack_remote_comment" class="jetpack_remote_comment" id="jetpack_remote_comment" sandbox="allow-same-origin allow-top-navigation allow-scripts allow-forms allow-popups"></iframe>
+									<!--[if !IE]><!-->
+					<script>
+						document.addEventListener('DOMContentLoaded', function () {
+							var commentForms = document.getElementsByClassName('jetpack_remote_comment');
+							for (var i = 0; i < commentForms.length; i++) {
+								commentForms[i].allowTransparency = false;
+								commentForms[i].scrolling = 'no';
+							}
+						});
+					</script>
+					<!--<![endif]-->
+							</form>
+		</div>
+
+		
+		<input type="hidden" name="comment_parent" id="comment_parent" value="" />
+
+		<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>		</div>
+	</div>
+					</div>
+				</div>
+					</article>
+		<!-- End Article -->
+		<!-- Start Sidebar -->
+		
+<aside class="sidebar c-4-12">
+	<div id="sidebars" class="sidebar">
+		<div class="sidebar_list">
+			<div id="text-6" class="widget widget_text">			<div class="textwidget"><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><br />
+<!-- dbg_sidebar_top_300x250 --><br />
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-2649652639912551"
+     data-ad-slot="6051622247"></ins><br />
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+</div>
+		</div><div id="top-posts-2" class="widget widget_top-posts"><h3 class="widget-title">Popular Posts</h3><ul>				<li>
+										<a href="https://thedebuggers.com/multiple-files-upload-using-html-php/" class="bump-view" data-bump-view="tp">
+						Multiple files upload using HTML and PHP					</a>
+										</li>
+								<li>
+										<a href="https://thedebuggers.com/push-notification-google-fcm-php/" class="bump-view" data-bump-view="tp">
+						Send PUSH notification using Google FCM and PHP					</a>
+										</li>
+								<li>
+										<a href="https://thedebuggers.com/build-viber-chat-bot-6-simple-steps/" class="bump-view" data-bump-view="tp">
+						Build a Complete Viber Chat Bot in 6 simple steps					</a>
+										</li>
+								<li>
+										<a href="https://thedebuggers.com/mysql-bulk-insert-update-using-php/" class="bump-view" data-bump-view="tp">
+						Bulk Insert Update into MySQL using PHP					</a>
+										</li>
+								<li>
+										<a href="https://thedebuggers.com/drag-drop-file-upload-dropzonejs-php/" class="bump-view" data-bump-view="tp">
+						Drag and Drop ajax file upload using DropzoneJS and PHP					</a>
+										</li>
+								<li>
+										<a href="https://thedebuggers.com/image-steganography-hiding-text-using-php/" class="bump-view" data-bump-view="tp">
+						Image Steganography: Hiding text in images using PHP					</a>
+										</li>
+								<li>
+										<a href="https://thedebuggers.com/send-mailchimp-newsletter-via-php/" class="bump-view" data-bump-view="tp">
+						Dynamically send MailChimp newsletter via PHP					</a>
+										</li>
+								<li>
+										<a href="https://thedebuggers.com/structured-message-keyboard-menu-viber-bot/" class="bump-view" data-bump-view="tp">
+						Sending structured message and keyboard menu in Viber chat bot					</a>
+										</li>
+								<li>
+										<a href="https://thedebuggers.com/get-youtube-video-info-using-api-via-php/" class="bump-view" data-bump-view="tp">
+						Get YouTube Video Info using YouTube  API via PHP					</a>
+										</li>
+								<li>
+										<a href="https://thedebuggers.com/generate-multiple-google-maps/" class="bump-view" data-bump-view="tp">
+						Generate multiple Google Maps on a page					</a>
+										</li>
+				</ul></div><div id="text-3" class="widget widget_text">			<div class="textwidget"><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><br />
+<!-- dbg_sidebar --><br />
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2649652639912551"
+     data-ad-slot="6266109197"
+     data-ad-format="auto"></ins><br />
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+</div>
+		</div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+											<li>
+					<a href="https://thedebuggers.com/backup-restore-mysql-database-using-php/">Backup/Restore MySql database using PHP</a>
+									</li>
+											<li>
+					<a href="https://thedebuggers.com/minify-html-codeigniter-using-hooks/">Minify  HTML in CodeIgniter using Hooks</a>
+									</li>
+											<li>
+					<a href="https://thedebuggers.com/php-api-current-bitcoin-price/">PHP API for Current Bitcoin Price</a>
+									</li>
+											<li>
+					<a href="https://thedebuggers.com/database-indexes-best-practices/">Best practices to follow with database indexes</a>
+									</li>
+											<li>
+					<a href="https://thedebuggers.com/file-encryption-decryption-using-php-extension-mcrypt/">File Encryption and Decryption using PHP Extension Mcrypt</a>
+									</li>
+					</ul>
+		</div><div id="tag_cloud-2" class="widget widget_tag_cloud"><h3 class="widget-title">Tag Cloud</h3><div class="tagcloud"><a href="https://thedebuggers.com/tag/api/" class="tag-cloud-link tag-link-17 tag-link-position-1" style="font-size: 18.5pt;" aria-label="API (3 items)">API</a>
+<a href="https://thedebuggers.com/tag/api-integration/" class="tag-cloud-link tag-link-27 tag-link-position-2" style="font-size: 22pt;" aria-label="Api Integration (4 items)">Api Integration</a>
+<a href="https://thedebuggers.com/tag/bitcoin/" class="tag-cloud-link tag-link-45 tag-link-position-3" style="font-size: 8pt;" aria-label="bitcoin (1 item)">bitcoin</a>
+<a href="https://thedebuggers.com/tag/bot/" class="tag-cloud-link tag-link-25 tag-link-position-4" style="font-size: 8pt;" aria-label="bot (1 item)">bot</a>
+<a href="https://thedebuggers.com/tag/calculator/" class="tag-cloud-link tag-link-15 tag-link-position-5" style="font-size: 8pt;" aria-label="calculator (1 item)">calculator</a>
+<a href="https://thedebuggers.com/tag/chatbot/" class="tag-cloud-link tag-link-24 tag-link-position-6" style="font-size: 8pt;" aria-label="chatbot (1 item)">chatbot</a>
+<a href="https://thedebuggers.com/tag/cryptocurrency/" class="tag-cloud-link tag-link-46 tag-link-position-7" style="font-size: 8pt;" aria-label="cryptocurrency (1 item)">cryptocurrency</a>
+<a href="https://thedebuggers.com/tag/facebook/" class="tag-cloud-link tag-link-18 tag-link-position-8" style="font-size: 14.3pt;" aria-label="Facebook (2 items)">Facebook</a>
+<a href="https://thedebuggers.com/tag/facebook-api/" class="tag-cloud-link tag-link-48 tag-link-position-9" style="font-size: 8pt;" aria-label="facebook api (1 item)">facebook api</a>
+<a href="https://thedebuggers.com/tag/facebook-tab/" class="tag-cloud-link tag-link-47 tag-link-position-10" style="font-size: 8pt;" aria-label="facebook tab (1 item)">facebook tab</a>
+<a href="https://thedebuggers.com/tag/face-detection/" class="tag-cloud-link tag-link-35 tag-link-position-11" style="font-size: 8pt;" aria-label="face detection (1 item)">face detection</a>
+<a href="https://thedebuggers.com/tag/functionalprogramming/" class="tag-cloud-link tag-link-36 tag-link-position-12" style="font-size: 8pt;" aria-label="FunctionalProgramming (1 item)">FunctionalProgramming</a>
+<a href="https://thedebuggers.com/tag/gmap/" class="tag-cloud-link tag-link-40 tag-link-position-13" style="font-size: 8pt;" aria-label="gmap (1 item)">gmap</a>
+<a href="https://thedebuggers.com/tag/google-map-api/" class="tag-cloud-link tag-link-41 tag-link-position-14" style="font-size: 8pt;" aria-label="google map api (1 item)">google map api</a>
+<a href="https://thedebuggers.com/tag/instant-articles/" class="tag-cloud-link tag-link-19 tag-link-position-15" style="font-size: 8pt;" aria-label="Instant Articles (1 item)">Instant Articles</a>
+<a href="https://thedebuggers.com/tag/javascript-calculator/" class="tag-cloud-link tag-link-16 tag-link-position-16" style="font-size: 8pt;" aria-label="javascript calculator (1 item)">javascript calculator</a>
+<a href="https://thedebuggers.com/tag/mailchimp/" class="tag-cloud-link tag-link-21 tag-link-position-17" style="font-size: 14.3pt;" aria-label="MailChimp (2 items)">MailChimp</a>
+<a href="https://thedebuggers.com/tag/messenger-bot/" class="tag-cloud-link tag-link-26 tag-link-position-18" style="font-size: 8pt;" aria-label="messenger bot (1 item)">messenger bot</a>
+<a href="https://thedebuggers.com/tag/messenger-platform/" class="tag-cloud-link tag-link-23 tag-link-position-19" style="font-size: 8pt;" aria-label="Messenger Platform (1 item)">Messenger Platform</a>
+<a href="https://thedebuggers.com/tag/newsletter/" class="tag-cloud-link tag-link-22 tag-link-position-20" style="font-size: 14.3pt;" aria-label="Newsletter (2 items)">Newsletter</a>
+<a href="https://thedebuggers.com/tag/onesignal/" class="tag-cloud-link tag-link-44 tag-link-position-21" style="font-size: 8pt;" aria-label="onesignal (1 item)">onesignal</a>
+<a href="https://thedebuggers.com/tag/page-caching/" class="tag-cloud-link tag-link-29 tag-link-position-22" style="font-size: 8pt;" aria-label="page caching (1 item)">page caching</a>
+<a href="https://thedebuggers.com/tag/push-notification/" class="tag-cloud-link tag-link-43 tag-link-position-23" style="font-size: 8pt;" aria-label="push notification (1 item)">push notification</a>
+<a href="https://thedebuggers.com/tag/python/" class="tag-cloud-link tag-link-37 tag-link-position-24" style="font-size: 8pt;" aria-label="Python (1 item)">Python</a>
+<a href="https://thedebuggers.com/tag/version-control/" class="tag-cloud-link tag-link-33 tag-link-position-25" style="font-size: 8pt;" aria-label="Version Control (1 item)">Version Control</a>
+<a href="https://thedebuggers.com/tag/youtube/" class="tag-cloud-link tag-link-20 tag-link-position-26" style="font-size: 18.5pt;" aria-label="YouTube (3 items)">YouTube</a></div>
+</div><div id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+				<li class="cat-item cat-item-7"><a href="https://thedebuggers.com/category/javascript/ajax/" title="Find the latest articles from The Debuggers on AJAX. Read articles, tips, tricks, tutorial, useful codes, tools, scripts on AJAX.">AJAX</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="https://thedebuggers.com/category/database/" title="The Debuggers presents you articles on database, how to optimize database, performance tuning of database, useful tips, debugging and so on. Keep reading.">Database</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="https://thedebuggers.com/category/debugging-tools/">Debugging Tools</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="https://thedebuggers.com/category/javascript/" title="Find the latest articles from The Debuggers on JavaScript. Read articles, tips, tricks, tutorial, useful codes, tools, scripts on JavaScript.">JavaScript</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="https://thedebuggers.com/category/javascript/jquery/" title="Find the latest articles from The Debuggers on jQuery. Read articles, tips, tricks, tutorial, useful codes, tools, scripts on jQuery.">jQuery</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="https://thedebuggers.com/category/mailchimp/" title="Find the latest articles from The Debuggers on MalChimp newsletter, latest API integration, campaign, list, template and useful tips. ">MailChimp</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="https://thedebuggers.com/category/messenger-bot/" title="Find the latest articles from The Debuggers on Messenger chatbot for platforms like Facebook, Viber, etc. Connect to your customers with Deeper Interactions and grow your business.">Messenger Bot</a>
+</li>
+	<li class="cat-item cat-item-42"><a href="https://thedebuggers.com/category/milestones/">Milestones</a>
+</li>
+	<li class="cat-item cat-item-39"><a href="https://thedebuggers.com/category/database/mysql/">MySQL</a>
+</li>
+	<li class="cat-item cat-item-30"><a href="https://thedebuggers.com/category/optimization/">Optimization</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="https://thedebuggers.com/category/php/" title="Find the latest articles from The Debuggers on PHP.  Read articles, tips, tricks, tutorial, useful codes, tools, scripts on PHP.">PHP</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="https://thedebuggers.com/category/python/" title="Find the latest articles from The Debuggers on Python. Read articles, tips, tricks, tutorial, useful codes, tools, scripts on Python.">Python</a>
+</li>
+	<li class="cat-item cat-item-32"><a href="https://thedebuggers.com/category/revenue/">Revenue</a>
+</li>
+	<li class="cat-item cat-item-38"><a href="https://thedebuggers.com/category/social-marketting/">Social Marketting</a>
+</li>
+	<li class="cat-item cat-item-34"><a href="https://thedebuggers.com/category/version-control/">Version Control</a>
+</li>
+	<li class="cat-item cat-item-31"><a href="https://thedebuggers.com/category/wordpress/">WordPress</a>
+</li>
+		</ul>
+			</div>		</div>
+	</div><!--sidebars-->
+</aside>		<!-- End Sidebar -->
+	</div>
+</div>
+	<footer id="site-footer" role="contentinfo">
+			    	<div class="container">
+	    	    <div class="footer-widgets">
+		    		<div class="footer-widget">
+			    					        		<div id="nav_menu-2" class="widget widget_nav_menu"><div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-8" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8"><a href="https://thedebuggers.com/about-us/">About Us</a></li>
+<li id="menu-item-15" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15"><a href="https://thedebuggers.com/terms-and-conditions/">Terms and Conditions</a></li>
+<li id="menu-item-14" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-14"><a href="https://thedebuggers.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-9" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9"><a href="https://thedebuggers.com/contact-us/">Contact Us</a></li>
+</ul></div></div>											</div>
+					<div class="footer-widget">
+									        		<div id="search-2" class="widget widget_search"><h3 class="widget-title">Search</h3><form method="get" id="searchform" class="search-form" action="https://thedebuggers.com" _lpchecked="1">
+	<fieldset>
+		<input type="text" name="s" id="s" value="Search this site..." onblur="if (this.value == '') {this.value = 'Search this site...';}" onfocus="if (this.value == 'Search this site...') {this.value = '';}" >
+		<input type="submit" value="Search" />
+	</fieldset>
+</form>
+</div>											</div>
+					<div class="footer-widget last">
+									        		<div id="social-profile-icons-2" class="widget social-profile-icons"><h3 class="widget-title">Lets Get Social</h3><div class="social-profile-icons"><ul class=""><li class="social-facebook"><a title="Facebook" href="https://www.facebook.com/thedebuggers/" target="_blank"><i class="publishable-icon icon-facebook"></i></a></li><li class="social-twitter"><a title="Twitter" href="https://twitter.com/thedebuggers" target="_blank"><i class="publishable-icon icon-twitter"></i></a></li></ul></div></div>											</div>
+				</div>
+			</div>
+				<!--start copyrights-->
+		<div class="copyrights">
+			<div class="container">
+				<div class="row" id="copyright-note">
+					<span>
+						&copy; 2019 The Debuggers	<span class="footer-info-right">
+						 | WordPress Theme by <a rel="designer" href="https://superbthemes.com/">SuperbThemes.com</a>
+					</span>
+					<div class="top">
+
+						<a href="#top" class="toplink">Back to Top &uarr;</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end copyrights-->
+			</footer><!-- #site-footer -->
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/thedebuggers.com\/multiple-files-upload-using-html-php\/":350};
+	</script>
+				<script type='text/javascript' src='https://thedebuggers.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=7.0.0'></script>
+<script type='text/javascript'>
+( 'fetch' in window ) || document.write( '<script src="https://thedebuggers.com/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js?ver=3.0.0"></scr' + 'ipt>' );( document.contains ) || document.write( '<script src="https://thedebuggers.com/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js?ver=3.26.0-0"></scr' + 'ipt>' );( window.FormData && window.FormData.prototype.keys ) || document.write( '<script src="https://thedebuggers.com/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js?ver=3.0.12"></scr' + 'ipt>' );( Element.prototype.matches && Element.prototype.closest ) || document.write( '<script src="https://thedebuggers.com/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js?ver=2.0.2"></scr' + 'ipt>' );
+</script>
+<script type='text/javascript' src='https://thedebuggers.com/wp-includes/js/dist/dom-ready.min.js?ver=2.2.0'></script>
+<script type='text/javascript' src='https://thedebuggers.com/wp-content/plugins/jetpack/_inc/build/photon/photon.min.js?ver=20190901'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201943'></script>
+<script type='text/javascript' src='https://thedebuggers.com/wp-content/themes/publishable-mag/js/customscripts.js?ver=5.2.4'></script>
+<script type='text/javascript' src='https://thedebuggers.com/wp-includes/js/comment-reply.min.js?ver=5.2.4'></script>
+<script type='text/javascript' src='https://thedebuggers.com/wp-content/plugins/jetpack/_inc/build/lazy-images/js/lazy-images.min.js?ver=7.8'></script>
+<script type='text/javascript' src='https://thedebuggers.com/wp-content/plugins/enlighter/resources/mootools-core-yc.js?ver=3.10.0'></script>
+<script type='text/javascript' src='https://thedebuggers.com/wp-content/plugins/enlighter/resources/EnlighterJS.min.js?ver=3.10.0'></script>
+<script type='text/javascript' src='https://thedebuggers.com/wp-includes/js/wp-embed.min.js?ver=5.2.4'></script>
+<script async="async" type='text/javascript' src='https://thedebuggers.com/wp-content/plugins/akismet/_inc/form.js?ver=4.1.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://thedebuggers.com/wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=7.8'></script>
+<script type='text/javascript'>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+</script>
+<script type="text/javascript">/* <![CDATA[ */EnlighterJS_Config = {"selector":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"language":"generic","theme":"enlighter","indent":2,"hover":"hoverEnabled","showLinenumbers":true,"rawButton":true,"infoButton":true,"windowButton":true,"rawcodeDoubleclick":false,"grouping":true,"cryptex":{"enabled":false,"email":"mail@example.tld"}};!function(){var a=function(a){var b="Enlighter Error: ";console.error?console.error(b+a):console.log&&console.log(b+a)};return window.addEvent?"undefined"==typeof EnlighterJS?void a("Javascript Resources not loaded yet!"):"undefined"==typeof EnlighterJS_Config?void a("Configuration not loaded yet!"):void window.addEvent("domready",function(){EnlighterJS.Util.Init(EnlighterJS_Config.selector.block,EnlighterJS_Config.selector.inline,EnlighterJS_Config)}):void a("MooTools Framework not loaded yet!")}();;/* ]]> */</script>
+		<!--[if IE]>
+		<script type="text/javascript">
+			if ( 0 === window.location.hash.indexOf( '#comment-' ) ) {
+				// window.location.reload() doesn't respect the Hash in IE
+				window.location.hash = window.location.hash;
+			}
+		</script>
+		<![endif]-->
+		<script type="text/javascript">
+			(function () {
+				var comm_par_el = document.getElementById( 'comment_parent' ),
+					comm_par = ( comm_par_el && comm_par_el.value ) ? comm_par_el.value : '',
+					frame = document.getElementById( 'jetpack_remote_comment' ),
+					tellFrameNewParent;
+
+				tellFrameNewParent = function () {
+					if ( comm_par ) {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=121341696&postid=350&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=blank&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_US&jetpack_version=7.8&show_cookie_consent=10&has_cookie_consent=0&token_key=%3Bnormal%3B&sig=5fa6c6b0c6216caa6d441aebcf789c4420cd63ce#parent=https%3A%2F%2Fthedebuggers.com%2Fmultiple-files-upload-using-html-php%2F" + '&replytocom=' + parseInt( comm_par, 10 ).toString();
+					} else {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=121341696&postid=350&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=blank&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_US&jetpack_version=7.8&show_cookie_consent=10&has_cookie_consent=0&token_key=%3Bnormal%3B&sig=5fa6c6b0c6216caa6d441aebcf789c4420cd63ce#parent=https%3A%2F%2Fthedebuggers.com%2Fmultiple-files-upload-using-html-php%2F";
+					}
+				};
+
+				
+				if ( 'undefined' !== typeof addComment ) {
+					addComment._Jetpack_moveForm = addComment.moveForm;
+
+					addComment.moveForm = function ( commId, parentId, respondId, postId ) {
+						var returnValue = addComment._Jetpack_moveForm( commId, parentId, respondId, postId ),
+							cancelClick, cancel;
+
+						if ( false === returnValue ) {
+							cancel = document.getElementById( 'cancel-comment-reply-link' );
+							cancelClick = cancel.onclick;
+							cancel.onclick = function () {
+								var cancelReturn = cancelClick.call( this );
+								if ( false !== cancelReturn ) {
+									return cancelReturn;
+								}
+
+								if ( ! comm_par ) {
+									return cancelReturn;
+								}
+
+								comm_par = 0;
+
+								tellFrameNewParent();
+
+								return cancelReturn;
+							};
+						}
+
+						if ( comm_par == parentId ) {
+							return returnValue;
+						}
+
+						comm_par = parentId;
+
+						tellFrameNewParent();
+
+						return returnValue;
+					};
+				}
+
+				
+				// Do the post message bit after the dom has loaded.
+				document.addEventListener( 'DOMContentLoaded', function () {
+					var iframe_url = "https:\/\/jetpack.wordpress.com";
+					if ( window.postMessage ) {
+						if ( document.addEventListener ) {
+							window.addEventListener( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								jQuery( frame ).height( event.data );
+							});
+						} else if ( document.attachEvent ) {
+							window.attachEvent( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								jQuery( frame ).height( event.data );
+							});
+						}
+					}
+				})
+
+			})();
+		</script>
+
+		<script type='text/javascript' src='https://stats.wp.com/e-201943.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:7.8',blog:'121341696',post:'350',tz:'5.75',srv:'thedebuggers.com'} ]);
+	_stq.push([ 'clickTrackerInit', '121341696', '350' ]);
+</script>
+
+</body>
+</html>
+
+<!-- Dynamic page generated in 0.567 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2019-10-26 04:12:29 -->
+
+<!-- Compression = gzip -->

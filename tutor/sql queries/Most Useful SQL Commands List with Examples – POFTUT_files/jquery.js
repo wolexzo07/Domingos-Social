@@ -1,0 +1,1 @@
+typeof btjsonpcallback1572644203199 ==="function" && btjsonpcallback1572644203199 ("7%%7Cz");

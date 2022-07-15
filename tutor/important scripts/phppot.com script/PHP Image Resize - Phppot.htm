@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>PHP Image Resize - Phppot</title>
+<meta name="description" content="While displaying images for our websites, it is important to ensure that it could be set within our layout boundary. If not, we need to resi"><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://phppot.com/feed/">
+<link rel="apple-touch-icon" sizes="180x180" href="https://phppot.com/apple-touch-icon.png?v=031218">
+<link rel="icon" type="image/png" sizes="32x32" href="https://phppot.com/favicon-32x32.png?v=031218">
+<link rel="icon" type="image/png" sizes="16x16" href="https://phppot.com/favicon-16x16.png?v=031218">
+<link rel="manifest" href="https://phppot.com/site.webmanifest?v=031218">
+<link rel="mask-icon" href="https://phppot.com/safari-pinned-tab.svg?v=031218" color="#ffa500">
+<link rel="shortcut icon" href="https://phppot.com/favicon.ico?v=031218">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="PHP Image Resize - Phppot">
+<meta property="og:site_name" content="Phppot">
+<meta property="og:description" content="While displaying images for our websites, it is important to ensure that it could be set within our layout boundary. If not, we need to resi"><meta property="og:url" content="https://phppot.com/php/php-image-resize/">
+<meta property="twitter:title" content="PHP Image Resize - Phppot">
+<meta name="twitter:site" content="@phppot">
+<meta property="twitter:creator" content="@phppot">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://phppot.com/wp-content/uploads/2013/07/php_image_resize.png"><meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:description" content="While displaying images for our websites, it is important to ensure that it could be set within our layout boundary. If not, we need to resi"><meta property="twitter:image" content="https://phppot.com/wp-content/uploads/2013/07/php_image_resize.png"><script type="text/javascript" async="" src="PHP%20Image%20Resize%20-%20Phppot_files/ga.js"></script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40067115-1']);
+  _gaq.push(['_setDomainName', 'phppot.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://www.google-analytics.com/"><link rel="dns-prefetch" href="https://www.youtube.com/"><link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/"><link rel="dns-prefetch" href="https://static.doubleclick.net/"><link rel="dns-prefetch" href="https://www.google.com/"><link rel="dns-prefetch" href="https://i.ytimg.com/"><link rel="dns-prefetch" href="https://yt3.ggpht.com/"><link rel="dns-prefetch" href="https://fonts.gstatic.com/"><link rel="stylesheet" id="main-style-css" href="PHP%20Image%20Resize%20-%20Phppot_files/papers_228192.css" type="text/css" media="all">
+<link rel="canonical" href="https://phppot.com/php/php-image-resize/">
+</head>
+<body onload="prettyPrint()">
+ <div id="site_header">
+    <div class="content">
+        <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP"><img src="PHP%20Image%20Resize%20-%20Phppot_files/phppot-logo.png" id="site-logo" alt="Helping You Build Web Applications Using PHP"></a>
+        <div class="search-container">
+            <form method="get" action="/" class="search-form">
+                <input name="s" class="search" placeholder="Search Phppot" title="Search Phppot" autocomplete="off">
+                <button type="submit" title="Search Phppot" id="search-button"></button>
+            </form>
+        </div>
+        <div class="header-link-container">
+            <span id="mobile-search-icon" onclick="toggleSearch();">Mobile
+                Search</span>
+                <div id="expand-sub-menu-icon">
+                    <a class="testimonial-icon" href="https://phppot.com/testimonials/">Testimonials</a><a class="demo-download-icon" href="https://phppot.com/demo/">Demo</a>
+                </div>  <a id="header-contact-navigation" href="https://phppot.com/contact/">Contact Me</a>
+        </div>
+    </div>
+</div>    <div class="content">
+        <div id="tutorial-body">
+            <div id="tutorial">
+                <h1>PHP Image Resize</h1>
+                <div class="modified-on">Last modified on February 24th, 2017 by Vincy.</div>
+<p>While displaying images for our websites, it is important to ensure 
+that it could be set within our layout boundary. If not, we need to 
+resize these images, accordingly.&nbsp; In PHP, resizing an image, it 
+can be achieved by using a set of PHP functions to create a new image 
+from scratch, with the given dimensions, in which the original image is 
+expected to be resized.</p>
+<p>So, a combination of such functions is used to obtain the following 
+steps, which will result in successful image resize through PHP 
+programming.</p>
+<ul>
+<li>Get image <a title="PHP Resource Data Type" href="https://phppot.com/php/php-resource-data-type/">resource</a> id for the source image.</li>
+<li>Get resource id for target image layer.</li>
+<li>Resizing and reassembling.</li>
+<li>Save resized image into given target location.</li>
+</ul>
+<p><img class="alignnone size-full wp-image-1075" src="PHP%20Image%20Resize%20-%20Phppot_files/php_image_resize.png" alt="php_image_resize" width="197" height="236"></p>
+<h2>Get Image Resource Id for Source Image</h2>
+<p>For working on the given image file to be resized, we need to get the resource identifier for reference, as we have done while <a title="PHP File Handling" href="https://phppot.com/php/php-file-handling/">working with files</a> after getting file resource, or like, getting directory handle to perform <a title="PHP Directory Functions" href="https://phppot.com/php/php-directory-functions/">PHP directory functions</a>.</p>
+<p>In PHP, there are various functions to get an image file resource id.
+ These functions are used appropriately based on the type of image given
+ for resizing. For example, <em>imagecreatefromjpeg()</em>, <em>imagecreatefromgif()</em>, <em>imagecreatefrompng()</em>, used to get the resource identifier for JPEG, GIF and PNG images.</p>
+<p>In this step, first, we need to get image type by using PHP function <em>getimagesize()</em>,
+ which is used for getting an entire list of image properties, including
+ width, height and etc. After that, we can apply a suitable function to 
+get the resource id. All these PHP functions used to get image 
+properties and to get image file resource data expects name or path of 
+the image file. For example,</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">$file </span><span class="pun">=</span><span class="pln"> </span><span class="str">"christmas.jpg"</span><span class="pun">;</span><span class="pln"> 
+$source_properties </span><span class="pun">=</span><span class="pln"> getimagesize</span><span class="pun">(</span><span class="pln">$file</span><span class="pun">);</span><span class="pln">
+$image_type </span><span class="pun">=</span><span class="pln"> $source_properties</span><span class="pun">[</span><span class="lit">2</span><span class="pun">];</span><span class="pln"> 
+</span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> $image_type </span><span class="pun">==</span><span class="pln"> IMAGETYPE_JPEG </span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">   
+$image_resource_id </span><span class="pun">=</span><span class="pln"> imagecreatefromjpeg</span><span class="pun">(</span><span class="pln">$file</span><span class="pun">);</span><span class="pln">  
+</span><span class="pun">}</span><span class="pln">
+elseif</span><span class="pun">(</span><span class="pln"> $image_type </span><span class="pun">==</span><span class="pln"> IMAGETYPE_GIF </span><span class="pun">)</span><span class="pln">  </span><span class="pun">{</span><span class="pln">  
+$image_resource_id </span><span class="pun">=</span><span class="pln"> imagecreatefromgif</span><span class="pun">(</span><span class="pln">$file</span><span class="pun">);</span><span class="pln">  </span><span class="pun">}</span><span class="pln">
+elseif</span><span class="pun">(</span><span class="pln"> $image_type </span><span class="pun">==</span><span class="pln"> IMAGETYPE_PNG </span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+$image_resource_id </span><span class="pun">=</span><span class="pln"> imagecreatefrompng</span><span class="pun">(</span><span class="pln">$file</span><span class="pun">);</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+ </span></pre>
+<p>The <a title="PHP Constants" href="https://phppot.com/php/php-constants/">constants</a> used in conditional statements are predefined with appropriate integer value denotes image type. For example, <em>IMAGETYPE_JPEG</em> defined with value 2 which is used for indicating JPEG image.</p>
+<h2>Get Resource Id for Target Image Layer</h2>
+<p>After getting reference resource id from source image file, we need 
+to create a new image as a target layer. This image will be created with
+ the dimensions to what the original image is expected to be resized.</p>
+<p>PHP built-in function, named as, <em>imagecreatetruecolor() </em>is used for this purpose, by accepting required dimensions, that is, the width and height of the target image. For example,</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">$target_width </span><span class="pun">=</span><span class="lit">200</span><span class="pun">;</span><span class="pln">
+$target_height </span><span class="pun">=</span><span class="lit">200</span><span class="pun">;</span><span class="pln">
+$target_layer</span><span class="pun">=</span><span class="pln">imagecreatetruecolor</span><span class="pun">(</span><span class="pln">$target_width</span><span class="pun">,</span><span class="pln">$target_height</span><span class="pun">);</span></pre>
+<p><em>imagecreatetruecolor() </em>function will create empty image. 
+Added to that, it will return resource data identifier as a reference to
+ the newly created image with specified width and height parameter. This
+ reference will be used in subsequent steps, for mentioning target, on 
+top of which the resized image will be assembled.</p>
+<h2>Resizing and Reassembling</h2>
+<p>For this step, we should provide a list of details about the source 
+and the target image, that are used in image resize process.&nbsp; These
+ are,</p>
+<ul>
+<li>Source and target layer resource id</li>
+<li>Dimensions for denoting width and height of the original image and target image layer.</li>
+</ul>
+<p>Using these details provided, required portion of the original image 
+will be copied and reassembled onto the target layer. For that, PHP 
+function, named as, <em>imagecopyresampled() </em>for such resizing and reassembling process. For example,</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">imagecopyresampled</span><span class="pun">(</span><span class="pln">$target_layer</span><span class="pun">,</span><span class="pln">$image_resource_id</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="pln">$target_width</span><span class="pun">,</span><span class="pln">$target_height</span><span class="pun">,</span><span class="pln"> $source_properties</span><span class="pun">[</span><span class="lit">0</span><span class="pun">],</span><span class="pln">$source_properties</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]);</span></pre>
+<p>In this code sample, shown above, some of the arguments of this 
+function are passed with 0 value. These arguments, actually, represents 
+the x, y coordinates of target and source image, respectively.</p>
+<p>These arguments will contain values for cropping some portion of the 
+source image. Otherwise, there is no need to mention x,y points, meaning
+ that, the entire image will be cropped to preserve its appearance as it
+ is except its dimensions.</p>
+<p><strong>Note: </strong>There is an equivalent PHP function <em>imagecopyresized() </em>as like as <em>imagecopyresampled()</em>, whereas, the <em>imagecopyresampled()</em> function creates resized the image with more quality, comparatively.</p>
+<h2>Save Resized Image into Target Location</h2>
+<p>Finally, it’s time for saving resized image to the target location. For that, we need to specify the following details.</p>
+<ul>
+<li>Resource id of the resized image layer.</li>
+<li>Target image name or location.</li>
+</ul>
+<p>Now, we can use the code sample shown below to save resized image layer.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">imagejpeg</span><span class="pun">(</span><span class="pln">$target_layer</span><span class="pun">,</span><span class="str">"christmas_thump.jpg"</span><span class="pun">);</span></pre>
+<p>Code sample shown in each step is applicable only for JPEG image. We 
+can replicate the same for other image types by using appropriate PHP 
+functions.</p>
+<h2>Example: PHP Image Resize</h2>
+<p>This example shows how to resize any type of image file uploaded from
+ an HTML form. So, the PHP script is shown below handles the uploaded 
+image file to be resized.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php
+</span><span class="kwd">if</span><span class="pun">(</span><span class="pln">isset</span><span class="pun">(</span><span class="pln">$_POST</span><span class="pun">[</span><span class="str">"submit"</span><span class="pun">]))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+</span><span class="kwd">if</span><span class="pun">(</span><span class="pln">is_array</span><span class="pun">(</span><span class="pln">$_FILES</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+$file </span><span class="pun">=</span><span class="pln"> $_FILES</span><span class="pun">[</span><span class="str">'myImage'</span><span class="pun">][</span><span class="str">'tmp_name'</span><span class="pun">];</span><span class="pln"> 
+$source_properties </span><span class="pun">=</span><span class="pln"> getimagesize</span><span class="pun">(</span><span class="pln">$file</span><span class="pun">);</span><span class="pln">
+$image_type </span><span class="pun">=</span><span class="pln"> $source_properties</span><span class="pun">[</span><span class="lit">2</span><span class="pun">];</span><span class="pln"> 
+</span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> $image_type </span><span class="pun">==</span><span class="pln"> IMAGETYPE_JPEG </span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">   
+$image_resource_id </span><span class="pun">=</span><span class="pln"> imagecreatefromjpeg</span><span class="pun">(</span><span class="pln">$file</span><span class="pun">);</span><span class="pln">  
+$target_layer </span><span class="pun">=</span><span class="pln"> fn_resize</span><span class="pun">(</span><span class="pln">$image_resource_id</span><span class="pun">,</span><span class="pln">$source_properties</span><span class="pun">[</span><span class="lit">0</span><span class="pun">],</span><span class="pln">$source_properties</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]);</span><span class="pln">
+imagejpeg</span><span class="pun">(</span><span class="pln">$target_layer</span><span class="pun">,</span><span class="pln">$_FILES</span><span class="pun">[</span><span class="str">'myImage'</span><span class="pun">][</span><span class="str">'name'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> </span><span class="str">"_thump.jpg"</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+elseif</span><span class="pun">(</span><span class="pln"> $image_type </span><span class="pun">==</span><span class="pln"> IMAGETYPE_GIF </span><span class="pun">)</span><span class="pln">  </span><span class="pun">{</span><span class="pln">  
+$image_resource_id </span><span class="pun">=</span><span class="pln"> imagecreatefromgif</span><span class="pun">(</span><span class="pln">$file</span><span class="pun">);</span><span class="pln">
+$target_layer </span><span class="pun">=</span><span class="pln"> fn_resize</span><span class="pun">(</span><span class="pln">$image_resource_id</span><span class="pun">,</span><span class="pln">$source_properties</span><span class="pun">[</span><span class="lit">0</span><span class="pun">],</span><span class="pln">$source_properties</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]);</span><span class="pln">
+imagegif</span><span class="pun">(</span><span class="pln">$target_layer</span><span class="pun">,</span><span class="pln">$_FILES</span><span class="pun">[</span><span class="str">'myImage'</span><span class="pun">][</span><span class="str">'name'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> </span><span class="str">"_thump.gif"</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+elseif</span><span class="pun">(</span><span class="pln"> $image_type </span><span class="pun">==</span><span class="pln"> IMAGETYPE_PNG </span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+$image_resource_id </span><span class="pun">=</span><span class="pln"> imagecreatefrompng</span><span class="pun">(</span><span class="pln">$file</span><span class="pun">);</span><span class="pln"> 
+$target_layer </span><span class="pun">=</span><span class="pln"> fn_resize</span><span class="pun">(</span><span class="pln">$image_resource_id</span><span class="pun">,</span><span class="pln">$source_properties</span><span class="pun">[</span><span class="lit">0</span><span class="pun">],</span><span class="pln">$source_properties</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]);</span><span class="pln">
+imagepng</span><span class="pun">(</span><span class="pln">$target_layer</span><span class="pun">,</span><span class="pln">$_FILES</span><span class="pun">[</span><span class="str">'myImage'</span><span class="pun">][</span><span class="str">'name'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> </span><span class="str">"_thump.png"</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">function</span><span class="pln"> fn_resize</span><span class="pun">(</span><span class="pln">$image_resource_id</span><span class="pun">,</span><span class="pln">$width</span><span class="pun">,</span><span class="pln">$height</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+$target_width </span><span class="pun">=</span><span class="lit">200</span><span class="pun">;</span><span class="pln">
+$target_height </span><span class="pun">=</span><span class="lit">200</span><span class="pun">;</span><span class="pln">
+$target_layer</span><span class="pun">=</span><span class="pln">imagecreatetruecolor</span><span class="pun">(</span><span class="pln">$target_width</span><span class="pun">,</span><span class="pln">$target_height</span><span class="pun">);</span><span class="pln">
+imagecopyresampled</span><span class="pun">(</span><span class="pln">$target_layer</span><span class="pun">,</span><span class="pln">$image_resource_id</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="pln">$target_width</span><span class="pun">,</span><span class="pln">$target_height</span><span class="pun">,</span><span class="pln"> $width</span><span class="pun">,</span><span class="pln">$height</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">return</span><span class="pln"> $target_layer</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">?&gt;</span></pre>
+<p>And the HTML code which includes the form container to upload image file is,</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"frmImageResize"</span><span class="pln"> </span><span class="atn">action</span><span class="pun">=</span><span class="atv">""</span><span class="pln"> </span><span class="atn">method</span><span class="pun">=</span><span class="atv">"post"</span><span class="pln"> </span><span class="atn">enctype</span><span class="pun">=</span><span class="atv">"multipart/form-data"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"file"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"myImage"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln"> 
+</span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"Submit"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;/form&gt;</span></pre>
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			Comments to “PHP Image Resize”		</h2>
+
+		<ul class="comment-list">
+					<li class="comment even thread-even depth-1" id="comment-323">
+				<div id="div-comment-323" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">pavan</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-image-resize/#comment-323">
+			August 6, 2013 at 12:54 pm</a>		</div>
+
+		<p>Excellent tutorial… Nicely explained</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-image-resize/?replytocom=323#respond" onclick='return addComment.moveForm( "div-comment-323", "323", "respond", "1061" )' aria-label="Reply to pavan">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-vincy bypostauthor odd alt thread-odd thread-alt depth-1 parent" id="comment-916">
+				<div id="div-comment-916" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-image-resize/#comment-916">
+			December 11, 2013 at 10:06 pm</a>		</div>
+
+		<p>Thank you.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-image-resize/?replytocom=916#respond" onclick='return addComment.moveForm( "div-comment-916", "916", "respond", "1061" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-2 parent" id="comment-20513">
+				<div id="div-comment-20513" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Devesh Mishra</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-image-resize/#comment-20513">
+			May 31, 2019 at 6:14 am</a>		</div>
+
+		<p>Thanks your are writing very nice</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-image-resize/?replytocom=20513#respond" onclick='return addComment.moveForm( "div-comment-20513", "20513", "respond", "1061" )' aria-label="Reply to Devesh Mishra">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor odd alt depth-3" id="comment-20954">
+				<div id="div-comment-20954" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-image-resize/#comment-20954">
+			June 28, 2019 at 11:28 am</a>		</div>
+
+		<p>Welcome Devesh.</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-20533">
+				<div id="div-comment-20533" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Mukesh</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-image-resize/#comment-20533">
+			June 1, 2019 at 12:04 pm</a>		</div>
+
+		<p>Transparent PNG Images not resized using this code. Can you help us on this.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-image-resize/?replytocom=20533#respond" onclick='return addComment.moveForm( "div-comment-20533", "20533", "respond", "1061" )' aria-label="Reply to Mukesh">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor odd alt depth-2" id="comment-20953">
+				<div id="div-comment-20953" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-image-resize/#comment-20953">
+			June 28, 2019 at 11:27 am</a>		</div>
+
+		<p>Hi Mukesh,</p>
+<p>I will check the script and update it.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-image-resize/?replytocom=20953#respond" onclick='return addComment.moveForm( "div-comment-20953", "20953", "respond", "1061" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-20919">
+				<div id="div-comment-20919" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Frin</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-image-resize/#comment-20919">
+			June 26, 2019 at 6:58 pm</a>		</div>
+
+		<p>Excellent script.<br>
+Would be nice if it would be possible to maintain aspect ratio while resizing..</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-image-resize/?replytocom=20919#respond" onclick='return addComment.moveForm( "div-comment-20919", "20919", "respond", "1061" )' aria-label="Reply to Frin">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor odd alt depth-2" id="comment-20948">
+				<div id="div-comment-20948" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-image-resize/#comment-20948">
+			June 28, 2019 at 11:21 am</a>		</div>
+
+		<p>Thank you Frin. Sure, I will update the script with the aspect ratio.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-image-resize/?replytocom=20948#respond" onclick='return addComment.moveForm( "div-comment-20948", "20948", "respond", "1061" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-30820">
+				<div id="div-comment-30820" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Midhun</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-image-resize/#comment-30820">
+			September 27, 2019 at 11:04 am</a>		</div>
+
+		<p>Thanks for all scripts including this</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-image-resize/?replytocom=30820#respond" onclick='return addComment.moveForm( "div-comment-30820", "30820", "respond", "1061" )' aria-label="Reply to Midhun">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor odd alt depth-2" id="comment-30843">
+				<div id="div-comment-30843" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-image-resize/#comment-30843">
+			September 27, 2019 at 1:43 pm</a>		</div>
+
+		<p>Welcome Midhun.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-image-resize/?replytocom=30843#respond" onclick='return addComment.moveForm( "div-comment-30843", "30843", "respond", "1061" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		</ul>
+
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://phppot.com/php/php-image-resize/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://phppot.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Leave this empty <span class="required">*</span></label> <input id="url" name="url" type="text" size="30" maxlength="245"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="1061" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>			</form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+    <div class="related-articles">
+                    <h2>Popular Articles</h2>
+                    <ul class="related-articles-list">
+                        <li><a href="https://phppot.com/php/how-to-generate-initial-avatar-image-from-username-using-php-dynamically/">How to Generate Initial Avatar Image from Username using PHP Dynamically</a></li>
+                        <li><a href="https://phppot.com/php/php-watermark/">PHP Watermark</a></li>
+                        <li><a href="https://phppot.com/php/upload-and-crop-image-using-php-and-jquery/">Upload and Crop Image using PHP and jQuery</a></li>
+                    </ul>
+                </div>
+                <p>
+                    <a href="#top" class="top">↑ Back to Top</a>
+                </p>
+            </div>
+            <div id="tutorial-menu">
+	<ul class="main-menu"><li class="cat-item cat-item-72"><a href="https://phppot.com/category/php/">PHP</a><ul class="sub-menu"><li class="cat-item cat-item-59 "><a href="https://phppot.com/category/php/php-introduction/">PHP Introduction</a></li><li class="cat-item cat-item-26 "><a href="https://phppot.com/category/php/php-basics/">PHP Basics</a></li><li class="cat-item cat-item-99 "><a href="https://phppot.com/category/php/product/">Product</a></li><li class="cat-item cat-item-79 "><a href="https://phppot.com/category/php/php-shopping-cart/">PHP Shopping Cart</a></li><li class="cat-item cat-item-102 "><a href="https://phppot.com/category/php/payment-gateway-integration/">Payment Gateway Integration</a></li><li class="cat-item cat-item-94 "><a href="https://phppot.com/category/php/php-contact-form/">PHP Contact Form</a></li><li class="cat-item cat-item-103 "><a href="https://phppot.com/category/php/comments-system/">Comments System</a></li><li class="cat-item cat-item-57 "><a href="https://phppot.com/category/php/types-variables-operators/">Types, Variables &amp; Operators</a></li><li class="cat-item cat-item-58 "><a href="https://phppot.com/category/php/php-strings/">PHP Strings</a></li><li class="cat-item cat-item-22 "><a href="https://phppot.com/category/php/php-arrays/">PHP Arrays</a></li><li class="cat-item cat-item-61 "><a href="https://phppot.com/category/php/php-functions/">PHP Functions</a></li><li class="cat-item cat-item-35 "><a href="https://phppot.com/category/php/php-oops/">PHP OOPS</a></li><li class="cat-item cat-item-31 "><a href="https://phppot.com/category/php/php-forms/">PHP Forms</a></li><li class="cat-item cat-item-78 "><a href="https://phppot.com/category/php/advanced/">Advanced</a></li><li class="cat-item cat-item-90 "><a href="https://phppot.com/category/php/php-ajax/">PHP AJAX</a></li><li class="cat-item cat-item-89 "><a href="https://phppot.com/category/php/restful-api/">RESTful API</a></li><li class="cat-item cat-item-15 "><a href="https://phppot.com/category/php/php-databases/">PHP Databases</a></li><li class="cat-item cat-item-23 "><a href="https://phppot.com/category/php/php-sessions-and-cookies/">PHP Sessions and Cookies</a></li><li class="cat-item cat-item-51 "><a href="https://phppot.com/category/php/error-exception-handling/">Error and Exception Handling</a></li><li class="cat-item cat-item-100 "><a href="https://phppot.com/category/php/file-upload/">File Upload</a></li><li class="cat-item cat-item-101 "><a href="https://phppot.com/category/php/file-import-export/">File Import Export</a></li><li class="cat-item cat-item-36 "><a href="https://phppot.com/category/php/files-and-directories/">Files and Directories</a></li><li class="cat-item cat-item-45 "><a href="https://phppot.com/category/php/php-date-time/">PHP Date Time</a></li><li class="cat-item cat-item-12 taxonomy-active"><a href="https://phppot.com/category/php/php-graphics/">PHP Graphics</a><ul class="post-list"><li><a class="post-menu" href="https://phppot.com/php/get-image-properties-using-php/">Get Image Properties using PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/how-to-crop-image-using-jquery-and-php/">How to Crop Image using jQuery and PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/how-to-generate-initial-avatar-image-from-username-using-php-dynamically/">How to Generate Initial Avatar Image from Username using PHP Dynamically</a></li><li><a class="post-menu" href="https://phppot.com/php/upload-and-crop-image-using-php-and-jquery/">Upload and Crop Image using PHP and jQuery</a></li><li class="current-post">PHP Image Resize</li><li><a class="post-menu" href="https://phppot.com/php/php-watermark/">PHP Watermark</a></li></ul></li><li class="cat-item cat-item-24 "><a href="https://phppot.com/category/php/php-xml/">PHP XML</a></li><li class="cat-item cat-item-62 "><a href="https://phppot.com/category/php/php-code-samples/">PHP Code Samples</a></li><li class="cat-item cat-item-96 "><a href="https://phppot.com/category/php/library/">Library</a></li><li class="cat-item cat-item-88 "><a href="https://phppot.com/category/php/php-freelancer/">PHP Freelancer</a></li></ul></li><li class="cat-item cat-item-73"><a href="https://phppot.com/category/jquery/">jQuery</a></li><li class="cat-item cat-item-74"><a href="https://phppot.com/category/wordpress/">WordPress</a></li><li class="cat-item cat-item-75"><a href="https://phppot.com/category/mysql/">MySQL</a></li><li class="cat-item cat-item-76"><a href="https://phppot.com/category/css/">CSS</a></li></ul></div>
+
+            <div id="social-icon">
+                <div class="heading">Share this Article</div>
+                <ul>
+                    <li><a class="social-link facebook-social-link" href="https://www.facebook.com/sharer/sharer.php?u=https://phppot.com/php/php-image-resize/" title="Share on Facebook"><span class="facebook-social-img">Share</span></a></li>
+                    <li><a class="social-link twitter-social-link" href="https://twitter.com/intent/tweet?original_referer=https://phppot.com&amp;source=tweetbutton&amp;text=PHP%20Image%20Resize;url=https://phppot.com/php/php-image-resize/&amp;via=phppot" title="Share on Twitter"><span class="twitter-social-img">Tweet</span></a></li>
+                    <li><a class="social-link linkedin-social-link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://phppot.com/php/php-image-resize/&amp;media=PHP%20Image%20Resize" title="Share on Linkedin"><span class="linkedin-social-img">Share</span></a></li>
+                </ul>
+            </div>
+        </div>
+<div id="sidebar">
+    <div id="aboutcntnt">
+        <div id="photo">
+            <img src="PHP%20Image%20Resize%20-%20Phppot_files/Vincy.jpg" alt="Vincy" title="Vincy" width="100" height="100">
+        </div>
+        <div id="aboutdesc">
+            <p>
+                I’m Vincy, a web developer. If you want to start a
+                project and do a quick launch, <a href="https://phppot.com/contact/">contact
+                    me</a>.
+            </p>
+            <p>I am available for freelance work.</p>
+        </div>
+        <div id="contactMe">
+            <a href="mailto:vincy@phppot.com" title="Contact Me">vincy@phppot.com</a>
+        </div>
+    </div>
+
+                          <div class="sidebar-featured-product">
+        <div class="heading">Featured Product</div>
+        <a href="https://phppot.com/shop/contact-form-iris/"><img src="PHP%20Image%20Resize%20-%20Phppot_files/simple-secure-spam-free-contact-form-in-php-iris-150x150.png">
+        </a>
+        <div class="sidebar-featured-url">
+            <a href="https://phppot.com/shop/contact-form-iris/">Contact
+                Form - Iris</a>
+        </div>
+    </div>
+            <div id="recommended">
+        <div class="heading">Trending Now</div>
+        <ul>
+            <li><a href="https://phppot.com/shop/contact-form-iris/">Contact
+                    Form – Iris</a></li>
+            <li><a href="https://phppot.com/php/simple-php-shopping-cart/">Simple
+                    PHP Shopping Cart</a></li>
+            <li><a href="https://phppot.com/php/how-to-become-a-full-time-freelance-php-developer-and-consultant/">How
+                    to Become a Full Time Freelance PHP Developer and
+                    Consultant</a></li>
+            <li><a href="https://phppot.com/jquery/jquery-ajax-inline-crud-with-php/">jQuery
+                    AJAX Inline CRUD with PHP</a></li>
+            <li><a href="https://phppot.com/php/simple-secure-spam-free-contact-form-in-php-iris/">Simple
+                    Secure Spam-Free Contact Form in PHP – Iris</a></li>
+        </ul>
+    </div>
+    <div class="testimonials-sbar">
+    <div class="heading">Testimonials</div>
+    <p class="testimonial-content"><span class="left-quotes">“</span>She
+ replied promptly. She asked all the right questions and provided a very
+ quick turnaround time, along with support to get any issues ironed out 
+...<span class="right-quotes">”</span></p>
+    <p class="testimonials-sbar-by">Salim, VIN Analytics, USA</p>
+    <div class="view-more-testimonial">
+        <a href="https://phppot.com/testimonials/"><span class="view-testimonials">View More Testimonials</span></a>
+    </div>
+</div></div></div>
+<div id="footer-contact-note">
+    <div class="content">
+        <h2>Looking for an expert PHP freelancer?</h2>
+        <p class="footer-contact-banner-title">Do you want to develop a
+            modern, lightweight, responsive web application and launch
+            quickly?</p>
+        <p>
+            <a id="footer-contact-navigation" href="https://phppot.com/contact/">Contact
+                Me</a>
+        </p>
+    </div>
+</div>
+<div id="footer">
+    <div class="content">
+        <div class="subscribe-section">
+            <div class="subscribe-email">
+                <div>
+    <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=phppot',
+             'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <p>
+        </p><div><label for="feedb-email-inp">Email:</label></div>
+            <input id="feedb-email-inp" placeholder="Enter your email here" type="text" class="feedb-email" name="email"><input type="hidden" value="phppot" name="uri"><input type="hidden" name="loc" value="en_US"><input type="submit" value="Subscribe" class="subscribe">
+        <p></p>
+    </form>
+</div></div>
+
+            <div class="follow">
+                <a class="facebook" href="https://www.facebook.com/PPbay" rel="nofollow noopener" title="Phppot Facebook Page" target="_blank">Facebook</a><a class="twitter" href="https://www.linkedin.com/in/vincya/" rel="nofollow noopener" title="Phppot LinkedIn Page" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="shop-footer-common">
+            <div class="shop-doc-nav">
+                <div class="shop-doc-nav-links">
+                    <div class="heading">Digital Goods Shop</div>
+                    <a href="https://phppot.com/faq/">FAQ</a> <a href="https://phppot.com/support-policy/">Support
+                        Policy</a> <a href="https://phppot.com/refund-policy/">Refund Policy</a>
+                    <a href="https://phppot.com/licenses/">Licenses</a> <a href="https://phppot.com/user-license/">User License</a> <a href="https://phppot.com/developer-license/">Developer License</a>
+                </div>
+
+                <div class="policy-doc-nav">
+                    <a href="https://phppot.com/terms-of-use/">Terms of
+                        Service</a><a href="https://phppot.com/privacy-policy/">Privacy
+                        Policy</a><a href="https://phppot.com/privacy-policy/#cookie-policy">Cookie
+                        Policy</a> <span class="copyright">© 2019 <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP">Phppot</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('click', function(e){
+    	var element = document.getElementsByClassName("search-container")[0];
+        if (element && !element.contains(e.target) && e.target.id != "mobile-search-icon" && window.innerWidth <= "550") {
+            element.style.display = "none";
+        }
+    });
+    function toggleSearch() {
+        var element = document.getElementsByClassName("search-container")[0];
+        if(element.style.display == 'inline-block') {
+            	element.style.display = "none";
+        } else {
+        	   element.style.display = "inline-block";
+        }
+    }
+</script><script async="" src="PHP%20Image%20Resize%20-%20Phppot_files/prettify.js"></script>
+
+</body></html>

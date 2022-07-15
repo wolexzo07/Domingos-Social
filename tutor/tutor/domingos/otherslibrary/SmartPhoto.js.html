@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>SmartPhoto.js</title>
+  <meta name="description" content="The most easy to use responsive image viewer especially for mobile devices">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link href="SmartPhoto.js_files/css.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="SmartPhoto.js_files/style.css">
+  <link rel="stylesheet" href="SmartPhoto.js_files/font-awesome.css">
+  <link rel="stylesheet" href="SmartPhoto.js_files/smartphoto.css">
+  <link rel="stylesheet" href="SmartPhoto.js_files/default.css">
+</head>
+
+<body style="">
+  <section class="page-header">
+    <header class="page-header-top">
+      <div class="container">
+        <span class="page-header-brand">SmartPhoto.js<small>v1.1.0</small></span>
+        <ul class="page-header-navi">
+          <li><a href="https://appleple.github.io/SmartPhoto/">Home</a></li>
+          <li><a href="https://appleple.github.io/SmartPhoto/demo.html">Demos</a></li>
+          <li><a href="https://appleple.github.io/SmartPhoto/doc.html">Docs</a></li>
+          <li><a href="https://www.appleple.com/blog/javascript/smartphoto-js.html">Japanese</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <h1 class="project-name">SmartPhoto.js</h1>
+          <h2 class="project-tagline">The most easy to use responsive image viewer especially for mobile devices</h2>
+          <a href="https://github.com/appleple/SmartPhoto" class="btn">View on GitHub</a>
+        </div>
+        <div class="col-6">
+          <img src="SmartPhoto.js_files/logo_smartphoto.svg" class="logo" width="200">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container main-container">
+
+    <h2 id="demo">Demo</h2>
+    <div class="demo-list">
+      <a href="https://appleple.github.io/SmartPhoto/assets/images/large-kuma.jpg" class="js-smartPhoto" data-caption="bear" data-id="bear" data-group="animal" data-index="0">
+				<img src="SmartPhoto.js_files/kuma.jpg">
+			</a>
+      <a href="https://appleple.github.io/SmartPhoto/assets/images/large-rakuda.jpg" class="js-smartPhoto" data-caption="camel" data-id="camel" data-group="animal" data-index="1">
+				<img src="SmartPhoto.js_files/rakuda.jpg">
+			</a>
+      <a href="https://appleple.github.io/SmartPhoto/assets/images/large-lion.jpg" class="js-smartPhoto" data-caption="lion" data-id="lion" data-group="animal" data-index="2">
+				<img src="SmartPhoto.js_files/lion.jpg">
+			</a>
+      <a href="https://appleple.github.io/SmartPhoto/assets/images/large-sai.jpg" class="js-smartPhoto" data-caption="rhinoceros" data-id="rhinoceros" data-group="animal" data-index="3">
+				<img src="SmartPhoto.js_files/sai.jpg">
+			</a>
+      <a href="https://appleple.github.io/SmartPhoto/assets/images/large-kaba.jpg" class="js-smartPhoto" data-caption="hippopotamus" data-id="hippopotamus" data-group="animal" data-index="4">
+				<img src="SmartPhoto.js_files/kaba.jpg">
+			</a>
+      <a href="https://appleple.github.io/SmartPhoto/assets/images/large-koara.jpg" class="js-smartPhoto" data-caption="koala" data-id="koala" data-group="animal" data-index="5">
+				<img src="SmartPhoto.js_files/koara.jpg">
+			</a>
+    </div>
+
+    <h2 id="feature">Feature</h2>
+
+    <div class="row">
+      <div class="col-4">
+        <div class="feature-box">
+          <h3 class="feature-box-title"><i class="fa fa-hand-pointer-o"></i>Intuitive</h3>
+          <p>gestures such as pinch-in/pinch-out/drag/swipe</p>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="feature-box">
+          <h3 class="feature-box-title"><i class="fa fa-gear"></i>Accelerometer</h3>
+          <p>Use Accelerometer to move images</p>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="feature-box">
+          <h3 class="feature-box-title"><i class="fa fa-universal-access"></i>Accessible</h3>
+          <p>Accessible from keyboard and screen-reader</p>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="feature-box">
+          <h3 class="feature-box-title"><i class="fa fa-hashtag"></i>Link directly</h3>
+          <p>Show pictures via URL hash When the page is loaded</p>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="feature-box">
+          <h3 class="feature-box-title"><i class="fa fa-object-group"></i>Photo Group</h3>
+          <p>make photo groups</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 id="Installation">Installation</h2>
+
+    <p>via npm</p>
+    <div class="language-shell highlighter-rouge">
+      <pre class="highlight"><code class="hljs sql">npm <span class="hljs-keyword">install</span> smartphoto <span class="hljs-comment">--save</span>
+</code></pre>
+    </div>
+
+    <p>or yarn</p>
+
+    <div class="language-shell highlighter-rouge">
+      <pre class="highlight"><code class="hljs cs">yarn <span class="hljs-keyword">add</span> smartphoto
+</code></pre>
+    </div>
+
+
+    <h2 id="cdn">CDN</h2>
+    <p>Link directly to SmartPhoto files on <a href="https://unpkg.com/">unpkg</a>.</p>
+    <div class="language-html highlighter-rouge">
+      <pre class="highlight"><code class="hljs xml"><span class="nt"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> </span></span><span class="na"><span class="hljs-tag"><span class="hljs-attr">src</span>=</span></span><span class="s"><span class="hljs-tag"><span class="hljs-string">"https://unpkg.com/smartphoto@1.1.0/js/smartphoto.min.js"</span></span></span><span class="nt"><span class="hljs-tag">&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+</code></pre>
+    </div>
+    <div class="language-html highlighter-rouge">
+      <pre class="highlight"><code class="hljs perl"><span class="nt">&lt;<span class="hljs-keyword">link</span> </span><span class="na">rel=</span><span class="s"><span class="hljs-string">"stylesheet"</span></span> <span class="na">href=</span><span class="s"><span class="hljs-string">"https://unpkg.com/smartphoto@1.1.0/css/smartphoto.min.css"</span></span><span class="nt">&gt;</span>
+</code></pre>
+    </div>
+
+    <h2 id="usage">Usage</h2>
+
+    <p>Include the SmartPhoto .js/.css file in your site.</p>
+    <div class="language-html highlighter-rouge">
+      <pre class="highlight"><code class="hljs xml"><span class="nt"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> </span></span><span class="na"><span class="hljs-tag"><span class="hljs-attr">src</span>=</span></span><span class="s"><span class="hljs-tag"><span class="hljs-string">"/path/to/js/smartphoto.min.js"</span></span></span><span class="nt"><span class="hljs-tag">&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+</code></pre>
+    </div>
+    <div class="language-html highlighter-rouge">
+      <pre class="highlight"><code class="hljs xml"><span class="nt"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> </span></span><span class="na"><span class="hljs-tag"><span class="hljs-attr">rel</span>=</span></span><span class="s"><span class="hljs-tag"><span class="hljs-string">"stylesheet"</span></span></span><span class="hljs-tag"> </span><span class="na"><span class="hljs-tag"><span class="hljs-attr">href</span>=</span></span><span class="s"><span class="hljs-tag"><span class="hljs-string">"/path/to/css/smartphoto.min.css"</span></span></span><span class="nt"><span class="hljs-tag">&gt;</span></span>
+</code></pre>
+    </div>
+    <p>HTML</p>
+    <pre><code class="html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"./assets/images/large-kuma.jpg"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"js-smartPhoto"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"bear"</span> <span class="hljs-attr">data-id</span>=<span class="hljs-string">"bear"</span> <span class="hljs-attr">data-group</span>=<span class="hljs-string">"animal"</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./assets/images/kuma.jpg"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"./assets/images/large-rakuda.jpg"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"js-smartPhoto"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"camel"</span> <span class="hljs-attr">data-id</span>=<span class="hljs-string">"camel"</span> <span class="hljs-attr">data-group</span>=<span class="hljs-string">"animal"</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./assets/images/rakuda.jpg"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"./assets/images/large-lion.jpg"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"js-smartPhoto"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"lion"</span> <span class="hljs-attr">data-id</span>=<span class="hljs-string">"lion"</span> <span class="hljs-attr">data-group</span>=<span class="hljs-string">"animal"</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./assets/images/lion.jpg"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
+
+
+    <p>smartphoto.js</p>
+
+    <div class="language-js highlighter-rouge">
+      <pre class="highlight"><code class="hljs javascript"><span class="nb"><span class="hljs-built_in">window</span></span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1"><span class="hljs-string">'DOMContentLoaded'</span></span><span class="p">,</span><span class="kd"><span class="hljs-function"><span class="hljs-keyword">function</span></span></span><span class="p"><span class="hljs-function">(<span class="hljs-params"></span>)</span>{</span>
+    <span class="k"><span class="hljs-keyword">new</span></span> <span class="nx">SmartPhoto</span><span class="p">(</span><span class="s2"><span class="hljs-string">".js-smartPhoto"</span></span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+    </div>
+
+    <p>jquery-smartphoto.js</p>
+    <div class="language-js highlighter-rouge">
+      <pre class="highlight"><code class="hljs javascript"><span class="nx">$</span><span class="p">(</span><span class="kd"><span class="hljs-function"><span class="hljs-keyword">function</span></span></span><span class="p"><span class="hljs-function">(<span class="hljs-params"></span>)</span>{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2"><span class="hljs-string">".js-smartPhoto"</span></span><span class="p">).</span><span class="nx">SmartPhoto</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre>
+    </div>
+
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span class="site-footer-owner"><a href="https://github.com/appleple/SmartPhoto">SmartPhoto</a> is maintained by <a href="https://www.appleple.com/">appleple</a>.</span>
+
+      <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com/">GitHub Pages</a>.</span>
+    </div>
+  </footer>
+  <script src="SmartPhoto.js_files/highlight.js"></script>
+  <script src="SmartPhoto.js_files/doc.js"></script>
+  <script src="SmartPhoto.js_files/smartphoto.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new SmartPhoto(".js-smartPhoto");
+      new SmartPhoto(".js-smartPhoto-hide", {
+        arrows: false,
+        nav: false
+      });
+      new SmartPhoto(".js-smartPhoto-fit", {
+        resizeStyle: 'fit'
+      });
+    });
+
+  </script>
+
+
+
+<div data-id="K2AKDDL2D9F4K"><div class="smartphoto" aria-hidden="true" role="dialog">
+	<div class="smartphoto-body">
+		<div class="smartphoto-inner">
+			   <div class="smartphoto-header">
+					<span class="smartphoto-count">6/6</span>
+					<span class="smartphoto-caption" aria-live="polite" tabindex="-1">koala</span>
+					<button class="smartphoto-dismiss" data-action-click="hidePhoto()"><span class="smartphoto-sr-only">close the image dialog</span></button>
+				</div>
+				<div class="smartphoto-content" data-action-click="hidePhoto()">
+				</div>
+				<ul style="transform:translate(-6770px,0px);" class="smartphoto-list">
+					<li style="transform:translate(0px,0px);" class="">
+						<div class="smartphoto-img-wrap" data-action-mouseup="afterDrag" data-action-mousedown="beforeDrag" data-action-mousemove="onDrag" style="transform:translate(-174.99999999999994px,-275.49999999999994px) scale(0.4114035087719298);">
+							<img style="width:1716px;" src="SmartPhoto.js_files/large-kuma.jpg" class="smartphoto-img" ondragstart="return false;">
+						</div>
+					</li>
+					<li style="transform:translate(1354px,0px);" class="">
+						<div class="smartphoto-img-wrap" data-action-mouseup="afterDrag" data-action-mousedown="beforeDrag" data-action-mousemove="onDrag" style="transform:translate(-174.99999999999994px,-275.49999999999994px) scale(0.4114035087719298);">
+							<img style="width:1716px;" src="SmartPhoto.js_files/large-rakuda.jpg" class="smartphoto-img" ondragstart="return false;">
+						</div>
+					</li>
+					<li style="transform:translate(2708px,0px);" class="">
+						<div class="smartphoto-img-wrap" data-action-mouseup="afterDrag" data-action-mousedown="beforeDrag" data-action-mousemove="onDrag" style="transform:translate(249.5px,-704px) scale(0.23485227841762643);">
+							<img style="width:867px;" src="SmartPhoto.js_files/large-lion.jpg" class="smartphoto-img" ondragstart="return false;">
+						</div>
+					</li>
+					<li style="transform:translate(4062px,0px);" class="">
+						<div class="smartphoto-img-wrap" data-action-mouseup="afterDrag" data-action-mousedown="beforeDrag" data-action-mousemove="onDrag" style="transform:translate(-174.99999999999994px,-275.49999999999994px) scale(0.4114035087719298);">
+							<img style="width:1716px;" src="SmartPhoto.js_files/large-sai.jpg" class="smartphoto-img" ondragstart="return false;">
+						</div>
+					</li>
+					<li style="transform:translate(5416px,0px);" class="">
+						<div class="smartphoto-img-wrap" data-action-mouseup="afterDrag" data-action-mousedown="beforeDrag" data-action-mousemove="onDrag" style="transform:translate(42.00000000000006px,-669.5px) scale(0.24325726141078838);">
+							<img style="width:1282px;" src="SmartPhoto.js_files/large-kaba.jpg" class="smartphoto-img" ondragstart="return false;">
+						</div>
+					</li>
+					<li style="transform:translate(6770px,0px);" class="current">
+						<div class="smartphoto-img-wrap" data-action-mouseup="afterDrag" data-action-mousedown="beforeDrag" data-action-mousemove="onDrag" style="transform:translate(-174.99999999999994px,-275.99999999999994px) scale(0.4110429447852761);">
+							<img style="transform:translate(0px,0px) scale(1);width:1716px;" src="SmartPhoto.js_files/large-koara.jpg" class="smartphoto-img" ondragstart="return false;">
+						</div>
+					</li>
+				</ul>
+				<ul class="smartphoto-arrows">
+					<li class="smartphoto-arrow-left"><a href="#" data-action-click="gotoSlide(4)" role="button"><span class="smartphoto-sr-only">go to the previous image</span></a></li>
+					<li class="smartphoto-arrow-right" aria-hidden="true"><a href="#" data-action-click="gotoSlide(5)" role="button"><span class="smartphoto-sr-only">go to the next image</span></a></li>
+				</ul>
+				<nav class="smartphoto-nav">
+					<ul>
+						<li><a href="#" data-action-click="gotoSlide(0)" class="" style="background-image:url(./assets/images/large-kuma.jpg);" role="button"><span class="smartphoto-sr-only">go to bear</span></a></li>
+						<li><a href="#" data-action-click="gotoSlide(1)" class="" style="background-image:url(./assets/images/large-rakuda.jpg);" role="button"><span class="smartphoto-sr-only">go to camel</span></a></li>
+						<li><a href="#" data-action-click="gotoSlide(2)" class="" style="background-image:url(./assets/images/large-lion.jpg);" role="button"><span class="smartphoto-sr-only">go to lion</span></a></li>
+						<li><a href="#" data-action-click="gotoSlide(3)" class="" style="background-image:url(./assets/images/large-sai.jpg);" role="button"><span class="smartphoto-sr-only">go to rhinoceros</span></a></li>
+						<li><a href="#" data-action-click="gotoSlide(4)" class="" style="background-image:url(./assets/images/large-kaba.jpg);" role="button"><span class="smartphoto-sr-only">go to hippopotamus</span></a></li>
+						<li><a href="#" data-action-click="gotoSlide(5)" class="current" style="background-image:url(./assets/images/large-koara.jpg);" role="button"><span class="smartphoto-sr-only">go to koala</span></a></li>
+					</ul>
+				</nav>
+		</div>
+	</div>
+</div>
+</div><div data-id="K2AKDDLOLBK3F"><div class="smartphoto" aria-hidden="true" role="dialog">
+	<div class="smartphoto-body">
+		<div class="smartphoto-inner">
+			   <div class="smartphoto-header">
+					<span class="smartphoto-count">1/</span>
+					<span class="smartphoto-caption" aria-live="polite" tabindex="-1"></span>
+					<button class="smartphoto-dismiss" data-action-click="hidePhoto()"><span class="smartphoto-sr-only">close the image dialog</span></button>
+				</div>
+				<div class="smartphoto-content" data-action-click="hidePhoto()">
+				</div>
+				<ul style="transform:translate(px,px);" class="smartphoto-list">
+				</ul>
+		</div>
+	</div>
+</div>
+</div><div data-id="K2AKDDLSPL473"><div class="smartphoto" aria-hidden="true" role="dialog">
+	<div class="smartphoto-body">
+		<div class="smartphoto-inner">
+			   <div class="smartphoto-header">
+					<span class="smartphoto-count">1/</span>
+					<span class="smartphoto-caption" aria-live="polite" tabindex="-1"></span>
+					<button class="smartphoto-dismiss" data-action-click="hidePhoto()"><span class="smartphoto-sr-only">close the image dialog</span></button>
+				</div>
+				<div class="smartphoto-content" data-action-click="hidePhoto()">
+				</div>
+				<ul style="transform:translate(px,px);" class="smartphoto-list">
+				</ul>
+				<ul class="smartphoto-arrows">
+					<li class="smartphoto-arrow-left" aria-hidden="true"><a href="#" data-action-click="gotoSlide()" role="button"><span class="smartphoto-sr-only">go to the previous image</span></a></li>
+					<li class="smartphoto-arrow-right" aria-hidden="true"><a href="#" data-action-click="gotoSlide()" role="button"><span class="smartphoto-sr-only">go to the next image</span></a></li>
+				</ul>
+				<nav class="smartphoto-nav">
+					<ul>
+					</ul>
+				</nav>
+		</div>
+	</div>
+</div>
+</div></body></html>

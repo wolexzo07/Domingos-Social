@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>PHP Timezone - Phppot</title>
+<meta name="description" content="In PHP, working with timezone is quite interesting by utilizing various functions coming under PHP date/time. In this article, we are going"><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://phppot.com/feed/">
+<link rel="apple-touch-icon" sizes="180x180" href="https://phppot.com/apple-touch-icon.png?v=031218">
+<link rel="icon" type="image/png" sizes="32x32" href="https://phppot.com/favicon-32x32.png?v=031218">
+<link rel="icon" type="image/png" sizes="16x16" href="https://phppot.com/favicon-16x16.png?v=031218">
+<link rel="manifest" href="https://phppot.com/site.webmanifest?v=031218">
+<link rel="mask-icon" href="https://phppot.com/safari-pinned-tab.svg?v=031218" color="#ffa500">
+<link rel="shortcut icon" href="https://phppot.com/favicon.ico?v=031218">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="PHP Timezone - Phppot">
+<meta property="og:site_name" content="Phppot">
+<meta property="og:description" content="In PHP, working with timezone is quite interesting by utilizing various functions coming under PHP date/time. In this article, we are going"><meta property="og:url" content="https://phppot.com/php/php-timezone/">
+<meta property="twitter:title" content="PHP Timezone - Phppot">
+<meta name="twitter:site" content="@phppot">
+<meta property="twitter:creator" content="@phppot">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://phppot.com/wp-content/uploads/2013/06/php_time_zone.jpg"><meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:description" content="In PHP, working with timezone is quite interesting by utilizing various functions coming under PHP date/time. In this article, we are going"><meta property="twitter:image" content="https://phppot.com/wp-content/uploads/2013/06/php_time_zone.jpg"><script type="text/javascript" async="" src="PHP%20Timezone%20-%20Phppot_files/ga.js"></script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40067115-1']);
+  _gaq.push(['_setDomainName', 'phppot.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://www.google-analytics.com/"><link rel="dns-prefetch" href="https://www.youtube.com/"><link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/"><link rel="dns-prefetch" href="https://static.doubleclick.net/"><link rel="dns-prefetch" href="https://www.google.com/"><link rel="dns-prefetch" href="https://i.ytimg.com/"><link rel="dns-prefetch" href="https://yt3.ggpht.com/"><link rel="dns-prefetch" href="https://fonts.gstatic.com/"><link rel="stylesheet" id="main-style-css" href="PHP%20Timezone%20-%20Phppot_files/papers_228192.css" type="text/css" media="all">
+<link rel="canonical" href="https://phppot.com/php/php-timezone/">
+</head>
+<body onload="prettyPrint()">
+ <div id="site_header">
+    <div class="content">
+        <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP"><img src="PHP%20Timezone%20-%20Phppot_files/phppot-logo.png" id="site-logo" alt="Helping You Build Web Applications Using PHP"></a>
+        <div class="search-container">
+            <form method="get" action="/" class="search-form">
+                <input name="s" class="search" placeholder="Search Phppot" title="Search Phppot" autocomplete="off">
+                <button type="submit" title="Search Phppot" id="search-button"></button>
+            </form>
+        </div>
+        <div class="header-link-container">
+            <span id="mobile-search-icon" onclick="toggleSearch();">Mobile
+                Search</span>
+                <div id="expand-sub-menu-icon">
+                    <a class="testimonial-icon" href="https://phppot.com/testimonials/">Testimonials</a><a class="demo-download-icon" href="https://phppot.com/demo/">Demo</a>
+                </div>  <a id="header-contact-navigation" href="https://phppot.com/contact/">Contact Me</a>
+        </div>
+    </div>
+</div>    <div class="content">
+        <div id="tutorial-body">
+            <div id="tutorial">
+                <h1>PHP Timezone</h1>
+                <div class="modified-on">Last modified on February 25th, 2017 by Vincy.</div>
+<p>In PHP, working with timezone is quite interesting by utilizing various functions coming under <a href="https://phppot.com/php/dates-and-time-in-php/">PHP date/time</a>. In this article, we are going to cover the following list of items.</p>
+<ul>
+<li>How to get a list of PHP supported timezone identifiers.</li>
+<li>PHP timezone getters and setters.</li>
+<li>PHP timezone conversion.</li>
+</ul>
+<p><img class="alignnone size-full wp-image-953" src="PHP%20Timezone%20-%20Phppot_files/php_time_zone.jpg" alt="php_time_zone" width="200" height="132"></p>
+<h2>How to Get list of PHP Supported Timezone Identifiers</h2>
+<p>As of PHP version 5.2, it introduces<em> DateTimeZone</em> class in which the function named as <em>listIdentifiers() </em>is defined. This function will return a list of all identifiers as an associative array of string.</p>
+<p>This function accepts two optional arguments, like,</p>
+<ul>
+<li>DateTimeZone constants – This argument is used to return an array of
+ timezone identifiers with respect to the continent, sub-continent, 
+country and etc. If it is specified as <em>ALL </em>or if this is empty, then all available identifiers will be returned.</li>
+<li>Country Code – The standard two character code is used to represent 
+the country for this second argument. And it requires the first argument
+ should be <em>PER_COUNTRY</em>.</li>
+</ul>
+<p>We can invoke this function with the references of class name by using <a href="https://phppot.com/php/php-scope-resolution-operator/">PHP scope resolution operator</a> as shown below.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">$timezoneIderntifiers </span><span class="pun">=</span><span class="pln"> </span><span class="typ">DateTimeZone</span><span class="pun">::</span><span class="pln">listIdentifiers</span><span class="pun">();</span><span class="pln">
+</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"&lt;pre&gt;"</span><span class="pun">;</span><span class="pln">
+print_r</span><span class="pun">(</span><span class="pln">$timezoneIderntifiers</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"&lt;/pre&gt;"</span><span class="pun">;</span></pre>
+<p>Since <em>DateTimeZone::listIdentifiers() </em>doesn’t have an argument, the above program will return all available time zone to be displayed to the browser.</p>
+<p>In PHP, there is an alias of this <em>DateTimeZone</em> class function, which is named as, <em>timezone_identifiers_list()</em>. But, since it is recommended to use the upgraded code as we have seen in the article <a href="https://phppot.com/php/php-array-length/">PHP Array Length</a>, we can prefer <em>DateTimeZone</em> class function shown in the example above.</p>
+<h2>PHP Timezone Getter and Setter</h2>
+<p>PHP includes two functions named <em>date_default_timezone_get()</em> and <em>date_default_timezone_set()</em>, as timezone getter and setter respectively.</p>
+<ul>
+<li><em>date_default_timezone_get()</em> – This function will return the
+ timzone&nbsp; set using PHP timezone setter, or a value specified with 
+php.ini date.timezone directive if any. (PHP version below 5.4, this 
+function can take the value of $_ENV[“TZ”], if available.).</li>
+<li><em>date_default_timezone_set()</em> – This function accepts the PHP supported format of timezone string identifier as its argument.</li>
+</ul>
+<p>In the following program, PHP timezone getter returns the value of 
+php.in option until it is overridden by the setter function as shown 
+below.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">$timezone_identifier </span><span class="pun">=</span><span class="pln"> date_default_timezone_get</span><span class="pun">();</span><span class="pln">
+echo $timezone_identifier </span><span class="pun">.</span><span class="pln"> </span><span class="str">"&lt;br/&gt;"</span><span class="pun">;</span><span class="pln">
+date_default_timezone_set</span><span class="pun">(</span><span class="str">'Asia/Kolkata'</span><span class="pun">);</span><span class="pln">
+$timezone_identifier </span><span class="pun">=</span><span class="pln"> date_default_timezone_get</span><span class="pun">();</span><span class="pln">
+echo $timezone_identifier</span><span class="pun">;</span></pre>
+<h3>Other PHP Functions to Get/Set Timezone</h3>
+<ul>
+<li>date(‘e’) / date(‘T’) –&nbsp; date() function is used to get 
+timezone identifier by passing ‘e’ as its argument. When we pass ‘T’ to 
+this function, then it will return abbreviated time zone.</li>
+<li>setTimezone() – This function is used to set timezone upon a DateTime object by the given timezone identifier as its argument.</li>
+</ul>
+<h2>PHP Timezone Conversion</h2>
+<p>In PHP, there is no inbuilt function to convert from one time zone to
+ another. Rather, we can obtain this conversion process by creating a <em>DateTimeZone</em>
+ instance for the required timezone and this instance should be applied 
+it to date time object involved in timezone conversion. For example,</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">date_default_timezone_set</span><span class="pun">(</span><span class="str">'Asia/Kolkata'</span><span class="pun">);</span><span class="pln">
+$objDateTime </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">DateTime</span><span class="pun">(</span><span class="str">"1978-11-21 12:12:12"</span><span class="pun">);</span><span class="pln">
+$timezone_array</span><span class="pun">[</span><span class="str">"asian_time"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> $objDateTime</span><span class="pun">-&gt;</span><span class="pln">format</span><span class="pun">(</span><span class="str">'d-m-Y H:i:s'</span><span class="pun">);</span><span class="pln">
+$objDateTimeZone </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">DateTimeZone</span><span class="pun">(</span><span class="str">'America/Los_Angeles'</span><span class="pun">);</span><span class="pln">
+$objDateTime</span><span class="pun">-&gt;</span><span class="pln">setTimeZone</span><span class="pun">(</span><span class="pln">$objDateTimeZone</span><span class="pun">);</span><span class="pln">
+$timezone_array</span><span class="pun">[</span><span class="str">"us_time"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> $objDateTime</span><span class="pun">-&gt;</span><span class="pln">format</span><span class="pun">(</span><span class="str">'d-m-Y H:i:s'</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"&lt;pre&gt;"</span><span class="pun">;</span><span class="pln">
+print_r</span><span class="pun">(</span><span class="pln">$timezone_array</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"&lt;/pre&gt;"</span><span class="pun">;</span></pre>
+
+<div id="comments" class="comments-area">
+
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://phppot.com/php/php-timezone/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://phppot.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Leave this empty <span class="required">*</span></label> <input id="url" name="url" type="text" size="30" maxlength="245"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="951" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>			</form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+    <div class="related-articles">
+                    <h2>Popular Articles</h2>
+                    <ul class="related-articles-list">
+                        <li><a href="https://phppot.com/php/php-current-date/">PHP Current Date</a></li>
+                        <li><a href="https://phppot.com/php/dates-and-time-in-php/">Dates and Time in PHP</a></li>
+                        <li><a href="https://phppot.com/php/php-timestamp/">PHP Timestamp</a></li>
+                    </ul>
+                </div>
+                <p>
+                    <a href="#top" class="top">↑ Back to Top</a>
+                </p>
+            </div>
+            <div id="tutorial-menu">
+	<ul class="main-menu"><li class="cat-item cat-item-72"><a href="https://phppot.com/category/php/">PHP</a><ul class="sub-menu"><li class="cat-item cat-item-59 "><a href="https://phppot.com/category/php/php-introduction/">PHP Introduction</a></li><li class="cat-item cat-item-26 "><a href="https://phppot.com/category/php/php-basics/">PHP Basics</a></li><li class="cat-item cat-item-99 "><a href="https://phppot.com/category/php/product/">Product</a></li><li class="cat-item cat-item-79 "><a href="https://phppot.com/category/php/php-shopping-cart/">PHP Shopping Cart</a></li><li class="cat-item cat-item-102 "><a href="https://phppot.com/category/php/payment-gateway-integration/">Payment Gateway Integration</a></li><li class="cat-item cat-item-94 "><a href="https://phppot.com/category/php/php-contact-form/">PHP Contact Form</a></li><li class="cat-item cat-item-103 "><a href="https://phppot.com/category/php/comments-system/">Comments System</a></li><li class="cat-item cat-item-57 "><a href="https://phppot.com/category/php/types-variables-operators/">Types, Variables &amp; Operators</a></li><li class="cat-item cat-item-58 "><a href="https://phppot.com/category/php/php-strings/">PHP Strings</a></li><li class="cat-item cat-item-22 "><a href="https://phppot.com/category/php/php-arrays/">PHP Arrays</a></li><li class="cat-item cat-item-61 "><a href="https://phppot.com/category/php/php-functions/">PHP Functions</a></li><li class="cat-item cat-item-35 "><a href="https://phppot.com/category/php/php-oops/">PHP OOPS</a></li><li class="cat-item cat-item-31 "><a href="https://phppot.com/category/php/php-forms/">PHP Forms</a></li><li class="cat-item cat-item-78 "><a href="https://phppot.com/category/php/advanced/">Advanced</a></li><li class="cat-item cat-item-90 "><a href="https://phppot.com/category/php/php-ajax/">PHP AJAX</a></li><li class="cat-item cat-item-89 "><a href="https://phppot.com/category/php/restful-api/">RESTful API</a></li><li class="cat-item cat-item-15 "><a href="https://phppot.com/category/php/php-databases/">PHP Databases</a></li><li class="cat-item cat-item-23 "><a href="https://phppot.com/category/php/php-sessions-and-cookies/">PHP Sessions and Cookies</a></li><li class="cat-item cat-item-51 "><a href="https://phppot.com/category/php/error-exception-handling/">Error and Exception Handling</a></li><li class="cat-item cat-item-100 "><a href="https://phppot.com/category/php/file-upload/">File Upload</a></li><li class="cat-item cat-item-101 "><a href="https://phppot.com/category/php/file-import-export/">File Import Export</a></li><li class="cat-item cat-item-36 "><a href="https://phppot.com/category/php/files-and-directories/">Files and Directories</a></li><li class="cat-item cat-item-45 taxonomy-active"><a href="https://phppot.com/category/php/php-date-time/">PHP Date Time</a><ul class="post-list"><li><a class="post-menu" href="https://phppot.com/php/calculating-hours-difference-in-php/">Calculating Hours Difference in PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/dates-and-time-in-php/">Dates and Time in PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/php-current-date/">PHP Current Date</a></li><li><a class="post-menu" href="https://phppot.com/php/formatting-dates-in-php/">Formatting Dates in PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/php-timestamp/">PHP Timestamp</a></li><li><a class="post-menu" href="https://phppot.com/php/php-time-ago-function/">PHP Time Ago Function</a></li><li class="current-post">PHP Timezone</li></ul></li><li class="cat-item cat-item-12 "><a href="https://phppot.com/category/php/php-graphics/">PHP Graphics</a></li><li class="cat-item cat-item-24 "><a href="https://phppot.com/category/php/php-xml/">PHP XML</a></li><li class="cat-item cat-item-62 "><a href="https://phppot.com/category/php/php-code-samples/">PHP Code Samples</a></li><li class="cat-item cat-item-96 "><a href="https://phppot.com/category/php/library/">Library</a></li><li class="cat-item cat-item-88 "><a href="https://phppot.com/category/php/php-freelancer/">PHP Freelancer</a></li></ul></li><li class="cat-item cat-item-73"><a href="https://phppot.com/category/jquery/">jQuery</a></li><li class="cat-item cat-item-74"><a href="https://phppot.com/category/wordpress/">WordPress</a></li><li class="cat-item cat-item-75"><a href="https://phppot.com/category/mysql/">MySQL</a></li><li class="cat-item cat-item-76"><a href="https://phppot.com/category/css/">CSS</a></li></ul></div>
+
+            <div id="social-icon">
+                <div class="heading">Share this Article</div>
+                <ul>
+                    <li><a class="social-link facebook-social-link" href="https://www.facebook.com/sharer/sharer.php?u=https://phppot.com/php/php-timezone/" title="Share on Facebook"><span class="facebook-social-img">Share</span></a></li>
+                    <li><a class="social-link twitter-social-link" href="https://twitter.com/intent/tweet?original_referer=https://phppot.com&amp;source=tweetbutton&amp;text=PHP%20Timezone;url=https://phppot.com/php/php-timezone/&amp;via=phppot" title="Share on Twitter"><span class="twitter-social-img">Tweet</span></a></li>
+                    <li><a class="social-link linkedin-social-link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://phppot.com/php/php-timezone/&amp;media=PHP%20Timezone" title="Share on Linkedin"><span class="linkedin-social-img">Share</span></a></li>
+                </ul>
+            </div>
+        </div>
+<div id="sidebar">
+    <div id="aboutcntnt">
+        <div id="photo">
+            <img src="PHP%20Timezone%20-%20Phppot_files/Vincy.jpg" alt="Vincy" title="Vincy" width="100" height="100">
+        </div>
+        <div id="aboutdesc">
+            <p>
+                I’m Vincy, a web developer. If you want to start a
+                project and do a quick launch, <a href="https://phppot.com/contact/">contact
+                    me</a>.
+            </p>
+            <p>I am available for freelance work.</p>
+        </div>
+        <div id="contactMe">
+            <a href="mailto:vincy@phppot.com" title="Contact Me">vincy@phppot.com</a>
+        </div>
+    </div>
+
+                          <div class="sidebar-featured-product">
+        <div class="heading">Featured Product</div>
+        <a href="https://phppot.com/shop/contact-form-iris/"><img src="PHP%20Timezone%20-%20Phppot_files/simple-secure-spam-free-contact-form-in-php-iris-150x150.png">
+        </a>
+        <div class="sidebar-featured-url">
+            <a href="https://phppot.com/shop/contact-form-iris/">Contact
+                Form - Iris</a>
+        </div>
+    </div>
+            <div id="recommended">
+        <div class="heading">Trending Now</div>
+        <ul>
+            <li><a href="https://phppot.com/shop/contact-form-iris/">Contact
+                    Form – Iris</a></li>
+            <li><a href="https://phppot.com/php/simple-php-shopping-cart/">Simple
+                    PHP Shopping Cart</a></li>
+            <li><a href="https://phppot.com/php/how-to-become-a-full-time-freelance-php-developer-and-consultant/">How
+                    to Become a Full Time Freelance PHP Developer and
+                    Consultant</a></li>
+            <li><a href="https://phppot.com/jquery/jquery-ajax-inline-crud-with-php/">jQuery
+                    AJAX Inline CRUD with PHP</a></li>
+            <li><a href="https://phppot.com/php/simple-secure-spam-free-contact-form-in-php-iris/">Simple
+                    Secure Spam-Free Contact Form in PHP – Iris</a></li>
+        </ul>
+    </div>
+    <div class="testimonials-sbar">
+    <div class="heading">Testimonials</div>
+    <p class="testimonial-content"><span class="left-quotes">“</span>Vincy
+ is talented. I am very impressed by her work and diligence. I highly 
+recommend Vincy, and I am eager to work with her in my next project ...<span class="right-quotes">”</span></p>
+    <p class="testimonials-sbar-by">Stephen Opiyo, Patira Data Science, USA</p>
+    <div class="view-more-testimonial">
+        <a href="https://phppot.com/testimonials/"><span class="view-testimonials">View More Testimonials</span></a>
+    </div>
+</div></div></div>
+<div id="footer-contact-note">
+    <div class="content">
+        <h2>Looking for an expert PHP freelancer?</h2>
+        <p class="footer-contact-banner-title">Do you want to develop a
+            modern, lightweight, responsive web application and launch
+            quickly?</p>
+        <p>
+            <a id="footer-contact-navigation" href="https://phppot.com/contact/">Contact
+                Me</a>
+        </p>
+    </div>
+</div>
+<div id="footer">
+    <div class="content">
+        <div class="subscribe-section">
+            <div class="subscribe-email">
+                <div>
+    <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=phppot',
+             'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <p>
+        </p><div><label for="feedb-email-inp">Email:</label></div>
+            <input id="feedb-email-inp" placeholder="Enter your email here" type="text" class="feedb-email" name="email"><input type="hidden" value="phppot" name="uri"><input type="hidden" name="loc" value="en_US"><input type="submit" value="Subscribe" class="subscribe">
+        <p></p>
+    </form>
+</div></div>
+
+            <div class="follow">
+                <a class="facebook" href="https://www.facebook.com/PPbay" rel="nofollow noopener" title="Phppot Facebook Page" target="_blank">Facebook</a><a class="twitter" href="https://www.linkedin.com/in/vincya/" rel="nofollow noopener" title="Phppot LinkedIn Page" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="shop-footer-common">
+            <div class="shop-doc-nav">
+                <div class="shop-doc-nav-links">
+                    <div class="heading">Digital Goods Shop</div>
+                    <a href="https://phppot.com/faq/">FAQ</a> <a href="https://phppot.com/support-policy/">Support
+                        Policy</a> <a href="https://phppot.com/refund-policy/">Refund Policy</a>
+                    <a href="https://phppot.com/licenses/">Licenses</a> <a href="https://phppot.com/user-license/">User License</a> <a href="https://phppot.com/developer-license/">Developer License</a>
+                </div>
+
+                <div class="policy-doc-nav">
+                    <a href="https://phppot.com/terms-of-use/">Terms of
+                        Service</a><a href="https://phppot.com/privacy-policy/">Privacy
+                        Policy</a><a href="https://phppot.com/privacy-policy/#cookie-policy">Cookie
+                        Policy</a> <span class="copyright">© 2019 <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP">Phppot</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('click', function(e){
+    	var element = document.getElementsByClassName("search-container")[0];
+        if (element && !element.contains(e.target) && e.target.id != "mobile-search-icon" && window.innerWidth <= "550") {
+            element.style.display = "none";
+        }
+    });
+    function toggleSearch() {
+        var element = document.getElementsByClassName("search-container")[0];
+        if(element.style.display == 'inline-block') {
+            	element.style.display = "none";
+        } else {
+        	   element.style.display = "inline-block";
+        }
+    }
+</script><script async="" src="PHP%20Timezone%20-%20Phppot_files/prettify.js"></script>
+
+</body></html>

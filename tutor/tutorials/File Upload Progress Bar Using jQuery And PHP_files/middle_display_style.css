@@ -1,0 +1,16 @@
+#middlead_display,#second_middlead_display,#third_middlead_display
+{
+	margin:0px auto;
+	text-align:center;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+@media only screen and (max-width: 960px)
+{
+#middlead_display,#second_middlead_display,#third_middlead_display
+{
+	//width:100%;
+	//height:auto;
+}
+}

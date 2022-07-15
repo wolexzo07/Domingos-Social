@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Autogrow Textarea Plugin</title>
+	<style>
+	    #content {
+			width:410px;
+			margin:auto;
+			border:#0F0 solid 1px;
+		}
+		p{
+			margin:0 auto;
+			}
+		#target {
+			font-family: arial;
+			font-size: 20px;
+			border:1px solid #00F;
+			max-width: 400px;
+			min-width: 400px;
+			min-height:50px;
+			resize:none;
+			
+		}
+		#normal {
+			font-family: arial;
+			font-size: 20px;
+			border:1px solid #00F;
+			max-width: 400px;
+			min-width: 400px;
+			min-height:50px;
+			
+		}
+		
+		</style>
+	<script src="jquery-1.8.1.min.js"></script>
+	<script src="jquery.autogrowtextarea.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#target").autoGrow();
+		});
+	</script>
+</head>
+<body>
+	<div id="content">
+			<p><h1>Plugin Used TextArea</h1>
+					<textarea id="target" rows="4"></textarea>
+               <h1>Plugin Not Used TextArea</h1>
+                    <textarea id="normal" rows="4"></textarea>
+			</p>
+	</div>
+</body>
+</html>

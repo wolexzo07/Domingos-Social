@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="sp🚧  no-js lt-ie9" lang="en" ><![endif]-->
+<!--[if gt IE 8]><!--><html class="sp🚧  no-js" lang="en" ><!--<![endif]-->
+  <head>
+    <link rel="manifest" href="/manifest.json">
+    <link href="//dab1nmslvvntp.cloudfront.net" ref="dns-prefetch">
+    <link href="//d2sis3lil8ndrq.cloudfront.net" ref="dns-prefetch">
+    <link href="//sitepoint.com" ref="dns-prefetch">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:image" content="https://www.sitepoint.com/wp-content/themes/sitepoint/assets/images/icon.php.png">
+        
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <link rel="apple-touch-icon-precomposed" href="/wp-content/themes/sitepoint/assets/images/apple-touch-icon-57x57-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/wp-content/themes/sitepoint/assets/images/apple-touch-icon-72x72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/wp-content/themes/sitepoint/assets/images/apple-touch-icon-114x114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/wp-content/themes/sitepoint/assets/images/apple-touch-icon-144x144-precomposed.png" />
+
+    <!-- Sitepoint's new font from Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:900,900italic,700,700italic,400,400italic,300,300italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" >
+
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for SitePoint.com" href="https://www.sitepoint.com/feed/" />
+
+        <link href="https://plus.google.com/113214561650167033983" rel="publisher" />
+        <meta property="twitter:account_id" content="15743570" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <meta name="google-site-verification" content="hcQq0cWX73AYby8aMMzNHx8bZrTDI75GWeljGdPmNf8"  />
+<meta name="google-site-verification" content="I0jyQlTvZaveab8RtDOjUxSPZXbdSgFrcKdAwaCCfvA"  />
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KL8PMMW');</script>
+
+    <script class="SP_stripMobile" type="text/javascript">
+      var propertag = propertag || {};
+      propertag.cmd = propertag.cmd || [];
+      (function() {
+      var pm = document.createElement('script');
+      pm.async = true; pm.type = 'text/javascript';
+      var is_ssl = 'https:' == document.location.protocol;
+      pm.src = (is_ssl ? 'https:' : 'http:') + '//global.proper.io/sitepoint.min.js';
+      var node = document.getElementsByTagName('script')[0];
+      node.parentNode.insertBefore(pm, node);
+      })();
+    </script>
+    <script class="SP_stripMobile" type="text/javascript">
+      var googletag = googletag || {};
+      googletag.cmd = googletag.cmd || [];
+      (function() {
+      var gads = document.createElement('script');
+      gads.async = true;
+      gads.type = 'text/javascript';
+      var useSSL = 'https:' == document.location.protocol;
+      gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+      var node = document.getElementsByTagName('script')[0];
+      node.parentNode.insertBefore(gads, node);
+      })();
+
+      var oSpP;
+    </script>
+    <script charset="UTF-8" src="//cdn.sendpulse.com/js/push/ee9a890c7a9d2a9236648c25e40bd03e_1.js" async></script>
+
+
+    <!-- [JSON-LD Schema data[ -->
+        <script type="application/ld+json">
+      {"@context":"http:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/www.sitepoint.com\/php\/","name":"PHP"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/www.sitepoint.com\/author\/mpsinas","name":"Martin Psinas"}}]}    </script>
+    <script type="application/ld+json">
+      {"@context":"http:\/\/schema.org","@type":"Article","headline":"Tracking Upload Progress with PHP and JavaScript","url":"https:\/\/www.sitepoint.com\/tracking-upload-progress-with-php-and-javascript\/","articleSection":"PHP","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.sitepoint.com\/tracking-upload-progress-with-php-and-javascript\/"},"author":[{"@type":"Person","name":"Martin Psinas"}],"publisher":{"@type":"Organization","name":"SitePoint","logo":{"@type":"ImageObject","url":"https:\/\/www.sitepoint.com\/wp-content\/themes\/sitepoint\/assets\/images\/icon.php.png"}},"dateCreated":"2012-02-03T16:30:01Z","datePublished":"2012-02-03T16:30:01Z","dateModified":"2012-02-03T16:30:01Z","keywords":["Advanced"]}    </script>
+    <!-- ]] -->
+
+    
+<!-- This site is optimized with the Yoast SEO plugin v8.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Tracking Upload Progress with PHP and JavaScript &mdash; SitePoint</title>
+<link rel="canonical" href="https://www.sitepoint.com/tracking-upload-progress-with-php-and-javascript/" />
+<link rel="publisher" href="https://plus.google.com/+sitepoint/"/>
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Tracking Upload Progress with PHP and JavaScript &mdash; SitePoint" />
+<meta property="og:description" content="A problem that has plagued web developers for years is how to add real-time information to their applications, such a progress bar for file uploads. Users are impatient; they don&#039;t want to sit and wait while the browser is doing something and wonder whether it has frozen or if they have a slow connection. Providing a progress indicator gives users useful information and lets them know exactly what&#039;s going on. Learn how a new feature in PHP 5.4 can be used to create a dynamic upload progress bar without any external libraries or browser dependencies." />
+<meta property="og:url" content="https://www.sitepoint.com/tracking-upload-progress-with-php-and-javascript/" />
+<meta property="og:site_name" content="SitePoint" />
+<meta property="article:publisher" content="https://www.facebook.com/sitepoint" />
+<meta property="article:tag" content="Advanced" />
+<meta property="article:section" content="PHP" />
+<meta property="article:published_time" content="2012-02-03T16:30:01+00:00" />
+<meta property="article:modified_time" content="2013-07-29T04:24:48+00:00" />
+<meta property="og:updated_time" content="2013-07-29T04:24:48+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="A problem that has plagued web developers for years is how to add real-time information to their applications, such a progress bar for file uploads. Users are impatient; they don&#039;t want to sit and wait while the browser is doing something and wonder whether it has frozen or if they have a slow connection. Providing a progress indicator gives users useful information and lets them know exactly what&#039;s going on. Learn how a new feature in PHP 5.4 can be used to create a dynamic upload progress bar without any external libraries or browser dependencies." />
+<meta name="twitter:title" content="Tracking Upload Progress with PHP and JavaScript &mdash; SitePoint" />
+<meta name="twitter:site" content="@sitepointdotcom" />
+<meta name="twitter:image" content="http://www.sitepoint.com/wp-content/uploads/2012/02/progressbar.png" />
+<meta name="twitter:creator" content="@sitepointdotcom" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="SitePoint &raquo; Tracking Upload Progress with PHP and JavaScript Comments Feed" href="https://www.sitepoint.com/tracking-upload-progress-with-php-and-javascript/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.sitepoint.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-postratings-css'  href='https://www.sitepoint.com/wp-content/plugins/wp-postratings/css/postratings-css.css?ver=1.85' type='text/css' media='all' />
+<link rel='stylesheet' id='sitepoint-styles-css'  href='//www.sitepoint.com/wp-content/themes/sitepoint/assets/stylesheets/styles-151a38e87e68fbad6a7c4527ed1a5fba.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='sitepoint-dynamic-styles-css'  href='//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/bundle-2e0dae5fdc3e93f30cc9361cf4b70597.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='sitepoint-styles-article-css'  href='//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/article-35a91ee329370f5244ffecd2a6c2e8ca.css?ver=4.9.8' type='text/css' media='all' />
+<script type='text/javascript' src='//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/scripts-head-d486959b95b4547afeeb1b5d8e5cf97f.js?ver=4.9.8'></script>
+<link rel='https://api.w.org/' href='https://www.sitepoint.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.sitepoint.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.sitepoint.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.8" />
+<link rel='shortlink' href='https://www.sitepoint.com/?p=1524' />
+<link rel="alternate" type="application/json+oembed" href="https://www.sitepoint.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sitepoint.com%2Ftracking-upload-progress-with-php-and-javascript%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.sitepoint.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sitepoint.com%2Ftracking-upload-progress-with-php-and-javascript%2F&#038;format=xml" />
+    <script type="text/javascript">
+      googletag.cmd.push(function() {
+        purchs2s.cmd.push(function() {
+          		googletag.pubads().setTargeting("channel", "php");
+		googletag.pubads().setTargeting("post_id", "1524");
+		googletag.pubads().setTargeting("AOL",["true", "false"]);
+		googletag.pubads().setTargeting("OpenX",["true", "false"]);
+		googletag.pubads().setTargeting("Tribal",["true", "false"]);
+		googletag.pubads().enableSingleRequest();
+                    googletag.pubads().collapseEmptyDivs();
+          googletag.pubads().disableInitialLoad();
+          googletag.enableServices();
+          purchs2s.setup();
+        });
+      });
+      SP_GPT_Slots = [];
+    </script>
+    <!--[if lt IE 9]>
+      <script src="/wp-content/themes/sitepoint/assets/javascripts/vendor/respond.custom.min.js"></script>
+    <![endif]-->
+    <style>
+  .t-color { color: #666699 }
+  a.t-color:hover,
+  button.t-color:hover { color: #565681 }
+
+  .t-bg { background-color: #666699 }
+  a.t-bg:hover,
+  button.t-bg:hover { background-color: #565681}
+
+  .t-border { border-color: #666699 }
+  a.t-border:hover,
+  button.t-border:hover { border-color: #565681 }
+
+  .t-bg-dark { background-color: #565681 }
+
+  .t-list li:before { background-color: #666699; }
+
+  .t-p-pop-bg { background-color: #1a9b9e }
+  a.t-p-pop-bg:hover,
+  button.t-p-pop-bg:hover { background-color: #018285}
+</style>
+
+    <!-- Nativo Ads -->
+    <script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script>
+     <!-- Tapfiliate code here-->
+    <script src="https://script.tapfiliate.com/tapfiliate.js" type="text/javascript" async></script>
+    <script type="text/javascript">
+      (function(t,a,p){t.TapfiliateObject=a;t[a]=t[a]||function(){
+      (t[a].q=t[a].q||[]).push(arguments)}})(window,'tap');
+
+      tap('create', '10694-267423');
+      tap('detect');
+    </script>
+
+    <!-- reCAPTCHA v3 code here-->
+          <script src="https://www.google.com/recaptcha/api.js?render=6LfEw7cUAAAAABIV8YABIbOzqBJ3zr4BpjVbDXDK"></script>
+      <script>
+        grecaptcha.ready(function(){
+          document.querySelector('.grecaptcha-badge').style.visibility = 'hidden';
+        });
+      </script>
+      </head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KL8PMMW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+    <header class="main-header u-isSingle" role="banner">
+    <nav id="navigation-bar" class="l-d-f l-p-fix l-w-100">
+      <div class="l-d-f l-w-100 l-w-3col--3col l-w-4col--4col l-jc-sb l-mh-auto">
+        <section class="l-d-f l-ai-str l-jc-sta l-gs-ph2 l-gs-ph1--2col">
+          <a class="l-d-f" href="https://www.sitepoint.com/">
+            <div class="l-d-f l-as-cen l-b-n">
+              <svg class="sp-logo" viewBox="0 0 123 27">
+  <g fill-rule="evenodd">
+    <path d="M31.36,16.75 C31.56,17.07 31.82,17.31 32.14,17.50 C32.46,17.68 32.82,17.82 33.23,17.89 C33.63,17.97 34.05,18.01 34.48,18.01 C34.81,18.01 35.16,17.99 35.52,17.94 C35.89,17.89 36.22,17.81 36.53,17.68 C36.83,17.55 37.08,17.36 37.28,17.11 C37.48,16.87 37.58,16.55 37.58,16.17 C37.58,15.64 37.37,15.24 36.96,14.97 C36.55,14.69 36.03,14.47 35.41,14.31 C34.79,14.14 34.12,13.99 33.39,13.85 C32.66,13.71 31.99,13.52 31.37,13.27 C30.75,13.03 30.23,12.68 29.82,12.23 C29.41,11.78 29.20,11.16 29.20,10.36 C29.20,9.73 29.34,9.20 29.63,8.75 C29.92,8.30 30.30,7.94 30.75,7.66 C31.20,7.38 31.72,7.17 32.29,7.03 C32.86,6.90 33.42,6.83 33.99,6.83 C34.71,6.83 35.38,6.89 35.99,7.01 C36.61,7.13 37.15,7.34 37.62,7.63 C38.09,7.93 38.46,8.33 38.75,8.83 C39.03,9.34 39.19,9.96 39.24,10.72 L37.13,10.72 C37.10,10.32 36.99,9.98 36.81,9.72 C36.63,9.46 36.40,9.25 36.12,9.08 C35.84,8.92 35.53,8.81 35.19,8.74 C34.85,8.66 34.51,8.63 34.16,8.63 C33.84,8.63 33.53,8.65 33.20,8.70 C32.88,8.75 32.59,8.83 32.32,8.95 C32.06,9.07 31.84,9.23 31.68,9.43 C31.51,9.63 31.43,9.89 31.43,10.21 C31.43,10.56 31.56,10.86 31.82,11.09 C32.07,11.32 32.40,11.51 32.80,11.66 C33.19,11.82 33.64,11.95 34.13,12.05 C34.63,12.15 35.13,12.26 35.62,12.37 C36.15,12.49 36.67,12.62 37.17,12.78 C37.67,12.94 38.12,13.15 38.51,13.42 C38.90,13.68 39.21,14.01 39.45,14.41 C39.69,14.81 39.81,15.31 39.81,15.90 C39.81,16.66 39.65,17.28 39.33,17.77 C39.01,18.27 38.58,18.67 38.06,18.98 C37.54,19.28 36.96,19.49 36.30,19.61 C35.65,19.73 35.00,19.79 34.36,19.79 C33.65,19.79 32.97,19.72 32.32,19.58 C31.68,19.43 31.11,19.20 30.61,18.87 C30.12,18.54 29.72,18.11 29.42,17.57 C29.13,17.03 28.96,16.38 28.93,15.61 L31.03,15.61 C31.05,16.06 31.16,16.44 31.36,16.75" id="Fill-1"></path>
+    <path d="M42.27,7.12 L44.37,7.12 L44.37,19.53 L42.27,19.53 L42.27,7.12 Z" id="Fill-2"></path>
+    <path d="M53.13,7.12 L53.13,8.92 L50.57,8.92 L50.57,16.62 C50.57,16.86 50.59,17.05 50.63,17.20 C50.67,17.34 50.75,17.46 50.87,17.54 C50.99,17.62 51.15,17.67 51.35,17.69 C51.56,17.71 51.83,17.73 52.16,17.73 L53.13,17.73 L53.13,19.53 L51.51,19.53 C50.97,19.53 50.50,19.49 50.11,19.42 C49.72,19.35 49.41,19.22 49.17,19.02 C48.93,18.83 48.75,18.56 48.64,18.21 C48.52,17.86 48.46,17.39 48.46,16.81 L48.46,8.92 L46.28,8.92 L46.28,7.12 L48.46,7.12 L48.46,3.39 L50.57,3.39 L50.57,7.12 L53.13,7.12" id="Fill-3"></path>
+    <path d="M64.53,18.73 C63.57,19.44 62.36,19.79 60.91,19.79 C59.89,19.79 59.00,19.63 58.25,19.31 C57.49,18.99 56.86,18.54 56.35,17.97 C55.84,17.39 55.45,16.70 55.20,15.90 C54.94,15.10 54.80,14.23 54.76,13.29 C54.76,12.34 54.91,11.48 55.21,10.69 C55.51,9.91 55.92,9.23 56.46,8.65 C57.00,8.08 57.63,7.63 58.37,7.31 C59.11,6.99 59.91,6.83 60.79,6.83 C61.93,6.83 62.87,7.05 63.63,7.51 C64.38,7.97 64.98,8.55 65.44,9.25 C65.89,9.96 66.20,10.73 66.38,11.56 C66.55,12.39 66.62,13.18 66.59,13.93 L56.99,13.93 C56.98,14.48 57.04,14.99 57.19,15.48 C57.34,15.97 57.58,16.40 57.91,16.78 C58.24,17.16 58.66,17.46 59.18,17.68 C59.69,17.90 60.29,18.01 60.98,18.01 C61.88,18.01 62.61,17.82 63.18,17.41 C63.75,17.02 64.13,16.41 64.31,15.59 L66.39,15.59 C66.11,16.98 65.49,18.03 64.53,18.73 L64.53,18.73 Z M64.02,10.76 C63.83,10.33 63.58,9.96 63.25,9.65 C62.93,9.34 62.55,9.09 62.11,8.90 C61.68,8.72 61.19,8.63 60.66,8.63 C60.12,8.63 59.62,8.72 59.19,8.90 C58.75,9.09 58.37,9.34 58.06,9.66 C57.75,9.98 57.50,10.35 57.32,10.78 C57.13,11.20 57.03,11.65 56.99,12.13 L64.36,12.13 C64.32,11.65 64.21,11.20 64.02,10.76 L64.02,10.76 Z" id="Fill-4"></path>
+    <path d="M70.95,7.12 L70.95,8.80 L71.00,8.80 C71.35,8.11 71.89,7.61 72.64,7.30 C73.38,6.98 74.20,6.83 75.09,6.83 C76.09,6.83 76.95,7.00 77.68,7.36 C78.42,7.71 79.03,8.18 79.52,8.78 C80.01,9.38 80.37,10.08 80.62,10.86 C80.87,11.65 80.99,12.48 80.99,13.36 C80.99,14.24 80.87,15.07 80.63,15.85 C80.39,16.64 80.03,17.32 79.54,17.91 C79.06,18.49 78.44,18.95 77.71,19.29 C76.97,19.62 76.12,19.79 75.14,19.79 C74.83,19.79 74.48,19.76 74.09,19.70 C73.70,19.63 73.32,19.53 72.94,19.38 C72.56,19.24 72.20,19.04 71.86,18.79 C71.52,18.55 71.23,18.24 71.00,17.87 L70.95,17.87 L70.95,24.26 L68.84,24.26 L68.84,7.12 L70.95,7.12 L70.95,7.12 Z M78.53,11.52 C78.37,10.97 78.13,10.48 77.81,10.04 C77.49,9.61 77.07,9.27 76.57,9.01 C76.06,8.76 75.47,8.63 74.79,8.63 C74.08,8.63 73.48,8.76 72.98,9.04 C72.49,9.31 72.08,9.67 71.77,10.10 C71.46,10.55 71.23,11.05 71.09,11.60 C70.95,12.17 70.88,12.73 70.88,13.31 C70.88,13.92 70.95,14.51 71.10,15.07 C71.25,15.64 71.48,16.14 71.81,16.57 C72.13,17.01 72.55,17.35 73.06,17.62 C73.57,17.88 74.19,18.01 74.92,18.01 C75.65,18.01 76.25,17.88 76.74,17.61 C77.23,17.34 77.62,16.98 77.92,16.53 C78.22,16.08 78.43,15.57 78.56,14.99 C78.70,14.41 78.76,13.82 78.76,13.21 C78.76,12.64 78.68,12.07 78.53,11.52 L78.53,11.52 Z" id="Fill-5"></path>
+    <path d="M83.17,10.78 C83.44,9.98 83.84,9.30 84.36,8.71 C84.89,8.13 85.55,7.67 86.33,7.33 C87.10,7.00 87.99,6.83 89.00,6.83 C90.03,6.83 90.92,7.00 91.69,7.33 C92.46,7.67 93.11,8.13 93.64,8.71 C94.17,9.30 94.56,9.98 94.83,10.78 C95.09,11.57 95.23,12.42 95.23,13.33 C95.23,14.25 95.09,15.09 94.83,15.88 C94.56,16.66 94.17,17.35 93.64,17.93 C93.11,18.52 92.46,18.97 91.69,19.30 C90.92,19.63 90.03,19.79 89.00,19.79 C87.99,19.79 87.10,19.63 86.33,19.30 C85.55,18.97 84.89,18.52 84.36,17.93 C83.84,17.35 83.44,16.66 83.17,15.88 C82.91,15.09 82.78,14.25 82.78,13.33 C82.78,12.42 82.91,11.57 83.17,10.78 L83.17,10.78 Z M85.32,15.34 C85.53,15.92 85.81,16.41 86.18,16.80 C86.54,17.19 86.96,17.49 87.45,17.70 C87.94,17.91 88.46,18.01 89.00,18.01 C89.55,18.01 90.06,17.91 90.55,17.70 C91.04,17.49 91.46,17.19 91.83,16.80 C92.19,16.41 92.48,15.92 92.68,15.34 C92.89,14.75 92.99,14.09 92.99,13.33 C92.99,12.58 92.89,11.91 92.68,11.33 C92.48,10.75 92.19,10.25 91.83,9.85 C91.46,9.45 91.04,9.15 90.55,8.94 C90.06,8.73 89.55,8.63 89.00,8.63 C88.46,8.63 87.94,8.73 87.45,8.94 C86.96,9.15 86.54,9.45 86.18,9.85 C85.81,10.25 85.53,10.75 85.32,11.33 C85.11,11.91 85.01,12.58 85.01,13.33 C85.01,14.09 85.11,14.75 85.32,15.34 L85.32,15.34 Z" id="Fill-6"></path>
+    <path d="M97.83,7.12 L99.94,7.12 L99.94,19.53 L97.83,19.53 L97.83,7.12 Z" id="Fill-7"></path>
+    <path d="M105.19,7.12 L105.19,9.08 L105.24,9.08 C106.12,7.58 107.51,6.83 109.41,6.83 C110.25,6.83 110.95,6.94 111.51,7.16 C112.08,7.39 112.53,7.70 112.88,8.10 C113.23,8.50 113.47,8.98 113.61,9.53 C113.75,10.08 113.82,10.69 113.82,11.36 L113.82,19.53 L111.71,19.53 L111.71,11.12 C111.71,10.36 111.48,9.75 111.02,9.30 C110.56,8.85 109.92,8.63 109.11,8.63 C108.46,8.63 107.91,8.72 107.43,8.92 C106.96,9.11 106.57,9.38 106.26,9.73 C105.94,10.08 105.71,10.50 105.55,10.97 C105.39,11.44 105.32,11.96 105.32,12.52 L105.32,19.53 L103.21,19.53 L103.21,7.12 L105.19,7.12" id="Fill-8"></path>
+    <path d="M122.47,7.12 L122.47,8.92 L119.92,8.92 L119.92,16.62 C119.92,16.86 119.94,17.05 119.98,17.20 C120.02,17.34 120.10,17.46 120.22,17.54 C120.33,17.62 120.49,17.67 120.70,17.69 C120.91,17.71 121.18,17.73 121.50,17.73 L122.47,17.73 L122.47,19.53 L120.86,19.53 C120.32,19.53 119.85,19.49 119.46,19.42 C119.07,19.35 118.76,19.22 118.52,19.02 C118.28,18.83 118.10,18.56 117.99,18.21 C117.87,17.86 117.81,17.39 117.81,16.81 L117.81,8.92 L115.63,8.92 L115.63,7.12 L117.81,7.12 L117.81,3.39 L119.92,3.39 L119.92,7.12 L122.47,7.12" id="Fill-9"></path>
+    <path d="M0.67,11.87 L2.62,13.76 L8.76,19.50 L11.41,16.94 C11.65,16.61 11.64,16.16 11.36,15.84 L8.94,13.72 L8.95,13.72 L6.34,11.19 C6.04,10.84 6.04,10.32 6.37,9.99 L13.38,3.21 L10.20,0.12 L0.68,9.31 C-0.05,10.02 -0.05,11.17 0.67,11.87" id="Fill-10"></path>
+    <path d="M21.60,15.15 L19.66,13.27 L13.51,7.53 L10.86,10.08 C10.62,10.42 10.64,10.87 10.91,11.19 L13.33,13.31 L13.33,13.31 L15.93,15.84 C16.24,16.19 16.23,16.70 15.91,17.04 L8.89,23.82 L12.08,26.91 L19.65,19.60 L21.60,17.71 C22.33,17.01 22.33,15.86 21.60,15.15" id="Fill-11"></path>
+    <path d="M44.55,4.58 C44.55,5.24 44.00,5.77 43.32,5.77 C42.64,5.77 42.09,5.24 42.09,4.58 C42.09,3.93 42.64,3.39 43.32,3.39 C44.00,3.39 44.55,3.93 44.55,4.58" id="Fill-12"></path>
+    <path d="M100.11,4.58 C100.11,5.24 99.56,5.77 98.88,5.77 C98.20,5.77 97.65,5.24 97.65,4.58 C97.65,3.93 98.20,3.39 98.88,3.39 C99.56,3.39 100.11,3.93 100.11,4.58" id="Fill-13"></path>
+  </g>
+</svg>
+            </div>
+          </a>
+        </section>
+        <section id="hamburger-container" class="l-ai-cen l-d-f l-gs-ph1">
+          <div class="hamburger">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="nav-container" class="l-ai-cen">
+          <ul id="nav" class="l-d-f l-w-100 l-ma0 l-fd-col">
+            <li class="l-gs-ph2 l-gs-ph1--2col t-ls-n">
+              <a id="nav-blog" href="/blog" data-text="Blog">Blog</a>
+            </li>
+            <li class="l-gs-ph2 l-gs-ph1--2col t-ls-n">
+              <a href="/community" data-text="Community">Community</a>
+            </li>
+            <li class="l-gs-ph2 l-gs-ph1--2col t-ls-n">
+              <a href="/premium/library/" data-text="Library">Library</a>
+            </li>
+                          <nav-bar-actions is_member="" slug="tracking-upload-progress-with-php-and-javascript" categories="php"></nav-bar-actions>
+                      </ul>
+        </section>
+      </div>
+    </nav>
+
+    <div class="NavBar_offsetSpacer"></div>
+    <script>
+              var current_category = ['php'];
+        if (localStorage.getItem('SP_categories') !== null) {
+          if (localStorage.getItem('SP_categories').includes(current_category) === false) {
+            var sp_categories = JSON.parse(localStorage.getItem('SP_categories') || "[]");
+            var temp = current_category.concat(sp_categories);
+            var filtered_categories = Array.from(new Set(temp));
+            localStorage.setItem('SP_categories', JSON.stringify(filtered_categories));
+          }
+        } else {
+          localStorage.setItem('SP_categories', JSON.stringify('php'));
+        }
+        // campaign
+        localStorage.setItem('SP_slug', 'tracking-upload-progress-with-php-and-javascript');
+
+      
+      /* Toggle mobile navigation */
+      var toggleMobileNav = function(event) {
+        var target = event.target;
+        if (target.className.includes("hamburger")) {
+          document.getElementById("hamburger-container").classList.toggle("open");
+        }
+      }
+      var isTouchSupported = 'ontouchstart' in window;
+      var startEvent = isTouchSupported ? 'touchstart' : 'click';
+      document.addEventListener(startEvent, toggleMobileNav);
+
+      /* Set active navigation item  */
+      var current_url = window.location.href;
+      if (current_url.indexOf("/blog") > -1) {
+        document.getElementById("nav-blog").classList.add("youarehere");
+      }
+    </script>
+            <ads-weighted widget='87' data='{"AU":[{"id":"788","weight":"0","randMax":0},{"id":"788","weight":"0","randMax":0}]}' fallback='744' url='tracking-upload-progress-with-php-and-javascript' channelSlug='php'></ads-weighted>  </header><div class="widget maestro maestro-content-type-html hide-for-mobile-SP" id="maestro-776"><div class="proper-ad-unit">
+    <div id="proper-ad-sitepoint_billboard"> <script> propertag.cmd.push(function() { proper_display('sitepoint_billboard'); }); </script> </div>
+</div></div>  <div class="l-p-rel t-bg-white sp-article" role="main">
+      <div class="l-p-rel l-w-100 l-mh-auto Article_overflow">
+        <div class="l-w-100 t-bg">
+      <div class="l-w-4col--4col l-mh3 l-ph4--2col l-mh-auto--3col">
+        <div class="f-medium f-c-grey-200 l-pt3">
+                    <ol class='Article_breadcrumb l-ml0 f-minor l-mb0'>
+            <li
+              class='breadcrumb__item f-capitalize l-d-ib t-ls-n'
+              >
+              <a
+                class='f-c-white f-bold'
+                href="https://www.sitepoint.com/php/">
+                  php              </a>
+            </li>
+            <li
+              class='breadcrumb__item f-c-grey-200 l-d-ib t-ls-n'
+            >
+              February 03, 2012            </li>
+            <li
+              class='breadcrumb__item l-d-ib t-ls-n'
+              class='breadcrumb_author f-c-white'>
+                                                By
+                  <a
+                    class='f-c-grey-200'
+                    href="https://www.sitepoint.com/author/mpsinas/">
+                      Martin Psinas                  </a>
+                                          </li>
+          </ol>
+        </div>
+        <div class="l-d-f l-fd-col l-fd-row--3col l-jc-sb">
+          <div>
+            <h1 class="l-mt0 f-bold f-icon-bold l-mb4 f-c-white">
+              <span class="f-c-white l-mr3">Tracking Upload Progress with PHP and JavaScript</span>
+            </h1>
+                      </div>
+        </div>
+      </div>
+    </div>
+            <div class="l-d-f l-jc-sb l-mt3 l-w-4col--4col l-mh-auto" data-hellobar="content">
+      <div class="l-w-100 l-fg1 l-mh3--2col l-mh0--4col l-o-h">
+                    <div class="l-pa3 l-pt0">
+    
+      <div class="l-d-f l-jc-cen f-center l-mh-auto l-o-h l-mt3">
+              </div>
+
+        <div class="ArticleCopy language-">
+      <sp-social-share></sp-social-share>
+      <div class='l-mt3 l-mh5--2col'>
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><p>A problem that has plagued web developers for years is how to add real-time information to their applications, such as a progress bar for file uploads. Users are impatient; they don&rsquo;t want to sit and wait while the browser is doing something and wonder whether it has frozen or if they have a slow connection. Providing a progress indicator gives users useful information and lets them know exactly what&rsquo;s going on.</p>
+<p>At first thought, you might think accomplishing this can be done easily by first obtaining the file&rsquo;s size from the user&rsquo;s computer and then performing some simple calculations against the directory on the server where the file is being uploaded to. On second thought, you&rsquo;d find things aren&rsquo;t quite that simple.</p>
+<p>JavaScript can access a file&rsquo;s name, type, and even the width and height of a local image, but it wasn&rsquo;t until <a href="http://stackoverflow.com/q/4112575/322819">HTML5 that it could access a file&rsquo;s size</a>. Unfortunately, HTML5 still isn&rsquo;t a completed standard yet and isn&rsquo;t uniformly supported across all browsers. An alternate solution is to rely on a Flash, Java, or ActiveX plugin; no thanks, I&rsquo;ll pass. Yet another solution is to install the <a href="http://php.net/apc">Alternative PHP Cache</a> extension, but that may not be available depending on your hosting environment and it seems like overkill for such a small task such as this.</p>
+<p>It would seem as though all the options are fraught with nuisances and the task has quickly become a headache. But in the words of Yoda, &ldquo;No&hellip; There is another.&rdquo;</p>
+<p>One of the many reasons I love PHP is that it makes seemingly difficult tasks easy. As of PHP 5.4, they&rsquo;ve done it again with a new set of configuration directives, <code>session.upload_progress</code>.</p>
+<p>In this article I&rsquo;ll show you how this feature can be used to create a simple upload progress bar without any external libraries or browser dependencies. I&rsquo;ll first discuss how it works, and then I&rsquo;ll walk you through creating the four files needed to accomplish the task (an upload form, some JavaScript, a little CSS, and a file to return the status of the upload).</p>
+<h2>Session Upload Progress</h2>
+<p>Besides the usual requirements to allow file uploads, there are two more to track the progress. The <code>session.upload_progress.enabled</code> directive must be enabled and there must be a hidden field in your web form with the name specified by the <code>session.upload_progress.name</code> directive. When <code>session.upload_progress.enabled</code> is true (as it is by default in PHP 5.4 and presumably beyond) and <code>$_POST[<em>session.upload_progress.name</em>]</code> is sent during an upload, information about the file transfer is made available in the <code>$_SESSION</code> superglobal array. </p>
+<p>The <code>print_r()</code> output of the <code>$_SESSION</code> array will look similar to the following during a file transfer:</p>
+<pre>Array
+(
+    [upload_progress_myForm] =&gt; Array
+        (
+            [start_time] =&gt; 1323733740
+            [content_length] =&gt; 721127769
+            [bytes_processed] =&gt; 263178326
+            [done] =&gt; 
+            [files] =&gt; Array
+                (
+                    [0] =&gt; Array
+                        (
+                            [field_name] =&gt; userfile
+                            [name] =&gt; ubuntu-10.04.3-desktop-i386.iso
+                            [tmp_name] =&gt; 
+                            [error] =&gt; 0
+                            [done] =&gt; 
+                            [start_time] =&gt; 1323733740
+                            [bytes_processed] =&gt; 263178026
+                        )
+                )
+        )
+)</pre>
+<p>When you are developing either locally or on a fast network and upload small files, you won&rsquo;t be able to visually observe the progress because the transfer happens so fast. In this case, you might want to try transferring a large file. Make sure the settings in your <code>php.ini</code> file allow large uploads, specifically the <code>post_max_size</code> and <code>upload_max_filesize</code> directives, and then verify they are sane values when you go to production.</p>
+<h3>Create the Form</h3>
+<p>The first file I&rsquo;ll present is the upload form. Just to keep things as simple as possible, the example will post to itself and only handle one file upload at a time. Additionally, I won&rsquo;t bother saving the file after it has been uploaded. </p>
+<p>Here&rsquo;s the code for <code>form.php</code>:</p>
+<pre><code class="language-php">&lt;?php
+if ($_SERVER["REQUEST_METHOD"] == "POST" &amp;&amp; !empty($_FILES["userfile"])) {
+    // move_uploaded_file()
+}
+?&gt;
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;title&gt;File Upload Progress Bar&lt;/title&gt;
+  &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;div id="bar_blank"&gt;
+   &lt;div id="bar_color"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div id="status"&gt;&lt;/div&gt;
+  &lt;form action="&lt;?php echo $_SERVER["PHP_SELF"]; ?&gt;" method="POST" 
+   id="myForm" enctype="multipart/form-data" target="hidden_iframe"&gt;
+   &lt;input type="hidden" value="myForm"
+    name="&lt;?php echo ini_get("session.upload_progress.name"); ?&gt;"&gt;
+   &lt;input type="file" name="userfile"&gt;&lt;br&gt;
+   &lt;input type="submit" value="Start Upload"&gt;
+  &lt;/form&gt;
+  &lt;iframe id="hidden_iframe" name="hidden_iframe" src="about:blank"&gt;&lt;/iframe&gt;
+  &lt;script type="text/javascript" src="script.js"&gt;&lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>In the example the code to actually process the file has been omitted to keep things simple. If you&rsquo;re interested in what such code should look like, check out the article <a href="http://www.sitepoint.com/file-uploads-with-php/">File Uploads with PHP</a> by Timothy Boronczyk.</p>
+<p>After the head section which provides the page&rsquo;s title and includes the stylesheet, you&rsquo;ll notice a small collection of div elements. The div with the ID &ldquo;bar_blank&rdquo; is the container for the progress bar. The div with the ID &ldquo;bar_color&rdquo; will be dynamically updated as the file upload progresses. The &ldquo;status&rdquo; div will display the numeric value of the percent uploaded.</p>
+<p>The form is set to submit to the same URL and its target attribute points to a hidden iframe element. Submitting a form to a hidden frame allows you to keep the visitor on the same page while the work is being done in the background. In fact, this is a common practice when doing &ldquo;Ajax file uploads&rdquo; since it isn&rsquo;t possible to send the contents of a file directly using JavaScript&rsquo;s <code>XmlHttpRequest</code> object.<div class="proper-ad-unit">
+          <div id="proper-ad-sitepoint_content_1">
+            <script>
+              window.propertag.cmd.push(function() {
+                proper_display('sitepoint_content_1');
+              });
+            </script></div>
+        </div></p>
+<p>Within the form, the special hidden field needed to populate the <code>$_SESSION</code> array appears, followed by a file upload input and submit button. Submitting the form will trigger a JavaScript function named <code>startUpload()</code> which will be defined by the included JavaScript file.</p>
+<p>At the bottom of the page is the hidden frame to which the form will post and the import of the <code>script.js</code> file.</p>
+<h3>Add Some Style</h3>
+<p>The next file, <code>style.css</code>, is pretty straight-forward. I&rsquo;ve defined the size of the progress bar container and given it a 1px black border, the color of the progress bar as it&rsquo;s loading, and both the iframe and the progress bar are hidden.</p>
+<pre><code class="language-css">#bar_blank {
+  border: solid 1px #000;
+  height: 20px;
+  width: 300px;
+}
+
+#bar_color {
+  background-color: #006666;
+  height: 20px;
+  width: 0px;
+}
+
+#bar_blank, #hidden_iframe {
+  display: none;
+}</code></pre>
+<h3>Client-Side Functionality</h3>
+<p>The <code>script.js</code> file is the largest of the group of files. It contains six functions which I will discuss below. Many people like to use jQuery to provide some of the functionality here, and you are certainly free to do so if you wish, but I personally prefer the old-school approach. Similar to how the Japanese place a higher value on hand crafted goods, I just feel more passionate about the code if it is my own.</p>
+<pre><code class="language-javascript">function toggleBarVisibility() {
+    var e = document.getElementById("bar_blank");
+    e.style.display = (e.style.display == "block") ? "none" : "block";
+}
+
+function createRequestObject() {
+    var http;
+    if (navigator.appName == "Microsoft Internet Explorer") {
+        http = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    else {
+        http = new XMLHttpRequest();
+    }
+    return http;
+}
+
+function sendRequest() {
+    var http = createRequestObject();
+    http.open("GET", "progress.php");
+    http.onreadystatechange = function () { handleResponse(http); };
+    http.send(null);
+}
+
+function handleResponse(http) {
+    var response;
+    if (http.readyState == 4) {
+        response = http.responseText;
+        document.getElementById("bar_color").style.width = response + "%";
+        document.getElementById("status").innerHTML = response + "%";
+
+        if (response &lt; 100) {
+            setTimeout("sendRequest()", 1000);
+        }
+        else {
+            toggleBarVisibility();
+            document.getElementById("status").innerHTML = "Done.";
+        }
+    }
+}
+
+function startUpload() {
+    toggleBarVisibility();
+    setTimeout("sendRequest()", 1000);
+}
+
+(function () {
+    document.getElementById("myForm").onsubmit = startUpload;
+})();</code></pre>
+<p>The <code>toggleBarVisibility()</code> function sets an appropriate style on the &ldquo;bar_blank&rdquo; div to show or hide the progress bar as needed. Initially it starts out hidden, but will be displayed once an upload starts and hidden again when an upload finishes.</p>
+<p>The <code>createRequestObject()</code> function creates an <code>XMLHttpRequest</code> or <code>ActiveXObject</code> object based on the user&rsquo;s browser. This is probably the function most people would look to jQuery or some other JavaScript framework to provide.</p>
+<p>The <code>sendRequest()</code> function requests the <code>progress.php</code> file with a GET request, and then invokes the <code>handleResponse()</code> function to handle the returned data.</p>
+<p>The <code>handleResponse()</code> function handles the response from <code>progress.php</code> which will be a number between 1-100 depending on the file upload progress. I also update the &ldquo;status&rdquo; div with the appropriate value. If the current percent is below 100 then I call JavaScript&rsquo;s native <code>setTimeout()</code> function to send another request for an update after 1 second (you may want to adjust this value as appropriate), otherwise I hide the progress bar again and set the status to &ldquo;Done.&rdquo;</p>
+<p>The <code>startUpload()</code> function makes the upload bar visible and sends a request for an update after a delay of 1 second. This small delay is needed in order to give the upload time to start.</p>
+<p>The final function is a self-executing anonymous function which registers <code>startUpload()</code> with the form&rsquo;s submit event.</p>
+<h3>Real-Time Progress</h3>
+<p>The last file that brings everything together is the <code>progress.php</code> file:</p>
+<pre><code class="language-php">&lt;?php
+session_start();
+
+$key = ini_get("session.upload_progress.prefix") . "myForm";
+if (!empty($_SESSION[$key])) {
+    $current = $_SESSION[$key]["bytes_processed"];
+    $total = $_SESSION[$key]["content_length"];
+    echo $current &lt; $total ? ceil($current / $total * 100) : 100;
+}
+else {
+    echo 100;
+}</code></pre>
+<p>The script performs some simple math on the current number of bytes transferred divided by the total file size, multiplied by 100 and rounded off to give a percent.</p>
+<p>Information about the transfer is keyed with a concatenation of the session.upload_progress.prefix directive&rsquo;s value and the hidden <code>session.upload_progress.name</code> field&rsquo;s value. Because my form passed &ldquo;myForm&rdquo;, the session&rsquo;s key is determined with <code>ini_get("session.upload_progress.prefix") . "myForm"</code>. </p>
+<p>Here&rsquo;s a screenshot of the progress bar in action:</p>
+<p><img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2012/02/progressbar.png" alt="upload progress bar" width="316" height="104" class="aligncenter size-full wp-image-1534" style="float: none !important;margin-left:auto;margin-right:auto"></p>
+<h2>Fine-Tuning the Behavior</h2>
+<p>PHP provides some additional directives to help fine-tune the behavior of session uploads you should be aware of. For example, <code>session.upload_progress.cleanup</code>, which is set to 1 by default, cleans up the extra session data immediately after the upload has finished. You need to be careful to avoid a potential race condition.</p>
+<p>Take a look again at the code in <code>progress.php</code> and you&rsquo;ll notice that I check to see if <code>$_SESSION[$key]</code> is empty or not before proceeding. My JavaScript functions fire off every second as long as the result returned from <code>progress.php</code> is less than 100. If <code>session.upload_progress.cleanup</code> is enabled and my script fetches 99% of the upload and a 1/2-second later the upload finishes, <code>$_SESSION[$key]</code> would not exist for the next check. If I didn&rsquo;t take that into consideration then my JavaScript function might keep firing, even after the upload finished.</p>
+<p>Another two directives are <code>session.upload_progress.freq</code> and <code>session.upload_progress.min_freq</code> which both determine how often the session should be updated. The value of freq can be given in either bytes (i.e., 100) or the percentage of total bytes (i.e., 2%). The value of <code>min_freq</code> is given in seconds and indicates the minimum number of seconds between updates. Obviously if <code>min_freq</code> was set to update every 1 second, it would be pointless for your JavaScript to check every 100 milliseconds.</p>
+<h2>Summary</h2>
+<p>You should now have a solid grasp on how to create a progress bar for file uploads using the session upload progress feature. Moving forward, I encourage you to experiment with uploading multiple files, giving the option to cancel an upload in progress using <code>$_SESSION[$key]["cancel_upload"]</code>, or whatever other ideas your mind can muster. Please share in the comments your experiences and improvements you&rsquo;ve made for others to benefit from and enjoy as well!</p>
+<p><small>Image via <a href="http://www.shutterstock.com/gallery-587221p1.html">file404</a> / <a href="http://www.shutterstock.com">Shutterstock</a></small></p></body></html>
+      <div class="Article_authorBio l-mv4 t-bg-white m-border l-pa3">
+        <div class="l-d-f l-pt3">
+          <a class="l-s5 l-pa0 l-mr3 l-round l-o-h" href="https://www.sitepoint.com/author/mpsinas/">
+            <img src="https://secure.gravatar.com/avatar/3c26551f8a950ccf5f648b7676464404?s=96&#038;d=mm&#038;r=g" width="96" height="96" alt="" class="avatar avatar-96 wp-user-avatar wp-user-avatar-96 photo avatar-default" />          </a>
+          <div class="f-lh-title">
+            <div class="f-c-grey-300">Meet the author</div>
+            <div class="f-large">
+              <a class="f-bold f-c-grey-500" href="https://www.sitepoint.com/author/mpsinas/">
+                Martin Psinas              </a>
+                          </div>
+          </div>
+        </div>
+        <div class="f-light f-lh-copy l-mt3">Martin E. Psinas is a self-taught web developer, published author, and is currently studying Japanese. For more information, visit his website.</div>
+      </div>
+            </div>
+    </div>
+        </div>
+          </div>
+              <div class="article-ads">
+              <div class="l-w-aside-i l-mt3 l-mh3 l-d-n l-d-f--3col l-fd-col l-fs0">
+      <div class="l-mb3">
+            <sp-heading content="Sponsors"></sp-heading>
+    <div class="l-w-100 l-mv3 t-bg-white m-border"><div class="widget maestro maestro-content-type-html hide-for-mobile-SP" id="maestro-765"><div class="proper-ad-unit">
+  <div id="proper-ad-sitepoint_sponsor_1">
+    <script>
+        propertag.cmd.push(function() { 
+          proper_display('sitepoint_sponsor_1');
+        }); 
+    </script>
+  </div>
+</div></div></div>
+            <div class="widget maestro maestro-content-type-html hide-for-mobile-SP" id="maestro-763"><div class="proper-ad-unit">
+
+    <div id="proper-ad-sitepoint_side_1"> <script> propertag.cmd.push(function() { proper_display('sitepoint_side_1'); }); </script> 
+
+</div>
+</div></div>      </div>
+      <div class="ArticleBox u-premium-preview"></div>
+      <div class="ArticleAside_row"><div class="widget maestro maestro-content-type-html " id="maestro-728"><div class="proper-ad-unit">
+    <div id="proper-ad-sitepoint_side_2"> <script> propertag.cmd.push(function() { proper_display('sitepoint_side_2'); }); </script> </div>
+</div></div><div class="widget maestro maestro-content-type-html " id="maestro-785"><div class="proper-ad-unit Sticky">
+
+    <div id="proper-ad-sitepoint_side_3"> <script> propertag.cmd.push(function() { proper_display('sitepoint_side_3'); }); </script> </div>
+
+</div></div>        <ads-weighted widget='21' data='{"NL":[{"id":"584","weight":"50","randMax":50},{"id":"585","weight":"50","randMax":100}]}' fallback='' url='tracking-upload-progress-with-php-and-javascript' channelSlug='php'></ads-weighted></div>
+      <div class="ArticleAside_row ArticleAside_newboxads"></div>
+    </div>
+            </div>
+          </div>
+
+    <div class="u-accordion-end"></div>
+
+    <div class="l-d-f l-jc-sb l-w-3col--3col l-mh-auto">
+      <div class="u-showseriesx l-w-100 l-fg1 l-mh3--2col l-mh0--4col">
+
+        <div class="widget maestro maestro-content-type-html hide-for-tablet-SP hide-for-mobile-SP" id="maestro-649"><span data-sumome-listbuilder-embed-id="6cbb401075afaa88f82a6ddc686573be3368d07928cf833fe1a56254d6ff9849"></span></div>
+                <div id="commentsSection" class="l-pa3 t-bg-white">
+                  </div>
+      </div>
+    </div>
+
+    
+    <script>
+      var data = 'php';
+      if (localStorage && localStorage.SP_categories) {
+        data = JSON.parse(localStorage.SP_categories).toString();
+        data = data ? data.replace('-', '') : 'php'
+      }
+
+      oSpP && oSpP.push('channel', data);
+    </script>
+    </div>
+
+    <script>
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      post_id: 1524,
+      title: "Tracking Upload Progress with PHP and JavaScript",
+      category: "PHP",
+      tags: ["Advanced"],
+      authors: ["Martin Psinas"],
+      permalink: "https:\/\/www.sitepoint.com\/tracking-upload-progress-with-php-and-javascript\/",
+      published: "20120203",
+      sponsored: false    })
+  </script>
+
+    <style type="text/css">.alm-btn-wrap{display:block;text-align:center;padding:10px 0 25px;position:relative}.alm-btn-wrap:after{display:table;clear:both;height:0;width:100%;content:''}.alm-btn-wrap .alm-load-more-btn{font-size:15px;font-weight:600;width:auto;height:42px;line-height:42px;background:#ed7070;color:#fff;border:none;border-radius:4px;margin:0 0 4px;padding:0 20px;display:inline-block;position:relative;-webkit-transition:all .35s ease;transition:all .35s ease;text-align:center;text-decoration:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer}.alm-btn-wrap .alm-load-more-btn.loading,.alm-btn-wrap .alm-load-more-btn:hover{background-color:#e06464;color:#fff;text-decoration:none}.alm-btn-wrap .alm-load-more-btn:active{-webkit-box-shadow:inset 0 2px 1px rgba(0,0,0,.1);box-shadow:inset 0 2px 1px rgba(0,0,0,.1);text-decoration:none}.alm-btn-wrap .alm-load-more-btn.loading{cursor:default;outline:0;padding-left:44px}.alm-btn-wrap .alm-load-more-btn.done{cursor:default;opacity:.15;background-color:#ed7070;outline:0!important;-webkit-box-shadow:none!important;box-shadow:none!important}.alm-btn-wrap .alm-load-more-btn.done:before,.alm-btn-wrap .alm-load-more-btn:before{background:0 0;width:0}.alm-btn-wrap .alm-load-more-btn.loading:before{background:#fff url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/ajax-loader.gif) no-repeat center center;width:30px;height:30px;margin:6px;border-radius:3px;display:inline-block;z-index:0;content:'';position:absolute;left:0;top:0;overflow:hidden;-webkit-transition:width .5s ease-in-out;transition:width .5s ease-in-out}.alm-masonry{display:block;overflow:hidden;clear:both}.ajax-load-more-wrap.blue .alm-load-more-btn{background-color:#0081bf}.ajax-load-more-wrap.blue .alm-load-more-btn.done,.ajax-load-more-wrap.blue .alm-load-more-btn.loading,.ajax-load-more-wrap.blue .alm-load-more-btn:hover{background-color:#0073aa}.ajax-load-more-wrap.green .alm-load-more-btn{background-color:#6fca68}.ajax-load-more-wrap.green .alm-load-more-btn.done,.ajax-load-more-wrap.green .alm-load-more-btn.loading,.ajax-load-more-wrap.green .alm-load-more-btn:hover{background-color:#64b95e}.ajax-load-more-wrap.red .alm-load-more-btn{background-color:#ca4b4b}.ajax-load-more-wrap.red .alm-load-more-btn.done,.ajax-load-more-wrap.red .alm-load-more-btn.loading,.ajax-load-more-wrap.red .alm-load-more-btn:hover{background-color:#b13b3b}.ajax-load-more-wrap.purple .alm-load-more-btn{background-color:#a86bb9}.ajax-load-more-wrap.purple .alm-load-more-btn.done,.ajax-load-more-wrap.purple .alm-load-more-btn.loading,.ajax-load-more-wrap.purple .alm-load-more-btn:hover{background-color:#9963a8}.ajax-load-more-wrap.grey .alm-load-more-btn{background-color:#888}.ajax-load-more-wrap.grey .alm-load-more-btn.done,.ajax-load-more-wrap.grey .alm-load-more-btn.loading,.ajax-load-more-wrap.grey .alm-load-more-btn:hover{background-color:#777}.ajax-load-more-wrap.white .alm-load-more-btn{background-color:#fff;color:#666;border:1px solid #efefef}.ajax-load-more-wrap.white .alm-load-more-btn.done,.ajax-load-more-wrap.white .alm-load-more-btn.loading,.ajax-load-more-wrap.white .alm-load-more-btn:hover{background-color:#efefef;color:#333}.ajax-load-more-wrap.white .alm-load-more-btn.done{border-color:#fff}.ajax-load-more-wrap.infinite .alm-load-more-btn{width:100%;background-color:transparent!important;background-position:center center;background-repeat:no-repeat;background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/spinner.gif);border:none!important;opacity:0;-webkit-transition:opacity .2s ease;transition:opacity .2s ease;-webkit-box-shadow:none!important;box-shadow:none!important;overflow:hidden;text-indent:-9999px;cursor:default!important;outline:0!important}.ajax-load-more-wrap.infinite .alm-load-more-btn:before{display:none!important}.ajax-load-more-wrap.infinite .alm-load-more-btn:active,.ajax-load-more-wrap.infinite .alm-load-more-btn:focus{outline:0}.ajax-load-more-wrap.infinite .alm-load-more-btn.done{opacity:0}.ajax-load-more-wrap.infinite .alm-load-more-btn.loading{opacity:1}.ajax-load-more-wrap.infinite.skype .alm-load-more-btn{background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/spinner-skype.gif)}.ajax-load-more-wrap.infinite.ring .alm-load-more-btn{background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/spinner-ring.gif)}.ajax-load-more-wrap.infinite.fading-blocks .alm-load-more-btn{background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/loader-fading-blocks.gif)}.ajax-load-more-wrap.infinite.fading-circles .alm-load-more-btn{background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/loader-fading-circles.gif)}.ajax-load-more-wrap.infinite.chasing-arrows .alm-load-more-btn{background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/spinner-chasing-arrows.gif)}.alm-listing{margin:0;padding:0}.alm-listing .alm-reveal{outline:0}.alm-listing .alm-reveal:after{display:table;clear:both;height:0;width:100%;content:''}.alm-listing .alm-paging-content>li,.alm-listing .alm-reveal>li,.alm-listing>li{background:0 0;margin:0 0 30px;padding:0 0 0 170px;overflow:hidden;position:relative;list-style:none}.alm-listing .alm-paging-content>li.no-img,.alm-listing .alm-reveal>li.no-img,.alm-listing>li.no-img{padding:0}.alm-listing .alm-paging-content>li p,.alm-listing .alm-reveal>li p,.alm-listing>li p{margin:0}.alm-listing .alm-paging-content>li p.entry-meta,.alm-listing .alm-reveal>li p.entry-meta,.alm-listing>li p.entry-meta{margin:0 0 5px;opacity:.75}.alm-listing .alm-paging-content>li h3,.alm-listing .alm-reveal>li h3,.alm-listing>li h3{margin:0 0 10px}.alm-listing .alm-paging-content>li img,.alm-listing .alm-reveal>li img,.alm-listing>li img{position:absolute;left:0;top:0;border-radius:2px}</style><div id="ajax-load-more" class="ajax-load-more-wrap infinite classic"  data-alm-id="" data-canonical-url="https://www.sitepoint.com/tracking-upload-progress-with-php-and-javascript/" data-slug="tracking-upload-progress-with-php-and-javascript" data-post-id="1524"  data-localized="ajax_load_more_vars"><div aria-live="polite" class="alm-listing alm-ajax" data-container-type="div" data-repeater="default" data-post-type="post" data-category="php" data-post-not-in="1524" data-order="DESC" data-orderby="date" data-offset="0" data-posts-per-page="1" data-scroll="true" data-scroll-distance="-2000" data-max-pages="0" data-pause-override="true" data-pause="true" data-button-label="Older Posts" data-transition="fade" data-transition-container-classes=" next-article l-o-h" data-images-loaded="true"></div><div class="alm-btn-wrap" style="visibility: hidden;"><button class="alm-load-more-btn more " rel="next">Older Posts</button></div></div>  </div>
+    <div class="widget maestro maestro-content-type-html " id="maestro-778"><script type="text/html" class="ModalOnce" data-activate-delay="15" data-tracking="free-book" data-min-height="1" data-min-width="1">
+  <div id="free-book-modal" class="reveal-modal medium l-b-n l-br" data-reveal aria-labelledby="Free Book" aria-hidden="true" role="dialog">
+    <free-book-content book_cover="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2019/04/1556253551phpmysql.png" heading="Free Book. All Yours." book_title="PHP & MYSQL: Novice to Ninja, 6th Edition">
+      <p class="f-small l-mb3">Make the leap into server-side programming with a comprehensive cover of PHP & MySQL. We'll use PHP to pass variables in forms, cover database design principles, control access and publish data on the web. It's everything to take you from Novice to Ninja!</p>
+      <p class="f-small l-mb0">Worth $29 on Amazon. Yours FREE!</p>
+    </free-book-content>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    <free-book-form slug="php-mysql-n2n6-reader" />
+  </div>
+</script></div>    <footer role="contentinfo">
+  <div class="l-w-100 l-d-f Footer-bg">
+    <div class="l-d-f l-fw-w l-mh-auto">
+      <div class="l-d-f l-fw-w l-mt4 l-w-100 l-pa3 l-w-3col--4col l-jc-sb l-jc-sa--4col">
+        <ul>
+          <li class="t-ls-n">
+            <div class="f-c-white f-large f-bold l-mb2">Stuff we do</div>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="/premium/">Premium</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="/community/">Forums</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="https://sitepoint.typeform.com/to/fNY7XG">Corporate memberships</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="https://sitepoint.tapfiliate.com/">Become an affiliate</a>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="t-ls-n">
+            <div class="f-c-white f-large f-bold l-mb2">About</div>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="/about-us/">Our story</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="/press/">Press room</a>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="t-ls-n">
+            <div class="f-c-white f-large f-bold l-mb2">Contact</div>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="/contact-us/">Contact us</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="https://sitepoint.zendesk.com/hc/en-us">FAQ</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="https://sitepoint.typeform.com/to/HtAXVN">Publish your book with us</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="https://sitepoint.typeform.com/to/DMmYfn">Write an article for us</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="/advertise/">Advertise</a>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="t-ls-n">
+            <div class="f-c-white f-large f-bold l-mb2">Legals</div>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="/legals/">Terms of use</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="/privacy-policy/">Privacy policy</a>
+          </li>
+        </ul>
+      </div>
+      <div class="l-d-n l-d-b--4col l-as-cen Footer-hr" >
+      </div>
+      <div class="l-mt4 l-pa3 l-w-1col--4col">
+        <ul class="t-ls-n l-d-f l-fw-w l-d-b--3col">
+          <li>
+            <div class="f-c-white f-large f-bold l-mb2 l-mr3">Connect</div>
+          </li>
+          <li class="f-center">
+            <a class="f-c-grey-300" href="https://www.facebook.com/sitepoint" rel="noopener" target="_blank">
+              <i class="fab fa-facebook-square l-i4"></i>
+            </a>
+            <a class="l-pl3 f-c-grey-300" href="http://twitter.com/sitepointdotcom" rel="noopener" target="_blank">
+              <i class="fab fa-twitter-square l-i4"></i>
+            </a>
+            <a class="l-pl3 f-c-grey-300" href="https://www.sitepoint.com/feed/">
+              <i class="fas fa-rss-square l-i4"></i>
+            </a>
+            <a class="l-pl3 f-c-grey-300" href="https://plus.google.com/+sitepoint" rel="noopener" target="_blank">
+              <i class="fab fa-google-plus-square l-i4"></i>
+            </a>
+          </li>
+          <p class="f-c-grey-300 l-mh-auto l-ml3--2col l-ml0--3col l-mv3--4col f-small f-center">
+            &copy; 2000 &ndash; 2019 SitePoint Pty. Ltd.
+          </p>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+        <script type="text/javascript">
+    (function(googletag, SP_GPT_Slots) {
+      if(!SP_GPT_Slots.length) return;
+
+      var SP_GPT_First_Slot_Rendered = false;
+      googletag.cmd.push(function(){
+        googletag.pubads().addEventListener("slotRenderEnded", function(e){
+          if (!SP_GPT_First_Slot_Rendered) {
+            gaEventQueue.track("CanSeeAds", "dfpFirstRendered", {"nonInteraction": true});
+            SP_GPT_First_Slot_Rendered = true;
+          }
+        });
+      });
+
+    })(googletag, SP_GPT_Slots);
+    </script>
+<div class="widget maestro maestro-content-type-html hide-for-mobile-SP" id="maestro-746"><div class="proper-ad-unit ad-sticky">
+    <div id="proper-ad-sitepoint_main_1"> <script> propertag.cmd.push(function() { proper_display('sitepoint_main_1'); }); </script> </div>
+</div></div><script type='text/javascript'>
+/* <![CDATA[ */
+var ratingsL10n = {"plugin_url":"https:\/\/www.sitepoint.com\/wp-content\/plugins\/wp-postratings","ajax_url":"https:\/\/www.sitepoint.com\/wp-admin\/admin-ajax.php","text_wait":"Please rate only 1 item at a time.","image":"thumbs","image_ext":"gif","max":"2","show_loading":"1","show_fading":"1","custom":"1"};
+var ratings_1_mouseover_image=new Image();ratings_1_mouseover_image.src="https://www.sitepoint.com/wp-content/plugins/wp-postratings/images/thumbs/rating_1_over.gif";var ratings_2_mouseover_image=new Image();ratings_2_mouseover_image.src="https://www.sitepoint.com/wp-content/plugins/wp-postratings/images/thumbs/rating_2_over.gif";;
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.sitepoint.com/wp-content/plugins/wp-postratings/js/postratings-js.js?ver=1.85'></script>
+<script type='text/javascript' src='//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/scripts-foot-6e8feb0d357d51d669d194de6aae4530.js?ver=4.9.8'></script>
+<script type='text/javascript' src='//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/bundle-8c91a5c26dd85948a16a560af21aef25.js'></script>
+<script type='text/javascript' src='//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/article-ba6b0e32b94bc8805a429662be25e5e6.js'></script>
+<script type='text/javascript' src='https://www.sitepoint.com/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var alm_localize = {"ajaxurl":"https:\/\/www.sitepoint.com\/wp-admin\/admin-ajax.php","alm_nonce":"d8e09e2583","pluginurl":"https:\/\/www.sitepoint.com\/wp-content\/plugins\/ajax-load-more","scrolltop":"false","speed":"250","results_text":"Displaying page {num} of {total}.","no_results_text":"No results found."};
+var ajax_load_more_vars = {"id":"ajax-load-more"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/dist/js/ajax-load-more.min.js?ver=5.1.2'></script>
+
+  </body>
+</html>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+Object Caching 14/82 objects using memcached
+Page Caching using memcached 
+Content Delivery Network via Amazon Web Services: CloudFront: dab1nmslvvntp.cloudfront.net
+
+Served from: www.sitepoint.com @ 2019-10-25 15:32:09 by W3 Total Cache
+-->

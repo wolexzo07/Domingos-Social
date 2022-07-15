@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Get Image Properties using PHP - Phppot</title>
+<meta name="description" content="The data or Information that are associated with an image is called as metadata of the images. For example, image type, image width, and hei"><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://phppot.com/feed/">
+<link rel="apple-touch-icon" sizes="180x180" href="https://phppot.com/apple-touch-icon.png?v=031218">
+<link rel="icon" type="image/png" sizes="32x32" href="https://phppot.com/favicon-32x32.png?v=031218">
+<link rel="icon" type="image/png" sizes="16x16" href="https://phppot.com/favicon-16x16.png?v=031218">
+<link rel="manifest" href="https://phppot.com/site.webmanifest?v=031218">
+<link rel="mask-icon" href="https://phppot.com/safari-pinned-tab.svg?v=031218" color="#ffa500">
+<link rel="shortcut icon" href="https://phppot.com/favicon.ico?v=031218">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Get Image Properties using PHP - Phppot">
+<meta property="og:site_name" content="Phppot">
+<meta property="og:description" content="The data or Information that are associated with an image is called as metadata of the images. For example, image type, image width, and hei"><meta property="og:url" content="https://phppot.com/php/get-image-properties-using-php/">
+<meta property="twitter:title" content="Get Image Properties using PHP - Phppot">
+<meta name="twitter:site" content="@phppot">
+<meta property="twitter:creator" content="@phppot">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://phppot.com/wp-content/uploads/2013/06/php_get_image_properties.jpg"><meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:description" content="The data or Information that are associated with an image is called as metadata of the images. For example, image type, image width, and hei"><meta property="twitter:image" content="https://phppot.com/wp-content/uploads/2013/06/php_get_image_properties.jpg"><script type="text/javascript" async="" src="Get%20Image%20Properties%20using%20PHP%20-%20Phppot_files/ga.js"></script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40067115-1']);
+  _gaq.push(['_setDomainName', 'phppot.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://www.google-analytics.com/"><link rel="dns-prefetch" href="https://www.youtube.com/"><link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/"><link rel="dns-prefetch" href="https://static.doubleclick.net/"><link rel="dns-prefetch" href="https://www.google.com/"><link rel="dns-prefetch" href="https://i.ytimg.com/"><link rel="dns-prefetch" href="https://yt3.ggpht.com/"><link rel="dns-prefetch" href="https://fonts.gstatic.com/"><link rel="stylesheet" id="main-style-css" href="Get%20Image%20Properties%20using%20PHP%20-%20Phppot_files/papers_228192.css" type="text/css" media="all">
+<link rel="canonical" href="https://phppot.com/php/get-image-properties-using-php/">
+</head>
+<body onload="prettyPrint()">
+ <div id="site_header">
+    <div class="content">
+        <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP"><img src="Get%20Image%20Properties%20using%20PHP%20-%20Phppot_files/phppot-logo.png" id="site-logo" alt="Helping You Build Web Applications Using PHP"></a>
+        <div class="search-container">
+            <form method="get" action="/" class="search-form">
+                <input name="s" class="search" placeholder="Search Phppot" title="Search Phppot" autocomplete="off">
+                <button type="submit" title="Search Phppot" id="search-button"></button>
+            </form>
+        </div>
+        <div class="header-link-container">
+            <span id="mobile-search-icon" onclick="toggleSearch();">Mobile
+                Search</span>
+                <div id="expand-sub-menu-icon">
+                    <a class="testimonial-icon" href="https://phppot.com/testimonials/">Testimonials</a><a class="demo-download-icon" href="https://phppot.com/demo/">Demo</a>
+                </div>  <a id="header-contact-navigation" href="https://phppot.com/contact/">Contact Me</a>
+        </div>
+    </div>
+</div>    <div class="content">
+        <div id="tutorial-body">
+            <div id="tutorial">
+                <h1>Get Image Properties using PHP</h1>
+                <div class="modified-on">Last modified on February 25th, 2017 by Vincy.</div>
+<p>The data or Information that are associated with an image is called 
+as metadata of the images. For example, image type, image width, and 
+height, attributes, created date, last modified date and etc.</p>
+<p>This information are not obvious to the user on simply viewing the 
+images. In this article, we have to see how to get metadata of images 
+using PHP script.</p>
+<p>PHP provides various functions and DLL to extract image properties from an image. These functions are,</p>
+<ol>
+<li>imagesx() and imagesy()</li>
+<li>getimagesize()</li>
+<li>exif_read_data()</li>
+</ol>
+<p>The corresponding DLL to be enabled for using these functions are <em>php_mbstring.dll</em>,<em> php_exif.dll</em>. For that, we should search for these all names among <a title="php.ini FILE" href="https://phppot.com/php/php-ini-file/">php.ini</a>, and could be found as,</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pun">;</span><span class="pln">extension</span><span class="pun">=</span><span class="pln">php_mbstring</span><span class="pun">.</span><span class="pln">dll
+</span><span class="pun">;</span><span class="pln">extension</span><span class="pun">=</span><span class="pln">php_exif</span><span class="pun">.</span><span class="pln">dll</span></pre>
+<p>And then, enable this DLL by removing semicolon(;) at the beginning 
+of each line. And the order should be as shown above to enable <em>mbstring</em> before <em>exif</em>.</p>
+<h2>imagesx() and imagesy()</h2>
+<p>The <em>imagesx()</em> and <em>imagesy()</em> are used to extract the
+ width and height of the images respectively. For that, it accepts the 
+resource type of data which will be returned on creating new images 
+dynamically using PHP script. For example, PHP captcha code is created 
+dynamically as images to ensure that the input of web application is 
+entered by the human. If we want to check the width and height of the 
+captcha we have created, then, <em>imagesx()</em> and<em> imagesy()</em> could be used appropriately.</p>
+<p><img class="alignnone size-full wp-image-878" src="Get%20Image%20Properties%20using%20PHP%20-%20Phppot_files/php_get_image_properties.jpg" alt="php_get_image_properties" width="200" height="133"></p>
+<h2>getimagesize()</h2>
+<p>This PHP method that returns an array of image properties like width,
+ height, image type, mime type and etc. This method will return a 
+limited amount of image data. But, there is no need to send resource 
+data of the image as the argument of this function. Rather, we should 
+specify the path of the image file, which can be either relative or 
+absolute path.</p>
+<p>The following PHP program is used to extract the properties of an image. For that, we need to <a href="https://phppot.com/php/access-form-data-from-php/">access HTML form data</a> on submitting the selected image file.</p>
+<p>First, create HTML content to select the image file for which we need to extract properties. As we have seen, to <a href="https://phppot.com/php/working-on-file-upload-using-php/">upload files through HTML form</a>, we need to specify the <em>enctype</em> attribute to the form. But this attribute can be used, if the form method is posted, as like as the following content.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="tag">&lt;html&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+</span><span class="tag">&lt;title&gt;</span><span class="pln">Getting Image Properties</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body&gt;</span><span class="pln">
+</span><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"frmImage"</span><span class="pln"> </span><span class="atn">action</span><span class="pun">=</span><span class="atv">""</span><span class="pln"> </span><span class="atn">method</span><span class="pun">=</span><span class="atv">"post"</span><span class="pln"> </span><span class="atn">enctype</span><span class="pun">=</span><span class="atv">"multipart/form-data"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"file"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"myImage"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln"> 
+</span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"Submit"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;/form&gt;</span><span class="pln">
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<p>After that, we need to access these from data from a PHP script to be
+ embedded on top of the above content. And the PHP script is,</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php
+</span><span class="kwd">if</span><span class="pun">(</span><span class="pln">isset</span><span class="pun">(</span><span class="pln">$_POST</span><span class="pun">[</span><span class="str">"submit"</span><span class="pun">]))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+</span><span class="kwd">if</span><span class="pun">(</span><span class="pln">is_array</span><span class="pun">(</span><span class="pln">$_FILES</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+$image_properties </span><span class="pun">=</span><span class="pln"> getimagesize</span><span class="pun">(</span><span class="pln">$_FILES</span><span class="pun">[</span><span class="str">'myImage'</span><span class="pun">][</span><span class="str">'tmp_name'</span><span class="pun">]);</span><span class="pln">
+</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"&lt;PRE&gt;"</span><span class="pun">;</span><span class="pln">
+print_r</span><span class="pun">(</span><span class="pln">$image_properties</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"&lt;/PRE&gt;"</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">?&gt;</span></pre>
+<p>This script will be executed on submitting the form, and the image 
+file is added to PHP global array, that is, $_FILES. After ensuring that
+ the $_FILES is not empty, then, we should specify the name of the file 
+to <em>getimagesize() </em>as shown above. Finally, image properties are
+ returned as an array and displayed to the browser, in human readable 
+format, by using <a href="https://phppot.com/php/php-print-statements/">PHP print statement</a> inside <em>pre </em>tags.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="typ">Array</span><span class="pln">
+</span><span class="pun">(</span><span class="pln">
+    </span><span class="pun">[</span><span class="lit">0</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="lit">1024</span><span class="pln">
+    </span><span class="pun">[</span><span class="lit">1</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="lit">768</span><span class="pln">
+    </span><span class="pun">[</span><span class="lit">2</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="lit">2</span><span class="pln">
+    </span><span class="pun">[</span><span class="lit">3</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> width</span><span class="pun">=</span><span class="str">"1024"</span><span class="pln"> height</span><span class="pun">=</span><span class="str">"768"</span><span class="pln">
+    </span><span class="pun">[</span><span class="pln">bits</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="lit">8</span><span class="pln">
+    </span><span class="pun">[</span><span class="pln">channels</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="lit">3</span><span class="pln">
+    </span><span class="pun">[</span><span class="pln">mime</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> image</span><span class="pun">/</span><span class="pln">jpeg
+</span><span class="pun">)</span></pre>
+<h2>exif_read_data()</h2>
+<p>Since <em>getimagesize()</em> functions will return limited set of properties, <em>exif_read_data() </em>is
+ used to get more information further associated with images. So, added 
+to the width, height information, it will return a huge list of 
+additional information such as image created date, last modified date, 
+File name, size, orientation, resolution and etc.</p>
+<p>This function will be used to extract properties of digital images in
+ which Exif data is stored in its header. Exif is a standard format, 
+that can be expanded as Exchangeable Image Format.</p>
+<p>Image types are of 16 totally, which varies based on the devices used
+ to capture images. Image types are returned as numbers that are 
+associated with the available types of images like gif, png and etc. For
+ example, if image type returned as 2 denotes that, it is JPEG image.</p>
+<p>Not only the type of the images but also the entire list of image 
+properties returned by this function, will also be varied depends on 
+devices.</p>
+<p>In the above program, replace the line which invokes <em>getimagesize() </em>function, that is,</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">$image_properties </span><span class="pun">=</span><span class="pln"> getimagesize</span><span class="pun">(</span><span class="pln">$_FILES</span><span class="pun">[</span><span class="str">'myImage'</span><span class="pun">][</span><span class="str">'tmp_name'</span><span class="pun">]);</span></pre>
+<p>by the following line for getting image properties in EXIF format.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">$image_properties </span><span class="pun">=</span><span class="pln"> exif_read_data</span><span class="pun">(</span><span class="pln">$_FILES</span><span class="pun">[</span><span class="str">'myImage'</span><span class="pun">][</span><span class="str">'tmp_name'</span><span class="pun">]);</span></pre>
+<p>And, let us experiment with different images captured by different 
+devices, to see the differences between the resultant property array 
+will be returned.</p>
+
+<div id="comments" class="comments-area">
+
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://phppot.com/php/get-image-properties-using-php/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://phppot.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Leave this empty <span class="required">*</span></label> <input id="url" name="url" type="text" size="30" maxlength="245"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="876" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>			</form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+    <div class="related-articles">
+                    <h2>Popular Articles</h2>
+                    <ul class="related-articles-list">
+                        <li><a href="https://phppot.com/php/php-image-resize/">PHP Image Resize</a></li>
+                        <li><a href="https://phppot.com/php/how-to-generate-initial-avatar-image-from-username-using-php-dynamically/">How to Generate Initial Avatar Image from Username using PHP Dynamically</a></li>
+                        <li><a href="https://phppot.com/php/php-watermark/">PHP Watermark</a></li>
+                    </ul>
+                </div>
+                <p>
+                    <a href="#top" class="top">↑ Back to Top</a>
+                </p>
+            </div>
+            <div id="tutorial-menu">
+	<ul class="main-menu"><li class="cat-item cat-item-72"><a href="https://phppot.com/category/php/">PHP</a><ul class="sub-menu"><li class="cat-item cat-item-59 "><a href="https://phppot.com/category/php/php-introduction/">PHP Introduction</a></li><li class="cat-item cat-item-26 "><a href="https://phppot.com/category/php/php-basics/">PHP Basics</a></li><li class="cat-item cat-item-99 "><a href="https://phppot.com/category/php/product/">Product</a></li><li class="cat-item cat-item-79 "><a href="https://phppot.com/category/php/php-shopping-cart/">PHP Shopping Cart</a></li><li class="cat-item cat-item-102 "><a href="https://phppot.com/category/php/payment-gateway-integration/">Payment Gateway Integration</a></li><li class="cat-item cat-item-94 "><a href="https://phppot.com/category/php/php-contact-form/">PHP Contact Form</a></li><li class="cat-item cat-item-103 "><a href="https://phppot.com/category/php/comments-system/">Comments System</a></li><li class="cat-item cat-item-57 "><a href="https://phppot.com/category/php/types-variables-operators/">Types, Variables &amp; Operators</a></li><li class="cat-item cat-item-58 "><a href="https://phppot.com/category/php/php-strings/">PHP Strings</a></li><li class="cat-item cat-item-22 "><a href="https://phppot.com/category/php/php-arrays/">PHP Arrays</a></li><li class="cat-item cat-item-61 "><a href="https://phppot.com/category/php/php-functions/">PHP Functions</a></li><li class="cat-item cat-item-35 "><a href="https://phppot.com/category/php/php-oops/">PHP OOPS</a></li><li class="cat-item cat-item-31 "><a href="https://phppot.com/category/php/php-forms/">PHP Forms</a></li><li class="cat-item cat-item-78 "><a href="https://phppot.com/category/php/advanced/">Advanced</a></li><li class="cat-item cat-item-90 "><a href="https://phppot.com/category/php/php-ajax/">PHP AJAX</a></li><li class="cat-item cat-item-89 "><a href="https://phppot.com/category/php/restful-api/">RESTful API</a></li><li class="cat-item cat-item-15 "><a href="https://phppot.com/category/php/php-databases/">PHP Databases</a></li><li class="cat-item cat-item-23 "><a href="https://phppot.com/category/php/php-sessions-and-cookies/">PHP Sessions and Cookies</a></li><li class="cat-item cat-item-51 "><a href="https://phppot.com/category/php/error-exception-handling/">Error and Exception Handling</a></li><li class="cat-item cat-item-100 "><a href="https://phppot.com/category/php/file-upload/">File Upload</a></li><li class="cat-item cat-item-101 "><a href="https://phppot.com/category/php/file-import-export/">File Import Export</a></li><li class="cat-item cat-item-36 "><a href="https://phppot.com/category/php/files-and-directories/">Files and Directories</a></li><li class="cat-item cat-item-45 "><a href="https://phppot.com/category/php/php-date-time/">PHP Date Time</a></li><li class="cat-item cat-item-12 taxonomy-active"><a href="https://phppot.com/category/php/php-graphics/">PHP Graphics</a><ul class="post-list"><li class="current-post">Get Image Properties using PHP</li><li><a class="post-menu" href="https://phppot.com/php/how-to-crop-image-using-jquery-and-php/">How to Crop Image using jQuery and PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/how-to-generate-initial-avatar-image-from-username-using-php-dynamically/">How to Generate Initial Avatar Image from Username using PHP Dynamically</a></li><li><a class="post-menu" href="https://phppot.com/php/upload-and-crop-image-using-php-and-jquery/">Upload and Crop Image using PHP and jQuery</a></li><li><a class="post-menu" href="https://phppot.com/php/php-image-resize/">PHP Image Resize</a></li><li><a class="post-menu" href="https://phppot.com/php/php-watermark/">PHP Watermark</a></li></ul></li><li class="cat-item cat-item-24 "><a href="https://phppot.com/category/php/php-xml/">PHP XML</a></li><li class="cat-item cat-item-62 "><a href="https://phppot.com/category/php/php-code-samples/">PHP Code Samples</a></li><li class="cat-item cat-item-96 "><a href="https://phppot.com/category/php/library/">Library</a></li><li class="cat-item cat-item-88 "><a href="https://phppot.com/category/php/php-freelancer/">PHP Freelancer</a></li></ul></li><li class="cat-item cat-item-73"><a href="https://phppot.com/category/jquery/">jQuery</a></li><li class="cat-item cat-item-74"><a href="https://phppot.com/category/wordpress/">WordPress</a></li><li class="cat-item cat-item-75"><a href="https://phppot.com/category/mysql/">MySQL</a></li><li class="cat-item cat-item-76"><a href="https://phppot.com/category/css/">CSS</a></li></ul></div>
+
+            <div id="social-icon">
+                <div class="heading">Share this Article</div>
+                <ul>
+                    <li><a class="social-link facebook-social-link" href="https://www.facebook.com/sharer/sharer.php?u=https://phppot.com/php/get-image-properties-using-php/" title="Share on Facebook"><span class="facebook-social-img">Share</span></a></li>
+                    <li><a class="social-link twitter-social-link" href="https://twitter.com/intent/tweet?original_referer=https://phppot.com&amp;source=tweetbutton&amp;text=Get%20Image%20Properties%20using%20PHP;url=https://phppot.com/php/get-image-properties-using-php/&amp;via=phppot" title="Share on Twitter"><span class="twitter-social-img">Tweet</span></a></li>
+                    <li><a class="social-link linkedin-social-link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://phppot.com/php/get-image-properties-using-php/&amp;media=Get%20Image%20Properties%20using%20PHP" title="Share on Linkedin"><span class="linkedin-social-img">Share</span></a></li>
+                </ul>
+            </div>
+        </div>
+<div id="sidebar">
+    <div id="aboutcntnt">
+        <div id="photo">
+            <img src="Get%20Image%20Properties%20using%20PHP%20-%20Phppot_files/Vincy.jpg" alt="Vincy" title="Vincy" width="100" height="100">
+        </div>
+        <div id="aboutdesc">
+            <p>
+                I’m Vincy, a web developer. If you want to start a
+                project and do a quick launch, <a href="https://phppot.com/contact/">contact
+                    me</a>.
+            </p>
+            <p>I am available for freelance work.</p>
+        </div>
+        <div id="contactMe">
+            <a href="mailto:vincy@phppot.com" title="Contact Me">vincy@phppot.com</a>
+        </div>
+    </div>
+
+                          <div class="sidebar-featured-product">
+        <div class="heading">Featured Product</div>
+        <a href="https://phppot.com/shop/contact-form-iris/"><img src="Get%20Image%20Properties%20using%20PHP%20-%20Phppot_files/simple-secure-spam-free-contact-form-in-php-iris-150x150.png">
+        </a>
+        <div class="sidebar-featured-url">
+            <a href="https://phppot.com/shop/contact-form-iris/">Contact
+                Form - Iris</a>
+        </div>
+    </div>
+            <div id="recommended">
+        <div class="heading">Trending Now</div>
+        <ul>
+            <li><a href="https://phppot.com/shop/contact-form-iris/">Contact
+                    Form – Iris</a></li>
+            <li><a href="https://phppot.com/php/simple-php-shopping-cart/">Simple
+                    PHP Shopping Cart</a></li>
+            <li><a href="https://phppot.com/php/how-to-become-a-full-time-freelance-php-developer-and-consultant/">How
+                    to Become a Full Time Freelance PHP Developer and
+                    Consultant</a></li>
+            <li><a href="https://phppot.com/jquery/jquery-ajax-inline-crud-with-php/">jQuery
+                    AJAX Inline CRUD with PHP</a></li>
+            <li><a href="https://phppot.com/php/simple-secure-spam-free-contact-form-in-php-iris/">Simple
+                    Secure Spam-Free Contact Form in PHP – Iris</a></li>
+        </ul>
+    </div>
+    <div class="testimonials-sbar">
+    <div class="heading">Testimonials</div>
+    <p class="testimonial-content"><span class="left-quotes">“</span>Vincy
+ is talented. I am very impressed by her work and diligence. I highly 
+recommend Vincy, and I am eager to work with her in my next project ...<span class="right-quotes">”</span></p>
+    <p class="testimonials-sbar-by">Stephen Opiyo, Patira Data Science, USA</p>
+    <div class="view-more-testimonial">
+        <a href="https://phppot.com/testimonials/"><span class="view-testimonials">View More Testimonials</span></a>
+    </div>
+</div></div></div>
+<div id="footer-contact-note">
+    <div class="content">
+        <h2>Looking for an expert PHP freelancer?</h2>
+        <p class="footer-contact-banner-title">Do you want to develop a
+            modern, lightweight, responsive web application and launch
+            quickly?</p>
+        <p>
+            <a id="footer-contact-navigation" href="https://phppot.com/contact/">Contact
+                Me</a>
+        </p>
+    </div>
+</div>
+<div id="footer">
+    <div class="content">
+        <div class="subscribe-section">
+            <div class="subscribe-email">
+                <div>
+    <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=phppot',
+             'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <p>
+        </p><div><label for="feedb-email-inp">Email:</label></div>
+            <input id="feedb-email-inp" placeholder="Enter your email here" type="text" class="feedb-email" name="email"><input type="hidden" value="phppot" name="uri"><input type="hidden" name="loc" value="en_US"><input type="submit" value="Subscribe" class="subscribe">
+        <p></p>
+    </form>
+</div></div>
+
+            <div class="follow">
+                <a class="facebook" href="https://www.facebook.com/PPbay" rel="nofollow noopener" title="Phppot Facebook Page" target="_blank">Facebook</a><a class="twitter" href="https://www.linkedin.com/in/vincya/" rel="nofollow noopener" title="Phppot LinkedIn Page" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="shop-footer-common">
+            <div class="shop-doc-nav">
+                <div class="shop-doc-nav-links">
+                    <div class="heading">Digital Goods Shop</div>
+                    <a href="https://phppot.com/faq/">FAQ</a> <a href="https://phppot.com/support-policy/">Support
+                        Policy</a> <a href="https://phppot.com/refund-policy/">Refund Policy</a>
+                    <a href="https://phppot.com/licenses/">Licenses</a> <a href="https://phppot.com/user-license/">User License</a> <a href="https://phppot.com/developer-license/">Developer License</a>
+                </div>
+
+                <div class="policy-doc-nav">
+                    <a href="https://phppot.com/terms-of-use/">Terms of
+                        Service</a><a href="https://phppot.com/privacy-policy/">Privacy
+                        Policy</a><a href="https://phppot.com/privacy-policy/#cookie-policy">Cookie
+                        Policy</a> <span class="copyright">© 2019 <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP">Phppot</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('click', function(e){
+    	var element = document.getElementsByClassName("search-container")[0];
+        if (element && !element.contains(e.target) && e.target.id != "mobile-search-icon" && window.innerWidth <= "550") {
+            element.style.display = "none";
+        }
+    });
+    function toggleSearch() {
+        var element = document.getElementsByClassName("search-container")[0];
+        if(element.style.display == 'inline-block') {
+            	element.style.display = "none";
+        } else {
+        	   element.style.display = "inline-block";
+        }
+    }
+</script><script async="" src="Get%20Image%20Properties%20using%20PHP%20-%20Phppot_files/prettify.js"></script>
+
+</body></html>

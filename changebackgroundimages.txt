@@ -1,0 +1,37 @@
+(function() {
+    var curImgId = 0;
+    var numberOfImages = 42; // Change this to the number of background images
+    window.setInterval(function() {
+        $('body').css('background-image','url(/background' + curImgId + '.jpg)');
+        curImgId = (curImgId + 1) % numberOfImages;
+    }, 15 * 1000);
+})();
+
+
+
+var currentIndex = 1;
+var totalCount = 21;
+
+setInterval(function() {
+    if (currentIndex > totalCount)
+        currentIndex = 1;
+
+    $(body).css('background-image', 'url(/bg' + currentIndex++ + '.jpg)');
+}, 15000);
+
+
+
+
+<script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+<script style="text/javascript">
+    (function () {
+        var curImgId = 0;
+        var numberOfImages = 5; // Change this to the number of background images
+        window.setInterval(function() {
+            $('body').css('background','url("'+ curImgId +'.jpg")');// set the image path here
+            curImgId = (curImgId + 1) % numberOfImages;
+        }, 15 * 1000);
+    })();
+
+</script>
+

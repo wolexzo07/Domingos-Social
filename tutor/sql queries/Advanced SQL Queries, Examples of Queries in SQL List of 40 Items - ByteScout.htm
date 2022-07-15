@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html class="" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K7ZP29"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/n8x6d7y5h6_popups.js" async=""></script><script async="" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/universal.js"></script><script async="" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/gtm.js"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K7ZP29');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="shortcut icon" href="https://s16458.pcdn.co/wp-content/uploads/2016/09/favicon.png" type="image/x-icon">
+<title>Advanced SQL Queries, Examples of Queries in SQL List of 40 Items - ByteScout</title>
+
+	  
+<!-- This site is optimized with the Yoast SEO Premium plugin v11.9 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Learn more about SQL with our extenisve list of basic and advanced SQL queries. Make your coding faster and more efficient.">
+<link rel="canonical" href="https://bytescout.com/blog/20-important-sql-queries.html">
+<!-- Social Pug v.2.7.3 https://devpups.com/social-pug/ -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Advanced SQL Queries, Examples of Queries in SQL List of 40 Items - ByteScout">
+<meta property="og:description" content="Learn more about SQL with our extenisve list of basic and advanced SQL queries. Make your coding faster and more efficient.">
+<meta property="og:url" content="https://bytescout.com/blog/20-important-sql-queries.html">
+<meta property="og:site_name" content="ByteScout">
+<meta property="og:updated_time" content="2019-10-24T11:10:48+00:00">
+<meta property="article:published_time" content="2019-09-04T06:52:06+00:00">
+<meta property="article:modified_time" content="2019-10-24T11:10:48+00:00">
+<meta property="og:image" content="https://s16458.pcdn.co/wp-content/uploads/2018/07/A13_SQL-Server.jpg">
+<meta property="og:image:width" content="450">
+<meta property="og:image:height" content="314">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Advanced SQL Queries, Examples of Queries in SQL List of 40 Items - ByteScout">
+<meta name="twitter:description" content="Learn more about SQL with our extenisve list of basic and advanced SQL queries. Make your coding faster and more efficient.">
+<meta name="twitter:image" content="https://s16458.pcdn.co/wp-content/uploads/2018/07/A13_SQL-Server.jpg">
+<!-- Social Pug v.2.7.3 https://devpups.com/social-pug/ -->
+<script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://bytescout.com/#website","url":"https://bytescout.com/","name":"ByteScout","potentialAction":{"@type":"SearchAction","target":"https://bytescout.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://bytescout.com/blog/20-important-sql-queries.html#primaryimage","url":"https://s16458.pcdn.co/wp-content/uploads/2018/07/A13_SQL-Server.jpg","width":450,"height":314,"caption":"Important SQL Queries"},{"@type":"WebPage","@id":"https://bytescout.com/blog/20-important-sql-queries.html#webpage","url":"https://bytescout.com/blog/20-important-sql-queries.html","inLanguage":"en-US","name":"Advanced SQL Queries, Examples of Queries in SQL List of 40 Items - ByteScout","isPartOf":{"@id":"https://bytescout.com/#website"},"primaryImageOfPage":{"@id":"https://bytescout.com/blog/20-important-sql-queries.html#primaryimage"},"datePublished":"2019-09-04T06:52:06+00:00","dateModified":"2019-10-24T11:10:48+00:00","author":{"@id":"https://bytescout.com/#/schema/person/93cefcfb2ec6f977ea0cf81ec9fb18fb"},"description":"Learn more about SQL with our extenisve list of basic and advanced SQL queries. Make your coding faster and more efficient."},{"@type":["Person"],"@id":"https://bytescout.com/#/schema/person/93cefcfb2ec6f977ea0cf81ec9fb18fb","name":"den","image":{"@type":"ImageObject","@id":"https://bytescout.com/#authorlogo","url":"https://secure.gravatar.com/avatar/ba99a122d194abb9099fa46d9f4c9c9e?s=96&d=mm&r=g","caption":"den"},"sameAs":[]}]}</script>
+<!-- / Yoast SEO Premium plugin. -->
+
+<link rel="dns-prefetch" href="https://bytescout.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s16458.pcdn.co\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.4"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="rs-plugin-settings-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/settings.css" type="text/css" media="all">
+<style id="rs-plugin-settings-inline-css" type="text/css">
+#rs-demo-id {}
+</style>
+<link rel="stylesheet" id="dpsp-frontend-style-pro-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/style-frontend-pro.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-lightbox-2.min.css-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/lightbox.css" type="text/css" media="all">
+<link rel="stylesheet" id="socicon-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/socicon.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-social-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/bootstrap-social.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="simple-line-icons-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/simple-line-icons.css" type="text/css" media="all">
+<link rel="stylesheet" id="animate-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/animate.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/bootstrap.css" type="text/css" media="all">
+<link rel="stylesheet" id="fancybox-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/jquery.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-slider-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/slider.css" type="text/css" media="all">
+<link rel="stylesheet" id="jango-plugins-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/plugins.css" type="text/css" media="all">
+<link rel="stylesheet" id="jango-components-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/components.css" type="text/css" media="all">
+<link rel="stylesheet" id="jango-custom-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/custom.css" type="text/css" media="all">
+<link rel="stylesheet" id="jango-theme-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/green1.css" type="text/css" media="all">
+<link rel="stylesheet" id="jango-roboto-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="cubeportfolio-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/cubeportfolio.css" type="text/css" media="all">
+<link rel="stylesheet" id="owl-carousel-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/owl.css" type="text/css" media="all">
+<link rel="stylesheet" id="redux-google-fonts-jango-css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/css_002.css" type="text/css" media="all">
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/jquery_002.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/jquery-migrate.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/jquery_003.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/jquery_005.js"></script>
+<script type="text/javascript">
+			var dpsp_pin_button_data = {"pin_description_source":"image_alt_tag","button_position":"top_left","button_shape":"rectangular","minimum_image_width":"","minimum_image_height":"","button_text_label":"","button_share_behavior":"hover_image","pinterest_button_share_behavior":"post_image"}
+		
+</script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/front-end-pro.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/conversions.js"></script>
+<link rel="https://api.w.org/" href="https://bytescout.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://bytescout.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s16458.pcdn.co/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.2.4">
+<link rel="shortlink" href="https://bytescout.com/?p=18393">
+<!-- / HREFLANG Tags by DCGWS -->
+<link rel="alternate" href="https://bytescout.com/blog/20-important-sql-queries.html" hreflang="en">
+<link rel="alternate" href="https://bytescout.com/blog/top-wichtigsten-sql-abfragen.html" hreflang="de">
+<!-- / HREFLANG Tags by DCGWS -->
+<script type="text/javascript"><!--
+function powerpress_pinw(pinw_url){window.open(pinw_url, 'PowerPressPlayer','toolbar=0,status=0,resizable=1,width=460,height=320');	return false;}
+//-->
+</script>
+<style type="text/css" data-source="Social Pug"></style><meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress.">
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://s16458.pcdn.co/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><meta name="generator" content="Powered by Slider Revolution 5.4.8 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface.">
+<script type="text/javascript">function setREVStartSize(e){									
+						try{ e.c=jQuery(e.c);var i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;
+							if(e.responsiveLevels&&(jQuery.each(e.responsiveLevels,function(e,f){f>i&&(t=r=f,l=e),i>f&&f>r&&(r=f,n=e)}),t>r&&(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h>1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length>0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length>1&&void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0&&(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&&f<e.minHeight&&(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})					
+						}catch(d){console.log("Failure at Presize of Slider:"+d)}						
+					};</script>
+<style type="text/css" title="dynamic-css" class="options-output">body{font-family:"Roboto Condensed";}.menu-item{font-family:"Roboto Condensed";}h1, h2, h3, h4, h5, h6{font-family:"Roboto Condensed";}body{color:#484848;}h1{font-family:"Open Sans";text-transform:none;word-spacing:0px;letter-spacing:0px;font-weight:400;color:#484848;font-size:22px;}h2{font-family:"Open Sans";text-transform:none;word-spacing:0px;letter-spacing:0px;font-weight:700;color:#3f444a;font-size:20px;}h3{font-family:"Open Sans";text-transform:none;word-spacing:0px;letter-spacing:0px;font-weight:700;color:#3f444a;font-size:18px;}h4{font-family:"Open Sans";text-transform:none;word-spacing:0px;letter-spacing:0px;font-weight:400;color:#3f444a;font-size:16px;}h5{font-family:"Open Sans";text-transform:none;word-spacing:0px;letter-spacing:0px;font-weight:400;color:#3f444a;font-size:14px;}h6{font-family:"Open Sans";text-transform:none;word-spacing:0px;letter-spacing:0px;font-weight:400;color:#3f444a;font-size:12px;}</style><noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
+<link rel="stylesheet" type="text/css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shCore.css"><link rel="stylesheet" type="text/css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shThemeDefault.css"><style type="text/css">.fancybox-margin{margin-right:17px;}</style><link rel="stylesheet" type="text/css" href="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/universal.css" media="all"></head>
+
+<body class="post-template-default single single-post postid-18393 single-format-standard c-layout-header-fixed c-layout-header-mobile-fixed wpb-js-composer js-comp-ver-5.5.2 vc_responsive c-page-on-scroll">
+
+<header class="c-layout-header c-layout-header-4 c-layout-header-default-mobile" data-minimize-offset="80">
+
+    <div class="c-navbar">
+		        <div class="container">
+
+            <div class="c-navbar-wrapper clearfix">
+                <div class="c-brand c-pull-left">
+                    <a href="https://bytescout.com/" class="c-logo">
+                        <img src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/ByteScout-Logo-Transparent-2.png" alt="Logo" class="c-desktop-logo" width="171">
+                        <img src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/ByteScout-Logo-Transparent-2.png" alt="Logo" class="c-desktop-logo-inverse" width="171">
+                        <img src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/ByteScout-Logo-Transparent-2.png" alt="Logo" class="c-mobile-logo" width="171">
+                    </a>
+                    <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
+                        <span class="c-line"></span>
+                        <span class="c-line"></span>
+                        <span class="c-line"></span>
+                    </button>
+                    <button class="c-topbar-toggler" type="button">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </button>
+                                            <button class="c-search-toggler" type="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    
+                                    </div>
+
+                                    <form class="c-quick-search" action="https://bytescout.com/">
+                        <input type="text" name="s" placeholder="Type to search..." class="form-control" autocomplete="off">
+                        <span class="c-theme-link">×</span>
+                    </form>
+                
+                <nav class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase ">
+
+                    <ul id="menu-main-menu" class="nav navbar-nav c-theme-nav"><li id="nav-menu-item-9" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a class="c-link dropdown-toggle">PRODUCTS<span class="c-arrow c-toggler"></span></a>
+<ul class="dropdown-menu c-menu-type-classic c-pull-left">
+<li id="nav-menu-item-17777" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown-submenu"><a class="c-link dropdown-toggle">Desktop Apps<span class="c-arrow c-toggler"></span></a>
+<ul class="dropdown-menu c-menu-type-classic c-pull-right">
+<li id="nav-menu-item-17751" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/pdfmultitool/index.html" class="c-link">PDF Multitool</a></li>
+<li id="nav-menu-item-17768" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/enduser/misc/barcodereader.html" class="c-link">Barcode Reader</a></li>
+<li id="nav-menu-item-17767" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/enduser/misc/barcodegenerator.html" class="c-link">Barcode Generator</a></li>
+<li id="nav-menu-item-17750" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/bitmapvisualizer/index.html" class="c-link">Bitmap Visualizer for Visual Studio</a></li>
+<li id="nav-menu-item-17781" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/enduser/spreadsheettools/spreadsheettools.html" class="c-link">Spreadsheet Tools</a></li>
+<li id="nav-menu-item-36705" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/products/enduser/misc/mailboxdownloader.html" class="c-link">Mailbox Downloader</a></li>
+<li id="nav-menu-item-17766" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/enduser/misc/xlsviewer.html" class="c-link">XLS Viewer</a></li>
+<li id="nav-menu-item-17775" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/enduser/screencapturing/screencapturing.html" class="c-link">Screen Capturing</a></li>
+<li id="nav-menu-item-17769" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/enduser/watermarking/watermarking.html" class="c-link">Watermarking</a></li>
+<li id="nav-menu-item-27050" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/products/enduser/watermarking/watermarkingpro" class="c-link">Watermarking Pro</a></li>
+<li id="nav-menu-item-27084" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/products/enduser/misc/imagetovideogui.html" class="c-link">Image to Video GUI</a></li>
+<li id="nav-menu-item-37756" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/products/enduser/misc/qr-code-barcode-generator.html" class="c-link">QR Code BarCode Generator</a></li>
+<li id="nav-menu-item-37516" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/products/enduser/misc/lines-sorting.html" class="c-link">Lines Sorting</a></li>
+<li id="nav-menu-item-37533" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/products/enduser/misc/timesheet.html" class="c-link">Timesheet</a></li>
+<li id="nav-menu-item-37780" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/products/enduser/misc/synonyms-finder.html" class="c-link">Synonyms Finder</a></li>
+<li id="nav-menu-item-38100" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/products/developer/streamvisualizer/index.html" class="c-link">Stream Visualizer for Visual Studio</a></li>
+<li id="nav-menu-item-37768" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/products/enduser/misc/word-counter.html" class="c-link">Word Counter</a></li>
+	</ul>
+</li>
+<li id="nav-menu-item-17778" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown-submenu"><a class="c-link dropdown-toggle">Online Apps<span class="c-arrow c-toggler"></span></a>
+<ul class="dropdown-menu c-menu-type-classic c-pull-right">
+<li id="nav-menu-item-143741" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://pdf.co/" class="c-link">PDF.co Online Service</a></li>
+<li id="nav-menu-item-42998" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/apps/qr-code-reader.html" class="c-link">QR Code Reader</a></li>
+<li id="nav-menu-item-27080" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/apps/qr-code-generator.html" class="c-link">QR Code Generator</a></li>
+<li id="nav-menu-item-27081" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/apps/invoice-generator.html" class="c-link">Invoice Generator</a></li>
+<li id="nav-menu-item-27074" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/apps/barcode-reader.html" class="c-link">Barcode Reader (Online)</a></li>
+<li id="nav-menu-item-27073" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/apps/base-64-decoder-encoder.html" class="c-link">Base 64 Encoder Decoder</a></li>
+<li id="nav-menu-item-27075" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/apps/json-formatter.html" class="c-link">JSON Formatter</a></li>
+<li id="nav-menu-item-27070" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/apps/text-sorting-online.html" class="c-link">Lines Sorting</a></li>
+<li id="nav-menu-item-27071" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/apps/payment-reminders-email-generator.html" class="c-link">Payment Reminders Email Generator</a></li>
+<li id="nav-menu-item-27082" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/apps/timesheet.html" class="c-link">Timesheet</a></li>
+<li id="nav-menu-item-27072" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/apps/synonym-finder-online.html" class="c-link">Synonym Finder</a></li>
+<li id="nav-menu-item-27077" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/apps/word-counter.html" class="c-link">Word Counter</a></li>
+	</ul>
+</li>
+<li id="nav-menu-item-134522" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown-submenu"><a class="c-link dropdown-toggle">Web API for Developers<span class="c-arrow c-toggler"></span></a>
+<ul class="dropdown-menu c-menu-type-classic c-pull-right">
+<li id="nav-menu-item-150081" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://pdf.co/documentation/api/" class="c-link">PDF.co Web API (on-demand)</a></li>
+<li id="nav-menu-item-150082" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/cloudapiserver/index.html" class="c-link">Cloud API Server (on-premise)</a></li>
+	</ul>
+</li>
+<li id="nav-menu-item-17763" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown-submenu"><a class="c-link dropdown-toggle">SUITES (all in one) For Developers<span class="c-arrow c-toggler"></span></a>
+<ul class="dropdown-menu c-menu-type-classic c-pull-right">
+<li id="nav-menu-item-150118" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/products/developer/sensitivedatasuite/index.html" class="c-link">Sensitive Data Suite</a></li>
+<li id="nav-menu-item-27052" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/products/developer/premiumsuite/index.html" class="c-link">Premium Suite</a></li>
+<li id="nav-menu-item-10" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/barcodessuite/index.html" class="c-link">BarCode Suite</a></li>
+<li id="nav-menu-item-11" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/dataextractionsuite/index.html" class="c-link">Data Extraction Suite</a></li>
+<li id="nav-menu-item-12" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/pdfsuite/index.html" class="c-link">PDF Suite</a></li>
+	</ul>
+</li>
+<li id="nav-menu-item-17761" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown-submenu"><a class="c-link dropdown-toggle">Document Tools for Developers<span class="c-arrow c-toggler"></span></a>
+<ul class="dropdown-menu c-menu-type-classic c-pull-right">
+<li id="nav-menu-item-252722" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/documentparsersdk/index.html" class="c-link">Document Parser SDK</a></li>
+<li id="nav-menu-item-114365" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/pdfextractorsdk/index.html" class="c-link">PDF Extractor SDK</a></li>
+<li id="nav-menu-item-150117" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/products/developer/sensitivedatasuite/index.html" class="c-link">Sensitive Data Suite</a></li>
+<li id="nav-menu-item-16" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/pdfsdk/index.html" class="c-link">PDF SDK</a></li>
+<li id="nav-menu-item-20" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/pdftohtmlsdk/pdftohtmlsdk.html" class="c-link">PDF To HTML SDK</a></li>
+<li id="nav-menu-item-17746" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/spreadsheetsdk/bytescoutspreadsheetsdk.html" class="c-link">Spreadsheet SDK</a></li>
+<li id="nav-menu-item-21" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/pdfviewersdk/index.html" class="c-link">PDF Viewer SDK</a></li>
+<li id="nav-menu-item-19" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/pdfrenderersdk/index.html" class="c-link">PDF Renderer SDK</a></li>
+<li id="nav-menu-item-38956" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/products/developer/pdfeditsdk/index.html" class="c-link">PDF Edit SDK</a></li>
+	</ul>
+</li>
+<li id="nav-menu-item-36818" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown-submenu"><a class="c-link dropdown-toggle">Barcodes For Developers<span class="c-arrow c-toggler"></span></a>
+<ul class="dropdown-menu c-menu-type-classic c-pull-right">
+<li id="nav-menu-item-14" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/barcodesdk/bytescoutbarcodesdk.html" class="c-link">BarCode Generator SDK</a></li>
+<li id="nav-menu-item-15" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/barcodereadersdk/bytescoutbarcodereadersdk.html" class="c-link">BarCode Reader SDK</a></li>
+<li id="nav-menu-item-36923" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/products/developer/qrcodesdk/index.html" class="c-link">QR Code SDK</a></li>
+	</ul>
+</li>
+<li id="nav-menu-item-17762" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown-submenu"><a class="c-link dropdown-toggle">Data Extraction For Developers<span class="c-arrow c-toggler"></span></a>
+<ul class="dropdown-menu c-menu-type-classic c-pull-right">
+<li id="nav-menu-item-36520" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/products/developer/documentparsersdk/index.html" class="c-link">Document Parser SDK</a></li>
+<li id="nav-menu-item-114304" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/barcodereadersdk/bytescoutbarcodereadersdk.html" class="c-link">Barcode Reader SDK</a></li>
+<li id="nav-menu-item-18" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/pdfextractorsdk/index.html" class="c-link">PDF Extractor SDK</a></li>
+<li id="nav-menu-item-36519" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/products/developer/invoiceparsersdk/index.html" class="c-link">Invoice Parser SDK</a></li>
+<li id="nav-menu-item-113878" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/spreadsheetsdk/bytescoutspreadsheetsdk.html" class="c-link">Spreadsheet SDK</a></li>
+<li id="nav-menu-item-27067" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/products/developer/text-recognition-sdk/index.html" class="c-link">Text Recognition SDK</a></li>
+	</ul>
+</li>
+<li id="nav-menu-item-106180" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/rpatools/index.html" class="c-link">RPA Tools</a></li>
+<li id="nav-menu-item-36817" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown-submenu"><a class="c-link dropdown-toggle">Video Tools For Developers<span class="c-arrow c-toggler"></span></a>
+<ul class="dropdown-menu c-menu-type-classic c-pull-right">
+<li id="nav-menu-item-17745" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/imagetovideosdk/imagetovideosdk.html" class="c-link">Image To Video SDK</a></li>
+<li id="nav-menu-item-17747" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/screencapturingsdk/screencapturingsdk.html" class="c-link">Screen Capturing SDK</a></li>
+<li id="nav-menu-item-17749" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/watermarkingsdk/watermarkingsdk.html" class="c-link">Watermarking SDK</a></li>
+<li id="nav-menu-item-17748" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/products/developer/swftovideosdk/swftovideosdk.html" class="c-link">SWF To Video SDK</a></li>
+	</ul>
+</li>
+<li id="nav-menu-item-114606" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown-submenu"><a href="https://bytescout.com/learn-sql-online" class="c-link dropdown-toggle">SQL For Developers<span class="c-arrow c-toggler"></span></a>
+<ul class="dropdown-menu c-menu-type-classic c-pull-right">
+<li id="nav-menu-item-38560" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/learn-sql-online" class="c-link">SQL Trainer</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="nav-menu-item-17752" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/download/web-installer" class="c-link">FREE TRIAL</a></li>
+<li id="nav-menu-item-162598" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://secure.bytescout.com/" class="c-link">BUY NOW</a></li>
+<li id="nav-menu-item-17765" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="https://bytescout.com/solutions" class="c-link dropdown-toggle">SOLUTIONS<span class="c-arrow c-toggler"></span></a>
+<ul class="dropdown-menu c-menu-type-classic c-pull-left">
+<li id="nav-menu-item-106162" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/rpa-robotic-process-automation" class="c-link">Robotic Process Automation</a></li>
+<li id="nav-menu-item-17771" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/solutions-pos-devices" class="c-link">POS devices</a></li>
+<li id="nav-menu-item-27058" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/solutions-for-banking" class="c-link">Banking</a></li>
+<li id="nav-menu-item-17772" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/solutions-for-healthcare" class="c-link">Healthcare</a></li>
+<li id="nav-menu-item-27066" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/blockchain-bitcoin-smart-contracts-ethereum" class="c-link">BLOCKCHAIN</a></li>
+<li id="nav-menu-item-27069" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/machine-learning-algorithms-techniques" class="c-link">MACHINE LEARNING</a></li>
+<li id="nav-menu-item-27085" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/solutions-etl" class="c-link">ETL</a></li>
+<li id="nav-menu-item-150116" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/solutions-data-masking" class="c-link">Data Masking</a></li>
+<li id="nav-menu-item-27062" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/solutions-for-fintech" class="c-link">Financial Technology</a></li>
+<li id="nav-menu-item-27061" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/solutions-artificial-intelligence" class="c-link">Artificial Intelligence</a></li>
+<li id="nav-menu-item-27063" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/solutions-for-education" class="c-link">Education</a></li>
+<li id="nav-menu-item-17770" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/solutions-for-logistics" class="c-link">Logistics</a></li>
+<li id="nav-menu-item-17773" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/solutions-for-insurance" class="c-link">Insurance</a></li>
+<li id="nav-menu-item-27064" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/solutions-real-estate" class="c-link">Real estate</a></li>
+<li id="nav-menu-item-27065" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/solutions-legal" class="c-link">Legal</a></li>
+<li id="nav-menu-item-27059" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/solutions-automative-industry" class="c-link">Automative Industry</a></li>
+<li id="nav-menu-item-27060" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/solutions-hardware-industry" class="c-link">Hardware Industry</a></li>
+<li id="nav-menu-item-162395" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/whitepapers" class="c-link">Whitepapers</a></li>
+</ul>
+</li>
+<li id="nav-menu-item-17754" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a class="c-link dropdown-toggle">COMPANY<span class="c-arrow c-toggler"></span></a>
+<ul class="dropdown-menu c-menu-type-classic c-pull-left">
+<li id="nav-menu-item-8" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/buy/resellers.html" class="c-link">Local Resellers</a></li>
+<li id="nav-menu-item-17753" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://support.bytescout.com/hc/en-us/requests/new" class="c-link">Get Support</a></li>
+<li id="nav-menu-item-162387" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown-submenu"><a href="#" class="c-link dropdown-toggle">Resources<span class="c-arrow c-toggler"></span></a>
+<ul class="dropdown-menu c-menu-type-classic c-pull-right">
+<li id="nav-menu-item-34717" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/testimonials" class="c-link">Testimonials From Customers</a></li>
+<li id="nav-menu-item-27057" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/download/updates" class="c-link">Latest Updates</a></li>
+<li id="nav-menu-item-127886" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/whitepapers" class="c-link">Whitepapers</a></li>
+<li id="nav-menu-item-27056" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/documentation/index.html" class="c-link">Documentation</a></li>
+<li id="nav-menu-item-17764" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://github.com/bytescout/ByteScout-SDK-SourceCode" class="c-link">Free Source Code Samples</a></li>
+<li id="nav-menu-item-17757" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/media.html" class="c-link">Media Files</a></li>
+<li id="nav-menu-item-17758" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/partnership" class="c-link">For Partners</a></li>
+<li id="nav-menu-item-27068" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/developer-jobs-vacancies" class="c-link">Jobs</a></li>
+<li id="nav-menu-item-27054" class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://bytescout.com/we-fight-against-cancer" class="c-link">We Fight Against Cancer</a></li>
+	</ul>
+</li>
+<li id="nav-menu-item-17755" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/contacts.html" class="c-link">Contact Us</a></li>
+<li id="nav-menu-item-17756" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/about_us.html" class="c-link">About Us</a></li>
+</ul>
+</li>
+<li id="nav-menu-item-162389" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://academy.bytescout.com/" class="c-link">Courses</a></li>
+<li id="nav-menu-item-17759" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://bytescout.com/blog/" class="c-link">BLOG</a></li>
+
+            <li class="c-search-toggler-wrapper">
+                <a href="#" class="c-btn-icon c-search-toggler"><i class="fa fa-search"></i></a>
+            </li></ul>
+                </nav>
+
+            </div>
+
+            
+        </div>
+    </div>
+</header>
+
+<div class="c-layout-page">
+
+    
+  
+	<div class="c-layout-breadcrumbs-1 c-fonts-uppercase c-fonts-bold c-bordered c-bordered-both default-pos" style="background-color: #78bc2b;">
+
+		<div class="c-breadcrumbs-wrapper">
+
+			<div class="container">
+
+			
+        <style>
+        #jango-breadcrumb li,
+        #jango-breadcrumb li a {
+            color: #FFFFFF;
+        }
+        </style><ul id="jango-breadcrumb" class="c-page-breadcrumbs c-theme-nav c-pull-right c-fonts-regular"><li class="item-home"><a class="bread-link bread-home" href="https://bytescout.com/" title="Home">Home</a></li><li class="separator separator-home"> / </li><li class="item-cat"><a href="https://bytescout.com/blog">Blog</a></li><li class="separator"> / </li><li class="active item-18393"><span class="bread-current bread-18393" title="Ultimate List of 40 Important SQL Queries">Ultimate List of 40 Important SQL Queries</span></li></ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="blog-post-title" style="text-align: center; padding-top: 30px;">
+
+		<h1 class="c-font-uppercase">Ultimate List of 40 Important SQL Queries</h1>
+
+		
+	</div>
+
+  <style>
+.single-post .c-content-blog-post-1 h1, .c-content-blog-post-1 h2, .c-content-blog-post-1 h3 {
+    margin-top: 35px;
+}
+
+.single-post .c-content-blog-post-1 h2:nth-child(2) {
+    margin-top: 0px;
+}
+
+.single-article .c-content-blog-post-1 h3:nth-child(3) {
+    margin-top: 0px;
+}
+
+.single-post .c-content-blog-post-1-view {
+		margin: 0 12.5%;
+}
+
+.blog-post-title h1 {
+		margin: 0 25%;
+		font-size: 32px;
+		font-weight: 700;
+		padding: 0 30px;
+}
+
+.single-post .c-content-blog-post-1-view a {
+	color: #78bc2b;
+	font-weight: 500;
+}
+
+.single-post .c-content-blog-post-1-view a:hover {
+	color: #A2DE5D;
+}
+
+@media (max-width: 768px) {
+	.single-post .c-content-blog-post-1-view {
+		margin: 0;
+	}
+	
+	.blog-post-title h1 {
+			margin: 0;
+			font-size: 26px;
+	}
+}
+
+@media (max-width: 991px) {
+	.c-content-box.c-size-sm {
+		padding: 30px 0;
+	}
+}
+</style>
+
+    
+    <div class="container">
+
+        <div class="c-content-box c-size-sm">
+
+            <div class="row">
+
+                
+                
+                <div class="col-md-12">
+
+                    <div class="c-content-blog-post-1-view c-single ">
+
+												
+                        <div class="c-content-blog-post-1">
+
+                            <div class="c-border c-margin-b-40">
+
+                                <div class="clearfix"></div>
+
+                                <div class="c-desc  c-padding-l-40 c-padding-r-40 c-padding-t-30">
+                                    <span id="dpsp-post-content-markup" data-image-pin-it="true"></span><p><strong>SQL</strong> is incredibly powerful, and like every <strong>well-made development tool</strong>,
+ it has a few commands which it’s vital for a good developer to know. 
+Here are a few of the most important ones – each of these queries is 
+consequential to almost every system that interacts with an <a href="https://bytescout.com/blog/introduction-into-sql-databases.html">SQL database</a>.</p>
+<p style="text-align: center;"><strong>Check this video to learn about every SQL query:</strong></p>
+<p><iframe title="ULTIMATE LIST OF 40 IMPORTANT SQL QUERIES by ByteScout" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/s_RJEcMPYNE.htm" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="500" height="281" frameborder="0"></iframe></p>
+<h2>1.&nbsp;&nbsp; SQL Query for Retrieving Tables</h2>
+<p>This query can be run to retrieve the list of tables present in a database where the database is “My_Schema”.</p>
+<div><div id="highlighter_243401" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">* </code><code class="sql keyword">FROM</code> <code class="sql plain">My_Schema.Tables;</code></div></div></td></tr></tbody></table></div></div>
+<h2>2.&nbsp;&nbsp; <a href="https://bytescout.com/blog/deep-sql-queries-and-examples.html#2">Query for Selecting Columns from a Table</a></h2>
+<p>This is perhaps the most widely used SQL queries examples. In the 
+example below, we are extracting the “Student_ID” column or attribute 
+from the table “STUDENT”.</p>
+<div><div id="highlighter_583005" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">Student_ID </code><code class="sql keyword">FROM</code> <code class="sql plain">STUDENT;</code></div></div></td></tr></tbody></table></div></div>
+<p>If you want to display all the attributes from a particular table, this is the right query to use:</p>
+<div><div id="highlighter_794786" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">* </code><code class="sql keyword">FROM</code> <code class="sql plain">STUDENT;</code></div></div></td></tr></tbody></table></div></div>
+<h2>3.&nbsp;&nbsp; <a href="https://bytescout.com/blog/deep-sql-queries-and-examples.html#3">Query for Outputting Data Using a Constraint</a></h2>
+<p>This SQL query retrieves the specified attributes from the table on the constraint <i>Employee ID =0000</i></p>
+<div><div id="highlighter_591918" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">EMP_ID, </code><code class="sql keyword">NAME</code> <code class="sql keyword">FROM</code> <code class="sql plain">EMPLOYEE_TBL </code><code class="sql keyword">WHERE</code> <code class="sql plain">EMP_ID = </code><code class="sql string">'0000'</code><code class="sql plain">;</code></div></div></td></tr></tbody></table></div></div>
+<h2>4.&nbsp;Query for Outputting Sorted Data Using ‘Order By’</h2>
+<p>This query orders the results with respect to the attribute which is 
+referenced to using “Order By” – so for example, if that attribute is an
+ integer data type, then the result would either be sorted in ascending 
+or descending order; likewise, if the data type is a String then the 
+result would be ordered in alphabetical order.</p>
+<div><div id="highlighter_792354" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">EMP_ID, LAST_NAME </code><code class="sql keyword">FROM</code> <code class="sql plain">EMPLOYEE</code></div><div class="line number2 index1 alt1"><code class="sql keyword">WHERE</code> <code class="sql plain">CITY = </code><code class="sql string">'Seattle'</code> <code class="sql keyword">ORDER</code> <code class="sql keyword">BY</code> <code class="sql plain">EMP_ID;</code></div></div></td></tr></tbody></table></div></div>
+<p>The ordering of the result can also be set manually, using “asc ” for ascending and “desc” for descending.</p>
+<div><div id="highlighter_385504" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">EMP_ID, LAST_NAME </code><code class="sql keyword">FROM</code> <code class="sql plain">EMPLOYEE_TBL</code></div><div class="line number2 index1 alt1"><code class="sql keyword">WHERE</code> <code class="sql plain">CITY = </code><code class="sql string">'INDIANAPOLIS'</code> <code class="sql keyword">ORDER</code> <code class="sql keyword">BY</code> <code class="sql plain">EMP_ID </code><code class="sql keyword">asc</code><code class="sql plain">;</code></div></div></td></tr></tbody></table></div></div>
+<h2>5.&nbsp;&nbsp; SQL Query for Outputting Sorted Data Using ‘Group By’</h2>
+<p>The ‘Group By’ property groups the resulting data according to the specified attribute.</p>
+<p><small>The SQL query below will select Name, Age columns from 
+Patients table, then will filter them by Age value to include records 
+where Age is more than 40 and then will group records with similar Age 
+value and then finally will output them sorted by Name.</small></p>
+<div><div id="highlighter_114631" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code>&nbsp;<code class="sql keyword">Name</code><code class="sql plain">, Age </code><code class="sql keyword">FROM</code>&nbsp;<code class="sql plain">Patients </code><code class="sql keyword">WHERE</code>&nbsp;<code class="sql plain">Age &gt; 40 </code></div><div class="line number2 index1 alt1"><code class="sql keyword">GROUP</code>&nbsp;<code class="sql keyword">BY</code>&nbsp;<code class="sql keyword">Name</code><code class="sql plain">, Age </code><code class="sql keyword">ORDER</code>&nbsp;<code class="sql keyword">BY</code>&nbsp;<code class="sql keyword">Name</code><code class="sql plain">;</code></div></div></td></tr></tbody></table></div></div>
+<p><small>Another sample of use of Group By: this expression will select
+ records with a price lesser than 70 from Orders table, will group 
+records with a similar price, will sort the output by price and will 
+also add the column COUNT(price) that will display how many records with
+ similar price where found:</small></p>
+<div><div id="highlighter_660473" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql color2">COUNT</code><code class="sql plain">(price), price </code><code class="sql keyword">FROM</code> <code class="sql plain">orders </code></div><div class="line number2 index1 alt1"><code class="sql keyword">WHERE</code> <code class="sql plain">price &lt; 70 </code><code class="sql keyword">GROUP</code> <code class="sql keyword">BY</code> <code class="sql plain">price </code><code class="sql keyword">ORDER</code> <code class="sql keyword">BY</code> <code class="sql plain">price</code></div></div></td></tr></tbody></table></div></div>
+<p><small>Note: you should use the very same set of columns for both 
+SELECT and GROUP BY commands, otherwise you will get an error. Many 
+thanks to <i>Sachidannad</i> for pointing out! </small></p>
+<h3>SQL Queries for Data Manipulation Using Math Functions</h3>
+<p>There are a lot of built-in math functions like COUNT and AVG which 
+provide basic functionalities of counting the number of results and 
+averaging them respectively.</p>
+<h2>6. Data Manipulation Using COUNT</h2>
+<p>This query displays the total number of customers by counting each 
+customer ID. In addition, it groups the results according to the country
+ of each customer.</p>
+<div><div id="highlighter_949457" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code>&nbsp;<code class="sql color2">COUNT</code><code class="sql plain">(CustomerID), Country </code><code class="sql keyword">FROM</code>&nbsp;<code class="sql plain">Customers </code><code class="sql keyword">GROUP</code>&nbsp;<code class="sql keyword">BY</code>&nbsp;<code class="sql plain">Country;</code></div></div></td></tr></tbody></table></div></div>
+<h2>7.&nbsp;<a href="https://bytescout.com/blog/deep-sql-queries-and-examples.html#7">Data Manipulation Using SUM</a></h2>
+<p>SUM calculates the total of the attribute that is given to it as an argument.</p>
+<div><div id="highlighter_49918" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code>&nbsp;<code class="sql color2">SUM</code><code class="sql plain">(Salary)</code><code class="sql keyword">FROM</code>&nbsp;<code class="sql plain">Employee </code><code class="sql keyword">WHERE</code>&nbsp;<code class="sql plain">Emp_Age &lt; 30;</code></div></div></td></tr></tbody></table></div></div>
+<h2>8.&nbsp;Data Manipulation Using AVG</h2>
+<p>Simple – an average of a given attribute.</p>
+<div><div id="highlighter_238607" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code>&nbsp;<code class="sql color2">AVG</code><code class="sql plain">(Price)</code><code class="sql keyword">FROM</code>&nbsp;<code class="sql plain">Products;</code></div></div></td></tr></tbody></table></div></div>
+<h2>9.&nbsp;&nbsp; SQL Query for Listing all Views</h2>
+<p>This SQL query lists all the views available in the schema.</p>
+<div><div id="highlighter_512702" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">* </code><code class="sql keyword">FROM</code> <code class="sql plain">My_Schema.views;</code></div></div></td></tr></tbody></table></div></div>
+<h2>10. Query for Creating a View</h2>
+<p>A view is a tailored table that is formed as a result of a query. It 
+has tables and rows just like any other table. It’s usually a good idea 
+to run queries in SQL as independent views because this allows them to 
+be retrieved later to view the query results, rather than computing the 
+same command every time for a particular set of results.</p>
+<div><div id="highlighter_59103" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">CREATE</code>&nbsp;<code class="sql keyword">VIEW</code>&nbsp;<code class="sql plain">Failing_Students&nbsp;</code><code class="sql keyword">AS</code></div><div class="line number2 index1 alt1"><code class="sql keyword">SELECT</code>&nbsp;<code class="sql plain">S_NAME, Student_ID</code></div><div class="line number3 index2 alt2"><code class="sql keyword">FROM</code>&nbsp;<code class="sql plain">STUDENT</code></div><div class="line number4 index3 alt1"><code class="sql keyword">WHERE</code> <code class="sql plain">GPA &gt; 40;</code></div></div></td></tr></tbody></table></div></div>
+<h2>11.&nbsp;Query for Retrieving a View</h2>
+<p>The standard syntax of selecting attributes from a table is applicable to views as well.</p>
+<div><div id="highlighter_94445" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">* </code><code class="sql keyword">FROM</code> <code class="sql plain">Failing_Students;</code></div></div></td></tr></tbody></table></div></div>
+<h2>12.&nbsp;Query for Updating a View</h2>
+<p>This query updates the view named ‘Product List’ – and if this view 
+doesn’t exist, then the Product List view gets created as specified in 
+this query.</p>
+<div><div id="highlighter_69808" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">CREATE</code>&nbsp;<code class="sql color1">OR</code>&nbsp;<code class="sql color2">REPLACE</code>&nbsp;<code class="sql keyword">VIEW</code>&nbsp;<code class="sql plain">[&nbsp;Product List]&nbsp;</code><code class="sql keyword">AS</code></div><div class="line number2 index1 alt1"><code class="sql keyword">SELECT</code>&nbsp;<code class="sql plain">ProductID, ProductName, Category</code></div><div class="line number3 index2 alt2"><code class="sql keyword">FROM</code>&nbsp;<code class="sql plain">Products</code></div><div class="line number4 index3 alt1"><code class="sql keyword">WHERE</code>&nbsp;<code class="sql plain">Discontinued = </code><code class="sql keyword">No</code><code class="sql plain">;</code></div></div></td></tr></tbody></table></div></div>
+<h2>13. Query for Dropping a View</h2>
+<p>This query will drop or delete a view named ‘V1’.</p>
+<div><div id="highlighter_714686" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">DROP</code> <code class="sql keyword">VIEW</code> <code class="sql plain">V1;</code></div></div></td></tr></tbody></table></div></div>
+<h2>14.&nbsp;Query to Display User Tables</h2>
+<p><strong>A user-defined table</strong> is a representation of defined information in a table, and they can be used as arguments for procedures or <strong>user-defined functions</strong>. Because they’re so useful, it’s useful to keep track of them using the following query.</p>
+<div><div id="highlighter_347265" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">* </code><code class="sql keyword">FROM</code> <code class="sql plain">Sys.objects </code><code class="sql keyword">WHERE</code> <code class="sql plain">Type=</code><code class="sql string">'u'</code></div></div></td></tr></tbody></table></div></div>
+<h2>15. Query to Display Primary Keys</h2>
+<p>A primary key uniquely identifies all values within a table. The following SQL query lists all the fields in a <strong>table’s primary key.</strong></p>
+<div><div id="highlighter_459337" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">* </code><code class="sql keyword">from</code> <code class="sql plain">Sys.Objects </code><code class="sql keyword">WHERE</code> <code class="sql plain">Type=</code><code class="sql string">'PK'</code></div></div></td></tr></tbody></table></div></div>
+<h2>16.&nbsp;Query for Displaying Unique Keys</h2>
+<p><strong>A Unique Key</strong> allows a column to ensure that all of its values are different.</p>
+<div><div id="highlighter_572293" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">* </code><code class="sql keyword">FROM</code> <code class="sql plain">Sys.Objects </code><code class="sql keyword">WHERE</code> <code class="sql plain">Type=</code><code class="sql string">'uq'</code></div></div></td></tr></tbody></table></div></div>
+<h2>17.&nbsp;Displaying Foreign Keys</h2>
+<p><strong>Foreign keys link</strong> one table to another – they are attributes in one table which refer to the primary key of another table.</p>
+<div><div id="highlighter_434198" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">* </code><code class="sql keyword">FROM</code> <code class="sql plain">Sys.Objects </code><code class="sql keyword">WHERE</code> <code class="sql plain">Type=</code><code class="sql string">'f'</code></div></div></td></tr></tbody></table></div></div>
+<h2>18.&nbsp;Displaying Triggers</h2>
+<p>A <strong>Trigger</strong> is sort of an ‘event listener’ – i.e, it’s a pre-specified set of instructions that execute when a certain event occurs. The <strong>list of defined triggers</strong> can be viewed using the following query.</p>
+<div><div id="highlighter_919310" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">* </code><code class="sql keyword">FROM</code> <code class="sql plain">Sys.Objects </code><code class="sql keyword">WHERE</code> <code class="sql plain">Type=</code><code class="sql string">'tr'</code></div></div></td></tr></tbody></table></div></div>
+<h2>19.&nbsp;Displaying Internal Tables</h2>
+<p><strong>Internal tables</strong> are formed as a by-product of a <strong>user-action</strong>
+ and are usually not accessible. The data in internal tables cannot be 
+manipulated; however, the metadata of the internal tables can be viewed 
+using the following query.</p>
+<div><div id="highlighter_825195" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">* </code><code class="sql keyword">FROM</code> <code class="sql plain">Sys.Objects </code><code class="sql keyword">WHERE</code> <code class="sql plain">Type=</code><code class="sql string">'it'</code></div></div></td></tr></tbody></table></div></div>
+<h2>20. Displaying a List of Procedures</h2>
+<p>A stored procedure is a <strong>group of SQL queries</strong> that logically form a single unit and perform a particular task. Thus, using the following query you can keep track of them:</p>
+<div><div id="highlighter_887259" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">* </code><code class="sql keyword">FROM</code> <code class="sql plain">Sys.Objects </code><code class="sql keyword">WHERE</code> <code class="sql plain">Type=</code><code class="sql string">'p'</code></div></div></td></tr></tbody></table></div></div>
+<p style="text-align: center;"><a class="btn btn-lg btn-download" href="https://bytescout.com/products/developer/rpatools/index.html">Process Automation with RPA Tools</a></p>
+<p>&nbsp;</p>
+<p><span style="color: blue; font-size: 20pt;"><strong>.. and TWENTY More Advanced SQL Queries for our Users!</strong></span></p>
+<h2>21. Swapping the Values of Two Columns in a table</h2>
+<p>In this and subsequent examples, we will use a common company 
+database including several tables which are easily visualized. Our 
+practice DB will include a Customers table and an Order table. The 
+Customers table will contain some obvious columns including ID, Name, 
+Address, zip, and email, for example, where we assume for now that the 
+primary key field for indexing is the <i>Customer_ID</i> field.</p>
+<p>With this in mind, we can easily imagine an Orders table which 
+likewise contains the indexed customer ID field, along with details of 
+each order placed by the customer. This table will include the order 
+Number, Quantity, Date, Item, and Price. In our first one of <strong>SQL examples</strong>,
+ imagine a situation where the zip and phone fields were transposed and 
+all the phone numbers were erroneously entered into the zip code field. 
+We can easily fix this problem with the following SQL statement:</p>
+<div><div id="highlighter_308051" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">UPDATE</code> <code class="sql plain">Customers </code><code class="sql keyword">SET</code> <code class="sql plain">Zip=Phone, Phone=Zip</code></div></div></td></tr></tbody></table></div></div>
+<h2>22. <a href="https://bytescout.com/blog/deep-sql-queries-and-examples.html#22">Returning a Column of Unique Values</a></h2>
+<p>Now, suppose that our data entry operator added the same Customers to
+ the Customers table more than once by mistake. As you know, proper 
+indexing requires that the key field contain only unique values. To fix 
+the problem, we will use <i>SELECT DISTINCT</i> to create an indexable list of unique customers:</p>
+<div><div id="highlighter_453084" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql keyword">DISTINCT</code> <code class="sql plain">ID </code><code class="sql keyword">FROM</code> <code class="sql plain">Customers</code></div></div></td></tr></tbody></table></div></div>
+<h2>23. Making a Top 25 with the SELECT TOP Clause</h2>
+<p>Next, imagine that our Customers table has grown to include thousands
+ of records, but we just want to show a sample of 25 of these records to
+ demonstrate the column headings and The SELECT TOP clause allows us to 
+specify the number of records to return, like a <em>Top-25 list</em>. In this example we will return the top 25 from our Customers table:</p>
+<div><div id="highlighter_668328" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql keyword">TOP</code> <code class="sql plain">25 </code><code class="sql keyword">FROM</code> <code class="sql plain">Customers </code><code class="sql keyword">WHERE</code> <code class="sql plain">Customer_ID&lt;&gt;</code><code class="sql color1">NULL</code><code class="sql plain">;</code></div></div></td></tr></tbody></table></div></div>
+<h2>24. Searching for SQL Tables with Wildcards</h2>
+<p>Wildcard characters or operators like “%” make it easy to find 
+particular strings in a large table of thousands of records. Suppose we 
+want to find all of our customers who have names beginning with “Herb” 
+including Herberts, and Herbertson. The <strong>%</strong> wildcard 
+symbol can be used to achieve such a result. The following SQL query 
+will return all rows from the Customer table where the <strong>Customer_name</strong> field begins with “Herb”:</p>
+<div><div id="highlighter_74653" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">* </code><code class="sql keyword">From</code> <code class="sql plain">Customers </code><code class="sql keyword">WHERE</code> <code class="sql keyword">Name</code> <code class="sql color1">LIKE</code> <code class="sql string">'Herb%'</code></div></div></td></tr></tbody></table></div></div>
+<h2>25. Between Monday and Tuesday</h2>
+<p>Today is Wednesday, and we arrive at work and discover that our new 
+data entry clerk in training has entered all new orders incorrectly on 
+Monday and Tuesday. We wish to teach our new trainee to find and correct
+ all erroneous records. What’s the easiest way to get all the records 
+from the Orders table entered on Monday and Tuesday? The Between clause 
+makes the task a breeze:</p>
+<div><div id="highlighter_561999" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">ID </code><code class="sql keyword">FROM</code> <code class="sql plain">Orders </code><code class="sql keyword">WHERE</code></div><div class="line number2 index1 alt1"><code class="sql keyword">Date</code> <code class="sql color1">BETWEEN</code> <code class="sql plain">‘01/12/2018’ </code><code class="sql color1">AND</code> <code class="sql plain">‘01/13/2018’</code></div></div></td></tr></tbody></table></div></div>
+<h2>26. <a href="https://bytescout.com/blog/deep-sql-queries-and-examples.html#26">Finding the Intersection of Two Tables</a></h2>
+<p>Undoubtedly the whole reason that a relational database exists in the
+ first place is to find matching records in two tables! The JOIN 
+statement accomplishes this core objective of SQL and makes the task 
+easy. Here we are going to fetch a list of all records which have 
+matches in the Customers and Orders tables:</p>
+<div><div id="highlighter_17174" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">ID </code><code class="sql keyword">FROM</code> <code class="sql plain">Customers </code><code class="sql keyword">INNER</code></div><div class="line number2 index1 alt1"><code class="sql color1">JOIN</code> <code class="sql plain">Orders </code><code class="sql keyword">ON</code> <code class="sql plain">Customers.ID = Orders.ID</code></div></div></td></tr></tbody></table></div></div>
+<p>The point of INNER JOIN, in this case, is to select records in the 
+Customers table which have a matching customer ID values in the Orders 
+table and return only those records. Of course there are many types of 
+JOIN, such as FULL, SELF, and LEFT, but for now, let’s keep things 
+interesting and move on to more diverse types of queries.</p>
+<h2>27. Doubling the Power with UNION</h2>
+<p>We can combine the results of two SQL queries examples into one 
+naturally with the UNION keyword. Suppose we want to create a new table 
+by combining the Customer_name and phone from Customers with a list of 
+that customer’s recent orders so that we can look for patterns and 
+perhaps suggest future purchases. Here is a quick way to accomplish the 
+task:</p>
+<div><div id="highlighter_4893" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">phone </code><code class="sql keyword">FROM</code> <code class="sql plain">Customers </code></div><div class="line number2 index1 alt1"><code class="sql keyword">UNION</code> <code class="sql keyword">SELECT</code> <code class="sql plain">item </code><code class="sql keyword">FROM</code> <code class="sql plain">Orders</code></div></div></td></tr></tbody></table></div></div>
+<p>The UNION keyword makes it possible to combine JOINS and other criteria to achieve very powerful new table generation potential.</p>
+<h2>28. <a href="https://bytescout.com/blog/deep-sql-queries-and-examples.html#28">Making Column Labels More Friendly</a></h2>
+<p>Aliasing column labels give us the convenience of renaming a column 
+label to something more readable. There is a tradeoff when naming 
+columns to make them succinct results in reduced readability in 
+subsequent daily use. In our Orders table, the item column contains the 
+description of purchased products. Let’s see how to alias the item 
+column to temporarily rename it for greater user-friendliness:</p>
+<div><div id="highlighter_687085" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">Item </code><code class="sql keyword">AS</code> <code class="sql plain">item_description </code><code class="sql keyword">FROM</code> <code class="sql plain">Orders</code></div></div></td></tr></tbody></table></div></div>
+<h2>29. Always and Everywhere!</h2>
+<p>Wouldn’t it be great if there were a set of conditions you could depend on every time? The SQL queries using <strong>ANY</strong> and <strong>ALL</strong> can make this ideal a reality! Let’s look at how the <strong>ALL</strong> keyword is used to include records only when a set of conditions is true for <strong>ALL</strong>
+ records. In the following example, we will return records from the 
+Orders table where the idea is to get a list of high volume orders for a
+ given item, in this case for customers who ordered more than 50 of the 
+product:</p>
+<div><div id="highlighter_660547" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">Item </code><code class="sql keyword">FROM</code> <code class="sql plain">Orders </code></div><div class="line number2 index1 alt1"><code class="sql keyword">WHERE</code> <code class="sql plain">id = </code><code class="sql color1">ALL</code></div><div class="line number3 index2 alt2"><code class="sql plain">(</code><code class="sql keyword">SELECT</code> <code class="sql plain">ID </code><code class="sql keyword">FROM</code> <code class="sql plain">Orders</code></div><div class="line number4 index3 alt1"><code class="sql keyword">WHERE</code> <code class="sql plain">quantity &gt; 50)</code></div></div></td></tr></tbody></table></div></div>
+<h2>30. Writing Developer Friendly SQL</h2>
+<p>An often overlooked but very important element of SQL scripting is 
+adding comments to a script of queries to explain what it’s doing for 
+the benefit of future developers who may need to revise and update your 
+queries.<br>
+The <strong>—</strong> single line and the <strong>/*</strong> .. <strong>*/</strong>
+ multi-line delimiters empower us to add useful comments to scripts, but
+ this is also used in another valuable way. Sometimes a section of code 
+may not be in use, but we don’t want to delete it, because we anticipate
+ using it again. Here we can simply add the comment delimiter to 
+deactivate it momentarily:</p>
+<div><div id="highlighter_318999" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql comments">/* This query below is commented so it won't execute*/</code></div><div class="line number2 index1 alt1"><code class="sql comments">/*</code></div><div class="line number3 index2 alt2"><code class="sql comments">SELECT item FROM Orders </code></div><div class="line number4 index3 alt1"><code class="sql comments">WHERE date ALL = (SELECT Order_ID FROM Orders</code></div><div class="line number5 index4 alt2"><code class="sql comments">WHERE quantity &gt; 50)</code></div><div class="line number6 index5 alt1"><code class="sql comments">*/</code></div><div class="line number7 index6 alt2">&nbsp;</div><div class="line number8 index7 alt1"><code class="sql comments">/* the sql query below the will be executed </code></div><div class="line number9 index8 alt2"><code class="sql comments">ignoring the text after "--"</code></div><div class="line number10 index9 alt1"><code class="sql comments">*/</code></div><div class="line number11 index10 alt2">&nbsp;</div><div class="line number12 index11 alt1"><code class="sql keyword">SELECT</code> <code class="sql plain">item </code><code class="sql comments">-- single comment&nbsp; </code></div><div class="line number13 index12 alt2"><code class="sql keyword">FROM</code> <code class="sql plain">Orders </code><code class="sql comments">-- another single comment</code></div><div class="line number14 index13 alt1"><code class="sql keyword">WHERE</code> <code class="sql plain">id </code></div><div class="line number15 index14 alt2"><code class="sql color1">ALL</code> <code class="sql plain">= (</code><code class="sql keyword">SELECT</code> <code class="sql plain">ID </code><code class="sql keyword">FROM</code> <code class="sql plain">Orders</code></div><div class="line number16 index15 alt1"><code class="sql keyword">WHERE</code> <code class="sql plain">quantity &gt; 25)</code></div></div></td></tr></tbody></table></div></div>
+<h2>31. &nbsp;SQL queries for Database Management</h2>
+<p>So far we have explored SQL query commands for querying tables and 
+combining records from multiple queries. Now it’s time to take a step 
+upward and look at the database on a structural level. Let’s start with 
+the easiest SQL statement of all which creates a new database. Here, we 
+are going to create the DB as a container for our Customers and Orders 
+tables used in the previous ten examples above:</p>
+<div><div id="highlighter_146404" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">CREATE</code> <code class="sql keyword">DATABASE</code> <code class="sql plain">AllSales</code></div></div></td></tr></tbody></table></div></div>
+<h2>32. <a href="https://bytescout.com/blog/deep-sql-queries-and-examples.html#32">Adding Tables to Our New DB</a></h2>
+<p>Next, we will actually add the Customers table which we’ve been using
+ in previous examples, and then add some of the column labels which we 
+are already familiar with:</p>
+<div><div id="highlighter_608309" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">CREATE</code> <code class="sql keyword">TABLE</code> <code class="sql plain">Customers (</code></div><div class="line number2 index1 alt1"><code class="sql plain">ID </code><code class="sql keyword">varchar</code><code class="sql plain">(80),</code></div><div class="line number3 index2 alt2"><code class="sql keyword">Name</code> <code class="sql keyword">varchar</code><code class="sql plain">(80),</code></div><div class="line number4 index3 alt1"><code class="sql plain">Phone </code><code class="sql keyword">varchar</code><code class="sql plain">(20),</code></div><div class="line number5 index4 alt2"><code class="sql plain">....</code></div><div class="line number6 index5 alt1"><code class="sql plain">);</code></div></div></td></tr></tbody></table></div></div>
+<p>Although most databases are created using a UI such as Access or 
+OpenOffice, it is important to know how to create and delete databases 
+and tables programmatically via code with SQL statements. This is 
+especially so when installing a new web app and the UI asks new users to
+ enter names for DBs to be added during installation.</p>
+<h2>33. <a href="https://bytescout.com/blog/deep-sql-queries-and-examples.html#33">Modifying and Deleting Tables with SQL</a></h2>
+<p>Imagine that you decide to send a birthday card to your customers to 
+show your appreciation for their business, and so you want to add a 
+birthday field to the Customers table. In these SQL examples, you see 
+how easy it is to <strong>modify existing tables with the ALTER statement:</strong></p>
+<div><div id="highlighter_644982" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">ALTER</code> <code class="sql keyword">TABLE</code> <code class="sql plain">Customers </code><code class="sql keyword">ADD</code> <code class="sql plain">Birthday </code><code class="sql keyword">varchar</code><code class="sql plain">(80)</code></div></div></td></tr></tbody></table></div></div>
+<p>If a table becomes corrupted with bad data you can quickly delete it like this:</p>
+<div><div id="highlighter_808355" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">DROP</code> <code class="sql keyword">TABLE</code> <code class="sql plain">table_name</code></div></div></td></tr></tbody></table></div></div>
+<h2>34. <a href="https://bytescout.com/blog/deep-sql-queries-and-examples.html#34">The Key to Successful Indexing</a></h2>
+<p>Accurate indexing requires that the Primary Key column contain only 
+unique values for this purpose. This guarantees that JOIN statements 
+will maintain integrity and produce valid matches. Let’s create our 
+Customers table again and establish the ID column as the Primary Key:</p>
+<div><div id="highlighter_228315" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">CREATE</code> <code class="sql keyword">TABLE</code> <code class="sql plain">Customers (</code></div><div class="line number2 index1 alt1"><code class="sql plain">ID </code><code class="sql keyword">int</code> <code class="sql color1">NOT</code> <code class="sql color1">NULL</code><code class="sql plain">,</code></div><div class="line number3 index2 alt2"><code class="sql keyword">Name</code> <code class="sql keyword">varchar</code><code class="sql plain">(80) </code><code class="sql color1">NOT</code> <code class="sql color1">NULL</code><code class="sql plain">,</code></div><div class="line number4 index3 alt1"><code class="sql keyword">PRIMARY</code> <code class="sql keyword">KEY</code> <code class="sql plain">(ID)</code></div><div class="line number5 index4 alt2"><code class="sql plain">);</code></div></div></td></tr></tbody></table></div></div>
+<p>We can extend the functionality of the Primary Key so that it 
+automatically increments from a base. Change the ID entry above to add 
+the <i>AUTO_INCREMENT</i> keyword as in the following statement:</p>
+<div><div id="highlighter_829956" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql plain">ID </code><code class="sql keyword">int</code> <code class="sql color1">NOT</code> <code class="sql color1">NULL</code> <code class="sql plain">AUTO_INCREMENT</code></div></div></td></tr></tbody></table></div></div>
+<h2>35.&nbsp;Advanced Concepts For Improving Performance</h2>
+<p>Whenever practical, is always better to write the column name list into a SELECT statement rather than using the <strong>*</strong>
+ delimiter as a wildcard to select all columns. SQL Server has to do a 
+search and replace operation to find all the columns in your table and 
+write them into the statement for you (every time the SELECT is 
+executed). For example:</p>
+<div><div id="highlighter_765532" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">* </code><code class="sql keyword">FROM</code> <code class="sql plain">Customers</code></div></div></td></tr></tbody></table></div></div>
+<p>Would actually execute much faster on our database as:</p>
+<div><div id="highlighter_259525" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql keyword">Name</code><code class="sql plain">, Birthday, Phone, </code></div><div class="line number2 index1 alt1"><code class="sql plain">Address, Zip </code><code class="sql keyword">FROM</code> <code class="sql plain">Customers</code></div></div></td></tr></tbody></table></div></div>
+<p>Performance pitfalls can be avoided in many ways. For example, avoid 
+the time sinkhole of forcing SQL Server to check the system/master 
+database every time by using only a stored procedure name, and never 
+prefix it with SP_. Also setting NOCOUNT ON reduces the time required 
+for SQL Server to count rows affected by INSERT, DELETE, and other 
+commands. Using INNER JOIN with a condition is much faster than using 
+WHERE clauses with conditions. We advise developers to learn SQL server 
+queries to an advanced level for this purpose. For production purposes, 
+these tips may be crucial to adequate performance. Notice that our 
+tutorial examples tend to favor the INNER JOIN.</p>
+<h2>36. Conditional Subquery Results</h2>
+<p>The SQL operator EXISTS tests for the existence of records in a 
+subquery and returns a value TRUE if a subquery returns one or more 
+records. Have a look at this query with a subquery condition:</p>
+<div><div id="highlighter_669909" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql keyword">Name</code> <code class="sql keyword">FROM</code> <code class="sql plain">Customers </code><code class="sql keyword">WHERE</code> <code class="sql plain">EXISTS </code></div><div class="line number2 index1 alt1"><code class="sql plain">(</code><code class="sql keyword">SELECT</code> <code class="sql plain">Item </code><code class="sql keyword">FROM</code> <code class="sql plain">Orders </code></div><div class="line number3 index2 alt2"><code class="sql keyword">WHERE</code> <code class="sql plain">Customers.ID = Orders.ID </code><code class="sql color1">AND</code> <code class="sql plain">Price &lt; 50)</code></div></div></td></tr></tbody></table></div></div>
+<p>In this example above, the SELECT returns a value of TRUE when a customer has orders valued at less than $50.</p>
+<h2>37. Copying Selections from Table to Table</h2>
+<p>There are a hundred and one uses for this SQL tool. Suppose you want 
+to archive your yearly Orders table into a larger archive table. This 
+next example shows how to do it.</p>
+<div><div id="highlighter_602164" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">INSERT</code> <code class="sql keyword">INTO</code> <code class="sql plain">Yearly_Orders </code></div><div class="line number2 index1 alt1"><code class="sql keyword">SELECT</code> <code class="sql plain">* </code><code class="sql keyword">FROM</code> <code class="sql plain">Orders </code></div><div class="line number3 index2 alt2"><code class="sql keyword">WHERE</code> <code class="sql keyword">Date</code><code class="sql plain">&lt;=1/1/2018</code></div></div></td></tr></tbody></table></div></div>
+<p>This example will add any records from the year 2018 to the archive.</p>
+<h2>38.&nbsp;Catching NULL Results</h2>
+<p>In cases where NULL values are allowed in a field, calculations on 
+those values will produce NULL results as well. This can be avoided by 
+use of the IFNULL operator. In this next example, a value of zero is 
+returned rather than a value of NULL when the calculation encounters a 
+field with NULL value:</p>
+<div><div id="highlighter_648036" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">Item, Price * </code></div><div class="line number2 index1 alt1"><code class="sql plain">(QtyInStock + IFNULL(QtyOnOrder, 0)) </code></div><div class="line number3 index2 alt2"><code class="sql keyword">FROM</code> <code class="sql plain">Orders</code></div></div></td></tr></tbody></table></div></div>
+<h2>39.&nbsp;HAVING can be Relieving!</h2>
+<p>The problem was that the SQL WHERE clause could not operate on 
+aggregate functions. The problem was solved by using the HAVING clause. 
+As an example, this next query fetches a list of customers by the region
+ where there is at least one customer per region:</p>
+<div><div id="highlighter_356624" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql color2">COUNT</code><code class="sql plain">(ID), Region</code></div><div class="line number2 index1 alt1"><code class="sql keyword">FROM</code> <code class="sql plain">Customers</code></div><div class="line number3 index2 alt2"><code class="sql keyword">GROUP</code> <code class="sql keyword">BY</code> <code class="sql plain">Region</code></div><div class="line number4 index3 alt1"><code class="sql keyword">HAVING</code> <code class="sql color2">COUNT</code><code class="sql plain">(ID) &gt; 0;</code></div></div></td></tr></tbody></table></div></div>
+<h2>40. Tie things up with Strings!</h2>
+<p>Let’s have a look at processing the contents of field data using 
+functions. Substring is probably the most valuable of all built-in 
+functions. It gives you some of the power of Regex, but it’s not so 
+complicated as Regex. Suppose you want to find the substring left of the
+ dots in a web address. <strong>Here’s how to do it with an SQL Select query</strong>:</p>
+<div><div id="highlighter_977238" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">SELECT</code> <code class="sql plain">SUBSTRING_INDEX(</code><code class="sql string">"www.bytescout.com"</code><code class="sql plain">, </code><code class="sql string">"."</code><code class="sql plain">, 2);</code></div></div></td></tr></tbody></table></div></div>
+<p>This line will return everything to the left of the second occurrence of “. ” and so, in this case, it will return</p>
+<div><div id="highlighter_343767" class="syntaxhighlighter  xml"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xml plain">&lt;</code><code class="xml keyword">a</code> <code class="xml color1">href</code><code class="xml plain">=</code><code class="xml string">"<a href="https://bytescout.com/">https://bytescout.com</a>"</code><code class="xml plain">&gt;www.bytescout.com&lt;/</code><code class="xml keyword">a</code><code class="xml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+<p>&nbsp;</p>
+<div class="widget_text widget-odd widget-last widget-first widget-1 awac-wrapper"><div class="widget_text awac widget custom_html-15"><div class="textwidget custom-html-widget"><div class="free-video-banner" style="font-family: 'Roboto Condensed', sans-serif; background-color: #78bc2b; padding: 30px 20px; margin: 20px 0; text-align: center;">
+<a href="https://bytescout.com/download/download_freeware.html" style="font-size: 20px; color: #fff; letter-spacing: 3px; text-decoration: none;">
+GET
+<strong style="font-weight: 900; color: #484848;">BYTESCOUT FREEWARE</strong>
+- UPDATES, DESKTOP &amp; ONLINE APPS
+<span class="glyphicon glyphicon-arrow-right"></span>
+</a>
+</div></div></div></div><div id="dpsp-content-bottom" class="dpsp-content-wrapper dpsp-shape-rounded dpsp-size-small dpsp-has-spacing dpsp-show-on-mobile dpsp-button-style-1"><ul class="dpsp-networks-btns-wrapper dpsp-networks-btns-content dpsp-networks-btns-share dpsp-column-5 dpsp-has-button-icon-animation"><li><a rel="nofollow noopener noreferrer" href="https://twitter.com/intent/tweet?text=Ultimate%20List%20of%2040%20Important%20SQL%20Queries&amp;url=https%3A%2F%2Fbytescout.com%2Fblog%2F20-important-sql-queries.html%3Futm_source%3Dtwitter%26utm_medium%3Dsocial%26utm_campaign%3Dshare" class="dpsp-network-btn dpsp-twitter dpsp-first"><span class="dpsp-network-icon"></span><span class="dpsp-network-label-wrapper"><span class="dpsp-network-label">Tweet</span></span></a></li><li><a rel="nofollow noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbytescout.com%2Fblog%2F20-important-sql-queries.html%3Futm_source%3Dfacebook%26utm_medium%3Dsocial%26utm_campaign%3Dshare&amp;t=Ultimate%20List%20of%2040%20Important%20SQL%20Queries" class="dpsp-network-btn dpsp-facebook"><span class="dpsp-network-icon"></span><span class="dpsp-network-label-wrapper"><span class="dpsp-network-label">Share</span></span></a></li><li><a rel="nofollow noopener noreferrer" href="whatsapp://send?text=Ultimate%20List%20of%2040%20Important%20SQL%20Queries+https%3A%2F%2Fbytescout.com%2Fblog%2F20-important-sql-queries.html%3Futm_source%3Dwhatsapp%26utm_medium%3Dsocial%26utm_campaign%3Dshare" class="dpsp-network-btn dpsp-whatsapp"><span class="dpsp-network-icon"></span><span class="dpsp-network-label-wrapper"><span class="dpsp-network-label">WhatsApp</span></span></a></li><li><a rel="nofollow noopener noreferrer" data-href="#" class="dpsp-network-btn dpsp-pinterest"><span class="dpsp-network-icon"></span><span class="dpsp-network-label-wrapper"><span class="dpsp-network-label">Pin</span></span></a></li><li><a rel="nofollow noopener noreferrer" href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fbytescout.com%2Fblog%2F20-important-sql-queries.html%3Futm_source%3Dlinkedin%26utm_medium%3Dsocial%26utm_campaign%3Dshare&amp;title=Ultimate%20List%20of%2040%20Important%20SQL%20Queries&amp;summary=SQL%20is%20incredibly%20powerful%2C%20and%20like%20every%20well-made%20development%20tool%2C%20it%20has%20a%20few%20commands%20which%20it%E2%80%99s%20vital%20for%20a%20good%20developer%20to%20know.%20Here%20are%20a%20few%20of%20the%20most%20important%20ones%20%E2%80%93%20each&amp;mini=true" class="dpsp-network-btn dpsp-linkedin dpsp-last"><span class="dpsp-network-icon"></span><span class="dpsp-network-label-wrapper"><span class="dpsp-network-label">LinkedIn</span></span></a></li></ul></div>                                                                                                        </div>
+                            </div>
+
+                            
+                            
+<!-- UN-POST-NAVIGATION -->
+
+
+    <div class="c-post-prev c-post-nav-btn pull-left c-margin-b-40">
+        <div class="c-post-nav-label">
+
+            <a class="btn btn-md c-btn-uppercase c-theme-btn c-btn-border-1x c-btn-square" href="https://bytescout.com/blog/software-robots-vs-hardware-robots-in-rpa.html">
+                <i class="fa fa-chevron-left"></i><span>prev</span>
+            </a>
+
+        </div>
+    </div>
+
+
+
+    <div class="c-post-next c-post-nav-btn pull-right c-margin-b-40">
+        <div class="c-post-nav-label">
+
+            <a class="btn btn-md c-btn-uppercase c-theme-btn c-btn-border-1x c-btn-square" href="https://bytescout.com/blog/what-is-bpa-business-process-automation.html">
+                <span>next</span><i class="fa fa-chevron-right"></i>
+            </a>
+
+        </div>
+    </div>
+
+<div class="clearfix"></div>
+
+<!-- /UN-POST-NAVIGATION -->
+                            
+                            
+
+    <!-- c-POSTS-RELATED -->
+    <div class="c-posts-related c-margin-b-40">
+
+        <div class="c-content-title-1">
+            <h3 class="c-font-uppercase c-font-bold">
+                Related Posts            </h3>
+            <div class="c-line-left"></div></div>
+        <div class="row">
+
+            
+                <div class="c-rel-post col-sm-6">
+
+                    <div class="c-content-blog-post-card-1 c-option-2 c-bordered">
+                        						<a href="https://bytescout.com/blog/2016/11/resolution-dpi-dots-per-inch-affects-images-video.html">
+                            <img class="c-overlay-object img-responsive" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/Extract-Data-from-PDF-1110x500.jpg" alt="How The Resolution (DPI, Dots Per Inch) Affects Images And Video">
+                        </a>
+                                                <div class="c-body">
+                            <div class="c-title c-font-bold c-font-uppercase">
+                                <a href="https://bytescout.com/blog/2016/11/resolution-dpi-dots-per-inch-affects-images-video.html">How The Resolution (DPI, Dots Per Inch) Affects Images And Video</a>
+                            </div>
+
+                            <p>
+                                The use of some terms in digital imaging
+ has become a matter of great confusion for many people. If you have 
+ever wondered what is...                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            
+                <div class="c-rel-post col-sm-6">
+
+                    <div class="c-content-blog-post-card-1 c-option-2 c-bordered">
+                        						<a href="https://bytescout.com/blog/generating-qr-code.html">
+                            <img class="c-overlay-object img-responsive" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/A18_Featured-1110x500.jpg" alt="Generating QR Code for Different Data">
+                        </a>
+                                                <div class="c-body">
+                            <div class="c-title c-font-bold c-font-uppercase">
+                                <a href="https://bytescout.com/blog/generating-qr-code.html">Generating QR Code for Different Data</a>
+                            </div>
+
+                            <p>
+                                QR codes are a form of 2-Dimensional 
+barcode – QR is an acronym of Quick Response code, but they may also be 
+referred to as...                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            
+            <div class="c-clear"></div>
+
+        </div>
+
+    </div>
+    <!-- /UN-POSTS-RELATED -->
+
+    
+                           
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                                                    
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<a name="footer"></a>
+
+<footer class="c-layout-footer c-layout-footer-7">
+
+    <div class="container">
+
+                    <div class="c-prefooter">
+
+                <div class="c-body">
+
+                    <div class="row">
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+
+                                                            <ul class="footer-dark-sidebar">
+                                    <div class="widget-odd widget-last widget-first widget-1 widget_nav_menu widget c-margin-b-40"><div class="c-content-title-1 c-theme c-title-md"><h3 class="c-title c-font-bold c-font-uppercase">PURCHASE</h3><div class="c-line-left c-theme-bg"></div></div><div class="menu-footer-menu-1-container"><ul id="menu-footer-menu-1" class="menu"><li id="menu-item-30503" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30503"><a>Suites</a></li>
+<li id="menu-item-17760" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17760"><a href="https://bytescout.com/buy/purchase.html#_developertools">Single Products</a></li>
+<li id="menu-item-27044" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27044"><a href="https://bytescout.com/buy/resellers.html">Local Resellers</a></li>
+</ul></div></div>                                </ul>
+                            
+                        </div>
+
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+
+                                                            <ul class="footer-dark-sidebar">
+                                    <div class="widget-odd widget-last widget-first widget-1 widget_nav_menu widget c-margin-b-40"><div class="c-content-title-1 c-theme c-title-md"><h3 class="c-title c-font-bold c-font-uppercase">DOWNLOADS</h3><div class="c-line-left c-theme-bg"></div></div><div class="menu-footer-menu-2-products-container"><ul id="menu-footer-menu-2-products" class="menu"><li id="menu-item-27045" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27045"><a href="https://bytescout.com/download/download.html">Free Trials for Software Developers</a></li>
+<li id="menu-item-30506" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30506"><a href="https://bytescout.com/download/download_freeware.html">Desktop Utilities</a></li>
+<li id="menu-item-17779" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17779"><a href="https://app.bytescout.com/">Online Utilities</a></li>
+<li id="menu-item-28227" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28227"><a href="https://pdf.co/">www.PDF.co</a></li>
+</ul></div></div>                                </ul>
+                            
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 col-xs-12">
+
+                                                            <ul class="footer-dark-sidebar">
+                                    <div class="widget-odd widget-last widget-first widget-1 widget_nav_menu widget c-margin-b-40"><div class="c-content-title-1 c-theme c-title-md"><h3 class="c-title c-font-bold c-font-uppercase">COMPANY</h3><div class="c-line-left c-theme-bg"></div></div><div class="menu-footer-menu-3-company-container"><ul id="menu-footer-menu-3-company" class="menu"><li id="menu-item-17774" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17774"><a href="https://bytescout.com/solutions">SOLUTIONS</a></li>
+<li id="menu-item-30507" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30507"><a href="https://bytescout.com/contacts.html">Contact Us</a></li>
+<li id="menu-item-30508" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30508"><a href="https://bytescout.com/about_us.html">About Us</a></li>
+<li id="menu-item-30509" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30509"><a href="https://bytescout.com/partnership">Partnership</a></li>
+<li id="menu-item-45515" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45515"><a href="https://bytescout.com/we-fight-against-cancer">We Fight Against Cancer</a></li>
+</ul></div></div>                                </ul>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+                
+							<div class="widget_text widget-odd widget-last widget-first widget-1 bottom_contact_sidebar"><div class="textwidget custom-html-widget"><span style="font-size: 11pt;"><strong><a href="https://support.bytescout.com/hc/en-us/requests/new?subject=Question">get in touch</a></strong>&nbsp;&nbsp;or&nbsp;&nbsp;<strong><a href="https://support.bytescout.com/hc/en-us/requests/new?subject=Request%20For%20Quotation">request a quote</a></strong>&nbsp;&nbsp;email: <strong><a href="https://bytescout.com/blog/support@bytescout.com?subject=question">support@bytescout.com</a></strong></span></div></div>						
+            
+            
+            <div class="c-head">
+
+                <div class="row">
+
+                    <div class="col-md-6 col-sm-12">
+
+                        
+                                <div class="c-left">
+                                    <div class="socicon">
+                                            <a href="https://www.facebook.com/ByteScout-150677488302108/" class="socicon-btn socicon-btn-circle socicon-solid c-font-dark-1 c-theme-on-hover socicon-facebook tooltips" data-original-title="facebook" data-container="body"></a>
+                                            <a href="https://plus.google.com/b/105227772856040568631/105227772856040568631" class="socicon-btn socicon-btn-circle socicon-solid c-font-dark-1 c-theme-on-hover socicon-google tooltips" data-original-title="google" data-container="body"></a>
+                                            <a href="https://www.youtube.com/user/ByteScoutSoftware" class="socicon-btn socicon-btn-circle socicon-solid c-font-dark-1 c-theme-on-hover socicon-youtube tooltips" data-original-title="youtube" data-container="body"></a>
+                                     </div>
+                                </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="c-postfooter c-bg-dark-2">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-6 col-sm-12 c-col">
+
+                    <p class="c-copyright c-font-grey">© Copyright 2006 - <span id="footer-copyright">2019</span><script>document.getElementById('footer-copyright').appendChild(document.createTextNode(new Date().getFullYear()));</script> <a style="color: #78bc2b" href="https://bytescout.com/">ByteScout</a> — All Rights Reserved · <a class="terms_policy" href="https://secure.bytescout.com/static_page/terms">Terms Of Use</a> · <a class="terms_policy" href="https://secure.bytescout.com/static_page/privacy">Privacy Policy</a></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+<div class="c-layout-go2top" style="display: block;">
+    <i class="icon-arrow-up"></i>
+</div>
+
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shCore.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushAS3.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushBash.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushColdFusion.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushClojure.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushCpp.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushCSharp.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushCss.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushDelphi.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushDiff.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushErlang.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushFSharp.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushGroovy.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushJava.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushJavaFX.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushJScript.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushLatex.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushMatlabKey.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushObjC.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushPerl.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushPhp.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushPlain.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushPython.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushR.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushRuby.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushScala.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushSql.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushVb.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/shBrushXml.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://s16458.pcdn.co/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.head.appendChild( corecss );
+		var themecssurl = "https://s16458.pcdn.co/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		document.head.appendChild( themecss );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+
+	// Infinite scroll support
+	if ( typeof( jQuery ) !== 'undefined' ) {
+		jQuery( function( $ ) {
+			$( document.body ).on( 'post-load', function() {
+				SyntaxHighlighter.highlight();
+			} );
+		} );
+	}
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var JQLBSettings = {"fitToScreen":"1","resizeSpeed":"400","displayDownloadLink":"0","navbarOnTop":"0","loopImages":"","resizeCenter":"","marginSize":"0","linkTarget":"","help":"","prevLinkTitle":"previous image","nextLinkTitle":"next image","prevLinkText":"\u00ab Previous","nextLinkText":"Next \u00bb","closeTitle":"close image gallery","image":"Image ","of":" of ","download":"Download","jqlb_overlay_opacity":"80","jqlb_overlay_color":"#000000","jqlb_overlay_close":"1","jqlb_border_width":"10","jqlb_border_color":"#ffffff","jqlb_border_radius":"0","jqlb_image_info_background_transparency":"100","jqlb_image_info_bg_color":"#ffffff","jqlb_image_info_text_color":"#000000","jqlb_image_info_text_fontsize":"10","jqlb_show_text_for_image":"1","jqlb_next_image_title":"next image","jqlb_previous_image_title":"previous image","jqlb_next_button_image":"https:\/\/bytescout.com\/wp-content\/plugins\/wp-lightbox-2\/styles\/images\/next.gif","jqlb_previous_button_image":"https:\/\/bytescout.com\/wp-content\/plugins\/wp-lightbox-2\/styles\/images\/prev.gif","jqlb_maximum_width":"","jqlb_maximum_height":"","jqlb_show_close_button":"1","jqlb_close_image_title":"close image gallery","jqlb_close_image_max_heght":"22","jqlb_image_for_close_lightbox":"https:\/\/bytescout.com\/wp-content\/plugins\/wp-lightbox-2\/styles\/images\/closelabel.gif","jqlb_keyboard_navigation":"1","jqlb_popup_size_fix":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/wp-lightbox-2.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/bootstrap.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/jquery_006.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/bootstrap-slider.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/components.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/scripts.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/wow.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/jquery_004.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/owl.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/jquery.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/js.js"></script>
+<script type="text/javascript" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/progressbar.js"></script>
+
+
+<script type="text/javascript" id="">dataLayer.push({event:"jQueryLoaded"});dataLayer.push({event:"consent_event",consent_performance:google_tag_manager["GTM-K7ZP29"].macro(1),consent_targeting:google_tag_manager["GTM-K7ZP29"].macro(2)});</script>
+<script type="text/javascript" id="">(function(a,e,f,g,b,d){function c(){var a={a:arguments,q:[]},b=this.push(a);return"number"!=typeof b?b:c.bind(a.q)}a.MailerLiteObject=b;c.q=c.q||[];a[b]=a[b]||c.bind(c.q);a[b].q=a[b].q||c.q;d=e.createElement(f);a=e.getElementsByTagName(f)[0];d.async=1;d.src=g+"?v"+~~((new Date).getTime()/1E6);a.parentNode.insertBefore(d,a)})(window,document,"script","https://static.mailerlite.com/js/universal.js","ml");var ml_account=ml("accounts","1559616","n8x6d7y5h6","load");</script>
+<style>
+  #cookie_bar {
+    width: 100%;
+    z-index: 99999;
+    position: fixed;
+    bottom: 0;
+    background: #f5da2b;
+    border-top: 1px solid #d2d2d7;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    font-size: 12px;
+    padding: 5px 5% 20px 5%;
+    font-family: sans-serif;
+    line-height: 24px;
+    opacity: 0.97;
+}
+
+
+.policy_link {
+  text-decoration: none;
+  color: black;
+  border-bottom: 3px solid #50505a;
+  padding: 0px;
+}
+  
+  .policy_settings {
+  text-decoration: none;
+  color: black;
+  border-bottom: 3px solid #50505a;
+  margin: 0px 18px;
+}
+
+.cookie_close {
+  background-color: black;
+  padding: 6px 50%;
+  border-radius: 3px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  display:inline-block;
+}
+</style>
+
+<script type="text/javascript" id="">jQuery(document).ready(function(){function e(a){jQuery("#cookie_bar").fadeOut("normal",function(){jQuery(this).remove()});var b=1,c=1;dataLayer.push({event:"setCookie",attributes:{cookieName:"cookie_consent_performance",cookieValue:Number(b),cookieDomain:".bytescout.com",cookiePath:"/",cookieExpires:365}});dataLayer.push({event:"setCookie",attributes:{cookieName:"cookie_consent_targeting",cookieValue:Number(c),cookieDomain:".bytescout.com",cookiePath:"/",cookieExpires:365}});var d=0;
+a&&(d=1);dataLayer.push({event:"setCookie",attributes:{cookieName:"cookie_consent_settings_set",cookieValue:d,cookieDomain:".bytescout.com",cookiePath:"/",cookieExpires:365}});a="p"+b.toString()+"t"+c.toString();dataLayer.push({ga_cookie_settings:a,event:"consent_event",consent_performance:Number(b),consent_targeting:Number(c)});d&&dataLayer.push({event:"viewPage"})}var g="https://secure.bytescout.com/pages/legal/privacy",h="https://secure.bytescout.com/pages/legal/cookie-settings",f=document.createElement("div");
+f.setAttribute("id","cookie_bar");var k=document.querySelector("body");k.append(f);document.getElementById("cookie_bar").innerHTML='\x3cstrong\x3eThis website uses cookies.\x3c/strong\x3e Cookies are used to personalize content, analyze traffic, provide social media features, display ads. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you have provided to them or that they have collected from your use of their services. Please review our \x3ca class\x3d"policy_link" href\x3d"'+
+g+'"\x3ePrivacy Policy\x3c/a\x3e for more details or \x3ca class\x3d"policy_link" href\x3d"'+h+'"\x3echange cookies settings\x3c/a\x3e. By closing this banner or by clicking a link or continuing to browse otherwise, you consent to our cookies.\x3cbr\x3e\x3cspan class\x3d"cookie_close"\x3eOK\x3c/span\x3e';jQuery("a:not(.policy_link)").on("click",function(a){e(1)});jQuery(".cookie_close").click(function(){e(1)})});</script><div id="cookie_bar"><strong>This website uses cookies.</strong>
+ Cookies are used to personalize content, analyze traffic, provide 
+social media features, display ads. We also share information about your
+ use of our site with our social media, advertising and analytics 
+partners who may combine it with other information that you have 
+provided to them or that they have collected from your use of their 
+services. Please review our <a class="policy_link" href="https://secure.bytescout.com/pages/legal/privacy">Privacy Policy</a> for more details or <a class="policy_link" href="https://secure.bytescout.com/pages/legal/cookie-settings">change cookies settings</a>. By closing this banner or by clicking a link or continuing to browse otherwise, you consent to our cookies.<br><span class="cookie_close">OK</span></div><div id="ml-webforms-popup-1380440-overlay" class="ml-webforms-popup-overlay" style="position: fixed;"></div><iframe id="ml-webforms-popup-1380440" show-overlay="true" src="Advanced%20SQL%20Queries,%20Examples%20of%20Queries%20in%20SQL%20List%20of%2040%20Items%20-%20ByteScout_files/page.htm" style="position: fixed; inset: auto 0px 0px auto; visibility: visible; opacity: 1; margin: 0px; max-width: 100%; height: 215.4px; max-height: 215.4px; z-index: 2147483640; display: block;" animation="slideboxRight" class="mailerlite-form-slidebox" frameborder="0"></iframe></body></html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>PHP Mail - Phppot</title>
+<meta name="description" content="PHP provides mail() function for sending simple mail using PHP scripts. For that, the mail() function requires three arguments compulsorily"><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://phppot.com/feed/">
+<link rel="apple-touch-icon" sizes="180x180" href="https://phppot.com/apple-touch-icon.png?v=031218">
+<link rel="icon" type="image/png" sizes="32x32" href="https://phppot.com/favicon-32x32.png?v=031218">
+<link rel="icon" type="image/png" sizes="16x16" href="https://phppot.com/favicon-16x16.png?v=031218">
+<link rel="manifest" href="https://phppot.com/site.webmanifest?v=031218">
+<link rel="mask-icon" href="https://phppot.com/safari-pinned-tab.svg?v=031218" color="#ffa500">
+<link rel="shortcut icon" href="https://phppot.com/favicon.ico?v=031218">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="PHP Mail - Phppot">
+<meta property="og:site_name" content="Phppot">
+<meta property="og:description" content="PHP provides mail() function for sending simple mail using PHP scripts. For that, the mail() function requires three arguments compulsorily"><meta property="og:url" content="https://phppot.com/php/php-mail/">
+<meta property="twitter:title" content="PHP Mail - Phppot">
+<meta name="twitter:site" content="@phppot">
+<meta property="twitter:creator" content="@phppot">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://phppot.com/wp-content/uploads/2013/06/php_mail.jpg"><meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:description" content="PHP provides mail() function for sending simple mail using PHP scripts. For that, the mail() function requires three arguments compulsorily"><meta property="twitter:image" content="https://phppot.com/wp-content/uploads/2013/06/php_mail.jpg"><script type="text/javascript" async="" src="PHP%20Mail%20-%20Phppot_files/ga.js"></script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40067115-1']);
+  _gaq.push(['_setDomainName', 'phppot.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://www.google-analytics.com/"><link rel="dns-prefetch" href="https://www.youtube.com/"><link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/"><link rel="dns-prefetch" href="https://static.doubleclick.net/"><link rel="dns-prefetch" href="https://www.google.com/"><link rel="dns-prefetch" href="https://i.ytimg.com/"><link rel="dns-prefetch" href="https://yt3.ggpht.com/"><link rel="dns-prefetch" href="https://fonts.gstatic.com/"><link rel="stylesheet" id="main-style-css" href="PHP%20Mail%20-%20Phppot_files/papers_228192.css" type="text/css" media="all">
+<link rel="canonical" href="https://phppot.com/php/php-mail/">
+</head>
+<body onload="prettyPrint()">
+ <div id="site_header">
+    <div class="content">
+        <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP"><img src="PHP%20Mail%20-%20Phppot_files/phppot-logo.png" id="site-logo" alt="Helping You Build Web Applications Using PHP"></a>
+        <div class="search-container">
+            <form method="get" action="/" class="search-form">
+                <input name="s" class="search" placeholder="Search Phppot" title="Search Phppot" autocomplete="off">
+                <button type="submit" title="Search Phppot" id="search-button"></button>
+            </form>
+        </div>
+        <div class="header-link-container">
+            <span id="mobile-search-icon" onclick="toggleSearch();">Mobile
+                Search</span>
+                <div id="expand-sub-menu-icon">
+                    <a class="testimonial-icon" href="https://phppot.com/testimonials/">Testimonials</a><a class="demo-download-icon" href="https://phppot.com/demo/">Demo</a>
+                </div>  <a id="header-contact-navigation" href="https://phppot.com/contact/">Contact Me</a>
+        </div>
+    </div>
+</div>    <div class="content">
+        <div id="tutorial-body">
+            <div id="tutorial">
+                <h1>PHP Mail</h1>
+                <div class="modified-on">Last modified on February 25th, 2017 by Vincy.</div>
+<p>PHP provides mail() function for sending simple mail using PHP 
+scripts. For that, the mail() function requires three arguments 
+compulsorily and also two optional arguments, so totally five possible 
+arguments as shown below.</p>
+<ul>
+<li>Recipient Email Address (Mandatory).</li>
+<li>Email Subject (Mandatory)</li>
+<li>Email Context or Message Body (Mandatory)</li>
+<li>Additional Header Information (Optional)</li>
+<li>Additional Parameters (Optional)</li>
+</ul>
+<p><img class="alignnone size-full wp-image-744" src="PHP%20Mail%20-%20Phppot_files/php_mail.jpg" alt="php_mail" width="200" height="187"></p>
+<p>First three arguments are obvious and more clear about their purpose. a <em> Header</em> and <em>Additional Parameters</em> are needed to set values like <em>From Address</em> to avoid error while sending an mail. This <em>From Address</em> is by default set with <a title="php.ini File" href="https://phppot.com/php/php-ini-file/">php.ini file</a>. But in some rare cases of having custom php.ini file and no value is set for <em>From Address</em>, at that time <em>Additional Parameters</em> of this mail() function is used. And then, <em>Additional Header</em> argument that includes more header information like CC, BCC and etc.</p>
+<p><strong>Note:</strong> Not only FromAddress as <em>sendmail_from</em>, php.ini also holds set of other mail related settings like <em>smtp</em>, <em>smtp_port</em>, <em>sendmail_path</em> and etc.</p>
+<h2>Example: PHP mail()</h2>
+<p>The following PHP program is for sending simple mail using PHP mail 
+function. It starts with the initialization of mail() function’s five 
+parameters discussed above. For additional headers, <em>CC</em> and <em>BCC</em> are specified with email addresses for which copy of this email content will be sent. And, finally <em>From Address</em> is set as an additional parameter.</p>
+<p>All the arguments are used for the PHP mail() function in the following program. This function will return boolean value <em>TRUE</em>,
+ if the mail is accepted for delivery and print success message to the 
+browser . Otherwise, it returns false with failure notice.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php
+$recipientEmail </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Enter Recipient Email Here!"</span><span class="pun">;</span><span class="pln">
+$emailSubject </span><span class="pun">=</span><span class="pln"> </span><span class="str">"PHP Mailing Function"</span><span class="pun">;</span><span class="pln">
+$emailContext </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Sending content using PHP mail function"</span><span class="pun">;</span><span class="pln">
+
+$emailHeaders </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Cc: Replace email address"</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> </span><span class="str">"\r\n"</span><span class="pun">;</span><span class="pln">
+$emailHeaders </span><span class="pun">.=</span><span class="pln"> </span><span class="str">"Bcc: Replace email address"</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> </span><span class="str">"\r\n"</span><span class="pun">;</span><span class="pln">
+
+$fromAddress </span><span class="pun">=</span><span class="pln"> </span><span class="str">"-fpostmaster@localhost"</span><span class="pun">;</span><span class="pln">
+$emailStatus </span><span class="pun">=</span><span class="pln"> mail</span><span class="pun">(</span><span class="pln">$recipientEmail</span><span class="pun">,</span><span class="pln"> $emailSubject</span><span class="pun">,</span><span class="pln"> $emailContext</span><span class="pun">,</span><span class="pln"> $emailHeaders</span><span class="pun">,</span><span class="pln"> $fromAddress</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">if</span><span class="pun">(</span><span class="pln">$emailStatus</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+echo </span><span class="str">"EMail Sent Successfully!"</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+echo </span><span class="str">"No Email is sent"</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">?&gt;</span></pre>
+<p>But this mail() function is not efficient method to send email using 
+PHP program. Because, we can not transfer bulk data using this function.
+ And also, it has poor performance on sending email to more than one 
+recipient and not secure enough. To send email for each recipient, PHP 
+mail() function attempts to open the SMTP socket every time which leads 
+poor performance. To get rid of such inconvenience with this function, 
+we can better go with other alternative email packages, for example 
+PEAR::Mail package.</p>
+
+<div id="comments" class="comments-area">
+
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://phppot.com/php/php-mail/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://phppot.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Leave this empty <span class="required">*</span></label> <input id="url" name="url" type="text" size="30" maxlength="245"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="732" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>			</form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+    <div class="related-articles">
+                    <h2>Popular Articles</h2>
+                    <ul class="related-articles-list">
+                        <li><a href="https://phppot.com/php/php-login-script-with-session/">PHP Login Script with Session</a></li>
+                        <li><a href="https://phppot.com/php/send-email-in-php-using-gmail-smtp/">Send Email in PHP using Gmail SMTP</a></li>
+                        <li><a href="https://phppot.com/php/php-change-password-script/">PHP Change Password Script</a></li>
+                    </ul>
+                </div>
+                <p>
+                    <a href="#top" class="top">↑ Back to Top</a>
+                </p>
+            </div>
+            <div id="tutorial-menu">
+	<ul class="main-menu"><li class="cat-item cat-item-72"><a href="https://phppot.com/category/php/">PHP</a><ul class="sub-menu"><li class="cat-item cat-item-59 "><a href="https://phppot.com/category/php/php-introduction/">PHP Introduction</a></li><li class="cat-item cat-item-26 "><a href="https://phppot.com/category/php/php-basics/">PHP Basics</a></li><li class="cat-item cat-item-99 "><a href="https://phppot.com/category/php/product/">Product</a></li><li class="cat-item cat-item-79 "><a href="https://phppot.com/category/php/php-shopping-cart/">PHP Shopping Cart</a></li><li class="cat-item cat-item-102 "><a href="https://phppot.com/category/php/payment-gateway-integration/">Payment Gateway Integration</a></li><li class="cat-item cat-item-94 "><a href="https://phppot.com/category/php/php-contact-form/">PHP Contact Form</a></li><li class="cat-item cat-item-103 "><a href="https://phppot.com/category/php/comments-system/">Comments System</a></li><li class="cat-item cat-item-57 "><a href="https://phppot.com/category/php/types-variables-operators/">Types, Variables &amp; Operators</a></li><li class="cat-item cat-item-58 "><a href="https://phppot.com/category/php/php-strings/">PHP Strings</a></li><li class="cat-item cat-item-22 "><a href="https://phppot.com/category/php/php-arrays/">PHP Arrays</a></li><li class="cat-item cat-item-61 "><a href="https://phppot.com/category/php/php-functions/">PHP Functions</a></li><li class="cat-item cat-item-35 "><a href="https://phppot.com/category/php/php-oops/">PHP OOPS</a></li><li class="cat-item cat-item-31 "><a href="https://phppot.com/category/php/php-forms/">PHP Forms</a></li><li class="cat-item cat-item-78 "><a href="https://phppot.com/category/php/advanced/">Advanced</a></li><li class="cat-item cat-item-90 "><a href="https://phppot.com/category/php/php-ajax/">PHP AJAX</a></li><li class="cat-item cat-item-89 "><a href="https://phppot.com/category/php/restful-api/">RESTful API</a></li><li class="cat-item cat-item-15 "><a href="https://phppot.com/category/php/php-databases/">PHP Databases</a></li><li class="cat-item cat-item-23 "><a href="https://phppot.com/category/php/php-sessions-and-cookies/">PHP Sessions and Cookies</a></li><li class="cat-item cat-item-51 "><a href="https://phppot.com/category/php/error-exception-handling/">Error and Exception Handling</a></li><li class="cat-item cat-item-100 "><a href="https://phppot.com/category/php/file-upload/">File Upload</a></li><li class="cat-item cat-item-101 "><a href="https://phppot.com/category/php/file-import-export/">File Import Export</a></li><li class="cat-item cat-item-36 "><a href="https://phppot.com/category/php/files-and-directories/">Files and Directories</a></li><li class="cat-item cat-item-45 "><a href="https://phppot.com/category/php/php-date-time/">PHP Date Time</a></li><li class="cat-item cat-item-12 "><a href="https://phppot.com/category/php/php-graphics/">PHP Graphics</a></li><li class="cat-item cat-item-24 "><a href="https://phppot.com/category/php/php-xml/">PHP XML</a></li><li class="cat-item cat-item-62 taxonomy-active"><a href="https://phppot.com/category/php/php-code-samples/">PHP Code Samples</a><ul class="post-list"><li><a class="post-menu" href="https://phppot.com/php/php-crud-with-search-and-pagination/">PHP CRUD with Search and Pagination</a></li><li><a class="post-menu" href="https://phppot.com/php/show-php-captcha-on-failed-login-attempts/">Show PHP Captcha on Failed Login Attempts</a></li><li><a class="post-menu" href="https://phppot.com/php/php-mysql-date-range-search-with-jquery-datepicker/">PHP MySQL Date Range Search with jQuery DatePicker</a></li><li><a class="post-menu" href="https://phppot.com/php/advanced-search-using-php/">Advanced Search using PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/highlighting-keywords-in-search-results-with-php/">Highlighting Keywords in Search Results with PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/command-line-php/">Command Line PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/how-to-create-custom-image-file-explorer-in-php/">How to Create Custom Image File Explorer in PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/user-authentication-using-php-and-mysql/">PHP User Authentication with MySQL</a></li><li><a class="post-menu" href="https://phppot.com/php/php-login-script-with-session/">PHP Login Script with Session</a></li><li><a class="post-menu" href="https://phppot.com/php/php-login-with-otp-authentication/">PHP Login with OTP Authentication</a></li><li><a class="post-menu" href="https://phppot.com/php/php-login-script-with-remember-me/">PHP Login Script with Remember Me</a></li><li><a class="post-menu" href="https://phppot.com/php/user-login-session-timeout-logout-in-php/">User Login Session Timeout Logout in PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/php-change-password-script/">PHP Change Password Script</a></li><li><a class="post-menu" href="https://phppot.com/php/php-forgot-password-recover-code/">PHP Forgot Password Recover Code</a></li><li class="current-post">PHP Mail</li><li><a class="post-menu" href="https://phppot.com/php/send-email-in-php-using-gmail-smtp/">Send Email in PHP using Gmail SMTP</a></li><li><a class="post-menu" href="https://phppot.com/php/object-oriented-poll-system-using-php/">Object-Oriented Poll System using PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/php-curl/">PHP cURL</a></li><li><a class="post-menu" href="https://phppot.com/php/extract-content-using-php-and-preview-like-facebook/">Extract Content using PHP and Preview like Facebook</a></li><li><a class="post-menu" href="https://phppot.com/php/show-image-thumbnail-by-youtube-video-url-using-php/">Show Image Thumbnail by YouTube Video URL using PHP</a></li><li><a class="post-menu" href="https://phppot.com/php/star-rating-with-php-and-jquery-ajax/">Star Rating with PHP and jQuery AJAX</a></li></ul></li><li class="cat-item cat-item-96 "><a href="https://phppot.com/category/php/library/">Library</a></li><li class="cat-item cat-item-88 "><a href="https://phppot.com/category/php/php-freelancer/">PHP Freelancer</a></li></ul></li><li class="cat-item cat-item-73"><a href="https://phppot.com/category/jquery/">jQuery</a></li><li class="cat-item cat-item-74"><a href="https://phppot.com/category/wordpress/">WordPress</a></li><li class="cat-item cat-item-75"><a href="https://phppot.com/category/mysql/">MySQL</a></li><li class="cat-item cat-item-76"><a href="https://phppot.com/category/css/">CSS</a></li></ul></div>
+
+            <div id="social-icon">
+                <div class="heading">Share this Article</div>
+                <ul>
+                    <li><a class="social-link facebook-social-link" href="https://www.facebook.com/sharer/sharer.php?u=https://phppot.com/php/php-mail/" title="Share on Facebook"><span class="facebook-social-img">Share</span></a></li>
+                    <li><a class="social-link twitter-social-link" href="https://twitter.com/intent/tweet?original_referer=https://phppot.com&amp;source=tweetbutton&amp;text=PHP%20Mail;url=https://phppot.com/php/php-mail/&amp;via=phppot" title="Share on Twitter"><span class="twitter-social-img">Tweet</span></a></li>
+                    <li><a class="social-link linkedin-social-link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://phppot.com/php/php-mail/&amp;media=PHP%20Mail" title="Share on Linkedin"><span class="linkedin-social-img">Share</span></a></li>
+                </ul>
+            </div>
+        </div>
+<div id="sidebar">
+    <div id="aboutcntnt">
+        <div id="photo">
+            <img src="PHP%20Mail%20-%20Phppot_files/Vincy.jpg" alt="Vincy" title="Vincy" width="100" height="100">
+        </div>
+        <div id="aboutdesc">
+            <p>
+                I’m Vincy, a web developer. If you want to start a
+                project and do a quick launch, <a href="https://phppot.com/contact/">contact
+                    me</a>.
+            </p>
+            <p>I am available for freelance work.</p>
+        </div>
+        <div id="contactMe">
+            <a href="mailto:vincy@phppot.com" title="Contact Me">vincy@phppot.com</a>
+        </div>
+    </div>
+
+                          <div class="sidebar-featured-product">
+        <div class="heading">Featured Product</div>
+        <a href="https://phppot.com/shop/contact-form-iris/"><img src="PHP%20Mail%20-%20Phppot_files/simple-secure-spam-free-contact-form-in-php-iris-150x150.png">
+        </a>
+        <div class="sidebar-featured-url">
+            <a href="https://phppot.com/shop/contact-form-iris/">Contact
+                Form - Iris</a>
+        </div>
+    </div>
+            <div id="recommended">
+        <div class="heading">Trending Now</div>
+        <ul>
+            <li><a href="https://phppot.com/shop/contact-form-iris/">Contact
+                    Form – Iris</a></li>
+            <li><a href="https://phppot.com/php/simple-php-shopping-cart/">Simple
+                    PHP Shopping Cart</a></li>
+            <li><a href="https://phppot.com/php/how-to-become-a-full-time-freelance-php-developer-and-consultant/">How
+                    to Become a Full Time Freelance PHP Developer and
+                    Consultant</a></li>
+            <li><a href="https://phppot.com/jquery/jquery-ajax-inline-crud-with-php/">jQuery
+                    AJAX Inline CRUD with PHP</a></li>
+            <li><a href="https://phppot.com/php/simple-secure-spam-free-contact-form-in-php-iris/">Simple
+                    Secure Spam-Free Contact Form in PHP – Iris</a></li>
+        </ul>
+    </div>
+    <div class="testimonials-sbar">
+    <div class="heading">Testimonials</div>
+    <p class="testimonial-content"><span class="left-quotes">“</span>From
+ initial enquiry to wrap up, Vincy produced technically astute assets 
+which enabled our team back in The Netherlands to deliver a rock-solid 
+product ...<span class="right-quotes">”</span></p>
+    <p class="testimonials-sbar-by">Sal Souza, Ofamfa, The Netherlands</p>
+    <div class="view-more-testimonial">
+        <a href="https://phppot.com/testimonials/"><span class="view-testimonials">View More Testimonials</span></a>
+    </div>
+</div></div></div>
+<div id="footer-contact-note">
+    <div class="content">
+        <h2>Looking for an expert PHP freelancer?</h2>
+        <p class="footer-contact-banner-title">Do you want to develop a
+            modern, lightweight, responsive web application and launch
+            quickly?</p>
+        <p>
+            <a id="footer-contact-navigation" href="https://phppot.com/contact/">Contact
+                Me</a>
+        </p>
+    </div>
+</div>
+<div id="footer">
+    <div class="content">
+        <div class="subscribe-section">
+            <div class="subscribe-email">
+                <div>
+    <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=phppot',
+             'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <p>
+        </p><div><label for="feedb-email-inp">Email:</label></div>
+            <input id="feedb-email-inp" placeholder="Enter your email here" type="text" class="feedb-email" name="email"><input type="hidden" value="phppot" name="uri"><input type="hidden" name="loc" value="en_US"><input type="submit" value="Subscribe" class="subscribe">
+        <p></p>
+    </form>
+</div></div>
+
+            <div class="follow">
+                <a class="facebook" href="https://www.facebook.com/PPbay" rel="nofollow noopener" title="Phppot Facebook Page" target="_blank">Facebook</a><a class="twitter" href="https://www.linkedin.com/in/vincya/" rel="nofollow noopener" title="Phppot LinkedIn Page" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="shop-footer-common">
+            <div class="shop-doc-nav">
+                <div class="shop-doc-nav-links">
+                    <div class="heading">Digital Goods Shop</div>
+                    <a href="https://phppot.com/faq/">FAQ</a> <a href="https://phppot.com/support-policy/">Support
+                        Policy</a> <a href="https://phppot.com/refund-policy/">Refund Policy</a>
+                    <a href="https://phppot.com/licenses/">Licenses</a> <a href="https://phppot.com/user-license/">User License</a> <a href="https://phppot.com/developer-license/">Developer License</a>
+                </div>
+
+                <div class="policy-doc-nav">
+                    <a href="https://phppot.com/terms-of-use/">Terms of
+                        Service</a><a href="https://phppot.com/privacy-policy/">Privacy
+                        Policy</a><a href="https://phppot.com/privacy-policy/#cookie-policy">Cookie
+                        Policy</a> <span class="copyright">© 2019 <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP">Phppot</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('click', function(e){
+    	var element = document.getElementsByClassName("search-container")[0];
+        if (element && !element.contains(e.target) && e.target.id != "mobile-search-icon" && window.innerWidth <= "550") {
+            element.style.display = "none";
+        }
+    });
+    function toggleSearch() {
+        var element = document.getElementsByClassName("search-container")[0];
+        if(element.style.display == 'inline-block') {
+            	element.style.display = "none";
+        } else {
+        	   element.style.display = "inline-block";
+        }
+    }
+</script><script async="" src="PHP%20Mail%20-%20Phppot_files/prettify.js"></script>
+
+</body></html>

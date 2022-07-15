@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Drag and drop demo</title>
+</head>
+<body>
+
+<h2 align="center"> Main Tutorial <a href="http://www.2my4edge.com/2013/10/drag-and-drop-concept-using-jquery.html"> Drag and Drop concept using Jquery </a> &nbsp; / &nbsp; More tutorials <a href="http://www.2my4edge.com"> www.2my4edge.com </a> </h2>
+<div class="container" id="draggable">
+
+<div class="col">
+<div class="widget pink">
+<div class="widget-title">
+<h4>Resize the font using</h4>
+</div>
+<div>
+Resize the font size using Jquery, zoom in and zoom out the font size <a href="http://www.2my4edge.com/2013/08/resize-font-using-query.html"> see tutorial </a> </div>
+</div>
+<div class="widget red">
+<div class="widget-title">
+<h4> Image slider using Jquery</h4>
+</div>
+<div>
+Image slider with multiple random animation effects using Jquery, it may usefull to header of all webpage <a href="http://www.2my4edge.com/2013/08/image-slider-with-random-animation.html"> See Tutorial </a>
+</div>
+</div>
+<div class="widget green">
+<div class="widget-title">
+<h4> Get support with foreign language</h4>
+</div>
+<div>
+Get support with foreign and regional language in php and mysql, while insert and view database data, that may not support foreign and regional language <a href="http://www.2my4edge.com/2013/08/get-support-with-foreign-and-regional.html"> See Tutorial </a></div>
+</div>
+</div>
+
+
+<div class="col">
+<div class="widget red">
+<div class="widget-title">
+<h4> Activate and deactivate concept </h4>
+</div>
+<div>
+Activate and deactivate concept using php and mysql, this is the concept for block and unblock the user, this may useful in user management system. <a href="http://www.2my4edge.com/2013/08/activate-and-deactivate-concept-using.html"> See Tutorial </a></div>
+</div>
+<div class="widget green">
+<div class="widget-title">
+<h4>Redirect the webpage</h4>
+
+</div>
+<div>
+Redirect the page using javascript without .htaccess, By using Java script redirect the webpage to another page without using .HTACCESS <a href="http://www.2my4edge.com/2013/08/redirect-page-using-javascript-without.html"> See Tutorial </a></div>
+</div>
+<div class="widget pink">
+<div class="widget-title">
+<h4> Ajax delete </h4>
+
+</div>
+<div>
+Ajax delete with PHP and MySql, without refreshing page delete the data by using Ajax <a href="http://www.2my4edge.com/2013/08/ajax-delete-with-php-and-mysql.html"> See Tutorial </a></div>
+</div>
+</div>
+
+
+<div class="col">
+<div class="widget pink">
+<div class="widget-title">
+<h4> Login and logout system</h4>
+</div>
+<div>
+Simple Login and Logout system using Php and Mysql <a href="http://www.2my4edge.com/2013/07/simple-login-logout-system-using-php.html"> See Tutorial </a></div>
+</div>
+
+
+<div class="widget red">
+<div class="widget-title">
+<h4> scroll to top by using Jquery </h4>
+</div>
+<div>
+Animated Scroll to top using Jquery, from bottom to go top of the page <a href="http://www.2my4edge.com/2013/08/animated-scroll-to-top-by-using-jquery.html"> See Tutorial </a></div>
+</div>
+
+
+<div class="widget green">
+<div class="widget-title">
+<h4>How to create an animated .jpg</h4>
+</div>
+<div>
+How to create an animated .jpg image, animated .jpg image <a href="http://www.2my4edge.com/2013/08/how-to-create-animated-jpg-image.html"> See Tutorial </a></div>
+
+</div>
+</div>
+</div>
+
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$("#draggable").sortable({
+connectWith: ".widget",
+items: ".widget",
+opacity: 0.5,
+coneHelperSize: true,
+forcePlaceholderSize: true,
+tolerance: "pointer"
+});
+</script>
+<style type="text/css">
+* { font-family:Tahoma, Geneva, sans-serif; }
+h4 { color:#FFF; }
+.container { width:100%; margin:0 auto; }
+.col { width:420px; float:left; }
+.widget { padding:10px; min-height:160px; text-align:justify; }
+.widget-title { cursor:move; }
+.widget { border:0px #CCC solid; margin:10px; }
+.green { border:#0C0 1px solid; }
+.green h4 { background-color:#0C3; padding:10px; }
+.red { border:1px #C30 solid; }
+.red h4 { background-color:#C30; padding:10px; }
+.pink { border:#C6F 1px solid; }
+.pink h4 { background-color:#C6F; padding:10px; }
+
+
+
+</style>
+</body>
+</html>

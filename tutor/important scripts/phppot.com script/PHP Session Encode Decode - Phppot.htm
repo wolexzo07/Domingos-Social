@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>PHP Session Encode Decode - Phppot</title>
+<meta name="description" content="In PHP, session encodes and decode operations are automatically performed while storing session data into memory and reading stored session,"><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://phppot.com/feed/">
+<link rel="apple-touch-icon" sizes="180x180" href="https://phppot.com/apple-touch-icon.png?v=031218">
+<link rel="icon" type="image/png" sizes="32x32" href="https://phppot.com/favicon-32x32.png?v=031218">
+<link rel="icon" type="image/png" sizes="16x16" href="https://phppot.com/favicon-16x16.png?v=031218">
+<link rel="manifest" href="https://phppot.com/site.webmanifest?v=031218">
+<link rel="mask-icon" href="https://phppot.com/safari-pinned-tab.svg?v=031218" color="#ffa500">
+<link rel="shortcut icon" href="https://phppot.com/favicon.ico?v=031218">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="PHP Session Encode Decode - Phppot">
+<meta property="og:site_name" content="Phppot">
+<meta property="og:description" content="In PHP, session encodes and decode operations are automatically performed while storing session data into memory and reading stored session,"><meta property="og:url" content="https://phppot.com/php/php-session-encode-decode/">
+<meta property="twitter:title" content="PHP Session Encode Decode - Phppot">
+<meta name="twitter:site" content="@phppot">
+<meta property="twitter:creator" content="@phppot">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://phppot.com/wp-content/uploads/2013/11/encode_decode.jpg"><meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:description" content="In PHP, session encodes and decode operations are automatically performed while storing session data into memory and reading stored session,"><meta property="twitter:image" content="https://phppot.com/wp-content/uploads/2013/11/encode_decode.jpg"><script type="text/javascript" async="" src="PHP%20Session%20Encode%20Decode%20-%20Phppot_files/ga.js"></script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40067115-1']);
+  _gaq.push(['_setDomainName', 'phppot.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://www.google-analytics.com/"><link rel="dns-prefetch" href="https://www.youtube.com/"><link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/"><link rel="dns-prefetch" href="https://static.doubleclick.net/"><link rel="dns-prefetch" href="https://www.google.com/"><link rel="dns-prefetch" href="https://i.ytimg.com/"><link rel="dns-prefetch" href="https://yt3.ggpht.com/"><link rel="dns-prefetch" href="https://fonts.gstatic.com/"><link rel="stylesheet" id="main-style-css" href="PHP%20Session%20Encode%20Decode%20-%20Phppot_files/papers_228192.css" type="text/css" media="all">
+<link rel="canonical" href="https://phppot.com/php/php-session-encode-decode/">
+</head>
+<body onload="prettyPrint()">
+ <div id="site_header">
+    <div class="content">
+        <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP"><img src="PHP%20Session%20Encode%20Decode%20-%20Phppot_files/phppot-logo.png" id="site-logo" alt="Helping You Build Web Applications Using PHP"></a>
+        <div class="search-container">
+            <form method="get" action="/" class="search-form">
+                <input name="s" class="search" placeholder="Search Phppot" title="Search Phppot" autocomplete="off">
+                <button type="submit" title="Search Phppot" id="search-button"></button>
+            </form>
+        </div>
+        <div class="header-link-container">
+            <span id="mobile-search-icon" onclick="toggleSearch();">Mobile
+                Search</span>
+                <div id="expand-sub-menu-icon">
+                    <a class="testimonial-icon" href="https://phppot.com/testimonials/">Testimonials</a><a class="demo-download-icon" href="https://phppot.com/demo/">Demo</a>
+                </div>  <a id="header-contact-navigation" href="https://phppot.com/contact/">Contact Me</a>
+        </div>
+    </div>
+</div>    <div class="content">
+        <div id="tutorial-body">
+            <div id="tutorial">
+                <h1>PHP Session Encode Decode</h1>
+                <div class="modified-on">Last modified on February 24th, 2017 by Vincy.</div>
+<p>In PHP, session encodes and decode operations are automatically performed while storing <a href="https://phppot.com/php/session-vs-cookies/">session</a>
+ data into memory and reading stored session, respectively. While 
+encoding, the $_SESSION array is converted into serialized string format
+ and decoding reverts serialized string back to its original form. This 
+serialization will not return the same format like PHP serialize().</p>
+<p><img style="display: inline; border-width: 0px;" title="encode_decode" src="PHP%20Session%20Encode%20Decode%20-%20Phppot_files/encode_decode.jpg" alt="encode_decode" width="200" height="200" border="0"></p>
+<p>The encoded session data contains all $_SESSION elements separated by
+ the semicolon. Each element contains three parts: session index, 
+session length, and session value. For example,</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pln">index1</span><span class="pun">|</span><span class="pln">s</span><span class="pun">:</span><span class="pln">length1</span><span class="pun">:</span><span class="str">"value1"</span><span class="pun">;</span><span class="pln">index2</span><span class="pun">|</span><span class="pln">s</span><span class="pun">:</span><span class="pln">length2</span><span class="pun">:</span><span class="str">"value2"</span><span class="pun">;...</span></pre>
+<h2>Session Encode Decode functions in PHP</h2>
+<p>PHP provides functions to perform session encode and decode manually. These functions are,</p>
+<ul>
+<li>session_encode()</li>
+<li>session_decode()</li>
+</ul>
+<p>Before using these functions, we need to start the session using session_start(). Otherwise, we should set <strong>session.auto_start</strong> directive as 1 in <a href="https://phppot.com/php/php.ini-file/">PHP.ini</a> file.</p>
+<p>While invoking session_encode() it will take entire $_SESSION global array to serialize.</p>
+<p>PHP session_decode() accepts serialized session data and converts it 
+into an array. This function returns TRUE on successful decode. 
+session_decode() reloads $_SESSION array with decoded data.</p>
+<h2>PHP Session Encode Decode Example</h2>
+<p>In this example, we have two session ids, <em>product_code</em>, and <em>logged_in</em>. While invoking session_encode(), it returns serialized string data into a variable.</p>
+<p>When we decode serialized session data by using session_decode(), it reloads $_SESSION array with stored information.</p>
+<p>In this example, we have changed the values of <em>product_code</em> and <em>logged_in</em>. But, the changed values are replaced by previously stored session data while invoking session_decode.</p>
+<pre class="prettyprint lang-php prettyprinted" style=""><span class="pun">&lt;?</span><span class="pln">php
+session_start</span><span class="pun">();</span><span class="pln">
+$_SESSION</span><span class="pun">[</span><span class="str">"product_code"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"2222"</span><span class="pun">;</span><span class="pln">
+$_SESSION</span><span class="pun">[</span><span class="str">"logged_in"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"yes"</span><span class="pun">;</span><span class="pln">
+$enc_session </span><span class="pun">=</span><span class="pln"> session_encode</span><span class="pun">();</span><span class="pln">
+</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"&lt;b&gt;Encoded Session Data:&lt;br/&gt;&lt;/b&gt;"</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">print</span><span class="pln"> $enc_session </span><span class="pun">.</span><span class="pln"> </span><span class="str">"&lt;br/&gt;&lt;br/&gt;"</span><span class="pun">;</span><span class="pln">
+</span><span class="com">// Changing session values</span><span class="pln">
+$_SESSION</span><span class="pun">[</span><span class="str">'product_code'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"2000"</span><span class="pun">;</span><span class="pln">
+$_SESSION</span><span class="pun">[</span><span class="str">"logged_in"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"no"</span><span class="pun">;</span><span class="pln">
+</span><span class="com">// printing $_SESSION</span><span class="pln">
+</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"&lt;b&gt;SESSION Array:&lt;br/&gt;&lt;/b&gt;"</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"&lt;pre&gt;"</span><span class="pun">;</span><span class="pln">
+print_r</span><span class="pun">(</span><span class="pln">$_SESSION</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"&lt;/pre&gt;"</span><span class="pun">;</span><span class="pln">
+session_decode</span><span class="pun">(</span><span class="pln">$enc_session</span><span class="pun">);</span><span class="pln">
+</span><span class="com">// printing Reloaded $_SESSION</span><span class="pln">
+</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"&lt;b&gt;Reloaded SESSION Array:&lt;br/&gt;&lt;/b&gt;"</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"&lt;pre&gt;"</span><span class="pun">;</span><span class="pln">
+print_r</span><span class="pun">(</span><span class="pln">$_SESSION</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"&lt;/pre&gt;"</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">?&gt;</span></pre>
+<p><strong>Output:</strong></p>
+<pre class="prettyprint lang-html prettyprinted" style=""><b><span class="pln">Encoded Session Data:</span></b><span class="pln">
+product_code|s:4:"2222";logged_in|s:3:"yes";
+</span><b><span class="pln">Changed SESSION values:
+</span></b><span class="pln">Array (
+    [product_code] =&gt; 2000
+    [logged_in] =&gt; no
+)</span><b><span class="pln">Reloaded SESSION Array:
+</span></b><span class="pln">Array(
+    [product_code] =&gt; 2222
+    [logged_in] =&gt; yes
+)</span></pre>
+<p id="download"><a href="https://phppot.com/wp-content/uploads/2013/11/php_session_encode_decode.zip">Download PHP Session Encode Decode Source</a></p>
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			Comments to “PHP Session Encode Decode”		</h2>
+
+		<ul class="comment-list">
+					<li class="comment even thread-even depth-1 parent" id="comment-1066">
+				<div id="div-comment-1066" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">gabby</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-session-encode-decode/#comment-1066">
+			December 30, 2013 at 8:00 am</a>		</div>
+
+		<p>thanks for the info! helped..</p>
+<p>g.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-session-encode-decode/?replytocom=1066#respond" onclick='return addComment.moveForm( "div-comment-1066", "1066", "respond", "2168" )' aria-label="Reply to gabby">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment odd alt depth-2" id="comment-20749">
+				<div id="div-comment-20749" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">pramila</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-session-encode-decode/#comment-20749">
+			June 14, 2019 at 6:12 pm</a>		</div>
+
+		<p>welcome</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-session-encode-decode/?replytocom=20749#respond" onclick='return addComment.moveForm( "div-comment-20749", "20749", "respond", "2168" )' aria-label="Reply to pramila">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-20347">
+				<div id="div-comment-20347" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Hassen</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-session-encode-decode/#comment-20347">
+			May 21, 2019 at 4:05 pm</a>		</div>
+
+		<p>Thanks you very much<br>
+Really, your course is very helpful</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-session-encode-decode/?replytocom=20347#respond" onclick='return addComment.moveForm( "div-comment-20347", "20347", "respond", "2168" )' aria-label="Reply to Hassen">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-vincy bypostauthor odd alt depth-2" id="comment-21061">
+				<div id="div-comment-21061" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Vincy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://phppot.com/php/php-session-encode-decode/#comment-21061">
+			July 1, 2019 at 10:27 am</a>		</div>
+
+		<p>Welcome Hassen.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://phppot.com/php/php-session-encode-decode/?replytocom=21061#respond" onclick='return addComment.moveForm( "div-comment-21061", "21061", "respond", "2168" )' aria-label="Reply to Vincy">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		</ul>
+
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://phppot.com/php/php-session-encode-decode/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://phppot.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Leave this empty <span class="required">*</span></label> <input id="url" name="url" type="text" size="30" maxlength="245"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="2168" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>			</form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+    <div class="related-articles">
+                    <h2>Popular Articles</h2>
+                    <ul class="related-articles-list">
+                        <li><a href="https://phppot.com/php/secure-remember-me-for-login-using-php-session-and-cookies/">Secure Remember Me for Login using PHP Session and Cookies</a></li>
+                        <li><a href="https://phppot.com/php/session-vs-cookies/">PHP Session Vs Cookies</a></li>
+                        <li><a href="https://phppot.com/php/php-session-configuration/">PHP Session Configuration</a></li>
+                    </ul>
+                </div>
+                <p>
+                    <a href="#top" class="top">↑ Back to Top</a>
+                </p>
+            </div>
+            <div id="tutorial-menu">
+	<ul class="main-menu"><li class="cat-item cat-item-72"><a href="https://phppot.com/category/php/">PHP</a><ul class="sub-menu"><li class="cat-item cat-item-59 "><a href="https://phppot.com/category/php/php-introduction/">PHP Introduction</a></li><li class="cat-item cat-item-26 "><a href="https://phppot.com/category/php/php-basics/">PHP Basics</a></li><li class="cat-item cat-item-99 "><a href="https://phppot.com/category/php/product/">Product</a></li><li class="cat-item cat-item-79 "><a href="https://phppot.com/category/php/php-shopping-cart/">PHP Shopping Cart</a></li><li class="cat-item cat-item-102 "><a href="https://phppot.com/category/php/payment-gateway-integration/">Payment Gateway Integration</a></li><li class="cat-item cat-item-94 "><a href="https://phppot.com/category/php/php-contact-form/">PHP Contact Form</a></li><li class="cat-item cat-item-103 "><a href="https://phppot.com/category/php/comments-system/">Comments System</a></li><li class="cat-item cat-item-57 "><a href="https://phppot.com/category/php/types-variables-operators/">Types, Variables &amp; Operators</a></li><li class="cat-item cat-item-58 "><a href="https://phppot.com/category/php/php-strings/">PHP Strings</a></li><li class="cat-item cat-item-22 "><a href="https://phppot.com/category/php/php-arrays/">PHP Arrays</a></li><li class="cat-item cat-item-61 "><a href="https://phppot.com/category/php/php-functions/">PHP Functions</a></li><li class="cat-item cat-item-35 "><a href="https://phppot.com/category/php/php-oops/">PHP OOPS</a></li><li class="cat-item cat-item-31 "><a href="https://phppot.com/category/php/php-forms/">PHP Forms</a></li><li class="cat-item cat-item-78 "><a href="https://phppot.com/category/php/advanced/">Advanced</a></li><li class="cat-item cat-item-90 "><a href="https://phppot.com/category/php/php-ajax/">PHP AJAX</a></li><li class="cat-item cat-item-89 "><a href="https://phppot.com/category/php/restful-api/">RESTful API</a></li><li class="cat-item cat-item-15 "><a href="https://phppot.com/category/php/php-databases/">PHP Databases</a></li><li class="cat-item cat-item-23 taxonomy-active"><a href="https://phppot.com/category/php/php-sessions-and-cookies/">PHP Sessions and Cookies</a><ul class="post-list"><li><a class="post-menu" href="https://phppot.com/php/session-vs-cookies/">PHP Session Vs Cookies</a></li><li><a class="post-menu" href="https://phppot.com/php/secure-remember-me-for-login-using-php-session-and-cookies/">Secure Remember Me for Login using PHP Session and Cookies</a></li><li><a class="post-menu" href="https://phppot.com/php/php-session-configuration/">PHP Session Configuration</a></li><li class="current-post">PHP Session Encode Decode</li></ul></li><li class="cat-item cat-item-51 "><a href="https://phppot.com/category/php/error-exception-handling/">Error and Exception Handling</a></li><li class="cat-item cat-item-100 "><a href="https://phppot.com/category/php/file-upload/">File Upload</a></li><li class="cat-item cat-item-101 "><a href="https://phppot.com/category/php/file-import-export/">File Import Export</a></li><li class="cat-item cat-item-36 "><a href="https://phppot.com/category/php/files-and-directories/">Files and Directories</a></li><li class="cat-item cat-item-45 "><a href="https://phppot.com/category/php/php-date-time/">PHP Date Time</a></li><li class="cat-item cat-item-12 "><a href="https://phppot.com/category/php/php-graphics/">PHP Graphics</a></li><li class="cat-item cat-item-24 "><a href="https://phppot.com/category/php/php-xml/">PHP XML</a></li><li class="cat-item cat-item-62 "><a href="https://phppot.com/category/php/php-code-samples/">PHP Code Samples</a></li><li class="cat-item cat-item-96 "><a href="https://phppot.com/category/php/library/">Library</a></li><li class="cat-item cat-item-88 "><a href="https://phppot.com/category/php/php-freelancer/">PHP Freelancer</a></li></ul></li><li class="cat-item cat-item-73"><a href="https://phppot.com/category/jquery/">jQuery</a></li><li class="cat-item cat-item-74"><a href="https://phppot.com/category/wordpress/">WordPress</a></li><li class="cat-item cat-item-75"><a href="https://phppot.com/category/mysql/">MySQL</a></li><li class="cat-item cat-item-76"><a href="https://phppot.com/category/css/">CSS</a></li></ul></div>
+
+            <div id="social-icon">
+                <div class="heading">Share this Article</div>
+                <ul>
+                    <li><a class="social-link facebook-social-link" href="https://www.facebook.com/sharer/sharer.php?u=https://phppot.com/php/php-session-encode-decode/" title="Share on Facebook"><span class="facebook-social-img">Share</span></a></li>
+                    <li><a class="social-link twitter-social-link" href="https://twitter.com/intent/tweet?original_referer=https://phppot.com&amp;source=tweetbutton&amp;text=PHP%20Session%20Encode%20Decode;url=https://phppot.com/php/php-session-encode-decode/&amp;via=phppot" title="Share on Twitter"><span class="twitter-social-img">Tweet</span></a></li>
+                    <li><a class="social-link linkedin-social-link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://phppot.com/php/php-session-encode-decode/&amp;media=PHP%20Session%20Encode%20Decode" title="Share on Linkedin"><span class="linkedin-social-img">Share</span></a></li>
+                </ul>
+            </div>
+        </div>
+<div id="sidebar">
+    <div id="aboutcntnt">
+        <div id="photo">
+            <img src="PHP%20Session%20Encode%20Decode%20-%20Phppot_files/Vincy.jpg" alt="Vincy" title="Vincy" width="100" height="100">
+        </div>
+        <div id="aboutdesc">
+            <p>
+                I’m Vincy, a web developer. If you want to start a
+                project and do a quick launch, <a href="https://phppot.com/contact/">contact
+                    me</a>.
+            </p>
+            <p>I am available for freelance work.</p>
+        </div>
+        <div id="contactMe">
+            <a href="mailto:vincy@phppot.com" title="Contact Me">vincy@phppot.com</a>
+        </div>
+    </div>
+
+                          <div class="sidebar-featured-product">
+        <div class="heading">Featured Product</div>
+        <a href="https://phppot.com/shop/contact-form-iris/"><img src="PHP%20Session%20Encode%20Decode%20-%20Phppot_files/simple-secure-spam-free-contact-form-in-php-iris-150x150.png">
+        </a>
+        <div class="sidebar-featured-url">
+            <a href="https://phppot.com/shop/contact-form-iris/">Contact
+                Form - Iris</a>
+        </div>
+    </div>
+            <div id="recommended">
+        <div class="heading">Trending Now</div>
+        <ul>
+            <li><a href="https://phppot.com/shop/contact-form-iris/">Contact
+                    Form – Iris</a></li>
+            <li><a href="https://phppot.com/php/simple-php-shopping-cart/">Simple
+                    PHP Shopping Cart</a></li>
+            <li><a href="https://phppot.com/php/how-to-become-a-full-time-freelance-php-developer-and-consultant/">How
+                    to Become a Full Time Freelance PHP Developer and
+                    Consultant</a></li>
+            <li><a href="https://phppot.com/jquery/jquery-ajax-inline-crud-with-php/">jQuery
+                    AJAX Inline CRUD with PHP</a></li>
+            <li><a href="https://phppot.com/php/simple-secure-spam-free-contact-form-in-php-iris/">Simple
+                    Secure Spam-Free Contact Form in PHP – Iris</a></li>
+        </ul>
+    </div>
+    <div class="testimonials-sbar">
+    <div class="heading">Testimonials</div>
+    <p class="testimonial-content"><span class="left-quotes">“</span>Subcontracted
+ work was completed on time, as requested, with great attention to 
+details and utmost flexibility despite various changes towards the end 
+of the project. Bravo! ...<span class="right-quotes">”</span></p>
+    <p class="testimonials-sbar-by">Haris Memisevic, Webpage.ba, Bosnia and Herzegovina</p>
+    <div class="view-more-testimonial">
+        <a href="https://phppot.com/testimonials/"><span class="view-testimonials">View More Testimonials</span></a>
+    </div>
+</div></div></div>
+<div id="footer-contact-note">
+    <div class="content">
+        <h2>Looking for an expert PHP freelancer?</h2>
+        <p class="footer-contact-banner-title">Do you want to develop a
+            modern, lightweight, responsive web application and launch
+            quickly?</p>
+        <p>
+            <a id="footer-contact-navigation" href="https://phppot.com/contact/">Contact
+                Me</a>
+        </p>
+    </div>
+</div>
+<div id="footer">
+    <div class="content">
+        <div class="subscribe-section">
+            <div class="subscribe-email">
+                <div>
+    <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=phppot',
+             'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <p>
+        </p><div><label for="feedb-email-inp">Email:</label></div>
+            <input id="feedb-email-inp" placeholder="Enter your email here" type="text" class="feedb-email" name="email"><input type="hidden" value="phppot" name="uri"><input type="hidden" name="loc" value="en_US"><input type="submit" value="Subscribe" class="subscribe">
+        <p></p>
+    </form>
+</div></div>
+
+            <div class="follow">
+                <a class="facebook" href="https://www.facebook.com/PPbay" rel="nofollow noopener" title="Phppot Facebook Page" target="_blank">Facebook</a><a class="twitter" href="https://www.linkedin.com/in/vincya/" rel="nofollow noopener" title="Phppot LinkedIn Page" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="shop-footer-common">
+            <div class="shop-doc-nav">
+                <div class="shop-doc-nav-links">
+                    <div class="heading">Digital Goods Shop</div>
+                    <a href="https://phppot.com/faq/">FAQ</a> <a href="https://phppot.com/support-policy/">Support
+                        Policy</a> <a href="https://phppot.com/refund-policy/">Refund Policy</a>
+                    <a href="https://phppot.com/licenses/">Licenses</a> <a href="https://phppot.com/user-license/">User License</a> <a href="https://phppot.com/developer-license/">Developer License</a>
+                </div>
+
+                <div class="policy-doc-nav">
+                    <a href="https://phppot.com/terms-of-use/">Terms of
+                        Service</a><a href="https://phppot.com/privacy-policy/">Privacy
+                        Policy</a><a href="https://phppot.com/privacy-policy/#cookie-policy">Cookie
+                        Policy</a> <span class="copyright">© 2019 <a href="https://phppot.com/" title="Helping You Build Web Applications Using PHP">Phppot</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('click', function(e){
+    	var element = document.getElementsByClassName("search-container")[0];
+        if (element && !element.contains(e.target) && e.target.id != "mobile-search-icon" && window.innerWidth <= "550") {
+            element.style.display = "none";
+        }
+    });
+    function toggleSearch() {
+        var element = document.getElementsByClassName("search-container")[0];
+        if(element.style.display == 'inline-block') {
+            	element.style.display = "none";
+        } else {
+        	   element.style.display = "inline-block";
+        }
+    }
+</script><script async="" src="PHP%20Session%20Encode%20Decode%20-%20Phppot_files/prettify.js"></script>
+
+</body></html>

@@ -1,0 +1,33 @@
+<?php
+/**
+ * YouTube Preg Match Test Case.
+ *
+ * @author Mario "Kuroir" Ricalde
+ */
+// Regular Expression (the magic).
+$youtube_regexp = "/^http:\/\/(?:www\.)?(?:youtube.com|youtu.be)\/(?:watch\?(?=.*v=([\w\-]+))(?:\S+)?|([\w\-]+))$/";
+// The test urls, one per line.
+$urls = <<<EOF
+http://www.youtube.com/watch?v=4-iI6UnKUCs&feature=grec_index
+http://www.youtube.com/watch?v=4-iI6UnKUCs
+http://www.youtube.com/watch?v=QNnz_ktVggQ&NR=1
+http://youtu.be/QNnz_ktVAA
+http://youtu.x
+EOF;
+// Turn each line into one single element in an array.
+$urls = explode("\n", $urls);
+foreach ($urls as $url) {
+	// Match a URL.
+	preg_match($youtube_regexp, $url, $matches);
+	
+	// Remove empty values from the array (regexp shit).
+	$matches = array_filter($matches, function($var) {
+		return($var !== '');
+	});
+	
+	// If we have 2 elements in array, it means we got a valid url!
+	// $matches[2] is the youtube ID!
+	if (sizeof($matches) == 2) {
+		var_dump($matches);
+	}
+}

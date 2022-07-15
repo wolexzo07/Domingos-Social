@@ -1,0 +1,28 @@
+function getfavicon($url){
+    $favicon = '';
+    $html = file_get_contents($url);
+    $dom = new DOMDocument();
+    $dom->loadHTML($html);
+    $links = $dom->getElementsByTagName('link');
+    for ($i = 0; $i < $links->length; $i++){
+        $link = $links->item($i);
+        if($link->getAttribute('rel') == 'icon'){
+            $favicon = $link->getAttribute('href');
+	}
+    }
+    return $favicon;
+}
+$website = "http://www.adamkhoury.com";
+$favicon = getfavicon($website);
+echo $favicon;
+
+
+<?php
+$external_file = "http://www.developphp.com/favicon.ico";
+$headers = get_headers($external_file);
+if(preg_match("|200|", $headers[0])) {
+    echo "The file exists";
+} else {
+    echo "The file does not exist";
+}
+?>

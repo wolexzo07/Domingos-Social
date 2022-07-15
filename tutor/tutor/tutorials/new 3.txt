@@ -1,0 +1,62 @@
+function isArray(x) {
+  return x.constructor.toString().indexOf("Array") > -1;
+} 
+
+function arrayCompare(a1, a2) {
+    if (a1.length != a2.length) return false;
+    var length = a2.length;
+    for (var i = 0; i < length; i++) {
+        if (a1[i] !== a2[i]) return false;
+    }
+    return true;
+}
+
+function inArray(needle, haystack) {
+    var length = haystack.length;
+    for(var i = 0; i < length; i++) {
+        if(typeof haystack[i] == 'object') {
+            if(arrayCompare(haystack[i], needle)) return true;
+        } else {
+            if(haystack[i] == needle) return true;
+        }
+    }
+    return false;
+}
+
+
+
+
+EXAMPLE
+
+var a = [['p','h'],['p','r'],'o'];
+if(inArray(['p','h'], a)) {
+    alert('ph was found');
+}
+if(inArray(['f','i'], a)) {
+    alert('fi was found');
+}
+if(inArray('o', a)) {
+    alert('o was found');
+}  
+
+
+
+let myArray = ['Kevin', 'Bob', 'Stuart'];
+if( myArray.includes('Kevin'))
+alert('Kevin is here');
+
+var fileTypes = [
+  'image/jpeg',
+  'image/pjpeg',
+  'image/png'
+]
+
+function validFileType(file) {
+  for(var i = 0; i < fileTypes.length; i++) {
+    if(file.type === fileTypes[i]) {
+      return true;
+    }
+  }
+
+  return false;
+}
