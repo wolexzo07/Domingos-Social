@@ -112,7 +112,7 @@ $getcover = x_getsingle("SELECT cover_photo FROM userdatabank WHERE id='$userid'
 				<div class="col-md-8">
 				<?php
 				$userid = x_clean($_SESSION["XELOW_DOMINGOS_USER_ID"]);
-				if(x_count("userbank","is_admin='1' AND id='$userid' LIMIT 1") > 0){
+				if(x_count("userdatabank","is_admin='1' AND id='$userid' LIMIT 1") > 0){
 				include_once("admininterface.php");
 				}else{
 				include_once("normalinterface.php");	

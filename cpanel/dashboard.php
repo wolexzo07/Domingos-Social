@@ -1,6 +1,6 @@
 <?php 
 include_once("../finishit.php");
-include_once("../domingos_sp_functions.php");
+include_once("../xe-library/domingos_sp_functions.php");
 xstart("0");
 if(!x_validatesession("XELOW_DOMINGOS_USER_ID")){
 	finish("../","Unauthorized access! Please login.");
